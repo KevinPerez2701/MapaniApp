@@ -44,12 +44,12 @@ namespace MapaniApp
             this.BtnHistorial = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtID = new System.Windows.Forms.TextBox();
-            this.BtnVerCuidador = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
@@ -167,7 +167,7 @@ namespace MapaniApp
             // BtnHistorial
             // 
             this.BtnHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnHistorial.Location = new System.Drawing.Point(12, 300);
+            this.BtnHistorial.Location = new System.Drawing.Point(12, 260);
             this.BtnHistorial.Name = "BtnHistorial";
             this.BtnHistorial.Size = new System.Drawing.Size(244, 36);
             this.BtnHistorial.TabIndex = 39;
@@ -193,16 +193,6 @@ namespace MapaniApp
             this.TxtID.Size = new System.Drawing.Size(121, 29);
             this.TxtID.TabIndex = 42;
             // 
-            // BtnVerCuidador
-            // 
-            this.BtnVerCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVerCuidador.Location = new System.Drawing.Point(13, 347);
-            this.BtnVerCuidador.Name = "BtnVerCuidador";
-            this.BtnVerCuidador.Size = new System.Drawing.Size(242, 35);
-            this.BtnVerCuidador.TabIndex = 43;
-            this.BtnVerCuidador.Text = "Ver Cuidador";
-            this.BtnVerCuidador.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(360, 104);
@@ -220,7 +210,7 @@ namespace MapaniApp
             this.idDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.contactCuidadorBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(551, 32);
+            this.dataGridView1.Location = new System.Drawing.Point(557, 37);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(243, 244);
             this.dataGridView1.TabIndex = 45;
@@ -241,14 +231,24 @@ namespace MapaniApp
             // 
             this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(643, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 24);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Cuidadores";
+            // 
             // Recepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BtnVerCuidador);
             this.Controls.Add(this.TxtID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BtnHistorial);
@@ -290,11 +290,11 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnHistorial;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtID;
-        private System.Windows.Forms.Button BtnVerCuidador;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource contactCuidadorBindingSource;
+        private System.Windows.Forms.Label label6;
     }
 }
