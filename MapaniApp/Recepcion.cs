@@ -55,7 +55,7 @@ namespace MapaniApp
 
         private void Recepcion_Load(object sender, EventArgs e)
         {
-           
+           //Hello wordl
         }
     }
 }
