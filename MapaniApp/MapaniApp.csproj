@@ -84,6 +84,7 @@
       <DependentUpon>AsesoriaLegal.cs</DependentUpon>
     </Compile>
     <Compile Include="ContactCuidador.cs" />
+    <Compile Include="ContactMMB.cs" />
     <Compile Include="ContactNMB.cs" />
     <Compile Include="DataAccessLayer.cs" />
     <Compile Include="Enfermeria.cs">
@@ -158,6 +159,8 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ContactCuidador.datasource" />
+    <None Include="Properties\DataSources\ContactMMB.datasource" />
+    <None Include="Properties\DataSources\ContactNMB.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

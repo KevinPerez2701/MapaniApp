@@ -26,20 +26,6 @@ namespace MapaniApp
             Metodos.AgregarFoto(PbFotoNewContact);
         }
 
-        private void checkbox1_CheckedChanged(object sender, EventArgs e)
-        {
-            TxtIdCuidador.ReadOnly = !TxtIdCuidador.ReadOnly;
-            TxtIdCuidador.Visible = !TxtIdCuidador.Visible;
-            label6.Visible = !label6.Visible;
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            TxtIdMMB.ReadOnly = !TxtIdMMB.ReadOnly;
-            label8.Visible = !label8.Visible;
-            TxtIdMMB.Visible = !TxtIdMMB.Visible;
-        }
-
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -52,13 +38,38 @@ namespace MapaniApp
             Contact.Apellido = TxtApellido.Text;
             Contact.FechaNacimiento = dateTimePicker1.Value;
             Contact.Direccion = TxtDireccion.Text;
-            //Contact.IdCuidador = int.Parse(TxtIdCuidador.Text);
             Contact.Sexo = ComboSexo.Text;
             Contact.Foto = Metodos.ImageToArray(PbFotoNewContact);
             Contact.Id = _contactNMB != null ? _contactNMB.Id : 0;
             _LogicLayer.SaveContact(Contact); 
         }
 
+        private void SaveContactCuidador()
+        {
+            ContactCuidador Contact = new ContactCuidador();
+            Contact.Nombre = TxtNombre.Text;
+            Contact.Apellido = TxtApellido.Text;
+            Contact.FechaNacimiento = dateTimePicker1.Value;
+            Contact.Direccion = TxtDireccion.Text;
+            Contact.Sexo = ComboSexo.Text;
+            Contact.Foto = Metodos.ImageToArray(PbFotoNewContact);
+            Contact.Telefono = TxtTelefono.Text;
+            Contact.Id = _contactNMB != null ? _contactNMB.Id : 0;
+            _LogicLayer.SaveContactCuidador(Contact);
+        }
+        private void SaveContactMMB()
+        {
+            ContactMMB Contact = new ContactMMB();
+            Contact.Nombre = TxtNombre.Text;
+            Contact.Apellido = TxtApellido.Text;
+            Contact.FechaNacimiento = dateTimePicker1.Value;
+            Contact.Direccion = TxtDireccion.Text;
+            Contact.Sexo = ComboSexo.Text;
+            Contact.Foto = Metodos.ImageToArray(PbFotoNewContact);
+            Contact.Telefono = TxtTelefono.Text;
+            Contact.Id = _contactNMB != null ? _contactNMB.Id : 0;
+            _LogicLayer.SaveContactMMB(Contact);
+        }
         public void LoadContact(ContactNMB contact)
         {
             _contactNMB = contact;
@@ -70,18 +81,47 @@ namespace MapaniApp
                 dateTimePicker1.Value = contact.FechaNacimiento;
                 ComboSexo.Text = contact.Sexo;
                 TxtDireccion.Text = contact.Direccion;
-               // TxtIdCuidador.Text = (contact.IdCuidador).ToString();
                 PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);
-
             }
 
         }
             private void BtnSave_Click(object sender, EventArgs e)
-        {
-            SaveContact();
+        {   if (comboBox1.Text == "NMB")
+            {
+                SaveContact();
+            }
+            else if (comboBox1.Text == "Cuidador")
+            {
+                SaveContactCuidador();
+            }
+            else if (comboBox1.Text == "MMB")
+            {
+                SaveContactMMB();
+
+            }
             this.Close();
         }
 
-      
+        private void AddContact_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Cuidador" )
+            {
+                label6.Visible = !label6.Visible;
+                TxtTelefono.Visible = !TxtTelefono.Visible;
+                    
+            }
+            else if (comboBox1.Text == "MMB")
+            {
+                label6.Visible = !label6.Visible;
+                TxtTelefono.Visible = !TxtTelefono.Visible;
+            }
+
+
+        }
     }
 }

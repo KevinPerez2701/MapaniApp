@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MapaniApp
 {
-    public class ContactCuidador
+      public class ContactMMB
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

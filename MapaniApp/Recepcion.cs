@@ -12,7 +12,8 @@ namespace MapaniApp
 {
     public partial class Recepcion : Form
     {
-        private Metodos _metodos;
+        private ContactMMB _contactMMB = new ContactMMB();
+        private ContactCuidador _contactCuidador = new ContactCuidador();
         private ContactNMB _contactNMB = new ContactNMB();
         private LogicLayer _LogicLayer = new LogicLayer();
         public Recepcion()
@@ -25,6 +26,16 @@ namespace MapaniApp
             List<ContactCuidador> contacts = _LogicLayer.GetCuidadores(SearchText);
             dataGridView1.DataSource = contacts;
         }
+        public void PopulateContactsNMB(string SearchText = null)
+        {
+            List<ContactNMB> contacts = _LogicLayer.GetNMB(SearchText);
+            dataGridView1.DataSource = contacts;
+        }
+        public void PopulateContactsMMB(string SearchText = null)
+        {
+            List<ContactMMB> contacts = _LogicLayer.GetMMB(SearchText);
+            dataGridView1.DataSource = contacts;
+        }
 
         private void BtnCargar_Click(object sender, EventArgs e)
         {
@@ -34,6 +45,20 @@ namespace MapaniApp
                 ContactNMB contact = contacts[0];
                 LoadContact(contact);
                 PopulateContacts(TxtID.Text);
+            }
+            else if (ComboUsuario.Text == "Cuidador")
+            {
+                List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtID.Text);
+                ContactCuidador contact = contacts[0];
+                LoadContactCuidador(contact);
+                PopulateContactsNMB(TxtID.Text);
+            }
+            else if (ComboUsuario.Text == "MMB")
+            {
+                List<ContactMMB> contacts = _LogicLayer.GetContactsMMB(TxtID.Text);
+                ContactMMB contact = contacts[0];
+                LoadContactMMB(contact);
+                PopulateContactsMMB(TxtID.Text);
             }
         }
 
@@ -52,10 +77,42 @@ namespace MapaniApp
             }
 
         }
+        public void LoadContactCuidador(ContactCuidador contact)
+        {
+            _contactCuidador = contact;
+            if (contact != null)
+            {
+
+                TxtNombre.Text = contact.Nombre;
+                TxtApellido.Text = contact.Apellido;
+                dateTimePicker1.Value = contact.FechaNacimiento;
+                TxtDireccion.Text = contact.Direccion;
+                pictureBox1.Image = Metodos.GetImageFromByteArray(contact.Foto);
+
+            }
+
+        }
+        public void LoadContactMMB(ContactMMB contact)
+        {
+            _contactMMB = contact;
+            if (contact != null)
+            {
+
+                TxtNombre.Text = contact.Nombre;
+                TxtApellido.Text = contact.Apellido;
+                dateTimePicker1.Value = contact.FechaNacimiento;
+                TxtDireccion.Text = contact.Direccion;
+                pictureBox1.Image = Metodos.GetImageFromByteArray(contact.Foto);
+
+            }
+
+        }
 
         private void Recepcion_Load(object sender, EventArgs e)
         {
            //Hello wordl
         }
+
+     
     }
 }

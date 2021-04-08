@@ -50,9 +50,13 @@ namespace MapaniApp
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
+            this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contactNMBBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +75,8 @@ namespace MapaniApp
             this.ComboUsuario.FormattingEnabled = true;
             this.ComboUsuario.Items.AddRange(new object[] {
             "NMB",
-            "MMB"});
+            "MMB",
+            "Cuidador"});
             this.ComboUsuario.Location = new System.Drawing.Point(281, 12);
             this.ComboUsuario.Name = "ComboUsuario";
             this.ComboUsuario.Size = new System.Drawing.Size(121, 32);
@@ -209,10 +214,10 @@ namespace MapaniApp
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.contactCuidadorBindingSource;
+            this.dataGridView1.DataSource = this.contactNMBBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(557, 37);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(243, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(253, 244);
             this.dataGridView1.TabIndex = 45;
             // 
             // idDataGridViewTextBoxColumn
@@ -237,15 +242,23 @@ namespace MapaniApp
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(643, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 24);
+            this.label6.Size = new System.Drawing.Size(104, 24);
             this.label6.TabIndex = 46;
-            this.label6.Text = "Cuidadores";
+            this.label6.Text = "Relaciones";
+            // 
+            // contactNMBBindingSource
+            // 
+            this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
+            // 
+            // contactNMBBindingSource1
+            // 
+            this.contactNMBBindingSource1.DataSource = typeof(MapaniApp.ContactNMB);
             // 
             // Recepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(847, 450);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
@@ -269,6 +282,8 @@ namespace MapaniApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +311,7 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource contactCuidadorBindingSource;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.BindingSource contactNMBBindingSource1;
+        private System.Windows.Forms.BindingSource contactNMBBindingSource;
     }
 }
