@@ -41,22 +41,24 @@ namespace MapaniApp
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.BtnCargar = new System.Windows.Forms.Button();
-            this.BtnHistorial = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtID = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNMBBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contactNMBBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -169,17 +171,6 @@ namespace MapaniApp
             this.BtnCargar.UseVisualStyleBackColor = true;
             this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
             // 
-            // BtnHistorial
-            // 
-            this.BtnHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnHistorial.Location = new System.Drawing.Point(12, 260);
-            this.BtnHistorial.Name = "BtnHistorial";
-            this.BtnHistorial.Size = new System.Drawing.Size(244, 36);
-            this.BtnHistorial.TabIndex = 39;
-            this.BtnHistorial.Text = "Historial de Visitas";
-            this.BtnHistorial.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnHistorial.UseVisualStyleBackColor = true;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -232,6 +223,10 @@ namespace MapaniApp
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             // 
+            // contactNMBBindingSource1
+            // 
+            this.contactNMBBindingSource1.DataSource = typeof(MapaniApp.ContactNMB);
+            // 
             // contactCuidadorBindingSource
             // 
             this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
@@ -250,21 +245,36 @@ namespace MapaniApp
             // 
             this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
             // 
-            // contactNMBBindingSource1
+            // label8
             // 
-            this.contactNMBBindingSource1.DataSource = typeof(MapaniApp.ContactNMB);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(140, 286);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(134, 24);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Historial Visitas";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(25, 314);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(366, 124);
+            this.dataGridView2.TabIndex = 48;
             // 
             // Recepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TxtID);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.BtnHistorial);
             this.Controls.Add(this.BtnCargar);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.TxtDireccion);
@@ -281,9 +291,10 @@ namespace MapaniApp
             this.Load += new System.EventHandler(this.Recepcion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +313,6 @@ namespace MapaniApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtnCargar;
-        private System.Windows.Forms.Button BtnHistorial;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtID;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -313,5 +323,7 @@ namespace MapaniApp
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.BindingSource contactNMBBindingSource1;
         private System.Windows.Forms.BindingSource contactNMBBindingSource;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

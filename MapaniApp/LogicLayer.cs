@@ -78,5 +78,9 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetMMB(SearchText);
         }
+        public List<HistorialVisitas> GetHistorial(string SearchText = null)
+        {
+            return _dataAccessLayer.GetHistorial(SearchText);
+        }
     }
 }

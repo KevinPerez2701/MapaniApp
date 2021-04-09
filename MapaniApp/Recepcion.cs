@@ -37,6 +37,11 @@ namespace MapaniApp
             dataGridView1.DataSource = contacts;
         }
 
+        public void PopulateContactsVisita(string SearchText = null)
+        {
+            List<HistorialVisitas> Historial = _LogicLayer.GetHistorial(SearchText);
+            dataGridView2.DataSource = Historial;
+        }
         private void BtnCargar_Click(object sender, EventArgs e)
         {
             if (ComboUsuario.Text == "NMB")

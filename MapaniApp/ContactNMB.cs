@@ -14,7 +14,6 @@ namespace MapaniApp
         public  DateTime FechaNacimiento { get; set; }
         public string Direccion { get; set; }
         public string Sexo { get; set; }
-        public int IdCuidador { get; set; }
         public byte[] Foto { get; set; }
     }
 }

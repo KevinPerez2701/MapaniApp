@@ -370,6 +370,44 @@ namespace MapaniApp
             }
             return contacts;
         }
+        public List<HistorialVisitas> GetHistorial (string Search = null)
+        {
+            List<HistorialVisitas> Historial = new List<HistorialVisitas>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From ReferenciaMMB
+                                Join TablaNMB
+                                on TablaNMB.Id = ReferenciaMMB.NMB
+                                where ReferenciaMMB.MMB = @search";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Historial.Add(new HistorialVisitas
+                    {
+                        IdNMB = int.Parse(reader["Id"].ToString()),
+                        IdCuidador = int.Parse(reader["Id"].ToString()),
+                        Fecha = (DateTime)reader["Fecha"],
+                        Departamento = reader["Departamento"].ToString(),
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Historial;
+        }
     }
     
 }

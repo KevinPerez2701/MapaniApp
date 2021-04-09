@@ -93,6 +93,7 @@
     <Compile Include="Enfermeria.Designer.cs">
       <DependentUpon>Enfermeria.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistorialVisitas.cs" />
     <Compile Include="Recepcion.cs">
       <SubType>Form</SubType>
     </Compile>
