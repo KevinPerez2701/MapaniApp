@@ -13,7 +13,7 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
 
         public void InserContactNMB(ContactNMB contact)
         {
@@ -377,10 +377,8 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"Select * 
-                                From ReferenciaMMB
-                                Join TablaNMB
-                                on TablaNMB.Id = ReferenciaMMB.NMB
-                                where ReferenciaMMB.MMB = @search";
+                                From Visitas
+                                where Visitas.NMB = @Search";
                 SqlCommand command = new SqlCommand();
                 command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
                 command.CommandText = query;
@@ -390,8 +388,8 @@ namespace MapaniApp
                 {
                     Historial.Add(new HistorialVisitas
                     {
-                        IdNMB = int.Parse(reader["Id"].ToString()),
-                        IdCuidador = int.Parse(reader["Id"].ToString()),
+                        IdNMB = int.Parse(reader["NMB"].ToString()),
+                        IdCuidador = int.Parse(reader["Cuidador"].ToString()),
                         Fecha = (DateTime)reader["Fecha"],
                         Departamento = reader["Departamento"].ToString(),
                     });
@@ -407,6 +405,79 @@ namespace MapaniApp
                 Connection.Close();
             }
             return Historial;
+        }
+        public List<ProximasVisitas> GetProximas(string Search = null)
+        {
+            List<ProximasVisitas> Proximas = new List<ProximasVisitas>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From ProximasVisitas
+                                where ProximasVisitas.NMB = @Search";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Proximas.Add(new ProximasVisitas
+                    {
+                        IdNMB = int.Parse(reader["NMB"].ToString()),
+                        Fecha = (DateTime)reader["Fecha"],
+                        Departamento = reader["Departamento"].ToString(),
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Proximas;
+        }
+        public List<ProximasVisitas> GetCitas(string Search = null)
+        {
+            List<ProximasVisitas> Citas = new List<ProximasVisitas>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select NMB,Nombre, Apellido,FechaNacimiento, Fecha,Departamento
+                                           From TablaNMB,ProximasVisitas
+                               where ProximasVisitas.Fecha =@Search and ProximasVisitas.NMB=TablaNMB.Id";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Search", Search));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                   Citas.Add(new ProximasVisitas
+                    {
+                        IdNMB = int.Parse(reader["NMB"].ToString()),
+                        Nombre= reader["Nombre"].ToString(),
+                        Apellido = reader["Apellido"].ToString(),
+                        FechaNacimiento = (DateTime)reader["FechaNacimiento"],
+                        Fecha = (DateTime)reader["Fecha"],
+                        Departamento = reader["Departamento"].ToString(),
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Citas;
         }
     }
     

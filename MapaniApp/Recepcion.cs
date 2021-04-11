@@ -41,6 +41,8 @@ namespace MapaniApp
         {
             List<HistorialVisitas> Historial = _LogicLayer.GetHistorial(SearchText);
             dataGridView2.DataSource = Historial;
+            List<ProximasVisitas> Proximas = _LogicLayer.GetProximas(SearchText);
+            dataGridView3.DataSource = Proximas;
         }
         private void BtnCargar_Click(object sender, EventArgs e)
         {
@@ -50,6 +52,7 @@ namespace MapaniApp
                 ContactNMB contact = contacts[0];
                 LoadContact(contact);
                 PopulateContacts(TxtID.Text);
+                PopulateContactsVisita(TxtID.Text);
             }
             else if (ComboUsuario.Text == "Cuidador")
             {
@@ -118,6 +121,12 @@ namespace MapaniApp
            //Hello wordl
         }
 
-     
+      
+
+        private void BtnCitas_Click(object sender, EventArgs e)
+        {
+            Citas Cita = new Citas();
+            Cita.ShowDialog(this);
+        }
     }
 }

@@ -82,5 +82,13 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetHistorial(SearchText);
         }
+        public List<ProximasVisitas> GetProximas(string SearchText = null)
+        {
+            return _dataAccessLayer.GetProximas(SearchText);
+        }
+        public List<ProximasVisitas> GetCitas(string SearchText = null)
+        {
+            return _dataAccessLayer.GetCitas(SearchText);
+        }
     }
 }

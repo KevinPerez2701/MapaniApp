@@ -45,20 +45,35 @@ namespace MapaniApp
             this.TxtID = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.BtnCitas = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamentoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximasVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idCuidadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.historialVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNMBBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label6 = new System.Windows.Forms.Label();
             this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.historialVisitasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proximasVisitasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -211,6 +226,112 @@ namespace MapaniApp
             this.dataGridView1.Size = new System.Drawing.Size(253, 244);
             this.dataGridView1.TabIndex = 45;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(643, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 24);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Relaciones";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(140, 286);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(134, 24);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Historial Visitas";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCuidadorDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.departamentoDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.historialVisitasBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(25, 314);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(346, 124);
+            this.dataGridView2.TabIndex = 48;
+            // 
+            // BtnCitas
+            // 
+            this.BtnCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCitas.Location = new System.Drawing.Point(25, 49);
+            this.BtnCitas.Name = "BtnCitas";
+            this.BtnCitas.Size = new System.Drawing.Size(129, 45);
+            this.BtnCitas.TabIndex = 49;
+            this.BtnCitas.Text = "Citas del Dia";
+            this.BtnCitas.UseVisualStyleBackColor = true;
+            this.BtnCitas.Click += new System.EventHandler(this.BtnCitas_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(449, 286);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(146, 24);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "Proximas Visitas";
+           
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fechaDataGridViewTextBoxColumn1,
+            this.departamentoDataGridViewTextBoxColumn1});
+            this.dataGridView3.DataSource = this.proximasVisitasBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(398, 314);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(251, 124);
+            this.dataGridView3.TabIndex = 51;
+            // 
+            // fechaDataGridViewTextBoxColumn1
+            // 
+            this.fechaDataGridViewTextBoxColumn1.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn1.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn1.Name = "fechaDataGridViewTextBoxColumn1";
+            // 
+            // departamentoDataGridViewTextBoxColumn1
+            // 
+            this.departamentoDataGridViewTextBoxColumn1.DataPropertyName = "Departamento";
+            this.departamentoDataGridViewTextBoxColumn1.HeaderText = "Departamento";
+            this.departamentoDataGridViewTextBoxColumn1.Name = "departamentoDataGridViewTextBoxColumn1";
+            // 
+            // proximasVisitasBindingSource
+            // 
+            this.proximasVisitasBindingSource.DataSource = typeof(MapaniApp.ProximasVisitas);
+            // 
+            // idCuidadorDataGridViewTextBoxColumn
+            // 
+            this.idCuidadorDataGridViewTextBoxColumn.DataPropertyName = "IdCuidador";
+            this.idCuidadorDataGridViewTextBoxColumn.HeaderText = "IdCuidador";
+            this.idCuidadorDataGridViewTextBoxColumn.Name = "idCuidadorDataGridViewTextBoxColumn";
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
+            // departamentoDataGridViewTextBoxColumn
+            // 
+            this.departamentoDataGridViewTextBoxColumn.DataPropertyName = "Departamento";
+            this.departamentoDataGridViewTextBoxColumn.HeaderText = "Departamento";
+            this.departamentoDataGridViewTextBoxColumn.Name = "departamentoDataGridViewTextBoxColumn";
+            // 
+            // historialVisitasBindingSource
+            // 
+            this.historialVisitasBindingSource.DataSource = typeof(MapaniApp.HistorialVisitas);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -231,43 +352,22 @@ namespace MapaniApp
             // 
             this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(643, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 24);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Relaciones";
-            // 
             // contactNMBBindingSource
             // 
             this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
             // 
-            // label8
+            // historialVisitasBindingSource1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(140, 286);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 24);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Historial Visitas";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(25, 314);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(366, 124);
-            this.dataGridView2.TabIndex = 48;
+            this.historialVisitasBindingSource1.DataSource = typeof(MapaniApp.HistorialVisitas);
             // 
             // Recepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.BtnCitas);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -291,10 +391,14 @@ namespace MapaniApp
             this.Load += new System.EventHandler(this.Recepcion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proximasVisitasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,5 +429,16 @@ namespace MapaniApp
         private System.Windows.Forms.BindingSource contactNMBBindingSource;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.BindingSource historialVisitasBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCuidadorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departamentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button BtnCitas;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.BindingSource historialVisitasBindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departamentoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource proximasVisitasBindingSource;
     }
 }
