@@ -130,5 +130,11 @@ namespace MapaniApp
             Citas Cita = new Citas();
             Cita.ShowDialog(this);
         }
+
+        private void BtnAgregarCita_Click(object sender, EventArgs e)
+        {
+            AgregarCita NuevaCita = new AgregarCita();
+            NuevaCita.ShowDialog(this);
+        }
     }
 }

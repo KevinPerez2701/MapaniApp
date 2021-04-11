@@ -124,6 +124,35 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InserCita(ProximasVisitas Cita)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into ProximasVisitas ([NMB], [Fecha], [Departamento])  
+                                    Values(@IdNMB,@Fecha,@Departamento)";
+                SqlParameter IdNMB = new SqlParameter("@IdNMB", Cita.IdNMB);
+                SqlParameter Fecha= new SqlParameter("@Fecha", Cita.Fecha);
+                SqlParameter Departamento = new SqlParameter("@Departamento", Cita.Departamento);
+               
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(IdNMB);
+                command.Parameters.Add(Fecha);
+                command.Parameters.Add(Departamento);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         #endregion
         #region BUSQUEDA DE DATOS EN BDD
         public List<ContactNMB> GetContacts(string Search = null)
@@ -441,17 +470,17 @@ namespace MapaniApp
             }
             return Proximas;
         }
-        public List<ProximasVisitas> GetCitas(string Search = null)
+        public List<ProximasVisitas> GetCitas(DateTime Fecha )
         {
             List<ProximasVisitas> Citas = new List<ProximasVisitas>();
             try
             {
                 Connection.Open();
-                string query = @"Select NMB,Nombre, Apellido,FechaNacimiento, Fecha,Departamento
-                                           From TablaNMB,ProximasVisitas
-                               where ProximasVisitas.Fecha =@Search and ProximasVisitas.NMB=TablaNMB.Id";
+                string query = @"Select NMB,Fecha,Departamento,Nombre, Apellido,FechaNacimiento
+                                           From ProximasVisitas, TablaNMB
+                               where ProximasVisitas.Fecha =@Fecha and ProximasVisitas.NMB=TablaNMB.Id"; //and ProximasVisitas.NMB=TablaNMB.Id" Nombre, Apellido,FechaNacimiento,
                 SqlCommand command = new SqlCommand();
-                command.Parameters.Add(new SqlParameter("@Search", Search));
+                command.Parameters.Add(new SqlParameter("@Fecha",Fecha));
                 command.CommandText = query;
                 command.Connection = Connection;
                 SqlDataReader reader = command.ExecuteReader();

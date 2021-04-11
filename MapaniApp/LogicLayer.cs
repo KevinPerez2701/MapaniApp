@@ -56,6 +56,11 @@ namespace MapaniApp
            // }
             return Contact;
         }
+        public  ProximasVisitas SaveCita(ProximasVisitas Cita)
+        {
+                _dataAccessLayer.InserCita(Cita);
+            return Cita;
+        }
         #endregion
         #region PERMISOS DE BUSQUEDA DE DATOS
         public List<ContactNMB> GetContacts(string SearchText = null)
@@ -90,7 +95,7 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetProximas(SearchText);
         }
-        public List<ProximasVisitas> GetCitas(string SearchText = null)
+        public List<ProximasVisitas> GetCitas(DateTime SearchText)
         {
             return _dataAccessLayer.GetCitas(SearchText);
         }

@@ -20,7 +20,7 @@ namespace MapaniApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<ProximasVisitas> Citas = _LogicLayer.GetCitas(dateTimePicker1.Text);
+            List<ProximasVisitas> Citas = _LogicLayer.GetCitas(dateTimePicker1.Value.Date);
             dataGridView1.DataSource = Citas;
 
         }

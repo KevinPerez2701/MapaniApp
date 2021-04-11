@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carpeta Recepcion\AgregarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carpeta Recepcion\AgregarCita.Designer.cs">
+      <DependentUpon>AgregarCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transcripcion\AddContact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,10 +89,10 @@
     <Compile Include="AsesoriaLegal\AsesoriaLegal.Designer.cs">
       <DependentUpon>AsesoriaLegal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Recepcion\Citas.cs">
+    <Compile Include="Carpeta Recepcion\Citas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Recepcion\Citas.Designer.cs">
+    <Compile Include="Carpeta Recepcion\Citas.Designer.cs">
       <DependentUpon>Citas.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\ContactCuidador.cs" />
@@ -101,10 +107,10 @@
     </Compile>
     <Compile Include="Clases\HistorialVisitas.cs" />
     <Compile Include="Clases\ProximasVisitas.cs" />
-    <Compile Include="Recepcion\Recepcion.cs">
+    <Compile Include="Carpeta Recepcion\Recepcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Recepcion\Recepcion.Designer.cs">
+    <Compile Include="Carpeta Recepcion\Recepcion.Designer.cs">
       <DependentUpon>Recepcion.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicLayer.cs" />
@@ -141,10 +147,13 @@
     <Compile Include="Psicologia\Psicologia.Designer.cs">
       <DependentUpon>Psicologia.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Carpeta Recepcion\AgregarCita.resx">
+      <DependentUpon>AgregarCita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transcripcion\AddContact.resx">
       <DependentUpon>AddContact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Recepcion\Citas.resx">
+    <EmbeddedResource Include="Carpeta Recepcion\Citas.resx">
       <DependentUpon>Citas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\LoginForm.resx">
@@ -165,7 +174,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Recepcion\Recepcion.resx">
+    <EmbeddedResource Include="Carpeta Recepcion\Recepcion.resx">
       <DependentUpon>Recepcion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
