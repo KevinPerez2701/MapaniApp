@@ -14,7 +14,7 @@ namespace MapaniApp
 
     {
         private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
-
+        #region AGREGAR CONTACTOS
         public void InserContactNMB(ContactNMB contact)
         {
             try
@@ -27,7 +27,6 @@ namespace MapaniApp
                 SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
                 SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
                 SqlParameter Direccion = new SqlParameter("@Direccion", contact.Direccion);
-                //SqlParameter IdCuidador = new SqlParameter("@IdCuidador", contact.IdCuidador);
                 SqlParameter Sexo = new SqlParameter("@Sexo", contact.Sexo);
                 SqlParameter foto = new SqlParameter("@foto", contact.Foto);
 
@@ -37,7 +36,6 @@ namespace MapaniApp
                 command.Parameters.Add(FechaNacimiento);
                 command.Parameters.Add(Direccion);
                 command.Parameters.Add(Sexo);
-                //command.Parameters.Add(IdCuidador);
                 command.Parameters.Add(foto);
                 command.ExecuteNonQuery();
 
@@ -126,6 +124,8 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        #endregion
+        #region BUSQUEDA DE DATOS EN BDD
         public List<ContactNMB> GetContacts(string Search = null)
         {
             List<ContactNMB> contactsNMB = new List<ContactNMB>();
@@ -479,6 +479,7 @@ namespace MapaniApp
             }
             return Citas;
         }
+        #endregion
     }
-    
+
 }

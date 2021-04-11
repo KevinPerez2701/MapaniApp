@@ -44,33 +44,33 @@ namespace MapaniApp
             this.label7 = new System.Windows.Forms.Label();
             this.TxtID = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridRelaciones = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNMBBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.BtnCitas = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departamentoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximasVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridHistorial = new System.Windows.Forms.DataGridView();
             this.idCuidadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.historialVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNMBBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnCitas = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridProximasVisitas = new System.Windows.Forms.DataGridView();
+            this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamentoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximasVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.historialVisitasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proximasVisitasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistorial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProximasVisitas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proximasVisitasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource1)).BeginInit();
@@ -213,18 +213,34 @@ namespace MapaniApp
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dataGridRelaciones
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridRelaciones.AutoGenerateColumns = false;
+            this.dataGridRelaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridRelaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.contactNMBBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(557, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(253, 244);
-            this.dataGridView1.TabIndex = 45;
+            this.dataGridRelaciones.DataSource = this.contactNMBBindingSource1;
+            this.dataGridRelaciones.Location = new System.Drawing.Point(557, 37);
+            this.dataGridRelaciones.Name = "dataGridRelaciones";
+            this.dataGridRelaciones.Size = new System.Drawing.Size(253, 244);
+            this.dataGridRelaciones.TabIndex = 45;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // contactNMBBindingSource1
+            // 
+            this.contactNMBBindingSource1.DataSource = typeof(MapaniApp.ContactNMB);
             // 
             // label6
             // 
@@ -246,69 +262,19 @@ namespace MapaniApp
             this.label8.TabIndex = 47;
             this.label8.Text = "Historial Visitas";
             // 
-            // dataGridView2
+            // dataGridHistorial
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridHistorial.AutoGenerateColumns = false;
+            this.dataGridHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCuidadorDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
             this.departamentoDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.historialVisitasBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(25, 314);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(346, 124);
-            this.dataGridView2.TabIndex = 48;
-            // 
-            // BtnCitas
-            // 
-            this.BtnCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCitas.Location = new System.Drawing.Point(25, 49);
-            this.BtnCitas.Name = "BtnCitas";
-            this.BtnCitas.Size = new System.Drawing.Size(129, 45);
-            this.BtnCitas.TabIndex = 49;
-            this.BtnCitas.Text = "Citas del Dia";
-            this.BtnCitas.UseVisualStyleBackColor = true;
-            this.BtnCitas.Click += new System.EventHandler(this.BtnCitas_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(449, 286);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(146, 24);
-            this.label9.TabIndex = 50;
-            this.label9.Text = "Proximas Visitas";
-           
-            // dataGridView3
-            // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fechaDataGridViewTextBoxColumn1,
-            this.departamentoDataGridViewTextBoxColumn1});
-            this.dataGridView3.DataSource = this.proximasVisitasBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(398, 314);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(251, 124);
-            this.dataGridView3.TabIndex = 51;
-            // 
-            // fechaDataGridViewTextBoxColumn1
-            // 
-            this.fechaDataGridViewTextBoxColumn1.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn1.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn1.Name = "fechaDataGridViewTextBoxColumn1";
-            // 
-            // departamentoDataGridViewTextBoxColumn1
-            // 
-            this.departamentoDataGridViewTextBoxColumn1.DataPropertyName = "Departamento";
-            this.departamentoDataGridViewTextBoxColumn1.HeaderText = "Departamento";
-            this.departamentoDataGridViewTextBoxColumn1.Name = "departamentoDataGridViewTextBoxColumn1";
-            // 
-            // proximasVisitasBindingSource
-            // 
-            this.proximasVisitasBindingSource.DataSource = typeof(MapaniApp.ProximasVisitas);
+            this.dataGridHistorial.DataSource = this.historialVisitasBindingSource;
+            this.dataGridHistorial.Location = new System.Drawing.Point(25, 314);
+            this.dataGridHistorial.Name = "dataGridHistorial";
+            this.dataGridHistorial.Size = new System.Drawing.Size(346, 124);
+            this.dataGridHistorial.TabIndex = 48;
             // 
             // idCuidadorDataGridViewTextBoxColumn
             // 
@@ -332,21 +298,55 @@ namespace MapaniApp
             // 
             this.historialVisitasBindingSource.DataSource = typeof(MapaniApp.HistorialVisitas);
             // 
-            // idDataGridViewTextBoxColumn
+            // BtnCitas
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.BtnCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCitas.Location = new System.Drawing.Point(25, 49);
+            this.BtnCitas.Name = "BtnCitas";
+            this.BtnCitas.Size = new System.Drawing.Size(129, 45);
+            this.BtnCitas.TabIndex = 49;
+            this.BtnCitas.Text = "Citas del Dia";
+            this.BtnCitas.UseVisualStyleBackColor = true;
+            this.BtnCitas.Click += new System.EventHandler(this.BtnCitas_Click);
             // 
-            // nombreDataGridViewTextBoxColumn
+            // label9
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(449, 286);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(146, 24);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "Proximas Visitas";
             // 
-            // contactNMBBindingSource1
+            // dataGridProximasVisitas
             // 
-            this.contactNMBBindingSource1.DataSource = typeof(MapaniApp.ContactNMB);
+            this.dataGridProximasVisitas.AutoGenerateColumns = false;
+            this.dataGridProximasVisitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProximasVisitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fechaDataGridViewTextBoxColumn1,
+            this.departamentoDataGridViewTextBoxColumn1});
+            this.dataGridProximasVisitas.DataSource = this.proximasVisitasBindingSource;
+            this.dataGridProximasVisitas.Location = new System.Drawing.Point(398, 314);
+            this.dataGridProximasVisitas.Name = "dataGridProximasVisitas";
+            this.dataGridProximasVisitas.Size = new System.Drawing.Size(251, 124);
+            this.dataGridProximasVisitas.TabIndex = 51;
+            // 
+            // fechaDataGridViewTextBoxColumn1
+            // 
+            this.fechaDataGridViewTextBoxColumn1.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn1.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn1.Name = "fechaDataGridViewTextBoxColumn1";
+            // 
+            // departamentoDataGridViewTextBoxColumn1
+            // 
+            this.departamentoDataGridViewTextBoxColumn1.DataPropertyName = "Departamento";
+            this.departamentoDataGridViewTextBoxColumn1.HeaderText = "Departamento";
+            this.departamentoDataGridViewTextBoxColumn1.Name = "departamentoDataGridViewTextBoxColumn1";
+            // 
+            // proximasVisitasBindingSource
+            // 
+            this.proximasVisitasBindingSource.DataSource = typeof(MapaniApp.ProximasVisitas);
             // 
             // contactCuidadorBindingSource
             // 
@@ -365,13 +365,13 @@ namespace MapaniApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridProximasVisitas);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.BtnCitas);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridHistorial);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridRelaciones);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TxtID);
             this.Controls.Add(this.label7);
@@ -390,12 +390,12 @@ namespace MapaniApp
             this.Text = "Recepcion";
             this.Load += new System.EventHandler(this.Recepcion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proximasVisitasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistorial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProximasVisitas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proximasVisitasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource1)).EndInit();
@@ -420,7 +420,7 @@ namespace MapaniApp
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtID;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridRelaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource contactCuidadorBindingSource;
@@ -428,7 +428,7 @@ namespace MapaniApp
         private System.Windows.Forms.BindingSource contactNMBBindingSource1;
         private System.Windows.Forms.BindingSource contactNMBBindingSource;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridHistorial;
         private System.Windows.Forms.BindingSource historialVisitasBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCuidadorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
@@ -436,7 +436,7 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnCitas;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.BindingSource historialVisitasBindingSource1;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridProximasVisitas;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn departamentoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource proximasVisitasBindingSource;

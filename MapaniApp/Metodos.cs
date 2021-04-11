@@ -12,6 +12,8 @@ namespace MapaniApp
     class Metodos
     {
         private static readonly ImageConverter _imageConverter = new ImageConverter();
+        
+        #region CONVERTIR IMAGENES Y VICEVERSA
         public static void AgregarFoto(PictureBox Foto)
         {
             Stream MyStream = null;
@@ -39,6 +41,7 @@ namespace MapaniApp
             }
 
         }
+       
         public static Bitmap GetImageFromByteArray(byte[] byteArray)
         {
             Bitmap bm = (Bitmap)_imageConverter.ConvertFrom(byteArray);
@@ -63,11 +66,12 @@ namespace MapaniApp
             return pic;
 
         }
-
-        public  static void ClearForm(TextBox TextBox)
+        #endregion
+        #region LimpiezaDatos
+        public static void ClearForm(TextBox TextBox)
         {
             TextBox.Text = string.Empty;
         }
-
+        #endregion
     }
 }

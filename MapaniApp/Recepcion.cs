@@ -20,30 +20,31 @@ namespace MapaniApp
         {
             InitializeComponent();
         }
-
+        #region RECARGA DE DATOS 
         public void PopulateContacts(string SearchText = null)
         {
             List<ContactCuidador> contacts = _LogicLayer.GetCuidadores(SearchText);
-            dataGridView1.DataSource = contacts;
+            dataGridRelaciones.DataSource = contacts;
         }
         public void PopulateContactsNMB(string SearchText = null)
         {
             List<ContactNMB> contacts = _LogicLayer.GetNMB(SearchText);
-            dataGridView1.DataSource = contacts;
+            dataGridRelaciones.DataSource = contacts;
         }
         public void PopulateContactsMMB(string SearchText = null)
         {
             List<ContactMMB> contacts = _LogicLayer.GetMMB(SearchText);
-            dataGridView1.DataSource = contacts;
+            dataGridRelaciones.DataSource = contacts;
         }
 
         public void PopulateContactsVisita(string SearchText = null)
         {
             List<HistorialVisitas> Historial = _LogicLayer.GetHistorial(SearchText);
-            dataGridView2.DataSource = Historial;
+            dataGridHistorial.DataSource = Historial;
             List<ProximasVisitas> Proximas = _LogicLayer.GetProximas(SearchText);
-            dataGridView3.DataSource = Proximas;
+            dataGridProximasVisitas.DataSource = Proximas;
         }
+        #endregion
         private void BtnCargar_Click(object sender, EventArgs e)
         {
             if (ComboUsuario.Text == "NMB")
@@ -69,7 +70,7 @@ namespace MapaniApp
                 PopulateContactsMMB(TxtID.Text);
             }
         }
-
+        #region FUNCIONES DE CARGA DE CONTACTOS
         public void LoadContact(ContactNMB contact)
         {
             _contactNMB = contact;
@@ -115,6 +116,7 @@ namespace MapaniApp
             }
 
         }
+        #endregion
 
         private void Recepcion_Load(object sender, EventArgs e)
         {

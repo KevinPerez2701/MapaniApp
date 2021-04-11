@@ -44,7 +44,7 @@ namespace MapaniApp
             textBox1.Visible = !textBox1.Visible;
             BtnCargar.Visible = !BtnCargar.Visible;
         }
-
+        #region APERTURA DE NUEVAS VENTANAS
         private void BtnAlmacen_Click(object sender, EventArgs e)
         {
             Almacen almacen = new Almacen();
@@ -86,5 +86,6 @@ namespace MapaniApp
             Recepcion recepcion = new Recepcion();
             recepcion.ShowDialog(this);
         }
+        #endregion
     }
 }

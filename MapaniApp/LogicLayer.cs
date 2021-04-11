@@ -15,6 +15,8 @@ namespace MapaniApp
         {
             _dataAccessLayer = new DataAccessLayer();
         }
+
+        #region PERMISOS DE AGREGAR CONTACTO
         public ContactMMB SaveContactMMB(ContactMMB Contact)
         {
             int flag = Contact.Id;
@@ -54,6 +56,8 @@ namespace MapaniApp
            // }
             return Contact;
         }
+        #endregion
+        #region PERMISOS DE BUSQUEDA DE DATOS
         public List<ContactNMB> GetContacts(string SearchText = null)
         {
             return _dataAccessLayer.GetContacts(SearchText);
@@ -90,5 +94,6 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetCitas(SearchText);
         }
+        #endregion
     }
 }
