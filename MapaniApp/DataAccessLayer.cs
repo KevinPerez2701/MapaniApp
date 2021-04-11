@@ -153,6 +153,37 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void ConfirmCita(HistorialVisitas Cita)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into Visitas ([NMB], [Cuidador], [Fecha], [Departamento])  
+                                    Values(@IdNMB,@IdCuidador,@Fecha,@Departamento)";
+                SqlParameter IdNMB = new SqlParameter("@IdNMB", Cita.IdNMB);
+                SqlParameter IdCuidador = new SqlParameter("@IdCuidador", Cita.IdCuidador);
+                SqlParameter Fecha = new SqlParameter("@Fecha", Cita.Fecha);
+                SqlParameter Departamento = new SqlParameter("@Departamento", Cita.Departamento);
+               
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(IdNMB);
+                command.Parameters.Add(IdCuidador);
+                command.Parameters.Add(Fecha);
+                command.Parameters.Add(Departamento);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         #endregion
         #region BUSQUEDA DE DATOS EN BDD
         public List<ContactNMB> GetContacts(string Search = null)

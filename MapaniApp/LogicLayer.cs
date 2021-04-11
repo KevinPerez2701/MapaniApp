@@ -61,6 +61,11 @@ namespace MapaniApp
                 _dataAccessLayer.InserCita(Cita);
             return Cita;
         }
+        public HistorialVisitas ConfirmCita(HistorialVisitas Cita)
+        {
+            _dataAccessLayer.ConfirmCita(Cita);
+            return Cita;
+        }
         #endregion
         #region PERMISOS DE BUSQUEDA DE DATOS
         public List<ContactNMB> GetContacts(string SearchText = null)

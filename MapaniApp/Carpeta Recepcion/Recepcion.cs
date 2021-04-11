@@ -136,5 +136,15 @@ namespace MapaniApp
             AgregarCita NuevaCita = new AgregarCita();
             NuevaCita.ShowDialog(this);
         }
+
+        private void dataGridProximasVisitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridProximasVisitas.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            if (cell.Value.ToString() == "Confirmar")
+            {
+                ConfirmarCita Confirm = new ConfirmarCita();
+                Confirm.ShowDialog(this);
+            }    
+        }
     }
 }

@@ -10,36 +10,33 @@ using System.Windows.Forms;
 
 namespace MapaniApp
 {
-    public partial class AgregarCita : Form
+    public partial class ConfirmarCita : Form
     {
         private LogicLayer _LogicLayer = new LogicLayer();
-        public AgregarCita()
+        public ConfirmarCita()
         {
             InitializeComponent();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();       
         }
 
         private void BtnAgregarCita_Click(object sender, EventArgs e)
         {
-            SaveDate();
+            ConfirmDate();
         }
-        private void SaveDate()
+        private void ConfirmDate()
         {
-            ProximasVisitas Cita = new ProximasVisitas();
+            HistorialVisitas Cita = new HistorialVisitas();
             Cita.IdNMB = int.Parse(TxtId.Text);
-            Cita.Fecha =DateCita.Value;
+            Cita.IdCuidador = int.Parse(TxtCuidador.Text);
+            Cita.Fecha = DateCita.Value;
             Cita.Departamento = comboDepartamento.Text;
 
-            _LogicLayer.SaveCita(Cita);
+            _LogicLayer.ConfirmCita(Cita);
         }
 
-        private void AgregarCita_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
