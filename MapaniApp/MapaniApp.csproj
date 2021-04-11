@@ -65,53 +65,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddContact.cs">
+    <Compile Include="Transcripcion\AddContact.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddContact.Designer.cs">
+    <Compile Include="Transcripcion\AddContact.Designer.cs">
       <DependentUpon>AddContact.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen.cs">
+    <Compile Include="Almacen\Almacen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen.Designer.cs">
+    <Compile Include="Almacen\Almacen.Designer.cs">
       <DependentUpon>Almacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="AsesoriaLegal.cs">
+    <Compile Include="AsesoriaLegal\AsesoriaLegal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AsesoriaLegal.Designer.cs">
+    <Compile Include="AsesoriaLegal\AsesoriaLegal.Designer.cs">
       <DependentUpon>AsesoriaLegal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Citas.cs">
+    <Compile Include="Recepcion\Citas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Citas.Designer.cs">
+    <Compile Include="Recepcion\Citas.Designer.cs">
       <DependentUpon>Citas.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContactCuidador.cs" />
-    <Compile Include="ContactMMB.cs" />
-    <Compile Include="ContactNMB.cs" />
+    <Compile Include="Clases\ContactCuidador.cs" />
+    <Compile Include="Clases\ContactMMB.cs" />
+    <Compile Include="Clases\ContactNMB.cs" />
     <Compile Include="DataAccessLayer.cs" />
-    <Compile Include="Enfermeria.cs">
+    <Compile Include="Enfermeria\Enfermeria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Enfermeria.Designer.cs">
+    <Compile Include="Enfermeria\Enfermeria.Designer.cs">
       <DependentUpon>Enfermeria.cs</DependentUpon>
     </Compile>
-    <Compile Include="HistorialVisitas.cs" />
-    <Compile Include="ProximasVisitas.cs" />
-    <Compile Include="Recepcion.cs">
+    <Compile Include="Clases\HistorialVisitas.cs" />
+    <Compile Include="Clases\ProximasVisitas.cs" />
+    <Compile Include="Recepcion\Recepcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Recepcion.Designer.cs">
+    <Compile Include="Recepcion\Recepcion.Designer.cs">
       <DependentUpon>Recepcion.cs</DependentUpon>
     </Compile>
     <Compile Include="LogicLayer.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
@@ -120,40 +120,40 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Metodos.cs" />
-    <Compile Include="Nutricion.cs">
+    <Compile Include="Clases\Metodos.cs" />
+    <Compile Include="Nutricion\Nutricion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nutricion.Designer.cs">
+    <Compile Include="Nutricion\Nutricion.Designer.cs">
       <DependentUpon>Nutricion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pediatria.cs">
+    <Compile Include="Pediatria\Pediatria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pediatria.Designer.cs">
+    <Compile Include="Pediatria\Pediatria.Designer.cs">
       <DependentUpon>Pediatria.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Psicologia.cs">
+    <Compile Include="Psicologia\Psicologia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Psicologia.Designer.cs">
+    <Compile Include="Psicologia\Psicologia.Designer.cs">
       <DependentUpon>Psicologia.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddContact.resx">
+    <EmbeddedResource Include="Transcripcion\AddContact.resx">
       <DependentUpon>AddContact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Citas.resx">
+    <EmbeddedResource Include="Recepcion\Citas.resx">
       <DependentUpon>Citas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nutricion.resx">
+    <EmbeddedResource Include="Nutricion\Nutricion.resx">
       <DependentUpon>Nutricion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -165,7 +165,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Recepcion.resx">
+    <EmbeddedResource Include="Recepcion\Recepcion.resx">
       <DependentUpon>Recepcion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
