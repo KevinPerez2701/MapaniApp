@@ -159,6 +159,7 @@ namespace MapaniApp
             this.Controls.Add(this.label1);
             this.Name = "ConfirmarCita";
             this.Text = "ConfirmarCIta";
+            this.Load += new System.EventHandler(this.ConfirmarCita_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

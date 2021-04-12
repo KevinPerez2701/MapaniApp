@@ -143,6 +143,12 @@ namespace MapaniApp
             if (cell.Value.ToString() == "Confirmar")
             {
                 ConfirmarCita Confirm = new ConfirmarCita();
+                Confirm.LoadData(new HistorialVisitas
+                {
+                    IdNMB= int.Parse(dataGridProximasVisitas.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                    Departamento = (dataGridProximasVisitas.Rows[e.RowIndex].Cells[2].Value.ToString()),
+                    Fecha =(DateTime)dataGridProximasVisitas.Rows[e.RowIndex].Cells[1].Value
+                });
                 Confirm.ShowDialog(this);
             }    
         }

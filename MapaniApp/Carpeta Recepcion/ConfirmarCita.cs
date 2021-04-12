@@ -38,5 +38,20 @@ namespace MapaniApp
             _LogicLayer.ConfirmCita(Cita);
         }
 
+        public void LoadData(HistorialVisitas Cita)
+        {
+            if (Cita != null)
+            {
+                TxtId.Text = Cita.IdNMB.ToString();
+                comboDepartamento.Text = Cita.Departamento.ToString();
+                DateCita.Value = Cita.Fecha;
+
+            }    
+        }
+
+        private void ConfirmarCita_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

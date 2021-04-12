@@ -26,6 +26,7 @@ namespace MapaniApp
         private void BtnAgregarCita_Click(object sender, EventArgs e)
         {
             SaveDate();
+            this.Close();
         }
         private void SaveDate()
         {
