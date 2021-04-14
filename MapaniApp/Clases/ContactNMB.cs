@@ -12,6 +12,14 @@ namespace MapaniApp
         public string Nombre  { get; set; }
         public string Apellido { get; set; }
         public  DateTime FechaNacimiento { get; set; }
+        public DateTime FechaIngreso { get; set; }
+        public string Lactancia { get; set; }
+        public string Parto { get; set; }
+        public string PartidaNacimiento { get; set; }
+        public string Discapacidad { get; set; }
+        public string Ingreso { get; set; }
+        public string Vacunas { get; set; }
+        public string Cedula { get; set; }
         public string Direccion { get; set; }
         public string Sexo { get; set; }
         public byte[] Foto { get; set; }

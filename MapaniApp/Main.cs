@@ -45,6 +45,11 @@ namespace MapaniApp
             BtnCargar.Visible = !BtnCargar.Visible;
         }
         #region APERTURA DE NUEVAS VENTANAS
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Transcripcion transcripcion = new Transcripcion();
+            transcripcion.ShowDialog(this);
+        }
         private void BtnAlmacen_Click(object sender, EventArgs e)
         {
             Almacen almacen = new Almacen();
@@ -87,5 +92,7 @@ namespace MapaniApp
             recepcion.ShowDialog(this);
         }
         #endregion
+
+       
     }
 }

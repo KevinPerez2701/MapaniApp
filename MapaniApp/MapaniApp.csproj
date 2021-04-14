@@ -77,6 +77,12 @@
     <Compile Include="Carpeta Recepcion\ConfirmarCita.Designer.cs">
       <DependentUpon>ConfirmarCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transcripcion\Transcripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transcripcion\Transcripcion.Designer.cs">
+      <DependentUpon>Transcripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transcripcion\AddContact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </Compile>
     <EmbeddedResource Include="Carpeta Recepcion\Recepcion.resx">
       <DependentUpon>Recepcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transcripcion\Transcripcion.resx">
+      <DependentUpon>Transcripcion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ContactCuidador.datasource" />

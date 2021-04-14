@@ -34,10 +34,12 @@ namespace MapaniApp
             Cita.IdNMB = int.Parse(TxtId.Text);
             Cita.Fecha =DateCita.Value;
             Cita.Departamento = comboDepartamento.Text;
-
             _LogicLayer.SaveCita(Cita);
         }
-
+        public void LoadData(string ID)
+        {
+            TxtId.Text = ID;            
+        }
         private void AgregarCita_Load(object sender, EventArgs e)
         {
 

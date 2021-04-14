@@ -26,6 +26,7 @@ namespace MapaniApp
         private void BtnAgregarCita_Click(object sender, EventArgs e)
         {
             ConfirmDate();
+            this.Close();
         }
         private void ConfirmDate()
         {
@@ -36,6 +37,8 @@ namespace MapaniApp
             Cita.Departamento = comboDepartamento.Text;
 
             _LogicLayer.ConfirmCita(Cita);
+            _LogicLayer.DeleteCita(Cita);
+            
         }
 
         public void LoadData(HistorialVisitas Cita)
