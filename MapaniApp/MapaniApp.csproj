@@ -77,6 +77,12 @@
     <Compile Include="Carpeta Recepcion\ConfirmarCita.Designer.cs">
       <DependentUpon>ConfirmarCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transcripcion\Cedula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transcripcion\Cedula.Designer.cs">
+      <DependentUpon>Cedula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transcripcion\Transcripcion.cs">
       <SubType>Form</SubType>
     </Compile>

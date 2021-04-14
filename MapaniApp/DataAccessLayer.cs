@@ -13,7 +13,8 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+        //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -80,8 +81,8 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaCuidador ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],[Telefono])  
-                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@Telefono)";
+                                    Insert into TablaCuidador ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],[Telefono],EstadoCivil,Cedula,Hijos,Transporte)  
+                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@Telefono,@EstadoCivil,@Cedula,@Hijos,@Transporte)";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
                 SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
@@ -89,7 +90,10 @@ namespace MapaniApp
                 SqlParameter Telefono = new SqlParameter("@Telefono", contact.Telefono);
                 SqlParameter Sexo = new SqlParameter("@Sexo", contact.Sexo);
                 SqlParameter foto = new SqlParameter("@foto", contact.Foto);
-
+                SqlParameter EstadoCivil = new SqlParameter("@EstadoCivil", contact.EstadoCivil);
+                SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
+                SqlParameter Hijos = new SqlParameter("@Hijos", contact.CantidadHijos);
+                SqlParameter Transporte = new SqlParameter("@Transporte", contact.Transporte);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Apellido);
@@ -98,6 +102,10 @@ namespace MapaniApp
                 command.Parameters.Add(Sexo);
                 command.Parameters.Add(Telefono);
                 command.Parameters.Add(foto);
+                command.Parameters.Add(EstadoCivil);
+                command.Parameters.Add(Cedula);
+                command.Parameters.Add(Transporte);
+                command.Parameters.Add(Hijos);
                 command.ExecuteNonQuery();
 
             }
@@ -121,8 +129,8 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaMMB ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],[Telefono])  
-                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@Telefono)";
+                                    Insert into TablaMMB ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],[Telefono],Cedula,Transporte,EstadoCivil,CantidadHijos)  
+                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@Telefono,@Cedula,@Transporte,@EstadoCivil,@CantidadHijos)";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
                 SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
@@ -130,7 +138,10 @@ namespace MapaniApp
                 SqlParameter Telefono = new SqlParameter("@Telefono", contact.Telefono);
                 SqlParameter Sexo = new SqlParameter("@Sexo", contact.Sexo);
                 SqlParameter foto = new SqlParameter("@foto", contact.Foto);
-
+                SqlParameter EstadoCivil = new SqlParameter("@EstadoCivil", contact.EstadoCivil);
+                SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
+                SqlParameter Hijos = new SqlParameter("@CantidadHijos", contact.CantidadHijos);
+                SqlParameter Transporte = new SqlParameter("@Transporte", contact.Transporte);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Apellido);
@@ -139,6 +150,10 @@ namespace MapaniApp
                 command.Parameters.Add(Sexo);
                 command.Parameters.Add(Telefono);
                 command.Parameters.Add(foto);
+                command.Parameters.Add(EstadoCivil);
+                command.Parameters.Add(Cedula);
+                command.Parameters.Add(Transporte);
+                command.Parameters.Add(Hijos);
                 command.ExecuteNonQuery();
 
             }
@@ -254,6 +269,62 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InsertRelacion(string IdNMB,string IdCuidador)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into Referencia(NMB,Cuidador) 
+                                    Values(@IdNMB,@IdCuidador)";
+                SqlParameter NMB = new SqlParameter("@IdNMB",int.Parse(IdNMB));
+                SqlParameter Fecha = new SqlParameter("@IdCuidador", int.Parse(IdCuidador));
+              
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(NMB);
+                command.Parameters.Add(Fecha);
+               
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+        public void InsertRelacionMMB(string IdNMB, string IdMMB)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into ReferenciaMMB(NMB,MMB) 
+                                    Values(@IdNMB,@IdCuidador)";
+                SqlParameter NMB = new SqlParameter("@IdNMB", int.Parse(IdNMB));
+                SqlParameter Fecha = new SqlParameter("@IdMMB", int.Parse(IdMMB));
+
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(NMB);
+                command.Parameters.Add(Fecha);
+
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         #endregion
         #region BUSQUEDA DE DATOS EN BDD
         /// <summary>
@@ -268,7 +339,7 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                string query = @"Select Id,Nombre,Apellido,FechaNacimiento,Direccion,Sexo,foto FROM TablaNMB Where Id=@Search";
+                string query = @"Select * FROM TablaNMB Where Id=@Search";
                 SqlCommand command = new SqlCommand();
                 command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
              /*   if (!string.IsNullOrEmpty(Search))
@@ -288,10 +359,17 @@ namespace MapaniApp
                         Nombre = reader["Nombre"].ToString(),
                         Apellido = reader["Apellido"].ToString(),
                         FechaNacimiento =(DateTime)reader["FechaNacimiento"],
+                        FechaIngreso = (DateTime)reader["FechaIngreso"],
                         Direccion = reader["Direccion"].ToString(),
                         Sexo = reader["Sexo"].ToString(),
-                       // IdCuidador = int.Parse(reader["IdCuidador"].ToString()),
                         Foto = (byte[])reader["Foto"],
+                        Cedula = reader["Cedula"].ToString(),
+                        Ingreso = reader["IngresoPrograma"].ToString(),
+                        Vacunas = reader["Vacunas"].ToString(),
+                        Parto = reader["Parto"].ToString(),
+                        PartidaNacimiento = reader["PartidaNacimiento"].ToString(),
+                        Discapacidad = reader["Discapacidad"].ToString(),
+                        Lactancia = reader["LactanciaMaterna"].ToString(),
                     });
                 }
 
@@ -319,14 +397,13 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                string query = @"Select Id,Nombre,Apellido,FechaNacimiento,Direccion,Sexo,foto FROM TablaCuidador Where Id=@Search";
+                string query = @"Select * FROM TablaCuidador Where Id=@Search";
                 SqlCommand command = new SqlCommand();
                 command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
                 /*   if (!string.IsNullOrEmpty(Search))
                    {
                        query += @"WHERE Id=@Search";
                        command.Parameters.Add(new SqlParameter("@Search", $"%{Search}%"));
-
                    }*/
                 command.CommandText = query;
                 command.Connection = Connection;
@@ -342,6 +419,60 @@ namespace MapaniApp
                         Direccion = reader["Direccion"].ToString(),
                         Sexo = reader["Sexo"].ToString(),
                         Foto = (byte[])reader["Foto"],
+                        Telefono = reader["Telefono"].ToString(),
+                        EstadoCivil=reader["EstadoCivil"].ToString(),
+                        CantidadHijos = reader["Hijos"].ToString(),
+                        Cedula = reader["Cedula"].ToString(),
+                        Transporte= reader["Transporte"].ToString(),
+                    });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return contactsCuidador;
+        }
+        /// <summary>
+        /// Busqueda del Cuidador Por Cedula para el departamento Transcripcion con parametro Cedula
+        /// </summary>
+        /// <param name="Search"></param>
+        /// <returns></returns>
+        public List<ContactCuidador> GetCedulaCuidador(string Search = null)
+        {
+            List<ContactCuidador> contactsCuidador = new List<ContactCuidador>();
+
+            try
+            {
+                Connection.Open();
+                string query = @"Select Id,Nombre,Apellido,FechaNacimiento,Direccion,Sexo,foto,Cedula,Telefono,EstadoCivil,Transporte,Hijos FROM TablaCuidador Where Cedula=@Search";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Search", Search));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    contactsCuidador.Add(new ContactCuidador
+                    {
+                        Id = int.Parse(reader["Id"].ToString()),
+                        Nombre = reader["Nombre"].ToString(),
+                        Apellido = reader["Apellido"].ToString(),
+                        FechaNacimiento = (DateTime)reader["FechaNacimiento"],
+                        Direccion = reader["Direccion"].ToString(),
+                        Sexo = reader["Sexo"].ToString(),
+                        Foto = (byte[])reader["Foto"],
+                        Cedula = reader["Cedula"].ToString(),
+                        Telefono = reader["Telefono"].ToString(),
+                        EstadoCivil = reader["EstadoCivil"].ToString(),
+                        CantidadHijos = reader["Hijos"].ToString(),
+                        Transporte = reader["Transporte"].ToString(),
                     });
                 }
 
@@ -369,7 +500,7 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                string query = @"Select Id,Nombre,Apellido,FechaNacimiento,Direccion,Sexo,foto FROM TablaMMB Where Id=@Search";
+                string query = @"Select * FROM TablaMMB Where Id=@Search";
                 SqlCommand command = new SqlCommand();
                 command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
                 /*   if (!string.IsNullOrEmpty(Search))
@@ -392,6 +523,11 @@ namespace MapaniApp
                         Direccion = reader["Direccion"].ToString(),
                         Sexo = reader["Sexo"].ToString(),
                         Foto = (byte[])reader["Foto"],
+                        Cedula = reader["Cedula"].ToString(),
+                        Telefono = reader["Telefono"].ToString(),
+                        EstadoCivil = reader["EstadoCivil"].ToString(),
+                        CantidadHijos = reader["CantidadHijos"].ToString(),
+                        Transporte = reader["Transporte"].ToString(),
                     });
                 }
 

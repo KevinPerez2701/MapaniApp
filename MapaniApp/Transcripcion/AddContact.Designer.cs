@@ -44,7 +44,6 @@ namespace MapaniApp
             this.ComboSexo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TxtTelefono = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,8 +51,6 @@ namespace MapaniApp
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.TxtCedula = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.labelIngreso = new System.Windows.Forms.Label();
             this.ComboIngreso = new System.Windows.Forms.ComboBox();
             this.ComboVacunas = new System.Windows.Forms.ComboBox();
@@ -66,6 +63,12 @@ namespace MapaniApp
             this.ComboDiscapacidad = new System.Windows.Forms.ComboBox();
             this.ComboLactancia = new System.Windows.Forms.ComboBox();
             this.labelLactancia = new System.Windows.Forms.Label();
+            this.labelEstadoCivil = new System.Windows.Forms.Label();
+            this.ComboEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.labelHijos = new System.Windows.Forms.Label();
+            this.TxtHijos = new System.Windows.Forms.TextBox();
+            this.labelTransporte = new System.Windows.Forms.Label();
+            this.TxtTransporte = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,19 +222,6 @@ namespace MapaniApp
             this.dateTimePicker1.Size = new System.Drawing.Size(183, 29);
             this.dateTimePicker1.TabIndex = 27;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "NMB",
-            "MMB",
-            "Cuidador"});
-            this.comboBox1.Location = new System.Drawing.Point(533, 263);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(104, 32);
-            this.comboBox1.TabIndex = 28;
-            // 
             // TxtTelefono
             // 
             this.TxtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,34 +290,6 @@ namespace MapaniApp
             this.TxtCedula.TabIndex = 36;
             this.TxtCedula.WordWrap = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(529, 313);
-            this.label11.Name = "label11";
-            this.label11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label11.Size = new System.Drawing.Size(100, 24);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Selecione ";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Partida de Nacimiento",
-            "Discapacidad",
-            "Recibe Lactancia Materna",
-            "Vacunas Completas",
-            "Vacunas Incompletas",
-            "Parto Eutocico",
-            "Cesaria"});
-            this.checkedListBox1.Location = new System.Drawing.Point(437, 349);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(290, 172);
-            this.checkedListBox1.TabIndex = 42;
-            // 
             // labelIngreso
             // 
             this.labelIngreso.AutoSize = true;
@@ -338,7 +300,6 @@ namespace MapaniApp
             this.labelIngreso.Size = new System.Drawing.Size(73, 24);
             this.labelIngreso.TabIndex = 43;
             this.labelIngreso.Text = "Ingreso";
-            this.labelIngreso.Click += new System.EventHandler(this.labelIngreso_Click);
             // 
             // ComboIngreso
             // 
@@ -413,7 +374,7 @@ namespace MapaniApp
             this.ComboParto.FormattingEnabled = true;
             this.ComboParto.Items.AddRange(new object[] {
             "Eutocico",
-            "Cesaria"});
+            "Cesarea"});
             this.ComboParto.Location = new System.Drawing.Point(182, 567);
             this.ComboParto.Name = "ComboParto";
             this.ComboParto.Size = new System.Drawing.Size(226, 32);
@@ -464,11 +425,85 @@ namespace MapaniApp
             this.labelLactancia.TabIndex = 54;
             this.labelLactancia.Text = "Recibe Lactancia";
             // 
+            // labelEstadoCivil
+            // 
+            this.labelEstadoCivil.AutoSize = true;
+            this.labelEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEstadoCivil.Location = new System.Drawing.Point(16, 375);
+            this.labelEstadoCivil.Name = "labelEstadoCivil";
+            this.labelEstadoCivil.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelEstadoCivil.Size = new System.Drawing.Size(107, 24);
+            this.labelEstadoCivil.TabIndex = 56;
+            this.labelEstadoCivil.Text = "Estado Civil";
+            this.labelEstadoCivil.Visible = false;
+            // 
+            // ComboEstadoCivil
+            // 
+            this.ComboEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboEstadoCivil.FormattingEnabled = true;
+            this.ComboEstadoCivil.Items.AddRange(new object[] {
+            "Soltero/a",
+            "Casado/a",
+            "Divorciado/a",
+            "Viudo/a"});
+            this.ComboEstadoCivil.Location = new System.Drawing.Point(182, 367);
+            this.ComboEstadoCivil.Name = "ComboEstadoCivil";
+            this.ComboEstadoCivil.Size = new System.Drawing.Size(226, 32);
+            this.ComboEstadoCivil.TabIndex = 57;
+            this.ComboEstadoCivil.Visible = false;
+            // 
+            // labelHijos
+            // 
+            this.labelHijos.AutoSize = true;
+            this.labelHijos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHijos.Location = new System.Drawing.Point(16, 408);
+            this.labelHijos.Name = "labelHijos";
+            this.labelHijos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelHijos.Size = new System.Drawing.Size(158, 24);
+            this.labelHijos.TabIndex = 58;
+            this.labelHijos.Text = "Cantidad de Hijos";
+            this.labelHijos.Visible = false;
+            // 
+            // TxtHijos
+            // 
+            this.TxtHijos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtHijos.Location = new System.Drawing.Point(328, 403);
+            this.TxtHijos.Name = "TxtHijos";
+            this.TxtHijos.Size = new System.Drawing.Size(80, 29);
+            this.TxtHijos.TabIndex = 59;
+            this.TxtHijos.Visible = false;
+            // 
+            // labelTransporte
+            // 
+            this.labelTransporte.AutoSize = true;
+            this.labelTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTransporte.Location = new System.Drawing.Point(7, 448);
+            this.labelTransporte.Name = "labelTransporte";
+            this.labelTransporte.Size = new System.Drawing.Size(170, 24);
+            this.labelTransporte.TabIndex = 60;
+            this.labelTransporte.Text = "Metodo Transporte";
+            this.labelTransporte.Visible = false;
+            // 
+            // TxtTransporte
+            // 
+            this.TxtTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTransporte.Location = new System.Drawing.Point(182, 443);
+            this.TxtTransporte.Name = "TxtTransporte";
+            this.TxtTransporte.Size = new System.Drawing.Size(226, 29);
+            this.TxtTransporte.TabIndex = 61;
+            this.TxtTransporte.Visible = false;
+            // 
             // AddContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 696);
+            this.Controls.Add(this.TxtTransporte);
+            this.Controls.Add(this.labelTransporte);
+            this.Controls.Add(this.TxtHijos);
+            this.Controls.Add(this.labelHijos);
+            this.Controls.Add(this.ComboEstadoCivil);
+            this.Controls.Add(this.labelEstadoCivil);
             this.Controls.Add(this.ComboLactancia);
             this.Controls.Add(this.labelLactancia);
             this.Controls.Add(this.ComboDiscapacidad);
@@ -481,8 +516,6 @@ namespace MapaniApp
             this.Controls.Add(this.ComboPartidaNacimiento);
             this.Controls.Add(this.ComboIngreso);
             this.Controls.Add(this.labelIngreso);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.TxtCedula);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dateTimePicker2);
@@ -490,7 +523,6 @@ namespace MapaniApp
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TxtTelefono);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ComboSexo);
@@ -531,7 +563,6 @@ namespace MapaniApp
         private System.Windows.Forms.ComboBox ComboSexo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox TxtTelefono;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
@@ -539,8 +570,6 @@ namespace MapaniApp
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TxtCedula;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label labelIngreso;
         private System.Windows.Forms.ComboBox ComboIngreso;
         private System.Windows.Forms.ComboBox ComboVacunas;
@@ -553,5 +582,11 @@ namespace MapaniApp
         private System.Windows.Forms.ComboBox ComboDiscapacidad;
         private System.Windows.Forms.ComboBox ComboLactancia;
         private System.Windows.Forms.Label labelLactancia;
+        private System.Windows.Forms.Label labelEstadoCivil;
+        private System.Windows.Forms.ComboBox ComboEstadoCivil;
+        private System.Windows.Forms.Label labelHijos;
+        private System.Windows.Forms.TextBox TxtHijos;
+        private System.Windows.Forms.Label labelTransporte;
+        private System.Windows.Forms.TextBox TxtTransporte;
     }
 }

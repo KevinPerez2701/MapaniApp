@@ -15,6 +15,10 @@ namespace MapaniApp
         public string Direccion { get; set; }
         public string Sexo { get; set; }
         public string Telefono { get; set; }
+        public string EstadoCivil { get; set; }
+        public string CantidadHijos { get; set; }
+        public string Cedula { get; set; }
+        public string Transporte { get; set; }
         public byte[] Foto { get; set; }
     }
 }

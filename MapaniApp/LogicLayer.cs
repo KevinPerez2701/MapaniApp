@@ -77,6 +77,10 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetContacts(SearchText);
         }
+        public List<ContactCuidador> GetCedulaCuidador(string SearchText = null)
+        {
+            return _dataAccessLayer.GetCedulaCuidador(SearchText);
+        }
         public List<ContactCuidador> GetContactsCuidador(string SearchText = null)
         {
             return _dataAccessLayer.GetContactsCuidador(SearchText);
@@ -108,6 +112,14 @@ namespace MapaniApp
         public List<ProximasVisitas> GetCitas(DateTime SearchText)
         {
             return _dataAccessLayer.GetCitas(SearchText);
+        }
+        public void InsertRelacion(string IdNMB, string IdCuidador)
+        {
+            _dataAccessLayer.InsertRelacion(IdNMB, IdCuidador);
+        }
+        public void InsertRelacionMMB(string IdNMB, string IdMMB)
+        {
+            _dataAccessLayer.InsertRelacion(IdNMB, IdMMB);
         }
         #endregion
     }
