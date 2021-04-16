@@ -31,8 +31,8 @@ namespace MapaniApp
         {
             this.labelUser = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.TxtPassword = new System.Windows.Forms.TextBox();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
@@ -60,21 +60,22 @@ namespace MapaniApp
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
-            // textBox1
+            // TxtUsuario
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(359, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 29);
-            this.textBox1.TabIndex = 2;
+            this.TxtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUsuario.Location = new System.Drawing.Point(359, 116);
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.Size = new System.Drawing.Size(129, 29);
+            this.TxtUsuario.TabIndex = 2;
             // 
-            // textBox2
+            // TxtPassword
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(359, 158);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 29);
-            this.textBox2.TabIndex = 3;
+            this.TxtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPassword.Location = new System.Drawing.Point(359, 158);
+            this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.Size = new System.Drawing.Size(128, 29);
+            this.TxtPassword.TabIndex = 3;
+            this.TxtPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // BtnLogin
             // 
@@ -122,12 +123,13 @@ namespace MapaniApp
             this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.BtnLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtPassword);
+            this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelUser);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -139,10 +141,10 @@ namespace MapaniApp
 
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button BtnLogin;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        public System.Windows.Forms.TextBox TxtUsuario;
+        public System.Windows.Forms.TextBox TxtPassword;
     }
 }

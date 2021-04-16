@@ -73,5 +73,13 @@ namespace MapaniApp
             TextBox.Text = string.Empty;
         }
         #endregion
+        public static string GetEdad(DateTime Fecha)
+        {
+            string edad;
+            TimeSpan tS = new TimeSpan();
+            tS = DateTime.Now.Subtract(Fecha);
+            edad =Math.Floor((tS.TotalDays / 365)).ToString();                                       
+            return edad;
+        }
     }
 }

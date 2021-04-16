@@ -12,6 +12,7 @@ namespace MapaniApp
 {
     public partial class LoginForm : Form
     {
+        private LogicLayer _LogicLayer = new LogicLayer();
         public LoginForm()
         {
             InitializeComponent();
@@ -19,12 +20,29 @@ namespace MapaniApp
         #region EVENTOS
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            this.Posicion();
             this.DialogResult = DialogResult.OK;
-            this.Close();
+            this.Hide();
         }
         #endregion
+
         #region METODOS DE CLASE
 
         #endregion
+        public string Posicion()
+        {
+             string ventana=_LogicLayer.Login(TxtUsuario.Text, TxtPassword.Text);
+             return ventana;
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

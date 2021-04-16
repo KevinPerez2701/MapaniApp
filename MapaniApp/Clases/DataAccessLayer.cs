@@ -13,8 +13,8 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-        //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+       // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -789,6 +789,37 @@ namespace MapaniApp
                 Connection.Close();
             }
             return Citas;
+        }
+        public string Login(string User,string Password)
+        {
+            string posicion = "" ;
+            try
+            {
+                Connection.Open();
+                string query = @"Select Position
+                                From MapaniUsers
+                               where MapaniUsers.LoginName=@User and MapaniUsers.Password=@Password"; //and ProximasVisitas.NMB=TablaNMB.Id" Nombre, Apellido,FechaNacimiento,
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@User", User));
+                command.Parameters.Add(new SqlParameter("@Password", Password));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    posicion = reader["Position"].ToString();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return posicion;
         }
         #endregion
     }

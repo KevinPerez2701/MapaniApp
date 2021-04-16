@@ -121,6 +121,10 @@ namespace MapaniApp
         {
             _dataAccessLayer.InsertRelacion(IdNMB, IdMMB);
         }
+        public string Login(string User, string Password)
+        {
+           return _dataAccessLayer.Login(User, Password);
+        }
         #endregion
     }
 }

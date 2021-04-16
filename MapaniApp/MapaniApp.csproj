@@ -65,16 +65,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Carpeta Recepcion\AgregarCita.cs">
+    <Compile Include="Recepcion\AgregarCita.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Carpeta Recepcion\AgregarCita.Designer.cs">
+    <Compile Include="Recepcion\AgregarCita.Designer.cs">
       <DependentUpon>AgregarCita.cs</DependentUpon>
     </Compile>
-    <Compile Include="Carpeta Recepcion\ConfirmarCita.cs">
+    <Compile Include="Recepcion\ConfirmarCita.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Carpeta Recepcion\ConfirmarCita.Designer.cs">
+    <Compile Include="Recepcion\ConfirmarCita.Designer.cs">
       <DependentUpon>ConfirmarCita.cs</DependentUpon>
     </Compile>
     <Compile Include="Transcripcion\Cedula.cs">
@@ -107,16 +107,16 @@
     <Compile Include="AsesoriaLegal\AsesoriaLegal.Designer.cs">
       <DependentUpon>AsesoriaLegal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Carpeta Recepcion\Citas.cs">
+    <Compile Include="Recepcion\Citas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Carpeta Recepcion\Citas.Designer.cs">
+    <Compile Include="Recepcion\Citas.Designer.cs">
       <DependentUpon>Citas.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\ContactCuidador.cs" />
     <Compile Include="Clases\ContactMMB.cs" />
     <Compile Include="Clases\ContactNMB.cs" />
-    <Compile Include="DataAccessLayer.cs" />
+    <Compile Include="Clases\DataAccessLayer.cs" />
     <Compile Include="Enfermeria\Enfermeria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,13 +125,13 @@
     </Compile>
     <Compile Include="Clases\HistorialVisitas.cs" />
     <Compile Include="Clases\ProximasVisitas.cs" />
-    <Compile Include="Carpeta Recepcion\Recepcion.cs">
+    <Compile Include="Recepcion\Recepcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Carpeta Recepcion\Recepcion.Designer.cs">
+    <Compile Include="Recepcion\Recepcion.Designer.cs">
       <DependentUpon>Recepcion.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogicLayer.cs" />
+    <Compile Include="Clases\LogicLayer.cs" />
     <Compile Include="Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,16 +165,19 @@
     <Compile Include="Psicologia\Psicologia.Designer.cs">
       <DependentUpon>Psicologia.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Carpeta Recepcion\AgregarCita.resx">
+    <EmbeddedResource Include="Enfermeria\Enfermeria.resx">
+      <DependentUpon>Enfermeria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcion\AgregarCita.resx">
       <DependentUpon>AgregarCita.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Carpeta Recepcion\ConfirmarCita.resx">
+    <EmbeddedResource Include="Recepcion\ConfirmarCita.resx">
       <DependentUpon>ConfirmarCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transcripcion\AddContact.resx">
       <DependentUpon>AddContact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Carpeta Recepcion\Citas.resx">
+    <EmbeddedResource Include="Recepcion\Citas.resx">
       <DependentUpon>Citas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\LoginForm.resx">
@@ -195,7 +198,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Carpeta Recepcion\Recepcion.resx">
+    <EmbeddedResource Include="Recepcion\Recepcion.resx">
       <DependentUpon>Recepcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transcripcion\Transcripcion.resx">

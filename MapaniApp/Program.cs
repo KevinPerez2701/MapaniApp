@@ -13,15 +13,18 @@ namespace MapaniApp
         /// </summary>
         [STAThread]
         static void Main()
-        {   
+        {  
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoginForm Login = new LoginForm();
-            DialogResult Result = Login.ShowDialog();
-            if (Result == DialogResult.OK)
-                Application.Run(new Main());
-            else
-                Application.Exit();
+            // LoginForm Login = new LoginForm();
+            //DialogResult Result = Login.ShowDialog();
+            //if (Result == DialogResult.OK)
+            //{
+                Application.Run(new Main());     
+               
+             //
+            //else
+            //  Application.Exit();
 
         }
     }

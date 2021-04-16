@@ -21,6 +21,20 @@ namespace MapaniApp
        
         private void Main_Load(object sender, EventArgs e)
         {
+            LoginForm login = new LoginForm();
+            login.ShowDialog(this);
+            string ventana = login.Posicion();
+            if (ventana == "Recepcion")
+            {
+                Recepcion recepcion = new Recepcion();
+                recepcion.ShowDialog(this);
+            }
+            else if (ventana == "Transcripcion")
+            {
+                Transcripcion transcripcion = new Transcripcion();
+                transcripcion.ShowDialog(this);
+            }
+
 
         }
 
