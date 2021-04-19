@@ -55,6 +55,9 @@ namespace MapaniApp
             }
             else if  ((ComboUsuario.Text == "NMB") && (comboPrograma.Text == "IRC"))
                 {
+                List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
+                ContactNMB contact = contacts[0];
+                LoadContact(contact);
                 GroupIRC.Visible = true;
                 groupMenor5.Visible = false;
                 groupMayor5.Visible = false;
@@ -76,11 +79,7 @@ namespace MapaniApp
                 
             }
         }
-        private void ShowContact()
-        {
-
-        }
-
+        
        
     }
 }

@@ -34,6 +34,11 @@ namespace MapaniApp
                 Transcripcion transcripcion = new Transcripcion();
                 transcripcion.ShowDialog(this);
             }
+            else if (ventana == "Enfermeria")
+            {
+                Enfermeria enfermeria = new Enfermeria();
+                enfermeria.Show(this);
+            }
 
 
         }
