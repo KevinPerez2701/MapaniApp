@@ -69,7 +69,11 @@ namespace MapaniApp
             this.TxtHijos = new System.Windows.Forms.TextBox();
             this.labelTransporte = new System.Windows.Forms.Label();
             this.TxtTransporte = new System.Windows.Forms.TextBox();
+            this.groupNMB = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).BeginInit();
+            this.groupNMB.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtDireccion
@@ -225,22 +229,20 @@ namespace MapaniApp
             // TxtTelefono
             // 
             this.TxtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTelefono.Location = new System.Drawing.Point(182, 332);
+            this.TxtTelefono.Location = new System.Drawing.Point(178, 13);
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(226, 29);
             this.TxtTelefono.TabIndex = 30;
-            this.TxtTelefono.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 335);
+            this.label6.Location = new System.Drawing.Point(12, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 24);
             this.label6.TabIndex = 29;
             this.label6.Text = "Telefono";
-            this.label6.Visible = false;
             // 
             // textBox1
             // 
@@ -255,7 +257,7 @@ namespace MapaniApp
             // 
             this.labelFechaIngreso.AutoSize = true;
             this.labelFechaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFechaIngreso.Location = new System.Drawing.Point(12, 407);
+            this.labelFechaIngreso.Location = new System.Drawing.Point(6, 25);
             this.labelFechaIngreso.Name = "labelFechaIngreso";
             this.labelFechaIngreso.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelFechaIngreso.Size = new System.Drawing.Size(132, 24);
@@ -266,7 +268,7 @@ namespace MapaniApp
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(226, 403);
+            this.dateTimePicker2.Location = new System.Drawing.Point(230, 18);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(182, 29);
             this.dateTimePicker2.TabIndex = 33;
@@ -294,7 +296,7 @@ namespace MapaniApp
             // 
             this.labelIngreso.AutoSize = true;
             this.labelIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIngreso.Location = new System.Drawing.Point(12, 375);
+            this.labelIngreso.Location = new System.Drawing.Point(6, 246);
             this.labelIngreso.Name = "labelIngreso";
             this.labelIngreso.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelIngreso.Size = new System.Drawing.Size(73, 24);
@@ -308,7 +310,7 @@ namespace MapaniApp
             this.ComboIngreso.Items.AddRange(new object[] {
             "Primera Vez",
             "Recaida"});
-            this.ComboIngreso.Location = new System.Drawing.Point(182, 367);
+            this.ComboIngreso.Location = new System.Drawing.Point(186, 250);
             this.ComboIngreso.Name = "ComboIngreso";
             this.ComboIngreso.Size = new System.Drawing.Size(226, 32);
             this.ComboIngreso.TabIndex = 44;
@@ -320,7 +322,7 @@ namespace MapaniApp
             this.ComboVacunas.Items.AddRange(new object[] {
             "Completas",
             "Incompletas\t\t"});
-            this.ComboVacunas.Location = new System.Drawing.Point(182, 529);
+            this.ComboVacunas.Location = new System.Drawing.Point(186, 129);
             this.ComboVacunas.Name = "ComboVacunas";
             this.ComboVacunas.Size = new System.Drawing.Size(226, 32);
             this.ComboVacunas.TabIndex = 50;
@@ -329,7 +331,7 @@ namespace MapaniApp
             // 
             this.labelvacunas.AutoSize = true;
             this.labelvacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelvacunas.Location = new System.Drawing.Point(13, 537);
+            this.labelvacunas.Location = new System.Drawing.Point(6, 132);
             this.labelvacunas.Name = "labelvacunas";
             this.labelvacunas.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelvacunas.Size = new System.Drawing.Size(84, 24);
@@ -340,7 +342,7 @@ namespace MapaniApp
             // 
             this.labelDiscapacidad.AutoSize = true;
             this.labelDiscapacidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDiscapacidad.Location = new System.Drawing.Point(12, 494);
+            this.labelDiscapacidad.Location = new System.Drawing.Point(6, 91);
             this.labelDiscapacidad.Name = "labelDiscapacidad";
             this.labelDiscapacidad.Size = new System.Drawing.Size(123, 24);
             this.labelDiscapacidad.TabIndex = 47;
@@ -350,7 +352,7 @@ namespace MapaniApp
             // 
             this.labelPartidaNacimiento.AutoSize = true;
             this.labelPartidaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPartidaNacimiento.Location = new System.Drawing.Point(13, 446);
+            this.labelPartidaNacimiento.Location = new System.Drawing.Point(6, 56);
             this.labelPartidaNacimiento.Name = "labelPartidaNacimiento";
             this.labelPartidaNacimiento.Size = new System.Drawing.Size(167, 24);
             this.labelPartidaNacimiento.TabIndex = 46;
@@ -363,7 +365,7 @@ namespace MapaniApp
             this.ComboPartidaNacimiento.Items.AddRange(new object[] {
             "SI",
             "No"});
-            this.ComboPartidaNacimiento.Location = new System.Drawing.Point(182, 443);
+            this.ComboPartidaNacimiento.Location = new System.Drawing.Point(186, 53);
             this.ComboPartidaNacimiento.Name = "ComboPartidaNacimiento";
             this.ComboPartidaNacimiento.Size = new System.Drawing.Size(226, 32);
             this.ComboPartidaNacimiento.TabIndex = 45;
@@ -375,7 +377,7 @@ namespace MapaniApp
             this.ComboParto.Items.AddRange(new object[] {
             "Eutocico",
             "Cesarea"});
-            this.ComboParto.Location = new System.Drawing.Point(182, 567);
+            this.ComboParto.Location = new System.Drawing.Point(186, 173);
             this.ComboParto.Name = "ComboParto";
             this.ComboParto.Size = new System.Drawing.Size(226, 32);
             this.ComboParto.TabIndex = 52;
@@ -384,7 +386,7 @@ namespace MapaniApp
             // 
             this.labelParto.AutoSize = true;
             this.labelParto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelParto.Location = new System.Drawing.Point(13, 575);
+            this.labelParto.Location = new System.Drawing.Point(6, 173);
             this.labelParto.Name = "labelParto";
             this.labelParto.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelParto.Size = new System.Drawing.Size(53, 24);
@@ -398,7 +400,7 @@ namespace MapaniApp
             this.ComboDiscapacidad.Items.AddRange(new object[] {
             "SI",
             "No"});
-            this.ComboDiscapacidad.Location = new System.Drawing.Point(182, 486);
+            this.ComboDiscapacidad.Location = new System.Drawing.Point(186, 91);
             this.ComboDiscapacidad.Name = "ComboDiscapacidad";
             this.ComboDiscapacidad.Size = new System.Drawing.Size(226, 32);
             this.ComboDiscapacidad.TabIndex = 53;
@@ -410,7 +412,7 @@ namespace MapaniApp
             this.ComboLactancia.Items.AddRange(new object[] {
             "SI",
             "No"});
-            this.ComboLactancia.Location = new System.Drawing.Point(182, 613);
+            this.ComboLactancia.Location = new System.Drawing.Point(186, 214);
             this.ComboLactancia.Name = "ComboLactancia";
             this.ComboLactancia.Size = new System.Drawing.Size(226, 32);
             this.ComboLactancia.TabIndex = 55;
@@ -419,7 +421,7 @@ namespace MapaniApp
             // 
             this.labelLactancia.AutoSize = true;
             this.labelLactancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLactancia.Location = new System.Drawing.Point(12, 621);
+            this.labelLactancia.Location = new System.Drawing.Point(6, 212);
             this.labelLactancia.Name = "labelLactancia";
             this.labelLactancia.Size = new System.Drawing.Size(154, 24);
             this.labelLactancia.TabIndex = 54;
@@ -429,13 +431,12 @@ namespace MapaniApp
             // 
             this.labelEstadoCivil.AutoSize = true;
             this.labelEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEstadoCivil.Location = new System.Drawing.Point(16, 375);
+            this.labelEstadoCivil.Location = new System.Drawing.Point(12, 56);
             this.labelEstadoCivil.Name = "labelEstadoCivil";
             this.labelEstadoCivil.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelEstadoCivil.Size = new System.Drawing.Size(107, 24);
             this.labelEstadoCivil.TabIndex = 56;
             this.labelEstadoCivil.Text = "Estado Civil";
-            this.labelEstadoCivil.Visible = false;
             // 
             // ComboEstadoCivil
             // 
@@ -446,83 +447,101 @@ namespace MapaniApp
             "Casado/a",
             "Divorciado/a",
             "Viudo/a"});
-            this.ComboEstadoCivil.Location = new System.Drawing.Point(182, 367);
+            this.ComboEstadoCivil.Location = new System.Drawing.Point(178, 48);
             this.ComboEstadoCivil.Name = "ComboEstadoCivil";
             this.ComboEstadoCivil.Size = new System.Drawing.Size(226, 32);
             this.ComboEstadoCivil.TabIndex = 57;
-            this.ComboEstadoCivil.Visible = false;
             // 
             // labelHijos
             // 
             this.labelHijos.AutoSize = true;
             this.labelHijos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHijos.Location = new System.Drawing.Point(16, 408);
+            this.labelHijos.Location = new System.Drawing.Point(8, 80);
             this.labelHijos.Name = "labelHijos";
             this.labelHijos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelHijos.Size = new System.Drawing.Size(158, 24);
             this.labelHijos.TabIndex = 58;
             this.labelHijos.Text = "Cantidad de Hijos";
-            this.labelHijos.Visible = false;
             // 
             // TxtHijos
             // 
             this.TxtHijos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtHijos.Location = new System.Drawing.Point(328, 403);
+            this.TxtHijos.Location = new System.Drawing.Point(324, 84);
             this.TxtHijos.Name = "TxtHijos";
             this.TxtHijos.Size = new System.Drawing.Size(80, 29);
             this.TxtHijos.TabIndex = 59;
-            this.TxtHijos.Visible = false;
             // 
             // labelTransporte
             // 
             this.labelTransporte.AutoSize = true;
             this.labelTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTransporte.Location = new System.Drawing.Point(7, 448);
+            this.labelTransporte.Location = new System.Drawing.Point(3, 124);
             this.labelTransporte.Name = "labelTransporte";
             this.labelTransporte.Size = new System.Drawing.Size(170, 24);
             this.labelTransporte.TabIndex = 60;
             this.labelTransporte.Text = "Metodo Transporte";
-            this.labelTransporte.Visible = false;
+            this.labelTransporte.Click += new System.EventHandler(this.labelTransporte_Click);
             // 
             // TxtTransporte
             // 
             this.TxtTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTransporte.Location = new System.Drawing.Point(182, 443);
+            this.TxtTransporte.Location = new System.Drawing.Point(178, 119);
             this.TxtTransporte.Name = "TxtTransporte";
             this.TxtTransporte.Size = new System.Drawing.Size(226, 29);
             this.TxtTransporte.TabIndex = 61;
-            this.TxtTransporte.Visible = false;
+            // 
+            // groupNMB
+            // 
+            this.groupNMB.Controls.Add(this.dateTimePicker2);
+            this.groupNMB.Controls.Add(this.labelFechaIngreso);
+            this.groupNMB.Controls.Add(this.labelPartidaNacimiento);
+            this.groupNMB.Controls.Add(this.labelIngreso);
+            this.groupNMB.Controls.Add(this.ComboIngreso);
+            this.groupNMB.Controls.Add(this.labelDiscapacidad);
+            this.groupNMB.Controls.Add(this.ComboPartidaNacimiento);
+            this.groupNMB.Controls.Add(this.ComboDiscapacidad);
+            this.groupNMB.Controls.Add(this.labelvacunas);
+            this.groupNMB.Controls.Add(this.ComboLactancia);
+            this.groupNMB.Controls.Add(this.ComboVacunas);
+            this.groupNMB.Controls.Add(this.labelLactancia);
+            this.groupNMB.Controls.Add(this.labelParto);
+            this.groupNMB.Controls.Add(this.ComboParto);
+            this.groupNMB.Location = new System.Drawing.Point(2, 328);
+            this.groupNMB.Name = "groupNMB";
+            this.groupNMB.Size = new System.Drawing.Size(436, 296);
+            this.groupNMB.TabIndex = 62;
+            this.groupNMB.TabStop = false;
+            this.groupNMB.Text = "NMB";
+            this.groupNMB.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.TxtTelefono);
+            this.groupBox2.Controls.Add(this.TxtTransporte);
+            this.groupBox2.Controls.Add(this.labelTransporte);
+            this.groupBox2.Controls.Add(this.TxtHijos);
+            this.groupBox2.Controls.Add(this.labelEstadoCivil);
+            this.groupBox2.Controls.Add(this.labelHijos);
+            this.groupBox2.Controls.Add(this.ComboEstadoCivil);
+            this.groupBox2.Location = new System.Drawing.Point(2, 322);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(426, 173);
+            this.groupBox2.TabIndex = 63;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cuidador";
+            this.groupBox2.Visible = false;
             // 
             // AddContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 696);
-            this.Controls.Add(this.TxtTransporte);
-            this.Controls.Add(this.labelTransporte);
-            this.Controls.Add(this.TxtHijos);
-            this.Controls.Add(this.labelHijos);
-            this.Controls.Add(this.ComboEstadoCivil);
-            this.Controls.Add(this.labelEstadoCivil);
-            this.Controls.Add(this.ComboLactancia);
-            this.Controls.Add(this.labelLactancia);
-            this.Controls.Add(this.ComboDiscapacidad);
-            this.Controls.Add(this.ComboParto);
-            this.Controls.Add(this.labelParto);
-            this.Controls.Add(this.ComboVacunas);
-            this.Controls.Add(this.labelvacunas);
-            this.Controls.Add(this.labelDiscapacidad);
-            this.Controls.Add(this.labelPartidaNacimiento);
-            this.Controls.Add(this.ComboPartidaNacimiento);
-            this.Controls.Add(this.ComboIngreso);
-            this.Controls.Add(this.labelIngreso);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupNMB);
             this.Controls.Add(this.TxtCedula);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.labelFechaIngreso);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.TxtTelefono);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ComboSexo);
@@ -542,6 +561,10 @@ namespace MapaniApp
             this.Text = "AddContact";
             this.Load += new System.EventHandler(this.AddContact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).EndInit();
+            this.groupNMB.ResumeLayout(false);
+            this.groupNMB.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,5 +611,7 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtHijos;
         private System.Windows.Forms.Label labelTransporte;
         private System.Windows.Forms.TextBox TxtTransporte;
+        private System.Windows.Forms.GroupBox groupNMB;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

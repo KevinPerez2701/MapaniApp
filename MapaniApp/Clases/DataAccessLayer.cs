@@ -13,8 +13,8 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-       // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+       // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+       private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -269,21 +269,22 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
-        public void InsertRelacion(string IdNMB,string IdCuidador)
+        public void InsertRelacion(string IdNMB,string IdCuidador, string Parentesco)
         {
             try
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into Referencia(NMB,Cuidador) 
-                                    Values(@IdNMB,@IdCuidador)";
+                                    Insert into Referencia(NMB,Cuidador,Parentesco) 
+                                    Values(@IdNMB,@IdCuidador,@Parentesco)";
                 SqlParameter NMB = new SqlParameter("@IdNMB",int.Parse(IdNMB));
-                SqlParameter Fecha = new SqlParameter("@IdCuidador", int.Parse(IdCuidador));
-              
+                SqlParameter Cuidador = new SqlParameter("@IdCuidador", int.Parse(IdCuidador));
+                SqlParameter Relacion = new SqlParameter("@Parentesco", Parentesco);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(NMB);
-                command.Parameters.Add(Fecha);
-               
+                command.Parameters.Add(Cuidador);
+                command.Parameters.Add(Relacion);
+
                 command.ExecuteNonQuery();
 
             }
@@ -297,21 +298,21 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
-        public void InsertRelacionMMB(string IdNMB, string IdMMB)
+        public void InsertRelacionMMB(string IdNMB, string IdMMB, string Parentesco)
         {
             try
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into ReferenciaMMB(NMB,MMB) 
-                                    Values(@IdNMB,@IdCuidador)";
+                                    Insert into ReferenciaMMB(NMB,MMB,Parentesco) 
+                                    Values(@IdNMB,@IdMMB,@Parentesco)";
                 SqlParameter NMB = new SqlParameter("@IdNMB", int.Parse(IdNMB));
-                SqlParameter Fecha = new SqlParameter("@IdMMB", int.Parse(IdMMB));
-
+                SqlParameter MMB = new SqlParameter("@IdMMB", int.Parse(IdMMB));
+                SqlParameter Relacion = new SqlParameter("@Parentesco", Parentesco);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(NMB);
-                command.Parameters.Add(Fecha);
-
+                command.Parameters.Add(MMB);
+                command.Parameters.Add(Relacion);
                 command.ExecuteNonQuery();
 
             }

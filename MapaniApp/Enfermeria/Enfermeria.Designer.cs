@@ -73,14 +73,6 @@ namespace MapaniApp
             this.TxtObservacion = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.GroupIRC = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.TxtCC = new System.Windows.Forms.TextBox();
             this.TxtMUAC = new System.Windows.Forms.TextBox();
             this.labelCC = new System.Windows.Forms.Label();
@@ -558,14 +550,6 @@ namespace MapaniApp
             // 
             // GroupIRC
             // 
-            this.GroupIRC.Controls.Add(this.comboBox3);
-            this.GroupIRC.Controls.Add(this.label14);
-            this.GroupIRC.Controls.Add(this.comboBox4);
-            this.GroupIRC.Controls.Add(this.label15);
-            this.GroupIRC.Controls.Add(this.comboBox2);
-            this.GroupIRC.Controls.Add(this.label12);
-            this.GroupIRC.Controls.Add(this.comboBox1);
-            this.GroupIRC.Controls.Add(this.label11);
             this.GroupIRC.Controls.Add(this.TxtCC);
             this.GroupIRC.Controls.Add(this.TxtMUAC);
             this.GroupIRC.Controls.Add(this.labelCC);
@@ -576,113 +560,11 @@ namespace MapaniApp
             this.GroupIRC.Controls.Add(this.TxtTallaIrc);
             this.GroupIRC.Location = new System.Drawing.Point(7, 188);
             this.GroupIRC.Name = "GroupIRC";
-            this.GroupIRC.Size = new System.Drawing.Size(477, 315);
+            this.GroupIRC.Size = new System.Drawing.Size(477, 172);
             this.GroupIRC.TabIndex = 98;
             this.GroupIRC.TabStop = false;
             this.GroupIRC.Text = "Group IRC";
             this.GroupIRC.Visible = false;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Si",
-            "No"});
-            this.comboBox3.Location = new System.Drawing.Point(258, 280);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(173, 32);
-            this.comboBox3.TabIndex = 103;
-            this.comboBox3.Tag = "Contact";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(6, 283);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(212, 24);
-            this.label14.TabIndex = 102;
-            this.label14.Tag = "Contact";
-            this.label14.Text = "Referido HUPAZ o IVSS";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Kwashiorkor",
-            "Marasmo"});
-            this.comboBox4.Location = new System.Drawing.Point(258, 242);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(173, 32);
-            this.comboBox4.TabIndex = 101;
-            this.comboBox4.Tag = "Contact";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(6, 245);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(95, 24);
-            this.label15.TabIndex = 100;
-            this.label15.Tag = "Contact";
-            this.label15.Text = "Urgencias";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Alta",
-            "Normal",
-            "Baja"});
-            this.comboBox2.Location = new System.Drawing.Point(258, 204);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(173, 32);
-            this.comboBox2.TabIndex = 99;
-            this.comboBox2.Tag = "Contact";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 207);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 24);
-            this.label12.TabIndex = 98;
-            this.label12.Tag = "Contact";
-            this.label12.Text = "Talla";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Obesidad",
-            "Sobrepeso",
-            "Riesgo de Sobrepeso",
-            "Normal",
-            "Riesgo Deficit",
-            "Agudo Moderado",
-            "Agudo Severo"});
-            this.comboBox1.Location = new System.Drawing.Point(258, 166);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 32);
-            this.comboBox1.TabIndex = 97;
-            this.comboBox1.Tag = "Contact";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 169);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(162, 24);
-            this.label11.TabIndex = 96;
-            this.label11.Tag = "Contact";
-            this.label11.Text = "Estado Nutricional";
             // 
             // TxtCC
             // 
@@ -897,14 +779,6 @@ namespace MapaniApp
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TxtPesoIrc;
         private System.Windows.Forms.TextBox TxtTallaIrc;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox TxtAntecedentes;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;

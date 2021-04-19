@@ -166,15 +166,15 @@ namespace MapaniApp
         #region EVENTOS DE BOTONES
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "MMB" || textBox1.Text == "Cuidador")
+            if (textBox1.Text == "NMB")
             {
-                labelEstadoCivil.Visible = true;
-                ComboEstadoCivil.Visible = true;
-                labelHijos.Visible = true;
-                TxtHijos.Visible = true;
-                labelTransporte.Visible = true;
-                TxtTransporte.Visible = true;
-                HideNMB();
+                groupBox2.Visible = false;
+                groupNMB.Visible = true;
+            }
+            else if (textBox1.Text == "MMB" || textBox1.Text == "Cuidador")
+            {
+                groupBox2.Visible = true;
+                groupNMB.Visible = false;
 
             }
         }
@@ -202,28 +202,15 @@ namespace MapaniApp
             }
             this.Close();
         }
-        private void HideNMB()
-        {
-            label6.Visible = true;
-            TxtTelefono.Visible = true;
-            labelDiscapacidad.Visible = false;
-            ComboDiscapacidad.Visible = false;
-            labelFechaIngreso.Visible = false;
-            dateTimePicker2.Visible = false;
-            labelIngreso.Visible = false;
-            ComboIngreso.Visible = false;
-            labelLactancia.Visible = false;
-            ComboLactancia.Visible = false;
-            labelPartidaNacimiento.Visible = false;
-            ComboPartidaNacimiento.Visible = false;
-            labelParto.Visible = false;
-            ComboParto.Visible = false;
-            labelvacunas.Visible = false;
-            ComboVacunas.Visible = false;
-        }
+        
         #endregion
 
         private void AddContact_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelTransporte_Click(object sender, EventArgs e)
         {
 
         }

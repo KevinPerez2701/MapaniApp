@@ -75,11 +75,11 @@ namespace MapaniApp
             {
                 if (ComboCuidador.Text == "Cuidador")
                 {
-                    _LogicLayer.InsertRelacion(TxtIdNMB.Text, TxtIdCuidador.Text);
+                    _LogicLayer.InsertRelacion(TxtIdNMB.Text, TxtIdCuidador.Text,txtParentesco.Text);
                 }
                 else if (ComboCuidador.Text == "MMB")
                 {
-                    _LogicLayer.InsertRelacionMMB(TxtIdNMB.Text, TxtIdCuidador.Text);
+                    _LogicLayer.InsertRelacionMMB(TxtIdNMB.Text, TxtIdCuidador.Text,txtParentesco.Text);
                 }
             }
         }
@@ -109,11 +109,15 @@ namespace MapaniApp
                 TxtIdCuidador.Visible = true;
                 labelTipoCuidador.Visible = true;
                 ComboCuidador.Visible = true;
+                labelParentesco.Visible = true;
+                txtParentesco.Visible = true;
             }
 
 
             else
             {
+                labelParentesco.Visible = false;
+                txtParentesco.Visible = false;
                 labelTipoCuidador.Visible = false;
                 ComboCuidador.Visible = false;
                 dataGridView1.Visible = false;

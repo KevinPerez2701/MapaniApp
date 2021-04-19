@@ -45,14 +45,16 @@ namespace MapaniApp
             this.TxtIdNMB = new System.Windows.Forms.TextBox();
             this.labelContactoID = new System.Windows.Forms.Label();
             this.TxtIdCuidador = new System.Windows.Forms.TextBox();
+            this.labelTipoCuidador = new System.Windows.Forms.Label();
+            this.ComboCuidador = new System.Windows.Forms.ComboBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelTipoCuidador = new System.Windows.Forms.Label();
-            this.ComboCuidador = new System.Windows.Forms.ComboBox();
+            this.txtParentesco = new System.Windows.Forms.TextBox();
+            this.labelParentesco = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +111,7 @@ namespace MapaniApp
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(107, 169);
+            this.button1.Location = new System.Drawing.Point(111, 215);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 60);
             this.button1.TabIndex = 4;
@@ -120,7 +122,7 @@ namespace MapaniApp
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(270, 169);
+            this.button2.Location = new System.Drawing.Point(274, 215);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(142, 60);
             this.button2.TabIndex = 5;
@@ -179,7 +181,7 @@ namespace MapaniApp
             this.cedulaDataGridViewTextBoxColumn,
             this.telefonoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.contactCuidadorBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 235);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 281);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(563, 79);
             this.dataGridView1.TabIndex = 10;
@@ -225,6 +227,30 @@ namespace MapaniApp
             this.TxtIdCuidador.TabIndex = 14;
             this.TxtIdCuidador.Visible = false;
             // 
+            // labelTipoCuidador
+            // 
+            this.labelTipoCuidador.AutoSize = true;
+            this.labelTipoCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTipoCuidador.Location = new System.Drawing.Point(12, 68);
+            this.labelTipoCuidador.Name = "labelTipoCuidador";
+            this.labelTipoCuidador.Size = new System.Drawing.Size(277, 24);
+            this.labelTipoCuidador.TabIndex = 15;
+            this.labelTipoCuidador.Text = "Seleccione el Tipo de Cuidador";
+            this.labelTipoCuidador.Visible = false;
+            // 
+            // ComboCuidador
+            // 
+            this.ComboCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboCuidador.FormattingEnabled = true;
+            this.ComboCuidador.Items.AddRange(new object[] {
+            "MMB",
+            "Cuidador"});
+            this.ComboCuidador.Location = new System.Drawing.Point(330, 60);
+            this.ComboCuidador.Name = "ComboCuidador";
+            this.ComboCuidador.Size = new System.Drawing.Size(172, 32);
+            this.ComboCuidador.TabIndex = 16;
+            this.ComboCuidador.Visible = false;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -259,35 +285,33 @@ namespace MapaniApp
             // 
             this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
             // 
-            // labelTipoCuidador
+            // txtParentesco
             // 
-            this.labelTipoCuidador.AutoSize = true;
-            this.labelTipoCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipoCuidador.Location = new System.Drawing.Point(12, 68);
-            this.labelTipoCuidador.Name = "labelTipoCuidador";
-            this.labelTipoCuidador.Size = new System.Drawing.Size(277, 24);
-            this.labelTipoCuidador.TabIndex = 15;
-            this.labelTipoCuidador.Text = "Seleccione el Tipo de Cuidador";
-            this.labelTipoCuidador.Visible = false;
+            this.txtParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParentesco.Location = new System.Drawing.Point(330, 171);
+            this.txtParentesco.Name = "txtParentesco";
+            this.txtParentesco.Size = new System.Drawing.Size(172, 29);
+            this.txtParentesco.TabIndex = 18;
+            this.txtParentesco.Visible = false;
             // 
-            // ComboCuidador
+            // labelParentesco
             // 
-            this.ComboCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboCuidador.FormattingEnabled = true;
-            this.ComboCuidador.Items.AddRange(new object[] {
-            "MMB",
-            "Cuidador"});
-            this.ComboCuidador.Location = new System.Drawing.Point(330, 60);
-            this.ComboCuidador.Name = "ComboCuidador";
-            this.ComboCuidador.Size = new System.Drawing.Size(172, 32);
-            this.ComboCuidador.TabIndex = 16;
-            this.ComboCuidador.Visible = false;
+            this.labelParentesco.AutoSize = true;
+            this.labelParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelParentesco.Location = new System.Drawing.Point(12, 171);
+            this.labelParentesco.Name = "labelParentesco";
+            this.labelParentesco.Size = new System.Drawing.Size(205, 24);
+            this.labelParentesco.TabIndex = 17;
+            this.labelParentesco.Text = "Seleccione Parentesco";
+            this.labelParentesco.Visible = false;
             // 
             // Transcripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 391);
+            this.Controls.Add(this.txtParentesco);
+            this.Controls.Add(this.labelParentesco);
             this.Controls.Add(this.ComboCuidador);
             this.Controls.Add(this.labelTipoCuidador);
             this.Controls.Add(this.TxtIdCuidador);
@@ -340,5 +364,7 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtIdCuidador;
         private System.Windows.Forms.Label labelTipoCuidador;
         private System.Windows.Forms.ComboBox ComboCuidador;
+        private System.Windows.Forms.TextBox txtParentesco;
+        private System.Windows.Forms.Label labelParentesco;
     }
 }

@@ -113,13 +113,13 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetCitas(SearchText);
         }
-        public void InsertRelacion(string IdNMB, string IdCuidador)
+        public void InsertRelacion(string IdNMB, string IdCuidador,string parentesco)
         {
-            _dataAccessLayer.InsertRelacion(IdNMB, IdCuidador);
+            _dataAccessLayer.InsertRelacion(IdNMB, IdCuidador,parentesco);
         }
-        public void InsertRelacionMMB(string IdNMB, string IdMMB)
+        public void InsertRelacionMMB(string IdNMB, string IdMMB, string parentesco)
         {
-            _dataAccessLayer.InsertRelacion(IdNMB, IdMMB);
+            _dataAccessLayer.InsertRelacionMMB(IdNMB, IdMMB,parentesco);
         }
         public string Login(string User, string Password)
         {
