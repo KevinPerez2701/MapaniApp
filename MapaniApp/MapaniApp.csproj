@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ClaseEnfermeria.cs" />
     <Compile Include="Recepcion\AgregarCita.cs">
       <SubType>Form</SubType>
     </Compile>

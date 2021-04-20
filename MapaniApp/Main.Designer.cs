@@ -29,10 +29,6 @@ namespace MapaniApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnAddContact = new System.Windows.Forms.Button();
-            this.BtnCargarContacto = new System.Windows.Forms.Button();
-            this.BtnCargar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.BtnAlmacen = new System.Windows.Forms.Button();
             this.BtnEnfermeria = new System.Windows.Forms.Button();
             this.BtnNutricion = new System.Windows.Forms.Button();
@@ -41,55 +37,15 @@ namespace MapaniApp
             this.BtnLegal = new System.Windows.Forms.Button();
             this.BtnRecepcion = new System.Windows.Forms.Button();
             this.BtnTranscripcion = new System.Windows.Forms.Button();
+            this.groupSuperUser = new System.Windows.Forms.GroupBox();
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.groupSuperUser.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BtnAddContact
-            // 
-            this.BtnAddContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAddContact.Location = new System.Drawing.Point(305, 300);
-            this.BtnAddContact.Name = "BtnAddContact";
-            this.BtnAddContact.Size = new System.Drawing.Size(195, 67);
-            this.BtnAddContact.TabIndex = 0;
-            this.BtnAddContact.Text = "Agregar Contacto";
-            this.BtnAddContact.UseVisualStyleBackColor = true;
-            this.BtnAddContact.Click += new System.EventHandler(this.BtnAddContact_Click);
-            // 
-            // BtnCargarContacto
-            // 
-            this.BtnCargarContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCargarContacto.Location = new System.Drawing.Point(305, 235);
-            this.BtnCargarContacto.Name = "BtnCargarContacto";
-            this.BtnCargarContacto.Size = new System.Drawing.Size(195, 59);
-            this.BtnCargarContacto.TabIndex = 1;
-            this.BtnCargarContacto.Text = "Cargar Contacto";
-            this.BtnCargarContacto.UseVisualStyleBackColor = true;
-            this.BtnCargarContacto.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // BtnCargar
-            // 
-            this.BtnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCargar.Location = new System.Drawing.Point(223, 241);
-            this.BtnCargar.Name = "BtnCargar";
-            this.BtnCargar.Size = new System.Drawing.Size(76, 40);
-            this.BtnCargar.TabIndex = 2;
-            this.BtnCargar.Text = "Cargar";
-            this.BtnCargar.UseVisualStyleBackColor = true;
-            this.BtnCargar.Visible = false;
-            this.BtnCargar.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(193, 318);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 29);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Visible = false;
             // 
             // BtnAlmacen
             // 
             this.BtnAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAlmacen.Location = new System.Drawing.Point(213, 12);
+            this.BtnAlmacen.Location = new System.Drawing.Point(211, 12);
             this.BtnAlmacen.Name = "BtnAlmacen";
             this.BtnAlmacen.Size = new System.Drawing.Size(178, 63);
             this.BtnAlmacen.TabIndex = 4;
@@ -100,7 +56,7 @@ namespace MapaniApp
             // BtnEnfermeria
             // 
             this.BtnEnfermeria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEnfermeria.Location = new System.Drawing.Point(213, 85);
+            this.BtnEnfermeria.Location = new System.Drawing.Point(211, 85);
             this.BtnEnfermeria.Name = "BtnEnfermeria";
             this.BtnEnfermeria.Size = new System.Drawing.Size(178, 59);
             this.BtnEnfermeria.TabIndex = 5;
@@ -111,7 +67,7 @@ namespace MapaniApp
             // BtnNutricion
             // 
             this.BtnNutricion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNutricion.Location = new System.Drawing.Point(397, 12);
+            this.BtnNutricion.Location = new System.Drawing.Point(395, 12);
             this.BtnNutricion.Name = "BtnNutricion";
             this.BtnNutricion.Size = new System.Drawing.Size(173, 63);
             this.BtnNutricion.TabIndex = 6;
@@ -122,7 +78,7 @@ namespace MapaniApp
             // BtnPediatria
             // 
             this.BtnPediatria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPediatria.Location = new System.Drawing.Point(397, 85);
+            this.BtnPediatria.Location = new System.Drawing.Point(395, 85);
             this.BtnPediatria.Name = "BtnPediatria";
             this.BtnPediatria.Size = new System.Drawing.Size(173, 58);
             this.BtnPediatria.TabIndex = 7;
@@ -133,7 +89,7 @@ namespace MapaniApp
             // BtnPsicologia
             // 
             this.BtnPsicologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPsicologia.Location = new System.Drawing.Point(576, 12);
+            this.BtnPsicologia.Location = new System.Drawing.Point(574, 12);
             this.BtnPsicologia.Name = "BtnPsicologia";
             this.BtnPsicologia.Size = new System.Drawing.Size(148, 63);
             this.BtnPsicologia.TabIndex = 8;
@@ -144,7 +100,7 @@ namespace MapaniApp
             // BtnLegal
             // 
             this.BtnLegal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLegal.Location = new System.Drawing.Point(576, 85);
+            this.BtnLegal.Location = new System.Drawing.Point(574, 85);
             this.BtnLegal.Name = "BtnLegal";
             this.BtnLegal.Size = new System.Drawing.Size(147, 57);
             this.BtnLegal.TabIndex = 9;
@@ -155,7 +111,7 @@ namespace MapaniApp
             // BtnRecepcion
             // 
             this.BtnRecepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRecepcion.Location = new System.Drawing.Point(2, 12);
+            this.BtnRecepcion.Location = new System.Drawing.Point(0, 12);
             this.BtnRecepcion.Name = "BtnRecepcion";
             this.BtnRecepcion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnRecepcion.Size = new System.Drawing.Size(205, 63);
@@ -167,7 +123,7 @@ namespace MapaniApp
             // BtnTranscripcion
             // 
             this.BtnTranscripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTranscripcion.Location = new System.Drawing.Point(2, 85);
+            this.BtnTranscripcion.Location = new System.Drawing.Point(0, 85);
             this.BtnTranscripcion.Name = "BtnTranscripcion";
             this.BtnTranscripcion.Size = new System.Drawing.Size(205, 58);
             this.BtnTranscripcion.TabIndex = 11;
@@ -175,37 +131,51 @@ namespace MapaniApp
             this.BtnTranscripcion.UseVisualStyleBackColor = true;
             this.BtnTranscripcion.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // groupSuperUser
+            // 
+            this.groupSuperUser.Controls.Add(this.BtnTranscripcion);
+            this.groupSuperUser.Controls.Add(this.BtnRecepcion);
+            this.groupSuperUser.Controls.Add(this.BtnLegal);
+            this.groupSuperUser.Controls.Add(this.BtnPsicologia);
+            this.groupSuperUser.Controls.Add(this.BtnPediatria);
+            this.groupSuperUser.Controls.Add(this.BtnNutricion);
+            this.groupSuperUser.Controls.Add(this.BtnEnfermeria);
+            this.groupSuperUser.Controls.Add(this.BtnAlmacen);
+            this.groupSuperUser.Location = new System.Drawing.Point(12, 12);
+            this.groupSuperUser.Name = "groupSuperUser";
+            this.groupSuperUser.Size = new System.Drawing.Size(746, 162);
+            this.groupSuperUser.TabIndex = 12;
+            this.groupSuperUser.TabStop = false;
+            this.groupSuperUser.Text = "SuperUser";
+            this.groupSuperUser.Visible = false;
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSalir.Location = new System.Drawing.Point(309, 190);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(180, 44);
+            this.BtnSalir.TabIndex = 13;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BtnTranscripcion);
-            this.Controls.Add(this.BtnRecepcion);
-            this.Controls.Add(this.BtnLegal);
-            this.Controls.Add(this.BtnPsicologia);
-            this.Controls.Add(this.BtnPediatria);
-            this.Controls.Add(this.BtnNutricion);
-            this.Controls.Add(this.BtnEnfermeria);
-            this.Controls.Add(this.BtnAlmacen);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.BtnCargar);
-            this.Controls.Add(this.BtnCargarContacto);
-            this.Controls.Add(this.BtnAddContact);
+            this.ClientSize = new System.Drawing.Size(800, 277);
+            this.Controls.Add(this.BtnSalir);
+            this.Controls.Add(this.groupSuperUser);
             this.Name = "Main";
             this.Text = "MapaniAPP";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.groupSuperUser.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BtnAddContact;
-        private System.Windows.Forms.Button BtnCargarContacto;
-        private System.Windows.Forms.Button BtnCargar;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button BtnAlmacen;
         private System.Windows.Forms.Button BtnEnfermeria;
         private System.Windows.Forms.Button BtnNutricion;
@@ -214,6 +184,8 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnLegal;
         private System.Windows.Forms.Button BtnRecepcion;
         private System.Windows.Forms.Button BtnTranscripcion;
+        private System.Windows.Forms.GroupBox groupSuperUser;
+        private System.Windows.Forms.Button BtnSalir;
     }
 }
 

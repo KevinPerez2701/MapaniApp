@@ -61,7 +61,7 @@ namespace MapaniApp
                 GroupIRC.Visible = true;
                 groupMenor5.Visible = false;
                 groupMayor5.Visible = false;
-                groupBase.Visible = false;
+                groupBase.Visible = true;
             }
 
         }
@@ -79,7 +79,45 @@ namespace MapaniApp
                 
             }
         }
-        
-       
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveContact();
+            this.Close();
+        }
+        private void SaveContact()
+        {
+            ClaseEnfermeria Cita = new ClaseEnfermeria {
+                NMB = TxtID.Text,
+                Fecha = DateTimeFecha.Value.Date,
+                Programa = comboPrograma.Text,
+                Peso = TxtPeso.Text,
+                Talla = TxtTalla.Text,
+                MUAC = TxtMUAC.Text,
+                CC = TxtCC.Text,
+                CMB = TxtCMB.Text,
+                Edema = ComboEdema.Text,
+                IMC = TxtIMC.Text,
+                PZImcEdad = TxtPzImcEdad.Text,
+                PZTallaEdad = TxtPZTallaEdad.Text,
+                PZTallaImc = TxtPZpesotalla.Text,
+                PesoNacimiento = TxtPesoNacimiento.Text,
+                Lactancia = comboLactancia.Text,
+                Observacion = TxtObservacion.Text,
+                Patologia = TxtPatologia.Text,
+                Antecedentes = TxtAntecedentes.Text,
+            };
+            _LogicLayer.SaveContactEnfermeria(Cita);
+        }
+
+        private void GroupIRC_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -24,7 +24,11 @@ namespace MapaniApp
             LoginForm login = new LoginForm();
             login.ShowDialog(this);
             string ventana = login.Posicion();
-            if (ventana == "Recepcion")
+            if (ventana == "SuperUser")
+            {
+                groupSuperUser.Visible = true;
+            }
+            else if (ventana == "Recepcion")
             {
                 Recepcion recepcion = new Recepcion();
                 recepcion.ShowDialog(this);
@@ -110,8 +114,12 @@ namespace MapaniApp
             Recepcion recepcion = new Recepcion();
             recepcion.ShowDialog(this);
         }
+
         #endregion
 
-       
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

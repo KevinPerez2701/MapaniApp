@@ -56,6 +56,19 @@ namespace MapaniApp
            // }
             return Contact;
         }
+        public ClaseEnfermeria SaveContactEnfermeria(ClaseEnfermeria Contact)
+        {
+            //int flag = Contact.Id;
+            //if (flag == 0)
+            //{
+                _dataAccessLayer.InserCitaEnfermeria(Contact);
+            //}
+            //else
+            // {
+            //     _dataAccessLayer.UpdateContact(Contact);
+            // }
+            return Contact;
+        }
         public  ProximasVisitas SaveCita(ProximasVisitas Cita)
         {
                 _dataAccessLayer.InserCita(Cita);
