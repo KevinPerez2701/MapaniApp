@@ -53,20 +53,6 @@ namespace MapaniApp
             NewContact.ShowDialog(this);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            List<ContactNMB> contacts = _LogicLayer.GetContacts(textBox1.Text);
-            ContactNMB contact = contacts[0];
-            AddContact contactDetails = new AddContact();
-            contactDetails.LoadContact(contact);
-            contactDetails.ShowDialog(this);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Visible = !textBox1.Visible;
-            BtnCargar.Visible = !BtnCargar.Visible;
-        }
         #region APERTURA DE NUEVAS VENTANAS
         private void button1_Click_1(object sender, EventArgs e)
         {
