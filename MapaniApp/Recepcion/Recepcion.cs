@@ -179,5 +179,7 @@ namespace MapaniApp
                 Confirm.ShowDialog(this);
             }    
         }
+
+       
     }
 }

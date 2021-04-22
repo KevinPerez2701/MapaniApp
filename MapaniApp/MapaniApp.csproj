@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ClaseEnfermeria.cs" />
+    <Compile Include="Clases\DataAlmacen.cs" />
     <Compile Include="Recepcion\AgregarCita.cs">
       <SubType>Form</SubType>
     </Compile>

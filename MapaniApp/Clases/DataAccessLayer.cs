@@ -755,6 +755,8 @@ namespace MapaniApp
                         IdCuidador = int.Parse(reader["Cuidador"].ToString()),
                         Fecha = (DateTime)reader["Fecha"],
                         Departamento = reader["Departamento"].ToString(),
+                        Reagendo = reader ["Reagendada"].ToString(),
+                        Motivo = reader ["Motivo"].ToString(),
                     });
                 }
             }
