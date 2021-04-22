@@ -34,6 +34,7 @@ namespace MapaniApp
                 ContactNMB contact = contacts[0];
                 LoadContact(contact);
                 groupBase.Visible = true;
+                groupBox1.Visible = true;
                 if ((int.Parse(TxtEdad.Text) > 5))
                 {
                     groupMayor5.Visible = true;
@@ -59,6 +60,7 @@ namespace MapaniApp
                 ContactNMB contact = contacts[0];
                 LoadContact(contact);
                 GroupIRC.Visible = true;
+                groupBox1.Visible = true;
                 groupMenor5.Visible = false;
                 groupMayor5.Visible = false;
                 groupBase.Visible = true;
@@ -116,6 +118,11 @@ namespace MapaniApp
         }
 
         private void GroupIRC_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

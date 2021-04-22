@@ -39,12 +39,18 @@ namespace MapaniApp
             this.label1 = new System.Windows.Forms.Label();
             this.TxtCuidador = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtObservacion = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(214, 185);
+            this.BtnSalir.Location = new System.Drawing.Point(222, 307);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(162, 34);
             this.BtnSalir.TabIndex = 23;
@@ -55,7 +61,7 @@ namespace MapaniApp
             // BtnAgregarCita
             // 
             this.BtnAgregarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarCita.Location = new System.Drawing.Point(33, 185);
+            this.BtnAgregarCita.Location = new System.Drawing.Point(54, 308);
             this.BtnAgregarCita.Name = "BtnAgregarCita";
             this.BtnAgregarCita.Size = new System.Drawing.Size(162, 33);
             this.BtnAgregarCita.TabIndex = 22;
@@ -73,7 +79,7 @@ namespace MapaniApp
             "Psicologia"});
             this.comboDepartamento.Location = new System.Drawing.Point(242, 130);
             this.comboDepartamento.Name = "comboDepartamento";
-            this.comboDepartamento.Size = new System.Drawing.Size(134, 32);
+            this.comboDepartamento.Size = new System.Drawing.Size(184, 32);
             this.comboDepartamento.TabIndex = 21;
             // 
             // TxtId
@@ -81,7 +87,7 @@ namespace MapaniApp
             this.TxtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtId.Location = new System.Drawing.Point(242, 19);
             this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(134, 29);
+            this.TxtId.Size = new System.Drawing.Size(184, 29);
             this.TxtId.TabIndex = 20;
             // 
             // DateCita
@@ -91,7 +97,7 @@ namespace MapaniApp
             this.DateCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateCita.Location = new System.Drawing.Point(242, 97);
             this.DateCita.Name = "DateCita";
-            this.DateCita.Size = new System.Drawing.Size(134, 29);
+            this.DateCita.Size = new System.Drawing.Size(184, 29);
             this.DateCita.TabIndex = 19;
             // 
             // label3
@@ -129,7 +135,7 @@ namespace MapaniApp
             this.TxtCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCuidador.Location = new System.Drawing.Point(242, 56);
             this.TxtCuidador.Name = "TxtCuidador";
-            this.TxtCuidador.Size = new System.Drawing.Size(134, 29);
+            this.TxtCuidador.Size = new System.Drawing.Size(184, 29);
             this.TxtCuidador.TabIndex = 25;
             // 
             // label4
@@ -142,11 +148,69 @@ namespace MapaniApp
             this.label4.TabIndex = 24;
             this.label4.Text = "Inserte Id Cuidador";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.comboBox1.Location = new System.Drawing.Point(242, 167);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(184, 32);
+            this.comboBox1.TabIndex = 27;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(16, 167);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 24);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Reagendar Cita";
+            // 
+            // TxtObservacion
+            // 
+            this.TxtObservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtObservacion.Location = new System.Drawing.Point(234, 4);
+            this.TxtObservacion.Multiline = true;
+            this.TxtObservacion.Name = "TxtObservacion";
+            this.TxtObservacion.Size = new System.Drawing.Size(184, 74);
+            this.TxtObservacion.TabIndex = 29;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 24);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Motivo Reagendar";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.TxtObservacion);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(8, 205);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(426, 87);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Reagendar";
+            this.groupBox1.Visible = false;
+            // 
             // ConfirmarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 257);
+            this.ClientSize = new System.Drawing.Size(438, 344);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtCuidador);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnSalir);
@@ -160,6 +224,8 @@ namespace MapaniApp
             this.Name = "ConfirmarCita";
             this.Text = "ConfirmarCIta";
             this.Load += new System.EventHandler(this.ConfirmarCita_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +243,10 @@ namespace MapaniApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtCuidador;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtObservacion;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

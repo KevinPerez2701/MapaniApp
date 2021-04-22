@@ -77,10 +77,6 @@ namespace MapaniApp
             this.TxtMUAC = new System.Windows.Forms.TextBox();
             this.labelCC = new System.Windows.Forms.Label();
             this.labelMUAC = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.TxtPesoIrc = new System.Windows.Forms.TextBox();
-            this.TxtTallaIrc = new System.Windows.Forms.TextBox();
             this.TxtAntecedentes = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -89,10 +85,12 @@ namespace MapaniApp
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBase.SuspendLayout();
             this.groupMayor5.SuspendLayout();
             this.groupMenor5.SuspendLayout();
             this.GroupIRC.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtID
@@ -505,7 +503,7 @@ namespace MapaniApp
             this.groupMenor5.Controls.Add(this.TxtPZTallaEdad);
             this.groupMenor5.Location = new System.Drawing.Point(12, 366);
             this.groupMenor5.Name = "groupMenor5";
-            this.groupMenor5.Size = new System.Drawing.Size(465, 188);
+            this.groupMenor5.Size = new System.Drawing.Size(452, 188);
             this.groupMenor5.TabIndex = 92;
             this.groupMenor5.TabStop = false;
             this.groupMenor5.Text = "GroupMenor5";
@@ -559,13 +557,9 @@ namespace MapaniApp
             this.GroupIRC.Controls.Add(this.TxtMUAC);
             this.GroupIRC.Controls.Add(this.labelCC);
             this.GroupIRC.Controls.Add(this.labelMUAC);
-            this.GroupIRC.Controls.Add(this.label3);
-            this.GroupIRC.Controls.Add(this.label10);
-            this.GroupIRC.Controls.Add(this.TxtPesoIrc);
-            this.GroupIRC.Controls.Add(this.TxtTallaIrc);
             this.GroupIRC.Location = new System.Drawing.Point(12, 282);
             this.GroupIRC.Name = "GroupIRC";
-            this.GroupIRC.Size = new System.Drawing.Size(477, 99);
+            this.GroupIRC.Size = new System.Drawing.Size(452, 95);
             this.GroupIRC.TabIndex = 98;
             this.GroupIRC.TabStop = false;
             this.GroupIRC.Text = "Group IRC";
@@ -612,46 +606,6 @@ namespace MapaniApp
             this.labelMUAC.Tag = "Contact";
             this.labelMUAC.Text = "MUAC";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 24);
-            this.label3.TabIndex = 88;
-            this.label3.Tag = "Contact";
-            this.label3.Text = "Peso";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(11, 134);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 24);
-            this.label10.TabIndex = 89;
-            this.label10.Tag = "Contact";
-            this.label10.Text = "Talla";
-            // 
-            // TxtPesoIrc
-            // 
-            this.TxtPesoIrc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesoIrc.Location = new System.Drawing.Point(258, 97);
-            this.TxtPesoIrc.Name = "TxtPesoIrc";
-            this.TxtPesoIrc.Size = new System.Drawing.Size(173, 29);
-            this.TxtPesoIrc.TabIndex = 90;
-            this.TxtPesoIrc.Tag = "Contact";
-            // 
-            // TxtTallaIrc
-            // 
-            this.TxtTallaIrc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTallaIrc.Location = new System.Drawing.Point(257, 142);
-            this.TxtTallaIrc.Name = "TxtTallaIrc";
-            this.TxtTallaIrc.Size = new System.Drawing.Size(173, 29);
-            this.TxtTallaIrc.TabIndex = 91;
-            this.TxtTallaIrc.Tag = "Contact";
-            // 
             // TxtAntecedentes
             // 
             this.TxtAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -687,7 +641,7 @@ namespace MapaniApp
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(429, 565);
+            this.button1.Location = new System.Drawing.Point(153, 11);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 36);
             this.button1.TabIndex = 102;
@@ -719,7 +673,7 @@ namespace MapaniApp
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(288, 572);
+            this.label12.Location = new System.Drawing.Point(11, 19);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(130, 24);
             this.label12.TabIndex = 105;
@@ -728,7 +682,7 @@ namespace MapaniApp
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(608, 565);
+            this.BtnSalir.Location = new System.Drawing.Point(624, 576);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(157, 36);
             this.BtnSalir.TabIndex = 106;
@@ -736,16 +690,29 @@ namespace MapaniApp
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(302, 565);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(316, 62);
+            this.groupBox1.TabIndex = 107;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Agregar";
+            this.groupBox1.Visible = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // Enfermeria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 613);
+            this.ClientSize = new System.Drawing.Size(920, 661);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.DateTimeFecha);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.TxtAntecedentes);
             this.Controls.Add(this.label16);
@@ -784,6 +751,8 @@ namespace MapaniApp
             this.groupMenor5.PerformLayout();
             this.GroupIRC.ResumeLayout(false);
             this.GroupIRC.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -838,10 +807,6 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtMUAC;
         private System.Windows.Forms.Label labelCC;
         private System.Windows.Forms.Label labelMUAC;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox TxtPesoIrc;
-        private System.Windows.Forms.TextBox TxtTallaIrc;
         private System.Windows.Forms.TextBox TxtAntecedentes;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -850,5 +815,6 @@ namespace MapaniApp
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

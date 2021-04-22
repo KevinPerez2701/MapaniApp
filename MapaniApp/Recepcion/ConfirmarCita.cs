@@ -35,7 +35,8 @@ namespace MapaniApp
             Cita.IdCuidador = int.Parse(TxtCuidador.Text);
             Cita.Fecha = DateCita.Value;
             Cita.Departamento = comboDepartamento.Text;
-
+            Cita.Motivo = TxtObservacion.Text;
+            Cita.Reagendo = comboBox1.Text;
             _LogicLayer.ConfirmCita(Cita);
             _LogicLayer.DeleteCita(Cita);
             
@@ -55,6 +56,19 @@ namespace MapaniApp
         private void ConfirmarCita_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Si")
+                groupBox1.Visible = true;
+            else
+                groupBox1.Visible = false;
         }
     }
 }

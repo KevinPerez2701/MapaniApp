@@ -13,8 +13,8 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-         private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-      // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+        // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -210,18 +210,21 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into Visitas ([NMB], [Cuidador], [Fecha], [Departamento])  
-                                    Values(@IdNMB,@IdCuidador,@Fecha,@Departamento)";
+                                    Insert into Visitas ([NMB], [Cuidador], [Fecha], [Departamento],Motivo,Reagendada)  
+                                    Values(@IdNMB,@IdCuidador,@Fecha,@Departamento,@Motivo,@Reagendada)";
                 SqlParameter IdNMB = new SqlParameter("@IdNMB", Cita.IdNMB);
                 SqlParameter IdCuidador = new SqlParameter("@IdCuidador", Cita.IdCuidador);
                 SqlParameter Fecha = new SqlParameter("@Fecha", Cita.Fecha);
                 SqlParameter Departamento = new SqlParameter("@Departamento", Cita.Departamento);
-
+                SqlParameter Motivo = new SqlParameter("@Motivo", Cita.Motivo);
+                SqlParameter Reagendada = new SqlParameter("@Reagendada", Cita.Reagendo);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(IdNMB);
                 command.Parameters.Add(IdCuidador);
                 command.Parameters.Add(Fecha);
                 command.Parameters.Add(Departamento);
+                command.Parameters.Add(Motivo);
+                command.Parameters.Add(Reagendada);
                 command.ExecuteNonQuery();
 
             }
