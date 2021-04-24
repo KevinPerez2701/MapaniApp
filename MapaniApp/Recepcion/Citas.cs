@@ -16,13 +16,28 @@ namespace MapaniApp
         public Citas()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             List<ProximasVisitas> Citas = _LogicLayer.GetCitas(dateTimePicker1.Value.Date);
             dataGridView1.DataSource = Citas;
+            dataGridView1.Visible = true;
 
+
+        }
+
+        private void Citas_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<HistorialVisitas> Historial = _LogicLayer.GetHistorialCitas(dateTimePicker1.Value.Date);
+            dataGridView2.DataSource = Historial;
         }
     }
 }

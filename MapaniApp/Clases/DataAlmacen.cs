@@ -13,6 +13,10 @@ namespace MapaniApp
         public string Programa { get; set; }
         public string Lote { get; set; }
         public DateTime FechaVencimiento { get; set; }
+        public DateTime Fecha { get; set; }
         public int Cantidad { get; set; }
+        public string Descripcion { get; set; }
+        public string Pediatra { get; set; }
+        public string IdNMB { get; set; }
     }
 }

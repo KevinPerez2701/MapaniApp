@@ -13,7 +13,7 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-        // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+      //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
       private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
@@ -200,6 +200,41 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InsertOrden(DataAlmacen Orden)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into Ordenes ([IdNMB], [IdProducto], [Nombre],Programa,Fecha,Pediatra,Cantidad)  
+                                    Values(@IdNMB,@IdProducto,@Nombre,@Programa,@Fecha,@Pediatra,@Cantidad)";
+                SqlParameter IdNMB = new SqlParameter("@IdNMB", int.Parse(Orden.IdNMB));
+                SqlParameter IdProducto = new SqlParameter("@IdProducto", Orden.IdProducto);
+                SqlParameter Nombre = new SqlParameter("@Nombre", Orden.Nombre);
+                SqlParameter Programa = new SqlParameter("@Programa", Orden.Programa);
+                SqlParameter Pediatra = new SqlParameter("@Pediatra", Orden.Pediatra);
+                SqlParameter Fecha = new SqlParameter("@Fecha", Orden.Fecha);
+                SqlParameter Cantidad = new SqlParameter("@Cantidad", Orden.Cantidad);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(IdNMB);
+                command.Parameters.Add(IdProducto);
+                command.Parameters.Add(Nombre);
+                command.Parameters.Add(Programa);
+                command.Parameters.Add(Pediatra);
+                command.Parameters.Add(Fecha);
+                command.Parameters.Add(Cantidad);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         /// <summary>
         /// Inserta en el Historial de visitas la Cita una vez que fue confirmada, incluyendo el Id de cuidador que lo trajo
         /// </summary>
@@ -374,6 +409,42 @@ namespace MapaniApp
                 command.Parameters.Add(Observacion);
                 command.Parameters.Add(Patologia);
                 command.Parameters.Add(Antecedente);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+        public void InserProduct(DataAlmacen contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into TablaAlmacen ([IdProducto], [Nombre], [Lote], [FechaVencimiento],[Cantidad],[Descripcion],Programa)  
+                                    Values(@IdProducto,@Nombre,@Lote,@FechaVencimiento,@Cantidad,@Descripcion,@Programa)";
+                SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
+                SqlParameter Id = new SqlParameter("@IdProducto", contact.IdProducto);
+                SqlParameter Lote = new SqlParameter("@Lote", contact.Lote);
+                SqlParameter FechaVencimiento = new SqlParameter("@FechaVencimiento", contact.FechaVencimiento);
+                SqlParameter Descripcion = new SqlParameter("@Descripcion", contact.Descripcion);
+                SqlParameter Cantidad = new SqlParameter("@Cantidad", contact.Cantidad);
+                SqlParameter Programa = new SqlParameter("@Programa", contact.Programa);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(Nombre);
+                command.Parameters.Add(Lote);
+                command.Parameters.Add(FechaVencimiento);
+                command.Parameters.Add(Descripcion);
+                command.Parameters.Add(Cantidad);
+                command.Parameters.Add(Programa);
+                command.Parameters.Add(Id);
                 command.ExecuteNonQuery();
 
             }
@@ -687,6 +758,78 @@ namespace MapaniApp
             }
             return contacts;
         }
+        public List<DataAlmacen> GetProductos()
+        {
+            List<DataAlmacen> contacts = new List<DataAlmacen>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From TablaAlmacen";
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    contacts.Add(new DataAlmacen
+                    {
+                        IdProducto = int.Parse(reader["IdProducto"].ToString()),
+                        Nombre = reader["Nombre"].ToString(),
+                        Programa = reader["Programa"].ToString(),
+                        Lote = reader["Lote"].ToString(),
+                        Cantidad = int.Parse(reader["Cantidad"].ToString()),
+                        FechaVencimiento = (DateTime)reader["FechaVencimiento"],
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return contacts;
+        }
+        public List<DataAlmacen> GetOrdenes()
+        {
+            List<DataAlmacen> contacts = new List<DataAlmacen>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From Ordenes";
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    contacts.Add(new DataAlmacen
+                    {   IdNMB = reader["IdNMB"].ToString(),
+                        IdProducto = int.Parse(reader["IdProducto"].ToString()),
+                        Nombre = reader["Nombre"].ToString(),
+                        Programa = reader["Programa"].ToString(),
+                        Pediatra = reader["Pediatra"].ToString(),
+                        Cantidad = int.Parse(reader["Cantidad"].ToString()),
+                        Fecha= (DateTime)reader["Fecha"],
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return contacts;
+        }
         /// <summary>
         /// Idem pero Obtiene la relacion de las MMB con los NMB
         /// </summary>
@@ -757,6 +900,46 @@ namespace MapaniApp
                         Departamento = reader["Departamento"].ToString(),
                         Reagendo = reader ["Reagendada"].ToString(),
                         Motivo = reader ["Motivo"].ToString(),
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Historial;
+        }
+
+        public List<HistorialVisitas> GetHistorialCitas(DateTime Search )
+        {
+            List<HistorialVisitas> Historial = new List<HistorialVisitas>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From Visitas
+                                Where Fecha=@Search
+                               ";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Search", Search));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Historial.Add(new HistorialVisitas
+                    {
+                        IdNMB = int.Parse(reader["NMB"].ToString()),
+                        IdCuidador = int.Parse(reader["Cuidador"].ToString()),
+                        Fecha = (DateTime)reader["Fecha"],
+                        Departamento = reader["Departamento"].ToString(),
+                        Reagendo = reader["Reagendada"].ToString(),
+                        Motivo = reader["Motivo"].ToString(),
                     });
                 }
             }

@@ -30,10 +30,12 @@ namespace MapaniApp
         }
         private void SaveDate()
         {
-            ProximasVisitas Cita = new ProximasVisitas();
-            Cita.IdNMB = int.Parse(TxtId.Text);
-            Cita.Fecha =DateCita.Value;
-            Cita.Departamento = comboDepartamento.Text;
+            ProximasVisitas Cita = new ProximasVisitas
+            {
+                IdNMB = int.Parse(TxtId.Text),
+                Fecha = DateCita.Value,
+                Departamento = comboDepartamento.Text
+            };
             _LogicLayer.SaveCita(Cita);
         }
         public void LoadData(string ID)

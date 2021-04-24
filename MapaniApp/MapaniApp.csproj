@@ -65,8 +65,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Almacen\AddOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen\AddOrden.Designer.cs">
+      <DependentUpon>AddOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Almacen\AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen\AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\ClaseEnfermeria.cs" />
     <Compile Include="Clases\DataAlmacen.cs" />
+    <Compile Include="Almacen\EntregaOrdenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen\EntregaOrdenes.Designer.cs">
+      <DependentUpon>EntregaOrdenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Recepcion\AgregarCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,8 +185,32 @@
     <Compile Include="Psicologia\Psicologia.Designer.cs">
       <DependentUpon>Psicologia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Almacen\VerProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen\VerProductos.Designer.cs">
+      <DependentUpon>VerProductos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Almacen\AddOrden.resx">
+      <DependentUpon>AddOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\Almacen.resx">
+      <DependentUpon>Almacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\EntregaOrdenes.resx">
+      <DependentUpon>EntregaOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\VerProductos.resx">
+      <DependentUpon>VerProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Enfermeria\Enfermeria.resx">
       <DependentUpon>Enfermeria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pediatria\Pediatria.resx">
+      <DependentUpon>Pediatria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recepcion\AgregarCita.resx">
       <DependentUpon>AgregarCita.cs</DependentUpon>
@@ -210,6 +252,7 @@
     <None Include="Properties\DataSources\ContactCuidador.datasource" />
     <None Include="Properties\DataSources\ContactMMB.datasource" />
     <None Include="Properties\DataSources\ContactNMB.datasource" />
+    <None Include="Properties\DataSources\DataAlmacen.datasource" />
     <None Include="Properties\DataSources\HistorialVisitas.datasource" />
     <None Include="Properties\DataSources\ProximasVisitas.datasource" />
     <None Include="Properties\Settings.settings">

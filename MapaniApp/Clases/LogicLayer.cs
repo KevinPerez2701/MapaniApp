@@ -56,6 +56,19 @@ namespace MapaniApp
            // }
             return Contact;
         }
+        public DataAlmacen SaveProduct(DataAlmacen Product)
+        {
+            //int flag = Product.IdProducto;
+            //if (flag == 0)
+            //{
+                _dataAccessLayer.InserProduct(Product);
+            //}
+            //else
+            // {
+            //     _dataAccessLayer.UpdateContact(Contact);
+            // }
+            return Product;
+        }
         public ClaseEnfermeria SaveContactEnfermeria(ClaseEnfermeria Contact)
         {
             //int flag = Contact.Id;
@@ -73,6 +86,11 @@ namespace MapaniApp
         {
                 _dataAccessLayer.InserCita(Cita);
             return Cita;
+        }
+        public DataAlmacen SaveOrder(DataAlmacen Orden)
+        {
+            _dataAccessLayer.InsertOrden(Orden);
+            return Orden;
         }
         public HistorialVisitas ConfirmCita(HistorialVisitas Cita)
         {
@@ -110,6 +128,14 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetNMB(SearchText);
         }
+        public List<DataAlmacen> GetProductos()
+        {
+            return _dataAccessLayer.GetProductos();
+        }
+        public List<DataAlmacen> GetOrdenes()
+        {
+            return _dataAccessLayer.GetOrdenes();
+        }
         public List<ContactMMB> GetMMB(string SearchText = null)
         {
             return _dataAccessLayer.GetMMB(SearchText);
@@ -117,6 +143,10 @@ namespace MapaniApp
         public List<HistorialVisitas> GetHistorial(string SearchText = null)
         {
             return _dataAccessLayer.GetHistorial(SearchText);
+        }
+        public List<HistorialVisitas> GetHistorialCitas(DateTime SearchText)
+        {
+            return _dataAccessLayer.GetHistorialCitas(SearchText);
         }
         public List<ProximasVisitas> GetProximas(string SearchText = null)
         {
