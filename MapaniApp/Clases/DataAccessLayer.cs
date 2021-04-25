@@ -235,6 +235,33 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InsertDespacho(DataAlmacen Orden)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"   UPDATE Ordenes SET Despachado = 'Si' 
+                                    Where (Ordenes.IdNMB = @IdNMB and Ordenes.IdProducto = @IdProducto and Fecha = @Fecha)
+                                    ";
+                SqlParameter IdNMB = new SqlParameter("@IdNMB", int.Parse(Orden.IdNMB));
+                SqlParameter IdProducto = new SqlParameter("@IdProducto", Orden.IdProducto);                        
+                SqlParameter Fecha = new SqlParameter("@Fecha", Orden.Fecha);            
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(IdNMB);
+                command.Parameters.Add(IdProducto);              
+                command.Parameters.Add(Fecha);             
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         /// <summary>
         /// Inserta en el Historial de visitas la Cita una vez que fue confirmada, incluyendo el Id de cuidador que lo trajo
         /// </summary>
@@ -816,6 +843,7 @@ namespace MapaniApp
                         Pediatra = reader["Pediatra"].ToString(),
                         Cantidad = int.Parse(reader["Cantidad"].ToString()),
                         Fecha= (DateTime)reader["Fecha"],
+                        Despachado = reader["Despachado"].ToString(),
                     });
                 }
             }

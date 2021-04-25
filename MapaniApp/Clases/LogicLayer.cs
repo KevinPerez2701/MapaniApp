@@ -92,6 +92,11 @@ namespace MapaniApp
             _dataAccessLayer.InsertOrden(Orden);
             return Orden;
         }
+        public DataAlmacen Despacho(DataAlmacen Orden)
+        {
+            _dataAccessLayer.InsertDespacho(Orden);
+            return Orden;
+        }
         public HistorialVisitas ConfirmCita(HistorialVisitas Cita)
         {
             _dataAccessLayer.ConfirmCita(Cita);
@@ -133,7 +138,7 @@ namespace MapaniApp
             return _dataAccessLayer.GetProductos();
         }
         public List<DataAlmacen> GetOrdenes()
-        {
+        {   
             return _dataAccessLayer.GetOrdenes();
         }
         public List<ContactMMB> GetMMB(string SearchText = null)

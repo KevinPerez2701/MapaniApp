@@ -30,6 +30,11 @@ namespace MapaniApp
         public void PopulateContacts()
         {
                 List<DataAlmacen> contacts = _LogicLayer.GetOrdenes();
+                foreach (DataAlmacen contact in contacts.ToArray())
+                 {
+                    if (contact.Despachado == "Si")
+                        contacts.Remove(contact);
+                 }
                 dataGridView1.DataSource = contacts;           
         }
 
@@ -38,10 +43,18 @@ namespace MapaniApp
             DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
             if (cell.Value.ToString() == "Despachar") // Si se selecciona el hipervinculo "confirmar"
             {
+                _LogicLayer.Despacho(new DataAlmacen
+                {
+                    IdNMB = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(),
+                    IdProducto = int.Parse((dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString())),
+                    Fecha = (DateTime)dataGridView1.Rows[e.RowIndex].Cells[4].Value,                    
+                });
                 PopulateContacts();
             }
 
          }
+        
+        
     }
 
 }

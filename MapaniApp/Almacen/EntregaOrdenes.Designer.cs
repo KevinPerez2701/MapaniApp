@@ -31,8 +31,8 @@ namespace MapaniApp
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataAlmacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.dataAlmacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,13 +61,9 @@ namespace MapaniApp
             this.dataGridView1.DataSource = this.dataAlmacenBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(9, 8);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(691, 209);
+            this.dataGridView1.Size = new System.Drawing.Size(732, 209);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // dataAlmacenBindingSource
-            // 
-            this.dataAlmacenBindingSource.DataSource = typeof(MapaniApp.DataAlmacen);
             // 
             // BtnSalir
             // 
@@ -79,6 +75,10 @@ namespace MapaniApp
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // dataAlmacenBindingSource
+            // 
+            this.dataAlmacenBindingSource.DataSource = typeof(MapaniApp.DataAlmacen);
             // 
             // idNMBDataGridViewTextBoxColumn
             // 
@@ -131,7 +131,6 @@ namespace MapaniApp
             this.Orden.Name = "Orden";
             this.Orden.Text = "Despachar";
             this.Orden.UseColumnTextForLinkValue = true;
-            this.Orden.Width = 50;
             // 
             // EntregaOrdenes
             // 
