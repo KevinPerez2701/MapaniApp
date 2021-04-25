@@ -180,6 +180,19 @@ namespace MapaniApp
             }    
         }
 
-       
+        private void dataGridHistorial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridHistorial.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            if (cell.Value.ToString() == "Ver") // Si se selecciona el hipervinculo "confirmar"
+            {
+                EntregaOrdenes VerOrdenes = new EntregaOrdenes();
+                VerOrdenes.GetHistorial(new DataAlmacen
+                {
+                    IdNMB = TxtID.Text,
+                    Fecha = (DateTime)dataGridHistorial.Rows[e.RowIndex].Cells[1].Value,
+                });
+                VerOrdenes.ShowDialog(this);
+            }
+        }
     }
 }

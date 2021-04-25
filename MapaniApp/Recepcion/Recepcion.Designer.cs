@@ -56,6 +56,7 @@ namespace MapaniApp
             this.BtnAgregarCita = new System.Windows.Forms.Button();
             this.Reagendo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Productos = new System.Windows.Forms.DataGridViewLinkColumn();
             this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proximasVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -262,13 +263,14 @@ namespace MapaniApp
             this.fechaDataGridViewTextBoxColumn,
             this.departamentoDataGridViewTextBoxColumn,
             this.Reagendo,
-            this.Motivo});
+            this.Motivo,
+            this.Productos});
             this.dataGridHistorial.DataSource = this.historialVisitasBindingSource2;
-            this.dataGridHistorial.Location = new System.Drawing.Point(187, 477);
+            this.dataGridHistorial.Location = new System.Drawing.Point(82, 477);
             this.dataGridHistorial.Name = "dataGridHistorial";
-            this.dataGridHistorial.Size = new System.Drawing.Size(548, 124);
+            this.dataGridHistorial.Size = new System.Drawing.Size(662, 124);
             this.dataGridHistorial.TabIndex = 48;
-           
+            this.dataGridHistorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridHistorial_CellContentClick);
             // 
             // BtnCitas
             // 
@@ -342,6 +344,13 @@ namespace MapaniApp
             this.Motivo.DataPropertyName = "Motivo";
             this.Motivo.HeaderText = "Motivo";
             this.Motivo.Name = "Motivo";
+            // 
+            // Productos
+            // 
+            this.Productos.HeaderText = "Productos";
+            this.Productos.Name = "Productos";
+            this.Productos.Text = "Ver";
+            this.Productos.UseColumnTextForLinkValue = true;
             // 
             // fechaDataGridViewTextBoxColumn1
             // 
@@ -501,5 +510,6 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn departamentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Reagendo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Motivo;
+        private System.Windows.Forms.DataGridViewLinkColumn Productos;
     }
 }

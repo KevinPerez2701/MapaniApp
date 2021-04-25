@@ -25,7 +25,7 @@ namespace MapaniApp
 
         private void EntregaOrdenes_Load(object sender, EventArgs e)
         {
-            PopulateContacts();
+            
         }
         public void PopulateContacts()
         {
@@ -37,6 +37,18 @@ namespace MapaniApp
                  }
                 dataGridView1.DataSource = contacts;           
         }
+        public void GetHistorial(DataAlmacen Orden)
+        {
+            List<DataAlmacen> contacts = _LogicLayer.GetHistorialOrdenes(Orden);       
+            foreach (DataAlmacen contact in contacts.ToArray())
+            {
+                if (contact.Despachado == "No")
+                    contacts.Remove(contact);
+            }
+           
+            dataGridView1.DataSource = contacts;
+            dataGridView1.Columns[7].Visible = false;
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -47,8 +59,10 @@ namespace MapaniApp
                 {
                     IdNMB = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(),
                     IdProducto = int.Parse((dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString())),
-                    Fecha = (DateTime)dataGridView1.Rows[e.RowIndex].Cells[4].Value,                    
+                    Fecha = (DateTime)dataGridView1.Rows[e.RowIndex].Cells[4].Value,
+                    Cantidad = int.Parse((dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString())),
                 });
+
                 PopulateContacts();
             }
 

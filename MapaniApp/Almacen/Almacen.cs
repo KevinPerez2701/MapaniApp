@@ -34,6 +34,7 @@ namespace MapaniApp
         private void button2_Click(object sender, EventArgs e)
         {
             EntregaOrdenes Ordenes = new EntregaOrdenes();
+            Ordenes.PopulateContacts();
             Ordenes.ShowDialog(this);
         }
     }

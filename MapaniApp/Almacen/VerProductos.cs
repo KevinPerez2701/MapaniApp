@@ -31,6 +31,7 @@ namespace MapaniApp
         {
             List<DataAlmacen> contacts = _LogicLayer.GetProductos();
             dataGridView1.DataSource = contacts;
+            dataGridView1.Columns[6].Visible = false;
         }
         public void GetIdNMB(string Id)
         {
