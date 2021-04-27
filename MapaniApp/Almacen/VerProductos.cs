@@ -36,7 +36,9 @@ namespace MapaniApp
         public void GetIdNMB(string Id)
         {
             TxtId.Text = Id;
+        
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

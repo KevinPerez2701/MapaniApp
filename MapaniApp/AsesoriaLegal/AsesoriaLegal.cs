@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnthStat.Statistics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,22 @@ namespace MapaniApp
         public AsesoriaLegal()
         {
             InitializeComponent();
+        }
+
+        private void AsesoriaLegal_Load(object sender, EventArgs e)
+        {
+            var who2006 = new AnthStat.Statistics.WHO2006();
+
+            double ageDays = 73.00;
+            double bmi = 8.50;
+            double z = 0.0;
+
+            if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: bmi, measurement2: ageDays, sex: Sex.Female, z: ref z))
+            {
+                double p = StatisticsHelper.CalculatePercentile(z);
+                Console.WriteLine($"{ageDays} month old male, BMI = {bmi}, z-score = {z},");
+            }
+
         }
     }
 }
