@@ -20,7 +20,7 @@ namespace MapaniApp
         private void button1_Click(object sender, EventArgs e)
         {
             VerProductos Productos = new VerProductos();
-            Productos.GetProductos();
+            Productos.GetProductos("1");
             Productos.ShowDialog(this);
 
         }

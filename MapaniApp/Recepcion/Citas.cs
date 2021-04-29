@@ -34,10 +34,6 @@ namespace MapaniApp
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            List<HistorialVisitas> Historial = _LogicLayer.GetHistorialCitas(dateTimePicker1.Value.Date);
-            dataGridView2.DataSource = Historial;
-        }
+       
     }
 }

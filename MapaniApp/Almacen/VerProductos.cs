@@ -27,10 +27,11 @@ namespace MapaniApp
         {
 
         }
-        public void GetProductos()
+        public void GetProductos(string flag=null)
         {
             List<DataAlmacen> contacts = _LogicLayer.GetProductos();
             dataGridView1.DataSource = contacts;
+            if (flag=="1")
             dataGridView1.Columns[6].Visible = false;
         }
         public void GetIdNMB(string Id)
