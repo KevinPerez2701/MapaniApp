@@ -177,6 +177,8 @@ namespace MapaniApp
                     Fecha =(DateTime)dataGridProximasVisitas.Rows[e.RowIndex].Cells[1].Value
                 }); // Carga de datos de los cuadros de texto
                 Confirm.ShowDialog(this);
+                PopulateContacts(TxtID.Text); //Refresca las relaciones de cuidadores del NMB
+                PopulateContactsVisita(TxtID.Text);
             }    
         }
 

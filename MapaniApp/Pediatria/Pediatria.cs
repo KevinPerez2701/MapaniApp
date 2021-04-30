@@ -39,7 +39,7 @@ namespace MapaniApp
                 TxtApellido.Text = contact.Apellido;
                 dateTimePicker1.Value = contact.FechaNacimiento.Date;
                 TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento);
-
+                TxtEdadMeses.Text = Metodos.GetEdadMeses(contact.FechaNacimiento);
 
             }
         }
@@ -72,6 +72,9 @@ namespace MapaniApp
             double ageDays = double.Parse(TxtEdad.Text);
             double Weight = double.Parse(TxtPeso.Text);
             double Lenght = double.Parse(TxtTalla.Text);
+            double CC  = double.Parse(TxtCC.Text);
+            double CMB = double.Parse(TxtCMB.Text);
+            double Muac = double.Parse(TxtTricep.Text);
             double LenghtMeters = Lenght / 100;
             double imc = Weight / (LenghtMeters * LenghtMeters);
             double z = 0.0;
@@ -81,29 +84,60 @@ namespace MapaniApp
          
             if (who2006.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement1: imc, measurement2: ageDays, sex: Sex.Male, z: ref z))
             {
+                TxtZIMC.Text = Math.Round(z, 2).ToString();
                 double p = StatisticsHelper.CalculatePercentile(z);
                 TxtImc.Text = Math.Round(p,1).ToString();
               
             }
             if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: Lenght, sex: Sex.Male, z: ref x))
             {
+                TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
                 double p = StatisticsHelper.CalculatePercentile(x);
                 TxtPesoTalla.Text = Math.Round(p,1).ToString();
                 
             }
             if (who2006.TryCalculateZScore(indicator: Indicator.WeightForAge, measurement1: Weight, measurement2: ageDays, sex: Sex.Male, z: ref y))
             {
+                TxtZPesoEdad.Text = Math.Round(y, 2).ToString();
                 double p = StatisticsHelper.CalculatePercentile(y);
                 TxtPesoEdad.Text = Math.Round(p,1).ToString();
                 
             }
             if (who2006.TryCalculateZScore(indicator: Indicator.LengthForAge, measurement1: Lenght, measurement2: ageDays, sex: Sex.Male, z: ref w))
             {
+                TxtZTallaEdad.Text = Math.Round(w, 2).ToString();
                 double p = StatisticsHelper.CalculatePercentile(w);
                 TxtTallaEdad.Text = Math.Round(p,1).ToString();
             }
+            if (who2006.TryCalculateZScore(indicator: Indicator.HeadCircumferenceForAge, measurement1: CC, measurement2: ageDays, sex: Sex.Male, z: ref w))
+            {
+                TxtZCC.Text = Math.Round(w, 2).ToString();
+                double p = StatisticsHelper.CalculatePercentile(w);
+                TxtCCP.Text = Math.Round(p, 1).ToString();
+            }
+            if (who2006.TryCalculateZScore(indicator: Indicator.ArmCircumferenceForAge, measurement1: CMB, measurement2: ageDays, sex: Sex.Male, z: ref w))
+            {
+                TxtZMuac.Text = Math.Round(w, 2).ToString();
+                double p = StatisticsHelper.CalculatePercentile(w);
+                TxtMuacP.Text = Math.Round(p, 1).ToString();
+            }
+            if (who2006.TryCalculateZScore(indicator: Indicator.TricepsSkinfoldForAge, measurement1: double.Parse(TxtTricep.Text), measurement2: ageDays, sex: Sex.Male, z: ref w))
+            {
+                TxtTSFZ.Text = Math.Round(w, 2).ToString();
+                double p = StatisticsHelper.CalculatePercentile(w);
+                TxtTSFP.Text = Math.Round(p, 1).ToString();
+            }
+            if (who2006.TryCalculateZScore(indicator: Indicator.SubscapularSkinfoldForAge, measurement1: double.Parse(TxtSSF.Text), measurement2: ageDays, sex: Sex.Male, z: ref w))
+            {
+                TxtSSFZ.Text = Math.Round(w, 2).ToString();
+                double p = StatisticsHelper.CalculatePercentile(w);
+                TxtSSFP.Text = Math.Round(p, 1).ToString();
+            }
+
 
 
         }
+
+        
     }
 }

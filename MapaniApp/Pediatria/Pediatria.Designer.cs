@@ -45,21 +45,45 @@ namespace MapaniApp
             this.BtnAddOrder = new System.Windows.Forms.Button();
             this.groupBase = new System.Windows.Forms.GroupBox();
             this.labelPeso = new System.Windows.Forms.Label();
-            this.ComboEdema = new System.Windows.Forms.ComboBox();
-            this.labelEdema = new System.Windows.Forms.Label();
             this.labelTalla = new System.Windows.Forms.Label();
             this.TxtTalla = new System.Windows.Forms.TextBox();
             this.TxtPeso = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.TxtPesoTalla = new System.Windows.Forms.TextBox();
-            this.TxtPesoEdad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.TxtImc = new System.Windows.Forms.TextBox();
             this.TxtTallaEdad = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TxtPesoTalla = new System.Windows.Forms.TextBox();
+            this.TxtPesoEdad = new System.Windows.Forms.TextBox();
             this.BtnCalcular = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TxtCC = new System.Windows.Forms.TextBox();
+            this.TxtTricep = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TxtCMB = new System.Windows.Forms.TextBox();
+            this.TxtZIMC = new System.Windows.Forms.TextBox();
+            this.TxtZTallaEdad = new System.Windows.Forms.TextBox();
+            this.TxtZPesoTalla = new System.Windows.Forms.TextBox();
+            this.TxtZPesoEdad = new System.Windows.Forms.TextBox();
+            this.TxtSSFZ = new System.Windows.Forms.TextBox();
+            this.TxtTSFZ = new System.Windows.Forms.TextBox();
+            this.TxtZCC = new System.Windows.Forms.TextBox();
+            this.TxtZMuac = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.TxtSSFP = new System.Windows.Forms.TextBox();
+            this.TxtTSFP = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.TxtCCP = new System.Windows.Forms.TextBox();
+            this.TxtMuacP = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.TxtSSF = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.TxtEdadMeses = new System.Windows.Forms.TextBox();
             this.groupBase.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,9 +113,9 @@ namespace MapaniApp
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(478, 117);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 24);
+            this.label13.Size = new System.Drawing.Size(96, 24);
             this.label13.TabIndex = 89;
-            this.label13.Text = "Edad";
+            this.label13.Text = "Edad Dias";
             // 
             // comboPrograma
             // 
@@ -204,15 +228,21 @@ namespace MapaniApp
             // 
             // groupBase
             // 
+            this.groupBase.Controls.Add(this.label18);
+            this.groupBase.Controls.Add(this.TxtSSF);
+            this.groupBase.Controls.Add(this.label11);
+            this.groupBase.Controls.Add(this.TxtCMB);
+            this.groupBase.Controls.Add(this.label10);
+            this.groupBase.Controls.Add(this.label12);
+            this.groupBase.Controls.Add(this.TxtCC);
+            this.groupBase.Controls.Add(this.TxtTricep);
             this.groupBase.Controls.Add(this.labelPeso);
-            this.groupBase.Controls.Add(this.ComboEdema);
-            this.groupBase.Controls.Add(this.labelEdema);
             this.groupBase.Controls.Add(this.labelTalla);
             this.groupBase.Controls.Add(this.TxtTalla);
             this.groupBase.Controls.Add(this.TxtPeso);
             this.groupBase.Location = new System.Drawing.Point(16, 152);
             this.groupBase.Name = "groupBase";
-            this.groupBase.Size = new System.Drawing.Size(452, 134);
+            this.groupBase.Size = new System.Drawing.Size(341, 134);
             this.groupBase.TabIndex = 93;
             this.groupBase.TabStop = false;
             this.groupBase.Text = "GroupBase";
@@ -228,30 +258,6 @@ namespace MapaniApp
             this.labelPeso.Tag = "Contact";
             this.labelPeso.Text = "Peso";
             // 
-            // ComboEdema
-            // 
-            this.ComboEdema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboEdema.FormattingEnabled = true;
-            this.ComboEdema.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino"});
-            this.ComboEdema.Location = new System.Drawing.Point(268, 96);
-            this.ComboEdema.Name = "ComboEdema";
-            this.ComboEdema.Size = new System.Drawing.Size(173, 32);
-            this.ComboEdema.TabIndex = 87;
-            this.ComboEdema.Tag = "Contact";
-            // 
-            // labelEdema
-            // 
-            this.labelEdema.AutoSize = true;
-            this.labelEdema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEdema.Location = new System.Drawing.Point(16, 96);
-            this.labelEdema.Name = "labelEdema";
-            this.labelEdema.Size = new System.Drawing.Size(54, 24);
-            this.labelEdema.TabIndex = 77;
-            this.labelEdema.Tag = "Contact";
-            this.labelEdema.Text = "Sexo";
-            // 
             // labelTalla
             // 
             this.labelTalla.AutoSize = true;
@@ -266,23 +272,39 @@ namespace MapaniApp
             // TxtTalla
             // 
             this.TxtTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTalla.Location = new System.Drawing.Point(268, 58);
+            this.TxtTalla.Location = new System.Drawing.Point(75, 58);
             this.TxtTalla.Name = "TxtTalla";
-            this.TxtTalla.Size = new System.Drawing.Size(173, 29);
+            this.TxtTalla.Size = new System.Drawing.Size(75, 29);
             this.TxtTalla.TabIndex = 81;
             this.TxtTalla.Tag = "Contact";
             // 
             // TxtPeso
             // 
             this.TxtPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPeso.Location = new System.Drawing.Point(268, 23);
+            this.TxtPeso.Location = new System.Drawing.Point(75, 25);
             this.TxtPeso.Name = "TxtPeso";
-            this.TxtPeso.Size = new System.Drawing.Size(173, 29);
+            this.TxtPeso.Size = new System.Drawing.Size(75, 29);
             this.TxtPeso.TabIndex = 80;
             this.TxtPeso.Tag = "Contact";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TxtSSFZ);
+            this.groupBox1.Controls.Add(this.TxtTSFZ);
+            this.groupBox1.Controls.Add(this.TxtZCC);
+            this.groupBox1.Controls.Add(this.TxtZMuac);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.TxtSSFP);
+            this.groupBox1.Controls.Add(this.TxtTSFP);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.TxtCCP);
+            this.groupBox1.Controls.Add(this.TxtMuacP);
+            this.groupBox1.Controls.Add(this.TxtZIMC);
+            this.groupBox1.Controls.Add(this.TxtZTallaEdad);
+            this.groupBox1.Controls.Add(this.TxtZPesoTalla);
+            this.groupBox1.Controls.Add(this.TxtZPesoEdad);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.TxtImc);
@@ -293,10 +315,50 @@ namespace MapaniApp
             this.groupBox1.Controls.Add(this.TxtPesoEdad);
             this.groupBox1.Location = new System.Drawing.Point(16, 292);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 179);
+            this.groupBox1.Size = new System.Drawing.Size(558, 179);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "GroupBase";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 24);
+            this.label3.TabIndex = 82;
+            this.label3.Tag = "Contact";
+            this.label3.Text = "Talla-Edad";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(16, 133);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 24);
+            this.label9.TabIndex = 83;
+            this.label9.Tag = "Contact";
+            this.label9.Text = "IMC";
+            // 
+            // TxtImc
+            // 
+            this.TxtImc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtImc.Location = new System.Drawing.Point(121, 128);
+            this.TxtImc.Name = "TxtImc";
+            this.TxtImc.Size = new System.Drawing.Size(72, 29);
+            this.TxtImc.TabIndex = 85;
+            this.TxtImc.Tag = "Contact";
+            // 
+            // TxtTallaEdad
+            // 
+            this.TxtTallaEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTallaEdad.Location = new System.Drawing.Point(121, 93);
+            this.TxtTallaEdad.Name = "TxtTallaEdad";
+            this.TxtTallaEdad.Size = new System.Drawing.Size(72, 29);
+            this.TxtTallaEdad.TabIndex = 84;
+            this.TxtTallaEdad.Tag = "Contact";
             // 
             // label1
             // 
@@ -324,65 +386,25 @@ namespace MapaniApp
             // TxtPesoTalla
             // 
             this.TxtPesoTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesoTalla.Location = new System.Drawing.Point(268, 19);
+            this.TxtPesoTalla.Location = new System.Drawing.Point(121, 25);
             this.TxtPesoTalla.Name = "TxtPesoTalla";
-            this.TxtPesoTalla.Size = new System.Drawing.Size(173, 29);
+            this.TxtPesoTalla.Size = new System.Drawing.Size(72, 29);
             this.TxtPesoTalla.TabIndex = 81;
             this.TxtPesoTalla.Tag = "Contact";
             // 
             // TxtPesoEdad
             // 
             this.TxtPesoEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesoEdad.Location = new System.Drawing.Point(268, 54);
+            this.TxtPesoEdad.Location = new System.Drawing.Point(121, 60);
             this.TxtPesoEdad.Name = "TxtPesoEdad";
-            this.TxtPesoEdad.Size = new System.Drawing.Size(173, 29);
+            this.TxtPesoEdad.Size = new System.Drawing.Size(72, 29);
             this.TxtPesoEdad.TabIndex = 80;
             this.TxtPesoEdad.Tag = "Contact";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 24);
-            this.label3.TabIndex = 82;
-            this.label3.Tag = "Contact";
-            this.label3.Text = "Talla-Edad";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 133);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 24);
-            this.label9.TabIndex = 83;
-            this.label9.Tag = "Contact";
-            this.label9.Text = "IMC";
-            // 
-            // TxtImc
-            // 
-            this.TxtImc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtImc.Location = new System.Drawing.Point(268, 128);
-            this.TxtImc.Name = "TxtImc";
-            this.TxtImc.Size = new System.Drawing.Size(173, 29);
-            this.TxtImc.TabIndex = 85;
-            this.TxtImc.Tag = "Contact";
-            // 
-            // TxtTallaEdad
-            // 
-            this.TxtTallaEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTallaEdad.Location = new System.Drawing.Point(268, 93);
-            this.TxtTallaEdad.Name = "TxtTallaEdad";
-            this.TxtTallaEdad.Size = new System.Drawing.Size(173, 29);
-            this.TxtTallaEdad.TabIndex = 84;
-            this.TxtTallaEdad.Tag = "Contact";
             // 
             // BtnCalcular
             // 
             this.BtnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCalcular.Location = new System.Drawing.Point(488, 197);
+            this.BtnCalcular.Location = new System.Drawing.Point(381, 196);
             this.BtnCalcular.Name = "BtnCalcular";
             this.BtnCalcular.Size = new System.Drawing.Size(92, 41);
             this.BtnCalcular.TabIndex = 95;
@@ -390,11 +412,266 @@ namespace MapaniApp
             this.BtnCalcular.UseVisualStyleBackColor = true;
             this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(171, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 24);
+            this.label10.TabIndex = 88;
+            this.label10.Tag = "Contact";
+            this.label10.Text = "Tricep";
+            
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(171, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 24);
+            this.label12.TabIndex = 90;
+            this.label12.Tag = "Contact";
+            this.label12.Text = "CC";
+           
+            // 
+            // TxtCC
+            // 
+            this.TxtCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCC.Location = new System.Drawing.Point(242, 58);
+            this.TxtCC.Name = "TxtCC";
+            this.TxtCC.Size = new System.Drawing.Size(75, 29);
+            this.TxtCC.TabIndex = 92;
+            this.TxtCC.Tag = "Contact";
+            // 
+            // TxtTricep
+            // 
+            this.TxtTricep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTricep.Location = new System.Drawing.Point(242, 23);
+            this.TxtTricep.Name = "TxtTricep";
+            this.TxtTricep.Size = new System.Drawing.Size(75, 29);
+            this.TxtTricep.TabIndex = 91;
+            this.TxtTricep.Tag = "Contact";
+           
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(171, 94);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 24);
+            this.label11.TabIndex = 93;
+            this.label11.Tag = "Contact";
+            this.label11.Text = "CMB";
+            // 
+            // TxtCMB
+            // 
+            this.TxtCMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCMB.Location = new System.Drawing.Point(242, 91);
+            this.TxtCMB.Name = "TxtCMB";
+            this.TxtCMB.Size = new System.Drawing.Size(75, 29);
+            this.TxtCMB.TabIndex = 94;
+            this.TxtCMB.Tag = "Contact";
+            // 
+            // TxtZIMC
+            // 
+            this.TxtZIMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtZIMC.Location = new System.Drawing.Point(199, 128);
+            this.TxtZIMC.Name = "TxtZIMC";
+            this.TxtZIMC.Size = new System.Drawing.Size(72, 29);
+            this.TxtZIMC.TabIndex = 89;
+            this.TxtZIMC.Tag = "Contact";
+            // 
+            // TxtZTallaEdad
+            // 
+            this.TxtZTallaEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtZTallaEdad.Location = new System.Drawing.Point(199, 93);
+            this.TxtZTallaEdad.Name = "TxtZTallaEdad";
+            this.TxtZTallaEdad.Size = new System.Drawing.Size(72, 29);
+            this.TxtZTallaEdad.TabIndex = 88;
+            this.TxtZTallaEdad.Tag = "Contact";
+            // 
+            // TxtZPesoTalla
+            // 
+            this.TxtZPesoTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtZPesoTalla.Location = new System.Drawing.Point(199, 25);
+            this.TxtZPesoTalla.Name = "TxtZPesoTalla";
+            this.TxtZPesoTalla.Size = new System.Drawing.Size(72, 29);
+            this.TxtZPesoTalla.TabIndex = 87;
+            this.TxtZPesoTalla.Tag = "Contact";
+            // 
+            // TxtZPesoEdad
+            // 
+            this.TxtZPesoEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtZPesoEdad.Location = new System.Drawing.Point(199, 60);
+            this.TxtZPesoEdad.Name = "TxtZPesoEdad";
+            this.TxtZPesoEdad.Size = new System.Drawing.Size(72, 29);
+            this.TxtZPesoEdad.TabIndex = 86;
+            this.TxtZPesoEdad.Tag = "Contact";
+            // 
+            // TxtSSFZ
+            // 
+            this.TxtSSFZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSSFZ.Location = new System.Drawing.Point(470, 125);
+            this.TxtSSFZ.Name = "TxtSSFZ";
+            this.TxtSSFZ.Size = new System.Drawing.Size(72, 29);
+            this.TxtSSFZ.TabIndex = 101;
+            this.TxtSSFZ.Tag = "Contact";
+            // 
+            // TxtTSFZ
+            // 
+            this.TxtTSFZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTSFZ.Location = new System.Drawing.Point(470, 90);
+            this.TxtTSFZ.Name = "TxtTSFZ";
+            this.TxtTSFZ.Size = new System.Drawing.Size(72, 29);
+            this.TxtTSFZ.TabIndex = 100;
+            this.TxtTSFZ.Tag = "Contact";
+            // 
+            // TxtZCC
+            // 
+            this.TxtZCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtZCC.Location = new System.Drawing.Point(470, 22);
+            this.TxtZCC.Name = "TxtZCC";
+            this.TxtZCC.Size = new System.Drawing.Size(72, 29);
+            this.TxtZCC.TabIndex = 99;
+            this.TxtZCC.Tag = "Contact";
+            // 
+            // TxtZMuac
+            // 
+            this.TxtZMuac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtZMuac.Location = new System.Drawing.Point(469, 57);
+            this.TxtZMuac.Name = "TxtZMuac";
+            this.TxtZMuac.Size = new System.Drawing.Size(72, 29);
+            this.TxtZMuac.TabIndex = 98;
+            this.TxtZMuac.Tag = "Contact";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(278, 95);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 24);
+            this.label14.TabIndex = 94;
+            this.label14.Tag = "Contact";
+            this.label14.Text = "TSF-Edad";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(278, 130);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(97, 24);
+            this.label15.TabIndex = 95;
+            this.label15.Tag = "Contact";
+            this.label15.Text = "SSF-Edad";
+            // 
+            // TxtSSFP
+            // 
+            this.TxtSSFP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSSFP.Location = new System.Drawing.Point(392, 125);
+            this.TxtSSFP.Name = "TxtSSFP";
+            this.TxtSSFP.Size = new System.Drawing.Size(72, 29);
+            this.TxtSSFP.TabIndex = 97;
+            this.TxtSSFP.Tag = "Contact";
+            // 
+            // TxtTSFP
+            // 
+            this.TxtTSFP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTSFP.Location = new System.Drawing.Point(392, 92);
+            this.TxtTSFP.Name = "TxtTSFP";
+            this.TxtTSFP.Size = new System.Drawing.Size(72, 29);
+            this.TxtTSFP.TabIndex = 96;
+            this.TxtTSFP.Tag = "Contact";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(278, 60);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(108, 24);
+            this.label16.TabIndex = 90;
+            this.label16.Tag = "Contact";
+            this.label16.Text = "Muac-Edad";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(278, 25);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(87, 24);
+            this.label17.TabIndex = 91;
+            this.label17.Tag = "Contact";
+            this.label17.Text = "CC-Edad";
+            // 
+            // TxtCCP
+            // 
+            this.TxtCCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCCP.Location = new System.Drawing.Point(392, 22);
+            this.TxtCCP.Name = "TxtCCP";
+            this.TxtCCP.Size = new System.Drawing.Size(72, 29);
+            this.TxtCCP.TabIndex = 93;
+            this.TxtCCP.Tag = "Contact";
+            // 
+            // TxtMuacP
+            // 
+            this.TxtMuacP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMuacP.Location = new System.Drawing.Point(392, 57);
+            this.TxtMuacP.Name = "TxtMuacP";
+            this.TxtMuacP.Size = new System.Drawing.Size(72, 29);
+            this.TxtMuacP.TabIndex = 92;
+            this.TxtMuacP.Tag = "Contact";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(16, 98);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(46, 24);
+            this.label18.TabIndex = 95;
+            this.label18.Tag = "Contact";
+            this.label18.Text = "SSF";
+            // 
+            // TxtSSF
+            // 
+            this.TxtSSF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSSF.Location = new System.Drawing.Point(75, 93);
+            this.TxtSSF.Name = "TxtSSF";
+            this.TxtSSF.Size = new System.Drawing.Size(75, 29);
+            this.TxtSSF.TabIndex = 96;
+            this.TxtSSF.Tag = "Contact";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(478, 152);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(116, 24);
+            this.label19.TabIndex = 96;
+            this.label19.Text = "Edad Meses";
+            // 
+            // TxtEdadMeses
+            // 
+            this.TxtEdadMeses.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtEdadMeses.Location = new System.Drawing.Point(601, 147);
+            this.TxtEdadMeses.Name = "TxtEdadMeses";
+            this.TxtEdadMeses.Size = new System.Drawing.Size(173, 29);
+            this.TxtEdadMeses.TabIndex = 97;
+            // 
             // Pediatria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 483);
+            this.Controls.Add(this.TxtEdadMeses);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.BtnCalcular);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBase);
@@ -442,8 +719,6 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnAddOrder;
         private System.Windows.Forms.GroupBox groupBase;
         private System.Windows.Forms.Label labelPeso;
-        private System.Windows.Forms.ComboBox ComboEdema;
-        private System.Windows.Forms.Label labelEdema;
         private System.Windows.Forms.Label labelTalla;
         private System.Windows.Forms.TextBox TxtTalla;
         private System.Windows.Forms.TextBox TxtPeso;
@@ -457,5 +732,31 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtPesoTalla;
         private System.Windows.Forms.TextBox TxtPesoEdad;
         private System.Windows.Forms.Button BtnCalcular;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox TxtCC;
+        private System.Windows.Forms.TextBox TxtTricep;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox TxtCMB;
+        private System.Windows.Forms.TextBox TxtZIMC;
+        private System.Windows.Forms.TextBox TxtZTallaEdad;
+        private System.Windows.Forms.TextBox TxtZPesoTalla;
+        private System.Windows.Forms.TextBox TxtZPesoEdad;
+        private System.Windows.Forms.TextBox TxtSSFZ;
+        private System.Windows.Forms.TextBox TxtTSFZ;
+        private System.Windows.Forms.TextBox TxtZCC;
+        private System.Windows.Forms.TextBox TxtZMuac;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox TxtSSFP;
+        private System.Windows.Forms.TextBox TxtTSFP;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox TxtCCP;
+        private System.Windows.Forms.TextBox TxtMuacP;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox TxtSSF;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox TxtEdadMeses;
     }
 }
