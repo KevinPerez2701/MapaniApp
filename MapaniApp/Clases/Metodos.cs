@@ -78,7 +78,8 @@ namespace MapaniApp
             string edad;
             TimeSpan tS = new TimeSpan();
             tS = DateTime.Now.Subtract(Fecha);
-            edad =Math.Floor((tS.TotalDays / 365)).ToString();                                       
+            //edad =Math.Floor((tS.TotalDays / 365)).ToString();
+            edad = Math.Floor(tS.TotalDays).ToString();
             return edad;
         }
     }
