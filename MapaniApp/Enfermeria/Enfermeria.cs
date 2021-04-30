@@ -34,35 +34,16 @@ namespace MapaniApp
                 ContactNMB contact = contacts[0];
                 LoadContact(contact);
                 groupBase.Visible = true;
-                groupBox1.Visible = true;
-                if ((int.Parse(TxtEdad.Text) > 5))
-                {
-                    groupMayor5.Visible = true;
-                    groupMenor5.Visible = false;
-                    GroupIRC.Visible = false;
-                }
-                else if (int.Parse(TxtEdad.Text) < 5)
-                {                    
-                    groupMenor5.Visible = true;
-                    groupMayor5.Visible = false;
-                    GroupIRC.Visible = false;
-                }
-                else
-                {
-                    groupMenor5.Visible = false;
-                    groupMayor5.Visible = false;
-                    groupBase.Visible = false;
-                }
+                groupBox1.Visible = true;                              
             }
             else if  ((ComboUsuario.Text == "NMB") && (comboPrograma.Text == "IRC"))
                 {
                 List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
                 ContactNMB contact = contacts[0];
                 LoadContact(contact);
-                GroupIRC.Visible = true;
+               
                 groupBox1.Visible = true;
-                groupMenor5.Visible = false;
-                groupMayor5.Visible = false;
+                
                 groupBase.Visible = true;
             }
 
@@ -99,32 +80,14 @@ namespace MapaniApp
                 Fecha = DateTimeFecha.Value.Date,
                 Programa = comboPrograma.Text,
                 Peso = TxtPeso.Text,
-                Talla = TxtTalla.Text,
-                MUAC = TxtMUAC.Text,
-                CC = TxtCC.Text,
+                Talla = TxtTalla.Text,              
                 CMB = TxtCMB.Text,
-                Edema = ComboEdema.Text,
-                IMC = TxtIMC.Text,
-                PZImcEdad = TxtPzImcEdad.Text,
-                PZTallaEdad = TxtPZTallaEdad.Text,
-                PZTallaImc = TxtPZpesotalla.Text,
-                PesoNacimiento = TxtPesoNacimiento.Text,
-                Lactancia = comboLactancia.Text,
+                Edema = ComboEdema.Text,               
                 Observacion = TxtObservacion.Text,
                 Patologia = TxtPatologia.Text,
                 Antecedentes = TxtAntecedentes.Text,
             };
             _LogicLayer.SaveContactEnfermeria(Cita);
-        }
-
-        private void GroupIRC_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+        }    
     }
 }

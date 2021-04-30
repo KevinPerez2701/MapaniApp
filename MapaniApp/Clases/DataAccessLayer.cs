@@ -422,23 +422,23 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaEnfermeria (NMB, Fecha,Programa,Peso,Talla,Muac,CC,CMB,Edema,IMC,PZImcEdad,PZTallaEdad,PZTallaIMC,PesoNacimiento,Lactancia,Observacion,Patologias,Antecedentes)  
-                                    Values(@NMB,@Fecha,@Programa,@Peso,@Talla,@Muac,@CC,@CMB,@Edema,@IMC,@PZImcEdad,@PZTallaEdad,@PZTallaImc,@PesoNacimiento,@Lactancia,@Observacion,@Patologia,@Antecedentes )";
+                                    Insert into TablaEnfermeria (NMB, Fecha,Programa,Peso,Talla,CMB,Edema,Observacion,Patologias,Antecedentes)  
+                                    Values(@NMB,@Fecha,@Programa,@Peso,@Talla,@CMB,@Edema,@Observacion,@Patologia,@Antecedentes )";
                 SqlParameter NMB = new SqlParameter("@NMB", contact.NMB);
                 SqlParameter Fecha = new SqlParameter("@Fecha", contact.Fecha);
                 SqlParameter Programa = new SqlParameter("@Programa", contact.Programa);
                 SqlParameter Peso = new SqlParameter("@Peso", contact.Peso);
                 SqlParameter Talla = new SqlParameter("@Talla", contact.Talla);
-                SqlParameter MUAC = new SqlParameter("@Muac", contact.MUAC);
-                SqlParameter CC = new SqlParameter("@CC", contact.CC);
+               // SqlParameter MUAC = new SqlParameter("@Muac", contact.MUAC);
+                //SqlParameter CC = new SqlParameter("@CC", contact.CC);
                 SqlParameter CMB = new SqlParameter("@CMB", contact.CMB);
                 SqlParameter Edema  = new SqlParameter("@Edema", contact.Edema);
-                SqlParameter IMC = new SqlParameter("@IMC", contact.IMC);
-                SqlParameter PZImcEdad = new SqlParameter("@PZImcEdad", contact.PZImcEdad);
-                SqlParameter PZTallaEdad = new SqlParameter("@PZTallaEdad", contact.PZTallaEdad);
-                SqlParameter PZTallaIMC = new SqlParameter("@PZTallaImc", contact.PZTallaImc);
-                SqlParameter PesoNacimiento = new SqlParameter("@PesoNacimiento", contact.PesoNacimiento);
-                SqlParameter Lactancia = new SqlParameter("@Lactancia", contact.Lactancia);
+                //SqlParameter IMC = new SqlParameter("@IMC", contact.IMC);
+                //SqlParameter PZImcEdad = new SqlParameter("@PZImcEdad", contact.PZImcEdad);
+                //SqlParameter PZTallaEdad = new SqlParameter("@PZTallaEdad", contact.PZTallaEdad);
+                //SqlParameter PZTallaIMC = new SqlParameter("@PZTallaImc", contact.PZTallaImc);
+                //SqlParameter PesoNacimiento = new SqlParameter("@PesoNacimiento", contact.PesoNacimiento);
+                //SqlParameter Lactancia = new SqlParameter("@Lactancia", contact.Lactancia);
                 SqlParameter Observacion = new SqlParameter("@Observacion", contact.Observacion);
                 SqlParameter Patologia = new SqlParameter("@Patologia", contact.Patologia);
                 SqlParameter Antecedente = new SqlParameter("@Antecedentes", contact.Antecedentes);
@@ -448,16 +448,16 @@ namespace MapaniApp
                 command.Parameters.Add(Programa);
                 command.Parameters.Add(Peso);
                 command.Parameters.Add(Talla);
-                command.Parameters.Add(MUAC);
-                command.Parameters.Add(CC);
+               // command.Parameters.Add(MUAC);
+                //command.Parameters.Add(CC);
                 command.Parameters.Add(CMB);
                 command.Parameters.Add(Edema);
-                command.Parameters.Add(IMC);
-                command.Parameters.Add(PZImcEdad);
-                command.Parameters.Add(PZTallaEdad);
-                command.Parameters.Add(PZTallaIMC);
-                command.Parameters.Add(PesoNacimiento);
-                command.Parameters.Add(Lactancia);
+                //command.Parameters.Add(IMC);
+                //command.Parameters.Add(PZImcEdad);
+                //command.Parameters.Add(PZTallaEdad);
+                //command.Parameters.Add(PZTallaIMC);
+                //command.Parameters.Add(PesoNacimiento);
+                //command.Parameters.Add(Lactancia);
                 command.Parameters.Add(Observacion);
                 command.Parameters.Add(Patologia);
                 command.Parameters.Add(Antecedente);
@@ -845,6 +845,47 @@ namespace MapaniApp
                 Connection.Close();
             }
             return contacts;
+        }
+        public List<ClaseEnfermeria> GetDataEnfermeria(string Id, DateTime Fecha)
+        {
+            List<ClaseEnfermeria> Data = new List<ClaseEnfermeria>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From TablaEnfermeria
+                                Where TablaEnfermeria.NMB=@IdNMB and TablaEnfermeria.Fecha=@Fecha ";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Fecha", Fecha));
+                command.Parameters.Add(new SqlParameter("@IdNMB", int.Parse(Id)));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Data.Add(new ClaseEnfermeria
+                    {
+                        Peso = reader["Peso"].ToString(),
+                        Talla = reader["Talla"].ToString(),
+                        Programa = reader["Programa"].ToString(),
+                        CMB = reader["CMB"].ToString(),
+                        Edema = reader["Edema"].ToString(),
+                        Observacion = reader["Observacion"].ToString(),
+                        Antecedentes = reader["Antecedentes"].ToString(),
+                        Patologia = reader["Patologias"].ToString(),
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Data;
         }
         public List<DataAlmacen> GetOrdenes()
         {

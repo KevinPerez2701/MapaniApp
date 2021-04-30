@@ -26,7 +26,8 @@ namespace MapaniApp
                 List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
                 ContactNMB contact = contacts[0];
                 LoadContact(contact);
-            BtnAddOrder.Visible = true;
+                BtnAddOrder.Visible = true;
+                GetDataEnfermeria();
             
         }
         private void LoadContact(ContactNMB contact)
@@ -48,7 +49,15 @@ namespace MapaniApp
         {
 
         }
-
+        public void GetDataEnfermeria()
+        {
+            List<ClaseEnfermeria> Data = _LogicLayer.GetDataEnfermeria(TxtID.Text,dateTimePicker2.Value.Date);
+            ClaseEnfermeria Datos = Data[0];
+            TxtPeso.Text = Datos.Peso;
+            TxtTalla.Text = Datos.Talla;
+            TxtCMB.Text = Datos.CMB;
+        }
+       
         private void button1_Click(object sender, EventArgs e)
         {
             VerProductos NuevaOrden = new VerProductos();

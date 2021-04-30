@@ -138,6 +138,10 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetProductos();
         }
+        public List<ClaseEnfermeria> GetDataEnfermeria(string Id, DateTime Fecha)
+        {
+            return _dataAccessLayer.GetDataEnfermeria(Id, Fecha);
+        }
         public List<DataAlmacen> GetOrdenes()
         {   
             return _dataAccessLayer.GetOrdenes();

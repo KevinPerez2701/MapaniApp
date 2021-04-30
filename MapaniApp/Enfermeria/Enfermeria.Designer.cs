@@ -42,41 +42,22 @@ namespace MapaniApp
             this.label6 = new System.Windows.Forms.Label();
             this.comboPrograma = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.labelPZPesoTalla = new System.Windows.Forms.Label();
             this.labelCMB = new System.Windows.Forms.Label();
             this.labelPeso = new System.Windows.Forms.Label();
-            this.labelPZTallaEdad = new System.Windows.Forms.Label();
-            this.labelPesoNacimiento = new System.Windows.Forms.Label();
             this.TxtEdad = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.BtnCargarContacto = new System.Windows.Forms.Button();
-            this.labelLactancia = new System.Windows.Forms.Label();
             this.labelEdema = new System.Windows.Forms.Label();
             this.labelTalla = new System.Windows.Forms.Label();
             this.TxtTalla = new System.Windows.Forms.TextBox();
             this.TxtPeso = new System.Windows.Forms.TextBox();
             this.TxtCMB = new System.Windows.Forms.TextBox();
-            this.TxtPesoNacimiento = new System.Windows.Forms.TextBox();
-            this.TxtPZpesotalla = new System.Windows.Forms.TextBox();
-            this.TxtPZTallaEdad = new System.Windows.Forms.TextBox();
             this.ComboEdema = new System.Windows.Forms.ComboBox();
-            this.comboLactancia = new System.Windows.Forms.ComboBox();
             this.groupBase = new System.Windows.Forms.GroupBox();
-            this.labelMC = new System.Windows.Forms.Label();
-            this.TxtIMC = new System.Windows.Forms.TextBox();
-            this.labelPZImcEdad = new System.Windows.Forms.Label();
-            this.TxtPzImcEdad = new System.Windows.Forms.TextBox();
-            this.groupMayor5 = new System.Windows.Forms.GroupBox();
-            this.groupMenor5 = new System.Windows.Forms.GroupBox();
             this.labelObservacion = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.TxtObservacion = new System.Windows.Forms.TextBox();
             this.TxtPatologia = new System.Windows.Forms.TextBox();
-            this.GroupIRC = new System.Windows.Forms.GroupBox();
-            this.TxtCC = new System.Windows.Forms.TextBox();
-            this.TxtMUAC = new System.Windows.Forms.TextBox();
-            this.labelCC = new System.Windows.Forms.Label();
-            this.labelMUAC = new System.Windows.Forms.Label();
             this.TxtAntecedentes = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -87,9 +68,6 @@ namespace MapaniApp
             this.BtnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBase.SuspendLayout();
-            this.groupMayor5.SuspendLayout();
-            this.groupMenor5.SuspendLayout();
-            this.GroupIRC.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -222,17 +200,6 @@ namespace MapaniApp
             this.label8.TabIndex = 68;
             this.label8.Text = "Carga de Datos";
             // 
-            // labelPZPesoTalla
-            // 
-            this.labelPZPesoTalla.AutoSize = true;
-            this.labelPZPesoTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPZPesoTalla.Location = new System.Drawing.Point(6, 57);
-            this.labelPZPesoTalla.Name = "labelPZPesoTalla";
-            this.labelPZPesoTalla.Size = new System.Drawing.Size(234, 24);
-            this.labelPZPesoTalla.TabIndex = 71;
-            this.labelPZPesoTalla.Tag = "Contact";
-            this.labelPZPesoTalla.Text = "Puntaje Z (Peso-Talla/IMC)";
-            // 
             // labelCMB
             // 
             this.labelCMB.AutoSize = true;
@@ -254,28 +221,6 @@ namespace MapaniApp
             this.labelPeso.TabIndex = 69;
             this.labelPeso.Tag = "Contact";
             this.labelPeso.Text = "Peso";
-            // 
-            // labelPZTallaEdad
-            // 
-            this.labelPZTallaEdad.AutoSize = true;
-            this.labelPZTallaEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPZTallaEdad.Location = new System.Drawing.Point(6, 24);
-            this.labelPZTallaEdad.Name = "labelPZTallaEdad";
-            this.labelPZTallaEdad.Size = new System.Drawing.Size(198, 24);
-            this.labelPZTallaEdad.TabIndex = 72;
-            this.labelPZTallaEdad.Tag = "Contact";
-            this.labelPZTallaEdad.Text = "Puntaje Z (Talla-Edad)";
-            // 
-            // labelPesoNacimiento
-            // 
-            this.labelPesoNacimiento.AutoSize = true;
-            this.labelPesoNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPesoNacimiento.Location = new System.Drawing.Point(6, 91);
-            this.labelPesoNacimiento.Name = "labelPesoNacimiento";
-            this.labelPesoNacimiento.Size = new System.Drawing.Size(128, 24);
-            this.labelPesoNacimiento.TabIndex = 73;
-            this.labelPesoNacimiento.Tag = "Contact";
-            this.labelPesoNacimiento.Text = "Peso al Nacer";
             // 
             // TxtEdad
             // 
@@ -305,17 +250,6 @@ namespace MapaniApp
             this.BtnCargarContacto.Text = "Cargar Contacto";
             this.BtnCargarContacto.UseVisualStyleBackColor = true;
             this.BtnCargarContacto.Click += new System.EventHandler(this.BtnCargarContacto_Click);
-            // 
-            // labelLactancia
-            // 
-            this.labelLactancia.AutoSize = true;
-            this.labelLactancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLactancia.Location = new System.Drawing.Point(6, 128);
-            this.labelLactancia.Name = "labelLactancia";
-            this.labelLactancia.Size = new System.Drawing.Size(154, 24);
-            this.labelLactancia.TabIndex = 78;
-            this.labelLactancia.Tag = "Contact";
-            this.labelLactancia.Text = "Recibe Lactancia";
             // 
             // labelEdema
             // 
@@ -366,33 +300,6 @@ namespace MapaniApp
             this.TxtCMB.TabIndex = 82;
             this.TxtCMB.Tag = "Contact";
             // 
-            // TxtPesoNacimiento
-            // 
-            this.TxtPesoNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPesoNacimiento.Location = new System.Drawing.Point(268, 88);
-            this.TxtPesoNacimiento.Name = "TxtPesoNacimiento";
-            this.TxtPesoNacimiento.Size = new System.Drawing.Size(173, 29);
-            this.TxtPesoNacimiento.TabIndex = 85;
-            this.TxtPesoNacimiento.Tag = "Contact";
-            // 
-            // TxtPZpesotalla
-            // 
-            this.TxtPZpesotalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPZpesotalla.Location = new System.Drawing.Point(268, 54);
-            this.TxtPZpesotalla.Name = "TxtPZpesotalla";
-            this.TxtPZpesotalla.Size = new System.Drawing.Size(173, 29);
-            this.TxtPZpesotalla.TabIndex = 84;
-            this.TxtPZpesotalla.Tag = "Contact";
-            // 
-            // TxtPZTallaEdad
-            // 
-            this.TxtPZTallaEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPZTallaEdad.Location = new System.Drawing.Point(267, 17);
-            this.TxtPZTallaEdad.Name = "TxtPZTallaEdad";
-            this.TxtPZTallaEdad.Size = new System.Drawing.Size(173, 29);
-            this.TxtPZTallaEdad.TabIndex = 86;
-            this.TxtPZTallaEdad.Tag = "Contact";
-            // 
             // ComboEdema
             // 
             this.ComboEdema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -406,19 +313,6 @@ namespace MapaniApp
             this.ComboEdema.TabIndex = 87;
             this.ComboEdema.Tag = "Contact";
             // 
-            // comboLactancia
-            // 
-            this.comboLactancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboLactancia.FormattingEnabled = true;
-            this.comboLactancia.Items.AddRange(new object[] {
-            "Si",
-            "No"});
-            this.comboLactancia.Location = new System.Drawing.Point(268, 120);
-            this.comboLactancia.Name = "comboLactancia";
-            this.comboLactancia.Size = new System.Drawing.Size(173, 32);
-            this.comboLactancia.TabIndex = 88;
-            this.comboLactancia.Tag = "Contact";
-            // 
             // groupBase
             // 
             this.groupBase.Controls.Add(this.labelPeso);
@@ -429,85 +323,13 @@ namespace MapaniApp
             this.groupBase.Controls.Add(this.labelTalla);
             this.groupBase.Controls.Add(this.TxtTalla);
             this.groupBase.Controls.Add(this.TxtPeso);
-            this.groupBase.Location = new System.Drawing.Point(12, 188);
+            this.groupBase.Location = new System.Drawing.Point(7, 196);
             this.groupBase.Name = "groupBase";
             this.groupBase.Size = new System.Drawing.Size(452, 167);
             this.groupBase.TabIndex = 90;
             this.groupBase.TabStop = false;
             this.groupBase.Text = "GroupBase";
             this.groupBase.Visible = false;
-            // 
-            // labelMC
-            // 
-            this.labelMC.AutoSize = true;
-            this.labelMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMC.Location = new System.Drawing.Point(6, 22);
-            this.labelMC.Name = "labelMC";
-            this.labelMC.Size = new System.Drawing.Size(43, 24);
-            this.labelMC.TabIndex = 89;
-            this.labelMC.Tag = "Contact";
-            this.labelMC.Text = "IMC";
-            // 
-            // TxtIMC
-            // 
-            this.TxtIMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIMC.Location = new System.Drawing.Point(268, 19);
-            this.TxtIMC.Name = "TxtIMC";
-            this.TxtIMC.Size = new System.Drawing.Size(173, 29);
-            this.TxtIMC.TabIndex = 90;
-            this.TxtIMC.Tag = "Contact";
-            // 
-            // labelPZImcEdad
-            // 
-            this.labelPZImcEdad.AutoSize = true;
-            this.labelPZImcEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPZImcEdad.Location = new System.Drawing.Point(6, 59);
-            this.labelPZImcEdad.Name = "labelPZImcEdad";
-            this.labelPZImcEdad.Size = new System.Drawing.Size(191, 24);
-            this.labelPZImcEdad.TabIndex = 91;
-            this.labelPZImcEdad.Tag = "Contact";
-            this.labelPZImcEdad.Text = "Puntaje Z (IMC-Edad)";
-            // 
-            // TxtPzImcEdad
-            // 
-            this.TxtPzImcEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPzImcEdad.Location = new System.Drawing.Point(267, 54);
-            this.TxtPzImcEdad.Name = "TxtPzImcEdad";
-            this.TxtPzImcEdad.Size = new System.Drawing.Size(173, 29);
-            this.TxtPzImcEdad.TabIndex = 91;
-            this.TxtPzImcEdad.Tag = "Contact";
-            // 
-            // groupMayor5
-            // 
-            this.groupMayor5.Controls.Add(this.TxtPzImcEdad);
-            this.groupMayor5.Controls.Add(this.labelMC);
-            this.groupMayor5.Controls.Add(this.labelPZImcEdad);
-            this.groupMayor5.Controls.Add(this.TxtIMC);
-            this.groupMayor5.Location = new System.Drawing.Point(12, 361);
-            this.groupMayor5.Name = "groupMayor5";
-            this.groupMayor5.Size = new System.Drawing.Size(452, 112);
-            this.groupMayor5.TabIndex = 91;
-            this.groupMayor5.TabStop = false;
-            this.groupMayor5.Text = "GroupMayor5";
-            this.groupMayor5.Visible = false;
-            // 
-            // groupMenor5
-            // 
-            this.groupMenor5.Controls.Add(this.labelPZTallaEdad);
-            this.groupMenor5.Controls.Add(this.labelLactancia);
-            this.groupMenor5.Controls.Add(this.comboLactancia);
-            this.groupMenor5.Controls.Add(this.TxtPZpesotalla);
-            this.groupMenor5.Controls.Add(this.labelPZPesoTalla);
-            this.groupMenor5.Controls.Add(this.TxtPesoNacimiento);
-            this.groupMenor5.Controls.Add(this.labelPesoNacimiento);
-            this.groupMenor5.Controls.Add(this.TxtPZTallaEdad);
-            this.groupMenor5.Location = new System.Drawing.Point(12, 366);
-            this.groupMenor5.Name = "groupMenor5";
-            this.groupMenor5.Size = new System.Drawing.Size(452, 188);
-            this.groupMenor5.TabIndex = 92;
-            this.groupMenor5.TabStop = false;
-            this.groupMenor5.Text = "GroupMenor5";
-            this.groupMenor5.Visible = false;
             // 
             // labelObservacion
             // 
@@ -550,61 +372,6 @@ namespace MapaniApp
             this.TxtPatologia.Size = new System.Drawing.Size(305, 102);
             this.TxtPatologia.TabIndex = 97;
             this.TxtPatologia.Tag = "Contact";
-            // 
-            // GroupIRC
-            // 
-            this.GroupIRC.Controls.Add(this.TxtCC);
-            this.GroupIRC.Controls.Add(this.TxtMUAC);
-            this.GroupIRC.Controls.Add(this.labelCC);
-            this.GroupIRC.Controls.Add(this.labelMUAC);
-            this.GroupIRC.Location = new System.Drawing.Point(12, 282);
-            this.GroupIRC.Name = "GroupIRC";
-            this.GroupIRC.Size = new System.Drawing.Size(452, 95);
-            this.GroupIRC.TabIndex = 98;
-            this.GroupIRC.TabStop = false;
-            this.GroupIRC.Text = "Group IRC";
-            this.GroupIRC.Visible = false;
-            this.GroupIRC.Enter += new System.EventHandler(this.GroupIRC_Enter);
-            // 
-            // TxtCC
-            // 
-            this.TxtCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCC.Location = new System.Drawing.Point(258, 58);
-            this.TxtCC.Name = "TxtCC";
-            this.TxtCC.Size = new System.Drawing.Size(173, 29);
-            this.TxtCC.TabIndex = 94;
-            this.TxtCC.Tag = "Contact";
-            // 
-            // TxtMUAC
-            // 
-            this.TxtMUAC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMUAC.Location = new System.Drawing.Point(256, 19);
-            this.TxtMUAC.Name = "TxtMUAC";
-            this.TxtMUAC.Size = new System.Drawing.Size(173, 29);
-            this.TxtMUAC.TabIndex = 95;
-            this.TxtMUAC.Tag = "Contact";
-            // 
-            // labelCC
-            // 
-            this.labelCC.AutoSize = true;
-            this.labelCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCC.Location = new System.Drawing.Point(6, 50);
-            this.labelCC.Name = "labelCC";
-            this.labelCC.Size = new System.Drawing.Size(62, 24);
-            this.labelCC.TabIndex = 92;
-            this.labelCC.Tag = "Contact";
-            this.labelCC.Text = "CC <2";
-            // 
-            // labelMUAC
-            // 
-            this.labelMUAC.AutoSize = true;
-            this.labelMUAC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMUAC.Location = new System.Drawing.Point(6, 22);
-            this.labelMUAC.Name = "labelMUAC";
-            this.labelMUAC.Size = new System.Drawing.Size(65, 24);
-            this.labelMUAC.TabIndex = 93;
-            this.labelMUAC.Tag = "Contact";
-            this.labelMUAC.Text = "MUAC";
             // 
             // TxtAntecedentes
             // 
@@ -702,13 +469,12 @@ namespace MapaniApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar";
             this.groupBox1.Visible = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Enfermeria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 661);
+            this.ClientSize = new System.Drawing.Size(1087, 661);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.label11);
@@ -716,13 +482,10 @@ namespace MapaniApp
             this.Controls.Add(this.label17);
             this.Controls.Add(this.TxtAntecedentes);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.GroupIRC);
             this.Controls.Add(this.TxtPatologia);
             this.Controls.Add(this.labelObservacion);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.TxtObservacion);
-            this.Controls.Add(this.groupMenor5);
-            this.Controls.Add(this.groupMayor5);
             this.Controls.Add(this.groupBase);
             this.Controls.Add(this.BtnCargarContacto);
             this.Controls.Add(this.TxtEdad);
@@ -745,12 +508,6 @@ namespace MapaniApp
             this.Load += new System.EventHandler(this.Enfermeria_Load);
             this.groupBase.ResumeLayout(false);
             this.groupBase.PerformLayout();
-            this.groupMayor5.ResumeLayout(false);
-            this.groupMayor5.PerformLayout();
-            this.groupMenor5.ResumeLayout(false);
-            this.groupMenor5.PerformLayout();
-            this.GroupIRC.ResumeLayout(false);
-            this.GroupIRC.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -772,41 +529,22 @@ namespace MapaniApp
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboPrograma;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label labelPZPesoTalla;
         private System.Windows.Forms.Label labelCMB;
         private System.Windows.Forms.Label labelPeso;
-        private System.Windows.Forms.Label labelPZTallaEdad;
-        private System.Windows.Forms.Label labelPesoNacimiento;
         private System.Windows.Forms.TextBox TxtEdad;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button BtnCargarContacto;
-        private System.Windows.Forms.Label labelLactancia;
         private System.Windows.Forms.Label labelEdema;
         private System.Windows.Forms.Label labelTalla;
         private System.Windows.Forms.TextBox TxtTalla;
         private System.Windows.Forms.TextBox TxtPeso;
         private System.Windows.Forms.TextBox TxtCMB;
-        private System.Windows.Forms.TextBox TxtPesoNacimiento;
-        private System.Windows.Forms.TextBox TxtPZpesotalla;
-        private System.Windows.Forms.TextBox TxtPZTallaEdad;
         private System.Windows.Forms.ComboBox ComboEdema;
-        private System.Windows.Forms.ComboBox comboLactancia;
         private System.Windows.Forms.GroupBox groupBase;
-        private System.Windows.Forms.TextBox TxtPzImcEdad;
-        private System.Windows.Forms.Label labelMC;
-        private System.Windows.Forms.Label labelPZImcEdad;
-        private System.Windows.Forms.TextBox TxtIMC;
-        private System.Windows.Forms.GroupBox groupMayor5;
-        private System.Windows.Forms.GroupBox groupMenor5;
         private System.Windows.Forms.Label labelObservacion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtObservacion;
         private System.Windows.Forms.TextBox TxtPatologia;
-        private System.Windows.Forms.GroupBox GroupIRC;
-        private System.Windows.Forms.TextBox TxtCC;
-        private System.Windows.Forms.TextBox TxtMUAC;
-        private System.Windows.Forms.Label labelCC;
-        private System.Windows.Forms.Label labelMUAC;
         private System.Windows.Forms.TextBox TxtAntecedentes;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
