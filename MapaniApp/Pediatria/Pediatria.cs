@@ -72,10 +72,12 @@ namespace MapaniApp
         }
 
         private void BtnCalcular_Click(object sender, EventArgs e)
-        {
-            CalculateZScores();
+        {   if (int.Parse(TxtEdad.Text)>1825)
+            CalculateZScoresWho2007();
+            else
+            CalculateZScoresWho2006();
         }
-        public void CalculateZScores()
+        public void CalculateZScoresWho2006()
         {
             var who2006 = new AnthStat.Statistics.WHO2006();
             double ageDays = double.Parse(TxtEdad.Text);
@@ -86,6 +88,7 @@ namespace MapaniApp
             double Muac = double.Parse(TxtTricep.Text);
             double LenghtMeters = Lenght / 100;
             double imc = Weight / (LenghtMeters * LenghtMeters);
+            TxtIMCCalculado.Text = Math.Round(imc,2).ToString();
             double z = 0.0;
             double x = 0.0;
             double y = 0.0;
@@ -147,6 +150,36 @@ namespace MapaniApp
 
         }
 
-        
+        public void CalculateZScoresWho2007()
+        {
+            var who2007 = new AnthStat.Statistics.WHO2007();
+            double ageMonths = double.Parse(TxtEdadMeses.Text);
+            double Weight = double.Parse(TxtPeso.Text);
+            double Lenght = double.Parse(TxtTalla.Text);            
+            double LenghtMeters = Lenght / 100;
+            double imc = Weight / (LenghtMeters * LenghtMeters);
+            double z = 0.0;
+            double x = 0.0;
+            double y = 0.0;
+            TxtIMCCalculado.Text = Math.Round(imc, 2).ToString();
+            if (who2007.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement: imc, age: ageMonths, sex: Sex.Male, z: ref z))
+            {
+                double p = StatisticsHelper.CalculatePercentile(z);
+                TxtIMCEdadWho2007Z.Text = Math.Round(z, 2).ToString();
+                TxtIMCEdadWho2007P.Text = Math.Round(p, 2).ToString();              
+            }
+            if (who2007.TryCalculateZScore(indicator: Indicator.WeightForAge, measurement: Weight, age: ageMonths, sex: Sex.Male, z: ref x))
+            {
+                double p = StatisticsHelper.CalculatePercentile(x);
+                TxtPesoEdadWho2007Z.Text = Math.Round(x, 2).ToString();
+                TxtPesoEdadWho2007P.Text = Math.Round(p, 2).ToString();
+            }
+            if (who2007.TryCalculateZScore(indicator: Indicator.HeightForAge, measurement: Lenght, age: ageMonths, sex: Sex.Male, z: ref y))
+            {
+                double p = StatisticsHelper.CalculatePercentile(y);
+                TxtPesoEdadWho2007Z.Text = Math.Round(y, 2).ToString();
+                TxtPesoEdadWho2007P.Text = Math.Round(p, 2).ToString();
+            }
+        }
     }
 }

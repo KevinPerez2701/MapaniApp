@@ -43,7 +43,7 @@ namespace MapaniApp
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.BtnAddOrder = new System.Windows.Forms.Button();
-            this.groupBase = new System.Windows.Forms.GroupBox();
+            this.DatosEnfermeria = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.TxtSSF = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace MapaniApp
             this.labelTalla = new System.Windows.Forms.Label();
             this.TxtTalla = new System.Windows.Forms.TextBox();
             this.TxtPeso = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GroupWHO2006 = new System.Windows.Forms.GroupBox();
             this.TxtSSFZ = new System.Windows.Forms.TextBox();
             this.TxtTSFZ = new System.Windows.Forms.TextBox();
             this.TxtZCC = new System.Windows.Forms.TextBox();
@@ -86,8 +86,21 @@ namespace MapaniApp
             this.TxtEdadMeses = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.groupBase.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.GroupWHO2007 = new System.Windows.Forms.GroupBox();
+            this.TxtIMCEdadWho2007Z = new System.Windows.Forms.TextBox();
+            this.TxtTallaEdadWho2007Z = new System.Windows.Forms.TextBox();
+            this.TxtPesoEdadWho2007Z = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.TxtIMCEdadWho2007P = new System.Windows.Forms.TextBox();
+            this.TxtTallaEdadWho2007P = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.TxtPesoEdadWho2007P = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.TxtIMCCalculado = new System.Windows.Forms.TextBox();
+            this.DatosEnfermeria.SuspendLayout();
+            this.GroupWHO2006.SuspendLayout();
+            this.GroupWHO2007.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnCargarContacto
@@ -228,26 +241,28 @@ namespace MapaniApp
             this.BtnAddOrder.Visible = false;
             this.BtnAddOrder.Click += new System.EventHandler(this.button1_Click);
             // 
-            // groupBase
+            // DatosEnfermeria
             // 
-            this.groupBase.Controls.Add(this.label18);
-            this.groupBase.Controls.Add(this.TxtSSF);
-            this.groupBase.Controls.Add(this.label11);
-            this.groupBase.Controls.Add(this.TxtCMB);
-            this.groupBase.Controls.Add(this.label10);
-            this.groupBase.Controls.Add(this.label12);
-            this.groupBase.Controls.Add(this.TxtCC);
-            this.groupBase.Controls.Add(this.TxtTricep);
-            this.groupBase.Controls.Add(this.labelPeso);
-            this.groupBase.Controls.Add(this.labelTalla);
-            this.groupBase.Controls.Add(this.TxtTalla);
-            this.groupBase.Controls.Add(this.TxtPeso);
-            this.groupBase.Location = new System.Drawing.Point(16, 186);
-            this.groupBase.Name = "groupBase";
-            this.groupBase.Size = new System.Drawing.Size(341, 134);
-            this.groupBase.TabIndex = 93;
-            this.groupBase.TabStop = false;
-            this.groupBase.Text = "GroupBase";
+            this.DatosEnfermeria.Controls.Add(this.TxtIMCCalculado);
+            this.DatosEnfermeria.Controls.Add(this.label21);
+            this.DatosEnfermeria.Controls.Add(this.label18);
+            this.DatosEnfermeria.Controls.Add(this.TxtSSF);
+            this.DatosEnfermeria.Controls.Add(this.label11);
+            this.DatosEnfermeria.Controls.Add(this.TxtCMB);
+            this.DatosEnfermeria.Controls.Add(this.label10);
+            this.DatosEnfermeria.Controls.Add(this.label12);
+            this.DatosEnfermeria.Controls.Add(this.TxtCC);
+            this.DatosEnfermeria.Controls.Add(this.TxtTricep);
+            this.DatosEnfermeria.Controls.Add(this.labelPeso);
+            this.DatosEnfermeria.Controls.Add(this.labelTalla);
+            this.DatosEnfermeria.Controls.Add(this.TxtTalla);
+            this.DatosEnfermeria.Controls.Add(this.TxtPeso);
+            this.DatosEnfermeria.Location = new System.Drawing.Point(16, 186);
+            this.DatosEnfermeria.Name = "DatosEnfermeria";
+            this.DatosEnfermeria.Size = new System.Drawing.Size(442, 134);
+            this.DatosEnfermeria.TabIndex = 93;
+            this.DatosEnfermeria.TabStop = false;
+            this.DatosEnfermeria.Text = "Datos Enfermeria";
             // 
             // label18
             // 
@@ -369,38 +384,38 @@ namespace MapaniApp
             this.TxtPeso.TabIndex = 80;
             this.TxtPeso.Tag = "Contact";
             // 
-            // groupBox1
+            // GroupWHO2006
             // 
-            this.groupBox1.Controls.Add(this.TxtSSFZ);
-            this.groupBox1.Controls.Add(this.TxtTSFZ);
-            this.groupBox1.Controls.Add(this.TxtZCC);
-            this.groupBox1.Controls.Add(this.TxtZMuac);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.TxtSSFP);
-            this.groupBox1.Controls.Add(this.TxtTSFP);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.TxtCCP);
-            this.groupBox1.Controls.Add(this.TxtMuacP);
-            this.groupBox1.Controls.Add(this.TxtZIMC);
-            this.groupBox1.Controls.Add(this.TxtZTallaEdad);
-            this.groupBox1.Controls.Add(this.TxtZPesoTalla);
-            this.groupBox1.Controls.Add(this.TxtZPesoEdad);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.TxtImc);
-            this.groupBox1.Controls.Add(this.TxtTallaEdad);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.TxtPesoTalla);
-            this.groupBox1.Controls.Add(this.TxtPesoEdad);
-            this.groupBox1.Location = new System.Drawing.Point(16, 326);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(558, 161);
-            this.groupBox1.TabIndex = 94;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "GroupBase";
+            this.GroupWHO2006.Controls.Add(this.TxtSSFZ);
+            this.GroupWHO2006.Controls.Add(this.TxtTSFZ);
+            this.GroupWHO2006.Controls.Add(this.TxtZCC);
+            this.GroupWHO2006.Controls.Add(this.TxtZMuac);
+            this.GroupWHO2006.Controls.Add(this.label14);
+            this.GroupWHO2006.Controls.Add(this.label15);
+            this.GroupWHO2006.Controls.Add(this.TxtSSFP);
+            this.GroupWHO2006.Controls.Add(this.TxtTSFP);
+            this.GroupWHO2006.Controls.Add(this.label16);
+            this.GroupWHO2006.Controls.Add(this.label17);
+            this.GroupWHO2006.Controls.Add(this.TxtCCP);
+            this.GroupWHO2006.Controls.Add(this.TxtMuacP);
+            this.GroupWHO2006.Controls.Add(this.TxtZIMC);
+            this.GroupWHO2006.Controls.Add(this.TxtZTallaEdad);
+            this.GroupWHO2006.Controls.Add(this.TxtZPesoTalla);
+            this.GroupWHO2006.Controls.Add(this.TxtZPesoEdad);
+            this.GroupWHO2006.Controls.Add(this.label3);
+            this.GroupWHO2006.Controls.Add(this.label9);
+            this.GroupWHO2006.Controls.Add(this.TxtImc);
+            this.GroupWHO2006.Controls.Add(this.TxtTallaEdad);
+            this.GroupWHO2006.Controls.Add(this.label1);
+            this.GroupWHO2006.Controls.Add(this.label8);
+            this.GroupWHO2006.Controls.Add(this.TxtPesoTalla);
+            this.GroupWHO2006.Controls.Add(this.TxtPesoEdad);
+            this.GroupWHO2006.Location = new System.Drawing.Point(16, 326);
+            this.GroupWHO2006.Name = "GroupWHO2006";
+            this.GroupWHO2006.Size = new System.Drawing.Size(558, 161);
+            this.GroupWHO2006.TabIndex = 94;
+            this.GroupWHO2006.TabStop = false;
+            this.GroupWHO2006.Text = "WHO2006";
             // 
             // TxtSSFZ
             // 
@@ -685,18 +700,144 @@ namespace MapaniApp
             this.dateTimePicker2.Size = new System.Drawing.Size(130, 29);
             this.dateTimePicker2.TabIndex = 99;
             // 
+            // GroupWHO2007
+            // 
+            this.GroupWHO2007.Controls.Add(this.TxtIMCEdadWho2007Z);
+            this.GroupWHO2007.Controls.Add(this.TxtTallaEdadWho2007Z);
+            this.GroupWHO2007.Controls.Add(this.TxtPesoEdadWho2007Z);
+            this.GroupWHO2007.Controls.Add(this.label25);
+            this.GroupWHO2007.Controls.Add(this.label26);
+            this.GroupWHO2007.Controls.Add(this.TxtIMCEdadWho2007P);
+            this.GroupWHO2007.Controls.Add(this.TxtTallaEdadWho2007P);
+            this.GroupWHO2007.Controls.Add(this.label27);
+            this.GroupWHO2007.Controls.Add(this.TxtPesoEdadWho2007P);
+            this.GroupWHO2007.Location = new System.Drawing.Point(464, 192);
+            this.GroupWHO2007.Name = "GroupWHO2007";
+            this.GroupWHO2007.Size = new System.Drawing.Size(281, 128);
+            this.GroupWHO2007.TabIndex = 100;
+            this.GroupWHO2007.TabStop = false;
+            this.GroupWHO2007.Text = "WHO2007";
+            // 
+            // TxtIMCEdadWho2007Z
+            // 
+            this.TxtIMCEdadWho2007Z.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIMCEdadWho2007Z.Location = new System.Drawing.Point(200, 90);
+            this.TxtIMCEdadWho2007Z.Name = "TxtIMCEdadWho2007Z";
+            this.TxtIMCEdadWho2007Z.Size = new System.Drawing.Size(72, 29);
+            this.TxtIMCEdadWho2007Z.TabIndex = 89;
+            this.TxtIMCEdadWho2007Z.Tag = "Contact";
+            // 
+            // TxtTallaEdadWho2007Z
+            // 
+            this.TxtTallaEdadWho2007Z.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTallaEdadWho2007Z.Location = new System.Drawing.Point(200, 55);
+            this.TxtTallaEdadWho2007Z.Name = "TxtTallaEdadWho2007Z";
+            this.TxtTallaEdadWho2007Z.Size = new System.Drawing.Size(72, 29);
+            this.TxtTallaEdadWho2007Z.TabIndex = 88;
+            this.TxtTallaEdadWho2007Z.Tag = "Contact";
+            // 
+            // TxtPesoEdadWho2007Z
+            // 
+            this.TxtPesoEdadWho2007Z.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPesoEdadWho2007Z.Location = new System.Drawing.Point(200, 22);
+            this.TxtPesoEdadWho2007Z.Name = "TxtPesoEdadWho2007Z";
+            this.TxtPesoEdadWho2007Z.Size = new System.Drawing.Size(72, 29);
+            this.TxtPesoEdadWho2007Z.TabIndex = 86;
+            this.TxtPesoEdadWho2007Z.Tag = "Contact";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(17, 60);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(101, 24);
+            this.label25.TabIndex = 82;
+            this.label25.Tag = "Contact";
+            this.label25.Text = "Talla-Edad";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(17, 95);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(94, 24);
+            this.label26.TabIndex = 83;
+            this.label26.Tag = "Contact";
+            this.label26.Text = "IMC-Edad";
+            // 
+            // TxtIMCEdadWho2007P
+            // 
+            this.TxtIMCEdadWho2007P.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIMCEdadWho2007P.Location = new System.Drawing.Point(122, 90);
+            this.TxtIMCEdadWho2007P.Name = "TxtIMCEdadWho2007P";
+            this.TxtIMCEdadWho2007P.Size = new System.Drawing.Size(72, 29);
+            this.TxtIMCEdadWho2007P.TabIndex = 85;
+            this.TxtIMCEdadWho2007P.Tag = "Contact";
+            // 
+            // TxtTallaEdadWho2007P
+            // 
+            this.TxtTallaEdadWho2007P.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTallaEdadWho2007P.Location = new System.Drawing.Point(122, 55);
+            this.TxtTallaEdadWho2007P.Name = "TxtTallaEdadWho2007P";
+            this.TxtTallaEdadWho2007P.Size = new System.Drawing.Size(72, 29);
+            this.TxtTallaEdadWho2007P.TabIndex = 84;
+            this.TxtTallaEdadWho2007P.Tag = "Contact";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(17, 25);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(104, 24);
+            this.label27.TabIndex = 69;
+            this.label27.Tag = "Contact";
+            this.label27.Text = "Peso-Edad";
+            // 
+            // TxtPesoEdadWho2007P
+            // 
+            this.TxtPesoEdadWho2007P.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPesoEdadWho2007P.Location = new System.Drawing.Point(122, 22);
+            this.TxtPesoEdadWho2007P.Name = "TxtPesoEdadWho2007P";
+            this.TxtPesoEdadWho2007P.Size = new System.Drawing.Size(72, 29);
+            this.TxtPesoEdadWho2007P.TabIndex = 80;
+            this.TxtPesoEdadWho2007P.Tag = "Contact";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(359, 23);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(43, 24);
+            this.label21.TabIndex = 101;
+            this.label21.Tag = "Contact";
+            this.label21.Text = "IMC";
+            // 
+            // TxtIMCCalculado
+            // 
+            this.TxtIMCCalculado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIMCCalculado.Location = new System.Drawing.Point(347, 50);
+            this.TxtIMCCalculado.Name = "TxtIMCCalculado";
+            this.TxtIMCCalculado.Size = new System.Drawing.Size(76, 29);
+            this.TxtIMCCalculado.TabIndex = 101;
+            this.TxtIMCCalculado.Tag = "Contact";
+            // 
             // Pediatria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 510);
+            this.ClientSize = new System.Drawing.Size(885, 510);
+            this.Controls.Add(this.GroupWHO2007);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.TxtEdadMeses);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.BtnCalcular);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBase);
+            this.Controls.Add(this.GroupWHO2006);
+            this.Controls.Add(this.DatosEnfermeria);
             this.Controls.Add(this.BtnAddOrder);
             this.Controls.Add(this.BtnCargarContacto);
             this.Controls.Add(this.TxtEdad);
@@ -714,10 +855,12 @@ namespace MapaniApp
             this.Name = "Pediatria";
             this.Text = "Pediatria";
             this.Load += new System.EventHandler(this.Pediatria_Load);
-            this.groupBase.ResumeLayout(false);
-            this.groupBase.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.DatosEnfermeria.ResumeLayout(false);
+            this.DatosEnfermeria.PerformLayout();
+            this.GroupWHO2006.ResumeLayout(false);
+            this.GroupWHO2006.PerformLayout();
+            this.GroupWHO2007.ResumeLayout(false);
+            this.GroupWHO2007.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -739,12 +882,12 @@ namespace MapaniApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtnAddOrder;
-        private System.Windows.Forms.GroupBox groupBase;
+        private System.Windows.Forms.GroupBox DatosEnfermeria;
         private System.Windows.Forms.Label labelPeso;
         private System.Windows.Forms.Label labelTalla;
         private System.Windows.Forms.TextBox TxtTalla;
         private System.Windows.Forms.TextBox TxtPeso;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GroupWHO2006;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtImc;
@@ -782,5 +925,17 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtEdadMeses;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.GroupBox GroupWHO2007;
+        private System.Windows.Forms.TextBox TxtIMCEdadWho2007Z;
+        private System.Windows.Forms.TextBox TxtTallaEdadWho2007Z;
+        private System.Windows.Forms.TextBox TxtPesoEdadWho2007Z;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox TxtIMCEdadWho2007P;
+        private System.Windows.Forms.TextBox TxtTallaEdadWho2007P;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox TxtPesoEdadWho2007P;
+        private System.Windows.Forms.TextBox TxtIMCCalculado;
+        private System.Windows.Forms.Label label21;
     }
 }
