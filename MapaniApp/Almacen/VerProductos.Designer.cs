@@ -32,15 +32,16 @@ namespace MapaniApp
             this.components = new System.ComponentModel.Container();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Pedido = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.TxtId = new System.Windows.Forms.TextBox();
+            this.dataAlmacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaVencimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataAlmacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.TxtId = new System.Windows.Forms.TextBox();
+            this.Pedido = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Diferido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataAlmacenBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -67,20 +68,26 @@ namespace MapaniApp
             this.loteDataGridViewTextBoxColumn,
             this.fechaVencimientoDataGridViewTextBoxColumn,
             this.cantidadDataGridViewTextBoxColumn,
-            this.Pedido});
+            this.Pedido,
+            this.Diferido});
             this.dataGridView1.DataSource = this.dataAlmacenBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 86);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(748, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(861, 292);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Pedido
+            // TxtId
             // 
-            this.Pedido.HeaderText = "Agregar";
-            this.Pedido.Name = "Pedido";
-            this.Pedido.Text = "Agregar";
-            this.Pedido.UseColumnTextForLinkValue = true;
+            this.TxtId.Location = new System.Drawing.Point(504, 393);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(27, 20);
+            this.TxtId.TabIndex = 2;
+            this.TxtId.Visible = false;
+            // 
+            // dataAlmacenBindingSource
+            // 
+            this.dataAlmacenBindingSource.DataSource = typeof(MapaniApp.DataAlmacen);
             // 
             // idProductoDataGridViewTextBoxColumn
             // 
@@ -118,23 +125,24 @@ namespace MapaniApp
             this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             // 
-            // dataAlmacenBindingSource
+            // Pedido
             // 
-            this.dataAlmacenBindingSource.DataSource = typeof(MapaniApp.DataAlmacen);
+            this.Pedido.HeaderText = "Agregar";
+            this.Pedido.Name = "Pedido";
+            this.Pedido.Text = "Agregar";
+            this.Pedido.UseColumnTextForLinkValue = true;
             // 
-            // TxtId
+            // Diferido
             // 
-            this.TxtId.Location = new System.Drawing.Point(504, 393);
-            this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(27, 20);
-            this.TxtId.TabIndex = 2;
-            this.TxtId.Visible = false;
+            this.Diferido.DataPropertyName = "Diferido";
+            this.Diferido.HeaderText = "Diferido";
+            this.Diferido.Name = "Diferido";
             // 
             // VerProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(880, 450);
             this.Controls.Add(this.TxtId);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnSalir);
@@ -153,6 +161,7 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource dataAlmacenBindingSource;
+        private System.Windows.Forms.TextBox TxtId;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProductoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn programaDataGridViewTextBoxColumn;
@@ -160,6 +169,6 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaVencimientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn Pedido;
-        private System.Windows.Forms.TextBox TxtId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diferido;
     }
 }

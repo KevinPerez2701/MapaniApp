@@ -162,6 +162,8 @@ namespace MapaniApp
             AgregarCita NuevaCita = new AgregarCita();
             NuevaCita.LoadData(TxtID.Text);
             NuevaCita.ShowDialog(this);
+            PopulateContacts(TxtID.Text); //Refresca las relaciones de cuidadores del NMB
+            PopulateContactsVisita(TxtID.Text);
         }
 
         private void dataGridProximasVisitas_CellContentClick(object sender, DataGridViewCellEventArgs e)

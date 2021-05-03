@@ -56,6 +56,7 @@ namespace MapaniApp
                 Cantidad = int.Parse(TxtCantidad.Text),              
         };
             _LogicLayer.SaveOrder(Orden);
+           
         }
     }
 }

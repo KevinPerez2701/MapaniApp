@@ -90,6 +90,7 @@ namespace MapaniApp
         public DataAlmacen SaveOrder(DataAlmacen Orden)
         {
             _dataAccessLayer.InsertOrden(Orden);
+            _dataAccessLayer.UpdateDiferido(Orden);
             return Orden;
         }
         public DataAlmacen Despacho(DataAlmacen Orden)

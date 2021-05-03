@@ -267,7 +267,7 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                string query = @"    UPDATE TablaAlmacen SET Cantidad = (TablaAlmacen.Cantidad-@CantidadDespachada) 
+                string query = @"    UPDATE TablaAlmacen SET Cantidad = (TablaAlmacen.Cantidad-@CantidadDespachada),  Diferido = (TablaAlmacen.Diferido - @CantidadDespachada) 
                                      where (TablaAlmacen.IdProducto = @IdProducto)
                                     ";
                 SqlParameter CantidadDespachada = new SqlParameter("@CantidadDespachada", Orden.Cantidad);
@@ -276,6 +276,32 @@ namespace MapaniApp
                 command.Parameters.Add(CantidadDespachada);
                 command.Parameters.Add(IdProducto);        
                 command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+        public void UpdateDiferido(DataAlmacen Orden)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"    UPDATE TablaAlmacen SET Cantidad = (TablaAlmacen.Cantidad-@CantidadDiferida),   Diferido = (TablaAlmacen.Diferido + @CantidadDiferida)
+                                     where (TablaAlmacen.IdProducto = @IdProducto)
+                                    ";
+                SqlParameter CantidadDiferida = new SqlParameter("@CantidadDiferida", Orden.Cantidad);
+                SqlParameter IdProducto = new SqlParameter("@IdProducto", Orden.IdProducto);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(CantidadDiferida);
+                command.Parameters.Add(IdProducto);
+                command.ExecuteNonQuery();
+               
             }
             catch (Exception)
             {
@@ -832,6 +858,7 @@ namespace MapaniApp
                         Lote = reader["Lote"].ToString(),
                         Cantidad = int.Parse(reader["Cantidad"].ToString()),
                         FechaVencimiento = (DateTime)reader["FechaVencimiento"],
+                        Diferido = int.Parse(reader["Diferido"].ToString()),
                     });
                 }
             }

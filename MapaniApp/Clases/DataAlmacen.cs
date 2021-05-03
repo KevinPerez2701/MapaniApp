@@ -19,5 +19,6 @@ namespace MapaniApp
         public string Pediatra { get; set; }
         public string IdNMB { get; set; }
         public string Despachado { get; set; }
+        public int Diferido { get; set; }
     }
 }
