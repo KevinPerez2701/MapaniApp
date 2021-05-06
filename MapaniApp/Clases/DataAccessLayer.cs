@@ -294,6 +294,8 @@ namespace MapaniApp
                 Connection.Open();
                 string query = @"    UPDATE TablaAlmacen SET  Cantidad = (TablaAlmacen.Cantidad + @Cantidad) 
                                      where (TablaAlmacen.IdProducto = @IdProducto)
+                                     UPDATE TablaBodega SET Cantidad = (TablaBodega.Cantidad - @Cantidad)
+                                     where (TablaBodega.IdProducto = @IdProducto)
                                     ";
                 SqlParameter CantidadDespachada = new SqlParameter("@Cantidad", Orden.Cantidad);
                 SqlParameter IdProducto = new SqlParameter("@IdProducto", Orden.IdProducto);
@@ -573,6 +575,44 @@ namespace MapaniApp
                 command.Parameters.Add(Cantidad);
                 command.Parameters.Add(Programa);
                 //command.Parameters.Add(Id);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+        public void InserProduct(DataAlmacen contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into TablaAlmacen ([IdProducto],[Nombre], [Lote], [FechaVencimiento],[Cantidad],[Descripcion],Programa)  
+                                    Values(@IdProducto,@Nombre,@Lote,@FechaVencimiento,@Cantidad,@Descripcion,@Programa)
+                                     UPDATE TablaBodega SET Cantidad = (TablaBodega.Cantidad - @Cantidad)
+                                      where (TablaBodega.IdProducto = @IdProducto)   ";
+                SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
+                SqlParameter Id = new SqlParameter("@IdProducto", contact.IdProducto);
+                SqlParameter Lote = new SqlParameter("@Lote", contact.Lote);
+                SqlParameter FechaVencimiento = new SqlParameter("@FechaVencimiento", contact.FechaVencimiento);
+                SqlParameter Descripcion = new SqlParameter("@Descripcion", contact.Descripcion);
+                SqlParameter Cantidad = new SqlParameter("@Cantidad", contact.Cantidad);
+                SqlParameter Programa = new SqlParameter("@Programa", contact.Programa);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(Nombre);
+                command.Parameters.Add(Lote);
+                command.Parameters.Add(FechaVencimiento);
+                command.Parameters.Add(Descripcion);
+                command.Parameters.Add(Cantidad);
+                command.Parameters.Add(Programa);
+                command.Parameters.Add(Id);
                 command.ExecuteNonQuery();
 
             }
@@ -908,6 +948,7 @@ namespace MapaniApp
                         Lote = reader["Lote"].ToString(),
                         Cantidad = int.Parse(reader["Cantidad"].ToString()),
                         FechaVencimiento = (DateTime)reader["FechaVencimiento"],
+                        Descripcion = reader["Descripcion"].ToString(),
                         Diferido = int.Parse(reader["Diferido"].ToString()),
                     });
                 }

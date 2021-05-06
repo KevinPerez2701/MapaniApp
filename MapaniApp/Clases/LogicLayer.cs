@@ -69,6 +69,19 @@ namespace MapaniApp
             // }
             return Product;
         }
+        public DataAlmacen SaveProduct(DataAlmacen Product)
+        {
+            //int flag = Product.IdProducto;
+            //if (flag == 0)
+            //{
+            _dataAccessLayer.InserProduct(Product);
+            //}
+            //else
+            // {
+            //     _dataAccessLayer.UpdateContact(Contact);
+            // }
+            return Product;
+        }
         public DataAlmacen UpdateCantidad(DataAlmacen Product)
         {
             //int flag = Product.IdProducto;

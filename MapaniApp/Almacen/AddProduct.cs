@@ -15,7 +15,7 @@ namespace MapaniApp
         private LogicLayer _LogicLayer = new LogicLayer();
         string flag;
         string flagBodega;
-        string flagAlmacen;
+        string flagAlmacen = "0";
 
         public AddProduct()
         {
@@ -64,7 +64,22 @@ namespace MapaniApp
                     Cantidad = int.Parse(TxtCantidad.Text),
                 };
                 _LogicLayer.UpdateCantidad(Product);
-            }          
+            }
+            else if (flagAlmacen == "2")
+            {
+                DataAlmacen Product = new DataAlmacen
+                {
+                    IdProducto = int.Parse(TxtIdProducto.Text),
+                    Nombre = TxtNombre.Text,
+                    Lote = TxtLote.Text,
+                    FechaVencimiento = datetimeVencimiento.Value.Date,
+                    Descripcion = TxtDescripcion.Text,
+                    Programa = comboPrograma.Text,
+                    Cantidad = int.Parse(TxtCantidad.Text),
+
+                };
+                _LogicLayer.SaveProduct(Product);
+            }
         }
         private void SaveProductBodega()
         {
@@ -139,14 +154,28 @@ namespace MapaniApp
                         TxtDescripcion.Text = Producto.Descripcion;
                         comboPrograma.Text = Producto.Programa;
                         flagAlmacen = "1";
-                    }
-                    else
-                    {
-                        GroupAdd.Visible = true;
-                        groupCantidad.Visible = true;
+                    }                                     
+                }
+                if (flagAlmacen == "0")
+                {
+                    GroupAdd.Visible = true;
+                    groupCantidad.Visible = true;
+                    List<DataAlmacen> ProductosBodega = _LogicLayer.GetProductosBodega();
+                    foreach (DataAlmacen ProductoBodega in ProductosBodega.ToArray())
+                    {                       
+                        if (ProductoBodega.IdProducto == int.Parse(TxtIdProducto.Text))
+                        {
+                            GroupAdd.Visible = true;
+                            groupCantidad.Visible = true;
+                            TxtNombre.Text = ProductoBodega.Nombre;
+                            TxtLote.Text = ProductoBodega.Lote;
+                            datetimeVencimiento.Value = ProductoBodega.FechaVencimiento;
+                            TxtDescripcion.Text = ProductoBodega.Descripcion;
+                            comboPrograma.Text = ProductoBodega.Programa;
+                            flagAlmacen = "2";
+                        }
                     }
                 }
-
             }
         }
         public void Bodega()
