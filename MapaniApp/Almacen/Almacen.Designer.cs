@@ -33,6 +33,7 @@ namespace MapaniApp
             this.BtnAdd = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.BtnAddAlmacen = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -49,7 +50,7 @@ namespace MapaniApp
             // BtnAdd
             // 
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAdd.Location = new System.Drawing.Point(19, 98);
+            this.BtnAdd.Location = new System.Drawing.Point(205, 98);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(180, 67);
             this.BtnAdd.TabIndex = 1;
@@ -60,7 +61,7 @@ namespace MapaniApp
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(19, 250);
+            this.button2.Location = new System.Drawing.Point(391, 39);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(180, 53);
             this.button2.TabIndex = 2;
@@ -71,7 +72,7 @@ namespace MapaniApp
             // BtnAddAlmacen
             // 
             this.BtnAddAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAddAlmacen.Location = new System.Drawing.Point(19, 172);
+            this.BtnAddAlmacen.Location = new System.Drawing.Point(19, 98);
             this.BtnAddAlmacen.Name = "BtnAddAlmacen";
             this.BtnAddAlmacen.Size = new System.Drawing.Size(180, 67);
             this.BtnAddAlmacen.TabIndex = 3;
@@ -79,11 +80,23 @@ namespace MapaniApp
             this.BtnAddAlmacen.UseVisualStyleBackColor = true;
             this.BtnAddAlmacen.Click += new System.EventHandler(this.BtnAddAlmacen_Click);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(205, 39);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(180, 53);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Ver Bodega";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Almacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.BtnAddAlmacen);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.BtnAdd);
@@ -101,5 +114,6 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button BtnAddAlmacen;
+        private System.Windows.Forms.Button button3;
     }
 }

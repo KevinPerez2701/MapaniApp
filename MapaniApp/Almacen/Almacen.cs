@@ -50,5 +50,12 @@ namespace MapaniApp
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            VerProductos Productos = new VerProductos();
+            Productos.GetProductosBodega();
+            Productos.ShowDialog(this);
+        }
     }
 }

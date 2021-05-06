@@ -34,6 +34,13 @@ namespace MapaniApp
             if (flag=="1")
             dataGridView1.Columns[6].Visible = false;
         }
+        public void GetProductosBodega(string flag = null)
+        {
+            List<DataAlmacen> contacts = _LogicLayer.GetProductosBodega();
+            dataGridView1.DataSource = contacts;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+        }
         public void GetIdNMB(string Id)
         {
             TxtId.Text = Id;
