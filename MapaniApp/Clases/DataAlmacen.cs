@@ -20,5 +20,6 @@ namespace MapaniApp
         public string IdNMB { get; set; }
         public string Despachado { get; set; }
         public int Diferido { get; set; }
+        public string Flag { get; set; }
     }
 }

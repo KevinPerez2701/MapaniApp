@@ -56,12 +56,38 @@ namespace MapaniApp
            // }
             return Contact;
         }
-        public DataAlmacen SaveProduct(DataAlmacen Product)
+        public DataAlmacen SaveProductBodega(DataAlmacen Product)
         {
             //int flag = Product.IdProducto;
             //if (flag == 0)
             //{
-                _dataAccessLayer.InserProduct(Product);
+                _dataAccessLayer.InserProductBodega(Product);
+            //}
+            //else
+            // {
+            //     _dataAccessLayer.UpdateContact(Contact);
+            // }
+            return Product;
+        }
+        public DataAlmacen UpdateCantidad(DataAlmacen Product)
+        {
+            //int flag = Product.IdProducto;
+            //if (flag == 0)
+            //{
+            _dataAccessLayer.UpdateCantidad(Product);
+            //}
+            //else
+            // {
+            //     _dataAccessLayer.UpdateContact(Contact);
+            // }
+            return Product;
+        }
+        public DataAlmacen UpdateCantidadBodega(DataAlmacen Product)
+        {
+            //int flag = Product.IdProducto;
+            //if (flag == 0)
+            //{
+            _dataAccessLayer.UpdateCantidadBodega(Product);
             //}
             //else
             // {
@@ -138,6 +164,10 @@ namespace MapaniApp
         public List<DataAlmacen> GetProductos()
         {
             return _dataAccessLayer.GetProductos();
+        }
+        public List<DataAlmacen> GetProductosBodega()
+        {
+            return _dataAccessLayer.GetProductosBodega();
         }
         public List<ClaseEnfermeria> GetDataEnfermeria(string Id, DateTime Fecha)
         {

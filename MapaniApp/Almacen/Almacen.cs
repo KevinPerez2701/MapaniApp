@@ -28,6 +28,7 @@ namespace MapaniApp
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             AddProduct NewProduct = new AddProduct();
+            NewProduct.Bodega();
             NewProduct.ShowDialog(this);
         }
 
@@ -36,6 +37,18 @@ namespace MapaniApp
             EntregaOrdenes Ordenes = new EntregaOrdenes();
             Ordenes.PopulateContacts();
             Ordenes.ShowDialog(this);
+        }
+
+        private void BtnAddAlmacen_Click(object sender, EventArgs e)
+        {
+            AddProduct NewProduct = new AddProduct();
+            NewProduct.almacen();
+            NewProduct.ShowDialog(this);
+        }
+
+        private void Almacen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
