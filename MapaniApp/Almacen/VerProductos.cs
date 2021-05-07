@@ -45,7 +45,6 @@ namespace MapaniApp
         {
             List<DataAlmacen> ProductosAlmacen = _LogicLayer.GetProductos();
             List<DataAlmacen> ProductosBodega = _LogicLayer.GetProductosBodega();
-            DataAlmacen Productos = new DataAlmacen();
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
             int i=0;

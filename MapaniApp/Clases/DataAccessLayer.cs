@@ -936,9 +936,11 @@ namespace MapaniApp
                 Connection.Open();
                 string query = @"Select * 
                                 From TablaAlmacen";
-                SqlCommand command = new SqlCommand();
-                command.CommandText = query;
-                command.Connection = Connection;
+                SqlCommand command = new SqlCommand
+                {
+                    CommandText = query,
+                    Connection = Connection
+                };
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -974,9 +976,11 @@ namespace MapaniApp
                 Connection.Open();
                 string query = @"Select * 
                                 From TablaBodega";
-                SqlCommand command = new SqlCommand();
-                command.CommandText = query;
-                command.Connection = Connection;
+                SqlCommand command = new SqlCommand
+                {
+                    CommandText = query,
+                    Connection = Connection
+                };
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -1054,9 +1058,11 @@ namespace MapaniApp
                 Connection.Open();
                 string query = @"Select * 
                                 From Ordenes";
-                SqlCommand command = new SqlCommand();
-                command.CommandText = query;
-                command.Connection = Connection;
+                SqlCommand command = new SqlCommand
+                {
+                    CommandText = query,
+                    Connection = Connection
+                };
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -1092,9 +1098,11 @@ namespace MapaniApp
                 string query = @"Select * 
                                 From Ordenes
                                 Where Ordenes.IdNMB = @IdNMB and Ordenes.Fecha=@Fecha                ";
-                SqlCommand command = new SqlCommand();
-                command.CommandText = query;
-                command.Connection = Connection;
+                SqlCommand command = new SqlCommand
+                {
+                    CommandText = query,
+                    Connection = Connection
+                };
                 SqlParameter IdNMB = new SqlParameter("@IdNMB", int.Parse(Orden.IdNMB));
                 SqlParameter Fecha = new SqlParameter("@Fecha", Orden.Fecha);                                        
                 command.Parameters.Add(IdNMB);
