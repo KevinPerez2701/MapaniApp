@@ -18,27 +18,28 @@ namespace MapaniApp
             InitializeComponent();
             _LogicLayer = new LogicLayer();
         }
-       
+
         private void Main_Load(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();
             login.ShowDialog(this);
-            string ventana = login.Posicion();
-            if (ventana == "SuperUser")
+            List<MapaniUsers> ventana = login.Posicion();
+
+            if (ventana[0].Posicion == "SuperUser")
             {
                 groupSuperUser.Visible = true;
             }
-            else if (ventana == "Recepcion")
+            else if (ventana[0].Posicion == "Recepcion")
             {
                 Recepcion recepcion = new Recepcion();
                 recepcion.ShowDialog(this);
             }
-            else if (ventana == "Transcripcion")
+            else if (ventana[0].Posicion == "Transcripcion")
             {
                 Transcripcion transcripcion = new Transcripcion();
                 transcripcion.ShowDialog(this);
             }
-            else if (ventana == "Enfermeria")
+            else if (ventana[0].Posicion == "Enfermeria")
             {
                 Enfermeria enfermeria = new Enfermeria();
                 enfermeria.Show(this);

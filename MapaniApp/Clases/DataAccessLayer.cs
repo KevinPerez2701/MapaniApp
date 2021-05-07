@@ -1342,15 +1342,15 @@ namespace MapaniApp
             }
             return Citas;
         }
-        public string Login(string User,string Password)
+        public List<MapaniUsers> Login(string User,string Password)
         {
-            string posicion = "" ;
+            List<MapaniUsers> Usuario = new List<MapaniUsers>();
             try
             {
                 Connection.Open();
-                string query = @"Select Position
+                string query = @"Select *
                                 From MapaniUsers
-                               where MapaniUsers.LoginName=@User and MapaniUsers.Password=@Password"; //and ProximasVisitas.NMB=TablaNMB.Id" Nombre, Apellido,FechaNacimiento,
+                                where MapaniUsers.LoginName=@User and MapaniUsers.Password=@Password"; //and ProximasVisitas.NMB=TablaNMB.Id" Nombre, Apellido,FechaNacimiento,
                 SqlCommand command = new SqlCommand();
                 command.Parameters.Add(new SqlParameter("@User", User));
                 command.Parameters.Add(new SqlParameter("@Password", Password));
@@ -1358,8 +1358,11 @@ namespace MapaniApp
                 command.Connection = Connection;
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
-                {
-                    posicion = reader["Position"].ToString();
+                { Usuario.Add(new MapaniUsers
+                    {   Id = int.Parse(reader["Id"].ToString()),
+                        Nombre = reader["FirstName"].ToString(),
+                        Posicion = reader["Position"].ToString(),
+                    });
                 }
             }
             catch (Exception)
@@ -1371,7 +1374,7 @@ namespace MapaniApp
             {
                 Connection.Close();
             }
-            return posicion;
+            return Usuario;
         }
         #endregion
     }

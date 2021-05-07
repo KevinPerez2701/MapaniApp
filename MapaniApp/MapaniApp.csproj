@@ -88,6 +88,7 @@
     <Compile Include="Almacen\EntregaOrdenes.Designer.cs">
       <DependentUpon>EntregaOrdenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\MapaniUsers.cs" />
     <Compile Include="Recepcion\AgregarCita.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -222,7 +222,7 @@ namespace MapaniApp
         {
             _dataAccessLayer.InsertRelacionMMB(IdNMB, IdMMB,parentesco);
         }
-        public string Login(string User, string Password)
+        public List<MapaniUsers> Login(string User, string Password)
         {
            return _dataAccessLayer.Login(User, Password);
         }

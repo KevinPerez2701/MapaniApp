@@ -29,10 +29,12 @@ namespace MapaniApp
         #region METODOS DE CLASE
 
         #endregion
-        public string Posicion()
+        public List<MapaniUsers> Posicion()
         {
-             string ventana=_LogicLayer.Login(TxtUsuario.Text, TxtPassword.Text);
-             return ventana;
+            List<MapaniUsers> ventana =_LogicLayer.Login(TxtUsuario.Text, TxtPassword.Text);
+            ventana[0].Fecha = dateTimePicker1.Value.Date;
+            ventana[0].Asistencia = "Si";
+            return ventana;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
