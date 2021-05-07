@@ -41,6 +41,25 @@ namespace MapaniApp
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
         }
+        public void GetTotalProductos(string flag = null)
+        {
+            List<DataAlmacen> ProductosAlmacen = _LogicLayer.GetProductos();
+            List<DataAlmacen> ProductosBodega = _LogicLayer.GetProductosBodega();
+            DataAlmacen Productos = new DataAlmacen();
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            int i=0;
+            foreach (DataAlmacen Producto in ProductosAlmacen.ToArray())
+            {
+                i++;
+            }
+            for (int j=0; j<i; j++)
+            {
+                if (ProductosAlmacen[j].IdProducto == ProductosBodega[j].IdProducto)
+                    ProductosAlmacen[j].Cantidad += ProductosBodega[j].Cantidad;
+            }
+            dataGridView1.DataSource = ProductosAlmacen;
+        }
         public void GetIdNMB(string Id)
         {
             TxtId.Text = Id;

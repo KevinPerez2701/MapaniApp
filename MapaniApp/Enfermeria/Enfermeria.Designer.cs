@@ -67,6 +67,8 @@ namespace MapaniApp
             this.label12 = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtHb = new System.Windows.Forms.TextBox();
             this.groupBase.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -315,6 +317,8 @@ namespace MapaniApp
             // 
             // groupBase
             // 
+            this.groupBase.Controls.Add(this.label3);
+            this.groupBase.Controls.Add(this.TxtHb);
             this.groupBase.Controls.Add(this.labelPeso);
             this.groupBase.Controls.Add(this.labelCMB);
             this.groupBase.Controls.Add(this.ComboEdema);
@@ -325,7 +329,7 @@ namespace MapaniApp
             this.groupBase.Controls.Add(this.TxtPeso);
             this.groupBase.Location = new System.Drawing.Point(7, 196);
             this.groupBase.Name = "groupBase";
-            this.groupBase.Size = new System.Drawing.Size(452, 167);
+            this.groupBase.Size = new System.Drawing.Size(452, 221);
             this.groupBase.TabIndex = 90;
             this.groupBase.TabStop = false;
             this.groupBase.Text = "GroupBase";
@@ -470,6 +474,26 @@ namespace MapaniApp
             this.groupBox1.Text = "Agregar";
             this.groupBox1.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 170);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 24);
+            this.label3.TabIndex = 88;
+            this.label3.Tag = "Contact";
+            this.label3.Text = "Hb";
+            // 
+            // TxtHb
+            // 
+            this.TxtHb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtHb.Location = new System.Drawing.Point(268, 165);
+            this.TxtHb.Name = "TxtHb";
+            this.TxtHb.Size = new System.Drawing.Size(173, 29);
+            this.TxtHb.TabIndex = 89;
+            this.TxtHb.Tag = "Contact";
+            // 
             // Enfermeria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,5 +578,7 @@ namespace MapaniApp
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtHb;
     }
 }

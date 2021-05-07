@@ -26,6 +26,7 @@ namespace MapaniApp
         public string Observacion { get; set; }
         public string Patologia { get; set; }
         public string Antecedentes { get; set; }
+        public int Hb { get; set; }
 
     }
 }

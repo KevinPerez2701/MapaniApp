@@ -500,14 +500,15 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaEnfermeria (NMB, Fecha,Programa,Peso,Talla,CMB,Edema,Observacion,Patologias,Antecedentes)  
-                                    Values(@NMB,@Fecha,@Programa,@Peso,@Talla,@CMB,@Edema,@Observacion,@Patologia,@Antecedentes )";
+                                    Insert into TablaEnfermeria (NMB, Fecha,Programa,Peso,Talla,CMB,Edema,Observacion,Patologias,Antecedentes,Hb)  
+                                    Values(@NMB,@Fecha,@Programa,@Peso,@Talla,@CMB,@Edema,@Observacion,@Patologia,@Antecedentes,@Hb )";
                 SqlParameter NMB = new SqlParameter("@NMB", contact.NMB);
                 SqlParameter Fecha = new SqlParameter("@Fecha", contact.Fecha);
                 SqlParameter Programa = new SqlParameter("@Programa", contact.Programa);
                 SqlParameter Peso = new SqlParameter("@Peso", contact.Peso);
                 SqlParameter Talla = new SqlParameter("@Talla", contact.Talla);
-               // SqlParameter MUAC = new SqlParameter("@Muac", contact.MUAC);
+                SqlParameter Hb = new SqlParameter("@Hb", contact.Hb);
+                // SqlParameter MUAC = new SqlParameter("@Muac", contact.MUAC);
                 //SqlParameter CC = new SqlParameter("@CC", contact.CC);
                 SqlParameter CMB = new SqlParameter("@CMB", contact.CMB);
                 SqlParameter Edema  = new SqlParameter("@Edema", contact.Edema);
@@ -526,7 +527,8 @@ namespace MapaniApp
                 command.Parameters.Add(Programa);
                 command.Parameters.Add(Peso);
                 command.Parameters.Add(Talla);
-               // command.Parameters.Add(MUAC);
+                command.Parameters.Add(Hb);
+                // command.Parameters.Add(MUAC);
                 //command.Parameters.Add(CC);
                 command.Parameters.Add(CMB);
                 command.Parameters.Add(Edema);
