@@ -34,7 +34,8 @@ namespace MapaniApp
             {
                 IdNMB = int.Parse(TxtId.Text),
                 Fecha = DateCita.Value,
-                Departamento = comboDepartamento.Text
+                Departamento = comboDepartamento.Text,
+                Rol = comboBox1.Text
             };
             _LogicLayer.SaveCita(Cita);
         }

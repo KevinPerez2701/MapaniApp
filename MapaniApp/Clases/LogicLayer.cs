@@ -126,6 +126,11 @@ namespace MapaniApp
                 _dataAccessLayer.InserCita(Cita);
             return Cita;
         }
+        public List<MapaniUsers> Asistencia(List<MapaniUsers> Asistencia)
+        {
+            _dataAccessLayer.InsertAsistencia(Asistencia);
+           return Asistencia;
+        }
         public DataAlmacen SaveOrder(DataAlmacen Orden)
         {
             _dataAccessLayer.InsertOrden(Orden);
@@ -213,6 +218,10 @@ namespace MapaniApp
         public List<ProximasVisitas> GetCitas(DateTime SearchText)
         {
             return _dataAccessLayer.GetCitas(SearchText);
+        }
+        public List<MapaniUsers> GetAsistencia( )
+        {
+            return _dataAccessLayer.GetAsistencia();
         }
         public void InsertRelacion(string IdNMB, string IdCuidador,string parentesco)
         {

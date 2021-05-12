@@ -34,15 +34,17 @@ namespace MapaniApp
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.proximasVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.historialVisitasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.historialVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximasVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.historialVisitasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.historialVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proximasVisitasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource1)).BeginInit();
@@ -89,12 +91,27 @@ namespace MapaniApp
             this.Apellido,
             this.FechaNacimiento,
             this.fechaDataGridViewTextBoxColumn,
-            this.departamentoDataGridViewTextBoxColumn});
+            this.departamentoDataGridViewTextBoxColumn,
+            this.Rol,
+            this.Activo});
             this.dataGridView1.DataSource = this.proximasVisitasBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 76);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(686, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(855, 338);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // proximasVisitasBindingSource
+            // 
+            this.proximasVisitasBindingSource.DataSource = typeof(MapaniApp.ProximasVisitas);
+            // 
+            // historialVisitasBindingSource1
+            // 
+            this.historialVisitasBindingSource1.DataSource = typeof(MapaniApp.HistorialVisitas);
+            // 
+            // historialVisitasBindingSource
+            // 
+            this.historialVisitasBindingSource.DataSource = typeof(MapaniApp.HistorialVisitas);
             // 
             // idNMBDataGridViewTextBoxColumn
             // 
@@ -132,23 +149,23 @@ namespace MapaniApp
             this.departamentoDataGridViewTextBoxColumn.HeaderText = "Departamento";
             this.departamentoDataGridViewTextBoxColumn.Name = "departamentoDataGridViewTextBoxColumn";
             // 
-            // proximasVisitasBindingSource
+            // Rol
             // 
-            this.proximasVisitasBindingSource.DataSource = typeof(MapaniApp.ProximasVisitas);
+            this.Rol.DataPropertyName = "Rol";
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
             // 
-            // historialVisitasBindingSource1
+            // Activo
             // 
-            this.historialVisitasBindingSource1.DataSource = typeof(MapaniApp.HistorialVisitas);
-            // 
-            // historialVisitasBindingSource
-            // 
-            this.historialVisitasBindingSource.DataSource = typeof(MapaniApp.HistorialVisitas);
+            this.Activo.DataPropertyName = "Activo";
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
             // 
             // Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(894, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
@@ -172,13 +189,15 @@ namespace MapaniApp
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource proximasVisitasBindingSource;
+        private System.Windows.Forms.BindingSource historialVisitasBindingSource1;
+        private System.Windows.Forms.BindingSource historialVisitasBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idNMBDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departamentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource historialVisitasBindingSource1;
-        private System.Windows.Forms.BindingSource historialVisitasBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
     }
 }

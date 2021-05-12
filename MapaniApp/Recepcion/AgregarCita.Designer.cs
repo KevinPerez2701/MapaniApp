@@ -37,12 +37,14 @@ namespace MapaniApp
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(230, 145);
+            this.BtnSalir.Location = new System.Drawing.Point(230, 172);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(145, 34);
             this.BtnSalir.TabIndex = 15;
@@ -53,7 +55,7 @@ namespace MapaniApp
             // BtnAgregarCita
             // 
             this.BtnAgregarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarCita.Location = new System.Drawing.Point(74, 145);
+            this.BtnAgregarCita.Location = new System.Drawing.Point(74, 172);
             this.BtnAgregarCita.Name = "BtnAgregarCita";
             this.BtnAgregarCita.Size = new System.Drawing.Size(126, 33);
             this.BtnAgregarCita.TabIndex = 14;
@@ -122,11 +124,36 @@ namespace MapaniApp
             this.label1.TabIndex = 8;
             this.label1.Text = "Inserte Id NMB";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Pediatra1",
+            "Pediatra2",
+            "Nutricion1"});
+            this.comboBox1.Location = new System.Drawing.Point(253, 131);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(134, 32);
+            this.comboBox1.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(27, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 24);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Inserte el Doctor";
+            // 
             // AgregarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 199);
+            this.ClientSize = new System.Drawing.Size(401, 243);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnAgregarCita);
             this.Controls.Add(this.comboDepartamento);
@@ -153,5 +180,7 @@ namespace MapaniApp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

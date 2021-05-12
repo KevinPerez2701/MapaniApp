@@ -177,16 +177,46 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into ProximasVisitas ([NMB], [Fecha], [Departamento])  
-                                    Values(@IdNMB,@Fecha,@Departamento)";
+                                    Insert into ProximasVisitas ([NMB], [Fecha], [Departamento],Doctor)  
+                                    Values(@IdNMB,@Fecha,@Departamento,@Rol)";
                 SqlParameter IdNMB = new SqlParameter("@IdNMB", Cita.IdNMB);
                 SqlParameter Fecha= new SqlParameter("@Fecha", Cita.Fecha);
                 SqlParameter Departamento = new SqlParameter("@Departamento", Cita.Departamento);
-               
+                SqlParameter Rol = new SqlParameter("@Rol", Cita.Rol);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(IdNMB);
                 command.Parameters.Add(Fecha);
+                command.Parameters.Add(Rol);
                 command.Parameters.Add(Departamento);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+        public void InsertAsistencia(List<MapaniUsers> Asistencia)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into TablaAsistencia ([IdTrabajador], [Fecha],Rol)  
+                                    Values(@Id,@Fecha,@Rol)";
+                SqlParameter IdNMB = new SqlParameter("@Id", Asistencia[0].Id);
+                SqlParameter Fecha = new SqlParameter("@Fecha",Asistencia[0].Fecha);
+                SqlParameter Rol = new SqlParameter("@Rol", Asistencia[0].Rol);
+
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(IdNMB);
+                command.Parameters.Add(Fecha);
+                command.Parameters.Add(Rol);
                 command.ExecuteNonQuery();
 
             }
@@ -1310,7 +1340,7 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                string query = @"Select NMB,Fecha,Departamento,Nombre, Apellido,FechaNacimiento
+                string query = @"Select NMB,Fecha,Departamento,Doctor,Activo,Nombre, Apellido,FechaNacimiento
                                            From ProximasVisitas, TablaNMB
                                where ProximasVisitas.Fecha =@Fecha and ProximasVisitas.NMB=TablaNMB.Id"; //and ProximasVisitas.NMB=TablaNMB.Id" Nombre, Apellido,FechaNacimiento,
                 SqlCommand command = new SqlCommand();
@@ -1328,7 +1358,9 @@ namespace MapaniApp
                         FechaNacimiento = (DateTime)reader["FechaNacimiento"],
                         Fecha = (DateTime)reader["Fecha"],
                         Departamento = reader["Departamento"].ToString(),
-                    });
+                        Rol = reader["Doctor"].ToString(),
+                        Activo = reader["Activo"].ToString(),
+                   });
                 }
             }
             catch (Exception)
@@ -1341,6 +1373,40 @@ namespace MapaniApp
                 Connection.Close();
             }
             return Citas;
+        }
+        public List<MapaniUsers> GetAsistencia()
+        {
+            List<MapaniUsers> Asistencias = new List<MapaniUsers>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select IdTrabajador, Fecha,Rol
+                                 From TablaAsistencia";
+                              
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Asistencias.Add(new MapaniUsers
+                    {
+                        Id = int.Parse(reader["IdTrabajador"].ToString()),
+                        Fecha = (DateTime)reader["Fecha"],
+                        Rol = reader["Rol"].ToString()
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Asistencias;
         }
         public List<MapaniUsers> Login(string User,string Password)
         {
@@ -1362,7 +1428,8 @@ namespace MapaniApp
                     {   Id = int.Parse(reader["Id"].ToString()),
                         Nombre = reader["FirstName"].ToString(),
                         Posicion = reader["Position"].ToString(),
-                    });
+                        Rol = reader["Rol"].ToString(),
+                });
                 }
             }
             catch (Exception)

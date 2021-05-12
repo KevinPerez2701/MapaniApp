@@ -21,8 +21,15 @@ namespace MapaniApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            List<MapaniUsers> Asistencias = _LogicLayer.GetAsistencia();
             List<ProximasVisitas> Citas = _LogicLayer.GetCitas(dateTimePicker1.Value.Date);
+            foreach (ProximasVisitas Cita in Citas)
+            {   foreach(MapaniUsers Asistencia in Asistencias)
+                if (Cita.Rol == Asistencia.Rol && Cita.Fecha == Asistencia.Fecha)
+                    {
+                        Cita.Activo = "Si";
+                    }
+            }
             dataGridView1.DataSource = Citas;
             dataGridView1.Visible = true;
 
@@ -34,6 +41,9 @@ namespace MapaniApp
             
         }
 
-       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

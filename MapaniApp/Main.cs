@@ -24,6 +24,7 @@ namespace MapaniApp
             LoginForm login = new LoginForm();
             login.ShowDialog(this);
             List<MapaniUsers> ventana = login.Posicion();
+            _LogicLayer.Asistencia(ventana);
 
             if (ventana[0].Posicion == "SuperUser")
             {

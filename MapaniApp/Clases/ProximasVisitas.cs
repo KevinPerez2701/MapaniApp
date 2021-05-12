@@ -14,5 +14,7 @@ namespace MapaniApp
         public DateTime Fecha { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Departamento { get; set; }
+        public string Rol { get; set; }
+        public string Activo { get; set; }
     }
 }
