@@ -39,7 +39,7 @@ namespace MapaniApp
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraVista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapaniUsersBindingSource)).BeginInit();
@@ -75,7 +75,7 @@ namespace MapaniApp
             this.apellidoDataGridViewTextBoxColumn,
             this.posicionDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
-            this.HoraVista,
+            this.HoraEntrada,
             this.rolDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.mapaniUsersBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(15, 100);
@@ -117,11 +117,11 @@ namespace MapaniApp
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             // 
-            // HoraVista
+            // HoraEntrada
             // 
-            this.HoraVista.DataPropertyName = "HoraVista";
-            this.HoraVista.HeaderText = "Hora Entrada";
-            this.HoraVista.Name = "HoraVista";
+            this.HoraEntrada.DataPropertyName = "HoraEntrada";
+            this.HoraEntrada.HeaderText = "Hora Entrada";
+            this.HoraEntrada.Name = "HoraEntrada";
             // 
             // rolDataGridViewTextBoxColumn
             // 
@@ -157,7 +157,7 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn posicionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoraVista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoraEntrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn rolDataGridViewTextBoxColumn;
     }
 }
