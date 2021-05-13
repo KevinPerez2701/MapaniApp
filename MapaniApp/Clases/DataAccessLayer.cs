@@ -216,7 +216,7 @@ namespace MapaniApp
                 SqlParameter IdNMB = new SqlParameter("@Id", Asistencia[0].Id);
                 SqlParameter Fecha = new SqlParameter("@Fecha",Asistencia[0].Fecha);
                 SqlParameter Rol = new SqlParameter("@Rol", Asistencia[0].Rol);
-                SqlParameter Hora = new SqlParameter("@Hora", Asistencia[0].HoraVista);
+                SqlParameter Hora = new SqlParameter("@Hora", Asistencia[0].HoraEntrada);
 
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(IdNMB);
@@ -997,7 +997,7 @@ namespace MapaniApp
                         Posicion = reader["Position"].ToString(),
                         Rol = reader["Rol"].ToString(),
                         Fecha = (DateTime)reader["Fecha"],
-                        HoraVista =reader["Hora"].ToString(),
+                        HoraEntrada =reader["Hora"].ToString(),
 
                     });
                 }
