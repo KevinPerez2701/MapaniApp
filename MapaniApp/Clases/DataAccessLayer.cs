@@ -201,22 +201,28 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Inserta La asistencia unica por dia de los integrantes de MapaniUsers.
+        /// </summary>
+        /// <param name="Asistencia"></param>
         public void InsertAsistencia(List<MapaniUsers> Asistencia)
         {
             try
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaAsistencia ([IdTrabajador], [Fecha],Rol)  
-                                    Values(@Id,@Fecha,@Rol)";
+                                    Insert into TablaAsistencia ([IdTrabajador], [Fecha],Rol,Hora)  
+                                    Values(@Id,@Fecha,@Rol,@Hora)";
                 SqlParameter IdNMB = new SqlParameter("@Id", Asistencia[0].Id);
                 SqlParameter Fecha = new SqlParameter("@Fecha",Asistencia[0].Fecha);
                 SqlParameter Rol = new SqlParameter("@Rol", Asistencia[0].Rol);
+                SqlParameter Hora = new SqlParameter("@Hora", Asistencia[0].HoraVista);
 
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(IdNMB);
                 command.Parameters.Add(Fecha);
                 command.Parameters.Add(Rol);
+                command.Parameters.Add(Hora);
                 command.ExecuteNonQuery();
 
             }
@@ -230,6 +236,10 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Inserta una Orden de Pediatria o Nutricion en la Base de datos y queda como diferido hasta que se entregue.
+        /// </summary>
+        /// <param name="Orden"></param>
         public void InsertOrden(DataAlmacen Orden)
         {
             try
@@ -265,6 +275,10 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Inserta en la base de datos el despacho de la orden creada por el pediatra o Nutricionista para entregar. Resta la cantidad del almacen.
+        /// </summary>
+        /// <param name="Orden"></param>
         public void InsertDespacho(DataAlmacen Orden)
         {
             try
@@ -292,6 +306,10 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Actualiza  los valores del Producto despachado en almacen.
+        /// </summary>
+        /// <param name="Orden"></param>
         public void UpdateAlmacen(DataAlmacen Orden)
         {
             try
@@ -317,6 +335,10 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Actualiza la cantidad de productos en almacen cuando este recibe Unidades de la Bodega
+        /// </summary>
+        /// <param name="Orden"></param>
         public void UpdateCantidad(DataAlmacen Orden)
         {
             try
@@ -344,6 +366,10 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Actualiza los productos en Bodega una vez se trasladan a almacen
+        /// </summary>
+        /// <param name="Orden"></param>
         public void UpdateCantidadBodega(DataAlmacen Orden)
         {
             try
@@ -369,6 +395,10 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Actualiza el Producto Diferido una vez se hace el despacho.
+        /// </summary>
+        /// <param name="Orden"></param>
         public void UpdateDiferido(DataAlmacen Orden)
         {
             try
@@ -467,6 +497,12 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Establece una Relacion entre El NMB y el Cuidador, ademas recibe su parentesco.
+        /// </summary>
+        /// <param name="IdNMB"></param>
+        /// <param name="IdCuidador"></param>
+        /// <param name="Parentesco"></param>
         public void InsertRelacion(string IdNMB,string IdCuidador, string Parentesco)
         {
             try
@@ -496,6 +532,12 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Inserta relacion del NMB y MMB para casos especiales.
+        /// </summary>
+        /// <param name="IdNMB"></param>
+        /// <param name="IdMMB"></param>
+        /// <param name="Parentesco"></param>
         public void InsertRelacionMMB(string IdNMB, string IdMMB, string Parentesco)
         {
             try
@@ -524,6 +566,10 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Inserta los datos Del paciente de una visita a Enfermeria.
+        /// </summary>
+        /// <param name="contact"></param>
         public void InserCitaEnfermeria(ClaseEnfermeria contact)
         {
             try
@@ -584,6 +630,10 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Agrega un Producto Nuevo a la Tabla Bodega.
+        /// </summary>
+        /// <param name="contact"></param>
         public void InserProductBodega(DataAlmacen contact)
         {
             try
@@ -620,6 +670,10 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Inserta un Producto nuevo de la Bodega al Almacen. Actualiza La cantidad de dicho producto en Bodega.
+        /// </summary>
+        /// <param name="contact"></param>
         public void InserProduct(DataAlmacen contact)
         {
             try
@@ -917,6 +971,48 @@ namespace MapaniApp
             }
             return contacts;
         }
+        public List<MapaniUsers> ShowAsistencia(DateTime Fecha)
+        {
+            List<MapaniUsers> Asistencia = new List<MapaniUsers>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From TablaAsistencia	
+                                Join MapaniUsers
+                                on TablaAsistencia.IdTrabajador = MapaniUsers.Id
+                                where Fecha = @Fecha";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Fecha", Fecha));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Asistencia.Add(new MapaniUsers
+                    {
+                        Id = int.Parse(reader["Id"].ToString()),
+                        Nombre = reader["FirstName"].ToString(),
+                        Apellido = reader["LastName"].ToString(),
+                        Posicion = reader["Position"].ToString(),
+                        Rol = reader["Rol"].ToString(),
+                        Fecha = (DateTime)reader["Fecha"],
+                        HoraVista =reader["Hora"].ToString(),
+
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Asistencia;
+        }
         /// <summary>
         /// Idem pero en este caso las relaciones de NMB con cuidadores
         /// </summary>
@@ -958,6 +1054,10 @@ namespace MapaniApp
             }
             return contacts;
         }
+        /// <summary>
+        /// Obtiene los Productos del Almacen.
+        /// </summary>
+        /// <returns></returns>
         public List<DataAlmacen> GetProductos()
         {
             List<DataAlmacen> contacts = new List<DataAlmacen>();
@@ -998,6 +1098,10 @@ namespace MapaniApp
             }
             return contacts;
         }
+        /// <summary>
+        /// Idem pero Productos Bodega
+        /// </summary>
+        /// <returns></returns>
         public List<DataAlmacen> GetProductosBodega()
         {
             List<DataAlmacen> contacts = new List<DataAlmacen>();
@@ -1038,7 +1142,12 @@ namespace MapaniApp
             }
             return contacts;
         }
-
+        /// <summary>
+        /// Obtiene la Data que fue tomada en Enfermeria del Paciente NMB en la Fecha estipulada.
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="Fecha"></param>
+        /// <returns></returns>
         public List<ClaseEnfermeria> GetDataEnfermeria(string Id, DateTime Fecha)
         {
             List<ClaseEnfermeria> Data = new List<ClaseEnfermeria>();
@@ -1080,6 +1189,10 @@ namespace MapaniApp
             }
             return Data;
         }
+        /// <summary>
+        /// Obtiene las ordenes que se realizaorn.
+        /// </summary>
+        /// <returns></returns>
         public List<DataAlmacen> GetOrdenes()
         {
             List<DataAlmacen> contacts = new List<DataAlmacen>();
@@ -1119,6 +1232,11 @@ namespace MapaniApp
             }
             return contacts;
         }
+        /// <summary>
+        /// obtiene el Historial de las Ordenes que ya Fueron despachadas y quedan asociadas al NMB
+        /// </summary>
+        /// <param name="Orden"></param>
+        /// <returns></returns>
         public List<DataAlmacen> GetHistorialOrdenes(DataAlmacen Orden)
         {
             List<DataAlmacen> contacts = new List<DataAlmacen>();
@@ -1249,7 +1367,11 @@ namespace MapaniApp
             }
             return Historial;
         }
-
+        /// <summary>
+        /// Obtiene el Historial de las citas para una fecha especifica.
+        /// </summary>
+        /// <param name="Search"></param>
+        /// <returns></returns>
         public List<HistorialVisitas> GetHistorialCitas(DateTime Search )
         {
             List<HistorialVisitas> Historial = new List<HistorialVisitas>();
@@ -1315,6 +1437,8 @@ namespace MapaniApp
                         IdNMB = int.Parse(reader["NMB"].ToString()),
                         Fecha = (DateTime)reader["Fecha"],
                         Departamento = reader["Departamento"].ToString(),
+                        Activo = reader["Activo"].ToString(),
+
                     });
                 }
             }
@@ -1374,6 +1498,10 @@ namespace MapaniApp
             }
             return Citas;
         }
+        /// <summary>
+        /// Obtiene la Asistencia del usuario.
+        /// </summary>
+        /// <returns></returns>
         public List<MapaniUsers> GetAsistencia()
         {
             List<MapaniUsers> Asistencias = new List<MapaniUsers>();
@@ -1408,6 +1536,12 @@ namespace MapaniApp
             }
             return Asistencias;
         }
+        /// <summary>
+        /// Funcion para chequear las credenciales de usuario Mapani y mostrar las vistas de acuerdo a su posicion.
+        /// </summary>
+        /// <param name="User"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
         public List<MapaniUsers> Login(string User,string Password)
         {
             List<MapaniUsers> Usuario = new List<MapaniUsers>();

@@ -24,8 +24,7 @@ namespace MapaniApp
             LoginForm login = new LoginForm();
             login.ShowDialog(this);
             List<MapaniUsers> ventana = login.Posicion();
-            _LogicLayer.Asistencia(ventana);
-
+           
             if (ventana[0].Posicion == "SuperUser")
             {
                 groupSuperUser.Visible = true;
@@ -108,6 +107,12 @@ namespace MapaniApp
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnAsistencia_Click(object sender, EventArgs e)
+        {
+            Asistencia VerAsistencia = new Asistencia();
+            VerAsistencia.ShowDialog(this);
         }
     }
 }

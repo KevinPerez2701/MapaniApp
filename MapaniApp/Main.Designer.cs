@@ -39,6 +39,7 @@ namespace MapaniApp
             this.BtnTranscripcion = new System.Windows.Forms.Button();
             this.groupSuperUser = new System.Windows.Forms.GroupBox();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.BtnAsistencia = new System.Windows.Forms.Button();
             this.groupSuperUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,11 +161,23 @@ namespace MapaniApp
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
+            // BtnAsistencia
+            // 
+            this.BtnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAsistencia.Location = new System.Drawing.Point(12, 180);
+            this.BtnAsistencia.Name = "BtnAsistencia";
+            this.BtnAsistencia.Size = new System.Drawing.Size(190, 41);
+            this.BtnAsistencia.TabIndex = 14;
+            this.BtnAsistencia.Text = "Asistencia";
+            this.BtnAsistencia.UseVisualStyleBackColor = true;
+            this.BtnAsistencia.Click += new System.EventHandler(this.BtnAsistencia_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 277);
+            this.Controls.Add(this.BtnAsistencia);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.groupSuperUser);
             this.Name = "Main";
@@ -186,6 +199,7 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnTranscripcion;
         private System.Windows.Forms.GroupBox groupSuperUser;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.Button BtnAsistencia;
     }
 }
 

@@ -58,67 +58,30 @@ namespace MapaniApp
         }
         public DataAlmacen SaveProductBodega(DataAlmacen Product)
         {
-            //int flag = Product.IdProducto;
-            //if (flag == 0)
-            //{
+          
                 _dataAccessLayer.InserProductBodega(Product);
-            //}
-            //else
-            // {
-            //     _dataAccessLayer.UpdateContact(Contact);
-            // }
             return Product;
         }
         public DataAlmacen SaveProduct(DataAlmacen Product)
         {
-            //int flag = Product.IdProducto;
-            //if (flag == 0)
-            //{
             _dataAccessLayer.InserProduct(Product);
-            //}
-            //else
-            // {
-            //     _dataAccessLayer.UpdateContact(Contact);
-            // }
             return Product;
         }
         public DataAlmacen UpdateCantidad(DataAlmacen Product)
         {
-            //int flag = Product.IdProducto;
-            //if (flag == 0)
-            //{
             _dataAccessLayer.UpdateCantidad(Product);
-            //}
-            //else
-            // {
-            //     _dataAccessLayer.UpdateContact(Contact);
-            // }
             return Product;
         }
         public DataAlmacen UpdateCantidadBodega(DataAlmacen Product)
         {
-            //int flag = Product.IdProducto;
-            //if (flag == 0)
-            //{
+            
             _dataAccessLayer.UpdateCantidadBodega(Product);
-            //}
-            //else
-            // {
-            //     _dataAccessLayer.UpdateContact(Contact);
-            // }
             return Product;
         }
         public ClaseEnfermeria SaveContactEnfermeria(ClaseEnfermeria Contact)
         {
-            //int flag = Contact.Id;
-            //if (flag == 0)
-            //{
+            
                 _dataAccessLayer.InserCitaEnfermeria(Contact);
-            //}
-            //else
-            // {
-            //     _dataAccessLayer.UpdateContact(Contact);
-            // }
             return Contact;
         }
         public  ProximasVisitas SaveCita(ProximasVisitas Cita)
@@ -129,7 +92,7 @@ namespace MapaniApp
         public List<MapaniUsers> Asistencia(List<MapaniUsers> Asistencia)
         {
             _dataAccessLayer.InsertAsistencia(Asistencia);
-           return Asistencia;
+            return Asistencia;
         }
         public DataAlmacen SaveOrder(DataAlmacen Orden)
         {
@@ -158,6 +121,10 @@ namespace MapaniApp
         public List<ContactNMB> GetContacts(string SearchText = null)
         {
             return _dataAccessLayer.GetContacts(SearchText);
+        }
+        public List<MapaniUsers> ShowAsistencia(DateTime Fecha)
+        {
+            return _dataAccessLayer.ShowAsistencia(Fecha);
         }
         public List<ContactCuidador> GetCedulaCuidador(string SearchText = null)
         {

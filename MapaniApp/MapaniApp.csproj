@@ -80,6 +80,12 @@
     <Compile Include="Almacen\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\Asistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Asistencia.Designer.cs">
+      <DependentUpon>Asistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\ClaseEnfermeria.cs" />
     <Compile Include="Clases\DataAlmacen.cs" />
     <Compile Include="Almacen\EntregaOrdenes.cs">
@@ -210,6 +216,9 @@
     <EmbeddedResource Include="Enfermeria\Enfermeria.resx">
       <DependentUpon>Enfermeria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login\Asistencia.resx">
+      <DependentUpon>Asistencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pediatria\Pediatria.resx">
       <DependentUpon>Pediatria.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +264,7 @@
     <None Include="Properties\DataSources\ContactNMB.datasource" />
     <None Include="Properties\DataSources\DataAlmacen.datasource" />
     <None Include="Properties\DataSources\HistorialVisitas.datasource" />
+    <None Include="Properties\DataSources\MapaniUsers.datasource" />
     <None Include="Properties\DataSources\ProximasVisitas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
