@@ -94,6 +94,11 @@ namespace MapaniApp
             _dataAccessLayer.InsertAsistencia(Asistencia);
             return Asistencia;
         }
+        public List<MapaniUsers> Salida(List<MapaniUsers> Salida)
+        {
+            _dataAccessLayer.Salida(Salida);
+            return Salida;
+        }
         public DataAlmacen SaveOrder(DataAlmacen Orden)
         {
             _dataAccessLayer.InsertOrden(Orden);

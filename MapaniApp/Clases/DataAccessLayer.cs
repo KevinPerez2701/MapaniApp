@@ -236,6 +236,34 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void Salida(List<MapaniUsers> Asistencia)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"                                     
+                                    UPDATE TablaAsistencia SET HoraSalida = @Salida 
+                                    where TablaAsistencia.IdTrabajador = @Id and TablaAsistencia.Fecha =@Fecha";
+                SqlParameter IdNMB = new SqlParameter("@Id", Asistencia[0].Id);
+                SqlParameter Fecha = new SqlParameter("@Fecha", Asistencia[0].Fecha);
+                SqlParameter Salida = new SqlParameter("@Salida", Asistencia[0].HoraSalida);             
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(IdNMB);
+                command.Parameters.Add(Fecha);
+                command.Parameters.Add(Salida);        
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         /// <summary>
         /// Inserta una Orden de Pediatria o Nutricion en la Base de datos y queda como diferido hasta que se entregue.
         /// </summary>
@@ -998,7 +1026,7 @@ namespace MapaniApp
                         Rol = reader["Rol"].ToString(),
                         Fecha = (DateTime)reader["Fecha"],
                         HoraEntrada =reader["Hora"].ToString(),
-
+                        HoraSalida = reader["HoraSalida"].ToString(),
                     });
                 }
             }

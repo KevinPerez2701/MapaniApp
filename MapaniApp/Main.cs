@@ -12,6 +12,7 @@ namespace MapaniApp
 {
     public partial class Main : Form
     {
+        List<MapaniUsers> ventana;
         private LogicLayer _LogicLayer;
         public Main()
         {
@@ -23,7 +24,7 @@ namespace MapaniApp
         {
             LoginForm login = new LoginForm();
             login.ShowDialog(this);
-            List<MapaniUsers> ventana = login.Posicion();
+            ventana = login.Posicion();
            
             if (ventana[0].Posicion == "SuperUser")
             {
@@ -106,9 +107,14 @@ namespace MapaniApp
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
+            Salida();
             this.Close();
         }
-
+        private void Salida()
+        {
+            ventana[0].HoraSalida = DateTime.Now.ToString("hh:mm tt");
+            _LogicLayer.Salida(ventana);
+        }
         private void BtnAsistencia_Click(object sender, EventArgs e)
         {
             Asistencia VerAsistencia = new Asistencia();

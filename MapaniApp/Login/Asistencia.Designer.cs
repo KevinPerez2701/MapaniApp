@@ -33,14 +33,14 @@ namespace MapaniApp
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.mapaniUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.HoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mapaniUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapaniUsersBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -74,18 +74,27 @@ namespace MapaniApp
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
             this.posicionDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn,
             this.HoraEntrada,
+            this.HoraSalida,
             this.rolDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.mapaniUsersBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(15, 100);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(751, 302);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // mapaniUsersBindingSource
+            // HoraEntrada
             // 
-            this.mapaniUsersBindingSource.DataSource = typeof(MapaniApp.MapaniUsers);
+            this.HoraEntrada.DataPropertyName = "HoraEntrada";
+            this.HoraEntrada.HeaderText = "Hora Entrada";
+            this.HoraEntrada.Name = "HoraEntrada";
+            // 
+            // HoraSalida
+            // 
+            this.HoraSalida.DataPropertyName = "HoraSalida";
+            this.HoraSalida.HeaderText = "HoraSalida";
+            this.HoraSalida.Name = "HoraSalida";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -111,23 +120,15 @@ namespace MapaniApp
             this.posicionDataGridViewTextBoxColumn.HeaderText = "Posicion";
             this.posicionDataGridViewTextBoxColumn.Name = "posicionDataGridViewTextBoxColumn";
             // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // HoraEntrada
-            // 
-            this.HoraEntrada.DataPropertyName = "HoraEntrada";
-            this.HoraEntrada.HeaderText = "Hora Entrada";
-            this.HoraEntrada.Name = "HoraEntrada";
-            // 
             // rolDataGridViewTextBoxColumn
             // 
             this.rolDataGridViewTextBoxColumn.DataPropertyName = "Rol";
             this.rolDataGridViewTextBoxColumn.HeaderText = "Rol";
             this.rolDataGridViewTextBoxColumn.Name = "rolDataGridViewTextBoxColumn";
+            // 
+            // mapaniUsersBindingSource
+            // 
+            this.mapaniUsersBindingSource.DataSource = typeof(MapaniApp.MapaniUsers);
             // 
             // Asistencia
             // 
@@ -156,8 +157,8 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn posicionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoraEntrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoraSalida;
         private System.Windows.Forms.DataGridViewTextBoxColumn rolDataGridViewTextBoxColumn;
     }
 }
