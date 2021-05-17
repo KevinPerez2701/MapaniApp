@@ -24,10 +24,10 @@ namespace MapaniApp
             {
                 _dataAccessLayer.InserContactMMB(Contact);
             }
-            //else
-            // {
-            //     _dataAccessLayer.UpdateContact(Contact);
-            // }
+            else
+             {
+                 _dataAccessLayer.UpdateContactMMB(Contact);
+             }
             return Contact;
         }
         public ContactCuidador SaveContactCuidador(ContactCuidador Contact)
@@ -37,23 +37,23 @@ namespace MapaniApp
             {
                 _dataAccessLayer.InserContactCuidador(Contact);
             }
-            //else
-            // {
-            //     _dataAccessLayer.UpdateContact(Contact);
-            // }
+            else
+            {
+                 _dataAccessLayer.UpdateContactCuidador(Contact);
+            }
             return Contact;
         }
 
-        public ContactNMB SaveContact(ContactNMB Contact)
+        public  ContactNMB SaveContact(ContactNMB Contact)
         { int flag = Contact.Id;
             if ( flag == 0)
             {
                 _dataAccessLayer.InserContactNMB(Contact);
             }
-            //else
-           // {
-           //     _dataAccessLayer.UpdateContact(Contact);
-           // }
+            else
+            {
+                _dataAccessLayer.UpdateContactNMB(Contact);
+           }
             return Contact;
         }
         public DataAlmacen SaveProductBodega(DataAlmacen Product)

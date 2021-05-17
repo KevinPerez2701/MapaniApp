@@ -57,6 +57,15 @@ namespace MapaniApp
             List<HistorialVisitas> Historial = _LogicLayer.GetHistorial(SearchText);
             dataGridHistorial.DataSource = Historial;
             List<ProximasVisitas> Proximas = _LogicLayer.GetProximas(SearchText);
+            List<MapaniUsers> Asistencias = _LogicLayer.GetAsistencia();           
+            foreach (ProximasVisitas Cita in Proximas)
+            {
+                foreach (MapaniUsers Asistencia in Asistencias)
+                    if (Cita.Rol == Asistencia.Rol && Cita.Fecha == Asistencia.Fecha)
+                    {
+                        Cita.Activo = "Si";
+                    }
+            }
             dataGridProximasVisitas.DataSource = Proximas;
         }
         #endregion

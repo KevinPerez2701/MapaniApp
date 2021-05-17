@@ -33,6 +33,40 @@ namespace MapaniApp
                 contact.LoadUser(ComboContacto.Text);
                 contact.ShowDialog(this);
             }
+            else if (ComboOperacion.Text == "Editar Contacto")
+            {              
+                if (ComboContacto.Text == "NMB")
+                {
+                    List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtId.Text);
+                    ContactNMB contact = contacts[0];
+                    AddContact contactDetails = new AddContact();
+                    contactDetails.LoadContact(contact);
+                    contactDetails.EditUser(ComboContacto.Text,TxtId.Text);
+                    contactDetails.HideSave();
+                    contactDetails.ShowDialog(this);
+                }
+                else if (ComboContacto.Text == "Cuidador")
+                {
+                    List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtId.Text);
+                    ContactCuidador contact = contacts[0];
+                    AddContact contactDetails = new AddContact();
+                    contactDetails.LoadContactCuidador(contact);
+                    contactDetails.HideSave();
+                    contactDetails.EditUser(ComboContacto.Text, TxtId.Text);
+                    contactDetails.ShowDialog(this);
+                }
+                else if (ComboContacto.Text == "MMB")
+                {
+                    List<ContactMMB> contacts = _LogicLayer.GetContactsMMB(TxtId.Text);
+                    ContactMMB contact = contacts[0];
+                    AddContact contactDetails = new AddContact();
+                    contactDetails.LoadContactMMB(contact);
+                    contactDetails.EditUser(ComboContacto.Text, TxtId.Text);
+                    contactDetails.HideSave();
+                    contactDetails.ShowDialog(this);
+                }
+
+            }
             else if (ComboOperacion.Text == "Ver Contacto" )
             {   if (ComboContacto.Text == "NMB")
                 {
@@ -40,10 +74,11 @@ namespace MapaniApp
                     ContactNMB contact = contacts[0];
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContact(contact);
-                    contactDetails.LoadUser(ComboContacto.Text);
+                    contactDetails.LoadUser(ComboContacto.Text,TxtId.Text);
                     contactDetails.HideSave();
                     contactDetails.ShowDialog(this);
                 }
+          
                 else if (ComboContacto.Text =="Cuidador")
                 {
                     List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtId.Text);
@@ -51,7 +86,7 @@ namespace MapaniApp
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContactCuidador(contact);
                     contactDetails.HideSave();
-                    contactDetails.LoadUser(ComboContacto.Text);
+                    contactDetails.LoadUser(ComboContacto.Text, TxtId.Text);
                     contactDetails.ShowDialog(this);
                 }
                 else if (ComboContacto.Text =="MMB")
@@ -60,7 +95,7 @@ namespace MapaniApp
                     ContactMMB contact = contacts[0];
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContactMMB(contact);
-                    contactDetails.LoadUser(ComboContacto.Text);
+                    contactDetails.LoadUser(ComboContacto.Text, TxtId.Text);
                     contactDetails.HideSave();
                     contactDetails.ShowDialog(this);
                 }
@@ -111,6 +146,8 @@ namespace MapaniApp
                 ComboCuidador.Visible = true;
                 labelParentesco.Visible = true;
                 txtParentesco.Visible = true;
+                labelCedula.Visible = false;
+                TxtCedula.Visible = false;
             }
 
 

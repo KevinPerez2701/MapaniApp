@@ -13,8 +13,8 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-      //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+     // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -48,6 +48,59 @@ namespace MapaniApp
                 command.Parameters.Add(Apellido);
                 command.Parameters.Add(FechaNacimiento);
                 command.Parameters.Add(Direccion);
+                command.Parameters.Add(Sexo);
+                command.Parameters.Add(foto);
+                command.Parameters.Add(FechaIngreso);
+                command.Parameters.Add(Parto);
+                command.Parameters.Add(Vacunas);
+                command.Parameters.Add(LactanciaMaterna);
+                command.Parameters.Add(Ingreso);
+                command.Parameters.Add(Discapacidad);
+                command.Parameters.Add(Cedula);
+                command.Parameters.Add(PartidaNacimiento);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+        public void UpdateContactNMB(ContactNMB contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                   Update TablaNMB Set Nombre=@Nombre, Apellido=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@Foto,Cedula=@Cedula,FechaIngreso=@FechaIngreso,Discapacidad=@Discapacidad,Vacunas=@Vacunas,LactanciaMaterna=@LactanciaMaterna,Parto=@Parto,IngresoPrograma=@Ingreso,PartidaNacimiento=@PartidaNacimiento  
+                                   where TablaNMB.Id=@Id";
+                SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
+                SqlParameter Id = new SqlParameter("@Id", contact.Id);
+                SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
+                SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
+                SqlParameter Cedula = new SqlParameter("@cedula", contact.Cedula);
+                SqlParameter FechaIngreso = new SqlParameter("@fechaIngreso", contact.FechaIngreso);
+                SqlParameter Discapacidad = new SqlParameter("@Discapacidad", contact.Discapacidad);
+                SqlParameter Vacunas = new SqlParameter("@Vacunas", contact.Vacunas);
+                SqlParameter Parto = new SqlParameter("@Parto", contact.Parto);
+                SqlParameter Ingreso = new SqlParameter("@ingreso", contact.Ingreso);
+                SqlParameter Direccion = new SqlParameter("@Direccion", contact.Direccion);
+                SqlParameter LactanciaMaterna = new SqlParameter("@LactanciaMaterna", contact.Lactancia);
+                SqlParameter Sexo = new SqlParameter("@Sexo", contact.Sexo);
+                SqlParameter PartidaNacimiento = new SqlParameter("@PartidaNacimiento", contact.PartidaNacimiento);
+                SqlParameter foto = new SqlParameter("@foto", contact.Foto);
+
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(Nombre);
+                command.Parameters.Add(Apellido);
+                command.Parameters.Add(FechaNacimiento);
+                command.Parameters.Add(Direccion);
+                command.Parameters.Add(Id);
                 command.Parameters.Add(Sexo);
                 command.Parameters.Add(foto);
                 command.Parameters.Add(FechaIngreso);
@@ -119,6 +172,52 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void UpdateContactCuidador(ContactCuidador contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Update TablaCuidador SET [Nombre]=@Nombre, [Apellido]=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@foto,[Telefono]=@Telefono,EstadoCivil=@EstadoCivil,Cedula=@Cedula,Hijos=@Hijos,Transporte=@Transporte  
+                                   Where TablaCuidador.Id = @Id";
+                SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
+                SqlParameter Id = new SqlParameter("@Id", contact.Id);
+                SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
+                SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
+                SqlParameter Direccion = new SqlParameter("@Direccion", contact.Direccion);
+                SqlParameter Telefono = new SqlParameter("@Telefono", contact.Telefono);
+                SqlParameter Sexo = new SqlParameter("@Sexo", contact.Sexo);
+                SqlParameter foto = new SqlParameter("@foto", contact.Foto);
+                SqlParameter EstadoCivil = new SqlParameter("@EstadoCivil", contact.EstadoCivil);
+                SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
+                SqlParameter Hijos = new SqlParameter("@Hijos", contact.CantidadHijos);
+                SqlParameter Transporte = new SqlParameter("@Transporte", contact.Transporte);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(Nombre);
+                command.Parameters.Add(Id);
+                command.Parameters.Add(Apellido);
+                command.Parameters.Add(FechaNacimiento);
+                command.Parameters.Add(Direccion);
+                command.Parameters.Add(Sexo);
+                command.Parameters.Add(Telefono);
+                command.Parameters.Add(foto);
+                command.Parameters.Add(EstadoCivil);
+                command.Parameters.Add(Cedula);
+                command.Parameters.Add(Transporte);
+                command.Parameters.Add(Hijos);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         /// <summary>
         /// Idem Pero Con MMB, en TablaMMB
         /// </summary>
@@ -144,6 +243,52 @@ namespace MapaniApp
                 SqlParameter Transporte = new SqlParameter("@Transporte", contact.Transporte);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
+                command.Parameters.Add(Apellido);
+                command.Parameters.Add(FechaNacimiento);
+                command.Parameters.Add(Direccion);
+                command.Parameters.Add(Sexo);
+                command.Parameters.Add(Telefono);
+                command.Parameters.Add(foto);
+                command.Parameters.Add(EstadoCivil);
+                command.Parameters.Add(Cedula);
+                command.Parameters.Add(Transporte);
+                command.Parameters.Add(Hijos);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+        public void UpdateContactMMB(ContactMMB contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Update TablaMMB SET [Nombre]=@Nombre, [Apellido]=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@foto,[Telefono]=@Telefono,EstadoCivil=@EstadoCivil,Cedula=@Cedula,CantidadHijos=@Hijos,Transporte=@Transporte  
+                                   Where TablaMMB.Id = @Id";
+                SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
+                SqlParameter Id = new SqlParameter("@Id", contact.Id);
+                SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
+                SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
+                SqlParameter Direccion = new SqlParameter("@Direccion", contact.Direccion);
+                SqlParameter Telefono = new SqlParameter("@Telefono", contact.Telefono);
+                SqlParameter Sexo = new SqlParameter("@Sexo", contact.Sexo);
+                SqlParameter foto = new SqlParameter("@foto", contact.Foto);
+                SqlParameter EstadoCivil = new SqlParameter("@EstadoCivil", contact.EstadoCivil);
+                SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
+                SqlParameter Hijos = new SqlParameter("@Hijos", contact.CantidadHijos);
+                SqlParameter Transporte = new SqlParameter("@Transporte", contact.Transporte);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(Nombre);
+                command.Parameters.Add(Id);
                 command.Parameters.Add(Apellido);
                 command.Parameters.Add(FechaNacimiento);
                 command.Parameters.Add(Direccion);
@@ -1465,6 +1610,7 @@ namespace MapaniApp
                         IdNMB = int.Parse(reader["NMB"].ToString()),
                         Fecha = (DateTime)reader["Fecha"],
                         Departamento = reader["Departamento"].ToString(),
+                        Rol = reader["Doctor"].ToString(),
                         Activo = reader["Activo"].ToString(),
 
                     });

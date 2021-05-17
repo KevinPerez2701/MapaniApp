@@ -61,8 +61,8 @@ namespace MapaniApp
                 EstadoCivil = ComboEstadoCivil.Text,
                 CantidadHijos = TxtHijos.Text,
                 Transporte = TxtTransporte.Text,
-                Id = _contactNMB != null ? _contactNMB.Id : 0
-            };
+                Id = _contactCuidador != null ? _contactCuidador.Id : 0
+            };          
             _LogicLayer.SaveContactCuidador(Contact);
         }
         private void SaveContactMMB()
@@ -80,7 +80,7 @@ namespace MapaniApp
                 EstadoCivil = ComboEstadoCivil.Text,
                 CantidadHijos = TxtHijos.Text,
                 Transporte = TxtTransporte.Text,
-                Id = _contactNMB != null ? _contactNMB.Id : 0
+                Id = _contactMMB != null ? _contactMMB.Id : 0
             };
             _LogicLayer.SaveContactMMB(Contact);
         }
@@ -153,10 +153,20 @@ namespace MapaniApp
 
 
         }
-        public void LoadUser(string Contact)
+        public void LoadUser(string Contact,string Id = null)
         {
             textBox1.Text = Contact;
             textBox1.ReadOnly = true;
+            textBox2.Text = Id;
+            textBox2.ReadOnly = true;
+        }
+        public void EditUser(string Contact, string Id)
+        {
+            textBox1.Text = Contact;
+            textBox1.ReadOnly = true;
+            textBox2.Text = Id;
+            textBox2.ReadOnly = true;
+            BtnActualizar.Visible = true;
         }
         public void HideSave()
         {
@@ -202,7 +212,24 @@ namespace MapaniApp
             }
             this.Close();
         }
-        
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "NMB")
+            {
+                SaveContact();
+            }
+            else if (textBox1.Text == "Cuidador")
+            {
+                SaveContactCuidador();
+            }
+            else if (textBox1.Text == "MMB")
+            {
+                SaveContactMMB();
+
+            }
+            this.Close();
+        }
+
         #endregion
 
         private void AddContact_Load(object sender, EventArgs e)
@@ -214,5 +241,7 @@ namespace MapaniApp
         {
 
         }
+
+      
     }
 }
