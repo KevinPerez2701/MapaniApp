@@ -272,7 +272,7 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Update TablaMMB SET [Nombre]=@Nombre, [Apellido]=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@foto,[Telefono]=@Telefono,EstadoCivil=@EstadoCivil,Cedula=@Cedula,CantidadHijos=@Hijos,Transporte=@Transporte  
+                                   Update TablaMMB SET [Nombre]=@Nombre, [Apellido]=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@foto,[Telefono]=@Telefono,EstadoCivil=@EstadoCivil,Cedula=@Cedula,CantidadHijos=@Hijos,Transporte=@Transporte  
                                    Where TablaMMB.Id = @Id";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Id = new SqlParameter("@Id", contact.Id);

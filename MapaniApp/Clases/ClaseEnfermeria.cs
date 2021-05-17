@@ -22,6 +22,10 @@ namespace MapaniApp
         public string IMC { get; set; }
         public string  PZImcEdad { get; set; }
         public string  PZTallaEdad { get; set; }
+        public string PZTallaEdad2006 { get; set; }
+        public string PZPesoEdad { get; set; }
+        public string PZPesoEdad2006 { get; set; }
+        public string PZPesoTalla{ get; set; }
         public string PZTallaImc { get; set; }
         public string Observacion { get; set; }
         public string Patologia { get; set; }

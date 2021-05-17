@@ -44,6 +44,8 @@ namespace MapaniApp
             this.label5 = new System.Windows.Forms.Label();
             this.BtnAddOrder = new System.Windows.Forms.Button();
             this.DatosEnfermeria = new System.Windows.Forms.GroupBox();
+            this.TxtIMCCalculado = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.TxtSSF = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -96,8 +98,7 @@ namespace MapaniApp
             this.TxtTallaEdadWho2007P = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.TxtPesoEdadWho2007P = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.TxtIMCCalculado = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.DatosEnfermeria.SuspendLayout();
             this.GroupWHO2006.SuspendLayout();
             this.GroupWHO2007.SuspendLayout();
@@ -263,6 +264,26 @@ namespace MapaniApp
             this.DatosEnfermeria.TabIndex = 93;
             this.DatosEnfermeria.TabStop = false;
             this.DatosEnfermeria.Text = "Datos Enfermeria";
+            // 
+            // TxtIMCCalculado
+            // 
+            this.TxtIMCCalculado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIMCCalculado.Location = new System.Drawing.Point(347, 50);
+            this.TxtIMCCalculado.Name = "TxtIMCCalculado";
+            this.TxtIMCCalculado.Size = new System.Drawing.Size(76, 29);
+            this.TxtIMCCalculado.TabIndex = 101;
+            this.TxtIMCCalculado.Tag = "Contact";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(359, 23);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(43, 24);
+            this.label21.TabIndex = 101;
+            this.label21.Tag = "Contact";
+            this.label21.Text = "IMC";
             // 
             // label18
             // 
@@ -805,31 +826,23 @@ namespace MapaniApp
             this.TxtPesoEdadWho2007P.TabIndex = 80;
             this.TxtPesoEdadWho2007P.Tag = "Contact";
             // 
-            // label21
+            // button1
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(359, 23);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(43, 24);
-            this.label21.TabIndex = 101;
-            this.label21.Tag = "Contact";
-            this.label21.Text = "IMC";
-            // 
-            // TxtIMCCalculado
-            // 
-            this.TxtIMCCalculado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIMCCalculado.Location = new System.Drawing.Point(347, 50);
-            this.TxtIMCCalculado.Name = "TxtIMCCalculado";
-            this.TxtIMCCalculado.Size = new System.Drawing.Size(76, 29);
-            this.TxtIMCCalculado.TabIndex = 101;
-            this.TxtIMCCalculado.Tag = "Contact";
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(429, 493);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 38);
+            this.button1.TabIndex = 101;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Pediatria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 510);
+            this.ClientSize = new System.Drawing.Size(885, 536);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.GroupWHO2007);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label20);
@@ -937,5 +950,6 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtPesoEdadWho2007P;
         private System.Windows.Forms.TextBox TxtIMCCalculado;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button1;
     }
 }

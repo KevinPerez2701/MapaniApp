@@ -181,5 +181,23 @@ namespace MapaniApp
                 TxtPesoEdadWho2007P.Text = Math.Round(p, 2).ToString();
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SaveData();
+        }
+        public void SaveData()
+        {
+            ClaseEnfermeria Pediatria = new ClaseEnfermeria {
+                PZImcEdad = TxtIMCEdadWho2007Z.Text,
+                PZTallaEdad = TxtTallaEdadWho2007Z.Text,
+                PZPesoEdad = TxtPesoEdadWho2007Z.Text,
+                PZPesoEdad2006 = TxtZPesoEdad.Text,
+                PZTallaEdad2006 = TxtZPesoTalla.Text,
+                PZPesoTalla = TxtZPesoTalla.Text,
+                IMC = TxtIMCCalculado.Text,           
+            };
+         //   _LogicLayer.InserCitaPediatria(Pediatria);
+        }
     }
 }
