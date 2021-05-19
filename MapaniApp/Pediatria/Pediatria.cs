@@ -213,11 +213,11 @@ namespace MapaniApp
         }
         public void DiagnosticoTalla()
         {
-            if (int.Parse(TxtZTallaEdad.Text.ToString()) > 2)
+            if (int.Parse(TxtZTallaEdad.Text) > 2)
                 TxtDiagnosticoTalla.Text = "Alta";
-            else if (int.Parse(TxtZTallaEdad.Text.ToString()) > -2 && int.Parse(TxtZTallaEdad.Text.ToString()) < 2)
+            else if (int.Parse(TxtZTallaEdad.Text) > -2 && int.Parse(TxtZTallaEdad.Text) < 2)
                 TxtDiagnosticoTalla.Text = "Normal";
-            else if (int.Parse(TxtZTallaEdad.Text.ToString()) < -2)
+            else if (int.Parse(TxtZTallaEdad.Text) < -2)
                 TxtDiagnosticoTalla.Text = "Baja";
             else
                 TxtDiagnosticoTalla.Text = "Error";
@@ -225,11 +225,11 @@ namespace MapaniApp
         }
         public void DiagnosticoTalla2007()
         {
-            if (int.Parse(TxtTallaEdadWho2007Z.Text.ToString()) > 2)
+            if (int.Parse(TxtTallaEdadWho2007Z.Text) > 2)
                 TxtDiagnosticoTalla.Text = "Alta";
-            else if (int.Parse(TxtTallaEdadWho2007Z.Text.ToString()) > -2 && int.Parse(TxtTallaEdadWho2007Z.Text.ToString()) < 2)
+            else if (int.Parse(TxtTallaEdadWho2007Z.Text) > -2 && int.Parse(TxtTallaEdadWho2007Z.Text) < 2)
                 TxtDiagnosticoTalla.Text = "Normal";
-            else if (int.Parse(TxtTallaEdadWho2007Z.Text.ToString()) < -2)
+            else if (int.Parse(TxtTallaEdadWho2007Z.Text) < -2)
                 TxtDiagnosticoTalla.Text = "Baja";
             else
                 TxtDiagnosticoTalla.Text = "Error";
@@ -237,19 +237,19 @@ namespace MapaniApp
         }
         public void DiagnosticosWho2006()
         {
-            if (int.Parse(TxtZPesoTalla.Text.ToString()) > 3)
+            if (int.Parse(TxtZPesoTalla.Text) > 3)
                 TxtDiagnostico.Text = "Obesidad";
-            else if (int.Parse(TxtZPesoTalla.Text.ToString()) > 2 && int.Parse(TxtZPesoTalla.Text.ToString()) < 3)
+            else if (int.Parse(TxtZPesoTalla.Text) > 2 && int.Parse(TxtZPesoTalla.Text) < 3)
                 TxtDiagnostico.Text = " Sobrepeso";
-            else if (int.Parse(TxtZPesoTalla.Text.ToString()) > 1 && int.Parse(TxtZPesoTalla.Text.ToString()) < 2)
+            else if (int.Parse(TxtZPesoTalla.Text) > 1 && int.Parse(TxtZPesoTalla.Text) < 2)
                 TxtDiagnostico.Text = "Riesgo SP";
-            else if (int.Parse(TxtZPesoTalla.Text.ToString()) > -1 && int.Parse(TxtZPesoTalla.Text.ToString()) < 1)
+            else if (int.Parse(TxtZPesoTalla.Text) > -1 && int.Parse(TxtZPesoTalla.Text) < 1)
                 TxtDiagnostico.Text = "Normal";
-            else if (int.Parse(TxtZPesoTalla.Text.ToString()) > -2 && int.Parse(TxtZPesoTalla.Text.ToString()) < -1)
+            else if (int.Parse(TxtZPesoTalla.Text) > -2 && int.Parse(TxtZPesoTalla.Text) < -1)
                 TxtDiagnostico.Text = "Riesgo D";
-            else if (int.Parse(TxtZPesoTalla.Text.ToString()) > -3 && int.Parse(TxtZPesoTalla.Text.ToString()) < -2)
+            else if (int.Parse(TxtZPesoTalla.Text) > -3 && int.Parse(TxtZPesoTalla.Text) < -2)
                 TxtDiagnostico.Text = "Agudo Moderado";
-            else if (int.Parse(TxtZPesoTalla.Text.ToString()) > -4 && int.Parse(TxtZPesoTalla.Text.ToString()) < -3)
+            else if (int.Parse(TxtZPesoTalla.Text) > -4 && int.Parse(TxtZPesoTalla.Text) < -3)
                 TxtDiagnostico.Text = "Agudo Severo";
             else
                 TxtDiagnostico.Text = "Fuera de Rango";
@@ -257,19 +257,19 @@ namespace MapaniApp
         }
         public void DiagnosticosWho2007()
         {
-            if (int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) > 3)
+            if (int.Parse(TxtIMCEdadWho2007Z.Text) > 3)
                 TxtDiagnostico.Text = "Obesidad";
-            else if (int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) > 2 && int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) < 3)
+            else if (int.Parse(TxtIMCEdadWho2007Z.Text) > 2 && int.Parse(TxtIMCEdadWho2007Z.Text) < 3)
                 TxtDiagnostico.Text = " Sobrepeso";
-            else if (int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) > 1 && int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) < 2)
+            else if (int.Parse(TxtIMCEdadWho2007Z.Text) > 1 && int.Parse(TxtIMCEdadWho2007Z.Text) < 2)
                 TxtDiagnostico.Text = "Riesgo SP";
-            else if (int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) > -1 && int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) < 1)
+            else if (int.Parse(TxtIMCEdadWho2007Z.Text) > -1 && int.Parse(TxtIMCEdadWho2007Z.Text) < 1)
                 TxtDiagnostico.Text = "Normal";
-            else if (int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) > -2 && int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) < -1)
+            else if (int.Parse(TxtIMCEdadWho2007Z.Text) > -2 && int.Parse(TxtIMCEdadWho2007Z.Text) < -1)
                 TxtDiagnostico.Text = "Riesgo D";
-            else if (int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) > -3 && int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) < -2)
+            else if (int.Parse(TxtIMCEdadWho2007Z.Text) > -3 && int.Parse(TxtIMCEdadWho2007Z.Text) < -2)
                 TxtDiagnostico.Text = "Agudo Moderado";
-            else if (int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) > -4 && int.Parse(TxtIMCEdadWho2007Z.Text.ToString()) < -3)
+            else if (int.Parse(TxtIMCEdadWho2007Z.Text) > -4 && int.Parse(TxtIMCEdadWho2007Z.Text) < -3)
                 TxtDiagnostico.Text = "Agudo Severo";
             else
                 TxtDiagnostico.Text = "Fuera de Rango";
