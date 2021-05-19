@@ -44,6 +44,8 @@ namespace MapaniApp
             this.label5 = new System.Windows.Forms.Label();
             this.BtnAddOrder = new System.Windows.Forms.Button();
             this.DatosEnfermeria = new System.Windows.Forms.GroupBox();
+            this.txtHb = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.TxtIMCCalculado = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -99,19 +101,17 @@ namespace MapaniApp
             this.label27 = new System.Windows.Forms.Label();
             this.TxtPesoEdadWho2007P = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtHb = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.TxtDiagnostico = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.TxtDiagnosticoTalla = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.DatosEnfermeria.SuspendLayout();
             this.GroupWHO2006.SuspendLayout();
             this.GroupWHO2007.SuspendLayout();
@@ -281,6 +281,26 @@ namespace MapaniApp
             this.DatosEnfermeria.TabStop = false;
             this.DatosEnfermeria.Text = "Datos Enfermeria";
             this.DatosEnfermeria.Enter += new System.EventHandler(this.DatosEnfermeria_Enter);
+            // 
+            // txtHb
+            // 
+            this.txtHb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHb.Location = new System.Drawing.Point(366, 54);
+            this.txtHb.Name = "txtHb";
+            this.txtHb.Size = new System.Drawing.Size(76, 29);
+            this.txtHb.TabIndex = 102;
+            this.txtHb.Tag = "Contact";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(322, 54);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(35, 24);
+            this.label22.TabIndex = 103;
+            this.label22.Tag = "Contact";
+            this.label22.Text = "Hb";
             // 
             // TxtIMCCalculado
             // 
@@ -855,26 +875,6 @@ namespace MapaniApp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // txtHb
-            // 
-            this.txtHb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHb.Location = new System.Drawing.Point(366, 54);
-            this.txtHb.Name = "txtHb";
-            this.txtHb.Size = new System.Drawing.Size(76, 29);
-            this.txtHb.TabIndex = 102;
-            this.txtHb.Tag = "Contact";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(322, 54);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(35, 24);
-            this.label22.TabIndex = 103;
-            this.label22.Tag = "Contact";
-            this.label22.Text = "Hb";
-            // 
             // txtSexo
             // 
             this.txtSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -909,6 +909,32 @@ namespace MapaniApp
             this.groupBox1.TabIndex = 104;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pediatria";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "KWASHIORKOR",
+            "MARASMO"});
+            this.comboBox2.Location = new System.Drawing.Point(119, 23);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(167, 32);
+            this.comboBox2.TabIndex = 98;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "SI",
+            "NO"});
+            this.comboBox1.Location = new System.Drawing.Point(119, 58);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(167, 32);
+            this.comboBox1.TabIndex = 97;
             // 
             // label29
             // 
@@ -926,7 +952,7 @@ namespace MapaniApp
             this.TxtDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDiagnostico.Location = new System.Drawing.Point(119, 93);
             this.TxtDiagnostico.Name = "TxtDiagnostico";
-            this.TxtDiagnostico.Size = new System.Drawing.Size(130, 29);
+            this.TxtDiagnostico.Size = new System.Drawing.Size(167, 29);
             this.TxtDiagnostico.TabIndex = 96;
             this.TxtDiagnostico.Tag = "Contact";
             // 
@@ -946,7 +972,7 @@ namespace MapaniApp
             this.TxtDiagnosticoTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDiagnosticoTalla.Location = new System.Drawing.Point(119, 126);
             this.TxtDiagnosticoTalla.Name = "TxtDiagnosticoTalla";
-            this.TxtDiagnosticoTalla.Size = new System.Drawing.Size(130, 29);
+            this.TxtDiagnosticoTalla.Size = new System.Drawing.Size(167, 29);
             this.TxtDiagnosticoTalla.TabIndex = 94;
             this.TxtDiagnosticoTalla.Tag = "Contact";
             this.TxtDiagnosticoTalla.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -972,30 +998,6 @@ namespace MapaniApp
             this.label34.TabIndex = 79;
             this.label34.Tag = "Contact";
             this.label34.Text = "Referido";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "SI",
-            "NO"});
-            this.comboBox1.Location = new System.Drawing.Point(119, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 32);
-            this.comboBox1.TabIndex = 97;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "KWASHIORKOR",
-            "MARASMO"});
-            this.comboBox2.Location = new System.Drawing.Point(119, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(130, 32);
-            this.comboBox2.TabIndex = 98;
             // 
             // Pediatria
             // 
