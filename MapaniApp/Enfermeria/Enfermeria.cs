@@ -82,13 +82,15 @@ namespace MapaniApp
                 Peso = TxtPeso.Text,
                 Talla = TxtTalla.Text,              
                 CMB = TxtCMB.Text,
-                Edema = ComboEdema.Text, 
                 Hb = int.Parse(TxtHb.Text),
-                Observacion = TxtObservacion.Text,
-                Patologia = TxtPatologia.Text,
-                Antecedentes = TxtAntecedentes.Text,
+               
             };
             _LogicLayer.SaveContactEnfermeria(Cita);
-        }    
+        }
+
+        private void ComboEdema_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

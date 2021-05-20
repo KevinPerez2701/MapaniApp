@@ -20,6 +20,7 @@ namespace MapaniApp
         public string Lactancia { get; set; }
         public string PesoNacimiento { get; set; }
         public string IMC { get; set; }
+        public string IMCPZ { get; set; }
         public string  PZImcEdad { get; set; }
         public string  PZTallaEdad { get; set; }
         public string PZTallaEdad2006 { get; set; }
@@ -31,6 +32,9 @@ namespace MapaniApp
         public string Patologia { get; set; }
         public string Antecedentes { get; set; }
         public int Hb { get; set; }
-
+        public string Urgencias { get; set; }
+        public string Referido { get; set; }
+        public string Diagnostico { get; set; }
+        public string DiagnosticoTalla { get; set; }
     }
 }

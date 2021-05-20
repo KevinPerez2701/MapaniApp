@@ -84,6 +84,12 @@ namespace MapaniApp
                 _dataAccessLayer.InserCitaEnfermeria(Contact);
             return Contact;
         }
+        public ClaseEnfermeria InsertCitaPediatria(ClaseEnfermeria Contact)
+        {
+
+            _dataAccessLayer.InserCitaPediatria(Contact);
+            return Contact;
+        }
         public  ProximasVisitas SaveCita(ProximasVisitas Cita)
         {
                 _dataAccessLayer.InserCita(Cita);
@@ -162,6 +168,10 @@ namespace MapaniApp
         public List<ClaseEnfermeria> GetDataEnfermeria(string Id, DateTime Fecha)
         {
             return _dataAccessLayer.GetDataEnfermeria(Id, Fecha);
+        }
+        public List<ClaseEnfermeria> GetDataPediatria(string Id)
+        {
+            return _dataAccessLayer.GetDataPediatria(Id);
         }
         public List<DataAlmacen> GetOrdenes()
         {   

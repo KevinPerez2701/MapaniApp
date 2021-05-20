@@ -340,15 +340,23 @@ namespace MapaniApp
         public void SaveData()
         {
             ClaseEnfermeria Pediatria = new ClaseEnfermeria {
+                NMB = TxtID.Text,
+                Fecha = dateTimePicker2.Value.Date,
                 PZImcEdad = TxtIMCEdadWho2007Z.Text,
                 PZTallaEdad = TxtTallaEdadWho2007Z.Text,
                 PZPesoEdad = TxtPesoEdadWho2007Z.Text,
                 PZPesoEdad2006 = TxtZPesoEdad.Text,
-                PZTallaEdad2006 = TxtZPesoTalla.Text,
+                PZTallaEdad2006 = TxtZTallaEdad.Text,
                 PZPesoTalla = TxtZPesoTalla.Text,
-                IMC = TxtIMCCalculado.Text,           
+                IMCPZ = TxtZIMC.Text,
+                IMC = TxtIMCCalculado.Text,  
+                Urgencias = ComboUrgencias.Text,
+                Referido = ComboReferido.Text,
+                Diagnostico = TxtDiagnostico.Text,
+                DiagnosticoTalla = TxtDiagnosticoTalla.Text,
+
             };
-         //   _LogicLayer.InserCitaPediatria(Pediatria);
+            _LogicLayer.InsertCitaPediatria(Pediatria);
         }
 
         private void DatosEnfermeria_Enter(object sender, EventArgs e)
@@ -379,6 +387,13 @@ namespace MapaniApp
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HistoriasPediatria Sucesivo = new HistoriasPediatria();
+            Sucesivo.GetDataPediatria(TxtID.Text);
+            Sucesivo.ShowDialog(this);
         }
     }
 }

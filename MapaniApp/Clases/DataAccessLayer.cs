@@ -803,6 +803,73 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InserCitaPediatria(ClaseEnfermeria contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                   UPDATE  TablaEnfermeria SET IMC=@IMC, IMCPZ=@IMCPZ,Diagnostico=@Diagnostico,DiagnosticoTalla=@DiagnosticoTalla,Urgencias=@Urgencias,Referido=@Referido,
+                                   PZImcEdad=@PZImcEdad,PZTallaEdad=@PZTallaEdad,PZPesoEdad=@PZPesoEdad,PZPesoEdad2006=@PZPesoEdad2006,PZTallaEdad2006=@PZTallaEdad2006,PZPesoTalla=@PZPesoTalla        
+                                   Where TablaEnfermeria.NMB = @NMB and TablaEnfermeria.Fecha = @Fecha";
+                SqlParameter NMB = new SqlParameter("@NMB", contact.NMB);
+                SqlParameter Fecha = new SqlParameter("@Fecha", contact.Fecha);
+                SqlParameter IMCPZ = new SqlParameter("@IMCPZ", contact.IMCPZ);
+                SqlParameter DiagnosticoPeso = new SqlParameter("@Diagnostico", contact.Diagnostico);
+                SqlParameter DiagnosticoTalla = new SqlParameter("@DiagnosticoTalla", contact.DiagnosticoTalla);
+                SqlParameter Urgencias = new SqlParameter("@Urgencias", contact.Urgencias);
+                SqlParameter Referido = new SqlParameter("@Referido", contact.Referido);
+                // SqlParameter MUAC = new SqlParameter("@Muac", contact.MUAC);
+                //SqlParameter CC = new SqlParameter("@CC", contact.CC);
+                //SqlParameter Edema  = new SqlParameter("@Edema", contact.Edema);
+                SqlParameter IMC = new SqlParameter("@IMC", contact.IMC);
+                SqlParameter PZImcEdad = new SqlParameter("@PZImcEdad", contact.PZImcEdad);
+                SqlParameter PZTallaEdad = new SqlParameter("@PZTallaEdad", contact.PZTallaEdad);
+                SqlParameter PZPesoEdad = new SqlParameter("@PZPesoEdad", contact.PZPesoEdad);
+                SqlParameter PZPesoEdad2006 = new SqlParameter("@PZPesoEdad2006", contact.PZPesoEdad2006);
+                SqlParameter PZTallaEdad2006 = new SqlParameter("@PZTallaEdad2006", contact.PZTallaEdad2006);
+                SqlParameter PZPesoTalla = new SqlParameter("@PZPesoTalla", contact.PZPesoTalla);
+                //SqlParameter PesoNacimiento = new SqlParameter("@PesoNacimiento", contact.PesoNacimiento);
+                //SqlParameter Lactancia = new SqlParameter("@Lactancia", contact.Lactancia);
+                //SqlParameter Observacion = new SqlParameter("@Observacion", contact.Observacion);
+                //SqlParameter Patologia = new SqlParameter("@Patologia", contact.Patologia);
+                //SqlParameter Antecedente = new SqlParameter("@Antecedentes", contact.Antecedentes);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(NMB);
+                command.Parameters.Add(Fecha);
+                command.Parameters.Add(IMCPZ);
+                command.Parameters.Add(DiagnosticoPeso);
+                command.Parameters.Add(DiagnosticoTalla);
+                command.Parameters.Add(Urgencias);
+                command.Parameters.Add(Referido);
+                // command.Parameters.Add(MUAC);
+                //command.Parameters.Add(CC);
+                //command.Parameters.Add(Edema);
+                command.Parameters.Add(IMC);
+                command.Parameters.Add(PZImcEdad);
+                command.Parameters.Add(PZTallaEdad);
+                command.Parameters.Add(PZTallaEdad2006);
+                command.Parameters.Add(PZPesoEdad);
+                command.Parameters.Add(PZPesoEdad2006);
+                command.Parameters.Add(PZPesoTalla);
+                //command.Parameters.Add(PesoNacimiento);
+                //command.Parameters.Add(Lactancia);
+                //command.Parameters.Add(Observacion);
+                //command.Parameters.Add(Patologia);
+                //command.Parameters.Add(Antecedente);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         /// <summary>
         /// Agrega un Producto Nuevo a la Tabla Bodega.
         /// </summary>
@@ -1345,6 +1412,58 @@ namespace MapaniApp
                         Programa = reader["Programa"].ToString(),
                         CMB = reader["CMB"].ToString(),
                         Edema = reader["Edema"].ToString(),
+                        Hb = int.Parse(reader["Hb"].ToString()),
+                        Observacion = reader["Observacion"].ToString(),
+                        Antecedentes = reader["Antecedentes"].ToString(),
+                        Patologia = reader["Patologias"].ToString(),
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Data;
+        }
+        public List<ClaseEnfermeria> GetDataPediatria(string Id)
+        {
+            List<ClaseEnfermeria> Data = new List<ClaseEnfermeria>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From TablaEnfermeria
+                                Where TablaEnfermeria.NMB=@IdNMB";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@IdNMB", int.Parse(Id)));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Data.Add(new ClaseEnfermeria
+                    {   Fecha = (DateTime)reader["Fecha"],
+                        Peso = reader["Peso"].ToString(),
+                        Talla = reader["Talla"].ToString(),
+                        IMC = reader ["IMC"].ToString(),
+                        Programa = reader["Programa"].ToString(),
+                        CMB = reader["CMB"].ToString(),
+                        PZImcEdad = reader["PZImcEdad"].ToString(),
+                        PZTallaEdad = reader["PZTallaEdad"].ToString(),
+                        PZPesoEdad = reader["PZPesoEdad"].ToString(),
+                        PZPesoTalla = reader["PZPesoTalla"].ToString(),
+                        PZPesoEdad2006 = reader["PZPesoEdad2006"].ToString(),
+                        PZTallaEdad2006 = reader["PZTallaEdad2006"].ToString(),
+                        IMCPZ = reader["IMCPZ"].ToString(),
+                        Urgencias = reader["Urgencias"].ToString(),
+                        Referido = reader["Referido"].ToString(),
+                        Diagnostico = reader["Diagnostico"].ToString(),
+                        DiagnosticoTalla = reader["DiagnosticoTalla"].ToString(),
                         Hb = int.Parse(reader["Hb"].ToString()),
                         Observacion = reader["Observacion"].ToString(),
                         Antecedentes = reader["Antecedentes"].ToString(),

@@ -104,14 +104,15 @@ namespace MapaniApp
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ComboUrgencias = new System.Windows.Forms.ComboBox();
+            this.ComboReferido = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.TxtDiagnostico = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.TxtDiagnosticoTalla = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.DatosEnfermeria.SuspendLayout();
             this.GroupWHO2006.SuspendLayout();
             this.GroupWHO2007.SuspendLayout();
@@ -895,8 +896,8 @@ namespace MapaniApp
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.ComboUrgencias);
+            this.groupBox1.Controls.Add(this.ComboReferido);
             this.groupBox1.Controls.Add(this.label29);
             this.groupBox1.Controls.Add(this.TxtDiagnostico);
             this.groupBox1.Controls.Add(this.label30);
@@ -911,30 +912,31 @@ namespace MapaniApp
             this.groupBox1.Text = "Datos Pediatria";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // comboBox2
+            // ComboUrgencias
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.ComboUrgencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboUrgencias.FormattingEnabled = true;
+            this.ComboUrgencias.Items.AddRange(new object[] {
             "KWASHIORKOR",
-            "MARASMO"});
-            this.comboBox2.Location = new System.Drawing.Point(119, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(167, 32);
-            this.comboBox2.TabIndex = 98;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            "MARASMO",
+            "NO"});
+            this.ComboUrgencias.Location = new System.Drawing.Point(119, 23);
+            this.ComboUrgencias.Name = "ComboUrgencias";
+            this.ComboUrgencias.Size = new System.Drawing.Size(167, 32);
+            this.ComboUrgencias.TabIndex = 98;
+            this.ComboUrgencias.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox1
+            // ComboReferido
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.ComboReferido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboReferido.FormattingEnabled = true;
+            this.ComboReferido.Items.AddRange(new object[] {
             "SI",
             "NO"});
-            this.comboBox1.Location = new System.Drawing.Point(119, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 32);
-            this.comboBox1.TabIndex = 97;
+            this.ComboReferido.Location = new System.Drawing.Point(119, 58);
+            this.ComboReferido.Name = "ComboReferido";
+            this.ComboReferido.Size = new System.Drawing.Size(167, 32);
+            this.ComboReferido.TabIndex = 97;
             // 
             // label29
             // 
@@ -999,11 +1001,23 @@ namespace MapaniApp
             this.label34.Tag = "Contact";
             this.label34.Text = "Referido";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(564, 552);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 38);
+            this.button2.TabIndex = 105;
+            this.button2.Text = "Sucesivo";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Pediatria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 602);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.label23);
@@ -1129,7 +1143,8 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtDiagnosticoTalla;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ComboUrgencias;
+        private System.Windows.Forms.ComboBox ComboReferido;
+        private System.Windows.Forms.Button button2;
     }
 }

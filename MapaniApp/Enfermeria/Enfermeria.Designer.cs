@@ -47,28 +47,19 @@ namespace MapaniApp
             this.TxtEdad = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.BtnCargarContacto = new System.Windows.Forms.Button();
-            this.labelEdema = new System.Windows.Forms.Label();
             this.labelTalla = new System.Windows.Forms.Label();
             this.TxtTalla = new System.Windows.Forms.TextBox();
             this.TxtPeso = new System.Windows.Forms.TextBox();
             this.TxtCMB = new System.Windows.Forms.TextBox();
-            this.ComboEdema = new System.Windows.Forms.ComboBox();
             this.groupBase = new System.Windows.Forms.GroupBox();
-            this.labelObservacion = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TxtObservacion = new System.Windows.Forms.TextBox();
-            this.TxtPatologia = new System.Windows.Forms.TextBox();
-            this.TxtAntecedentes = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtHb = new System.Windows.Forms.TextBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.DateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TxtHb = new System.Windows.Forms.TextBox();
             this.groupBase.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -253,17 +244,6 @@ namespace MapaniApp
             this.BtnCargarContacto.UseVisualStyleBackColor = true;
             this.BtnCargarContacto.Click += new System.EventHandler(this.BtnCargarContacto_Click);
             // 
-            // labelEdema
-            // 
-            this.labelEdema.AutoSize = true;
-            this.labelEdema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEdema.Location = new System.Drawing.Point(16, 130);
-            this.labelEdema.Name = "labelEdema";
-            this.labelEdema.Size = new System.Drawing.Size(71, 24);
-            this.labelEdema.TabIndex = 77;
-            this.labelEdema.Tag = "Contact";
-            this.labelEdema.Text = "Edema";
-            // 
             // labelTalla
             // 
             this.labelTalla.AutoSize = true;
@@ -302,27 +282,12 @@ namespace MapaniApp
             this.TxtCMB.TabIndex = 82;
             this.TxtCMB.Tag = "Contact";
             // 
-            // ComboEdema
-            // 
-            this.ComboEdema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboEdema.FormattingEnabled = true;
-            this.ComboEdema.Items.AddRange(new object[] {
-            "Si",
-            "No"});
-            this.ComboEdema.Location = new System.Drawing.Point(268, 127);
-            this.ComboEdema.Name = "ComboEdema";
-            this.ComboEdema.Size = new System.Drawing.Size(173, 32);
-            this.ComboEdema.TabIndex = 87;
-            this.ComboEdema.Tag = "Contact";
-            // 
             // groupBase
             // 
             this.groupBase.Controls.Add(this.label3);
             this.groupBase.Controls.Add(this.TxtHb);
             this.groupBase.Controls.Add(this.labelPeso);
             this.groupBase.Controls.Add(this.labelCMB);
-            this.groupBase.Controls.Add(this.ComboEdema);
-            this.groupBase.Controls.Add(this.labelEdema);
             this.groupBase.Controls.Add(this.TxtCMB);
             this.groupBase.Controls.Add(this.labelTalla);
             this.groupBase.Controls.Add(this.TxtTalla);
@@ -335,79 +300,25 @@ namespace MapaniApp
             this.groupBase.Text = "GroupBase";
             this.groupBase.Visible = false;
             // 
-            // labelObservacion
+            // label3
             // 
-            this.labelObservacion.AutoSize = true;
-            this.labelObservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelObservacion.Location = new System.Drawing.Point(485, 230);
-            this.labelObservacion.Name = "labelObservacion";
-            this.labelObservacion.Size = new System.Drawing.Size(117, 24);
-            this.labelObservacion.TabIndex = 93;
-            this.labelObservacion.Tag = "Contact";
-            this.labelObservacion.Text = "Observacion";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 24);
+            this.label3.TabIndex = 88;
+            this.label3.Tag = "Contact";
+            this.label3.Text = "Hb";
             // 
-            // label9
+            // TxtHb
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(485, 351);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 24);
-            this.label9.TabIndex = 94;
-            this.label9.Tag = "Contact";
-            this.label9.Text = "Patologias";
-            // 
-            // TxtObservacion
-            // 
-            this.TxtObservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtObservacion.Location = new System.Drawing.Point(608, 196);
-            this.TxtObservacion.Multiline = true;
-            this.TxtObservacion.Name = "TxtObservacion";
-            this.TxtObservacion.Size = new System.Drawing.Size(305, 102);
-            this.TxtObservacion.TabIndex = 95;
-            this.TxtObservacion.Tag = "Contact";
-            // 
-            // TxtPatologia
-            // 
-            this.TxtPatologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPatologia.Location = new System.Drawing.Point(608, 315);
-            this.TxtPatologia.Multiline = true;
-            this.TxtPatologia.Name = "TxtPatologia";
-            this.TxtPatologia.Size = new System.Drawing.Size(305, 102);
-            this.TxtPatologia.TabIndex = 97;
-            this.TxtPatologia.Tag = "Contact";
-            // 
-            // TxtAntecedentes
-            // 
-            this.TxtAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtAntecedentes.Location = new System.Drawing.Point(608, 433);
-            this.TxtAntecedentes.Multiline = true;
-            this.TxtAntecedentes.Name = "TxtAntecedentes";
-            this.TxtAntecedentes.Size = new System.Drawing.Size(305, 102);
-            this.TxtAntecedentes.TabIndex = 100;
-            this.TxtAntecedentes.Tag = "Contact";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(485, 468);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 24);
-            this.label16.TabIndex = 99;
-            this.label16.Tag = "Contact";
-            this.label16.Text = "Antecedentes ";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(490, 489);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(96, 24);
-            this.label17.TabIndex = 101;
-            this.label17.Tag = "Contact";
-            this.label17.Text = "Familiares";
+            this.TxtHb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtHb.Location = new System.Drawing.Point(267, 129);
+            this.TxtHb.Name = "TxtHb";
+            this.TxtHb.Size = new System.Drawing.Size(173, 29);
+            this.TxtHb.TabIndex = 89;
+            this.TxtHb.Tag = "Contact";
             // 
             // BtnGuardar
             // 
@@ -474,26 +385,6 @@ namespace MapaniApp
             this.groupBox1.Text = "Agregar";
             this.groupBox1.Visible = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 24);
-            this.label3.TabIndex = 88;
-            this.label3.Tag = "Contact";
-            this.label3.Text = "Hb";
-            // 
-            // TxtHb
-            // 
-            this.TxtHb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtHb.Location = new System.Drawing.Point(268, 165);
-            this.TxtHb.Name = "TxtHb";
-            this.TxtHb.Size = new System.Drawing.Size(173, 29);
-            this.TxtHb.TabIndex = 89;
-            this.TxtHb.Tag = "Contact";
-            // 
             // Enfermeria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,13 +394,6 @@ namespace MapaniApp
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.DateTimeFecha);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.TxtAntecedentes);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.TxtPatologia);
-            this.Controls.Add(this.labelObservacion);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.TxtObservacion);
             this.Controls.Add(this.groupBase);
             this.Controls.Add(this.BtnCargarContacto);
             this.Controls.Add(this.TxtEdad);
@@ -558,20 +442,11 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtEdad;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button BtnCargarContacto;
-        private System.Windows.Forms.Label labelEdema;
         private System.Windows.Forms.Label labelTalla;
         private System.Windows.Forms.TextBox TxtTalla;
         private System.Windows.Forms.TextBox TxtPeso;
         private System.Windows.Forms.TextBox TxtCMB;
-        private System.Windows.Forms.ComboBox ComboEdema;
         private System.Windows.Forms.GroupBox groupBase;
-        private System.Windows.Forms.Label labelObservacion;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TxtObservacion;
-        private System.Windows.Forms.TextBox TxtPatologia;
-        private System.Windows.Forms.TextBox TxtAntecedentes;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.DateTimePicker DateTimeFecha;
         private System.Windows.Forms.Label label11;
