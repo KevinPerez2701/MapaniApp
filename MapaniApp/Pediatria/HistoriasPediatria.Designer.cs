@@ -53,6 +53,7 @@ namespace MapaniApp
             this.antecedentesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urgenciasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.referidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Evolutivo = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.claseEnfermeriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -82,11 +83,12 @@ namespace MapaniApp
             this.Observacion,
             this.antecedentesDataGridViewTextBoxColumn,
             this.urgenciasDataGridViewTextBoxColumn,
-            this.referidoDataGridViewTextBoxColumn});
+            this.referidoDataGridViewTextBoxColumn,
+            this.Evolutivo});
             this.dataGridView1.DataSource = this.claseEnfermeriaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 42);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(952, 396);
+            this.dataGridView1.Size = new System.Drawing.Size(1357, 396);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -111,72 +113,84 @@ namespace MapaniApp
             this.pesoDataGridViewTextBoxColumn.DataPropertyName = "Peso";
             this.pesoDataGridViewTextBoxColumn.HeaderText = "Peso";
             this.pesoDataGridViewTextBoxColumn.Name = "pesoDataGridViewTextBoxColumn";
+            this.pesoDataGridViewTextBoxColumn.Width = 50;
             // 
             // tallaDataGridViewTextBoxColumn
             // 
             this.tallaDataGridViewTextBoxColumn.DataPropertyName = "Talla";
             this.tallaDataGridViewTextBoxColumn.HeaderText = "Talla";
             this.tallaDataGridViewTextBoxColumn.Name = "tallaDataGridViewTextBoxColumn";
+            this.tallaDataGridViewTextBoxColumn.Width = 50;
             // 
             // cMBDataGridViewTextBoxColumn
             // 
             this.cMBDataGridViewTextBoxColumn.DataPropertyName = "CMB";
             this.cMBDataGridViewTextBoxColumn.HeaderText = "CMB";
             this.cMBDataGridViewTextBoxColumn.Name = "cMBDataGridViewTextBoxColumn";
+            this.cMBDataGridViewTextBoxColumn.Width = 50;
             // 
             // hbDataGridViewTextBoxColumn
             // 
             this.hbDataGridViewTextBoxColumn.DataPropertyName = "Hb";
             this.hbDataGridViewTextBoxColumn.HeaderText = "Hb";
             this.hbDataGridViewTextBoxColumn.Name = "hbDataGridViewTextBoxColumn";
+            this.hbDataGridViewTextBoxColumn.Width = 50;
             // 
             // iMCDataGridViewTextBoxColumn
             // 
             this.iMCDataGridViewTextBoxColumn.DataPropertyName = "IMC";
             this.iMCDataGridViewTextBoxColumn.HeaderText = "IMC";
             this.iMCDataGridViewTextBoxColumn.Name = "iMCDataGridViewTextBoxColumn";
+            this.iMCDataGridViewTextBoxColumn.Width = 50;
             // 
             // pZPesoEdadDataGridViewTextBoxColumn
             // 
             this.pZPesoEdadDataGridViewTextBoxColumn.DataPropertyName = "PZPesoEdad";
             this.pZPesoEdadDataGridViewTextBoxColumn.HeaderText = "PZPesoEdad";
             this.pZPesoEdadDataGridViewTextBoxColumn.Name = "pZPesoEdadDataGridViewTextBoxColumn";
+            this.pZPesoEdadDataGridViewTextBoxColumn.Visible = false;
             // 
             // pZTallaEdadDataGridViewTextBoxColumn
             // 
             this.pZTallaEdadDataGridViewTextBoxColumn.DataPropertyName = "PZTallaEdad";
             this.pZTallaEdadDataGridViewTextBoxColumn.HeaderText = "PZTallaEdad";
             this.pZTallaEdadDataGridViewTextBoxColumn.Name = "pZTallaEdadDataGridViewTextBoxColumn";
+            this.pZTallaEdadDataGridViewTextBoxColumn.Visible = false;
             // 
             // pZImcEdadDataGridViewTextBoxColumn
             // 
             this.pZImcEdadDataGridViewTextBoxColumn.DataPropertyName = "PZImcEdad";
             this.pZImcEdadDataGridViewTextBoxColumn.HeaderText = "PZImcEdad";
             this.pZImcEdadDataGridViewTextBoxColumn.Name = "pZImcEdadDataGridViewTextBoxColumn";
+            this.pZImcEdadDataGridViewTextBoxColumn.Visible = false;
             // 
             // pZTallaEdad2006DataGridViewTextBoxColumn
             // 
             this.pZTallaEdad2006DataGridViewTextBoxColumn.DataPropertyName = "PZTallaEdad2006";
             this.pZTallaEdad2006DataGridViewTextBoxColumn.HeaderText = "PZTallaEdad2006";
             this.pZTallaEdad2006DataGridViewTextBoxColumn.Name = "pZTallaEdad2006DataGridViewTextBoxColumn";
+            this.pZTallaEdad2006DataGridViewTextBoxColumn.Visible = false;
             // 
             // pZPesoEdad2006DataGridViewTextBoxColumn
             // 
             this.pZPesoEdad2006DataGridViewTextBoxColumn.DataPropertyName = "PZPesoEdad2006";
             this.pZPesoEdad2006DataGridViewTextBoxColumn.HeaderText = "PZPesoEdad2006";
             this.pZPesoEdad2006DataGridViewTextBoxColumn.Name = "pZPesoEdad2006DataGridViewTextBoxColumn";
+            this.pZPesoEdad2006DataGridViewTextBoxColumn.Visible = false;
             // 
             // pZPesoTallaDataGridViewTextBoxColumn
             // 
             this.pZPesoTallaDataGridViewTextBoxColumn.DataPropertyName = "PZPesoTalla";
             this.pZPesoTallaDataGridViewTextBoxColumn.HeaderText = "PZPesoTalla";
             this.pZPesoTallaDataGridViewTextBoxColumn.Name = "pZPesoTallaDataGridViewTextBoxColumn";
+            this.pZPesoTallaDataGridViewTextBoxColumn.Visible = false;
             // 
             // iMCPZDataGridViewTextBoxColumn
             // 
             this.iMCPZDataGridViewTextBoxColumn.DataPropertyName = "IMCPZ";
             this.iMCPZDataGridViewTextBoxColumn.HeaderText = "IMCPZ";
             this.iMCPZDataGridViewTextBoxColumn.Name = "iMCPZDataGridViewTextBoxColumn";
+            this.iMCPZDataGridViewTextBoxColumn.Visible = false;
             // 
             // diagnosticoDataGridViewTextBoxColumn
             // 
@@ -222,12 +236,20 @@ namespace MapaniApp
             this.referidoDataGridViewTextBoxColumn.DataPropertyName = "Referido";
             this.referidoDataGridViewTextBoxColumn.HeaderText = "Referido";
             this.referidoDataGridViewTextBoxColumn.Name = "referidoDataGridViewTextBoxColumn";
+            this.referidoDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // Evolutivo
+            // 
+            this.Evolutivo.HeaderText = "Evolutivo";
+            this.Evolutivo.Name = "Evolutivo";
+            this.Evolutivo.Text = "Ver";
+            this.Evolutivo.UseColumnTextForLinkValue = true;
             // 
             // HistoriasPediatria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 450);
+            this.ClientSize = new System.Drawing.Size(1381, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "HistoriasPediatria";
             this.Text = "HistoriasPediatria";
@@ -262,5 +284,6 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn antecedentesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn urgenciasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn referidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn Evolutivo;
     }
 }

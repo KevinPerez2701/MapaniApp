@@ -115,6 +115,12 @@
     <Compile Include="Almacen\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pediatria\EvolutivoPediatria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pediatria\EvolutivoPediatria.Designer.cs">
+      <DependentUpon>EvolutivoPediatria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pediatria\HistoriasPediatria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Asistencia.resx">
       <DependentUpon>Asistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pediatria\EvolutivoPediatria.resx">
+      <DependentUpon>EvolutivoPediatria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pediatria\HistoriasPediatria.resx">
       <DependentUpon>HistoriasPediatria.cs</DependentUpon>

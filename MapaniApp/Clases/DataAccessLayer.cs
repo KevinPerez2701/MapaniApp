@@ -810,7 +810,8 @@ namespace MapaniApp
                 Connection.Open();
                 string query = @"
                                    UPDATE  TablaEnfermeria SET IMC=@IMC, IMCPZ=@IMCPZ,Diagnostico=@Diagnostico,DiagnosticoTalla=@DiagnosticoTalla,Urgencias=@Urgencias,Referido=@Referido,
-                                   PZImcEdad=@PZImcEdad,PZTallaEdad=@PZTallaEdad,PZPesoEdad=@PZPesoEdad,PZPesoEdad2006=@PZPesoEdad2006,PZTallaEdad2006=@PZTallaEdad2006,PZPesoTalla=@PZPesoTalla        
+                                   PZImcEdad=@PZImcEdad,PZTallaEdad=@PZTallaEdad,PZPesoEdad=@PZPesoEdad,PZPesoEdad2006=@PZPesoEdad2006,PZTallaEdad2006=@PZTallaEdad2006,PZPesoTalla=@PZPesoTalla,
+                                   Observacion=@Observacion, Patologias=@Patologias,Antecedentes=@Antecedentes
                                    Where TablaEnfermeria.NMB = @NMB and TablaEnfermeria.Fecha = @Fecha";
                 SqlParameter NMB = new SqlParameter("@NMB", contact.NMB);
                 SqlParameter Fecha = new SqlParameter("@Fecha", contact.Fecha);
@@ -819,6 +820,9 @@ namespace MapaniApp
                 SqlParameter DiagnosticoTalla = new SqlParameter("@DiagnosticoTalla", contact.DiagnosticoTalla);
                 SqlParameter Urgencias = new SqlParameter("@Urgencias", contact.Urgencias);
                 SqlParameter Referido = new SqlParameter("@Referido", contact.Referido);
+                SqlParameter Antecedentes = new SqlParameter("@Antecedentes", contact.Antecedentes);
+                SqlParameter Observacion = new SqlParameter("@Observacion", contact.Observacion);
+                SqlParameter Patologias = new SqlParameter("@Patologias", contact.Patologia);
                 // SqlParameter MUAC = new SqlParameter("@Muac", contact.MUAC);
                 //SqlParameter CC = new SqlParameter("@CC", contact.CC);
                 //SqlParameter Edema  = new SqlParameter("@Edema", contact.Edema);
@@ -842,6 +846,9 @@ namespace MapaniApp
                 command.Parameters.Add(DiagnosticoTalla);
                 command.Parameters.Add(Urgencias);
                 command.Parameters.Add(Referido);
+                command.Parameters.Add(Antecedentes);
+                command.Parameters.Add(Observacion);
+                command.Parameters.Add(Patologias);
                 // command.Parameters.Add(MUAC);
                 //command.Parameters.Add(CC);
                 //command.Parameters.Add(Edema);

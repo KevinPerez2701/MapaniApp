@@ -356,7 +356,10 @@ namespace MapaniApp
                 DiagnosticoTalla = TxtDiagnosticoTalla.Text,
 
             };
-            _LogicLayer.InsertCitaPediatria(Pediatria);
+            EvolutivoPediatria Cita = new EvolutivoPediatria();
+            Cita.GetCita(Pediatria);
+            Cita.ShowDialog(this);
+           // _LogicLayer.InsertCitaPediatria(Pediatria);
         }
 
         private void DatosEnfermeria_Enter(object sender, EventArgs e)
@@ -392,7 +395,7 @@ namespace MapaniApp
         private void button2_Click(object sender, EventArgs e)
         {
             HistoriasPediatria Sucesivo = new HistoriasPediatria();
-            Sucesivo.GetDataPediatria(TxtID.Text);
+            Sucesivo.GetDataPediatria(TxtID.Text,int.Parse(TxtEdad.Text));
             Sucesivo.ShowDialog(this);
         }
     }
