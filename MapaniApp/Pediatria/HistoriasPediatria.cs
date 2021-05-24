@@ -30,9 +30,11 @@ namespace MapaniApp
                     Patologia =dataGridView1.Rows[e.RowIndex].Cells[17].Value.ToString(),
                     Observacion = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString(),
                 });
+                Evolutivo.HideButton();
                 Evolutivo.ShowDialog(this);
             }
         }
+       
         public void GetDataPediatria(string ID, int Dias)
         {
             List<ClaseEnfermeria> Data = _LogicLayer.GetDataPediatria(ID);

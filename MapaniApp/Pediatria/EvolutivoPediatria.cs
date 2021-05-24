@@ -24,9 +24,9 @@ namespace MapaniApp
         }
         public void Data(ClaseEnfermeria Data)
         {
-            textBox1.Text = Data.Observacion;
-            textBox2.Text = Data.Patologia;
-            textBox3.Text = Data.Antecedentes;
+            txtEvolutivo.Text = Data.Observacion;
+            txtAntecedentes.Text = Data.Patologia;
+            txtPatologias.Text = Data.Antecedentes;
         }
         
         public void GetCita(ClaseEnfermeria Cita)
@@ -41,11 +41,22 @@ namespace MapaniApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Pediatria.Antecedentes = textBox1.Text;
-            Pediatria.Patologia = textBox2.Text;
-            Pediatria.Observacion = textBox3.Text;
+            Pediatria.Antecedentes = txtAntecedentes.Text;
+            Pediatria.Patologia = txtPatologias.Text;
+            Pediatria.Observacion = txtEvolutivo.Text;
             _LogicLayer.InsertCitaPediatria(Pediatria);
             this.Close();
+        }
+        public void HideButton()
+        {
+            BtnSave.Visible = false;
+            txtAntecedentes.ReadOnly = true;
+            txtPatologias.ReadOnly = true;
+            txtEvolutivo.ReadOnly = true;
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

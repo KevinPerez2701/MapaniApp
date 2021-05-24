@@ -389,7 +389,7 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 661);
+            this.ClientSize = new System.Drawing.Size(778, 661);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.label11);
