@@ -41,16 +41,17 @@ namespace MapaniApp
         private void SaveContactAsesoria()
         {
             ContactAsesoria Contact = new ContactAsesoria
-            {   IdCuidador = int.Parse(txtID.Text),
+            { IdCuidador = int.Parse(txtID.Text),
                 Nombre = TxtNombre.Text,
                 Apellido = TxtApellido.Text,
-                Direccion = TxtDireccion.Text,                
+                Direccion = TxtDireccion.Text,
                 Telefono = txtTelefono.Text,
                 Ocupacion = txtOcupacion.Text,
                 Cedula = txtCedula.Text,
                 Parroquia = txtParroquia.Text,
                 Municipio = txtMunicipio.Text,
                 Estado = txtEstado.Text,
+                Vinculo = txtVinculo.Text,
                 Id = _contactAsesoria != null ? _contactAsesoria.Id : 0
             };
             _LogicLayer.SaveContactAsesoria(Contact);

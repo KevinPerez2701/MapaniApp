@@ -74,7 +74,7 @@ namespace MapaniApp
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ocupacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parentescoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vinculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parroquiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.municipioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -372,7 +372,7 @@ namespace MapaniApp
             this.cedulaDataGridViewTextBoxColumn,
             this.telefonoDataGridViewTextBoxColumn,
             this.ocupacionDataGridViewTextBoxColumn,
-            this.parentescoDataGridViewTextBoxColumn,
+            this.Vinculo,
             this.direccionDataGridViewTextBoxColumn,
             this.parroquiaDataGridViewTextBoxColumn,
             this.municipioDataGridViewTextBoxColumn,
@@ -463,11 +463,11 @@ namespace MapaniApp
             this.ocupacionDataGridViewTextBoxColumn.HeaderText = "Ocupacion";
             this.ocupacionDataGridViewTextBoxColumn.Name = "ocupacionDataGridViewTextBoxColumn";
             // 
-            // parentescoDataGridViewTextBoxColumn
+            // Vinculo
             // 
-            this.parentescoDataGridViewTextBoxColumn.DataPropertyName = "Parentesco";
-            this.parentescoDataGridViewTextBoxColumn.HeaderText = "Parentesco";
-            this.parentescoDataGridViewTextBoxColumn.Name = "parentescoDataGridViewTextBoxColumn";
+            this.Vinculo.DataPropertyName = "Vinculo";
+            this.Vinculo.HeaderText = "Vinculo";
+            this.Vinculo.Name = "Vinculo";
             // 
             // direccionDataGridViewTextBoxColumn
             // 
@@ -579,13 +579,14 @@ namespace MapaniApp
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource contactAsesoriaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn parentescoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ocupacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn parentescoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vinculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn parroquiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn municipioDataGridViewTextBoxColumn;

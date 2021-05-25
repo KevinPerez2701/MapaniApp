@@ -354,8 +354,8 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaContactASesoria (IdCuidador,[Nombre], [Apellido], [Cedula], [Direccion],[Ocupacion],[Telefono],Parroquia,Municipio,Estado)  
-                                    Values(@IdCuidador,@Nombre,@Apellido,@Cedula,@Direccion,@Ocupacion,@Telefono,@Parroquia,@Municipio,@Estado)";
+                                    Insert into TablaContactASesoria (Vinculo,IdCuidador,[Nombre], [Apellido], [Cedula], [Direccion],[Ocupacion],[Telefono],Parroquia,Municipio,Estado)  
+                                    Values(@Vinculo,@IdCuidador,@Nombre,@Apellido,@Cedula,@Direccion,@Ocupacion,@Telefono,@Parroquia,@Municipio,@Estado)";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
                 SqlParameter Direccion = new SqlParameter("@Direccion", contact.Direccion);
@@ -366,6 +366,7 @@ namespace MapaniApp
                 SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
                 SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
                 SqlParameter IdCuidador = new SqlParameter("@IdCuidador",contact.IdCuidador);
+                SqlParameter Vinculo = new SqlParameter("@Vinculo", contact.Vinculo);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Apellido);
@@ -377,6 +378,7 @@ namespace MapaniApp
                 command.Parameters.Add(Municipio);
                 command.Parameters.Add(Estado);
                 command.Parameters.Add(IdCuidador);
+                command.Parameters.Add(Vinculo);
                 command.ExecuteNonQuery();
 
             }
@@ -1294,7 +1296,8 @@ namespace MapaniApp
                         Cedula = reader["Cedula"].ToString(),
                         Parroquia = reader["Parroquia"].ToString(),
                         Municipio = reader["Municipio"].ToString(),
-                        Estado = reader["Estado"].ToString(),                      
+                        Estado = reader["Estado"].ToString(),
+                        Vinculo = reader["Vinculo"].ToString(),
                     });
                 }
 

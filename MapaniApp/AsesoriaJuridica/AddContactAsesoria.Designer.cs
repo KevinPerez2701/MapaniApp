@@ -51,6 +51,8 @@ namespace MapaniApp
             this.label5 = new System.Windows.Forms.Label();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.txtVinculo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTelefono
@@ -239,7 +241,7 @@ namespace MapaniApp
             // BtnSave
             // 
             this.BtnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSave.Location = new System.Drawing.Point(113, 416);
+            this.BtnSave.Location = new System.Drawing.Point(113, 446);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(93, 38);
             this.BtnSave.TabIndex = 115;
@@ -250,7 +252,7 @@ namespace MapaniApp
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(212, 416);
+            this.BtnSalir.Location = new System.Drawing.Point(212, 446);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(93, 38);
             this.BtnSalir.TabIndex = 116;
@@ -258,11 +260,31 @@ namespace MapaniApp
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtVinculo
+            // 
+            this.txtVinculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVinculo.Location = new System.Drawing.Point(199, 409);
+            this.txtVinculo.Name = "txtVinculo";
+            this.txtVinculo.Size = new System.Drawing.Size(226, 29);
+            this.txtVinculo.TabIndex = 118;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(29, 409);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 24);
+            this.label6.TabIndex = 117;
+            this.label6.Text = "Vinculo";
+            // 
             // AddContactAsesoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 466);
+            this.ClientSize = new System.Drawing.Size(454, 505);
+            this.Controls.Add(this.txtVinculo);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.txtID);
@@ -317,5 +339,7 @@ namespace MapaniApp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.TextBox txtVinculo;
+        private System.Windows.Forms.Label label6;
     }
 }

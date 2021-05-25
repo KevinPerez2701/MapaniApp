@@ -43,6 +43,7 @@ namespace MapaniApp
             txtEstado.Text = contact.Estado;
             txtCedula.Text = contact.Cedula;
             txtTelefono.Text = contact.Telefono;
+            
         }
         public void PopulateContactsNMB(string SearchText = null)
         {
