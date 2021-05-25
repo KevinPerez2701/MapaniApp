@@ -41,6 +41,9 @@ namespace MapaniApp
                 Vacunas = ComboVacunas.Text,
                 Parto = ComboParto.Text,
                 PartidaNacimiento = ComboPartidaNacimiento.Text,
+                Parroquia = txtParroquia.Text,
+                Municipio = txtMunicipio.Text,
+                Estado = txtEstado.Text,
                 Id = _contactNMB != null ? _contactNMB.Id : 0
             };
             _LogicLayer.SaveContact(Contact); 
@@ -61,6 +64,9 @@ namespace MapaniApp
                 EstadoCivil = ComboEstadoCivil.Text,
                 CantidadHijos = TxtHijos.Text,
                 Transporte = TxtTransporte.Text,
+                Parroquia = txtParroquia.Text,
+                Municipio = txtMunicipio.Text,
+                Estado = txtEstado.Text,
                 Id = _contactCuidador != null ? _contactCuidador.Id : 0
             };          
             _LogicLayer.SaveContactCuidador(Contact);
@@ -80,6 +86,9 @@ namespace MapaniApp
                 EstadoCivil = ComboEstadoCivil.Text,
                 CantidadHijos = TxtHijos.Text,
                 Transporte = TxtTransporte.Text,
+                Parroquia = txtParroquia.Text,
+                Municipio = txtMunicipio.Text,
+                Estado = txtEstado.Text,
                 Id = _contactMMB != null ? _contactMMB.Id : 0
             };
             _LogicLayer.SaveContactMMB(Contact);
@@ -101,11 +110,13 @@ namespace MapaniApp
                 ComboDiscapacidad.Text = contact.Discapacidad;
                 ComboParto.Text = contact.Parto;
                 ComboVacunas.Text = contact.Vacunas;
-                ComboPartidaNacimiento.Text = contact.PartidaNacimiento;
-                ComboLactancia.Text = contact.Lactancia;
+                ComboPartidaNacimiento.Text = contact.PartidaNacimiento;              
                 ComboIngreso.Text = contact.Ingreso;
                 ComboSexo.Text = contact.Sexo;
                 TxtDireccion.Text = contact.Direccion;
+                txtParroquia.Text = contact.Parroquia;
+                txtMunicipio.Text = contact.Municipio;
+                txtEstado.Text = contact.Estado;
                 PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);
             }
 
@@ -127,6 +138,10 @@ namespace MapaniApp
                 TxtTransporte.Text = contact.Transporte;
                 ComboSexo.Text = contact.Sexo;
                 TxtDireccion.Text = contact.Direccion;
+                TxtDireccion.Text = contact.Direccion;
+                txtParroquia.Text = contact.Parroquia;
+                txtMunicipio.Text = contact.Municipio;
+                txtEstado.Text = contact.Estado;
                 PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);
             }
 
@@ -148,6 +163,10 @@ namespace MapaniApp
                 TxtTransporte.Text = contact.Transporte;
                 ComboSexo.Text = contact.Sexo;
                 TxtDireccion.Text = contact.Direccion;
+                TxtDireccion.Text = contact.Direccion;
+                txtParroquia.Text = contact.Parroquia;
+                txtMunicipio.Text = contact.Municipio;
+                txtEstado.Text = contact.Estado;
                 PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);
             }
 
@@ -166,7 +185,7 @@ namespace MapaniApp
             textBox1.ReadOnly = true;
             textBox2.Text = Id;
             textBox2.ReadOnly = true;
-            BtnActualizar.Visible = true;
+          
         }
         public void HideSave()
         {
@@ -212,23 +231,7 @@ namespace MapaniApp
             }
             this.Close();
         }
-        private void BtnActualizar_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "NMB")
-            {
-                SaveContact();
-            }
-            else if (textBox1.Text == "Cuidador")
-            {
-                SaveContactCuidador();
-            }
-            else if (textBox1.Text == "MMB")
-            {
-                SaveContactMMB();
-
-            }
-            this.Close();
-        }
+       
 
         #endregion
 

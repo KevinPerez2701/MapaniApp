@@ -105,7 +105,7 @@ namespace MapaniApp
             this.BtnLegal.Name = "BtnLegal";
             this.BtnLegal.Size = new System.Drawing.Size(147, 57);
             this.BtnLegal.TabIndex = 9;
-            this.BtnLegal.Text = "Asesoria Legal";
+            this.BtnLegal.Text = "Asesoria Juridica";
             this.BtnLegal.UseVisualStyleBackColor = true;
             this.BtnLegal.Click += new System.EventHandler(this.BtnLegal_Click);
             // 

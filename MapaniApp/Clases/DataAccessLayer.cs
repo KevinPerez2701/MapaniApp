@@ -13,8 +13,8 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-      //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+      //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -26,8 +26,8 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaNMB ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],Cedula,FechaIngreso,Discapacidad,Vacunas,LactanciaMaterna,Parto,IngresoPrograma,PartidaNacimiento)  
-                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@cedula,@fechaIngreso,@Discapacidad,@Vacunas,@LactanciaMaterna,@Parto,@ingreso,@PartidaNacimiento)";
+                                    Insert into TablaNMB ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],Cedula,FechaIngreso,Discapacidad,Vacunas,LactanciaMaterna,Parto,IngresoPrograma,PartidaNacimiento,Parroquia,Municipio,Estado)  
+                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@cedula,@fechaIngreso,@Discapacidad,@Vacunas,@LactanciaMaterna,@Parto,@ingreso,@PartidaNacimiento,@Parroquia,@Municipio,@Estado)";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
                 SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
@@ -42,6 +42,9 @@ namespace MapaniApp
                 SqlParameter Sexo = new SqlParameter("@Sexo", contact.Sexo);
                 SqlParameter PartidaNacimiento = new SqlParameter("@PartidaNacimiento", contact.PartidaNacimiento);
                 SqlParameter foto = new SqlParameter("@foto", contact.Foto);
+                SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
+                SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
+                SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
 
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
@@ -58,6 +61,9 @@ namespace MapaniApp
                 command.Parameters.Add(Discapacidad);
                 command.Parameters.Add(Cedula);
                 command.Parameters.Add(PartidaNacimiento);
+                command.Parameters.Add(Parroquia);
+                command.Parameters.Add(Municipio);
+                command.Parameters.Add(Estado);
                 command.ExecuteNonQuery();
 
             }
@@ -77,7 +83,7 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                   Update TablaNMB Set Nombre=@Nombre, Apellido=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@Foto,Cedula=@Cedula,FechaIngreso=@FechaIngreso,Discapacidad=@Discapacidad,Vacunas=@Vacunas,LactanciaMaterna=@LactanciaMaterna,Parto=@Parto,IngresoPrograma=@Ingreso,PartidaNacimiento=@PartidaNacimiento  
+                                   Update TablaNMB Set Nombre=@Nombre, Apellido=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@Foto,Cedula=@Cedula,FechaIngreso=@FechaIngreso,Discapacidad=@Discapacidad,Vacunas=@Vacunas,LactanciaMaterna=@LactanciaMaterna,Parto=@Parto,IngresoPrograma=@Ingreso,PartidaNacimiento=@PartidaNacimiento, Parroquia=@Parroquia,Municipio=@Municipio,Estado=@Estado  
                                    where TablaNMB.Id=@Id";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Id = new SqlParameter("@Id", contact.Id);
@@ -94,6 +100,9 @@ namespace MapaniApp
                 SqlParameter Sexo = new SqlParameter("@Sexo", contact.Sexo);
                 SqlParameter PartidaNacimiento = new SqlParameter("@PartidaNacimiento", contact.PartidaNacimiento);
                 SqlParameter foto = new SqlParameter("@foto", contact.Foto);
+                SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
+                SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
+                SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
 
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
@@ -111,6 +120,9 @@ namespace MapaniApp
                 command.Parameters.Add(Discapacidad);
                 command.Parameters.Add(Cedula);
                 command.Parameters.Add(PartidaNacimiento);
+                command.Parameters.Add(Parroquia);
+                command.Parameters.Add(Municipio);
+                command.Parameters.Add(Estado);
                 command.ExecuteNonQuery();
 
             }
@@ -134,8 +146,8 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaCuidador ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],[Telefono],EstadoCivil,Cedula,Hijos,Transporte)  
-                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@Telefono,@EstadoCivil,@Cedula,@Hijos,@Transporte)";
+                                    Insert into TablaCuidador ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],[Telefono],EstadoCivil,Cedula,Hijos,Transporte,Parroquia,Municipio,Estado)  
+                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@Telefono,@EstadoCivil,@Cedula,@Hijos,@Transporte,@Parroquia,@Municipio,@Estado)";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
                 SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
@@ -147,6 +159,9 @@ namespace MapaniApp
                 SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
                 SqlParameter Hijos = new SqlParameter("@Hijos", contact.CantidadHijos);
                 SqlParameter Transporte = new SqlParameter("@Transporte", contact.Transporte);
+                SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
+                SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
+                SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Apellido);
@@ -158,6 +173,9 @@ namespace MapaniApp
                 command.Parameters.Add(EstadoCivil);
                 command.Parameters.Add(Cedula);
                 command.Parameters.Add(Transporte);
+                command.Parameters.Add(Parroquia);
+                command.Parameters.Add(Municipio);
+                command.Parameters.Add(Estado);
                 command.Parameters.Add(Hijos);
                 command.ExecuteNonQuery();
 
@@ -178,7 +196,7 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Update TablaCuidador SET [Nombre]=@Nombre, [Apellido]=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@foto,[Telefono]=@Telefono,EstadoCivil=@EstadoCivil,Cedula=@Cedula,Hijos=@Hijos,Transporte=@Transporte  
+                                    Update TablaCuidador SET [Nombre]=@Nombre, [Apellido]=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@foto,[Telefono]=@Telefono,EstadoCivil=@EstadoCivil,Cedula=@Cedula,Hijos=@Hijos,Transporte=@Transporte ,Parroquia=@Parroquia,Municipio=@Municipio,Estado=@Estado 
                                    Where TablaCuidador.Id = @Id";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Id = new SqlParameter("@Id", contact.Id);
@@ -192,6 +210,9 @@ namespace MapaniApp
                 SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
                 SqlParameter Hijos = new SqlParameter("@Hijos", contact.CantidadHijos);
                 SqlParameter Transporte = new SqlParameter("@Transporte", contact.Transporte);
+                SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
+                SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
+                SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Id);
@@ -205,6 +226,9 @@ namespace MapaniApp
                 command.Parameters.Add(Cedula);
                 command.Parameters.Add(Transporte);
                 command.Parameters.Add(Hijos);
+                command.Parameters.Add(Parroquia);
+                command.Parameters.Add(Municipio);
+                command.Parameters.Add(Estado);
                 command.ExecuteNonQuery();
 
             }
@@ -228,8 +252,8 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaMMB ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],[Telefono],Cedula,Transporte,EstadoCivil,CantidadHijos)  
-                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@Telefono,@Cedula,@Transporte,@EstadoCivil,@CantidadHijos)";
+                                    Insert into TablaMMB ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],[Telefono],Cedula,Transporte,EstadoCivil,CantidadHijos,Parroquia,Municipio,Estado)  
+                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@Telefono,@Cedula,@Transporte,@EstadoCivil,@CantidadHijos,@Parroquia,@Municipio,@Estado)";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
                 SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
@@ -241,6 +265,9 @@ namespace MapaniApp
                 SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
                 SqlParameter Hijos = new SqlParameter("@CantidadHijos", contact.CantidadHijos);
                 SqlParameter Transporte = new SqlParameter("@Transporte", contact.Transporte);
+                SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
+                SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
+                SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Apellido);
@@ -253,6 +280,9 @@ namespace MapaniApp
                 command.Parameters.Add(Cedula);
                 command.Parameters.Add(Transporte);
                 command.Parameters.Add(Hijos);
+                command.Parameters.Add(Parroquia);
+                command.Parameters.Add(Municipio);
+                command.Parameters.Add(Estado);
                 command.ExecuteNonQuery();
 
             }
@@ -272,7 +302,7 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                   Update TablaMMB SET [Nombre]=@Nombre, [Apellido]=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@foto,[Telefono]=@Telefono,EstadoCivil=@EstadoCivil,Cedula=@Cedula,CantidadHijos=@Hijos,Transporte=@Transporte  
+                                   Update TablaMMB SET [Nombre]=@Nombre, [Apellido]=@Apellido, [FechaNacimiento]=@Edad, [Direccion]=@Direccion,[sexo]=@Sexo,[Foto]=@foto,[Telefono]=@Telefono,EstadoCivil=@EstadoCivil,Cedula=@Cedula,CantidadHijos=@Hijos,Transporte=@Transporte ,Parroquia=@Parroquia,Municipio=@Municipio,Estado=@Estado 
                                    Where TablaMMB.Id = @Id";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Id = new SqlParameter("@Id", contact.Id);
@@ -286,6 +316,9 @@ namespace MapaniApp
                 SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
                 SqlParameter Hijos = new SqlParameter("@Hijos", contact.CantidadHijos);
                 SqlParameter Transporte = new SqlParameter("@Transporte", contact.Transporte);
+                SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
+                SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
+                SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Id);
@@ -299,6 +332,9 @@ namespace MapaniApp
                 command.Parameters.Add(Cedula);
                 command.Parameters.Add(Transporte);
                 command.Parameters.Add(Hijos);
+                command.Parameters.Add(Parroquia);
+                command.Parameters.Add(Municipio);
+                command.Parameters.Add(Estado);
                 command.ExecuteNonQuery();
 
             }
@@ -1004,6 +1040,9 @@ namespace MapaniApp
                         PartidaNacimiento = reader["PartidaNacimiento"].ToString(),
                         Discapacidad = reader["Discapacidad"].ToString(),
                         Lactancia = reader["LactanciaMaterna"].ToString(),
+                        Parroquia = reader["Parroquia"].ToString(),
+                        Municipio = reader["Municipio"].ToString(),
+                        Estado = reader["Estado"].ToString(),
                     });
                 }
 
@@ -1057,7 +1096,10 @@ namespace MapaniApp
                         EstadoCivil=reader["EstadoCivil"].ToString(),
                         CantidadHijos = reader["Hijos"].ToString(),
                         Cedula = reader["Cedula"].ToString(),
-                        Transporte= reader["Transporte"].ToString(),
+                        Parroquia = reader["Parroquia"].ToString(),
+                        Municipio = reader["Municipio"].ToString(),
+                        Estado = reader["Estado"].ToString(),
+                        Transporte = reader["Transporte"].ToString(),
                     });
                 }
 
@@ -1085,7 +1127,7 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                string query = @"Select Id,Nombre,Apellido,FechaNacimiento,Direccion,Sexo,foto,Cedula,Telefono,EstadoCivil,Transporte,Hijos FROM TablaCuidador Where Cedula=@Search";
+                string query = @"Select * FROM TablaCuidador Where Cedula=@Search";
                 SqlCommand command = new SqlCommand();
                 command.Parameters.Add(new SqlParameter("@Search", Search));
                 command.CommandText = query;
@@ -1107,6 +1149,9 @@ namespace MapaniApp
                         EstadoCivil = reader["EstadoCivil"].ToString(),
                         CantidadHijos = reader["Hijos"].ToString(),
                         Transporte = reader["Transporte"].ToString(),
+                        Parroquia = reader["Parroquia"].ToString(),
+                        Municipio = reader["Municipio"].ToString(),
+                        Estado = reader["Estado"].ToString(),
                     });
                 }
 
@@ -1162,6 +1207,9 @@ namespace MapaniApp
                         EstadoCivil = reader["EstadoCivil"].ToString(),
                         CantidadHijos = reader["CantidadHijos"].ToString(),
                         Transporte = reader["Transporte"].ToString(),
+                        Parroquia = reader["Parroquia"].ToString(),
+                        Municipio = reader["Municipio"].ToString(),
+                        Estado = reader["Estado"].ToString(),
                     });
                 }
 

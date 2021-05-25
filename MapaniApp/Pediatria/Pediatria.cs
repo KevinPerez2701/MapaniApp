@@ -80,7 +80,7 @@ namespace MapaniApp
                 DiagnosticosWho2007();
                 DiagnosticoTalla2007();
             }
-            else
+            else if (float.Parse(TxtEdad.Text) > 0 && float.Parse(TxtEdad.Text) <1825)
             {
                 CalculateZScoresWho2006();
                 DiagnosticosWho2006();
@@ -103,7 +103,7 @@ namespace MapaniApp
             double x = 0.0;
             double y = 0.0;
             double w = 0.0;
-            if (txtSexo.Text == "Masculino")
+            if (txtSexo.Text == "Masculino\t")
             {
                 if (who2006.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement1: imc, measurement2: ageDays, sex: Sex.Male, z: ref z))
                 {
@@ -157,7 +157,7 @@ namespace MapaniApp
                     TxtSSFP.Text = Math.Round(p, 1).ToString();
                 }
             }
-            else
+            else if (txtSexo.Text == "Femenino\t")
             {
                 if (who2006.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement1: imc, measurement2: ageDays, sex: Sex.Female, z: ref z))
                 {

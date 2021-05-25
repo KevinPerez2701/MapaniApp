@@ -42,7 +42,7 @@ namespace MapaniApp
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContact(contact);
                     contactDetails.EditUser(ComboContacto.Text,TxtId.Text);
-                    contactDetails.HideSave();
+                  
                     contactDetails.ShowDialog(this);
                 }
                 else if (ComboContacto.Text == "Cuidador")
@@ -51,7 +51,7 @@ namespace MapaniApp
                     ContactCuidador contact = contacts[0];
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContactCuidador(contact);
-                    contactDetails.HideSave();
+                    
                     contactDetails.EditUser(ComboContacto.Text, TxtId.Text);
                     contactDetails.ShowDialog(this);
                 }
@@ -62,7 +62,7 @@ namespace MapaniApp
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContactMMB(contact);
                     contactDetails.EditUser(ComboContacto.Text, TxtId.Text);
-                    contactDetails.HideSave();
+                   
                     contactDetails.ShowDialog(this);
                 }
 

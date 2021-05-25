@@ -21,5 +21,8 @@ namespace MapaniApp
         public string CantidadHijos { get; set; }
         public string Cedula { get; set; }
         public string Transporte { get; set; }
+        public string Parroquia { get; set; }
+        public string Municipio { get; set; }
+        public string Estado { get; set; }
     }
 }

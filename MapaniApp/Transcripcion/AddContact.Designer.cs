@@ -71,9 +71,14 @@ namespace MapaniApp
             this.TxtTransporte = new System.Windows.Forms.TextBox();
             this.groupNMB = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BtnActualizar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMunicipio = new System.Windows.Forms.TextBox();
+            this.txtParroquia = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).BeginInit();
             this.groupNMB.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -534,18 +539,6 @@ namespace MapaniApp
             this.groupBox2.Text = "Cuidador";
             this.groupBox2.Visible = false;
             // 
-            // BtnActualizar
-            // 
-            this.BtnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnActualizar.Location = new System.Drawing.Point(150, 651);
-            this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(102, 30);
-            this.BtnActualizar.TabIndex = 64;
-            this.BtnActualizar.Text = "Actualizar";
-            this.BtnActualizar.UseVisualStyleBackColor = true;
-            this.BtnActualizar.Visible = false;
-            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -564,14 +557,73 @@ namespace MapaniApp
             this.textBox2.Size = new System.Drawing.Size(48, 29);
             this.textBox2.TabIndex = 66;
             // 
+            // txtMunicipio
+            // 
+            this.txtMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMunicipio.Location = new System.Drawing.Point(594, 325);
+            this.txtMunicipio.Name = "txtMunicipio";
+            this.txtMunicipio.Size = new System.Drawing.Size(107, 29);
+            this.txtMunicipio.TabIndex = 70;
+            // 
+            // txtParroquia
+            // 
+            this.txtParroquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParroquia.Location = new System.Drawing.Point(594, 288);
+            this.txtParroquia.Name = "txtParroquia";
+            this.txtParroquia.Size = new System.Drawing.Size(107, 29);
+            this.txtParroquia.TabIndex = 69;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(444, 325);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(92, 24);
+            this.label9.TabIndex = 68;
+            this.label9.Text = "Municipio";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(448, 288);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(91, 24);
+            this.label11.TabIndex = 67;
+            this.label11.Text = "Parroquia";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(594, 360);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(107, 29);
+            this.txtEstado.TabIndex = 72;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(444, 360);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 24);
+            this.label12.TabIndex = 71;
+            this.label12.Text = "Estado";
+            // 
             // AddContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 696);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtMunicipio);
+            this.Controls.Add(this.txtParroquia);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupNMB);
             this.Controls.Add(this.TxtCedula);
@@ -648,8 +700,13 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtTransporte;
         private System.Windows.Forms.GroupBox groupNMB;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button BtnActualizar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMunicipio;
+        private System.Windows.Forms.TextBox txtParroquia;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.Label label12;
     }
 }

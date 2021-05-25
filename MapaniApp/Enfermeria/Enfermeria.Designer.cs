@@ -336,7 +336,7 @@ namespace MapaniApp
             this.DateTimeFecha.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTimeFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTimeFecha.Location = new System.Drawing.Point(98, 572);
+            this.DateTimeFecha.Location = new System.Drawing.Point(79, 461);
             this.DateTimeFecha.Name = "DateTimeFecha";
             this.DateTimeFecha.Size = new System.Drawing.Size(147, 29);
             this.DateTimeFecha.TabIndex = 103;
@@ -345,7 +345,7 @@ namespace MapaniApp
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(28, 572);
+            this.label11.Location = new System.Drawing.Point(9, 461);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 24);
             this.label11.TabIndex = 104;
@@ -364,7 +364,7 @@ namespace MapaniApp
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(624, 576);
+            this.BtnSalir.Location = new System.Drawing.Point(166, 584);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(157, 36);
             this.BtnSalir.TabIndex = 106;
@@ -377,7 +377,7 @@ namespace MapaniApp
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.BtnGuardar);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(302, 565);
+            this.groupBox1.Location = new System.Drawing.Point(13, 516);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 62);
             this.groupBox1.TabIndex = 107;

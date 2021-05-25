@@ -23,5 +23,9 @@ namespace MapaniApp
         public string Direccion { get; set; }
         public string Sexo { get; set; }
         public byte[] Foto { get; set; }
+
+        public string Parroquia { get; set; }
+        public string Municipio { get; set; }
+        public string Estado { get; set; }
     }
 }
