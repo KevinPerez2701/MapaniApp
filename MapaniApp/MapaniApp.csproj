@@ -103,6 +103,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsesoriaJuridica\AddContactAsesoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesoriaJuridica\AddContactAsesoria.Designer.cs">
+      <DependentUpon>AddContactAsesoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Almacen\AddOrden.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,13 @@
     <Compile Include="Almacen\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="AsesoriaJuridica\AsesoriaJuridica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesoriaJuridica\AsesoriaJuridica.Designer.cs">
+      <DependentUpon>AsesoriaJuridica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\ContactAsesoria.cs" />
     <Compile Include="Pediatria\EvolutivoPediatria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,11 +185,11 @@
     <Compile Include="Almacen\Almacen.Designer.cs">
       <DependentUpon>Almacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="AsesoriaLegal\AsesoriaLegal.cs">
+    <Compile Include="AsesoriaJuridica\RegistroBeneficiarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AsesoriaLegal\AsesoriaLegal.Designer.cs">
-      <DependentUpon>AsesoriaLegal.cs</DependentUpon>
+    <Compile Include="AsesoriaJuridica\RegistroBeneficiarios.Designer.cs">
+      <DependentUpon>RegistroBeneficiarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Recepcion\Citas.cs">
       <SubType>Form</SubType>
@@ -257,8 +270,14 @@
     <EmbeddedResource Include="Almacen\VerProductos.resx">
       <DependentUpon>VerProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AsesoriaLegal\AsesoriaLegal.resx">
-      <DependentUpon>AsesoriaLegal.cs</DependentUpon>
+    <EmbeddedResource Include="AsesoriaJuridica\AddContactAsesoria.resx">
+      <DependentUpon>AddContactAsesoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsesoriaJuridica\AsesoriaJuridica.resx">
+      <DependentUpon>AsesoriaJuridica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsesoriaJuridica\RegistroBeneficiarios.resx">
+      <DependentUpon>RegistroBeneficiarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Enfermeria\Enfermeria.resx">
       <DependentUpon>Enfermeria.cs</DependentUpon>
@@ -314,6 +333,7 @@
     <None Include="MapaniApp_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ClaseEnfermeria.datasource" />
+    <None Include="Properties\DataSources\ContactAsesoria.datasource" />
     <None Include="Properties\DataSources\ContactCuidador.datasource" />
     <None Include="Properties\DataSources\ContactMMB.datasource" />
     <None Include="Properties\DataSources\ContactNMB.datasource" />

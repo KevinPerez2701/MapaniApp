@@ -56,6 +56,19 @@ namespace MapaniApp
            }
             return Contact;
         }
+        public ContactAsesoria SaveContactAsesoria(ContactAsesoria Contact)
+        {
+            int flag = Contact.Id;
+            if (flag == 0)
+            {
+                _dataAccessLayer.InserContactAsesoria(Contact);
+            }
+          //  else
+           // {
+            //    _dataAccessLayer.UpdateContactNMB(Contact);
+            //}
+            return Contact;
+        }
         public DataAlmacen SaveProductBodega(DataAlmacen Product)
         {
           
@@ -144,6 +157,10 @@ namespace MapaniApp
         public List<ContactCuidador> GetContactsCuidador(string SearchText = null)
         {
             return _dataAccessLayer.GetContactsCuidador(SearchText);
+        }
+        public List<ContactAsesoria> GetContactsAsesoria(string SearchText = null)
+        {
+            return _dataAccessLayer.GetContactAsesoria(SearchText);
         }
         public List<ContactMMB> GetContactsMMB(string SearchText = null)
         {

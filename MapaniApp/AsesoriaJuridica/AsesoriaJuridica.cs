@@ -1,5 +1,4 @@
-﻿using AnthStat.Statistics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,16 +10,17 @@ using System.Windows.Forms;
 
 namespace MapaniApp
 {
-    public partial class AsesoriaLegal : Form
+    public partial class AsesoriaJuridica : Form
     {
-        public AsesoriaLegal()
+        public AsesoriaJuridica()
         {
             InitializeComponent();
         }
 
-        private void AsesoriaLegal_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            
+            RegistroBeneficiarios registro = new RegistroBeneficiarios();
+            registro.ShowDialog(this);
         }
     }
 }

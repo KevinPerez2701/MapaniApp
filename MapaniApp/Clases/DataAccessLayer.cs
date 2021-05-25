@@ -13,8 +13,8 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-      //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+      //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -335,6 +335,48 @@ namespace MapaniApp
                 command.Parameters.Add(Parroquia);
                 command.Parameters.Add(Municipio);
                 command.Parameters.Add(Estado);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+        public void InserContactAsesoria(ContactAsesoria contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into TablaContactASesoria (IdCuidador,[Nombre], [Apellido], [Cedula], [Direccion],[Ocupacion],[Telefono],Parroquia,Municipio,Estado)  
+                                    Values(@IdCuidador,@Nombre,@Apellido,@Cedula,@Direccion,@Ocupacion,@Telefono,@Parroquia,@Municipio,@Estado)";
+                SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
+                SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
+                SqlParameter Direccion = new SqlParameter("@Direccion", contact.Direccion);
+                SqlParameter Telefono = new SqlParameter("@Telefono", contact.Telefono);
+                SqlParameter Ocupacion = new SqlParameter("@Ocupacion", contact.Ocupacion);     
+                SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
+                SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
+                SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
+                SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
+                SqlParameter IdCuidador = new SqlParameter("@IdCuidador",contact.IdCuidador);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(Nombre);
+                command.Parameters.Add(Apellido);
+                command.Parameters.Add(Direccion);
+                command.Parameters.Add(Ocupacion);
+                command.Parameters.Add(Telefono);                
+                command.Parameters.Add(Cedula);              
+                command.Parameters.Add(Parroquia);
+                command.Parameters.Add(Municipio);
+                command.Parameters.Add(Estado);
+                command.Parameters.Add(IdCuidador);
                 command.ExecuteNonQuery();
 
             }
@@ -1225,6 +1267,49 @@ namespace MapaniApp
             }
             return contactsMMB;
         }
+        public List<ContactAsesoria> GetContactAsesoria(string Search = null)
+        {
+            List<ContactAsesoria> contactAsesoria = new List<ContactAsesoria>();
+
+            try
+            {
+                Connection.Open();
+                string query = @"Select * FROM TablaContactAsesoria Where IdCuidador=@Search";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    contactAsesoria.Add(new ContactAsesoria
+                    {
+                        Id = int.Parse(reader["Id"].ToString()),
+                      //  IdCuidador = int.Parse(reader["IdCuidador"].ToString()),
+                        Nombre = reader["Nombre"].ToString(),
+                        Apellido = reader["Apellido"].ToString(),
+                        Direccion = reader["Direccion"].ToString(),
+                        Ocupacion = reader["Ocupacion"].ToString(),
+                        Telefono = reader["Telefono"].ToString(),                      
+                        Cedula = reader["Cedula"].ToString(),
+                        Parroquia = reader["Parroquia"].ToString(),
+                        Municipio = reader["Municipio"].ToString(),
+                        Estado = reader["Estado"].ToString(),                      
+                    });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return contactAsesoria;
+        }
         /// <summary>
         /// Obtiene la lista de cuidadores asociados a un Id de NMB por la tabla de Relacion
         /// </summary>
@@ -1335,6 +1420,23 @@ namespace MapaniApp
                     {
                         Id = int.Parse(reader["Id"].ToString()),
                         Nombre = reader["Nombre"].ToString(),
+                        Apellido = reader["Apellido"].ToString(),
+                        FechaNacimiento = (DateTime)reader["FechaNacimiento"],
+                        FechaIngreso = (DateTime)reader["FechaIngreso"],
+                        Direccion = reader["Direccion"].ToString(),
+                        Sexo = reader["Sexo"].ToString(),
+                        Foto = (byte[])reader["Foto"],
+                        Cedula = reader["Cedula"].ToString(),
+                        Ingreso = reader["IngresoPrograma"].ToString(),
+                        Vacunas = reader["Vacunas"].ToString(),
+                        Parto = reader["Parto"].ToString(),
+                        PartidaNacimiento = reader["PartidaNacimiento"].ToString(),
+                        Discapacidad = reader["Discapacidad"].ToString(),
+                        Lactancia = reader["LactanciaMaterna"].ToString(),
+                        Parroquia = reader["Parroquia"].ToString(),
+                        Municipio = reader["Municipio"].ToString(),
+                        Estado = reader["Estado"].ToString(),
+                        Parentesco = reader["Parentesco"].ToString(),
                     });
                 }
             }

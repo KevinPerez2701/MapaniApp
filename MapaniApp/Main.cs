@@ -93,7 +93,7 @@ namespace MapaniApp
 
         private void BtnLegal_Click(object sender, EventArgs e)
         {
-            AsesoriaLegal legal = new AsesoriaLegal();
+            AsesoriaJuridica legal = new AsesoriaJuridica();
             legal.ShowDialog(this);
         }
 
