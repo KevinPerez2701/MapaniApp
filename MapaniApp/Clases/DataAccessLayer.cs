@@ -13,7 +13,7 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
       //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
@@ -379,6 +379,37 @@ namespace MapaniApp
                 command.Parameters.Add(Estado);
                 command.Parameters.Add(IdCuidador);
                 command.Parameters.Add(Vinculo);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+        public void InsertDocuments(ContactAsesoria contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into TablaDocumentsASesoria (IdCuidador,IdNMB,CedulaNMB)  
+                                    Values(@IdCuidador,@IdNMB,@Documento)";
+                
+                SqlParameter IdCuidador = new SqlParameter("@IdCuidador", contact.IdCuidador);
+                SqlParameter IdNMB = new SqlParameter("@IdNMB", contact.IdNMB);
+                SqlParameter Documento = new SqlParameter("@Documento", contact.Documento);
+            //    SqlParameter Tipo = new SqlParameter("@TipoDocumento", contact.TipoDocumento);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(IdCuidador);
+                command.Parameters.Add(IdNMB);
+                command.Parameters.Add(Documento);
+              //  command.Parameters.Add(Tipo);
                 command.ExecuteNonQuery();
 
             }

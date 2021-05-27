@@ -18,7 +18,7 @@ namespace MapaniApp
         {
             Stream MyStream = null;
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "image file (*.jpe; *.jpeg;)| *.jpg; *.jpeg";
+            openFileDialog.Filter = "image file (*.jpe; *.jpeg; )| *.jpg; *.jpeg;";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try

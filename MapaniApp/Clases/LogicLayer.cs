@@ -69,6 +69,13 @@ namespace MapaniApp
             //}
             return Contact;
         }
+        public ContactAsesoria SaveDocument(ContactAsesoria Contact)
+        {
+           
+                _dataAccessLayer.InsertDocuments(Contact);
+           
+                 return Contact;
+        }
         public DataAlmacen SaveProductBodega(DataAlmacen Product)
         {
           

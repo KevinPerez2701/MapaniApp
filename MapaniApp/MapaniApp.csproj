@@ -103,6 +103,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsesoriaJuridica\AddDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesoriaJuridica\AddDocuments.Designer.cs">
+      <DependentUpon>AddDocuments.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsesoriaJuridica\AddContactAsesoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AsesoriaJuridica\AddContactAsesoria.resx">
       <DependentUpon>AddContactAsesoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsesoriaJuridica\AddDocuments.resx">
+      <DependentUpon>AddDocuments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AsesoriaJuridica\AsesoriaJuridica.resx">
       <DependentUpon>AsesoriaJuridica.cs</DependentUpon>

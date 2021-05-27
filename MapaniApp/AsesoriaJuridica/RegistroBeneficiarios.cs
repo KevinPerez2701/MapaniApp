@@ -62,5 +62,10 @@ namespace MapaniApp
             asesoria.GetReferencia(txtID.Text);
             asesoria.ShowDialog(this);
         }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

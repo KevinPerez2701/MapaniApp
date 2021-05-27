@@ -22,5 +22,11 @@ namespace MapaniApp
             RegistroBeneficiarios registro = new RegistroBeneficiarios();
             registro.ShowDialog(this);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddDocuments Documento = new AddDocuments();
+            Documento.ShowDialog(this);
+        }
     }
 }
