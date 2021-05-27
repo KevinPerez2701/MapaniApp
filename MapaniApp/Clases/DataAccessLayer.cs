@@ -1346,6 +1346,48 @@ namespace MapaniApp
             }
             return contactAsesoria;
         }
+        public List<ContactAsesoria> GetDocuments(string Search = null)
+        {
+            List<ContactAsesoria> Documents = new List<ContactAsesoria>();
+
+            try
+            {
+                Connection.Open();
+                string query = @"Select * FROM TablaDocumentsAsesoria Where IdCuidador=@Search";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
+                /*   if (!string.IsNullOrEmpty(Search))
+                   {
+                       query += @"WHERE Id=@Search";
+                       command.Parameters.Add(new SqlParameter("@Search", $"%{Search}%"));
+
+                   }*/
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Documents.Add(new ContactAsesoria
+                    {
+                        IdCuidador = int.Parse(reader["IdCuidador"].ToString()),
+                        IdNMB = int.Parse(reader["IdNMB"].ToString()),
+                        TipoDocumento = reader["TipoDocumento"].ToString(),
+
+                    });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Documents;
+        }
         /// <summary>
         /// Obtiene la lista de cuidadores asociados a un Id de NMB por la tabla de Relacion
         /// </summary>

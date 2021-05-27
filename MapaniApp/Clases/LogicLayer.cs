@@ -160,6 +160,10 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetContacts(SearchText);
         }
+        public List<ContactAsesoria> GetDocuments(string SearchText = null)
+        {
+            return _dataAccessLayer.GetDocuments(SearchText);
+        }
         public List<MapaniUsers> ShowAsistencia(DateTime Fecha)
         {
             return _dataAccessLayer.ShowAsistencia(Fecha);

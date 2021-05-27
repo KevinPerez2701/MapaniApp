@@ -28,5 +28,11 @@ namespace MapaniApp
             AddDocuments Documento = new AddDocuments();
             Documento.ShowDialog(this);
         }
+
+        private void BtnVerDocumentos_Click(object sender, EventArgs e)
+        {
+            VerDocumentos Ver = new VerDocumentos();
+            Ver.ShowDialog(this);
+        }
     }
 }
