@@ -163,6 +163,7 @@ namespace MapaniApp
                 SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
                 SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
                 SqlCommand command = new SqlCommand(query, Connection);
+               
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Apellido);
                 command.Parameters.Add(FechaNacimiento);
@@ -397,21 +398,22 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                string query = @"
-                                    Insert into TablaDocumentsASesoria (IdCuidador,IdNMB,CedulaNMB)  
-                                    Values(@IdCuidador,@IdNMB,@Documento)";
-                
-                SqlParameter IdCuidador = new SqlParameter("@IdCuidador", contact.IdCuidador);
-                SqlParameter IdNMB = new SqlParameter("@IdNMB", contact.IdNMB);
-                SqlParameter Documento = new SqlParameter("@Documento", contact.Documento);
-            //    SqlParameter Tipo = new SqlParameter("@TipoDocumento", contact.TipoDocumento);
-                SqlCommand command = new SqlCommand(query, Connection);
-                command.Parameters.Add(IdCuidador);
-                command.Parameters.Add(IdNMB);
-                command.Parameters.Add(Documento);
-              //  command.Parameters.Add(Tipo);
-                command.ExecuteNonQuery();
+                    string query = @"Insert into TablaDocumentsASesoria (IdCuidador,IdNMB,TipoDocumento,Documento)  
+                                    Values(@IdCuidador,@IdNMB,@TipoDocumento,@Documento)
+                                   ";
 
+                    SqlParameter IdCuidador = new SqlParameter("@IdCuidador", contact.IdCuidador);
+                    SqlParameter Documento = new SqlParameter("@Documento", contact.Documento);
+                    SqlParameter IdNMB = new SqlParameter("@IdNMB", contact.IdNMB);
+                    SqlParameter Tipo = new SqlParameter("@TipoDocumento", contact.TipoDocumento);
+                    SqlCommand command = new SqlCommand(query, Connection);
+                    command.Parameters.Add(IdCuidador);
+                    command.Parameters.Add(Documento);
+                    command.Parameters.Add(IdNMB);
+                    command.Parameters.Add(Tipo);
+                    command.ExecuteNonQuery();
+                
+                
             }
             catch (Exception)
             {

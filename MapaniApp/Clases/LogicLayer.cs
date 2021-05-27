@@ -71,11 +71,18 @@ namespace MapaniApp
         }
         public ContactAsesoria SaveDocument(ContactAsesoria Contact)
         {
-           
+           // int flag = Contact.IdDocumento;
+           // if (flag == 0)
+            //{
                 _dataAccessLayer.InsertDocuments(Contact);
-           
-                 return Contact;
+            //}
+            //else
+            //{
+             //   _dataAccessLayer.UpdateDocuments(Contact);
+            //}
+            return Contact;
         }
+
         public DataAlmacen SaveProductBodega(DataAlmacen Product)
         {
           

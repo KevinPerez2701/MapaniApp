@@ -65,17 +65,23 @@ namespace MapaniApp
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             SaveDocument();
+            this.Close();
         }
         private void SaveDocument()
         {
-            ContactAsesoria document = new ContactAsesoria
-            {
-                IdCuidador = int.Parse(txtID.Text),
-                IdNMB = int.Parse(txtIdNMB.Text),      
-                Documento = Metodos.ImageToArray(PbFotoNewContact),
-                TipoDocumento = ComboDocumento.Text,
-            };
-           _LogicLayer.SaveDocument(document);
+            if (txtIdNMB.Text == "")
+                txtIdNMB.Text = "0";
+                ContactAsesoria document = new ContactAsesoria
+                {
+                    IdCuidador = int.Parse(txtID.Text),
+                    IdNMB = int.Parse(txtIdNMB.Text),
+                    Documento = Metodos.ImageToArray(PbFotoNewContact),
+                    TipoDocumento = ComboDocumento.Text,
+                  
+                };
+                 _LogicLayer.SaveDocument(document);
+            //}
+          
         }
     }
 }
