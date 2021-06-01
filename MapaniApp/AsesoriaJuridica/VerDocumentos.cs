@@ -27,5 +27,21 @@ namespace MapaniApp
             List<ContactAsesoria> Documents = _LogicLayer.GetDocuments(ID);
             dataGridView1.DataSource = Documents;
         }
+
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            if (cell.Value.ToString() == "Ver") // Si se selecciona el hipervinculo "confirmar"
+            {
+                AbrirDocumento Documento = new AbrirDocumento();
+                Documento.LoadDocument(new ContactAsesoria
+                {
+                    Documento = (byte[])dataGridView1.Rows[e.RowIndex].Cells[4].Value,
+                });
+
+                Documento.ShowDialog(this);
+            }
+        }
     }
 }

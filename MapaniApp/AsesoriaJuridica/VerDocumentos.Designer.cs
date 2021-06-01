@@ -31,13 +31,15 @@ namespace MapaniApp
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idCuidadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnCargar = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.VerDocumento = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewImageColumn();
+            this.idCuidadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -49,34 +51,15 @@ namespace MapaniApp
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCuidadorDataGridViewTextBoxColumn,
             this.idNMBDataGridViewTextBoxColumn,
-            this.tipoDocumentoDataGridViewTextBoxColumn});
+            this.tipoDocumentoDataGridViewTextBoxColumn,
+            this.VerDocumento,
+            this.Documento});
             this.dataGridView1.DataSource = this.contactAsesoriaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 139);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(373, 221);
+            this.dataGridView1.Size = new System.Drawing.Size(453, 221);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // contactAsesoriaBindingSource
-            // 
-            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
-            // 
-            // idCuidadorDataGridViewTextBoxColumn
-            // 
-            this.idCuidadorDataGridViewTextBoxColumn.DataPropertyName = "IdCuidador";
-            this.idCuidadorDataGridViewTextBoxColumn.HeaderText = "IdCuidador";
-            this.idCuidadorDataGridViewTextBoxColumn.Name = "idCuidadorDataGridViewTextBoxColumn";
-            // 
-            // idNMBDataGridViewTextBoxColumn
-            // 
-            this.idNMBDataGridViewTextBoxColumn.DataPropertyName = "IdNMB";
-            this.idNMBDataGridViewTextBoxColumn.HeaderText = "IdNMB";
-            this.idNMBDataGridViewTextBoxColumn.Name = "idNMBDataGridViewTextBoxColumn";
-            // 
-            // tipoDocumentoDataGridViewTextBoxColumn
-            // 
-            this.tipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "TipoDocumento";
-            this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "TipoDocumento";
-            this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // BtnCargar
             // 
@@ -107,6 +90,42 @@ namespace MapaniApp
             this.label5.TabIndex = 96;
             this.label5.Text = "Ingrese el  ID del usuario ";
             // 
+            // VerDocumento
+            // 
+            this.VerDocumento.HeaderText = "Ver Documento";
+            this.VerDocumento.Name = "VerDocumento";
+            this.VerDocumento.Text = "Ver";
+            this.VerDocumento.UseColumnTextForLinkValue = true;
+            // 
+            // Documento
+            // 
+            this.Documento.DataPropertyName = "Documento";
+            this.Documento.HeaderText = "Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.Visible = false;
+            // 
+            // idCuidadorDataGridViewTextBoxColumn
+            // 
+            this.idCuidadorDataGridViewTextBoxColumn.DataPropertyName = "IdCuidador";
+            this.idCuidadorDataGridViewTextBoxColumn.HeaderText = "IdCuidador";
+            this.idCuidadorDataGridViewTextBoxColumn.Name = "idCuidadorDataGridViewTextBoxColumn";
+            // 
+            // idNMBDataGridViewTextBoxColumn
+            // 
+            this.idNMBDataGridViewTextBoxColumn.DataPropertyName = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.HeaderText = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.Name = "idNMBDataGridViewTextBoxColumn";
+            // 
+            // tipoDocumentoDataGridViewTextBoxColumn
+            // 
+            this.tipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "TipoDocumento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "TipoDocumento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
+            // 
+            // contactAsesoriaBindingSource
+            // 
+            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
+            // 
             // VerDocumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,12 +147,14 @@ namespace MapaniApp
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCuidadorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idNMBDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource contactAsesoriaBindingSource;
         private System.Windows.Forms.Button BtnCargar;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCuidadorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNMBDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn VerDocumento;
+        private System.Windows.Forms.DataGridViewImageColumn Documento;
     }
 }

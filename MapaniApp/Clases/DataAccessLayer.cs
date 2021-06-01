@@ -1372,6 +1372,7 @@ namespace MapaniApp
                         IdCuidador = int.Parse(reader["IdCuidador"].ToString()),
                         IdNMB = int.Parse(reader["IdNMB"].ToString()),
                         TipoDocumento = reader["TipoDocumento"].ToString(),
+                        Documento = (byte[])reader["Documento"],
 
                     });
                 }
