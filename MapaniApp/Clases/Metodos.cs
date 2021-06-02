@@ -13,8 +13,31 @@ namespace MapaniApp
     class Metodos
     {
         private static readonly ImageConverter _imageConverter = new ImageConverter();
-        
+
         #region CONVERTIR IMAGENES Y VICEVERSA
+
+        public static void databaseFilePut(string varFilePath, ContactAsesoria File)
+        {
+           
+            using (var stream = new FileStream(varFilePath, FileMode.Open, FileAccess.Read))
+            {
+                using (var reader = new BinaryReader(stream))
+                {
+                   File.PDF = reader.ReadBytes((int)stream.Length);
+                }
+            }
+           
+        }
+        public static void databaseFileRead(ContactAsesoria blob, string varPathToNewLocation)
+        {
+         
+            {
+                            using (var fs = new FileStream(varPathToNewLocation, FileMode.Create, FileAccess.Write))
+                            fs.Write(blob.PDF, 0, (blob.PDF).Length);
+             }
+
+       }
+        
         public static void GuardarFoto(PictureBox Foto)
         {
             SaveFileDialog sfd = new SaveFileDialog();

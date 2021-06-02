@@ -34,12 +34,13 @@ namespace MapaniApp
             this.BtnCargar = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.VerDocumento = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewImageColumn();
+            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idCuidadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.VerDocumento = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewImageColumn();
+            this.PDF = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,8 @@ namespace MapaniApp
             this.idNMBDataGridViewTextBoxColumn,
             this.tipoDocumentoDataGridViewTextBoxColumn,
             this.VerDocumento,
-            this.Documento});
+            this.Documento,
+            this.PDF});
             this.dataGridView1.DataSource = this.contactAsesoriaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 139);
             this.dataGridView1.Name = "dataGridView1";
@@ -90,19 +92,9 @@ namespace MapaniApp
             this.label5.TabIndex = 96;
             this.label5.Text = "Ingrese el  ID del usuario ";
             // 
-            // VerDocumento
+            // contactAsesoriaBindingSource
             // 
-            this.VerDocumento.HeaderText = "Ver Documento";
-            this.VerDocumento.Name = "VerDocumento";
-            this.VerDocumento.Text = "Ver";
-            this.VerDocumento.UseColumnTextForLinkValue = true;
-            // 
-            // Documento
-            // 
-            this.Documento.DataPropertyName = "Documento";
-            this.Documento.HeaderText = "Documento";
-            this.Documento.Name = "Documento";
-            this.Documento.Visible = false;
+            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
             // 
             // idCuidadorDataGridViewTextBoxColumn
             // 
@@ -122,9 +114,26 @@ namespace MapaniApp
             this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "TipoDocumento";
             this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
             // 
-            // contactAsesoriaBindingSource
+            // VerDocumento
             // 
-            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
+            this.VerDocumento.HeaderText = "Ver Documento";
+            this.VerDocumento.Name = "VerDocumento";
+            this.VerDocumento.Text = "Ver";
+            this.VerDocumento.UseColumnTextForLinkValue = true;
+            // 
+            // Documento
+            // 
+            this.Documento.DataPropertyName = "Documento";
+            this.Documento.HeaderText = "Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.Visible = false;
+            // 
+            // PDF
+            // 
+            this.PDF.DataPropertyName = "PDF";
+            this.PDF.HeaderText = "PDF";
+            this.PDF.Name = "PDF";
+            this.PDF.Visible = false;
             // 
             // VerDocumentos
             // 
@@ -156,5 +165,6 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn VerDocumento;
         private System.Windows.Forms.DataGridViewImageColumn Documento;
+        private System.Windows.Forms.DataGridViewImageColumn PDF;
     }
 }

@@ -38,6 +38,7 @@ namespace MapaniApp
                 Documento.LoadDocument(new ContactAsesoria
                 {
                     Documento = (byte[])dataGridView1.Rows[e.RowIndex].Cells[4].Value,
+                    PDF = (byte[])dataGridView1.Rows[e.RowIndex].Cells[5].Value,
                 });
 
                 Documento.ShowDialog(this);

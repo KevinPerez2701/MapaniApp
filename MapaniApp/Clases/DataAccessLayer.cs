@@ -13,8 +13,8 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-      //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+       // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -398,19 +398,21 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                    string query = @"Insert into TablaDocumentsASesoria (IdCuidador,IdNMB,TipoDocumento,Documento)  
-                                    Values(@IdCuidador,@IdNMB,@TipoDocumento,@Documento)
+                    string query = @"Insert into TablaDocumentsASesoria (IdCuidador,IdNMB,TipoDocumento,Documento,PDF)  
+                                    Values(@IdCuidador,@IdNMB,@TipoDocumento,@Documento,@PDF)
                                    ";
 
                     SqlParameter IdCuidador = new SqlParameter("@IdCuidador", contact.IdCuidador);
                     SqlParameter Documento = new SqlParameter("@Documento", contact.Documento);
                     SqlParameter IdNMB = new SqlParameter("@IdNMB", contact.IdNMB);
                     SqlParameter Tipo = new SqlParameter("@TipoDocumento", contact.TipoDocumento);
+                    SqlParameter PDF = new SqlParameter("@PDF", contact.PDF);
                     SqlCommand command = new SqlCommand(query, Connection);
                     command.Parameters.Add(IdCuidador);
                     command.Parameters.Add(Documento);
                     command.Parameters.Add(IdNMB);
                     command.Parameters.Add(Tipo);
+                    command.Parameters.Add(PDF);
                     command.ExecuteNonQuery();
                 
                 
@@ -1373,6 +1375,7 @@ namespace MapaniApp
                         IdNMB = int.Parse(reader["IdNMB"].ToString()),
                         TipoDocumento = reader["TipoDocumento"].ToString(),
                         Documento = (byte[])reader["Documento"],
+                        PDF = (byte[])reader["PDF"],
 
                     });
                 }

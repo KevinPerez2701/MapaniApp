@@ -22,6 +22,7 @@ namespace MapaniApp
         public string Vinculo { get; set; }
         public string TipoDocumento { get; set; }
         public byte[] Documento { get; set; }
+        public byte[] PDF { get; set; }
         public int IdNMB { get; set; }
       
     }

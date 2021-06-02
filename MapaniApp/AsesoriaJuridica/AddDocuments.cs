@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 namespace MapaniApp
 {
     public partial class AddDocuments : Form
-    {
+    {   string filepath;
         private LogicLayer _LogicLayer = new LogicLayer();
         public AddDocuments()
         {
@@ -25,7 +26,9 @@ namespace MapaniApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Metodos.AgregarFoto(PbFotoNewContact);
+            Metodos.AgregarFoto(PbFotoNewContact); 
+           
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,9 +82,20 @@ namespace MapaniApp
                     TipoDocumento = ComboDocumento.Text,
                   
                 };
+            Metodos.databaseFilePut(filepath, document);
                  _LogicLayer.SaveDocument(document);
             //}
           
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filepath = openFileDialog.FileName;
+              
+            }
         }
     }
 }
