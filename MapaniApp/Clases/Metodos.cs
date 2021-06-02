@@ -28,11 +28,13 @@ namespace MapaniApp
             }
            
         }
-        public static void databaseFileRead(ContactAsesoria blob, string varPathToNewLocation)
+        public static void databaseFileRead(ContactAsesoria blob)
         {
-         
+
             {
-                            using (var fs = new FileStream(varPathToNewLocation, FileMode.Create, FileAccess.Write))
+                            SaveFileDialog svg = new SaveFileDialog();
+                            svg.ShowDialog();
+                            using (var fs = new FileStream(svg.FileName + ".pdf", FileMode.Create,FileAccess.Write))
                             fs.Write(blob.PDF, 0, (blob.PDF).Length);
              }
 

@@ -35,10 +35,10 @@ namespace MapaniApp
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.abrirPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarArchivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.guardarPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -75,6 +75,7 @@ namespace MapaniApp
             this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
             this.axAcroPDF1.Size = new System.Drawing.Size(521, 769);
             this.axAcroPDF1.TabIndex = 3;
+         
             // 
             // menuStrip1
             // 
@@ -100,7 +101,14 @@ namespace MapaniApp
             this.guardarArchivoToolStripMenuItem.Name = "guardarArchivoToolStripMenuItem";
             this.guardarArchivoToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
             this.guardarArchivoToolStripMenuItem.Text = "Guardar Archivo";
-            this.guardarArchivoToolStripMenuItem.Click += new System.EventHandler(this.guardarArchivoToolStripMenuItem_Click);
+          
+            // 
+            // guardarPDFToolStripMenuItem
+            // 
+            this.guardarPDFToolStripMenuItem.Name = "guardarPDFToolStripMenuItem";
+            this.guardarPDFToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.guardarPDFToolStripMenuItem.Text = "Guardar PDF";
+          
             // 
             // pictureBox1
             // 
@@ -115,13 +123,6 @@ namespace MapaniApp
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // guardarPDFToolStripMenuItem
-            // 
-            this.guardarPDFToolStripMenuItem.Name = "guardarPDFToolStripMenuItem";
-            this.guardarPDFToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.guardarPDFToolStripMenuItem.Text = "Guardar PDF";
-            this.guardarPDFToolStripMenuItem.Click += new System.EventHandler(this.guardarPDFToolStripMenuItem_Click);
             // 
             // AbrirDocumento
             // 
