@@ -16,5 +16,15 @@ namespace MapaniApp
         {
             InitializeComponent();
         }
+
+        private void HistorialNutricional_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

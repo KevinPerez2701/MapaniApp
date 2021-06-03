@@ -40,7 +40,7 @@ namespace MapaniApp
                 TxtApellido.Text = contact.Apellido;
                 dateTimePicker1.Value = contact.FechaNacimiento.Date;
                 TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento);
-                TxtEdadMeses.Text = Metodos.GetEdadMeses(contact.FechaNacimiento);
+                TxtEdadMeses.Text = Metodos.GetEdadMeses(contact.FechaNacimiento, dateTimePicker2.Value);
                 txtSexo.Text = contact.Sexo;
 
             }
@@ -74,7 +74,8 @@ namespace MapaniApp
         }
 
         private void BtnCalcular_Click(object sender, EventArgs e)
-        {   if (float.Parse(TxtEdad.Text) > 1825)
+        {   
+            if (float.Parse(TxtEdad.Text) > 1825)
             {
                 CalculateZScoresWho2007();
                 DiagnosticosWho2007();
@@ -307,10 +308,10 @@ namespace MapaniApp
                 {
                     double p = StatisticsHelper.CalculatePercentile(y);
                     TxtTallaEdadWho2007Z.Text = Math.Round(y, 2).ToString();
-                    //TxtTallaEdadWho2007P.Text = Math.Round(p, 2).ToString();
+                    TxtTallaEdadWho2007P.Text = Math.Round(p, 2).ToString();
                 }
             }
-            else if (txtSexo.Text == "Femenino\t")
+            else if (txtSexo.Text == "Femenino")
             {
                 if (who2007.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement: imc, age: ageMonths, sex: Sex.Female, z: ref z))
                 {
@@ -360,38 +361,7 @@ namespace MapaniApp
             Cita.GetCita(Pediatria);
             Cita.ShowDialog(this);
            // _LogicLayer.InsertCitaPediatria(Pediatria);
-        }
-
-        private void DatosEnfermeria_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupWHO2007_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        }      
         private void button2_Click(object sender, EventArgs e)
         {
             HistoriasPediatria Sucesivo = new HistoriasPediatria();

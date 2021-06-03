@@ -136,6 +136,7 @@ namespace MapaniApp
             this.BtnSucesivo.TabIndex = 132;
             this.BtnSucesivo.Text = "Sucesivo";
             this.BtnSucesivo.UseVisualStyleBackColor = true;
+            this.BtnSucesivo.Click += new System.EventHandler(this.BtnSucesivo_Click);
             // 
             // groupBox1
             // 
@@ -268,6 +269,7 @@ namespace MapaniApp
             this.BtnGuardar.TabIndex = 128;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // GroupWHO2007
             // 
@@ -422,6 +424,7 @@ namespace MapaniApp
             this.BtnCalcular.TabIndex = 122;
             this.BtnCalcular.Text = "Calcular";
             this.BtnCalcular.UseVisualStyleBackColor = true;
+            this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
             // GroupWHO2006
             // 
@@ -883,6 +886,7 @@ namespace MapaniApp
             this.BtnAddOrder.Text = "Agregar Medicamentos";
             this.BtnAddOrder.UseVisualStyleBackColor = true;
             this.BtnAddOrder.Visible = false;
+            this.BtnAddOrder.Click += new System.EventHandler(this.BtnAddOrder_Click);
             // 
             // BtnCargarContacto
             // 
@@ -893,6 +897,7 @@ namespace MapaniApp
             this.BtnCargarContacto.TabIndex = 118;
             this.BtnCargarContacto.Text = "Cargar Contacto";
             this.BtnCargarContacto.UseVisualStyleBackColor = true;
+            this.BtnCargarContacto.Click += new System.EventHandler(this.BtnCargarContacto_Click);
             // 
             // TxtEdad
             // 

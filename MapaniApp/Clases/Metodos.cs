@@ -129,12 +129,16 @@ namespace MapaniApp
             edad = Math.Floor(tS.TotalDays).ToString();
             return edad;
         }
-        public static string GetEdadMeses(DateTime Fecha)
+
+        public static string GetEdadMeses(DateTime Fecha, DateTime Hoy)
         {
+            double calculo;
             string edad;
-            TimeSpan tS = new TimeSpan();
-            tS = DateTime.Now.Subtract(Fecha);
-            edad = Math.Round((tS.TotalDays / 31), 2).ToString();
+            calculo = (Hoy.Month - Fecha.Month) + 12 * (Hoy.Year - Fecha.Year);
+            edad = Math.Round(calculo, 2).ToString();
+          //  TimeSpan tS = new TimeSpan();
+           // tS = DateTime.Now.Subtract(Fecha);
+            //edad = Math.Round((tS.TotalDays / 31), 2).ToString();
           // edad = Math.Floor((tS.TotalDays / 31)).ToString();            
             return edad;
         }

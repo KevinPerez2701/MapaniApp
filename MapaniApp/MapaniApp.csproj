@@ -363,6 +363,9 @@
     <EmbeddedResource Include="Login\Asistencia.resx">
       <DependentUpon>Asistencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nutricion\HistorialNutricional.resx">
+      <DependentUpon>HistorialNutricional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pediatria\EvolutivoPediatria.resx">
       <DependentUpon>EvolutivoPediatria.cs</DependentUpon>
     </EmbeddedResource>
