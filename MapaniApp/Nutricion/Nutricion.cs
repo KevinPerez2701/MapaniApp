@@ -63,7 +63,8 @@ namespace MapaniApp
             TxtPeso.Text = Datos.Peso;
             TxtTalla.Text = Datos.Talla;
             TxtCMB.Text = Datos.CMB;
-            txtHb.Text = Datos.Hb.ToString();
+            txtHb.Text = Datos.Hb;
+            TxtCC.Text = Datos.CC;
         }
         public void CalculateZScoresWho2006()
         {
@@ -288,7 +289,7 @@ namespace MapaniApp
                     TxtTallaEdadWho2007P.Text = Math.Round(p, 2).ToString();
                 }
             }
-            else if (txtSexo.Text == "Femenino\t")
+            else if (txtSexo.Text == "Femenino")
             {
                 if (who2007.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement: imc, age: ageMonths, sex: Sex.Female, z: ref z))
                 {

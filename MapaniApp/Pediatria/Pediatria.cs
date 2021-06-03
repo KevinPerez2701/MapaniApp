@@ -57,7 +57,8 @@ namespace MapaniApp
             TxtPeso.Text = Datos.Peso;
             TxtTalla.Text = Datos.Talla;
             TxtCMB.Text = Datos.CMB;
-            txtHb.Text = Datos.Hb.ToString();
+            txtHb.Text = Datos.Hb;
+            TxtCC.Text = Datos.CC;
         }
        
         private void button1_Click(object sender, EventArgs e)

@@ -28,25 +28,35 @@ namespace MapaniApp
 
         private void BtnCargarContacto_Click(object sender, EventArgs e)
         {
-            if ((ComboUsuario.Text == "NMB") && (comboPrograma.Text == "Ponte Poronte")  )
+            List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
+            ContactNMB contact = contacts[0];
+            LoadContact(contact);
+            groupBox1.Visible = true;
+            groupBase.Visible = true;
+            if (int.Parse(TxtEdad.Text)<730)
             {
-                List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
-                ContactNMB contact = contacts[0];
-                LoadContact(contact);
-                groupBase.Visible = true;
-                groupBox1.Visible = true;                              
+                txtCC.Visible = true;
+                labelCC.Visible = true;
             }
-            else if  ((ComboUsuario.Text == "NMB") && (comboPrograma.Text == "IRC"))
-                {
-                List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
-                ContactNMB contact = contacts[0];
-                LoadContact(contact);
-               
-                groupBox1.Visible = true;
-                
-                groupBase.Visible = true;
-            }
+            /*  if ((ComboUsuario.Text == "NMB") && (comboPrograma.Text == "Ponte Poronte")  )
+              {
+                  List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
+                  ContactNMB contact = contacts[0];
+                  LoadContact(contact);
+                  groupBase.Visible = true;
+                  groupBox1.Visible = true;                              
+              }
+              else if  ((ComboUsuario.Text == "NMB") && (comboPrograma.Text == "IRC"))
+                  {
+                  List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
+                  ContactNMB contact = contacts[0];
+                  LoadContact(contact);
 
+                  groupBox1.Visible = true;
+
+                  groupBase.Visible = true;
+              }
+            */
         }
         private void LoadContact(ContactNMB contact)
         {   
@@ -82,7 +92,8 @@ namespace MapaniApp
                 Peso = TxtPeso.Text,
                 Talla = TxtTalla.Text,              
                 CMB = TxtCMB.Text,
-                Hb = int.Parse(TxtHb.Text),
+                Hb = TxtHb.Text,
+                CC = txtCC.Text,
                
             };
             _LogicLayer.SaveContactEnfermeria(Cita);

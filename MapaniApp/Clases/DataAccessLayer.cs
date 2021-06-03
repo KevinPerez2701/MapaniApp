@@ -862,8 +862,8 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaEnfermeria (NMB, Fecha,Programa,Peso,Talla,CMB,Hb)  
-                                    Values(@NMB,@Fecha,@Programa,@Peso,@Talla,@CMB,@Hb )";
+                                    Insert into TablaEnfermeria (NMB, Fecha,Programa,Peso,Talla,CMB,Hb,CC)  
+                                    Values(@NMB,@Fecha,@Programa,@Peso,@Talla,@CMB,@Hb,@CC )";
                 SqlParameter NMB = new SqlParameter("@NMB", contact.NMB);
                 SqlParameter Fecha = new SqlParameter("@Fecha", contact.Fecha);
                 SqlParameter Programa = new SqlParameter("@Programa", contact.Programa);
@@ -872,7 +872,7 @@ namespace MapaniApp
                 SqlParameter Hb = new SqlParameter("@Hb", contact.Hb);
                 SqlParameter CMB = new SqlParameter("@CMB", contact.CMB);
                 // SqlParameter MUAC = new SqlParameter("@Muac", contact.MUAC);
-                //SqlParameter CC = new SqlParameter("@CC", contact.CC);
+                SqlParameter CC = new SqlParameter("@CC", contact.CC);
                 //SqlParameter Edema  = new SqlParameter("@Edema", contact.Edema);
                 //SqlParameter IMC = new SqlParameter("@IMC", contact.IMC);
                 //SqlParameter PZImcEdad = new SqlParameter("@PZImcEdad", contact.PZImcEdad);
@@ -892,7 +892,7 @@ namespace MapaniApp
                 command.Parameters.Add(Hb);
                 command.Parameters.Add(CMB);
                 // command.Parameters.Add(MUAC);
-                //command.Parameters.Add(CC);
+                command.Parameters.Add(CC);
                 //command.Parameters.Add(Edema);
                 //command.Parameters.Add(IMC);
                 //command.Parameters.Add(PZImcEdad);
@@ -1648,7 +1648,8 @@ namespace MapaniApp
                         Programa = reader["Programa"].ToString(),
                         CMB = reader["CMB"].ToString(),
                         Edema = reader["Edema"].ToString(),
-                        Hb = int.Parse(reader["Hb"].ToString()),
+                        Hb = (reader["Hb"].ToString()),
+                        CC = (reader["CC"].ToString()),
                         Observacion = reader["Observacion"].ToString(),
                         Antecedentes = reader["Antecedentes"].ToString(),
                         Patologia = reader["Patologias"].ToString(),
@@ -1700,7 +1701,8 @@ namespace MapaniApp
                         Referido = reader["Referido"].ToString(),
                         Diagnostico = reader["Diagnostico"].ToString(),
                         DiagnosticoTalla = reader["DiagnosticoTalla"].ToString(),
-                        Hb = int.Parse(reader["Hb"].ToString()),
+                        Hb =reader["Hb"].ToString(),
+                        CC =reader["CC"].ToString(),
                         Observacion = reader["Observacion"].ToString(),
                         Antecedentes = reader["Antecedentes"].ToString(),
                         Patologia = reader["Patologias"].ToString(),

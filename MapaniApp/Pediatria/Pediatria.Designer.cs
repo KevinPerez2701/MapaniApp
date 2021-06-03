@@ -281,7 +281,6 @@ namespace MapaniApp
             this.DatosEnfermeria.TabIndex = 93;
             this.DatosEnfermeria.TabStop = false;
             this.DatosEnfermeria.Text = "Datos Enfermeria";
-           
             // 
             // txtHb
             // 
@@ -776,7 +775,6 @@ namespace MapaniApp
             this.GroupWHO2007.TabIndex = 100;
             this.GroupWHO2007.TabStop = false;
             this.GroupWHO2007.Text = "WHO2007";
-           
             // 
             // TxtIMCEdadWho2007Z
             // 
@@ -910,7 +908,6 @@ namespace MapaniApp
             this.groupBox1.TabIndex = 104;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pediatria";
-         
             // 
             // ComboUrgencias
             // 
@@ -924,7 +921,6 @@ namespace MapaniApp
             this.ComboUrgencias.Name = "ComboUrgencias";
             this.ComboUrgencias.Size = new System.Drawing.Size(167, 32);
             this.ComboUrgencias.TabIndex = 98;
-           
             // 
             // ComboReferido
             // 
@@ -977,7 +973,6 @@ namespace MapaniApp
             this.TxtDiagnosticoTalla.Size = new System.Drawing.Size(167, 29);
             this.TxtDiagnosticoTalla.TabIndex = 94;
             this.TxtDiagnosticoTalla.Tag = "Contact";
-         
             // 
             // label33
             // 
