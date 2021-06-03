@@ -114,12 +114,13 @@ namespace MapaniApp
 
         }
         #endregion
-        #region LimpiezaDatos
+        #region LIMPIEZA DE DATOS
         public static void ClearForm(TextBox TextBox)
         {
             TextBox.Text = string.Empty;
         }
         #endregion
+        #region CALCULO EDAD
         public static string GetEdad(DateTime Fecha)
         {
             string edad;
@@ -133,7 +134,8 @@ namespace MapaniApp
             string edad;
             TimeSpan tS = new TimeSpan();
             tS = DateTime.Now.Subtract(Fecha);
-            edad = Math.Floor((tS.TotalDays / 31)).ToString();            
+            edad = Math.Round((tS.TotalDays / 31), 2).ToString();
+          // edad = Math.Floor((tS.TotalDays / 31)).ToString();            
             return edad;
         }
         public static string GetEdadAnhos(DateTime Fecha)
@@ -144,5 +146,7 @@ namespace MapaniApp
             edad =Math.Floor((tS.TotalDays / 365)).ToString();
             return edad;
         }
+        #endregion
+        
     }
 }

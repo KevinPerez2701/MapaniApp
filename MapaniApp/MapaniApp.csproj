@@ -179,6 +179,18 @@
       <DependentUpon>AsesoriaJuridica.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\ContactAsesoria.cs" />
+    <Compile Include="AsesoriaJuridica\GestionCasos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesoriaJuridica\GestionCasos.Designer.cs">
+      <DependentUpon>GestionCasos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\HistorialNutricional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nutricion\HistorialNutricional.Designer.cs">
+      <DependentUpon>HistorialNutricional.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pediatria\EvolutivoPediatria.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -27,15 +27,16 @@ namespace MapaniApp
         }
         public void LoadDocument(ContactAsesoria contact)
 
-        {
-            pictureBox1.Image = Metodos.GetImageFromByteArray(contact.Documento);        
+        {        
             Metodos.databaseFileRead(contact);
         }
 
-        private void abrirPDFToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void abrirPDFToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            axAcroPDF1.src = openFileDialog1.FileName;           
+            axAcroPDF1.src = openFileDialog1.FileName;
         }
     }
 }

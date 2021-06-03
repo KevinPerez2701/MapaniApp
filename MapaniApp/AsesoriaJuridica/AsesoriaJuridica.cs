@@ -34,5 +34,11 @@ namespace MapaniApp
             VerDocumentos Ver = new VerDocumentos();
             Ver.ShowDialog(this);
         }
+
+        private void BtnGestionCasos_Click(object sender, EventArgs e)
+        {
+            GestionCasos casos = new GestionCasos();
+            casos.ShowDialog(this);
+        }
     }
 }

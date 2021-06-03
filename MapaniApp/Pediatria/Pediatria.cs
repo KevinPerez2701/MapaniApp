@@ -289,7 +289,7 @@ namespace MapaniApp
             double x = 0.0;
             double y = 0.0;
             TxtIMCCalculado.Text = Math.Round(imc, 2).ToString();
-            if (txtSexo.Text == "Masculino")
+            if (txtSexo.Text == "Masculino\t")
             {
                 if (who2007.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement: imc, age: ageMonths, sex: Sex.Male, z: ref z))
                 {
@@ -307,10 +307,10 @@ namespace MapaniApp
                 {
                     double p = StatisticsHelper.CalculatePercentile(y);
                     TxtTallaEdadWho2007Z.Text = Math.Round(y, 2).ToString();
-                    TxtTallaEdadWho2007P.Text = Math.Round(p, 2).ToString();
+                    //TxtTallaEdadWho2007P.Text = Math.Round(p, 2).ToString();
                 }
             }
-            else
+            else if (txtSexo.Text == "Femenino\t")
             {
                 if (who2007.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement: imc, age: ageMonths, sex: Sex.Female, z: ref z))
                 {

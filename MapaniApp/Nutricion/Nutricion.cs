@@ -21,5 +21,11 @@ namespace MapaniApp
         private void Nutricion_Load(object sender, EventArgs e)
         {                        
         }
+
+        private void BtnHistorialNutricional_Click(object sender, EventArgs e)
+        {
+            HistorialNutricional Historial = new HistorialNutricional();
+            Historial.ShowDialog(this);
+        }
     }
 }

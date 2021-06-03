@@ -31,15 +31,14 @@ namespace MapaniApp
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnCargar = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idCuidadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VerDocumento = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewImageColumn();
             this.PDF = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).BeginInit();
@@ -54,7 +53,6 @@ namespace MapaniApp
             this.idNMBDataGridViewTextBoxColumn,
             this.tipoDocumentoDataGridViewTextBoxColumn,
             this.VerDocumento,
-            this.Documento,
             this.PDF});
             this.dataGridView1.DataSource = this.contactAsesoriaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 139);
@@ -62,6 +60,10 @@ namespace MapaniApp
             this.dataGridView1.Size = new System.Drawing.Size(453, 221);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // contactAsesoriaBindingSource
+            // 
+            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
             // 
             // BtnCargar
             // 
@@ -92,10 +94,6 @@ namespace MapaniApp
             this.label5.TabIndex = 96;
             this.label5.Text = "Ingrese el  ID del usuario ";
             // 
-            // contactAsesoriaBindingSource
-            // 
-            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
-            // 
             // idCuidadorDataGridViewTextBoxColumn
             // 
             this.idCuidadorDataGridViewTextBoxColumn.DataPropertyName = "IdCuidador";
@@ -120,13 +118,6 @@ namespace MapaniApp
             this.VerDocumento.Name = "VerDocumento";
             this.VerDocumento.Text = "Ver";
             this.VerDocumento.UseColumnTextForLinkValue = true;
-            // 
-            // Documento
-            // 
-            this.Documento.DataPropertyName = "Documento";
-            this.Documento.HeaderText = "Documento";
-            this.Documento.Name = "Documento";
-            this.Documento.Visible = false;
             // 
             // PDF
             // 
@@ -164,7 +155,6 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn idNMBDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn VerDocumento;
-        private System.Windows.Forms.DataGridViewImageColumn Documento;
         private System.Windows.Forms.DataGridViewImageColumn PDF;
     }
 }

@@ -26,8 +26,13 @@ namespace MapaniApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Metodos.AgregarFoto(PbFotoNewContact); 
-           
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filepath = openFileDialog.FileName;
+
+            }
+
 
         }
 
@@ -77,25 +82,16 @@ namespace MapaniApp
                 ContactAsesoria document = new ContactAsesoria
                 {
                     IdCuidador = int.Parse(txtID.Text),
-                    IdNMB = int.Parse(txtIdNMB.Text),
-                    Documento = Metodos.ImageToArray(PbFotoNewContact),
+                    IdNMB = int.Parse(txtIdNMB.Text),                  
                     TipoDocumento = ComboDocumento.Text,
                   
                 };
-            Metodos.databaseFilePut(filepath, document);
+                Metodos.databaseFilePut(filepath, document);
                  _LogicLayer.SaveDocument(document);
             //}
           
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                filepath = openFileDialog.FileName;
-              
-            }
-        }
+       
     }
 }

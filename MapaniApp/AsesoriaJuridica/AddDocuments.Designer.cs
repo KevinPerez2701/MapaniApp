@@ -35,7 +35,6 @@ namespace MapaniApp
             this.label1 = new System.Windows.Forms.Label();
             this.ComboDocumento = new System.Windows.Forms.ComboBox();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.PbFotoNewContact = new System.Windows.Forms.PictureBox();
             this.txtIdNMB = new System.Windows.Forms.TextBox();
             this.labelIdNMB = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
@@ -46,8 +45,6 @@ namespace MapaniApp
             this.label3 = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCargar
@@ -97,7 +94,10 @@ namespace MapaniApp
             "Cedula ",
             "Cedula NMB",
             "Partida Nacimiento",
-            "Acta Compromiso"});
+            "Acta Compromiso",
+            "Acta de Infraccion",
+            "Notificacion",
+            "Referido"});
             this.ComboDocumento.Location = new System.Drawing.Point(646, 21);
             this.ComboDocumento.Name = "ComboDocumento";
             this.ComboDocumento.Size = new System.Drawing.Size(167, 32);
@@ -115,15 +115,6 @@ namespace MapaniApp
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Visible = false;
             this.BtnAgregar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // PbFotoNewContact
-            // 
-            this.PbFotoNewContact.Location = new System.Drawing.Point(16, 184);
-            this.PbFotoNewContact.Name = "PbFotoNewContact";
-            this.PbFotoNewContact.Size = new System.Drawing.Size(797, 274);
-            this.PbFotoNewContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PbFotoNewContact.TabIndex = 99;
-            this.PbFotoNewContact.TabStop = false;
             // 
             // txtIdNMB
             // 
@@ -202,9 +193,9 @@ namespace MapaniApp
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(385, 475);
+            this.BtnGuardar.Location = new System.Drawing.Point(293, 195);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(115, 33);
+            this.BtnGuardar.Size = new System.Drawing.Size(115, 36);
             this.BtnGuardar.TabIndex = 108;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
@@ -213,7 +204,7 @@ namespace MapaniApp
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(524, 475);
+            this.BtnSalir.Location = new System.Drawing.Point(421, 195);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(96, 36);
             this.BtnSalir.TabIndex = 109;
@@ -221,22 +212,11 @@ namespace MapaniApp
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(560, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 42);
-            this.button1.TabIndex = 110;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // AddDocuments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 534);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(897, 241);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.txtCedula);
@@ -247,7 +227,6 @@ namespace MapaniApp
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIdNMB);
             this.Controls.Add(this.labelIdNMB);
-            this.Controls.Add(this.PbFotoNewContact);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.ComboDocumento);
             this.Controls.Add(this.label1);
@@ -257,7 +236,6 @@ namespace MapaniApp
             this.Name = "AddDocuments";
             this.Text = "AddDocuments";
             this.Load += new System.EventHandler(this.AddDocuments_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,7 +249,6 @@ namespace MapaniApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ComboDocumento;
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.PictureBox PbFotoNewContact;
         private System.Windows.Forms.TextBox txtIdNMB;
         private System.Windows.Forms.Label labelIdNMB;
         private System.Windows.Forms.TextBox txtCedula;
@@ -282,6 +259,5 @@ namespace MapaniApp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnSalir;
-        private System.Windows.Forms.Button button1;
     }
 }
