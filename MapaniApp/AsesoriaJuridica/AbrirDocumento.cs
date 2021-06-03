@@ -15,8 +15,8 @@ using System.Windows.Forms;
 namespace MapaniApp
 {
     public partial class AbrirDocumento : Form
-    { string filepath;
-        public AbrirDocumento()
+    { 
+       public AbrirDocumento()
         {
             InitializeComponent();
         }

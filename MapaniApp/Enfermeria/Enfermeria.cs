@@ -57,7 +57,7 @@ namespace MapaniApp
                 TxtNombre.Text = contact.Nombre;
                 TxtApellido.Text = contact.Apellido;
                 dateTimePicker1.Value = contact.FechaNacimiento.Date;
-                TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento);
+                TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento,DateTimeFecha.Value);
                 
                 
             }

@@ -121,25 +121,22 @@ namespace MapaniApp
         }
         #endregion
         #region CALCULO EDAD
-        public static string GetEdad(DateTime Fecha)
+        public static string GetEdad(DateTime Fecha, DateTime Cita)
         {
             string edad;
             TimeSpan tS = new TimeSpan();
-            tS = DateTime.Now.Subtract(Fecha);          
+            tS = Cita.Subtract(Fecha);          
             edad = Math.Floor(tS.TotalDays).ToString();
             return edad;
         }
 
-        public static string GetEdadMeses(DateTime Fecha, DateTime Hoy)
+        public static string GetEdadMeses(DateTime Fecha, DateTime Cita)
         {
             double calculo;
             string edad;
-            calculo = (Hoy.Month - Fecha.Month) + 12 * (Hoy.Year - Fecha.Year);
-            edad = Math.Round(calculo, 2).ToString();
-          //  TimeSpan tS = new TimeSpan();
-           // tS = DateTime.Now.Subtract(Fecha);
-            //edad = Math.Round((tS.TotalDays / 31), 2).ToString();
-          // edad = Math.Floor((tS.TotalDays / 31)).ToString();            
+            // calculo = (Cita.Month - Fecha.Month) + 12 * (Cita.Year - Fecha.Year);
+            calculo = Cita.Subtract(Fecha).Days / (365.25 / 12);
+            edad = Math.Round(calculo, 2).ToString();              
             return edad;
         }
         public static string GetEdadAnhos(DateTime Fecha)
