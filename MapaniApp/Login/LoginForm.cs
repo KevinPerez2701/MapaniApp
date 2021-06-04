@@ -56,7 +56,7 @@ namespace MapaniApp
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            TxtPassword.PasswordChar = '*';
         }
     }
 }
