@@ -26,9 +26,9 @@ namespace MapaniApp
                 EvolutivoPediatria Evolutivo = new EvolutivoPediatria();
                 Evolutivo.Data(new ClaseEnfermeria
                 {
-                    Antecedentes = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString(),
-                    Patologia =dataGridView1.Rows[e.RowIndex].Cells[17].Value.ToString(),
-                    Observacion = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString(),
+                    Antecedentes = dataGridView1.Rows[e.RowIndex].Cells[17].Value.ToString(),
+                    Patologia =dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString(),
+                    Observacion = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString(),
                 });
                 Evolutivo.HideButton();
                 Evolutivo.ShowDialog(this);
@@ -53,6 +53,11 @@ namespace MapaniApp
                 dataGridView1.Columns[13].Visible = true;
                
             }
+        }
+
+        private void HistoriasPediatria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -46,6 +46,9 @@ namespace MapaniApp
             this.txtDesayuno = new System.Windows.Forms.TextBox();
             this.txtMerienda = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtHoraLevantar = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtLevantar = new System.Windows.Forms.TextBox();
             this.txtHoraCena = new System.Windows.Forms.TextBox();
             this.txtHoraDulce = new System.Windows.Forms.TextBox();
             this.txtHoraAlmuerzo = new System.Windows.Forms.TextBox();
@@ -55,6 +58,8 @@ namespace MapaniApp
             this.label7 = new System.Windows.Forms.Label();
             this.txtCena = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -65,11 +70,6 @@ namespace MapaniApp
             this.label15 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtLevantar = new System.Windows.Forms.TextBox();
-            this.txtHoraLevantar = new System.Windows.Forms.TextBox();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -93,6 +93,7 @@ namespace MapaniApp
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(171, 139);
             this.checkedListBox1.TabIndex = 1;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // checkedListBox2
             // 
@@ -205,10 +206,10 @@ namespace MapaniApp
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(6, 178);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 24);
+            this.label9.Size = new System.Drawing.Size(105, 24);
             this.label9.TabIndex = 91;
             this.label9.Tag = "Contact";
-            this.label9.Text = "Dulce";
+            this.label9.Text = "Merienda 2";
             // 
             // txtDulce
             // 
@@ -234,10 +235,10 @@ namespace MapaniApp
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 108);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 24);
+            this.label6.Size = new System.Drawing.Size(105, 24);
             this.label6.TabIndex = 86;
             this.label6.Tag = "Contact";
-            this.label6.Text = "Merienda";
+            this.label6.Text = "Merienda 1";
             // 
             // label8
             // 
@@ -296,6 +297,35 @@ namespace MapaniApp
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Comida";
+            // 
+            // txtHoraLevantar
+            // 
+            this.txtHoraLevantar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraLevantar.Location = new System.Drawing.Point(300, 38);
+            this.txtHoraLevantar.Name = "txtHoraLevantar";
+            this.txtHoraLevantar.Size = new System.Drawing.Size(72, 29);
+            this.txtHoraLevantar.TabIndex = 104;
+            this.txtHoraLevantar.Tag = "Contact";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(6, 41);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 24);
+            this.label17.TabIndex = 102;
+            this.label17.Tag = "Contact";
+            this.label17.Text = "Levantar";
+            // 
+            // txtLevantar
+            // 
+            this.txtLevantar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLevantar.Location = new System.Drawing.Point(111, 38);
+            this.txtLevantar.Name = "txtLevantar";
+            this.txtLevantar.Size = new System.Drawing.Size(183, 29);
+            this.txtLevantar.TabIndex = 103;
+            this.txtLevantar.Tag = "Contact";
             // 
             // txtHoraCena
             // 
@@ -395,6 +425,26 @@ namespace MapaniApp
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Menu";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 41);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(81, 24);
+            this.label16.TabIndex = 106;
+            this.label16.Tag = "Contact";
+            this.label16.Text = "Levantar";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(111, 38);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(183, 29);
+            this.textBox6.TabIndex = 107;
+            this.textBox6.Tag = "Contact";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -432,10 +482,10 @@ namespace MapaniApp
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(6, 181);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 24);
+            this.label13.Size = new System.Drawing.Size(105, 24);
             this.label13.TabIndex = 101;
             this.label13.Tag = "Contact";
-            this.label13.Text = "Dulce";
+            this.label13.Text = "Merienda 2";
             // 
             // textBox2
             // 
@@ -461,10 +511,10 @@ namespace MapaniApp
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(6, 111);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(90, 24);
+            this.label14.Size = new System.Drawing.Size(105, 24);
             this.label14.TabIndex = 96;
             this.label14.Tag = "Contact";
-            this.label14.Text = "Merienda";
+            this.label14.Text = "Merienda 1";
             // 
             // label15
             // 
@@ -494,55 +544,6 @@ namespace MapaniApp
             this.textBox5.Size = new System.Drawing.Size(183, 29);
             this.textBox5.TabIndex = 98;
             this.textBox5.Tag = "Contact";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 41);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(81, 24);
-            this.label16.TabIndex = 106;
-            this.label16.Tag = "Contact";
-            this.label16.Text = "Levantar";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(111, 38);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(183, 29);
-            this.textBox6.TabIndex = 107;
-            this.textBox6.Tag = "Contact";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(6, 41);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(81, 24);
-            this.label17.TabIndex = 102;
-            this.label17.Tag = "Contact";
-            this.label17.Text = "Levantar";
-            // 
-            // txtLevantar
-            // 
-            this.txtLevantar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLevantar.Location = new System.Drawing.Point(111, 38);
-            this.txtLevantar.Name = "txtLevantar";
-            this.txtLevantar.Size = new System.Drawing.Size(183, 29);
-            this.txtLevantar.TabIndex = 103;
-            this.txtLevantar.Tag = "Contact";
-            // 
-            // txtHoraLevantar
-            // 
-            this.txtHoraLevantar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraLevantar.Location = new System.Drawing.Point(300, 38);
-            this.txtHoraLevantar.Name = "txtHoraLevantar";
-            this.txtHoraLevantar.Size = new System.Drawing.Size(72, 29);
-            this.txtHoraLevantar.TabIndex = 104;
-            this.txtHoraLevantar.Tag = "Contact";
             // 
             // BtnSalir
             // 

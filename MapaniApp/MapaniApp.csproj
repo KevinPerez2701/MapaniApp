@@ -351,6 +351,9 @@
     <EmbeddedResource Include="AsesoriaJuridica\AsesoriaJuridica.resx">
       <DependentUpon>AsesoriaJuridica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AsesoriaJuridica\GestionCasos.resx">
+      <DependentUpon>GestionCasos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AsesoriaJuridica\RegistroBeneficiarios.resx">
       <DependentUpon>RegistroBeneficiarios.cs</DependentUpon>
     </EmbeddedResource>

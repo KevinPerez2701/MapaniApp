@@ -25,8 +25,8 @@ namespace MapaniApp
         public void Data(ClaseEnfermeria Data)
         {
             txtEvolutivo.Text = Data.Observacion;
-            txtAntecedentes.Text = Data.Patologia;
-            txtPatologias.Text = Data.Antecedentes;
+            txtAntecedentes.Text = Data.Antecedentes;
+            txtPatologias.Text = Data.Patologia;
         }
         
         public void GetCita(ClaseEnfermeria Cita)

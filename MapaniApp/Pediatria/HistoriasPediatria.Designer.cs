@@ -48,9 +48,9 @@ namespace MapaniApp
             this.iMCPZDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diagnosticoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diagnosticoTallaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patologiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.antecedentesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patologiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urgenciasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.referidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Evolutivo = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -79,9 +79,9 @@ namespace MapaniApp
             this.iMCPZDataGridViewTextBoxColumn,
             this.diagnosticoDataGridViewTextBoxColumn,
             this.diagnosticoTallaDataGridViewTextBoxColumn,
-            this.patologiaDataGridViewTextBoxColumn,
             this.Observacion,
             this.antecedentesDataGridViewTextBoxColumn,
+            this.patologiaDataGridViewTextBoxColumn,
             this.urgenciasDataGridViewTextBoxColumn,
             this.referidoDataGridViewTextBoxColumn,
             this.Evolutivo});
@@ -204,13 +204,6 @@ namespace MapaniApp
             this.diagnosticoTallaDataGridViewTextBoxColumn.HeaderText = "DiagnosticoTalla";
             this.diagnosticoTallaDataGridViewTextBoxColumn.Name = "diagnosticoTallaDataGridViewTextBoxColumn";
             // 
-            // patologiaDataGridViewTextBoxColumn
-            // 
-            this.patologiaDataGridViewTextBoxColumn.DataPropertyName = "Patologia";
-            this.patologiaDataGridViewTextBoxColumn.HeaderText = "Patologia";
-            this.patologiaDataGridViewTextBoxColumn.Name = "patologiaDataGridViewTextBoxColumn";
-            this.patologiaDataGridViewTextBoxColumn.Visible = false;
-            // 
             // Observacion
             // 
             this.Observacion.DataPropertyName = "Observacion";
@@ -224,6 +217,13 @@ namespace MapaniApp
             this.antecedentesDataGridViewTextBoxColumn.HeaderText = "Antecedentes";
             this.antecedentesDataGridViewTextBoxColumn.Name = "antecedentesDataGridViewTextBoxColumn";
             this.antecedentesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // patologiaDataGridViewTextBoxColumn
+            // 
+            this.patologiaDataGridViewTextBoxColumn.DataPropertyName = "Patologia";
+            this.patologiaDataGridViewTextBoxColumn.HeaderText = "Patologia";
+            this.patologiaDataGridViewTextBoxColumn.Name = "patologiaDataGridViewTextBoxColumn";
+            this.patologiaDataGridViewTextBoxColumn.Visible = false;
             // 
             // urgenciasDataGridViewTextBoxColumn
             // 
@@ -253,6 +253,7 @@ namespace MapaniApp
             this.Controls.Add(this.dataGridView1);
             this.Name = "HistoriasPediatria";
             this.Text = "HistoriasPediatria";
+            this.Load += new System.EventHandler(this.HistoriasPediatria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.claseEnfermeriaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -279,9 +280,9 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn iMCPZDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diagnosticoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diagnosticoTallaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patologiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn antecedentesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patologiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn urgenciasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn referidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn Evolutivo;

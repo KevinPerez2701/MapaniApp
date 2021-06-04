@@ -24,6 +24,12 @@ namespace MapaniApp
         public byte[] Documento { get; set; }
         public byte[] PDF { get; set; }
         public int IdNMB { get; set; }
-      
+        public string TipoCaso { get; set; }
+        public string TipoAtencion { get; set; }
+        public string Seguimiento { get; set; }
+        public string Estatus { get; set; }
+        public string Observacion { get; set; }
+        public string Evolucion { get; set; }
+        public DateTime Fecha { get; set; }
     }
 }

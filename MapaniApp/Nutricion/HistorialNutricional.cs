@@ -26,5 +26,13 @@ namespace MapaniApp
         {
             this.Close();
         }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var item in checkedListBox1.CheckedItems)
+            {
+                
+            }
+        }
     }
 }

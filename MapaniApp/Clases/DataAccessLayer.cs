@@ -13,8 +13,8 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-       // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+      //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -990,6 +990,44 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InserCitaAsesoria(ContactAsesoria contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                    Insert into GestionCasosAsesoria(IdCuidador,Fecha,TipoCaso,TipoAtencion,Seguimiento,Evolucion,Estatus,Observacion)
+                                    Values(@IdCuidador, @Fecha, @TipoCaso, @TipoAtencion, @Seguimiento, @Evolucion, @Estatus, @Observacion)";
+                SqlParameter IdCuidador = new SqlParameter("@IdCuidador", contact.IdCuidador);
+                SqlParameter Fecha = new SqlParameter("@Fecha", contact.Fecha);
+                SqlParameter TipoCaso = new SqlParameter("@TipoCaso", contact.TipoCaso);
+                SqlParameter TipoAtencion = new SqlParameter("@TipoAtencion", contact.TipoAtencion);
+                SqlParameter Seguimiento = new SqlParameter("@Seguimiento", contact.Seguimiento);
+                SqlParameter Evolucion = new SqlParameter("@Evolucion", contact.Evolucion);
+                SqlParameter Estatus = new SqlParameter("@Estatus", contact.Estatus);
+                SqlParameter Observacion = new SqlParameter("@Observacion", contact.Observacion);              
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(IdCuidador);
+                command.Parameters.Add(Fecha);
+                command.Parameters.Add(TipoAtencion);
+                command.Parameters.Add(TipoCaso);
+                command.Parameters.Add(Seguimiento);
+                command.Parameters.Add(Evolucion);
+                command.Parameters.Add(Estatus);
+                command.Parameters.Add(Observacion);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         /// <summary>
         /// Agrega un Producto Nuevo a la Tabla Bodega.
         /// </summary>
@@ -1191,6 +1229,50 @@ namespace MapaniApp
                 Connection.Close();
             }
             return contactsCuidador;
+        }
+        public List<ContactAsesoria> GetHistorialAsesoria(string Search = null)
+        {
+            List<ContactAsesoria> contactsAsesoria = new List<ContactAsesoria>();
+
+            try
+            {
+                Connection.Open();
+                string query = @"Select * FROM GestionCasosAsesoria Where IdCuidador=@Search";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
+                /*   if (!string.IsNullOrEmpty(Search))
+                   {
+                       query += @"WHERE Id=@Search";
+                       command.Parameters.Add(new SqlParameter("@Search", $"%{Search}%"));
+                   }*/
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    contactsAsesoria.Add(new ContactAsesoria
+                    {
+                        Fecha = (DateTime)reader["Fecha"],
+                        TipoCaso = reader["TipoCaso"].ToString(),
+                        TipoAtencion = reader["TipoAtencion"].ToString(),                       
+                        Seguimiento = reader["Seguimiento"].ToString(),
+                        Estatus = reader["Estatus"].ToString(),
+                        Observacion = reader["Observacion"].ToString(),
+                        Evolucion = reader["Evolucion"].ToString(),                      
+                    });
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return contactsAsesoria;
         }
         /// <summary>
         /// Busqueda del Cuidador Por Cedula para el departamento Transcripcion con parametro Cedula

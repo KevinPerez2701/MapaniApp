@@ -117,6 +117,12 @@ namespace MapaniApp
             _dataAccessLayer.InserCitaPediatria(Contact);
             return Contact;
         }
+        public ContactAsesoria InsertCitaAsesoria(ContactAsesoria Contact)
+        {
+
+            _dataAccessLayer.InserCitaAsesoria(Contact);
+            return Contact;
+        }
         public  ProximasVisitas SaveCita(ProximasVisitas Cita)
         {
                 _dataAccessLayer.InserCita(Cita);
@@ -175,6 +181,11 @@ namespace MapaniApp
         public List<ContactCuidador> GetContactsCuidador(string SearchText = null)
         {
             return _dataAccessLayer.GetContactsCuidador(SearchText);
+        }
+      
+        public List<ContactAsesoria> GetHistorialAsesoria(string SearchText = null)
+        {
+            return _dataAccessLayer.GetHistorialAsesoria(SearchText);
         }
         public List<ContactAsesoria> GetContactsAsesoria(string SearchText = null)
         {

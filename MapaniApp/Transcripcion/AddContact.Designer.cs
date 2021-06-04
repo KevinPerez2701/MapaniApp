@@ -206,7 +206,7 @@ namespace MapaniApp
             this.ComboSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboSexo.FormattingEnabled = true;
             this.ComboSexo.Items.AddRange(new object[] {
-            "Masculino\t",
+            "Masculino",
             "Femenino"});
             this.ComboSexo.Location = new System.Drawing.Point(182, 245);
             this.ComboSexo.Name = "ComboSexo";
