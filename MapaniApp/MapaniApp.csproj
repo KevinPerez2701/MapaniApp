@@ -230,6 +230,12 @@
     <Compile Include="Recepcion\ConfirmarCita.Designer.cs">
       <DependentUpon>ConfirmarCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nutricion\SucesivoNutricion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nutricion\SucesivoNutricion.Designer.cs">
+      <DependentUpon>SucesivoNutricion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transcripcion\Transcripcion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nutricion\HistorialNutricional.resx">
       <DependentUpon>HistorialNutricional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nutricion\SucesivoNutricion.resx">
+      <DependentUpon>SucesivoNutricion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pediatria\EvolutivoPediatria.resx">
       <DependentUpon>EvolutivoPediatria.cs</DependentUpon>

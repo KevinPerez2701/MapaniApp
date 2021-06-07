@@ -84,6 +84,21 @@ namespace MapaniApp
             this.label8 = new System.Windows.Forms.Label();
             this.TxtPesoTalla = new System.Windows.Forms.TextBox();
             this.TxtPesoEdad = new System.Windows.Forms.TextBox();
+            this.BtnAddOrder = new System.Windows.Forms.Button();
+            this.BtnCargarContacto = new System.Windows.Forms.Button();
+            this.TxtEdad = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboPrograma = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtApellido = new System.Windows.Forms.TextBox();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.BtnHistorialNutricional = new System.Windows.Forms.Button();
             this.DatosEnfermeria = new System.Windows.Forms.GroupBox();
             this.txtHb = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -101,21 +116,6 @@ namespace MapaniApp
             this.labelTalla = new System.Windows.Forms.Label();
             this.TxtTalla = new System.Windows.Forms.TextBox();
             this.TxtPeso = new System.Windows.Forms.TextBox();
-            this.BtnAddOrder = new System.Windows.Forms.Button();
-            this.BtnCargarContacto = new System.Windows.Forms.Button();
-            this.TxtEdad = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboPrograma = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtID = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtApellido = new System.Windows.Forms.TextBox();
-            this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.BtnHistorialNutricional = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.GroupWHO2007.SuspendLayout();
             this.GroupWHO2006.SuspendLayout();
@@ -148,7 +148,7 @@ namespace MapaniApp
             this.groupBox1.Controls.Add(this.TxtDiagnosticoTalla);
             this.groupBox1.Controls.Add(this.label33);
             this.groupBox1.Controls.Add(this.label34);
-            this.groupBox1.Location = new System.Drawing.Point(482, 208);
+            this.groupBox1.Location = new System.Drawing.Point(606, 204);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(292, 167);
             this.groupBox1.TabIndex = 131;
@@ -691,191 +691,6 @@ namespace MapaniApp
             this.TxtPesoEdad.TabIndex = 80;
             this.TxtPesoEdad.Tag = "Contact";
             // 
-            // DatosEnfermeria
-            // 
-            this.DatosEnfermeria.Controls.Add(this.txtHb);
-            this.DatosEnfermeria.Controls.Add(this.label22);
-            this.DatosEnfermeria.Controls.Add(this.TxtIMCCalculado);
-            this.DatosEnfermeria.Controls.Add(this.label21);
-            this.DatosEnfermeria.Controls.Add(this.label18);
-            this.DatosEnfermeria.Controls.Add(this.TxtSSF);
-            this.DatosEnfermeria.Controls.Add(this.label11);
-            this.DatosEnfermeria.Controls.Add(this.TxtCMB);
-            this.DatosEnfermeria.Controls.Add(this.label10);
-            this.DatosEnfermeria.Controls.Add(this.label12);
-            this.DatosEnfermeria.Controls.Add(this.TxtCC);
-            this.DatosEnfermeria.Controls.Add(this.TxtTricep);
-            this.DatosEnfermeria.Controls.Add(this.labelPeso);
-            this.DatosEnfermeria.Controls.Add(this.labelTalla);
-            this.DatosEnfermeria.Controls.Add(this.TxtTalla);
-            this.DatosEnfermeria.Controls.Add(this.TxtPeso);
-            this.DatosEnfermeria.Location = new System.Drawing.Point(18, 208);
-            this.DatosEnfermeria.Name = "DatosEnfermeria";
-            this.DatosEnfermeria.Size = new System.Drawing.Size(449, 134);
-            this.DatosEnfermeria.TabIndex = 120;
-            this.DatosEnfermeria.TabStop = false;
-            this.DatosEnfermeria.Text = "Datos Enfermeria";
-            // 
-            // txtHb
-            // 
-            this.txtHb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHb.Location = new System.Drawing.Point(366, 54);
-            this.txtHb.Name = "txtHb";
-            this.txtHb.Size = new System.Drawing.Size(76, 29);
-            this.txtHb.TabIndex = 102;
-            this.txtHb.Tag = "Contact";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(322, 54);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(35, 24);
-            this.label22.TabIndex = 103;
-            this.label22.Tag = "Contact";
-            this.label22.Text = "Hb";
-            // 
-            // TxtIMCCalculado
-            // 
-            this.TxtIMCCalculado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIMCCalculado.Location = new System.Drawing.Point(366, 19);
-            this.TxtIMCCalculado.Name = "TxtIMCCalculado";
-            this.TxtIMCCalculado.Size = new System.Drawing.Size(76, 29);
-            this.TxtIMCCalculado.TabIndex = 101;
-            this.TxtIMCCalculado.Tag = "Contact";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(322, 23);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(43, 24);
-            this.label21.TabIndex = 101;
-            this.label21.Tag = "Contact";
-            this.label21.Text = "IMC";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(16, 98);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(46, 24);
-            this.label18.TabIndex = 95;
-            this.label18.Tag = "Contact";
-            this.label18.Text = "SSF";
-            // 
-            // TxtSSF
-            // 
-            this.TxtSSF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSSF.Location = new System.Drawing.Point(75, 93);
-            this.TxtSSF.Name = "TxtSSF";
-            this.TxtSSF.Size = new System.Drawing.Size(75, 29);
-            this.TxtSSF.TabIndex = 96;
-            this.TxtSSF.Tag = "Contact";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(171, 94);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 24);
-            this.label11.TabIndex = 93;
-            this.label11.Tag = "Contact";
-            this.label11.Text = "CMB";
-            // 
-            // TxtCMB
-            // 
-            this.TxtCMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCMB.Location = new System.Drawing.Point(242, 91);
-            this.TxtCMB.Name = "TxtCMB";
-            this.TxtCMB.Size = new System.Drawing.Size(75, 29);
-            this.TxtCMB.TabIndex = 94;
-            this.TxtCMB.Tag = "Contact";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(171, 26);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 24);
-            this.label10.TabIndex = 88;
-            this.label10.Tag = "Contact";
-            this.label10.Text = "Tricep";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(171, 61);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 24);
-            this.label12.TabIndex = 90;
-            this.label12.Tag = "Contact";
-            this.label12.Text = "CC";
-            // 
-            // TxtCC
-            // 
-            this.TxtCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCC.Location = new System.Drawing.Point(242, 58);
-            this.TxtCC.Name = "TxtCC";
-            this.TxtCC.Size = new System.Drawing.Size(75, 29);
-            this.TxtCC.TabIndex = 92;
-            this.TxtCC.Tag = "Contact";
-            // 
-            // TxtTricep
-            // 
-            this.TxtTricep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTricep.Location = new System.Drawing.Point(242, 23);
-            this.TxtTricep.Name = "TxtTricep";
-            this.TxtTricep.Size = new System.Drawing.Size(75, 29);
-            this.TxtTricep.TabIndex = 91;
-            this.TxtTricep.Tag = "Contact";
-            // 
-            // labelPeso
-            // 
-            this.labelPeso.AutoSize = true;
-            this.labelPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPeso.Location = new System.Drawing.Point(16, 28);
-            this.labelPeso.Name = "labelPeso";
-            this.labelPeso.Size = new System.Drawing.Size(53, 24);
-            this.labelPeso.TabIndex = 69;
-            this.labelPeso.Tag = "Contact";
-            this.labelPeso.Text = "Peso";
-            // 
-            // labelTalla
-            // 
-            this.labelTalla.AutoSize = true;
-            this.labelTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTalla.Location = new System.Drawing.Point(16, 63);
-            this.labelTalla.Name = "labelTalla";
-            this.labelTalla.Size = new System.Drawing.Size(50, 24);
-            this.labelTalla.TabIndex = 79;
-            this.labelTalla.Tag = "Contact";
-            this.labelTalla.Text = "Talla";
-            // 
-            // TxtTalla
-            // 
-            this.TxtTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTalla.Location = new System.Drawing.Point(75, 58);
-            this.TxtTalla.Name = "TxtTalla";
-            this.TxtTalla.Size = new System.Drawing.Size(75, 29);
-            this.TxtTalla.TabIndex = 81;
-            this.TxtTalla.Tag = "Contact";
-            // 
-            // TxtPeso
-            // 
-            this.TxtPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPeso.Location = new System.Drawing.Point(75, 25);
-            this.TxtPeso.Name = "TxtPeso";
-            this.TxtPeso.Size = new System.Drawing.Size(75, 29);
-            this.TxtPeso.TabIndex = 80;
-            this.TxtPeso.Tag = "Contact";
-            // 
             // BtnAddOrder
             // 
             this.BtnAddOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1025,11 +840,197 @@ namespace MapaniApp
             this.BtnHistorialNutricional.UseVisualStyleBackColor = true;
             this.BtnHistorialNutricional.Click += new System.EventHandler(this.BtnHistorialNutricional_Click);
             // 
+            // DatosEnfermeria
+            // 
+            this.DatosEnfermeria.Controls.Add(this.txtHb);
+            this.DatosEnfermeria.Controls.Add(this.label22);
+            this.DatosEnfermeria.Controls.Add(this.TxtIMCCalculado);
+            this.DatosEnfermeria.Controls.Add(this.label21);
+            this.DatosEnfermeria.Controls.Add(this.label18);
+            this.DatosEnfermeria.Controls.Add(this.TxtSSF);
+            this.DatosEnfermeria.Controls.Add(this.label11);
+            this.DatosEnfermeria.Controls.Add(this.TxtCMB);
+            this.DatosEnfermeria.Controls.Add(this.label10);
+            this.DatosEnfermeria.Controls.Add(this.label12);
+            this.DatosEnfermeria.Controls.Add(this.TxtCC);
+            this.DatosEnfermeria.Controls.Add(this.TxtTricep);
+            this.DatosEnfermeria.Controls.Add(this.labelPeso);
+            this.DatosEnfermeria.Controls.Add(this.labelTalla);
+            this.DatosEnfermeria.Controls.Add(this.TxtTalla);
+            this.DatosEnfermeria.Controls.Add(this.TxtPeso);
+            this.DatosEnfermeria.Location = new System.Drawing.Point(18, 227);
+            this.DatosEnfermeria.Name = "DatosEnfermeria";
+            this.DatosEnfermeria.Size = new System.Drawing.Size(582, 134);
+            this.DatosEnfermeria.TabIndex = 134;
+            this.DatosEnfermeria.TabStop = false;
+            this.DatosEnfermeria.Text = "Datos Enfermeria";
+            // 
+            // txtHb
+            // 
+            this.txtHb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHb.Location = new System.Drawing.Point(275, 96);
+            this.txtHb.Name = "txtHb";
+            this.txtHb.Size = new System.Drawing.Size(75, 29);
+            this.txtHb.TabIndex = 102;
+            this.txtHb.Tag = "Contact";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(201, 94);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(35, 24);
+            this.label22.TabIndex = 103;
+            this.label22.Tag = "Contact";
+            this.label22.Text = "Hb";
+            // 
+            // TxtIMCCalculado
+            // 
+            this.TxtIMCCalculado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIMCCalculado.Location = new System.Drawing.Point(95, 91);
+            this.TxtIMCCalculado.Name = "TxtIMCCalculado";
+            this.TxtIMCCalculado.Size = new System.Drawing.Size(76, 29);
+            this.TxtIMCCalculado.TabIndex = 101;
+            this.TxtIMCCalculado.Tag = "Contact";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(26, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(43, 24);
+            this.label21.TabIndex = 101;
+            this.label21.Tag = "Contact";
+            this.label21.Text = "IMC";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(362, 53);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(95, 24);
+            this.label18.TabIndex = 95;
+            this.label18.Tag = "Contact";
+            this.label18.Text = "SSF (mm)";
+            // 
+            // TxtSSF
+            // 
+            this.TxtSSF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSSF.Location = new System.Drawing.Point(481, 53);
+            this.TxtSSF.Name = "TxtSSF";
+            this.TxtSSF.Size = new System.Drawing.Size(75, 29);
+            this.TxtSSF.TabIndex = 96;
+            this.TxtSSF.Tag = "Contact";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(175, 61);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 24);
+            this.label11.TabIndex = 93;
+            this.label11.Tag = "Contact";
+            this.label11.Text = "CMB (cm)";
+            // 
+            // TxtCMB
+            // 
+            this.TxtCMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCMB.Location = new System.Drawing.Point(275, 58);
+            this.TxtCMB.Name = "TxtCMB";
+            this.TxtCMB.Size = new System.Drawing.Size(75, 29);
+            this.TxtCMB.TabIndex = 94;
+            this.TxtCMB.Tag = "Contact";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(362, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(113, 24);
+            this.label10.TabIndex = 88;
+            this.label10.Tag = "Contact";
+            this.label10.Text = "Tricep (mm)";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(175, 25);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 24);
+            this.label12.TabIndex = 90;
+            this.label12.Tag = "Contact";
+            this.label12.Text = "CC (cm)";
+            // 
+            // TxtCC
+            // 
+            this.TxtCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCC.Location = new System.Drawing.Point(275, 20);
+            this.TxtCC.Name = "TxtCC";
+            this.TxtCC.Size = new System.Drawing.Size(75, 29);
+            this.TxtCC.TabIndex = 92;
+            this.TxtCC.Tag = "Contact";
+            // 
+            // TxtTricep
+            // 
+            this.TxtTricep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTricep.Location = new System.Drawing.Point(481, 19);
+            this.TxtTricep.Name = "TxtTricep";
+            this.TxtTricep.Size = new System.Drawing.Size(75, 29);
+            this.TxtTricep.TabIndex = 91;
+            this.TxtTricep.Tag = "Contact";
+            // 
+            // labelPeso
+            // 
+            this.labelPeso.AutoSize = true;
+            this.labelPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPeso.Location = new System.Drawing.Point(2, 28);
+            this.labelPeso.Name = "labelPeso";
+            this.labelPeso.Size = new System.Drawing.Size(93, 24);
+            this.labelPeso.TabIndex = 69;
+            this.labelPeso.Tag = "Contact";
+            this.labelPeso.Text = "Peso (Kg)";
+            // 
+            // labelTalla
+            // 
+            this.labelTalla.AutoSize = true;
+            this.labelTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTalla.Location = new System.Drawing.Point(2, 61);
+            this.labelTalla.Name = "labelTalla";
+            this.labelTalla.Size = new System.Drawing.Size(93, 24);
+            this.labelTalla.TabIndex = 79;
+            this.labelTalla.Tag = "Contact";
+            this.labelTalla.Text = "Talla (cm)";
+            // 
+            // TxtTalla
+            // 
+            this.TxtTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTalla.Location = new System.Drawing.Point(96, 58);
+            this.TxtTalla.Name = "TxtTalla";
+            this.TxtTalla.Size = new System.Drawing.Size(75, 29);
+            this.TxtTalla.TabIndex = 81;
+            this.TxtTalla.Tag = "Contact";
+            // 
+            // TxtPeso
+            // 
+            this.TxtPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPeso.Location = new System.Drawing.Point(96, 25);
+            this.TxtPeso.Name = "TxtPeso";
+            this.TxtPeso.Size = new System.Drawing.Size(75, 29);
+            this.TxtPeso.TabIndex = 80;
+            this.TxtPeso.Tag = "Contact";
+            // 
             // Nutricion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 626);
+            this.ClientSize = new System.Drawing.Size(929, 626);
+            this.Controls.Add(this.DatosEnfermeria);
             this.Controls.Add(this.BtnHistorialNutricional);
             this.Controls.Add(this.BtnSucesivo);
             this.Controls.Add(this.groupBox1);
@@ -1043,7 +1044,6 @@ namespace MapaniApp
             this.Controls.Add(this.label19);
             this.Controls.Add(this.BtnCalcular);
             this.Controls.Add(this.GroupWHO2006);
-            this.Controls.Add(this.DatosEnfermeria);
             this.Controls.Add(this.BtnAddOrder);
             this.Controls.Add(this.BtnCargarContacto);
             this.Controls.Add(this.TxtEdad);
@@ -1129,6 +1129,21 @@ namespace MapaniApp
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TxtPesoTalla;
         private System.Windows.Forms.TextBox TxtPesoEdad;
+        private System.Windows.Forms.Button BtnAddOrder;
+        private System.Windows.Forms.Button BtnCargarContacto;
+        private System.Windows.Forms.TextBox TxtEdad;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboPrograma;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TxtID;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxtApellido;
+        private System.Windows.Forms.TextBox TxtNombre;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button BtnHistorialNutricional;
         private System.Windows.Forms.GroupBox DatosEnfermeria;
         private System.Windows.Forms.TextBox txtHb;
         private System.Windows.Forms.Label label22;
@@ -1146,20 +1161,5 @@ namespace MapaniApp
         private System.Windows.Forms.Label labelTalla;
         private System.Windows.Forms.TextBox TxtTalla;
         private System.Windows.Forms.TextBox TxtPeso;
-        private System.Windows.Forms.Button BtnAddOrder;
-        private System.Windows.Forms.Button BtnCargarContacto;
-        private System.Windows.Forms.TextBox TxtEdad;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboPrograma;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TxtID;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TxtApellido;
-        private System.Windows.Forms.TextBox TxtNombre;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button BtnHistorialNutricional;
     }
 }

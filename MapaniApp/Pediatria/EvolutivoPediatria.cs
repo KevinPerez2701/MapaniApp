@@ -12,6 +12,7 @@ namespace MapaniApp
 {
     public partial class EvolutivoPediatria : Form
     {   ClaseEnfermeria Pediatria = new ClaseEnfermeria();
+        int flag;
         private LogicLayer _LogicLayer = new LogicLayer();
         public EvolutivoPediatria()
         {
@@ -33,6 +34,12 @@ namespace MapaniApp
         {
             Pediatria = Cita;
         }
+        public void GetCitaNutricion(ClaseEnfermeria Cita)
+        {
+            Pediatria = Cita;
+            flag = 1;
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -44,7 +51,10 @@ namespace MapaniApp
             Pediatria.Antecedentes = txtAntecedentes.Text;
             Pediatria.Patologia = txtPatologias.Text;
             Pediatria.Observacion = txtEvolutivo.Text;
-            _LogicLayer.InsertCitaPediatria(Pediatria);
+            if (flag == 1)
+                _LogicLayer.InsertCitaNutricion(Pediatria);
+            else
+                _LogicLayer.InsertCitaPediatria(Pediatria);
             this.Close();
         }
         public void HideButton()

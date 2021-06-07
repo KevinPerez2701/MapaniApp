@@ -49,10 +49,17 @@ namespace MapaniApp
                 Referido = ComboReferido.Text,
                 Diagnostico = TxtDiagnostico.Text,
                 DiagnosticoTalla = TxtDiagnosticoTalla.Text,
+                Peso = TxtPeso.Text,
+                Talla = TxtTalla.Text,
+                Hb = txtHb.Text,
+                Programa = comboPrograma.Text,
+                CC = TxtCC.Text,
+                CMB = TxtCMB.Text,
+
 
             };
             EvolutivoPediatria Cita = new EvolutivoPediatria();
-            Cita.GetCita(Pediatria);
+            Cita.GetCitaNutricion(Pediatria);
             Cita.ShowDialog(this);
             // _LogicLayer.InsertCitaPediatria(Pediatria);
         }
@@ -334,8 +341,8 @@ namespace MapaniApp
 
         private void BtnSucesivo_Click(object sender, EventArgs e)
         {
-            HistoriasPediatria Sucesivo = new HistoriasPediatria();
-            Sucesivo.GetDataPediatria(TxtID.Text, int.Parse(TxtEdad.Text));
+            SucesivoNutricion Sucesivo = new SucesivoNutricion();
+            Sucesivo.GetDataNutricion(TxtID.Text, int.Parse(TxtEdad.Text));
             Sucesivo.ShowDialog(this);
         }
 

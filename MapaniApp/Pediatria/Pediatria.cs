@@ -369,5 +369,20 @@ namespace MapaniApp
             Sucesivo.GetDataPediatria(TxtID.Text,int.Parse(TxtEdad.Text));
             Sucesivo.ShowDialog(this);
         }
+
+        private void labelPeso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

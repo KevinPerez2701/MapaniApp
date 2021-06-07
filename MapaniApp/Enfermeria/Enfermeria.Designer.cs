@@ -52,6 +52,8 @@ namespace MapaniApp
             this.TxtPeso = new System.Windows.Forms.TextBox();
             this.TxtCMB = new System.Windows.Forms.TextBox();
             this.groupBase = new System.Windows.Forms.GroupBox();
+            this.labelCC = new System.Windows.Forms.Label();
+            this.txtCC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtHb = new System.Windows.Forms.TextBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
@@ -60,8 +62,6 @@ namespace MapaniApp
             this.label12 = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelCC = new System.Windows.Forms.Label();
-            this.txtCC = new System.Windows.Forms.TextBox();
             this.groupBase.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -201,10 +201,10 @@ namespace MapaniApp
             this.labelCMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCMB.Location = new System.Drawing.Point(16, 97);
             this.labelCMB.Name = "labelCMB";
-            this.labelCMB.Size = new System.Drawing.Size(159, 24);
+            this.labelCMB.Size = new System.Drawing.Size(144, 24);
             this.labelCMB.TabIndex = 70;
             this.labelCMB.Tag = "Contact";
-            this.labelCMB.Text = "Circ. Brazo (CMB)";
+            this.labelCMB.Text = "Circ. Brazo (cm)";
             // 
             // labelPeso
             // 
@@ -212,10 +212,10 @@ namespace MapaniApp
             this.labelPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPeso.Location = new System.Drawing.Point(16, 28);
             this.labelPeso.Name = "labelPeso";
-            this.labelPeso.Size = new System.Drawing.Size(53, 24);
+            this.labelPeso.Size = new System.Drawing.Size(93, 24);
             this.labelPeso.TabIndex = 69;
             this.labelPeso.Tag = "Contact";
-            this.labelPeso.Text = "Peso";
+            this.labelPeso.Text = "Peso (Kg)";
             // 
             // TxtEdad
             // 
@@ -252,10 +252,10 @@ namespace MapaniApp
             this.labelTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTalla.Location = new System.Drawing.Point(16, 63);
             this.labelTalla.Name = "labelTalla";
-            this.labelTalla.Size = new System.Drawing.Size(50, 24);
+            this.labelTalla.Size = new System.Drawing.Size(93, 24);
             this.labelTalla.TabIndex = 79;
             this.labelTalla.Tag = "Contact";
-            this.labelTalla.Text = "Talla";
+            this.labelTalla.Text = "Talla (cm)";
             // 
             // TxtTalla
             // 
@@ -303,6 +303,29 @@ namespace MapaniApp
             this.groupBase.TabStop = false;
             this.groupBase.Text = "GroupBase";
             this.groupBase.Visible = false;
+            // 
+            // labelCC
+            // 
+            this.labelCC.AutoSize = true;
+            this.labelCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCC.Location = new System.Drawing.Point(21, 166);
+            this.labelCC.Name = "labelCC";
+            this.labelCC.Size = new System.Drawing.Size(79, 24);
+            this.labelCC.TabIndex = 90;
+            this.labelCC.Tag = "Contact";
+            this.labelCC.Text = "CC (cm)";
+            this.labelCC.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.labelCC.Visible = false;
+            // 
+            // txtCC
+            // 
+            this.txtCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCC.Location = new System.Drawing.Point(267, 166);
+            this.txtCC.Name = "txtCC";
+            this.txtCC.Size = new System.Drawing.Size(173, 29);
+            this.txtCC.TabIndex = 91;
+            this.txtCC.Tag = "Contact";
+            this.txtCC.Visible = false;
             // 
             // label3
             // 
@@ -388,29 +411,6 @@ namespace MapaniApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar";
             this.groupBox1.Visible = false;
-            // 
-            // labelCC
-            // 
-            this.labelCC.AutoSize = true;
-            this.labelCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCC.Location = new System.Drawing.Point(21, 166);
-            this.labelCC.Name = "labelCC";
-            this.labelCC.Size = new System.Drawing.Size(36, 24);
-            this.labelCC.TabIndex = 90;
-            this.labelCC.Tag = "Contact";
-            this.labelCC.Text = "CC";
-            this.labelCC.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.labelCC.Visible = false;
-            // 
-            // txtCC
-            // 
-            this.txtCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCC.Location = new System.Drawing.Point(267, 166);
-            this.txtCC.Name = "txtCC";
-            this.txtCC.Size = new System.Drawing.Size(173, 29);
-            this.txtCC.TabIndex = 91;
-            this.txtCC.Tag = "Contact";
-            this.txtCC.Visible = false;
             // 
             // Enfermeria
             // 
