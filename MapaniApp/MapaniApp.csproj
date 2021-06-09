@@ -185,6 +185,7 @@
     <Compile Include="AsesoriaJuridica\GestionCasos.Designer.cs">
       <DependentUpon>GestionCasos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\ContactNutricion.cs" />
     <Compile Include="Nutricion\HistorialNutricional.cs">
       <SubType>Form</SubType>
     </Compile>

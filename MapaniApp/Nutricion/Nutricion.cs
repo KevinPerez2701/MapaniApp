@@ -29,6 +29,7 @@ namespace MapaniApp
         private void BtnHistorialNutricional_Click(object sender, EventArgs e)
         {
             HistorialNutricional Historial = new HistorialNutricional();
+            Historial.LoadInfo(TxtNombre.Text, TxtApellido.Text, TxtID.Text);
             Historial.ShowDialog(this);
         }
         public void SaveData()
