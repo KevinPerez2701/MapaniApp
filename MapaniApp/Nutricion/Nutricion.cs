@@ -29,7 +29,7 @@ namespace MapaniApp
         private void BtnHistorialNutricional_Click(object sender, EventArgs e)
         {
             HistorialNutricional Historial = new HistorialNutricional();
-            Historial.LoadInfo(TxtNombre.Text, TxtApellido.Text, TxtID.Text);
+            Historial.LoadInfo(TxtNombre.Text, TxtApellido.Text, TxtID.Text,_contactNMB.HistorialNutricional);
             Historial.ShowDialog(this);
         }
         public void SaveData()
@@ -332,6 +332,7 @@ namespace MapaniApp
                 TxtEdadMeses.Text = Metodos.GetEdadMeses(contact.FechaNacimiento,dateTimePicker2.Value);
                 txtSexo.Text = contact.Sexo;
 
+
             }
         }
 
@@ -343,6 +344,7 @@ namespace MapaniApp
         private void BtnSucesivo_Click(object sender, EventArgs e)
         {
             SucesivoNutricion Sucesivo = new SucesivoNutricion();
+           
             Sucesivo.GetDataNutricion(TxtID.Text, int.Parse(TxtEdad.Text));
             Sucesivo.ShowDialog(this);
         }

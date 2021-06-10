@@ -33,7 +33,7 @@ namespace MapaniApp
         {
            
         }
-        public void LoadInfo(string Name,string LastName,string ID)
+        public void LoadInfo(string Name,string LastName,string ID,string Historial)
         {
             TxtNombre.Text = Name;
             TxtApellido.Text = LastName;
@@ -41,6 +41,13 @@ namespace MapaniApp
             TxtNombre.ReadOnly = true;
             TxtApellido.ReadOnly = true;
             txtSexo.ReadOnly = true;
+            if (Historial=="Si")
+            {   
+                groupBox3.Visible = true;
+                groupBox2.Visible = false;
+                LoadHistorial(ID);
+                BtnGuardar.Visible = false;
+            }
 
         }
         public void SavedataList()
@@ -77,29 +84,51 @@ namespace MapaniApp
             ContactNutricion Nutricion = new ContactNutricion
             {
                 NMB = int.Parse(txtSexo.Text),
-                HoraLevantar=dateTimeLevantar.Value,
-                HoraDesayuno=dateTimeDesayuno.Value,
-                HoraAlmuerzo=dateTimeAlmuerzo.Value,
-                HoraMerienda1=dateTimeMerienda1.Value,
-                HoraMerienda2 =dateTimeMerienda2.Value,
-                HoraCena=dateTimeCena.Value,
-                Levantar =txtLevantar.Text,
-                Desayuno =txtDesayuno.Text,
-                Merienda1=txtMerienda.Text,
-                Almuerzo=txtAlmuerzo.Text,
-                Merienda2=txtDulce.Text,
-                Cena=txtCena.Text,
-                Diario=textBox4.Text,
-                Semanal=textBox3.Text,
-                Quincenal=textBox2.Text,
-                Mensual=textBox1.Text,               
+                HoraLevantar = dateTimeLevantar.Value,
+                HoraDesayuno = dateTimeDesayuno.Value,
+                HoraAlmuerzo = dateTimeAlmuerzo.Value,
+                HoraMerienda1 = dateTimeMerienda1.Value,
+                HoraMerienda2 = dateTimeMerienda2.Value,
+                HoraCena = dateTimeCena.Value,
+                Levantar = txtLevantar.Text,
+                Desayuno = txtDesayuno.Text,
+                Merienda1 = txtMerienda.Text,
+                Almuerzo = txtAlmuerzo.Text,
+                Merienda2 = txtDulce.Text,
+                Cena = txtCena.Text,
+                Diario = textBox4.Text,
+                Semanal = textBox3.Text,
+                Quincenal = textBox2.Text,
+                Mensual = textBox1.Text,
+                Historial = "Si",
             };
-            // _LogicLayer.InserHistorialNutricional(Nutricion);
+             _LogicLayer.InsertarHistorialNutricional(Nutricion);
+        }
+        public void LoadHistorial(string ID)
+        {
+            ContactNutricion contact = _LogicLayer.GetHistorialNutricion(ID);
+            dateTimeLevantar.Value = contact.HoraLevantar;
+            dateTimeDesayuno.Value = contact.HoraDesayuno;
+            dateTimeMerienda1.Value = contact.HoraMerienda1;
+            dateTimeAlmuerzo.Value = contact.HoraAlmuerzo;
+            dateTimeMerienda2.Value = contact.HoraMerienda2;
+            dateTimeCena.Value = contact.HoraCena;
+            txtLevantar.Text = contact.Levantar;
+            txtDesayuno.Text = contact.Desayuno;
+            txtMerienda.Text = contact.Merienda1;
+            txtAlmuerzo.Text = contact.Almuerzo;
+            txtDulce.Text = contact.Merienda2;
+            txtCena.Text = contact.Cena;
+            textBox4.Text = contact.Diario;
+            textBox3.Text = contact.Semanal;
+            textBox2.Text = contact.Quincenal;
+            textBox1.Text = contact.Mensual;
         }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             SavedataList();
-            //  Savedata();
+            SaveData();
+            this.Close();
         }
     }
 

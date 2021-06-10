@@ -25,5 +25,6 @@ namespace MapaniApp
         public string Semanal { get; set; }
         public string Quincenal { get; set; }
         public string Mensual { get; set; }
+        public string Historial { get; set; }
     }
 }

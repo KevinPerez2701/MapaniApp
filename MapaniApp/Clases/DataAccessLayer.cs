@@ -1064,6 +1064,64 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InsertHistorialNutricion(ContactNutricion contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                   Insert into TablaHistorialNutricion (NMB,HoraLevantar,HoraDesayuno,HoraMerienda1,HoraAlmuerzo,HoraMerienda2,HoraCena,Levantar,Desayuno,Merienda1,Almuerzo,Merienda2,Cena,Diario,Semanal,Quincenal,Mensual)  
+                                    Values(@NMB,@HoraLevantar,@HoraDesayuno,@HoraMerienda1,@HoraAlmuerzo,@HoraMerienda2,@HoraCena,@Levantar,@Desayuno,@Merienda1,@Almuerzo,@Merienda2,@Cena,@Diario,@Semanal,@Quincenal,@Mensual)
+                                     Update TablaNMB Set HistorialNutricional=@Historial where TablaNMB.Id=@NMB ";
+                SqlParameter NMB = new SqlParameter("@NMB", contact.NMB);
+                SqlParameter HoraLevantar = new SqlParameter("@HoraLevantar", contact.HoraLevantar);
+                SqlParameter HoraDesayuno = new SqlParameter("@HoraDesayuno", contact.HoraDesayuno);
+                SqlParameter HoraMerienda1 = new SqlParameter("@HoraMerienda1", contact.HoraMerienda1);
+                SqlParameter HoraAlmuerzo = new SqlParameter("@HoraAlmuerzo", contact.HoraAlmuerzo);
+                SqlParameter HoraMerienda2 = new SqlParameter("@HoraMerienda2", contact.HoraMerienda2);
+                SqlParameter HoraCena = new SqlParameter("@HoraCena", contact.HoraCena);
+                SqlParameter Levantar = new SqlParameter("@Levantar", contact.Levantar);
+                SqlParameter Desayuno = new SqlParameter("@Desayuno", contact.Desayuno);
+                SqlParameter Almuerzo = new SqlParameter("@Almuerzo", contact.Almuerzo);
+                SqlParameter Merienda1 = new SqlParameter("@Merienda1", contact.Merienda1);
+                SqlParameter Merienda2 = new SqlParameter("@Merienda2", contact.Merienda2);
+                SqlParameter Cena = new SqlParameter("@Cena", contact.Cena);
+                SqlParameter Diario = new SqlParameter("@Diario", contact.Diario);
+                SqlParameter Semanal = new SqlParameter("@Semanal", contact.Semanal);
+                SqlParameter Quincenal = new SqlParameter("@Quincenal", contact.Quincenal);
+                SqlParameter Mensual = new SqlParameter("@Mensual", contact.Mensual);
+                SqlParameter Historial = new SqlParameter("@Historial", contact.Historial);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(Historial);
+                command.Parameters.Add(NMB);
+                command.Parameters.Add(HoraLevantar);
+                command.Parameters.Add(HoraDesayuno);
+                command.Parameters.Add(HoraMerienda1);
+                command.Parameters.Add(HoraAlmuerzo);
+                command.Parameters.Add(HoraMerienda2);
+                command.Parameters.Add(HoraCena);
+                command.Parameters.Add(Levantar);
+                command.Parameters.Add(Desayuno);
+                command.Parameters.Add(Merienda1);
+                command.Parameters.Add(Almuerzo);
+                command.Parameters.Add(Merienda2);
+                command.Parameters.Add(Cena);
+                command.Parameters.Add(Semanal);
+                command.Parameters.Add(Diario);
+                command.Parameters.Add(Quincenal);
+                command.Parameters.Add(Mensual);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         public void InserCitaAsesoria(ContactAsesoria contact)
         {
             try
@@ -1232,6 +1290,7 @@ namespace MapaniApp
                         Parroquia = reader["Parroquia"].ToString(),
                         Municipio = reader["Municipio"].ToString(),
                         Estado = reader["Estado"].ToString(),
+                        HistorialNutricional = reader["HistorialNutricional"].ToString(),
                     });
                 }
 
@@ -1917,6 +1976,54 @@ namespace MapaniApp
                         Antecedentes = reader["Antecedentes"].ToString(),
                         Patologia = reader["Patologias"].ToString(),
                     });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Data;
+        }
+        public ContactNutricion GetHistorialNutricion(string Id)
+        {
+            ContactNutricion Data = new ContactNutricion();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From TablaHistorialNutricion
+                                Where TablaHistorialNutricion.NMB=@IdNMB";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@IdNMB", int.Parse(Id)));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Data = new ContactNutricion
+                    {
+                        HoraLevantar = DateTime.Parse(reader["HoraLevantar"].ToString()),
+                        HoraDesayuno = DateTime.Parse(reader["HoraDesayuno"].ToString()),
+                        HoraAlmuerzo = DateTime.Parse(reader["HoraAlmuerzo"].ToString()),
+                        HoraMerienda1 = DateTime.Parse(reader["HoraMerienda1"].ToString()),
+                        HoraMerienda2 = DateTime.Parse(reader["HoraMerienda2"].ToString()),
+                        HoraCena = DateTime.Parse(reader["HoraCena"].ToString()),
+                        Levantar = reader["Levantar"].ToString(),
+                        Desayuno = reader["Desayuno"].ToString(),
+                        Merienda1  = reader["Merienda1"].ToString(),
+                        Almuerzo = reader["Almuerzo"].ToString(),
+                        Merienda2 = reader["Merienda2"].ToString(),
+                        Cena = reader["Cena"].ToString(),
+                        Diario = reader["Diario"].ToString(),
+                        Semanal = reader["Semanal"].ToString(),
+                        Quincenal = reader["Quincenal"].ToString(),
+                        Mensual = reader["Mensual"].ToString(),
+                    };
                 }
             }
             catch (Exception)

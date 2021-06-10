@@ -123,6 +123,12 @@ namespace MapaniApp
             _dataAccessLayer.InserCitaNutricion(Contact);
             return Contact;
         }
+        public ContactNutricion InsertarHistorialNutricional(ContactNutricion Contact)
+        {
+
+            _dataAccessLayer.InsertHistorialNutricion(Contact);
+            return Contact;
+        }
         public ContactAsesoria InsertCitaAsesoria(ContactAsesoria Contact)
         {
 
@@ -228,6 +234,10 @@ namespace MapaniApp
         public List<ClaseEnfermeria> GetDataNutricion(string Id)
         {
             return _dataAccessLayer.GetDataNutricion(Id);
+        }
+        public ContactNutricion GetHistorialNutricion(string Id)
+        {
+            return _dataAccessLayer.GetHistorialNutricion(Id);
         }
         public List<DataAlmacen> GetOrdenes()
         {   
