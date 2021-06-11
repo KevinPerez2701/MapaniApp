@@ -44,6 +44,9 @@ namespace MapaniApp
                 Parroquia = txtParroquia.Text,
                 Municipio = txtMunicipio.Text,
                 Estado = txtEstado.Text,
+                Escolaridad = txtEscolaridad.Text,
+                NombreEscuela = txtNombreEscuela.Text,
+                DireccionEscuela = txtDireccionEscuela.Text,
                 Id = _contactNMB != null ? _contactNMB.Id : 0
             };
             _LogicLayer.SaveContact(Contact); 
@@ -245,6 +248,9 @@ namespace MapaniApp
 
         }
 
-      
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

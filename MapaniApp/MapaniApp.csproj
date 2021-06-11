@@ -186,6 +186,18 @@
       <DependentUpon>GestionCasos.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\ContactNutricion.cs" />
+    <Compile Include="AsesoriaJuridica\Escolaridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsesoriaJuridica\Escolaridad.Designer.cs">
+      <DependentUpon>Escolaridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Psicologia\ContactosCuidadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Psicologia\ContactosCuidadores.Designer.cs">
+      <DependentUpon>ContactosCuidadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nutricion\HistorialNutricional.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +399,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pediatria\Pediatria.resx">
       <DependentUpon>Pediatria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Psicologia\ContactosCuidadores.resx">
+      <DependentUpon>ContactosCuidadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Psicologia\Psicologia.resx">
+      <DependentUpon>Psicologia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recepcion\AgregarCita.resx">
       <DependentUpon>AgregarCita.cs</DependentUpon>

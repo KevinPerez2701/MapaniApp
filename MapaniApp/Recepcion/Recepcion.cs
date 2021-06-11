@@ -207,5 +207,10 @@ namespace MapaniApp
                 VerOrdenes.ShowDialog(this);
             }
         }
+
+        private void dataGridRelaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

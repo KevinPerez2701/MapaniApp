@@ -26,8 +26,8 @@ namespace MapaniApp
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaNMB ([Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],Cedula,FechaIngreso,Discapacidad,Vacunas,LactanciaMaterna,Parto,IngresoPrograma,PartidaNacimiento,Parroquia,Municipio,Estado)  
-                                    Values(@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@cedula,@fechaIngreso,@Discapacidad,@Vacunas,@LactanciaMaterna,@Parto,@ingreso,@PartidaNacimiento,@Parroquia,@Municipio,@Estado)";
+                                    Insert into TablaNMB (Escolaridad,DireccionEscuela,[Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],Cedula,FechaIngreso,Discapacidad,Vacunas,LactanciaMaterna,Parto,IngresoPrograma,PartidaNacimiento,Parroquia,Municipio,Estado)  
+                                    Values(@Escolaridad,@DireccionEscuela,@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@cedula,@fechaIngreso,@Discapacidad,@Vacunas,@LactanciaMaterna,@Parto,@ingreso,@PartidaNacimiento,@Parroquia,@Municipio,@Estado)";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
                 SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
                 SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
@@ -45,6 +45,9 @@ namespace MapaniApp
                 SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
                 SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
                 SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
+                SqlParameter Escolaridad = new SqlParameter("@Escolaridad", contact.Escolaridad);
+                SqlParameter DireccionEscuela = new SqlParameter("@DireccionEscuela", contact.DireccionEscuela);
+                SqlParameter NombreEscuela = new SqlParameter("@NombreEscuela", contact.NombreEscuela);
 
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
@@ -64,6 +67,9 @@ namespace MapaniApp
                 command.Parameters.Add(Parroquia);
                 command.Parameters.Add(Municipio);
                 command.Parameters.Add(Estado);
+                command.Parameters.Add(Escolaridad);
+                command.Parameters.Add(DireccionEscuela);
+                command.Parameters.Add(NombreEscuela);
                 command.ExecuteNonQuery();
 
             }
@@ -1275,7 +1281,7 @@ namespace MapaniApp
                         Id = int.Parse(reader["Id"].ToString()),
                         Nombre = reader["Nombre"].ToString(),
                         Apellido = reader["Apellido"].ToString(),
-                        FechaNacimiento =(DateTime)reader["FechaNacimiento"],
+                        FechaNacimiento = (DateTime)reader["FechaNacimiento"],
                         FechaIngreso = (DateTime)reader["FechaIngreso"],
                         Direccion = reader["Direccion"].ToString(),
                         Sexo = reader["Sexo"].ToString(),
@@ -1291,7 +1297,9 @@ namespace MapaniApp
                         Municipio = reader["Municipio"].ToString(),
                         Estado = reader["Estado"].ToString(),
                         HistorialNutricional = reader["HistorialNutricional"].ToString(),
-                    });
+                        Escolaridad = reader["Escolaridad"].ToString(),
+                        NombreEscuela = reader["NombreEscuela"].ToString(),
+                    }); ;
                 }
 
             }
@@ -1631,6 +1639,10 @@ namespace MapaniApp
                     {
                         Id = int.Parse(reader["Id"].ToString()),
                         Nombre = reader["Nombre"].ToString(),
+                        Apellido = reader ["Apellido"].ToString(),
+                        FechaNacimiento = (DateTime)reader["FechaNacimiento"],
+                        Cedula = reader ["Cedula"].ToString(),
+                        Parentesco = reader ["Parentesco"].ToString(),
                     });
                 }
             }
@@ -1731,6 +1743,9 @@ namespace MapaniApp
                         Municipio = reader["Municipio"].ToString(),
                         Estado = reader["Estado"].ToString(),
                         Parentesco = reader["Parentesco"].ToString(),
+                        Escolaridad = reader["Escolaridad"].ToString(),
+                        DireccionEscuela = reader["DireccionEscuela"].ToString(),
+                        NombreEscuela = reader["NombreEscuela"].ToString(),
                     });
                 }
             }

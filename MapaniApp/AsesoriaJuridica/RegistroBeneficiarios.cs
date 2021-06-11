@@ -67,5 +67,15 @@ namespace MapaniApp
         {
             this.Close();
         }
+
+        private void dataGridRelaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

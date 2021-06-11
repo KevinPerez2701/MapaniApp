@@ -61,17 +61,17 @@ namespace MapaniApp
             this.BtnCitas = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridProximasVisitas = new System.Windows.Forms.DataGridView();
+            this.IdNMB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamentoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Confirmar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.proximasVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnAgregarCita = new System.Windows.Forms.Button();
             this.historialVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.historialVisitasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.IdNMB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departamentoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Confirmar = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource1)).BeginInit();
@@ -234,6 +234,7 @@ namespace MapaniApp
             this.dataGridRelaciones.Name = "dataGridRelaciones";
             this.dataGridRelaciones.Size = new System.Drawing.Size(253, 244);
             this.dataGridRelaciones.TabIndex = 45;
+            this.dataGridRelaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRelaciones_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -368,37 +369,6 @@ namespace MapaniApp
             this.dataGridProximasVisitas.TabIndex = 51;
             this.dataGridProximasVisitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProximasVisitas_CellContentClick);
             // 
-            // proximasVisitasBindingSource
-            // 
-            this.proximasVisitasBindingSource.DataSource = typeof(MapaniApp.ProximasVisitas);
-            // 
-            // BtnAgregarCita
-            // 
-            this.BtnAgregarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarCita.Location = new System.Drawing.Point(82, 247);
-            this.BtnAgregarCita.Name = "BtnAgregarCita";
-            this.BtnAgregarCita.Size = new System.Drawing.Size(154, 34);
-            this.BtnAgregarCita.TabIndex = 52;
-            this.BtnAgregarCita.Text = "Agregar Cita";
-            this.BtnAgregarCita.UseVisualStyleBackColor = true;
-            this.BtnAgregarCita.Click += new System.EventHandler(this.BtnAgregarCita_Click);
-            // 
-            // historialVisitasBindingSource
-            // 
-            this.historialVisitasBindingSource.DataSource = typeof(MapaniApp.HistorialVisitas);
-            // 
-            // contactCuidadorBindingSource
-            // 
-            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
-            // 
-            // contactNMBBindingSource
-            // 
-            this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
-            // 
-            // historialVisitasBindingSource1
-            // 
-            this.historialVisitasBindingSource1.DataSource = typeof(MapaniApp.HistorialVisitas);
-            // 
             // IdNMB
             // 
             this.IdNMB.DataPropertyName = "IdNMB";
@@ -429,6 +399,37 @@ namespace MapaniApp
             this.Confirmar.Name = "Confirmar";
             this.Confirmar.Text = "Confirmar";
             this.Confirmar.UseColumnTextForLinkValue = true;
+            // 
+            // proximasVisitasBindingSource
+            // 
+            this.proximasVisitasBindingSource.DataSource = typeof(MapaniApp.ProximasVisitas);
+            // 
+            // BtnAgregarCita
+            // 
+            this.BtnAgregarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregarCita.Location = new System.Drawing.Point(82, 247);
+            this.BtnAgregarCita.Name = "BtnAgregarCita";
+            this.BtnAgregarCita.Size = new System.Drawing.Size(154, 34);
+            this.BtnAgregarCita.TabIndex = 52;
+            this.BtnAgregarCita.Text = "Agregar Cita";
+            this.BtnAgregarCita.UseVisualStyleBackColor = true;
+            this.BtnAgregarCita.Click += new System.EventHandler(this.BtnAgregarCita_Click);
+            // 
+            // historialVisitasBindingSource
+            // 
+            this.historialVisitasBindingSource.DataSource = typeof(MapaniApp.HistorialVisitas);
+            // 
+            // contactCuidadorBindingSource
+            // 
+            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
+            // 
+            // contactNMBBindingSource
+            // 
+            this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
+            // 
+            // historialVisitasBindingSource1
+            // 
+            this.historialVisitasBindingSource1.DataSource = typeof(MapaniApp.HistorialVisitas);
             // 
             // Recepcion
             // 

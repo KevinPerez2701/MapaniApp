@@ -28,5 +28,8 @@ namespace MapaniApp
         public string Municipio { get; set; }
         public string Estado { get; set; }
         public string Parentesco { get; set; }
+        public string Escolaridad { get; set; }
+        public string NombreEscuela { get; set; }
+        public string DireccionEscuela { get; set; }
     }
 }

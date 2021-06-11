@@ -31,7 +31,7 @@ namespace MapaniApp
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.claseEnfermeriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Evolutivo = new System.Windows.Forms.DataGridViewLinkColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,7 @@ namespace MapaniApp
             this.patologiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urgenciasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.referidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Evolutivo = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.claseEnfermeriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.claseEnfermeriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -86,15 +86,19 @@ namespace MapaniApp
             this.referidoDataGridViewTextBoxColumn,
             this.Evolutivo});
             this.dataGridView1.DataSource = this.claseEnfermeriaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 22);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1462, 396);
+            this.dataGridView1.Size = new System.Drawing.Size(1521, 450);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // claseEnfermeriaBindingSource
+            // Evolutivo
             // 
-            this.claseEnfermeriaBindingSource.DataSource = typeof(MapaniApp.ClaseEnfermeria);
+            this.Evolutivo.HeaderText = "Evolutivo";
+            this.Evolutivo.Name = "Evolutivo";
+            this.Evolutivo.Text = "Ver";
+            this.Evolutivo.UseColumnTextForLinkValue = true;
             // 
             // fechaDataGridViewTextBoxColumn
             // 
@@ -232,12 +236,9 @@ namespace MapaniApp
             this.referidoDataGridViewTextBoxColumn.HeaderText = "Referido";
             this.referidoDataGridViewTextBoxColumn.Name = "referidoDataGridViewTextBoxColumn";
             // 
-            // Evolutivo
+            // claseEnfermeriaBindingSource
             // 
-            this.Evolutivo.HeaderText = "Evolutivo";
-            this.Evolutivo.Name = "Evolutivo";
-            this.Evolutivo.Text = "Ver";
-            this.Evolutivo.UseColumnTextForLinkValue = true;
+            this.claseEnfermeriaBindingSource.DataSource = typeof(MapaniApp.ClaseEnfermeria);
             // 
             // SucesivoNutricion
             // 
