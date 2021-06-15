@@ -33,15 +33,26 @@ namespace MapaniApp
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtRiesgoAlto = new System.Windows.Forms.TextBox();
+            this.txtRiesgoMedio = new System.Windows.Forms.TextBox();
+            this.txtSinRiesgo = new System.Windows.Forms.TextBox();
+            this.txtRiesgoBajo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtEvaluacion = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TxtMotivoConsulta = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtSistemaAuxiliar = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtAntecedentes = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -54,20 +65,29 @@ namespace MapaniApp
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.checkedListBox1);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
+          
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.txtAntecedentes);
+            this.splitContainer1.Panel2.Controls.Add(this.label10);
+            this.splitContainer1.Panel2.Controls.Add(this.txtEvaluacion);
+            this.splitContainer1.Panel2.Controls.Add(this.label11);
+            this.splitContainer1.Panel2.Controls.Add(this.TxtMotivoConsulta);
+            this.splitContainer1.Panel2.Controls.Add(this.label9);
+            this.splitContainer1.Panel2.Controls.Add(this.txtSistemaAuxiliar);
+            this.splitContainer1.Panel2.Controls.Add(this.label8);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox3);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox4);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.txtSinRiesgo);
+            this.splitContainer1.Panel2.Controls.Add(this.txtRiesgoBajo);
+            this.splitContainer1.Panel2.Controls.Add(this.txtRiesgoMedio);
+            this.splitContainer1.Panel2.Controls.Add(this.txtRiesgoAlto);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.checkedListBox2);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1404, 507);
-            this.splitContainer1.SplitterDistance = 289;
+           
+            this.splitContainer1.Size = new System.Drawing.Size(1404, 712);
+            this.splitContainer1.SplitterDistance = 314;
             this.splitContainer1.TabIndex = 0;
             // 
             // checkedListBox1
@@ -112,7 +132,7 @@ namespace MapaniApp
             "Acuerdo de cuidado altamente Vulnerable",
             "Niño Sobreviviente de dispositivo Explosivo (DE)",
             "Otros, por favor especificar:"});
-            this.checkedListBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkedListBox1.Location = new System.Drawing.Point(0, 25);
             this.checkedListBox1.MultiColumn = true;
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(1404, 289);
@@ -142,37 +162,37 @@ namespace MapaniApp
             this.label1.TabIndex = 1;
             this.label1.Text = "Nivel de Riesgo";
             // 
-            // textBox1
+            // txtRiesgoAlto
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(158, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1234, 29);
-            this.textBox1.TabIndex = 2;
+            this.txtRiesgoAlto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRiesgoAlto.Location = new System.Drawing.Point(158, 58);
+            this.txtRiesgoAlto.Name = "txtRiesgoAlto";
+            this.txtRiesgoAlto.Size = new System.Drawing.Size(1234, 29);
+            this.txtRiesgoAlto.TabIndex = 2;
             // 
-            // textBox2
+            // txtRiesgoMedio
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(158, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1234, 29);
-            this.textBox2.TabIndex = 3;
+            this.txtRiesgoMedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRiesgoMedio.Location = new System.Drawing.Point(158, 93);
+            this.txtRiesgoMedio.Name = "txtRiesgoMedio";
+            this.txtRiesgoMedio.Size = new System.Drawing.Size(1234, 29);
+            this.txtRiesgoMedio.TabIndex = 3;
             // 
-            // textBox3
+            // txtSinRiesgo
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(158, 163);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(1234, 29);
-            this.textBox3.TabIndex = 5;
+            this.txtSinRiesgo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSinRiesgo.Location = new System.Drawing.Point(158, 163);
+            this.txtSinRiesgo.Name = "txtSinRiesgo";
+            this.txtSinRiesgo.Size = new System.Drawing.Size(1234, 29);
+            this.txtSinRiesgo.TabIndex = 5;
             // 
-            // textBox4
+            // txtRiesgoBajo
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(158, 128);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1234, 29);
-            this.textBox4.TabIndex = 4;
+            this.txtRiesgoBajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRiesgoBajo.Location = new System.Drawing.Point(158, 128);
+            this.txtRiesgoBajo.Name = "txtRiesgoBajo";
+            this.txtRiesgoBajo.Size = new System.Drawing.Size(1234, 29);
+            this.txtRiesgoBajo.TabIndex = 4;
             // 
             // label2
             // 
@@ -184,19 +204,117 @@ namespace MapaniApp
             this.label2.TabIndex = 6;
             this.label2.Text = "Resumen de Razones";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.guardarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1404, 25);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.guardarToolStripMenuItem.Text = "Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            // 
+            // txtEvaluacion
+            // 
+            this.txtEvaluacion.Location = new System.Drawing.Point(840, 198);
+            this.txtEvaluacion.Multiline = true;
+            this.txtEvaluacion.Name = "txtEvaluacion";
+            this.txtEvaluacion.Size = new System.Drawing.Size(552, 89);
+            this.txtEvaluacion.TabIndex = 112;
+        
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(720, 230);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 24);
+            this.label11.TabIndex = 111;
+            this.label11.Text = "Evaluacion";
+           
+            // 
+            // TxtMotivoConsulta
+            // 
+            this.TxtMotivoConsulta.Location = new System.Drawing.Point(202, 293);
+            this.TxtMotivoConsulta.Multiline = true;
+            this.TxtMotivoConsulta.Name = "TxtMotivoConsulta";
+            this.TxtMotivoConsulta.Size = new System.Drawing.Size(507, 89);
+            this.TxtMotivoConsulta.TabIndex = 110;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 325);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(143, 24);
+            this.label9.TabIndex = 109;
+            this.label9.Text = "Motivo Consulta";
+            // 
+            // txtSistemaAuxiliar
+            // 
+            this.txtSistemaAuxiliar.Location = new System.Drawing.Point(202, 198);
+            this.txtSistemaAuxiliar.Multiline = true;
+            this.txtSistemaAuxiliar.Name = "txtSistemaAuxiliar";
+            this.txtSistemaAuxiliar.Size = new System.Drawing.Size(507, 89);
+            this.txtSistemaAuxiliar.TabIndex = 108;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 230);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(147, 24);
+            this.label8.TabIndex = 107;
+            this.label8.Text = "Sistema Familiar";
+            // 
+            // txtAntecedentes
+            // 
+            this.txtAntecedentes.Location = new System.Drawing.Point(840, 293);
+            this.txtAntecedentes.Multiline = true;
+            this.txtAntecedentes.Name = "txtAntecedentes";
+            this.txtAntecedentes.Size = new System.Drawing.Size(552, 89);
+            this.txtAntecedentes.TabIndex = 116;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(716, 325);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(127, 24);
+            this.label10.TabIndex = 115;
+            this.label10.Text = "Antecedentes";
+            // 
             // EvaluacionInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1404, 507);
+            this.ClientSize = new System.Drawing.Size(1404, 712);
             this.Controls.Add(this.splitContainer1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "EvaluacionInicial";
             this.Text = "EvaluacionInicial";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+          
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -205,12 +323,22 @@ namespace MapaniApp
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRiesgoAlto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtRiesgoMedio;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtSinRiesgo;
+        private System.Windows.Forms.TextBox txtRiesgoBajo;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtEvaluacion;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox TxtMotivoConsulta;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtSistemaAuxiliar;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtAntecedentes;
+        private System.Windows.Forms.Label label10;
     }
 }

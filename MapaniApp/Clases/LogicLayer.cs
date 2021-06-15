@@ -129,6 +129,12 @@ namespace MapaniApp
             _dataAccessLayer.InsertHistorialNutricion(Contact);
             return Contact;
         }
+        public ContactPsicologia InsertarEvaluacionInicial(ContactPsicologia Contact)
+        {
+
+            _dataAccessLayer.InsertEvaluacionInicial(Contact);
+            return Contact;
+        }
         public ContactAsesoria InsertCitaAsesoria(ContactAsesoria Contact)
         {
 

@@ -1128,6 +1128,53 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InsertEvaluacionInicial(ContactPsicologia contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                   Insert into TablaPsicologia (SistemaFamiliar,MotivoConsulta,Antecedentes,Evaluacion,EvaluacionInicial,RazonAlta,RazonMedia,RazonBaja,NoRazon) 
+                                    Values(@SistemaFamiliar,@MotivoConsulta,@Antecedentes,@Evaluacion,@EvaluacionInicial,@RazonAlta,@RazonMedia,@RazonBaja,@NoRazon)
+                                    ";
+              //  Update TablaNMB Set HistorialNutricional = @Historial where TablaNMB.Id = @NMB
+               // SqlParameter NMB = new SqlParameter("@NMB", contact.NMB);
+                SqlParameter SistemaFamiliar = new SqlParameter("@SistemaFamiliar", contact.SistemaFamiliar);
+                SqlParameter MotivoConsulta = new SqlParameter("@MotivoConsulta", contact.MotivoConsulta);
+                SqlParameter Antecedentes = new SqlParameter("@Antecedentes", contact.Antecedentes);
+                SqlParameter Evaluacion = new SqlParameter("@Evaluacion", contact.Evaluacion);
+               // SqlParameter Referencia = new SqlParameter("@Referencia", contact.ref);
+                SqlParameter EvaluacionInicial = new SqlParameter("@EvaluacionInicial", contact.EvaluacionInicial);
+                SqlParameter RazonAlta = new SqlParameter("@RazonAlta", contact.RazonAlta);
+                SqlParameter RazonMedia = new SqlParameter("@RazonMedia", contact.RazonMedia);
+                SqlParameter RazonBaja = new SqlParameter("@RazonBaja", contact.RazonBajo);
+                SqlParameter NoRazon = new SqlParameter("@NoRazon", contact.NoRazon);
+      
+                SqlCommand command = new SqlCommand(query, Connection);
+               // command.Parameters.Add(Historial);
+              //  command.Parameters.Add(NMB);
+                command.Parameters.Add(SistemaFamiliar);
+                command.Parameters.Add(MotivoConsulta);
+                command.Parameters.Add(Antecedentes);
+                command.Parameters.Add(Evaluacion);
+                command.Parameters.Add(EvaluacionInicial);
+                command.Parameters.Add(RazonAlta);
+                command.Parameters.Add(RazonMedia);
+                command.Parameters.Add(RazonBaja);
+                command.Parameters.Add(NoRazon);
+               
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         public void InserCitaAsesoria(ContactAsesoria contact)
         {
             try
