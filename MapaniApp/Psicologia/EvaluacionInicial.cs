@@ -12,19 +12,43 @@ namespace MapaniApp
 {
     public partial class EvaluacionInicial : Form
     {
+        LogicLayer _LogicLayer = new LogicLayer();
         public EvaluacionInicial()
         {
             InitializeComponent();
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+       
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SavedataList();
+            this.Close();
+
 
         }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        public void SavedataList()
         {
-
+            string EvaluacionInicial = string.Empty;
+            foreach (object item in checkedListBox1.CheckedItems)
+            {
+                EvaluacionInicial += item.ToString() + ",";
+            }
+            ContactPsicologia Contact = new ContactPsicologia
+            {
+                Antecedentes = txtAntecedentes.Text,
+                SistemaFamiliar = txtSistemaAuxiliar.Text,
+                Evaluacion = txtEvaluacion.Text,
+                MotivoConsulta = TxtMotivoConsulta.Text,
+                EvaluacionInicial = EvaluacionInicial,
+                RazonAlta = txtRiesgoAlto.Text,
+                RazonMedia = txtRiesgoMedio.Text,
+                RazonBajo = txtRiesgoBajo.Text,
+                NoRazon = txtSinRiesgo.Text,
+            };
+            _LogicLayer.InsertarEvaluacionInicial(Contact);
         }
+
+    
     }
 }
