@@ -192,6 +192,13 @@
     <Compile Include="AsesoriaJuridica\Escolaridad.Designer.cs">
       <DependentUpon>Escolaridad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\ContactPsicologia.cs" />
+    <Compile Include="Psicologia\EvaluacionInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Psicologia\EvaluacionInicial.Designer.cs">
+      <DependentUpon>EvaluacionInicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Psicologia\ContactosCuidadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Psicologia\ContactosCuidadores.resx">
       <DependentUpon>ContactosCuidadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Psicologia\EvaluacionInicial.resx">
+      <DependentUpon>EvaluacionInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Psicologia\Psicologia.resx">
       <DependentUpon>Psicologia.cs</DependentUpon>

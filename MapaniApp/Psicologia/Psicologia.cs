@@ -75,5 +75,11 @@ namespace MapaniApp
                 Contactos.ShowDialog(this);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EvaluacionInicial evaluacion = new EvaluacionInicial();
+            evaluacion.ShowDialog(this);
+        }
     }
 }
