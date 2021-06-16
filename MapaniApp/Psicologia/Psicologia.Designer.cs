@@ -46,19 +46,55 @@ namespace MapaniApp
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridRelaciones = new System.Windows.Forms.DataGridView();
-            this.Contactos = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.BtnCargar = new System.Windows.Forms.Button();
-            this.txtSeguimiento = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parentescoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contactos = new System.Windows.Forms.DataGridViewLinkColumn();
             this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnCargar = new System.Windows.Forms.Button();
+            this.txtSeguimiento = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.txtRazonOtro = new System.Windows.Forms.TextBox();
+            this.txtRazonCuidado = new System.Windows.Forms.TextBox();
+            this.txtRazonSeguridad = new System.Windows.Forms.TextBox();
+            this.txtRazonSalud = new System.Windows.Forms.TextBox();
+            this.txtNoRazon = new System.Windows.Forms.TextBox();
+            this.txtNoAccion = new System.Windows.Forms.TextBox();
+            this.txtAccionOtra = new System.Windows.Forms.TextBox();
+            this.txtCuidadoProvisional = new System.Windows.Forms.TextBox();
+            this.txtAccionSeguridad = new System.Windows.Forms.TextBox();
+            this.txtAccionSalud = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contactPsicologiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnGuardarCita = new System.Windows.Forms.Button();
+            this.BtnLimpiar = new System.Windows.Forms.Button();
+            this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VerCita = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.RazonSalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSeguridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonCuidado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonOtro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoRazon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccionSalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccionSeguridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccionCuidado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccionOtro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoAccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seguimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactPsicologiaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -96,7 +132,6 @@ namespace MapaniApp
             this.label2.Size = new System.Drawing.Size(79, 24);
             this.label2.TabIndex = 84;
             this.label2.Text = "Apellido";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label5
             // 
@@ -135,7 +170,6 @@ namespace MapaniApp
             this.dateTimeFechaNacimiento.Size = new System.Drawing.Size(110, 29);
             this.dateTimeFechaNacimiento.TabIndex = 89;
             this.dateTimeFechaNacimiento.TabStop = false;
-            this.dateTimeFechaNacimiento.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label1
             // 
@@ -146,7 +180,6 @@ namespace MapaniApp
             this.label1.Size = new System.Drawing.Size(164, 24);
             this.label1.TabIndex = 90;
             this.label1.Text = "Fecha Nacimiento";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtEscuela
             // 
@@ -173,7 +206,6 @@ namespace MapaniApp
             this.label3.Size = new System.Drawing.Size(78, 24);
             this.label3.TabIndex = 92;
             this.label3.Text = "Escuela";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -221,51 +253,6 @@ namespace MapaniApp
             this.dataGridRelaciones.TabIndex = 97;
             this.dataGridRelaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRelaciones_CellContentClick);
             // 
-            // Contactos
-            // 
-            this.Contactos.HeaderText = "Contactos";
-            this.Contactos.Name = "Contactos";
-            this.Contactos.Text = "Ver";
-            this.Contactos.UseColumnTextForLinkValue = true;
-            // 
-            // BtnCargar
-            // 
-            this.BtnCargar.Location = new System.Drawing.Point(177, 3);
-            this.BtnCargar.Name = "BtnCargar";
-            this.BtnCargar.Size = new System.Drawing.Size(120, 25);
-            this.BtnCargar.TabIndex = 98;
-            this.BtnCargar.Text = "Cargar";
-            this.BtnCargar.UseVisualStyleBackColor = true;
-            this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
-            // 
-            // txtSeguimiento
-            // 
-            this.txtSeguimiento.Location = new System.Drawing.Point(202, 281);
-            this.txtSeguimiento.Multiline = true;
-            this.txtSeguimiento.Name = "txtSeguimiento";
-            this.txtSeguimiento.Size = new System.Drawing.Size(799, 89);
-            this.txtSeguimiento.TabIndex = 108;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 313);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(116, 24);
-            this.label12.TabIndex = 107;
-            this.label12.Text = "Seguimiento";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(303, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 25);
-            this.button1.TabIndex = 109;
-            this.button1.Text = "Evaluacion Inicial";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -296,15 +283,371 @@ namespace MapaniApp
             this.parentescoDataGridViewTextBoxColumn.HeaderText = "Parentesco";
             this.parentescoDataGridViewTextBoxColumn.Name = "parentescoDataGridViewTextBoxColumn";
             // 
+            // Contactos
+            // 
+            this.Contactos.HeaderText = "Contactos";
+            this.Contactos.Name = "Contactos";
+            this.Contactos.Text = "Ver";
+            this.Contactos.UseColumnTextForLinkValue = true;
+            // 
             // contactNMBBindingSource
             // 
             this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
+            // 
+            // BtnCargar
+            // 
+            this.BtnCargar.Location = new System.Drawing.Point(177, 3);
+            this.BtnCargar.Name = "BtnCargar";
+            this.BtnCargar.Size = new System.Drawing.Size(120, 25);
+            this.BtnCargar.TabIndex = 98;
+            this.BtnCargar.Text = "Cargar";
+            this.BtnCargar.UseVisualStyleBackColor = true;
+            this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
+            // 
+            // txtSeguimiento
+            // 
+            this.txtSeguimiento.Location = new System.Drawing.Point(221, 464);
+            this.txtSeguimiento.Multiline = true;
+            this.txtSeguimiento.Name = "txtSeguimiento";
+            this.txtSeguimiento.Size = new System.Drawing.Size(799, 89);
+            this.txtSeguimiento.TabIndex = 108;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(31, 496);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(116, 24);
+            this.label12.TabIndex = 107;
+            this.label12.Text = "Seguimiento";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(303, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 25);
+            this.button1.TabIndex = 109;
+            this.button1.Text = "Evaluacion Inicial";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Salud",
+            "Seguridad",
+            "Cuidado Provisional",
+            "Otro (Especifique)",
+            "No"});
+            this.checkedListBox1.Location = new System.Drawing.Point(35, 607);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(221, 134);
+            this.checkedListBox1.TabIndex = 110;
+            // 
+            // txtRazonOtro
+            // 
+            this.txtRazonOtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazonOtro.Location = new System.Drawing.Point(296, 697);
+            this.txtRazonOtro.Name = "txtRazonOtro";
+            this.txtRazonOtro.Size = new System.Drawing.Size(334, 29);
+            this.txtRazonOtro.TabIndex = 114;
+            // 
+            // txtRazonCuidado
+            // 
+            this.txtRazonCuidado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazonCuidado.Location = new System.Drawing.Point(296, 662);
+            this.txtRazonCuidado.Name = "txtRazonCuidado";
+            this.txtRazonCuidado.Size = new System.Drawing.Size(334, 29);
+            this.txtRazonCuidado.TabIndex = 113;
+            // 
+            // txtRazonSeguridad
+            // 
+            this.txtRazonSeguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazonSeguridad.Location = new System.Drawing.Point(296, 627);
+            this.txtRazonSeguridad.Name = "txtRazonSeguridad";
+            this.txtRazonSeguridad.Size = new System.Drawing.Size(334, 29);
+            this.txtRazonSeguridad.TabIndex = 112;
+            // 
+            // txtRazonSalud
+            // 
+            this.txtRazonSalud.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazonSalud.Location = new System.Drawing.Point(296, 592);
+            this.txtRazonSalud.Name = "txtRazonSalud";
+            this.txtRazonSalud.Size = new System.Drawing.Size(334, 29);
+            this.txtRazonSalud.TabIndex = 111;
+            // 
+            // txtNoRazon
+            // 
+            this.txtNoRazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoRazon.Location = new System.Drawing.Point(296, 732);
+            this.txtNoRazon.Name = "txtNoRazon";
+            this.txtNoRazon.Size = new System.Drawing.Size(334, 29);
+            this.txtNoRazon.TabIndex = 115;
+            // 
+            // txtNoAccion
+            // 
+            this.txtNoAccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoAccion.Location = new System.Drawing.Point(636, 732);
+            this.txtNoAccion.Name = "txtNoAccion";
+            this.txtNoAccion.Size = new System.Drawing.Size(339, 29);
+            this.txtNoAccion.TabIndex = 120;
+            // 
+            // txtAccionOtra
+            // 
+            this.txtAccionOtra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccionOtra.Location = new System.Drawing.Point(636, 697);
+            this.txtAccionOtra.Name = "txtAccionOtra";
+            this.txtAccionOtra.Size = new System.Drawing.Size(339, 29);
+            this.txtAccionOtra.TabIndex = 119;
+            // 
+            // txtCuidadoProvisional
+            // 
+            this.txtCuidadoProvisional.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCuidadoProvisional.Location = new System.Drawing.Point(636, 662);
+            this.txtCuidadoProvisional.Name = "txtCuidadoProvisional";
+            this.txtCuidadoProvisional.Size = new System.Drawing.Size(339, 29);
+            this.txtCuidadoProvisional.TabIndex = 118;
+            // 
+            // txtAccionSeguridad
+            // 
+            this.txtAccionSeguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccionSeguridad.Location = new System.Drawing.Point(636, 627);
+            this.txtAccionSeguridad.Name = "txtAccionSeguridad";
+            this.txtAccionSeguridad.Size = new System.Drawing.Size(339, 29);
+            this.txtAccionSeguridad.TabIndex = 117;
+            // 
+            // txtAccionSalud
+            // 
+            this.txtAccionSalud.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccionSalud.Location = new System.Drawing.Point(636, 592);
+            this.txtAccionSalud.Name = "txtAccionSalud";
+            this.txtAccionSalud.Size = new System.Drawing.Size(339, 29);
+            this.txtAccionSalud.TabIndex = 116;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(42, 565);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(214, 24);
+            this.label8.TabIndex = 121;
+            this.label8.Text = "Preocupacion Inmediata";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(353, 565);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(198, 24);
+            this.label9.TabIndex = 122;
+            this.label9.Text = "Resumen de Razones";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(746, 565);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 24);
+            this.label10.TabIndex = 123;
+            this.label10.Text = "AccionTomada";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(398, 288);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 24);
+            this.label11.TabIndex = 124;
+            this.label11.Text = "Historial";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idNMBDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.VerCita,
+            this.RazonSalud,
+            this.RazonSeguridad,
+            this.RazonCuidado,
+            this.RazonOtro,
+            this.NoRazon,
+            this.AccionSalud,
+            this.AccionSeguridad,
+            this.AccionCuidado,
+            this.AccionOtro,
+            this.NoAccion,
+            this.Fecha,
+            this.Seguimiento});
+            this.dataGridView1.DataSource = this.contactPsicologiaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(303, 315);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(299, 124);
+            this.dataGridView1.TabIndex = 125;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // contactPsicologiaBindingSource
+            // 
+            this.contactPsicologiaBindingSource.DataSource = typeof(MapaniApp.ContactPsicologia);
+            // 
+            // btnGuardarCita
+            // 
+            this.btnGuardarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCita.Location = new System.Drawing.Point(636, 315);
+            this.btnGuardarCita.Name = "btnGuardarCita";
+            this.btnGuardarCita.Size = new System.Drawing.Size(147, 36);
+            this.btnGuardarCita.TabIndex = 126;
+            this.btnGuardarCita.Text = "Guardar Cita";
+            this.btnGuardarCita.UseVisualStyleBackColor = true;
+            this.btnGuardarCita.Click += new System.EventHandler(this.btnGuardarCita_Click);
+            // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.Location = new System.Drawing.Point(636, 357);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(147, 36);
+            this.BtnLimpiar.TabIndex = 127;
+            this.BtnLimpiar.Text = "Limpiar Campo";
+            this.BtnLimpiar.UseVisualStyleBackColor = true;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
+            // idNMBDataGridViewTextBoxColumn
+            // 
+            this.idNMBDataGridViewTextBoxColumn.DataPropertyName = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.HeaderText = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.Name = "idNMBDataGridViewTextBoxColumn";
+            this.idNMBDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
+            // VerCita
+            // 
+            this.VerCita.HeaderText = "Ver Cita";
+            this.VerCita.Name = "VerCita";
+            this.VerCita.Text = "Ver";
+            this.VerCita.UseColumnTextForLinkValue = true;
+            // 
+            // RazonSalud
+            // 
+            this.RazonSalud.DataPropertyName = "RazonSalud";
+            this.RazonSalud.HeaderText = "RazonSalud";
+            this.RazonSalud.Name = "RazonSalud";
+            this.RazonSalud.Visible = false;
+            // 
+            // RazonSeguridad
+            // 
+            this.RazonSeguridad.DataPropertyName = "RazonSeguridad";
+            this.RazonSeguridad.HeaderText = "RazonSeguridad";
+            this.RazonSeguridad.Name = "RazonSeguridad";
+            this.RazonSeguridad.Visible = false;
+            // 
+            // RazonCuidado
+            // 
+            this.RazonCuidado.DataPropertyName = "RazonCuidado";
+            this.RazonCuidado.HeaderText = "RazonCuidado";
+            this.RazonCuidado.Name = "RazonCuidado";
+            this.RazonCuidado.Visible = false;
+            // 
+            // RazonOtro
+            // 
+            this.RazonOtro.DataPropertyName = "RazonOtro";
+            this.RazonOtro.HeaderText = "RazonOtro";
+            this.RazonOtro.Name = "RazonOtro";
+            this.RazonOtro.Visible = false;
+            // 
+            // NoRazon
+            // 
+            this.NoRazon.DataPropertyName = "NoRazon";
+            this.NoRazon.HeaderText = "NoRazon";
+            this.NoRazon.Name = "NoRazon";
+            this.NoRazon.Visible = false;
+            // 
+            // AccionSalud
+            // 
+            this.AccionSalud.DataPropertyName = "AccionSalud";
+            this.AccionSalud.HeaderText = "AccionSalud";
+            this.AccionSalud.Name = "AccionSalud";
+            this.AccionSalud.Visible = false;
+            // 
+            // AccionSeguridad
+            // 
+            this.AccionSeguridad.DataPropertyName = "AccionSeguridad";
+            this.AccionSeguridad.HeaderText = "AccionSeguridad";
+            this.AccionSeguridad.Name = "AccionSeguridad";
+            this.AccionSeguridad.Visible = false;
+            // 
+            // AccionCuidado
+            // 
+            this.AccionCuidado.DataPropertyName = "AccionCuidado";
+            this.AccionCuidado.HeaderText = "AccionCuidado";
+            this.AccionCuidado.Name = "AccionCuidado";
+            this.AccionCuidado.Visible = false;
+            // 
+            // AccionOtro
+            // 
+            this.AccionOtro.DataPropertyName = "AccionOtro";
+            this.AccionOtro.HeaderText = "AccionOtro";
+            this.AccionOtro.Name = "AccionOtro";
+            this.AccionOtro.Visible = false;
+            // 
+            // NoAccion
+            // 
+            this.NoAccion.DataPropertyName = "NoAccion";
+            this.NoAccion.HeaderText = "NoAccion";
+            this.NoAccion.Name = "NoAccion";
+            this.NoAccion.Visible = false;
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Visible = false;
+            // 
+            // Seguimiento
+            // 
+            this.Seguimiento.DataPropertyName = "Seguimiento";
+            this.Seguimiento.HeaderText = "Seguimiento";
+            this.Seguimiento.Name = "Seguimiento";
+            this.Seguimiento.Visible = false;
             // 
             // Psicologia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 774);
+            this.Controls.Add(this.BtnLimpiar);
+            this.Controls.Add(this.btnGuardarCita);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtNoAccion);
+            this.Controls.Add(this.txtAccionOtra);
+            this.Controls.Add(this.txtCuidadoProvisional);
+            this.Controls.Add(this.txtAccionSeguridad);
+            this.Controls.Add(this.txtAccionSalud);
+            this.Controls.Add(this.txtNoRazon);
+            this.Controls.Add(this.txtRazonOtro);
+            this.Controls.Add(this.txtRazonCuidado);
+            this.Controls.Add(this.txtRazonSeguridad);
+            this.Controls.Add(this.txtRazonSalud);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtSeguimiento);
             this.Controls.Add(this.label12);
@@ -330,6 +673,8 @@ namespace MapaniApp
             this.Load += new System.EventHandler(this.Psicologia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactPsicologiaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,5 +709,39 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox txtSeguimiento;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.TextBox txtRazonOtro;
+        private System.Windows.Forms.TextBox txtRazonCuidado;
+        private System.Windows.Forms.TextBox txtRazonSeguridad;
+        private System.Windows.Forms.TextBox txtRazonSalud;
+        private System.Windows.Forms.TextBox txtNoRazon;
+        private System.Windows.Forms.TextBox txtNoAccion;
+        private System.Windows.Forms.TextBox txtAccionOtra;
+        private System.Windows.Forms.TextBox txtCuidadoProvisional;
+        private System.Windows.Forms.TextBox txtAccionSeguridad;
+        private System.Windows.Forms.TextBox txtAccionSalud;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource contactPsicologiaBindingSource;
+        private System.Windows.Forms.Button btnGuardarCita;
+        private System.Windows.Forms.Button BtnLimpiar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNMBDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn VerCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSalud;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSeguridad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonCuidado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonOtro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoRazon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccionSalud;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccionSeguridad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccionCuidado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccionOtro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoAccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Seguimiento;
     }
 }

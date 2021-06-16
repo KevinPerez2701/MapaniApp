@@ -111,6 +111,12 @@ namespace MapaniApp
                 _dataAccessLayer.InserCitaEnfermeria(Contact);
             return Contact;
         }
+        public ContactPsicologia InsertCitaPsicologia(ContactPsicologia Contact)
+        {
+
+            _dataAccessLayer.InsertCitaPsicologia(Contact);
+            return Contact;
+        }
         public ClaseEnfermeria InsertCitaPediatria(ClaseEnfermeria Contact)
         {
 
@@ -155,6 +161,11 @@ namespace MapaniApp
         {
             _dataAccessLayer.Salida(Salida);
             return Salida;
+        }
+        public List<ContactPsicologia> GetHistorialPsicologia(string Id)
+        {
+            List<ContactPsicologia> contact =_dataAccessLayer.GetHistorialPsicologia(Id);
+            return contact;
         }
         public DataAlmacen SaveOrder(DataAlmacen Orden)
         {
@@ -244,6 +255,10 @@ namespace MapaniApp
         public ContactNutricion GetHistorialNutricion(string Id)
         {
             return _dataAccessLayer.GetHistorialNutricion(Id);
+        }
+        public ContactPsicologia GetEvaluacionPsicologia(string Id)
+        {
+            return _dataAccessLayer.GetEvaluacionPsicologia(Id);
         }
         public List<DataAlmacen> GetOrdenes()
         {   

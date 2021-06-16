@@ -1128,17 +1128,67 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InsertCitaPsicologia(ContactPsicologia contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"
+                                   Insert into TablaHistorialPsicologia (IdNMB,Fecha,RazonSalud,RazonSeguridad,RazonCuidado,RazonOtro,NoRazon,AccionSalud,AccionSeguridad,AccionCuidado,AccionOtro,NoAccion,Seguimiento)  
+                                    Values(@IdNMB,@Fecha,@RazonSalud,@RazonSeguridad,@RazonCuidado,@RazonOtro,@NoRazon,@AccionSalud,@AccionSeguridad,@AccionCuidado,@AccionOtro,@NoAccion,@Seguimiento)
+                                     ";
+                SqlParameter NMB = new SqlParameter("@IdNMB", int.Parse(contact.IdNMB));
+                SqlParameter RazonSalud = new SqlParameter("@RazonSalud", contact.RazonSalud);
+                SqlParameter Fecha = new SqlParameter("@Fecha", contact.Fecha);
+                SqlParameter RazonSeguridad = new SqlParameter("@RazonSeguridad", contact.RazonSeguridad);
+                SqlParameter RazonCuidado = new SqlParameter("@RazonCuidado", contact.RazonCuidado);
+                SqlParameter RazonOtro = new SqlParameter("@RazonOtro", contact.RazonOtro);
+                SqlParameter NoRazon = new SqlParameter("@NoRazon", contact.NoRazon);
+                SqlParameter AccionSalud = new SqlParameter("@AccionSalud", contact.AccionSalud);
+                SqlParameter AccionSeguridad = new SqlParameter("@AccionSeguridad", contact.AccionSeguridad);
+                SqlParameter AccionCuidado = new SqlParameter("@AccionCuidado", contact.AccionCuidado);
+                SqlParameter AccionOtro = new SqlParameter("@AccionOtro", contact.AccionOtro);
+                SqlParameter NoAccion = new SqlParameter("@NoAccion", contact.NoAccion);
+                SqlParameter Seguimiento = new SqlParameter("@Seguimiento", contact.Seguimiento);
+              
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(Fecha);
+                command.Parameters.Add(NMB);
+                command.Parameters.Add(RazonSalud);
+                command.Parameters.Add(RazonCuidado);
+                command.Parameters.Add(RazonSeguridad);
+                command.Parameters.Add(RazonOtro);
+                command.Parameters.Add(NoRazon);
+                command.Parameters.Add(AccionSalud);
+                command.Parameters.Add(AccionSeguridad);
+                command.Parameters.Add(AccionCuidado);
+                command.Parameters.Add(AccionOtro);
+                command.Parameters.Add(NoAccion);
+                command.Parameters.Add(Seguimiento);
+               
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         public void InsertEvaluacionInicial(ContactPsicologia contact)
         {
             try
             {
                 Connection.Open();
                 string query = @"
-                                   Insert into TablaPsicologia (SistemaFamiliar,MotivoConsulta,Antecedentes,Evaluacion,EvaluacionInicial,RazonAlta,RazonMedia,RazonBaja,NoRazon) 
-                                    Values(@SistemaFamiliar,@MotivoConsulta,@Antecedentes,@Evaluacion,@EvaluacionInicial,@RazonAlta,@RazonMedia,@RazonBaja,@NoRazon)
-                                    ";
-              //  Update TablaNMB Set HistorialNutricional = @Historial where TablaNMB.Id = @NMB
-               // SqlParameter NMB = new SqlParameter("@NMB", contact.NMB);
+                                   Insert into TablaPsicologia (IdNMB,SistemaFamiliar,MotivoConsulta,Antecedentes,Evaluacion,EvaluacionInicial,RazonAlta,RazonMedia,RazonBaja,NoRazon) 
+                                    Values(@NMB,@SistemaFamiliar,@MotivoConsulta,@Antecedentes,@Evaluacion,@EvaluacionInicial,@RazonAlta,@RazonMedia,@RazonBaja,@NoRazon)
+                                    Update TablaNMB Set Psicologia = 'Si' where TablaNMB.Id = @NMB";
+                
+                SqlParameter NMB = new SqlParameter("@NMB", contact.IdNMB);
                 SqlParameter SistemaFamiliar = new SqlParameter("@SistemaFamiliar", contact.SistemaFamiliar);
                 SqlParameter MotivoConsulta = new SqlParameter("@MotivoConsulta", contact.MotivoConsulta);
                 SqlParameter Antecedentes = new SqlParameter("@Antecedentes", contact.Antecedentes);
@@ -1152,7 +1202,7 @@ namespace MapaniApp
       
                 SqlCommand command = new SqlCommand(query, Connection);
                // command.Parameters.Add(Historial);
-              //  command.Parameters.Add(NMB);
+                command.Parameters.Add(NMB);
                 command.Parameters.Add(SistemaFamiliar);
                 command.Parameters.Add(MotivoConsulta);
                 command.Parameters.Add(Antecedentes);
@@ -1346,6 +1396,7 @@ namespace MapaniApp
                         HistorialNutricional = reader["HistorialNutricional"].ToString(),
                         Escolaridad = reader["Escolaridad"].ToString(),
                         NombreEscuela = reader["NombreEscuela"].ToString(),
+                        Psicologia = reader["Psicologia"].ToString(),
                     }); ;
                 }
 
@@ -2086,6 +2137,95 @@ namespace MapaniApp
                         Quincenal = reader["Quincenal"].ToString(),
                         Mensual = reader["Mensual"].ToString(),
                     };
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Data;
+        }
+        public ContactPsicologia GetEvaluacionPsicologia(string Id)
+        {
+            ContactPsicologia Data = new ContactPsicologia();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From TablaPsicologia
+                                Where TablaPsicologia.IdNMB=@IdNMB";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@IdNMB", int.Parse(Id)));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Data = new ContactPsicologia
+                    {
+                       
+                        RazonAlta = reader["RazonAlta"].ToString(),
+                        RazonMedia = reader["RazonMedia"].ToString(),
+                        RazonBajo = reader["RazonBaja"].ToString(),
+                        NoRazon = reader["NoRazon"].ToString(),
+                        EvaluacionInicial = reader["EvaluacionInicial"].ToString(),
+                        Antecedentes = reader["Antecedentes"].ToString(),
+                        SistemaFamiliar = reader["SistemaFamiliar"].ToString(),
+                        MotivoConsulta = reader["MotivoConsulta"].ToString(),
+                        Evaluacion = reader["Evaluacion"].ToString(),
+                        
+                    };
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Data;
+        }
+        public List<ContactPsicologia>  GetHistorialPsicologia(string Id)
+        {
+           List<ContactPsicologia> Data = new List<ContactPsicologia>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From TablaHIstorialPsicologia
+                                Where TablaHistorialPsicologia.IdNMB=@IdNMB";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@IdNMB", int.Parse(Id)));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Data.Add ( new ContactPsicologia
+                    {
+
+                        RazonSalud = reader["RazonSalud"].ToString(),
+                        RazonSeguridad = reader["RazonSeguridad"].ToString(),
+                        RazonCuidado = reader["RazonCuidado"].ToString(),
+                        RazonOtro = reader["RazonOtro"].ToString(),
+                        NoRazon = reader["NoRazon"].ToString(),
+                        AccionSalud = reader["AccionSalud"].ToString(),
+                        AccionSeguridad = reader["AccionSeguridad"].ToString(),
+                        AccionCuidado = reader["AccionCuidado"].ToString(),
+                        AccionOtro = reader["AccionOtro"].ToString(),
+                        NoAccion = reader["NoAccion"].ToString(),
+                       Fecha = (DateTime)reader["Fecha"],
+                        Seguimiento = reader["Seguimiento"].ToString(),
+
+                    });
                 }
             }
             catch (Exception)
