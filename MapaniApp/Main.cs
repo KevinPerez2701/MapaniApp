@@ -45,6 +45,34 @@ namespace MapaniApp
                 Enfermeria enfermeria = new Enfermeria();
                 enfermeria.Show(this);
             }
+            else if (ventana[0].Posicion == "Psicologia")
+            {
+                Psicologia psicologia = new Psicologia();
+                psicologia.Show(this);
+            }
+            else if (ventana[0].Posicion == "Almacen")
+            {
+                Almacen almacen = new Almacen();
+                almacen.Show(this);
+            }
+            else if (ventana[0].Posicion == "Pediatra")
+            {
+                Pediatria pediatria = new Pediatria();
+                pediatria.Show(this);
+            }
+            else if (ventana[0].Posicion == "Nutricionista")
+            {
+                Nutricion nutricion = new Nutricion();
+                nutricion.Show(this);
+            }
+            else if (ventana[0].Posicion == "Abogado")
+            {
+                AsesoriaJuridica Asesoria = new AsesoriaJuridica();
+                Asesoria.Show(this);
+            }
+
+
+
 
 
         }
