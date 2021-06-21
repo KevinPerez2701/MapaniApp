@@ -24,5 +24,6 @@ namespace MapaniApp
         public string Parroquia { get; set; }
         public string Municipio { get; set; }
         public string Estado { get; set; }
+        public string Ocupacion { get; set; }
     }
 }

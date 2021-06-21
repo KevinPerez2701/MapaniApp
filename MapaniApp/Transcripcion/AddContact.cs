@@ -70,6 +70,7 @@ namespace MapaniApp
                 Parroquia = txtParroquia.Text,
                 Municipio = txtMunicipio.Text,
                 Estado = txtEstado.Text,
+                Ocupacion = txtOcupacion.Text,
                 Id = _contactCuidador != null ? _contactCuidador.Id : 0
             };          
             _LogicLayer.SaveContactCuidador(Contact);
@@ -92,6 +93,7 @@ namespace MapaniApp
                 Parroquia = txtParroquia.Text,
                 Municipio = txtMunicipio.Text,
                 Estado = txtEstado.Text,
+                Ocupacion = txtOcupacion.Text,
                 Id = _contactMMB != null ? _contactMMB.Id : 0
             };
             _LogicLayer.SaveContactMMB(Contact);
