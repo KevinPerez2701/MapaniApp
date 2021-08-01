@@ -64,5 +64,10 @@ namespace MapaniApp
             Productos.GetTotalProductos();
             Productos.ShowDialog(this);
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

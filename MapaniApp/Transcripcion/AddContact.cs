@@ -147,6 +147,7 @@ namespace MapaniApp
                 txtParroquia.Text = contact.Parroquia;
                 txtMunicipio.Text = contact.Municipio;
                 txtEstado.Text = contact.Estado;
+                txtOcupacion.Text = contact.Ocupacion;
                 PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);
             }
 
@@ -204,11 +205,13 @@ namespace MapaniApp
             {
                 groupBox2.Visible = false;
                 groupNMB.Visible = true;
+                groupEscolaridad.Visible = true;
             }
             else if (textBox1.Text == "MMB" || textBox1.Text == "Cuidador")
             {
                 groupBox2.Visible = true;
                 groupNMB.Visible = false;
+                groupEscolaridad.Visible = false;
 
             }
         }

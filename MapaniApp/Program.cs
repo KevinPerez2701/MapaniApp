@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,11 +18,13 @@ namespace MapaniApp
         {  
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+           // System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            
             // LoginForm Login = new LoginForm();
             //DialogResult Result = Login.ShowDialog();
             //if (Result == DialogResult.OK)
             //{
-                Application.Run(new Main());     
+            Application.Run(new Main());     
                
              //
             //else

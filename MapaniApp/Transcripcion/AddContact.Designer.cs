@@ -71,6 +71,8 @@ namespace MapaniApp
             this.TxtTransporte = new System.Windows.Forms.TextBox();
             this.groupNMB = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtOcupacion = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtMunicipio = new System.Windows.Forms.TextBox();
@@ -85,11 +87,11 @@ namespace MapaniApp
             this.txtDireccionEscuela = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtNombreEscuela = new System.Windows.Forms.TextBox();
-            this.txtOcupacion = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.groupEscolaridad = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).BeginInit();
             this.groupNMB.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupEscolaridad.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtDireccion
@@ -549,6 +551,24 @@ namespace MapaniApp
             this.groupBox2.Text = "Cuidador";
             this.groupBox2.Visible = false;
             // 
+            // txtOcupacion
+            // 
+            this.txtOcupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOcupacion.Location = new System.Drawing.Point(178, 154);
+            this.txtOcupacion.Name = "txtOcupacion";
+            this.txtOcupacion.Size = new System.Drawing.Size(226, 29);
+            this.txtOcupacion.TabIndex = 63;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(3, 159);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(103, 24);
+            this.label16.TabIndex = 62;
+            this.label16.Text = "Ocupacion";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -624,7 +644,7 @@ namespace MapaniApp
             // txtEscolaridad
             // 
             this.txtEscolaridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEscolaridad.Location = new System.Drawing.Point(552, 436);
+            this.txtEscolaridad.Location = new System.Drawing.Point(108, 16);
             this.txtEscolaridad.Name = "txtEscolaridad";
             this.txtEscolaridad.Size = new System.Drawing.Size(166, 29);
             this.txtEscolaridad.TabIndex = 75;
@@ -634,7 +654,7 @@ namespace MapaniApp
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(444, 524);
+            this.label13.Location = new System.Drawing.Point(0, 104);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 24);
             this.label13.TabIndex = 74;
@@ -644,7 +664,7 @@ namespace MapaniApp
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(444, 436);
+            this.label14.Location = new System.Drawing.Point(0, 16);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(109, 24);
             this.label14.TabIndex = 73;
@@ -653,7 +673,7 @@ namespace MapaniApp
             // txtDireccionEscuela
             // 
             this.txtDireccionEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccionEscuela.Location = new System.Drawing.Point(552, 512);
+            this.txtDireccionEscuela.Location = new System.Drawing.Point(108, 92);
             this.txtDireccionEscuela.Multiline = true;
             this.txtDireccionEscuela.Name = "txtDireccionEscuela";
             this.txtDireccionEscuela.Size = new System.Drawing.Size(166, 94);
@@ -663,7 +683,7 @@ namespace MapaniApp
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(448, 482);
+            this.label15.Location = new System.Drawing.Point(4, 62);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 24);
             this.label15.TabIndex = 77;
@@ -672,40 +692,33 @@ namespace MapaniApp
             // txtNombreEscuela
             // 
             this.txtNombreEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEscuela.Location = new System.Drawing.Point(552, 477);
+            this.txtNombreEscuela.Location = new System.Drawing.Point(108, 57);
             this.txtNombreEscuela.Name = "txtNombreEscuela";
             this.txtNombreEscuela.Size = new System.Drawing.Size(166, 29);
             this.txtNombreEscuela.TabIndex = 78;
             // 
-            // txtOcupacion
+            // groupEscolaridad
             // 
-            this.txtOcupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOcupacion.Location = new System.Drawing.Point(178, 154);
-            this.txtOcupacion.Name = "txtOcupacion";
-            this.txtOcupacion.Size = new System.Drawing.Size(226, 29);
-            this.txtOcupacion.TabIndex = 63;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(3, 159);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(103, 24);
-            this.label16.TabIndex = 62;
-            this.label16.Text = "Ocupacion";
+            this.groupEscolaridad.Controls.Add(this.txtNombreEscuela);
+            this.groupEscolaridad.Controls.Add(this.label15);
+            this.groupEscolaridad.Controls.Add(this.txtDireccionEscuela);
+            this.groupEscolaridad.Controls.Add(this.txtEscolaridad);
+            this.groupEscolaridad.Controls.Add(this.label13);
+            this.groupEscolaridad.Controls.Add(this.label14);
+            this.groupEscolaridad.Location = new System.Drawing.Point(444, 419);
+            this.groupEscolaridad.Name = "groupEscolaridad";
+            this.groupEscolaridad.Size = new System.Drawing.Size(286, 217);
+            this.groupEscolaridad.TabIndex = 79;
+            this.groupEscolaridad.TabStop = false;
+            this.groupEscolaridad.Text = "Escolaridad";
+            this.groupEscolaridad.Visible = false;
             // 
             // AddContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 696);
-            this.Controls.Add(this.txtNombreEscuela);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.txtDireccionEscuela);
-            this.Controls.Add(this.txtEscolaridad);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.groupEscolaridad);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtMunicipio);
@@ -742,6 +755,8 @@ namespace MapaniApp
             this.groupNMB.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupEscolaridad.ResumeLayout(false);
+            this.groupEscolaridad.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -806,5 +821,6 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox txtNombreEscuela;
         private System.Windows.Forms.TextBox txtOcupacion;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupEscolaridad;
     }
 }

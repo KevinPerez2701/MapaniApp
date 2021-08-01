@@ -13,8 +13,10 @@ namespace MapaniApp
     class DataAccessLayer
 
     {
-      private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-      //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+
+        //private SqlConnection Connection = new SqlConnection("data source=192.168.68.118,1433; initial catalog=MAPANI; user id=kevin; password =1234;");
+        //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -169,6 +171,8 @@ namespace MapaniApp
                 SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
                 SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
                 SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
+              
+
                 SqlCommand command = new SqlCommand(query, Connection);
                
                 command.Parameters.Add(Nombre);
@@ -1462,6 +1466,7 @@ namespace MapaniApp
                         Municipio = reader["Municipio"].ToString(),
                         Estado = reader["Estado"].ToString(),
                         Transporte = reader["Transporte"].ToString(),
+                        Ocupacion = reader["Ocupacion"].ToString()
                     });
                 }
 

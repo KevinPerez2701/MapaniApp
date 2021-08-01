@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,10 +24,25 @@ namespace MapaniApp
         {
             this.Posicion();
             this.DialogResult = DialogResult.OK;
+            CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+            if (current.TwoLetterISOLanguageName != "fr")
+            {
+                CultureInfo newCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Thread.CurrentThread.CurrentUICulture = newCulture;
+                // Make current UI culture consistent with current culture.
+                Thread.CurrentThread.CurrentCulture = newCulture;
+            }
+            Console.WriteLine("The current UI culture is {0} [{1}]",
+                              Thread.CurrentThread.CurrentUICulture.NativeName,
+                              Thread.CurrentThread.CurrentUICulture.Name);
+            Console.WriteLine("The current culture is {0} [{1}]",
+                              Thread.CurrentThread.CurrentUICulture.NativeName,
+                              Thread.CurrentThread.CurrentUICulture.Name);
             this.Hide();
+            
         }
         #endregion
-
+       
         #region METODOS DE CLASE
 
         #endregion

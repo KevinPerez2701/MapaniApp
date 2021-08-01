@@ -332,7 +332,7 @@ namespace MapaniApp
             this.label18.TabIndex = 95;
             this.label18.Tag = "Contact";
             this.label18.Text = "SSF (mm)";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
+            
             // 
             // TxtSSF
             // 
@@ -353,7 +353,7 @@ namespace MapaniApp
             this.label11.TabIndex = 93;
             this.label11.Tag = "Contact";
             this.label11.Text = "CMB (cm)";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+         
             // 
             // TxtCMB
             // 
@@ -414,7 +414,7 @@ namespace MapaniApp
             this.labelPeso.TabIndex = 69;
             this.labelPeso.Tag = "Contact";
             this.labelPeso.Text = "Peso (Kg)";
-            this.labelPeso.Click += new System.EventHandler(this.labelPeso_Click);
+           
             // 
             // labelTalla
             // 
@@ -680,7 +680,7 @@ namespace MapaniApp
             this.label1.TabIndex = 69;
             this.label1.Tag = "Contact";
             this.label1.Text = "Peso-Edad";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+         
             // 
             // label8
             // 

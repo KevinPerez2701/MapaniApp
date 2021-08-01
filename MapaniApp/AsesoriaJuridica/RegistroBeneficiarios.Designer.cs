@@ -47,11 +47,7 @@ namespace MapaniApp
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridRelaciones = new System.Windows.Forms.DataGridView();
-            this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Escolaridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DireccionEscuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreEscuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtOcupacion = new System.Windows.Forms.TextBox();
@@ -63,30 +59,34 @@ namespace MapaniApp
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Vinculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnSalir = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ocupacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vinculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parroquiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.municipioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Escolaridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionEscuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreEscuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -245,8 +245,8 @@ namespace MapaniApp
             this.idDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
-            this.Parentesco,
             this.fechaNacimientoDataGridViewTextBoxColumn,
+            this.Parentesco,
             this.sexoDataGridViewTextBoxColumn,
             this.Escolaridad,
             this.DireccionEscuela,
@@ -259,37 +259,9 @@ namespace MapaniApp
             this.dataGridRelaciones.TabIndex = 85;
             this.dataGridRelaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRelaciones_CellContentClick);
             // 
-            // Parentesco
+            // contactNMBBindingSource
             // 
-            this.Parentesco.DataPropertyName = "Parentesco";
-            this.Parentesco.HeaderText = "Parentesco";
-            this.Parentesco.Name = "Parentesco";
-            // 
-            // Escolaridad
-            // 
-            this.Escolaridad.DataPropertyName = "Escolaridad";
-            this.Escolaridad.HeaderText = "Escolaridad";
-            this.Escolaridad.Name = "Escolaridad";
-            // 
-            // DireccionEscuela
-            // 
-            this.DireccionEscuela.DataPropertyName = "DireccionEscuela";
-            this.DireccionEscuela.HeaderText = "DireccionEscuela";
-            this.DireccionEscuela.Name = "DireccionEscuela";
-            // 
-            // NombreEscuela
-            // 
-            this.NombreEscuela.DataPropertyName = "NombreEscuela";
-            this.NombreEscuela.HeaderText = "NombreEscuela";
-            this.NombreEscuela.Name = "NombreEscuela";
-            // 
-            // dataGridViewLinkColumn1
-            // 
-            this.dataGridViewLinkColumn1.HeaderText = "Escolaridad";
-            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
-            this.dataGridViewLinkColumn1.Text = "Ver";
-            this.dataGridViewLinkColumn1.UseColumnTextForLinkValue = true;
-            this.dataGridViewLinkColumn1.Visible = false;
+            this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
             // 
             // txtCedula
             // 
@@ -405,28 +377,11 @@ namespace MapaniApp
             this.municipioDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.contactAsesoriaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(427, 300);
+            this.dataGridView1.Location = new System.Drawing.Point(429, 297);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(732, 156);
             this.dataGridView1.TabIndex = 98;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Vinculo
-            // 
-            this.Vinculo.DataPropertyName = "Vinculo";
-            this.Vinculo.HeaderText = "Vinculo";
-            this.Vinculo.Name = "Vinculo";
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(498, 476);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(96, 36);
-            this.BtnSalir.TabIndex = 99;
-            this.BtnSalir.Text = "Salir";
-            this.BtnSalir.UseVisualStyleBackColor = true;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -465,6 +420,12 @@ namespace MapaniApp
             this.ocupacionDataGridViewTextBoxColumn.HeaderText = "Ocupacion";
             this.ocupacionDataGridViewTextBoxColumn.Name = "ocupacionDataGridViewTextBoxColumn";
             // 
+            // Vinculo
+            // 
+            this.Vinculo.DataPropertyName = "Vinculo";
+            this.Vinculo.HeaderText = "Vinculo";
+            this.Vinculo.Name = "Vinculo";
+            // 
             // direccionDataGridViewTextBoxColumn
             // 
             this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
@@ -493,6 +454,21 @@ namespace MapaniApp
             // 
             this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
             // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSalir.Location = new System.Drawing.Point(498, 476);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(96, 36);
+            this.BtnSalir.TabIndex = 99;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // contactCuidadorBindingSource
+            // 
+            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -518,19 +494,43 @@ namespace MapaniApp
             this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
             this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
             // 
+            // Parentesco
+            // 
+            this.Parentesco.DataPropertyName = "Parentesco";
+            this.Parentesco.HeaderText = "Parentesco";
+            this.Parentesco.Name = "Parentesco";
+            // 
             // sexoDataGridViewTextBoxColumn
             // 
             this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
             this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
             this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
             // 
-            // contactNMBBindingSource
+            // Escolaridad
             // 
-            this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
+            this.Escolaridad.DataPropertyName = "Escolaridad";
+            this.Escolaridad.HeaderText = "Escolaridad";
+            this.Escolaridad.Name = "Escolaridad";
             // 
-            // contactCuidadorBindingSource
+            // DireccionEscuela
             // 
-            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
+            this.DireccionEscuela.DataPropertyName = "DireccionEscuela";
+            this.DireccionEscuela.HeaderText = "DireccionEscuela";
+            this.DireccionEscuela.Name = "DireccionEscuela";
+            // 
+            // NombreEscuela
+            // 
+            this.NombreEscuela.DataPropertyName = "NombreEscuela";
+            this.NombreEscuela.HeaderText = "NombreEscuela";
+            this.NombreEscuela.Name = "NombreEscuela";
+            // 
+            // dataGridViewLinkColumn1
+            // 
+            this.dataGridViewLinkColumn1.HeaderText = "Escolaridad";
+            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
+            this.dataGridViewLinkColumn1.Text = "Ver";
+            this.dataGridViewLinkColumn1.UseColumnTextForLinkValue = true;
+            this.dataGridViewLinkColumn1.Visible = false;
             // 
             // RegistroBeneficiarios
             // 
@@ -570,9 +570,9 @@ namespace MapaniApp
             this.Text = "Registro Beneficiarios";
             this.Load += new System.EventHandler(this.AsesoriaLegal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -611,8 +611,7 @@ namespace MapaniApp
         private System.Windows.Forms.BindingSource contactCuidadorBindingSource;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource contactAsesoriaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn parentescoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource contactAsesoriaBindingSource;      
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn1;
@@ -628,8 +627,8 @@ namespace MapaniApp
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Parentesco;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Parentesco;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Escolaridad;
         private System.Windows.Forms.DataGridViewTextBoxColumn DireccionEscuela;
