@@ -55,6 +55,7 @@ namespace MapaniApp
             this.ComboCuidador = new System.Windows.Forms.ComboBox();
             this.txtParentesco = new System.Windows.Forms.TextBox();
             this.labelParentesco = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +89,8 @@ namespace MapaniApp
             "Editar Contacto",
             "Ver Contacto",
             "Buscar Contacto",
-            "Agregar Relacion"});
+            "Agregar Relacion",
+            "Imprimir"});
             this.ComboOperacion.Location = new System.Drawing.Point(330, 18);
             this.ComboOperacion.Name = "ComboOperacion";
             this.ComboOperacion.Size = new System.Drawing.Size(172, 32);
@@ -305,11 +307,22 @@ namespace MapaniApp
             this.labelParentesco.Text = "Seleccione Parentesco";
             this.labelParentesco.Visible = false;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(428, 217);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(127, 57);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Imprimir";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Transcripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 391);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.txtParentesco);
             this.Controls.Add(this.labelParentesco);
             this.Controls.Add(this.ComboCuidador);
@@ -366,5 +379,6 @@ namespace MapaniApp
         private System.Windows.Forms.ComboBox ComboCuidador;
         private System.Windows.Forms.TextBox txtParentesco;
         private System.Windows.Forms.Label labelParentesco;
+        private System.Windows.Forms.Button button3;
     }
 }

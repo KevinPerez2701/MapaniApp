@@ -62,7 +62,7 @@ namespace MapaniApp
             this.BtnVerDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVerDocumentos.Location = new System.Drawing.Point(291, 23);
             this.BtnVerDocumentos.Name = "BtnVerDocumentos";
-            this.BtnVerDocumentos.Size = new System.Drawing.Size(128, 64);
+            this.BtnVerDocumentos.Size = new System.Drawing.Size(128, 68);
             this.BtnVerDocumentos.TabIndex = 2;
             this.BtnVerDocumentos.Text = "Ver Documentos";
             this.BtnVerDocumentos.UseVisualStyleBackColor = true;
@@ -71,9 +71,9 @@ namespace MapaniApp
             // BtnGestionCasos
             // 
             this.BtnGestionCasos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGestionCasos.Location = new System.Drawing.Point(23, 97);
+            this.BtnGestionCasos.Location = new System.Drawing.Point(425, 23);
             this.BtnGestionCasos.Name = "BtnGestionCasos";
-            this.BtnGestionCasos.Size = new System.Drawing.Size(128, 64);
+            this.BtnGestionCasos.Size = new System.Drawing.Size(128, 68);
             this.BtnGestionCasos.TabIndex = 3;
             this.BtnGestionCasos.Text = "Gestion de Casos";
             this.BtnGestionCasos.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 450);
+            this.ClientSize = new System.Drawing.Size(613, 119);
             this.Controls.Add(this.BtnGestionCasos);
             this.Controls.Add(this.BtnVerDocumentos);
             this.Controls.Add(this.BtnCargarDocumentos);

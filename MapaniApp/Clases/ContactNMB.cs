@@ -32,5 +32,6 @@ namespace MapaniApp
         public string Escolaridad { get; set; }
         public string NombreEscuela { get; set; }
         public string DireccionEscuela { get; set; }
+        public string TipoDiscapacidad { get; set; }
     }
 }

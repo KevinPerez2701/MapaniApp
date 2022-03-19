@@ -47,6 +47,7 @@ namespace MapaniApp
                 Escolaridad = txtEscolaridad.Text,
                 NombreEscuela = txtNombreEscuela.Text,
                 DireccionEscuela = txtDireccionEscuela.Text,
+                TipoDiscapacidad = comboTipoDiscapacidadNMB.Text,
                 Id = _contactNMB != null ? _contactNMB.Id : 0
             };
             _LogicLayer.SaveContact(Contact); 
@@ -64,13 +65,25 @@ namespace MapaniApp
                 Foto = Metodos.ImageToArray(PbFotoNewContact),
                 Telefono = TxtTelefono.Text,
                 Cedula = TxtCedula.Text,
-                EstadoCivil = ComboEstadoCivil.Text,
-                CantidadHijos = TxtHijos.Text,
+                EstadoCivil = ComboEstadoCivil.Text,              
                 Transporte = TxtTransporte.Text,
                 Parroquia = txtParroquia.Text,
                 Municipio = txtMunicipio.Text,
                 Estado = txtEstado.Text,
                 Ocupacion = txtOcupacion.Text,
+                IngresosPropios = ComboIngresosPropios.Text,
+                Discapacidad = ComboDiscapacidadCuidador.Text,
+                TipoDiscapacidad = ComboTipoDiscapacidadCuidador.Text,
+                GrupoEtnico = ComboGrupoEtnico.Text,
+                TipoGrupoEtnico = txtGrupoEtnico.Text,
+                Movilizacion = ComboMovilizacion.Text,
+                CharlaMuac = ComboMuacRecibido.Text,
+                CharlaLactancia = ComboCharlaLactancia.Text,
+                TieneHijos = ComboHijosHogar.Text,
+                CantidadHijos = TxtHijos.Text,
+                Rango1 = txtRango1.Text,
+                Rango2 = txtRango2.Text,
+                Rango3 = txtRango3.Text,
                 Id = _contactCuidador != null ? _contactCuidador.Id : 0
             };          
             _LogicLayer.SaveContactCuidador(Contact);
@@ -123,6 +136,10 @@ namespace MapaniApp
                 txtMunicipio.Text = contact.Municipio;
                 txtEstado.Text = contact.Estado;
                 PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);
+                txtEscolaridad.Text = contact.Escolaridad;
+                txtDireccionEscuela.Text = contact.DireccionEscuela;
+                txtNombreEscuela.Text = contact.NombreEscuela;
+                comboTipoDiscapacidadNMB.Text = contact.TipoDiscapacidad;
             }
 
 
@@ -149,6 +166,18 @@ namespace MapaniApp
                 txtEstado.Text = contact.Estado;
                 txtOcupacion.Text = contact.Ocupacion;
                 PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);
+                ComboIngresosPropios.Text = contact.IngresosPropios;
+                ComboDiscapacidadCuidador.Text = contact.Direccion;
+                ComboTipoDiscapacidadCuidador.Text = contact.TipoDiscapacidad;
+                ComboGrupoEtnico.Text = contact.GrupoEtnico;
+                txtGrupoEtnico.Text = contact.TipoGrupoEtnico;
+                ComboMovilizacion.Text = contact.Movilizacion;
+                ComboCharlaLactancia.Text = contact.CharlaLactancia;
+                ComboMuacRecibido.Text = contact.CharlaMuac;
+                ComboHijosHogar.Text = contact.TieneHijos;
+                txtRango1.Text = contact.Rango1;
+                txtRango2.Text = contact.Rango2;
+                txtRango3.Text = contact.Rango3;
             }
 
 
@@ -206,12 +235,14 @@ namespace MapaniApp
                 groupBox2.Visible = false;
                 groupNMB.Visible = true;
                 groupEscolaridad.Visible = true;
+                groupCharla.Visible = false;
             }
             else if (textBox1.Text == "MMB" || textBox1.Text == "Cuidador")
             {
                 groupBox2.Visible = true;
                 groupNMB.Visible = false;
                 groupEscolaridad.Visible = false;
+                groupCharla.Visible = true;
 
             }
         }
@@ -239,21 +270,12 @@ namespace MapaniApp
             }
             this.Close();
         }
-       
+
+
 
         #endregion
 
         private void AddContact_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelTransporte_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }

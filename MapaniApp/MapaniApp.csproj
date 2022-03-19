@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -197,6 +197,12 @@
       <DependentUpon>Escolaridad.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\ContactPsicologia.cs" />
+    <Compile Include="Transcripcion\ImprimirTranscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transcripcion\ImprimirTranscripcion.Designer.cs">
+      <DependentUpon>ImprimirTranscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Psicologia\EvaluacionInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -392,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Enfermeria\Enfermeria.resx">
       <DependentUpon>Enfermeria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transcripcion\ImprimirTranscripcion.resx">
+      <DependentUpon>ImprimirTranscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Asistencia.resx">
       <DependentUpon>Asistencia.cs</DependentUpon>

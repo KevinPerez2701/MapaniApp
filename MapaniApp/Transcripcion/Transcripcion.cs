@@ -136,7 +136,7 @@ namespace MapaniApp
                 TxtId.Visible = false;
                 dataGridView1.Visible = true;
             }
-            else if (ComboOperacion.Text == "Agregar Relacion")
+            else if (ComboOperacion.Text == "Agregar Relacion" || ComboOperacion.Text == "Imprimir")
             {
                 labelContactoID.Visible = true;
                 labelIdNMB.Visible = true;
@@ -172,6 +172,18 @@ namespace MapaniApp
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtId.Text);
+            ContactNMB contact = contacts[0];
+            List<ContactCuidador> contactsCuidador = _LogicLayer.GetContactsCuidador(TxtIdCuidador.Text);
+            ContactCuidador contactCuidador = contactsCuidador[0];
+            ImprimirTranscripcion Imprimir = new ImprimirTranscripcion();
+            Imprimir.LoadContact(contact);
+            Imprimir.LoadContactCuidador(contactCuidador);
+            Imprimir.ShowDialog(this);
         }
     }
 }

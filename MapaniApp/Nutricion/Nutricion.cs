@@ -90,7 +90,7 @@ namespace MapaniApp
             double x = 0.0;
             double y = 0.0;
             double w = 0.0;
-            if (txtSexo.Text == "Masculino")
+            if (txtSexo.Text == "Masculino" || txtSexo.Text == "Masculino\t")
             {
                 if (who2006.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement1: imc, measurement2: ageDays, sex: Sex.Male, z: ref z))
                 {
@@ -144,7 +144,7 @@ namespace MapaniApp
                     TxtSSFP.Text = Math.Round(p, 1).ToString();
                 }
             }
-            else if (txtSexo.Text == "Femenino")
+            else if (txtSexo.Text == "Femenino" || txtSexo.Text == "Femenino\t")
             {
                 if (who2006.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement1: imc, measurement2: ageDays, sex: Sex.Female, z: ref z))
                 {
@@ -276,7 +276,7 @@ namespace MapaniApp
             double x = 0.0;
             double y = 0.0;
             TxtIMCCalculado.Text = Math.Round(imc, 2).ToString();
-            if (txtSexo.Text == "Masculino")
+            if (txtSexo.Text == "Masculino" || txtSexo.Text == "Masculino\t")
             {
                 if (who2007.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement: imc, age: ageMonths, sex: Sex.Male, z: ref z))
                 {
@@ -297,7 +297,7 @@ namespace MapaniApp
                     TxtTallaEdadWho2007P.Text = Math.Round(p, 2).ToString();
                 }
             }
-            else if (txtSexo.Text == "Femenino")
+            else if (txtSexo.Text == "Femenino" || txtSexo.Text == "Femenino\t")
             {
                 if (who2007.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement: imc, age: ageMonths, sex: Sex.Female, z: ref z))
                 {
