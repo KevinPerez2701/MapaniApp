@@ -139,7 +139,7 @@ namespace MapaniApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelUser);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "Inicio de Sesion";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();

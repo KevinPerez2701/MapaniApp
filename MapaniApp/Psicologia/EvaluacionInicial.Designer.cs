@@ -30,9 +30,11 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txtEvaluacionInicial = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtAntecedentes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtEvaluacion = new System.Windows.Forms.TextBox();
@@ -48,8 +50,6 @@ namespace MapaniApp
             this.txtRiesgoAlto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtEvaluacionInicial = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,9 +88,20 @@ namespace MapaniApp
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.checkedListBox2);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1404, 712);
+            this.splitContainer1.Size = new System.Drawing.Size(1106, 712);
             this.splitContainer1.SplitterDistance = 314;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // txtEvaluacionInicial
+            // 
+            this.txtEvaluacionInicial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEvaluacionInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEvaluacionInicial.Location = new System.Drawing.Point(0, 25);
+            this.txtEvaluacionInicial.Multiline = true;
+            this.txtEvaluacionInicial.Name = "txtEvaluacionInicial";
+            this.txtEvaluacionInicial.Size = new System.Drawing.Size(1106, 289);
+            this.txtEvaluacionInicial.TabIndex = 109;
+            this.txtEvaluacionInicial.Visible = false;
             // 
             // checkedListBox1
             // 
@@ -137,7 +148,7 @@ namespace MapaniApp
             this.checkedListBox1.Location = new System.Drawing.Point(0, 25);
             this.checkedListBox1.MultiColumn = true;
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(1404, 289);
+            this.checkedListBox1.Size = new System.Drawing.Size(1106, 289);
             this.checkedListBox1.TabIndex = 1;
             // 
             // menuStrip1
@@ -147,7 +158,7 @@ namespace MapaniApp
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1404, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1106, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -159,19 +170,27 @@ namespace MapaniApp
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(45, 21);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // txtAntecedentes
             // 
-            this.txtAntecedentes.Location = new System.Drawing.Point(840, 293);
+            this.txtAntecedentes.Location = new System.Drawing.Point(761, 293);
             this.txtAntecedentes.Multiline = true;
             this.txtAntecedentes.Name = "txtAntecedentes";
-            this.txtAntecedentes.Size = new System.Drawing.Size(552, 89);
+            this.txtAntecedentes.Size = new System.Drawing.Size(333, 89);
             this.txtAntecedentes.TabIndex = 116;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(716, 325);
+            this.label10.Location = new System.Drawing.Point(634, 310);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(127, 24);
             this.label10.TabIndex = 115;
@@ -179,17 +198,17 @@ namespace MapaniApp
             // 
             // txtEvaluacion
             // 
-            this.txtEvaluacion.Location = new System.Drawing.Point(840, 198);
+            this.txtEvaluacion.Location = new System.Drawing.Point(761, 198);
             this.txtEvaluacion.Multiline = true;
             this.txtEvaluacion.Name = "txtEvaluacion";
-            this.txtEvaluacion.Size = new System.Drawing.Size(552, 89);
+            this.txtEvaluacion.Size = new System.Drawing.Size(333, 89);
             this.txtEvaluacion.TabIndex = 112;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(720, 230);
+            this.label11.Location = new System.Drawing.Point(634, 230);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 24);
             this.label11.TabIndex = 111;
@@ -200,7 +219,7 @@ namespace MapaniApp
             this.TxtMotivoConsulta.Location = new System.Drawing.Point(202, 293);
             this.TxtMotivoConsulta.Multiline = true;
             this.TxtMotivoConsulta.Name = "TxtMotivoConsulta";
-            this.TxtMotivoConsulta.Size = new System.Drawing.Size(507, 89);
+            this.TxtMotivoConsulta.Size = new System.Drawing.Size(426, 89);
             this.TxtMotivoConsulta.TabIndex = 110;
             // 
             // label9
@@ -218,7 +237,7 @@ namespace MapaniApp
             this.txtSistemaAuxiliar.Location = new System.Drawing.Point(202, 198);
             this.txtSistemaAuxiliar.Multiline = true;
             this.txtSistemaAuxiliar.Name = "txtSistemaAuxiliar";
-            this.txtSistemaAuxiliar.Size = new System.Drawing.Size(507, 89);
+            this.txtSistemaAuxiliar.Size = new System.Drawing.Size(426, 89);
             this.txtSistemaAuxiliar.TabIndex = 108;
             // 
             // label8
@@ -244,33 +263,33 @@ namespace MapaniApp
             // txtSinRiesgo
             // 
             this.txtSinRiesgo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSinRiesgo.Location = new System.Drawing.Point(158, 163);
+            this.txtSinRiesgo.Location = new System.Drawing.Point(146, 163);
             this.txtSinRiesgo.Name = "txtSinRiesgo";
-            this.txtSinRiesgo.Size = new System.Drawing.Size(1234, 29);
+            this.txtSinRiesgo.Size = new System.Drawing.Size(948, 29);
             this.txtSinRiesgo.TabIndex = 5;
             // 
             // txtRiesgoBajo
             // 
             this.txtRiesgoBajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRiesgoBajo.Location = new System.Drawing.Point(158, 128);
+            this.txtRiesgoBajo.Location = new System.Drawing.Point(146, 128);
             this.txtRiesgoBajo.Name = "txtRiesgoBajo";
-            this.txtRiesgoBajo.Size = new System.Drawing.Size(1234, 29);
+            this.txtRiesgoBajo.Size = new System.Drawing.Size(948, 29);
             this.txtRiesgoBajo.TabIndex = 4;
             // 
             // txtRiesgoMedio
             // 
             this.txtRiesgoMedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRiesgoMedio.Location = new System.Drawing.Point(158, 93);
+            this.txtRiesgoMedio.Location = new System.Drawing.Point(146, 93);
             this.txtRiesgoMedio.Name = "txtRiesgoMedio";
-            this.txtRiesgoMedio.Size = new System.Drawing.Size(1234, 29);
+            this.txtRiesgoMedio.Size = new System.Drawing.Size(948, 29);
             this.txtRiesgoMedio.TabIndex = 3;
             // 
             // txtRiesgoAlto
             // 
             this.txtRiesgoAlto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRiesgoAlto.Location = new System.Drawing.Point(158, 58);
+            this.txtRiesgoAlto.Location = new System.Drawing.Point(146, 58);
             this.txtRiesgoAlto.Name = "txtRiesgoAlto";
-            this.txtRiesgoAlto.Size = new System.Drawing.Size(1234, 29);
+            this.txtRiesgoAlto.Size = new System.Drawing.Size(948, 29);
             this.txtRiesgoAlto.TabIndex = 2;
             // 
             // label1
@@ -297,33 +316,16 @@ namespace MapaniApp
             this.checkedListBox2.Size = new System.Drawing.Size(98, 124);
             this.checkedListBox2.TabIndex = 0;
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(45, 21);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // txtEvaluacionInicial
-            // 
-            this.txtEvaluacionInicial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEvaluacionInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEvaluacionInicial.Location = new System.Drawing.Point(0, 25);
-            this.txtEvaluacionInicial.Multiline = true;
-            this.txtEvaluacionInicial.Name = "txtEvaluacionInicial";
-            this.txtEvaluacionInicial.Size = new System.Drawing.Size(1404, 289);
-            this.txtEvaluacionInicial.TabIndex = 109;
-            this.txtEvaluacionInicial.Visible = false;
-            // 
             // EvaluacionInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1404, 712);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1106, 712);
             this.Controls.Add(this.splitContainer1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "EvaluacionInicial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EvaluacionInicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.EvaluacionInicial_Load);

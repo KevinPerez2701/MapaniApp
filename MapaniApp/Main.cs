@@ -55,7 +55,7 @@ namespace MapaniApp
                 Almacen almacen = new Almacen();
                 almacen.Show(this);
             }
-            else if (ventana[0].Posicion == "Pediatra")
+            else if (ventana[0].Posicion == "Pediatria")
             {
                 Pediatria pediatria = new Pediatria();
                 pediatria.Show(this);

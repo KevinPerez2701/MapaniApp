@@ -272,7 +272,7 @@ namespace MapaniApp
             // 
             // txtSeguimiento
             // 
-            this.txtSeguimiento.Location = new System.Drawing.Point(223, 445);
+            this.txtSeguimiento.Location = new System.Drawing.Point(251, 306);
             this.txtSeguimiento.Multiline = true;
             this.txtSeguimiento.Name = "txtSeguimiento";
             this.txtSeguimiento.Size = new System.Drawing.Size(799, 59);
@@ -282,7 +282,7 @@ namespace MapaniApp
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(53, 460);
+            this.label12.Location = new System.Drawing.Point(81, 321);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(116, 24);
             this.label12.TabIndex = 107;
@@ -309,7 +309,7 @@ namespace MapaniApp
             "Cuidado Provisional",
             "Otro (Especifique)",
             "No"});
-            this.checkedListBox1.Location = new System.Drawing.Point(16, 549);
+            this.checkedListBox1.Location = new System.Drawing.Point(44, 410);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(221, 134);
             this.checkedListBox1.TabIndex = 110;
@@ -317,7 +317,7 @@ namespace MapaniApp
             // txtRazonOtro
             // 
             this.txtRazonOtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonOtro.Location = new System.Drawing.Point(277, 639);
+            this.txtRazonOtro.Location = new System.Drawing.Point(305, 500);
             this.txtRazonOtro.Name = "txtRazonOtro";
             this.txtRazonOtro.Size = new System.Drawing.Size(334, 29);
             this.txtRazonOtro.TabIndex = 114;
@@ -325,7 +325,7 @@ namespace MapaniApp
             // txtRazonCuidado
             // 
             this.txtRazonCuidado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonCuidado.Location = new System.Drawing.Point(277, 604);
+            this.txtRazonCuidado.Location = new System.Drawing.Point(305, 465);
             this.txtRazonCuidado.Name = "txtRazonCuidado";
             this.txtRazonCuidado.Size = new System.Drawing.Size(334, 29);
             this.txtRazonCuidado.TabIndex = 113;
@@ -333,7 +333,7 @@ namespace MapaniApp
             // txtRazonSeguridad
             // 
             this.txtRazonSeguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonSeguridad.Location = new System.Drawing.Point(277, 569);
+            this.txtRazonSeguridad.Location = new System.Drawing.Point(305, 430);
             this.txtRazonSeguridad.Name = "txtRazonSeguridad";
             this.txtRazonSeguridad.Size = new System.Drawing.Size(334, 29);
             this.txtRazonSeguridad.TabIndex = 112;
@@ -341,7 +341,7 @@ namespace MapaniApp
             // txtRazonSalud
             // 
             this.txtRazonSalud.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonSalud.Location = new System.Drawing.Point(277, 534);
+            this.txtRazonSalud.Location = new System.Drawing.Point(305, 395);
             this.txtRazonSalud.Name = "txtRazonSalud";
             this.txtRazonSalud.Size = new System.Drawing.Size(334, 29);
             this.txtRazonSalud.TabIndex = 111;
@@ -349,7 +349,7 @@ namespace MapaniApp
             // txtNoRazon
             // 
             this.txtNoRazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoRazon.Location = new System.Drawing.Point(277, 674);
+            this.txtNoRazon.Location = new System.Drawing.Point(305, 535);
             this.txtNoRazon.Name = "txtNoRazon";
             this.txtNoRazon.Size = new System.Drawing.Size(334, 29);
             this.txtNoRazon.TabIndex = 115;
@@ -357,7 +357,7 @@ namespace MapaniApp
             // txtNoAccion
             // 
             this.txtNoAccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoAccion.Location = new System.Drawing.Point(617, 674);
+            this.txtNoAccion.Location = new System.Drawing.Point(645, 535);
             this.txtNoAccion.Name = "txtNoAccion";
             this.txtNoAccion.Size = new System.Drawing.Size(339, 29);
             this.txtNoAccion.TabIndex = 120;
@@ -365,7 +365,7 @@ namespace MapaniApp
             // txtAccionOtra
             // 
             this.txtAccionOtra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccionOtra.Location = new System.Drawing.Point(617, 639);
+            this.txtAccionOtra.Location = new System.Drawing.Point(645, 500);
             this.txtAccionOtra.Name = "txtAccionOtra";
             this.txtAccionOtra.Size = new System.Drawing.Size(339, 29);
             this.txtAccionOtra.TabIndex = 119;
@@ -373,7 +373,7 @@ namespace MapaniApp
             // txtCuidadoProvisional
             // 
             this.txtCuidadoProvisional.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCuidadoProvisional.Location = new System.Drawing.Point(617, 604);
+            this.txtCuidadoProvisional.Location = new System.Drawing.Point(645, 465);
             this.txtCuidadoProvisional.Name = "txtCuidadoProvisional";
             this.txtCuidadoProvisional.Size = new System.Drawing.Size(339, 29);
             this.txtCuidadoProvisional.TabIndex = 118;
@@ -381,7 +381,7 @@ namespace MapaniApp
             // txtAccionSeguridad
             // 
             this.txtAccionSeguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccionSeguridad.Location = new System.Drawing.Point(617, 569);
+            this.txtAccionSeguridad.Location = new System.Drawing.Point(645, 430);
             this.txtAccionSeguridad.Name = "txtAccionSeguridad";
             this.txtAccionSeguridad.Size = new System.Drawing.Size(339, 29);
             this.txtAccionSeguridad.TabIndex = 117;
@@ -389,7 +389,7 @@ namespace MapaniApp
             // txtAccionSalud
             // 
             this.txtAccionSalud.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccionSalud.Location = new System.Drawing.Point(617, 534);
+            this.txtAccionSalud.Location = new System.Drawing.Point(645, 395);
             this.txtAccionSalud.Name = "txtAccionSalud";
             this.txtAccionSalud.Size = new System.Drawing.Size(339, 29);
             this.txtAccionSalud.TabIndex = 116;
@@ -398,7 +398,7 @@ namespace MapaniApp
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(23, 507);
+            this.label8.Location = new System.Drawing.Point(51, 368);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(214, 24);
             this.label8.TabIndex = 121;
@@ -408,7 +408,7 @@ namespace MapaniApp
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(334, 507);
+            this.label9.Location = new System.Drawing.Point(362, 368);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(198, 24);
             this.label9.TabIndex = 122;
@@ -418,7 +418,7 @@ namespace MapaniApp
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(738, 507);
+            this.label10.Location = new System.Drawing.Point(766, 368);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(139, 24);
             this.label10.TabIndex = 123;
@@ -428,7 +428,7 @@ namespace MapaniApp
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(398, 288);
+            this.label11.Location = new System.Drawing.Point(1102, 26);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 24);
             this.label11.TabIndex = 124;
@@ -455,7 +455,7 @@ namespace MapaniApp
             this.Fecha,
             this.Seguimiento});
             this.dataGridView1.DataSource = this.contactPsicologiaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(303, 315);
+            this.dataGridView1.Location = new System.Drawing.Point(1007, 53);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(299, 124);
             this.dataGridView1.TabIndex = 125;
@@ -555,7 +555,7 @@ namespace MapaniApp
             // btnGuardarCita
             // 
             this.btnGuardarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCita.Location = new System.Drawing.Point(636, 315);
+            this.btnGuardarCita.Location = new System.Drawing.Point(1097, 183);
             this.btnGuardarCita.Name = "btnGuardarCita";
             this.btnGuardarCita.Size = new System.Drawing.Size(147, 36);
             this.btnGuardarCita.TabIndex = 126;
@@ -566,7 +566,7 @@ namespace MapaniApp
             // BtnLimpiar
             // 
             this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.Location = new System.Drawing.Point(636, 357);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1097, 225);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(147, 36);
             this.BtnLimpiar.TabIndex = 127;
@@ -629,7 +629,8 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 710);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1253, 586);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.btnGuardarCita);
             this.Controls.Add(this.dataGridView1);
@@ -669,6 +670,7 @@ namespace MapaniApp
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "Psicologia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Psicologia";
             this.Load += new System.EventHandler(this.Psicologia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).EndInit();

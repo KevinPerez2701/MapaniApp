@@ -111,6 +111,7 @@ namespace MapaniApp
                 if (ComboCuidador.Text == "Cuidador")
                 {
                     _LogicLayer.InsertRelacion(TxtIdNMB.Text, TxtIdCuidador.Text,txtParentesco.Text);
+                    Clean();
                 }
                 else if (ComboCuidador.Text == "MMB")
                 {
@@ -184,6 +185,14 @@ namespace MapaniApp
             Imprimir.LoadContact(contact);
             Imprimir.LoadContactCuidador(contactCuidador);
             Imprimir.ShowDialog(this);
+        }
+
+        private void Clean()
+        {
+            TxtIdNMB.Text = "";
+            TxtIdCuidador.Text = "";
+            txtParentesco.Text = "";
+            ComboOperacion.Text = "";
         }
     }
 }
