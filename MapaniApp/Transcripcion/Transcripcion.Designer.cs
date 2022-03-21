@@ -30,7 +30,7 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelContacto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ComboOperacion = new System.Windows.Forms.ComboBox();
             this.ComboContacto = new System.Windows.Forms.ComboBox();
@@ -41,6 +41,7 @@ namespace MapaniApp
             this.labelCedula = new System.Windows.Forms.Label();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelIdNMB = new System.Windows.Forms.Label();
             this.TxtIdNMB = new System.Windows.Forms.TextBox();
             this.labelContactoID = new System.Windows.Forms.Label();
@@ -53,22 +54,21 @@ namespace MapaniApp
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelContacto
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Seleccione el Tipo de Contacto";
+            this.labelContacto.AutoSize = true;
+            this.labelContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContacto.Location = new System.Drawing.Point(12, 63);
+            this.labelContacto.Name = "labelContacto";
+            this.labelContacto.Size = new System.Drawing.Size(274, 24);
+            this.labelContacto.TabIndex = 0;
+            this.labelContacto.Text = "Seleccione el Tipo de Contacto";
+            this.labelContacto.Visible = false;
             // 
             // label2
             // 
@@ -108,6 +108,7 @@ namespace MapaniApp
             this.ComboContacto.Name = "ComboContacto";
             this.ComboContacto.Size = new System.Drawing.Size(172, 32);
             this.ComboContacto.TabIndex = 3;
+            this.ComboContacto.Visible = false;
             // 
             // button1
             // 
@@ -141,11 +142,12 @@ namespace MapaniApp
             this.labelId.TabIndex = 6;
             this.labelId.Text = "Ingrese el Id del Contacto";
             this.labelId.Visible = false;
+          
             // 
             // TxtId
             // 
             this.TxtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtId.Location = new System.Drawing.Point(330, 105);
+            this.TxtId.Location = new System.Drawing.Point(330, 102);
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(172, 29);
             this.TxtId.TabIndex = 7;
@@ -155,7 +157,7 @@ namespace MapaniApp
             // 
             this.labelCedula.AutoSize = true;
             this.labelCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCedula.Location = new System.Drawing.Point(12, 105);
+            this.labelCedula.Location = new System.Drawing.Point(12, 107);
             this.labelCedula.Name = "labelCedula";
             this.labelCedula.Size = new System.Drawing.Size(162, 24);
             this.labelCedula.TabIndex = 8;
@@ -165,7 +167,7 @@ namespace MapaniApp
             // TxtCedula
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCedula.Location = new System.Drawing.Point(330, 105);
+            this.TxtCedula.Location = new System.Drawing.Point(330, 102);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(172, 29);
             this.TxtCedula.TabIndex = 9;
@@ -179,20 +181,23 @@ namespace MapaniApp
             this.idDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
-            this.cedulaDataGridViewTextBoxColumn,
-            this.telefonoDataGridViewTextBoxColumn});
+            this.Parentesco});
             this.dataGridView1.DataSource = this.contactCuidadorBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 281);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(563, 79);
+            this.dataGridView1.Size = new System.Drawing.Size(524, 79);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.Visible = false;
+            // 
+            // contactCuidadorBindingSource
+            // 
+            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
             // 
             // labelIdNMB
             // 
             this.labelIdNMB.AutoSize = true;
             this.labelIdNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIdNMB.Location = new System.Drawing.Point(12, 105);
+            this.labelIdNMB.Location = new System.Drawing.Point(12, 107);
             this.labelIdNMB.Name = "labelIdNMB";
             this.labelIdNMB.Size = new System.Drawing.Size(191, 24);
             this.labelIdNMB.TabIndex = 11;
@@ -202,7 +207,7 @@ namespace MapaniApp
             // TxtIdNMB
             // 
             this.TxtIdNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIdNMB.Location = new System.Drawing.Point(330, 105);
+            this.TxtIdNMB.Location = new System.Drawing.Point(330, 102);
             this.TxtIdNMB.Name = "TxtIdNMB";
             this.TxtIdNMB.Size = new System.Drawing.Size(172, 29);
             this.TxtIdNMB.TabIndex = 12;
@@ -222,7 +227,7 @@ namespace MapaniApp
             // TxtIdCuidador
             // 
             this.TxtIdCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIdCuidador.Location = new System.Drawing.Point(330, 136);
+            this.TxtIdCuidador.Location = new System.Drawing.Point(330, 137);
             this.TxtIdCuidador.Name = "TxtIdCuidador";
             this.TxtIdCuidador.Size = new System.Drawing.Size(172, 29);
             this.TxtIdCuidador.TabIndex = 14;
@@ -232,7 +237,7 @@ namespace MapaniApp
             // 
             this.labelTipoCuidador.AutoSize = true;
             this.labelTipoCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipoCuidador.Location = new System.Drawing.Point(12, 68);
+            this.labelTipoCuidador.Location = new System.Drawing.Point(12, 60);
             this.labelTipoCuidador.Name = "labelTipoCuidador";
             this.labelTipoCuidador.Size = new System.Drawing.Size(277, 24);
             this.labelTipoCuidador.TabIndex = 15;
@@ -301,27 +306,17 @@ namespace MapaniApp
             this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
             this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
             // 
-            // cedulaDataGridViewTextBoxColumn
+            // Parentesco
             // 
-            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            // 
-            // contactCuidadorBindingSource
-            // 
-            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
+            this.Parentesco.DataPropertyName = "Parentesco";
+            this.Parentesco.HeaderText = "Parentesco";
+            this.Parentesco.Name = "Parentesco";
             // 
             // Transcripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 391);
+            this.ClientSize = new System.Drawing.Size(647, 391);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txtParentesco);
             this.Controls.Add(this.labelParentesco);
@@ -341,7 +336,7 @@ namespace MapaniApp
             this.Controls.Add(this.ComboContacto);
             this.Controls.Add(this.ComboOperacion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelContacto);
             this.Name = "Transcripcion";
             this.Text = "Transcripcion";
             this.Load += new System.EventHandler(this.Transcripcion_Load);
@@ -354,7 +349,7 @@ namespace MapaniApp
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelContacto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ComboOperacion;
         private System.Windows.Forms.ComboBox ComboContacto;
@@ -366,11 +361,6 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtCedula;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource contactCuidadorBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label labelIdNMB;
         private System.Windows.Forms.TextBox TxtIdNMB;
         private System.Windows.Forms.Label labelContactoID;
@@ -380,5 +370,9 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox txtParentesco;
         private System.Windows.Forms.Label labelParentesco;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Parentesco;
     }
 }

@@ -228,6 +228,10 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetCuidadores(SearchText);
         }
+        public List<ContactNMB> GetRelacion (string SearchText = null)
+        {
+            return _dataAccessLayer.GetRelacion(SearchText);
+        }
         public List<ContactNMB> GetNMB(string SearchText = null)
         {
             return _dataAccessLayer.GetNMB(SearchText);
@@ -292,9 +296,9 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetAsistencia();
         }
-        public void InsertRelacion(string IdNMB, string IdCuidador,string parentesco)
+        public void InsertRelacion(string IdNMB, string IdCuidador,string parentesco, string cedula)
         {
-            _dataAccessLayer.InsertRelacion(IdNMB, IdCuidador,parentesco);
+            _dataAccessLayer.InsertRelacion(IdNMB, IdCuidador,parentesco,cedula);
         }
         public void InsertRelacionMMB(string IdNMB, string IdMMB, string parentesco)
         {
@@ -304,6 +308,20 @@ namespace MapaniApp
         {
            return _dataAccessLayer.Login(User, Password);
         }
+
+        public int GetMaxID()
+        {
+            return _dataAccessLayer.GetMaxId();
+        }
+        public int GetMaxIDCuidador()
+        {
+            return _dataAccessLayer.GetMaxIdCuidador();
+        }
+        public int GetMaxIDMMB()
+        {
+            return _dataAccessLayer.GetMaxIdMMB();
+        }
         #endregion
+
     }
 }

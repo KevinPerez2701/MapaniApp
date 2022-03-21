@@ -159,15 +159,14 @@ namespace MapaniApp
                 TxtTelefono.Text = contact.Telefono;
                 TxtTransporte.Text = contact.Transporte;
                 ComboSexo.Text = contact.Sexo;
-                TxtDireccion.Text = contact.Direccion;
-                TxtDireccion.Text = contact.Direccion;
+                TxtDireccion.Text = contact.Direccion;             
                 txtParroquia.Text = contact.Parroquia;
                 txtMunicipio.Text = contact.Municipio;
                 txtEstado.Text = contact.Estado;
                 txtOcupacion.Text = contact.Ocupacion;
                 PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);
                 ComboIngresosPropios.Text = contact.IngresosPropios;
-                ComboDiscapacidadCuidador.Text = contact.Direccion;
+                ComboDiscapacidadCuidador.Text = contact.Discapacidad;
                 ComboTipoDiscapacidadCuidador.Text = contact.TipoDiscapacidad;
                 ComboGrupoEtnico.Text = contact.GrupoEtnico;
                 txtGrupoEtnico.Text = contact.TipoGrupoEtnico;
@@ -213,6 +212,34 @@ namespace MapaniApp
             textBox1.ReadOnly = true;
             textBox2.Text = Id;
             textBox2.ReadOnly = true;
+        }
+        public void LoadId(string Contact)
+        {
+            int aux;
+            textBox1.Text = Contact;
+            textBox1.ReadOnly = true;
+            if (Contact == "NMB")
+            {
+                aux = _LogicLayer.GetMaxID();
+                aux++;
+                textBox2.Text = aux.ToString();
+                textBox2.ReadOnly = true;
+            }
+            else if (Contact == "Cuidador")
+            {
+                aux = _LogicLayer.GetMaxIDCuidador();
+                aux++;
+                textBox2.Text = aux.ToString();
+                textBox2.ReadOnly = true;
+            }
+            else if (Contact == "MMB")
+            {
+                aux = _LogicLayer.GetMaxIDMMB();
+                aux++;
+                textBox2.Text = aux.ToString();
+                textBox2.ReadOnly = true;
+            }
+
         }
         public void EditUser(string Contact, string Id)
         {

@@ -292,7 +292,7 @@ namespace MapaniApp
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(260, 16);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(69, 29);
+            this.textBox1.Size = new System.Drawing.Size(102, 29);
             this.textBox1.TabIndex = 31;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -718,7 +718,7 @@ namespace MapaniApp
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(335, 19);
+            this.label8.Location = new System.Drawing.Point(364, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(20, 24);
             this.label8.TabIndex = 65;
@@ -727,7 +727,7 @@ namespace MapaniApp
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(358, 16);
+            this.textBox2.Location = new System.Drawing.Point(390, 14);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(48, 29);
             this.textBox2.TabIndex = 66;

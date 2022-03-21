@@ -15,8 +15,8 @@ namespace MapaniApp
     { 
          // private SqlConnection Connection = new SqlConnection("data source=192.168.68.166,1433; initial catalog=MAPANI; user id=kevin; password =Mapani2022;");
         // private SqlConnection Connection = new SqlConnection("data source=192.168.68.118,1433; initial catalog=MAPANI; user id=kevin; password =1234;");
-        //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-         private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+        // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -262,7 +262,7 @@ namespace MapaniApp
                 SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
                 SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
                 SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
-                SqlParameter IngresosPropios = new SqlParameter("@Ingresos", contact.IngresosPropios);
+                SqlParameter IngresosPropios = new SqlParameter("@IngresosPropios", contact.IngresosPropios);
                 SqlParameter Discapacidad = new SqlParameter("@Discapacidad", contact.Discapacidad);
                 SqlParameter TipoDiscapacidad = new SqlParameter("@TipoDiscapacidad", contact.TipoDiscapacidad);
                 SqlParameter GrupoEtnico = new SqlParameter("@GrupoEtnico", contact.GrupoEtnico);
@@ -867,22 +867,23 @@ namespace MapaniApp
         /// <param name="IdNMB"></param>
         /// <param name="IdCuidador"></param>
         /// <param name="Parentesco"></param>
-        public void InsertRelacion(string IdNMB,string IdCuidador, string Parentesco)
+        public void InsertRelacion(string IdNMB,string IdCuidador, string Parentesco, string Cedulas)
         {
             try
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into Referencia(NMB,Cuidador,Parentesco) 
-                                    Values(@IdNMB,@IdCuidador,@Parentesco)";
+                                    Insert into Referencia(NMB,Cuidador,Parentesco,Cedula) 
+                                    Values(@IdNMB,@IdCuidador,@Parentesco,@Cedula)";
                 SqlParameter NMB = new SqlParameter("@IdNMB",int.Parse(IdNMB));
                 SqlParameter Cuidador = new SqlParameter("@IdCuidador", int.Parse(IdCuidador));
                 SqlParameter Relacion = new SqlParameter("@Parentesco", Parentesco);
+                SqlParameter Cedula = new SqlParameter("@Cedula",Cedulas);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(NMB);
                 command.Parameters.Add(Cuidador);
                 command.Parameters.Add(Relacion);
-
+                command.Parameters.Add(Cedula);
                 command.ExecuteNonQuery();
 
             }
@@ -1498,7 +1499,7 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                string query = @"Select * FROM TablaCuidador Where Id=@Search";
+                string query = @"Select * FROM TablaCuidador Where Id=@Search or Cedula=@Search";
                 SqlCommand command = new SqlCommand();
                 command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
                 /*   if (!string.IsNullOrEmpty(Search))
@@ -1829,6 +1830,45 @@ namespace MapaniApp
                         FechaNacimiento = (DateTime)reader["FechaNacimiento"],
                         Cedula = reader ["Cedula"].ToString(),
                         Parentesco = reader ["Parentesco"].ToString(),
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return contacts;
+        }
+        public List<ContactNMB> GetRelacion(string Search = null)
+        {
+            List<ContactNMB> contacts = new List<ContactNMB>();
+            try
+            {
+                Connection.Open();
+                string query = @"Select * 
+                                From Referencia
+                                Join TablaNMB
+                                on TablaNMB.Id = Referencia.NMB
+                                where Referencia.Cedula = @search";
+                SqlCommand command = new SqlCommand();
+                command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    contacts.Add(new ContactNMB
+                    {
+                        Id = int.Parse(reader["Id"].ToString()),
+                        Nombre = reader["Nombre"].ToString(),
+                        Apellido = reader["Apellido"].ToString(),
+                        
+                        Parentesco = reader["Parentesco"].ToString(),
                     });
                 }
             }
@@ -2637,6 +2677,103 @@ namespace MapaniApp
             }
             return Citas;
         }
+        public int GetMaxId()
+        {
+            int MaxId=0;
+            try
+            {
+                Connection.Open();
+                string query = @"SELECT MAX(Id) MaxId FROM TablaNMB;";
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    MaxId = int.Parse(reader["MaxID"].ToString());
+                       
+                 };
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return MaxId;
+        }
+        public int GetMaxIdCuidador()
+        {
+            int MaxId = 0;
+            try
+            {
+                Connection.Open();
+                string query = @"SELECT MAX(Id) MaxId FROM TablaCuidador;";
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    MaxId = int.Parse(reader["MaxID"].ToString());
+
+                };
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return MaxId;
+        }
+        public int GetMaxIdMMB()
+        {
+            int MaxId = 0;
+            try
+            {
+                Connection.Open();
+                string query = @"SELECT MAX(Id) MaxId FROM TablaMMB;";
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    MaxId = int.Parse(reader["MaxID"].ToString());
+
+                };
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return MaxId;
+        }
+      
         /// <summary>
         /// Obtiene la Asistencia del usuario.
         /// </summary>

@@ -30,7 +30,7 @@ namespace MapaniApp
             if (ComboOperacion.Text=="Agregar Contacto")
             {
                 AddContact contact = new AddContact();
-                contact.LoadUser(ComboContacto.Text);
+                contact.LoadId(ComboContacto.Text);
                 contact.ShowDialog(this);
             }
             else if (ComboOperacion.Text == "Editar Contacto")
@@ -42,18 +42,18 @@ namespace MapaniApp
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContact(contact);
                     contactDetails.EditUser(ComboContacto.Text,TxtId.Text);
-                  
                     contactDetails.ShowDialog(this);
+                    Clean();
                 }
                 else if (ComboContacto.Text == "Cuidador")
                 {
                     List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtId.Text);
                     ContactCuidador contact = contacts[0];
                     AddContact contactDetails = new AddContact();
-                    contactDetails.LoadContactCuidador(contact);
-                    
-                    contactDetails.EditUser(ComboContacto.Text, TxtId.Text);
+                    contactDetails.LoadContactCuidador(contact);             
+                    contactDetails.EditUser(ComboContacto.Text, contact.Id.ToString());
                     contactDetails.ShowDialog(this);
+                    Clean();
                 }
                 else if (ComboContacto.Text == "MMB")
                 {
@@ -61,9 +61,9 @@ namespace MapaniApp
                     ContactMMB contact = contacts[0];
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContactMMB(contact);
-                    contactDetails.EditUser(ComboContacto.Text, TxtId.Text);
-                   
+                    contactDetails.EditUser(ComboContacto.Text, contact.Id.ToString());                   
                     contactDetails.ShowDialog(this);
+                    Clean();
                 }
 
             }
@@ -77,6 +77,7 @@ namespace MapaniApp
                     contactDetails.LoadUser(ComboContacto.Text,TxtId.Text);
                     contactDetails.HideSave();
                     contactDetails.ShowDialog(this);
+                    Clean();
                 }
           
                 else if (ComboContacto.Text =="Cuidador")
@@ -86,8 +87,9 @@ namespace MapaniApp
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContactCuidador(contact);
                     contactDetails.HideSave();
-                    contactDetails.LoadUser(ComboContacto.Text, TxtId.Text);
+                    contactDetails.LoadUser(ComboContacto.Text, contact.Id.ToString());
                     contactDetails.ShowDialog(this);
+                    Clean();
                 }
                 else if (ComboContacto.Text =="MMB")
                 {
@@ -95,50 +97,71 @@ namespace MapaniApp
                     ContactMMB contact = contacts[0];
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContactMMB(contact);
-                    contactDetails.LoadUser(ComboContacto.Text, TxtId.Text);
+                    contactDetails.LoadUser(ComboContacto.Text, contact.Id.ToString());
                     contactDetails.HideSave();
                     contactDetails.ShowDialog(this);
+                    Clean();
                 }
             }
             else if (ComboOperacion.Text=="Buscar Contacto")
             {
-                List<ContactCuidador> Cedula = _LogicLayer.GetCedulaCuidador(TxtCedula.Text);
-               // ContactCuidador contact = Cedula[0];
+                List<ContactNMB> Cedula = _LogicLayer.GetRelacion(TxtCedula.Text);               
                 dataGridView1.DataSource = Cedula;
+                
             }
             else if (ComboOperacion.Text == "Agregar Relacion")
             {
                 if (ComboCuidador.Text == "Cuidador")
                 {
-                    _LogicLayer.InsertRelacion(TxtIdNMB.Text, TxtIdCuidador.Text,txtParentesco.Text);
+                    List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtIdCuidador.Text);
+                    ContactCuidador contact = contacts[0];
+
+                    _LogicLayer.InsertRelacion(TxtIdNMB.Text, contact.Id.ToString(),txtParentesco.Text,contact.Cedula);
                     Clean();
                 }
                 else if (ComboCuidador.Text == "MMB")
                 {
                     _LogicLayer.InsertRelacionMMB(TxtIdNMB.Text, TxtIdCuidador.Text,txtParentesco.Text);
+                    Clean();
                 }
             }
         }
 
         private void ComboOperacion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboOperacion.Text == "Editar Contacto" || ComboOperacion.Text == "Ver Contacto")
+            if (ComboOperacion.Text == "Agregar Contacto")
             {
+                HideLabels();
+                labelContacto.Visible = true;
+                ComboContacto.Visible = true;
+
+            }
+            else if (ComboOperacion.Text == "")
+            {
+                HideLabels();
+            }
+
+            else if (ComboOperacion.Text == "Editar Contacto" || ComboOperacion.Text == "Ver Contacto")
+            {
+                HideLabels();
+                labelContacto.Visible = true;
+                ComboContacto.Visible = true;
                 labelId.Visible = true;
-                labelCedula.Visible = false;
-                TxtCedula.Visible = false;
                 TxtId.Visible = true;
             }
             else if (ComboOperacion.Text == "Buscar Contacto")
             {
+                HideLabels();
+                labelTipoCuidador.Visible = true;
+                ComboCuidador.Visible = true;
                 labelCedula.Visible = true;
                 TxtCedula.Visible = true;
-                labelId.Visible = false;
-                TxtId.Visible = false;
                 dataGridView1.Visible = true;
             }
             else if (ComboOperacion.Text == "Agregar Relacion" || ComboOperacion.Text == "Imprimir")
             {
+                labelTipoCuidador.Visible = true;
+                ComboCuidador.Visible = true;
                 labelContactoID.Visible = true;
                 labelIdNMB.Visible = true;
                 TxtIdNMB.Visible = true;
@@ -147,26 +170,12 @@ namespace MapaniApp
                 ComboCuidador.Visible = true;
                 labelParentesco.Visible = true;
                 txtParentesco.Visible = true;
-                labelCedula.Visible = false;
-                TxtCedula.Visible = false;
+               
             }
-
 
             else
             {
-                labelParentesco.Visible = false;
-                txtParentesco.Visible = false;
-                labelTipoCuidador.Visible = false;
-                ComboCuidador.Visible = false;
-                dataGridView1.Visible = false;
-                labelId.Visible = false;
-                TxtId.Visible = false;
-                labelCedula.Visible = false;
-                TxtCedula.Visible = false;
-                labelContactoID.Visible = false;
-                labelIdNMB.Visible = false;
-                TxtIdNMB.Visible = false;
-                TxtIdCuidador.Visible = false;
+                HideLabels();
             }
         }
 
@@ -187,12 +196,40 @@ namespace MapaniApp
             Imprimir.ShowDialog(this);
         }
 
+        
+
+        private void HideLabels()
+        {
+            labelTipoCuidador.Visible = false;
+            ComboCuidador.Visible = false;
+            labelCedula.Visible = false;
+            TxtCedula.Visible = false;
+            labelId.Visible = false;
+            TxtId.Visible = false;
+            labelContactoID.Visible = false;
+            TxtIdCuidador.Visible = false;
+            labelIdNMB.Visible = false;
+            TxtIdNMB.Visible = false;
+            ComboContacto.Visible = false;
+            labelContacto.Visible = false;
+            labelParentesco.Visible = false;
+            txtParentesco.Visible = false;
+            dataGridView1.Visible = false;           
+            dataGridView1.DataSource = null;
+        }
         private void Clean()
         {
             TxtIdNMB.Text = "";
             TxtIdCuidador.Text = "";
             txtParentesco.Text = "";
-            ComboOperacion.Text = "";
+            TxtCedula.Text = "";
+            TxtId.Text = "";
+            ComboCuidador.Text = "";
+            ComboContacto.Text = "";
+            ComboOperacion.Text = "";           
+            HideLabels();
         }
+
+       
     }
 }
