@@ -27,18 +27,29 @@ namespace MapaniApp
                 Evolutivo.Data(new ClaseEnfermeria
                 {
                     Antecedentes = dataGridView1.Rows[e.RowIndex].Cells[17].Value.ToString(),
-                    Patologia =dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString(),
+                    Patologia = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString(),
                     Observacion = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString(),
                 });
                 Evolutivo.HideButton();
                 Evolutivo.ShowDialog(this);
             }
+            else if (cell.Value.ToString() == "Productos") // Si se selecciona el hipervinculo "confirmar"
+             {
+                 EntregaOrdenes VerOrdenes = new EntregaOrdenes();
+                 VerOrdenes.GetHistorial(new DataAlmacen
+                 {
+                     IdNMB = dataGridView1.Rows[e.RowIndex].Cells[23].Value.ToString(),
+                     Fecha = (DateTime)dataGridView1.Rows[e.RowIndex].Cells[0].Value,
+                 });
+                 VerOrdenes.ShowDialog(this); 
+             } 
         }
-       
+
         public void GetDataPediatria(string ID, int Dias)
         {
             List<ClaseEnfermeria> Data = _LogicLayer.GetDataPediatria(ID);
             dataGridView1.DataSource = Data;
+           
             if (Dias>1825)
             {
                 dataGridView1.Columns[7].Visible = true;

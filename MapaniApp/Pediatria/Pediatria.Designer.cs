@@ -113,6 +113,8 @@ namespace MapaniApp
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtEdadVisible = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.DatosEnfermeria.SuspendLayout();
             this.GroupWHO2006.SuspendLayout();
             this.GroupWHO2007.SuspendLayout();
@@ -137,6 +139,7 @@ namespace MapaniApp
             this.TxtEdad.Name = "TxtEdad";
             this.TxtEdad.Size = new System.Drawing.Size(173, 29);
             this.TxtEdad.TabIndex = 90;
+            this.TxtEdad.Visible = false;
             // 
             // label13
             // 
@@ -147,6 +150,7 @@ namespace MapaniApp
             this.label13.Size = new System.Drawing.Size(96, 24);
             this.label13.TabIndex = 89;
             this.label13.Text = "Edad Dias";
+            this.label13.Visible = false;
             // 
             // comboPrograma
             // 
@@ -332,7 +336,6 @@ namespace MapaniApp
             this.label18.TabIndex = 95;
             this.label18.Tag = "Contact";
             this.label18.Text = "SSF (mm)";
-            
             // 
             // TxtSSF
             // 
@@ -353,7 +356,6 @@ namespace MapaniApp
             this.label11.TabIndex = 93;
             this.label11.Tag = "Contact";
             this.label11.Text = "CMB (cm)";
-         
             // 
             // TxtCMB
             // 
@@ -414,7 +416,6 @@ namespace MapaniApp
             this.labelPeso.TabIndex = 69;
             this.labelPeso.Tag = "Contact";
             this.labelPeso.Text = "Peso (Kg)";
-           
             // 
             // labelTalla
             // 
@@ -680,7 +681,6 @@ namespace MapaniApp
             this.label1.TabIndex = 69;
             this.label1.Tag = "Contact";
             this.label1.Text = "Peso-Edad";
-         
             // 
             // label8
             // 
@@ -731,6 +731,7 @@ namespace MapaniApp
             this.label19.Size = new System.Drawing.Size(116, 24);
             this.label19.TabIndex = 96;
             this.label19.Text = "Edad Meses";
+            this.label19.Visible = false;
             // 
             // TxtEdadMeses
             // 
@@ -739,6 +740,7 @@ namespace MapaniApp
             this.TxtEdadMeses.Name = "TxtEdadMeses";
             this.TxtEdadMeses.Size = new System.Drawing.Size(173, 29);
             this.TxtEdadMeses.TabIndex = 97;
+            this.TxtEdadMeses.Visible = false;
             // 
             // label20
             // 
@@ -1010,11 +1012,31 @@ namespace MapaniApp
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtEdadVisible
+            // 
+            this.txtEdadVisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdadVisible.Location = new System.Drawing.Point(601, 136);
+            this.txtEdadVisible.Name = "txtEdadVisible";
+            this.txtEdadVisible.Size = new System.Drawing.Size(173, 29);
+            this.txtEdadVisible.TabIndex = 110;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(478, 139);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(55, 24);
+            this.label24.TabIndex = 109;
+            this.label24.Text = "Edad";
+            // 
             // Pediatria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 602);
+            this.Controls.Add(this.txtEdadVisible);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSexo);
@@ -1144,5 +1166,7 @@ namespace MapaniApp
         private System.Windows.Forms.ComboBox ComboUrgencias;
         private System.Windows.Forms.ComboBox ComboReferido;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtEdadVisible;
+        private System.Windows.Forms.Label label24;
     }
 }

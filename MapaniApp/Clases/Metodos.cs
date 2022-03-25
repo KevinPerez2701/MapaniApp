@@ -147,7 +147,17 @@ namespace MapaniApp
             edad =Math.Floor((tS.TotalDays / 365)).ToString();
             return edad;
         }
+        public static string ObtenerEdad(DateTime birthday)
+        {
+            var now = DateTime.Now;
+
+            var yearsOld = now - birthday;
+            int years = (int)(yearsOld.TotalDays / 365.25);
+            int months = (int)(((yearsOld.TotalDays / 365.25) - years) * 12);
+
+            return $"{years} Años {(months > 0 ? $"y {months} meses" : "")}";
+        }
         #endregion
-        
+
     }
 }

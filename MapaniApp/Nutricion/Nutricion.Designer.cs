@@ -116,6 +116,8 @@ namespace MapaniApp
             this.labelTalla = new System.Windows.Forms.Label();
             this.TxtTalla = new System.Windows.Forms.TextBox();
             this.TxtPeso = new System.Windows.Forms.TextBox();
+            this.txtEdadVisible = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.GroupWHO2007.SuspendLayout();
             this.GroupWHO2006.SuspendLayout();
@@ -404,6 +406,7 @@ namespace MapaniApp
             this.TxtEdadMeses.Name = "TxtEdadMeses";
             this.TxtEdadMeses.Size = new System.Drawing.Size(173, 29);
             this.TxtEdadMeses.TabIndex = 124;
+            this.TxtEdadMeses.Visible = false;
             // 
             // label19
             // 
@@ -414,6 +417,7 @@ namespace MapaniApp
             this.label19.Size = new System.Drawing.Size(116, 24);
             this.label19.TabIndex = 123;
             this.label19.Text = "Edad Meses";
+            this.label19.Visible = false;
             // 
             // BtnCalcular
             // 
@@ -721,6 +725,7 @@ namespace MapaniApp
             this.TxtEdad.Name = "TxtEdad";
             this.TxtEdad.Size = new System.Drawing.Size(173, 29);
             this.TxtEdad.TabIndex = 117;
+            this.TxtEdad.Visible = false;
             // 
             // label13
             // 
@@ -731,6 +736,7 @@ namespace MapaniApp
             this.label13.Size = new System.Drawing.Size(96, 24);
             this.label13.TabIndex = 116;
             this.label13.Text = "Edad Dias";
+            this.label13.Visible = false;
             // 
             // comboPrograma
             // 
@@ -1025,11 +1031,31 @@ namespace MapaniApp
             this.TxtPeso.TabIndex = 80;
             this.TxtPeso.Tag = "Contact";
             // 
+            // txtEdadVisible
+            // 
+            this.txtEdadVisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdadVisible.Location = new System.Drawing.Point(601, 136);
+            this.txtEdadVisible.Name = "txtEdadVisible";
+            this.txtEdadVisible.Size = new System.Drawing.Size(173, 29);
+            this.txtEdadVisible.TabIndex = 136;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(478, 139);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(55, 24);
+            this.label24.TabIndex = 135;
+            this.label24.Text = "Edad";
+            // 
             // Nutricion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 626);
+            this.Controls.Add(this.txtEdadVisible);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.DatosEnfermeria);
             this.Controls.Add(this.BtnHistorialNutricional);
             this.Controls.Add(this.BtnSucesivo);
@@ -1161,5 +1187,7 @@ namespace MapaniApp
         private System.Windows.Forms.Label labelTalla;
         private System.Windows.Forms.TextBox TxtTalla;
         private System.Windows.Forms.TextBox TxtPeso;
+        private System.Windows.Forms.TextBox txtEdadVisible;
+        private System.Windows.Forms.Label label24;
     }
 }

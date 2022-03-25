@@ -18,18 +18,22 @@ namespace MapaniApp
         {  
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-            
-            // LoginForm Login = new LoginForm();
-            //DialogResult Result = Login.ShowDialog();
-            //if (Result == DialogResult.OK)
-            //{
+            CultureInfo current = Thread.CurrentThread.CurrentUICulture;
+            if (current.TwoLetterISOLanguageName != "fr")
+            {
+                CultureInfo newCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Thread.CurrentThread.CurrentUICulture = newCulture;
+                // Make current UI culture consistent with current culture.
+                Thread.CurrentThread.CurrentCulture = newCulture;
+            }
+            Console.WriteLine("The current UI culture is {0} [{1}]",
+                              Thread.CurrentThread.CurrentUICulture.NativeName,
+                              Thread.CurrentThread.CurrentUICulture.Name);
+            Console.WriteLine("The current culture is {0} [{1}]",
+                              Thread.CurrentThread.CurrentUICulture.NativeName,
+                              Thread.CurrentThread.CurrentUICulture.Name);
             Application.Run(new Main());     
-               
-             //
-            //else
-            //  Application.Exit();
-
+            
         }
     }
 }

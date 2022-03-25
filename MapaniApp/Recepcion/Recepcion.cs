@@ -27,6 +27,7 @@ namespace MapaniApp
         /// <param name="SearchText"></param>
         public void PopulateContacts(string SearchText = null)
         {
+            dataGridRelaciones.DataSource = null;
             List<ContactCuidador> contacts = _LogicLayer.GetCuidadores(SearchText);
             dataGridRelaciones.DataSource = contacts;
         }
@@ -36,6 +37,7 @@ namespace MapaniApp
         /// <param name="SearchText"></param>
         public void PopulateContactsNMB(string SearchText = null)
         {
+            dataGridRelaciones.DataSource = null;
             List<ContactNMB> contacts = _LogicLayer.GetNMB(SearchText);
             dataGridRelaciones.DataSource = contacts;
         }
@@ -45,6 +47,7 @@ namespace MapaniApp
         /// <param name="SearchText"></param>
         public void PopulateContactsMMB(string SearchText = null)
         {
+            dataGridRelaciones.DataSource = null;
             List<ContactMMB> contacts = _LogicLayer.GetMMB(SearchText);
             dataGridRelaciones.DataSource = contacts;
         }
@@ -54,6 +57,8 @@ namespace MapaniApp
         /// <param name="SearchText"></param>
         public void PopulateContactsVisita(string SearchText = null)
         {
+            dataGridHistorial.DataSource = null;
+            dataGridProximasVisitas.DataSource = null;
             List<HistorialVisitas> Historial = _LogicLayer.GetHistorial(SearchText);
             dataGridHistorial.DataSource = Historial;
             List<ProximasVisitas> Proximas = _LogicLayer.GetProximas(SearchText);

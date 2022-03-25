@@ -41,7 +41,7 @@ namespace MapaniApp
             this.labelCedula = new System.Windows.Forms.Label();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelIdNMB = new System.Windows.Forms.Label();
             this.TxtIdNMB = new System.Windows.Forms.TextBox();
             this.labelContactoID = new System.Windows.Forms.Label();
@@ -50,11 +50,10 @@ namespace MapaniApp
             this.ComboCuidador = new System.Windows.Forms.ComboBox();
             this.txtParentesco = new System.Windows.Forms.TextBox();
             this.labelParentesco = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +88,8 @@ namespace MapaniApp
             "Editar Contacto",
             "Ver Contacto",
             "Buscar Contacto",
-            "Agregar Relacion"});
+            "Agregar Relacion",
+            "Imprimir"});
             this.ComboOperacion.Location = new System.Drawing.Point(330, 18);
             this.ComboOperacion.Name = "ComboOperacion";
             this.ComboOperacion.Size = new System.Drawing.Size(172, 32);
@@ -142,7 +142,6 @@ namespace MapaniApp
             this.labelId.TabIndex = 6;
             this.labelId.Text = "Ingrese el Id del Contacto";
             this.labelId.Visible = false;
-          
             // 
             // TxtId
             // 
@@ -189,9 +188,11 @@ namespace MapaniApp
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.Visible = false;
             // 
-            // contactCuidadorBindingSource
+            // Parentesco
             // 
-            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
+            this.Parentesco.DataPropertyName = "Parentesco";
+            this.Parentesco.HeaderText = "Parentesco";
+            this.Parentesco.Name = "Parentesco";
             // 
             // labelIdNMB
             // 
@@ -277,17 +278,6 @@ namespace MapaniApp
             this.labelParentesco.Text = "Seleccione Parentesco";
             this.labelParentesco.Visible = false;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(428, 217);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 57);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Imprimir";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -306,18 +296,15 @@ namespace MapaniApp
             this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
             this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
             // 
-            // Parentesco
+            // contactCuidadorBindingSource
             // 
-            this.Parentesco.DataPropertyName = "Parentesco";
-            this.Parentesco.HeaderText = "Parentesco";
-            this.Parentesco.Name = "Parentesco";
+            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
             // 
             // Transcripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 391);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.txtParentesco);
             this.Controls.Add(this.labelParentesco);
             this.Controls.Add(this.ComboCuidador);
@@ -369,7 +356,6 @@ namespace MapaniApp
         private System.Windows.Forms.ComboBox ComboCuidador;
         private System.Windows.Forms.TextBox txtParentesco;
         private System.Windows.Forms.Label labelParentesco;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;

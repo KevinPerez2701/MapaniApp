@@ -16,6 +16,7 @@ namespace MapaniApp
         private ContactNMB _contactNMB = new ContactNMB();
         private ContactCuidador _contactCuidador = new ContactCuidador();
         private LogicLayer _LogicLayer = new LogicLayer();
+        private Metodos _metodos = new Metodos();
         public ImprimirTranscripcion()
         {
             InitializeComponent();
@@ -45,21 +46,19 @@ namespace MapaniApp
 
         }
 
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
+     
         public void LoadContact(ContactNMB contact)
-        {
+        {   
             _contactNMB = contact;
             if (contact != null)
-            {
+            {   
                 TxtNombre.Text = contact.Nombre;
                 TxtApellido.Text = contact.Apellido;
                 FechaNacimientoNMB.Value = contact.FechaNacimiento.Date;
                 Fecha.Value = contact.FechaIngreso.Date;
                 TxtGenero.Text = contact.Sexo;
-                txtDiscapacidad.Text = contact.Discapacidad;
+                ComboDiscapacidadNMB.Text = contact.Discapacidad;
+                ComboTipoDiscapacidadCuidador.Text = contact.TipoDiscapacidad;
                 txtIdNMB.Text = Convert.ToString(contact.Id);
                 txtPartidaNacimiento.Text = contact.PartidaNacimiento;
                 txtTipoIngreso.Text = contact.Ingreso;
@@ -67,7 +66,9 @@ namespace MapaniApp
                 txtParroquia.Text = contact.Parroquia;
                 txtMunicipio.Text = contact.Municipio;
                 txtEstado.Text = contact.Estado;
-
+                txtEdadNMB.Text = Metodos.ObtenerEdad(contact.FechaNacimiento.Date);
+                List<ContactCuidador> Relacion = _LogicLayer.GetCuidadores(contact.Id.ToString());
+                txtParentesco.Text = Relacion[0].Parentesco;
             }
         }
 
@@ -82,15 +83,37 @@ namespace MapaniApp
                 txtGeneroCuidador.Text = contact.Sexo;
                 txtCedula.Text = contact.Cedula;
                 dateTimePicker2.Value = contact.FechaNacimiento.Date;
+                txtEdad.Text = Metodos.ObtenerEdad(contact.FechaNacimiento.Date);
                 txtEstadoCivil.Text = contact.EstadoCivil;
                 txtTelefono.Text = contact.Telefono;
-                    
+                txtIngresos.Text = contact.IngresosPropios;
+                ComboDiscapacidadCuidador.Text = contact.Discapacidad;
+                ComboTipoDiscapacidadCuidador.Text = contact.TipoDiscapacidad;
+                ComboGrupoEtnico.Text = contact.GrupoEtnico;
+                txtGrupoEtnico.Text = contact.TipoGrupoEtnico;
+                txtMovilizacion.Text = contact.Movilizacion;
+                txtRango1.Text = contact.Rango1;
+                txtRango2.Text = contact.Rango2;
+                txtRango3.Text = contact.Rango3;
                 }
 
 
             }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
 
-     }
+        }
+
+        private void label32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGeneroCuidador_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
 

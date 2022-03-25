@@ -125,6 +125,17 @@ namespace MapaniApp
                     Clean();
                 }
             }
+            else if (ComboOperacion.Text == "Imprimir")
+            {
+                List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtIdNMB.Text);
+                ContactNMB contact = contacts[0];
+                List<ContactCuidador> contactsCuidador = _LogicLayer.GetContactsCuidador(TxtIdCuidador.Text);
+                ContactCuidador contactCuidador = contactsCuidador[0];
+                ImprimirTranscripcion Imprimir = new ImprimirTranscripcion();
+                Imprimir.LoadContact(contact);
+                Imprimir.LoadContactCuidador(contactCuidador);
+                Imprimir.ShowDialog(this);
+            }
         }
 
         private void ComboOperacion_SelectedIndexChanged(object sender, EventArgs e)
@@ -158,7 +169,7 @@ namespace MapaniApp
                 TxtCedula.Visible = true;
                 dataGridView1.Visible = true;
             }
-            else if (ComboOperacion.Text == "Agregar Relacion" || ComboOperacion.Text == "Imprimir")
+            else if (ComboOperacion.Text == "Agregar Relacion" )
             {
                 labelTipoCuidador.Visible = true;
                 ComboCuidador.Visible = true;
@@ -172,6 +183,20 @@ namespace MapaniApp
                 txtParentesco.Visible = true;
                
             }
+            else if ( ComboOperacion.Text == "Imprimir")
+            {
+                labelTipoCuidador.Visible = true;
+                ComboCuidador.Visible = true;
+                labelContactoID.Visible = true;
+                labelIdNMB.Visible = true;
+                TxtIdNMB.Visible = true;
+                TxtIdCuidador.Visible = true;
+                labelTipoCuidador.Visible = true;
+                ComboCuidador.Visible = true;
+             
+
+            }
+
 
             else
             {
@@ -184,17 +209,7 @@ namespace MapaniApp
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtId.Text);
-            ContactNMB contact = contacts[0];
-            List<ContactCuidador> contactsCuidador = _LogicLayer.GetContactsCuidador(TxtIdCuidador.Text);
-            ContactCuidador contactCuidador = contactsCuidador[0];
-            ImprimirTranscripcion Imprimir = new ImprimirTranscripcion();
-            Imprimir.LoadContact(contact);
-            Imprimir.LoadContactCuidador(contactCuidador);
-            Imprimir.ShowDialog(this);
-        }
+      
 
         
 

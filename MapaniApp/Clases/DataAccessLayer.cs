@@ -15,8 +15,8 @@ namespace MapaniApp
     { 
          // private SqlConnection Connection = new SqlConnection("data source=192.168.68.166,1433; initial catalog=MAPANI; user id=kevin; password =Mapani2022;");
         // private SqlConnection Connection = new SqlConnection("data source=192.168.68.118,1433; initial catalog=MAPANI; user id=kevin; password =1234;");
-        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-        // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+      //  private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
         /// Inserta el contacto NMB en la base de datos
@@ -2140,7 +2140,8 @@ namespace MapaniApp
                 while (reader.Read())
                 {
                     Data.Add(new ClaseEnfermeria
-                    {   Fecha = (DateTime)reader["Fecha"],
+                    {   
+                        Fecha = (DateTime)reader["Fecha"],
                         Peso = reader["Peso"].ToString(),
                         Talla = reader["Talla"].ToString(),
                         IMC = reader ["IMC"].ToString(),
@@ -2162,6 +2163,7 @@ namespace MapaniApp
                         Observacion = reader["Observacion"].ToString(),
                         Antecedentes = reader["Antecedentes"].ToString(),
                         Patologia = reader["Patologias"].ToString(),
+                        NMB = reader["NMB"].ToString(),
                     });
                 }
             }

@@ -23,21 +23,7 @@ namespace MapaniApp
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             this.Posicion();
-            this.DialogResult = DialogResult.OK;
-            CultureInfo current = Thread.CurrentThread.CurrentUICulture;
-            if (current.TwoLetterISOLanguageName != "fr")
-            {
-                CultureInfo newCulture = CultureInfo.CreateSpecificCulture("en-US");
-                Thread.CurrentThread.CurrentUICulture = newCulture;
-                // Make current UI culture consistent with current culture.
-                Thread.CurrentThread.CurrentCulture = newCulture;
-            }
-            Console.WriteLine("The current UI culture is {0} [{1}]",
-                              Thread.CurrentThread.CurrentUICulture.NativeName,
-                              Thread.CurrentThread.CurrentUICulture.Name);
-            Console.WriteLine("The current culture is {0} [{1}]",
-                              Thread.CurrentThread.CurrentUICulture.NativeName,
-                              Thread.CurrentThread.CurrentUICulture.Name);
+            this.DialogResult = DialogResult.OK;           
             this.Hide();
             
         }

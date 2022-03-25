@@ -62,6 +62,7 @@ namespace MapaniApp
             this.label12 = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEdadVisible = new System.Windows.Forms.TextBox();
             this.groupBase.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -189,7 +190,7 @@ namespace MapaniApp
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(298, 158);
+            this.label8.Location = new System.Drawing.Point(351, 169);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(139, 24);
             this.label8.TabIndex = 68;
@@ -224,6 +225,7 @@ namespace MapaniApp
             this.TxtEdad.Name = "TxtEdad";
             this.TxtEdad.Size = new System.Drawing.Size(173, 29);
             this.TxtEdad.TabIndex = 75;
+            this.TxtEdad.Visible = false;
             // 
             // label13
             // 
@@ -296,13 +298,14 @@ namespace MapaniApp
             this.groupBase.Controls.Add(this.labelTalla);
             this.groupBase.Controls.Add(this.TxtTalla);
             this.groupBase.Controls.Add(this.TxtPeso);
-            this.groupBase.Location = new System.Drawing.Point(7, 196);
+            this.groupBase.Location = new System.Drawing.Point(181, 205);
             this.groupBase.Name = "groupBase";
             this.groupBase.Size = new System.Drawing.Size(452, 211);
             this.groupBase.TabIndex = 90;
             this.groupBase.TabStop = false;
             this.groupBase.Text = "GroupBase";
             this.groupBase.Visible = false;
+            this.groupBase.Enter += new System.EventHandler(this.groupBase_Enter);
             // 
             // labelCC
             // 
@@ -363,7 +366,7 @@ namespace MapaniApp
             this.DateTimeFecha.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTimeFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTimeFecha.Location = new System.Drawing.Point(79, 461);
+            this.DateTimeFecha.Location = new System.Drawing.Point(329, 455);
             this.DateTimeFecha.Name = "DateTimeFecha";
             this.DateTimeFecha.Size = new System.Drawing.Size(147, 29);
             this.DateTimeFecha.TabIndex = 103;
@@ -372,7 +375,7 @@ namespace MapaniApp
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 461);
+            this.label11.Location = new System.Drawing.Point(259, 455);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 24);
             this.label11.TabIndex = 104;
@@ -391,7 +394,7 @@ namespace MapaniApp
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(166, 584);
+            this.BtnSalir.Location = new System.Drawing.Point(416, 578);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(157, 36);
             this.BtnSalir.TabIndex = 106;
@@ -404,7 +407,7 @@ namespace MapaniApp
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.BtnGuardar);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(13, 516);
+            this.groupBox1.Location = new System.Drawing.Point(263, 510);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 62);
             this.groupBox1.TabIndex = 107;
@@ -412,11 +415,20 @@ namespace MapaniApp
             this.groupBox1.Text = "Agregar";
             this.groupBox1.Visible = false;
             // 
+            // txtEdadVisible
+            // 
+            this.txtEdadVisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdadVisible.Location = new System.Drawing.Point(592, 114);
+            this.txtEdadVisible.Name = "txtEdadVisible";
+            this.txtEdadVisible.Size = new System.Drawing.Size(173, 29);
+            this.txtEdadVisible.TabIndex = 108;
+            // 
             // Enfermeria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 661);
+            this.Controls.Add(this.txtEdadVisible);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.label11);
@@ -484,5 +496,6 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox TxtHb;
         private System.Windows.Forms.Label labelCC;
         private System.Windows.Forms.TextBox txtCC;
+        private System.Windows.Forms.TextBox txtEdadVisible;
     }
 }

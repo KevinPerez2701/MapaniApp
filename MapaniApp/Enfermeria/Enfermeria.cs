@@ -68,8 +68,11 @@ namespace MapaniApp
                 TxtApellido.Text = contact.Apellido;
                 dateTimePicker1.Value = contact.FechaNacimiento.Date;
                 TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento,DateTimeFecha.Value);
-                
-                
+                txtEdadVisible.Text = Metodos.ObtenerEdad(contact.FechaNacimiento);
+
+
+
+
             }
         }
 
@@ -100,6 +103,11 @@ namespace MapaniApp
         }
 
         private void ComboEdema_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBase_Enter(object sender, EventArgs e)
         {
 
         }

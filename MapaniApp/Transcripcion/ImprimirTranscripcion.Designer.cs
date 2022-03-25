@@ -40,11 +40,12 @@ namespace MapaniApp
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtGenero = new System.Windows.Forms.TextBox();
-            this.txtDiscapacidad = new System.Windows.Forms.TextBox();
             this.txtPartidaNacimiento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ComboTipoDiscapacidadNMB = new System.Windows.Forms.ComboBox();
+            this.ComboDiscapacidadNMB = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,6 +53,18 @@ namespace MapaniApp
             this.txtTipoIngreso = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtGrupoEtnico = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.ComboGrupoEtnico = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtIngresos = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.ComboTipoDiscapacidadCuidador = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.ComboDiscapacidadCuidador = new System.Windows.Forms.ComboBox();
             this.txtEstadoCivil = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtParentesco = new System.Windows.Forms.TextBox();
@@ -69,12 +82,6 @@ namespace MapaniApp
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.txtDiscapacidadCuidador = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtEtnia = new System.Windows.Forms.TextBox();
-            this.txtIngresos = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtMunicipio = new System.Windows.Forms.TextBox();
@@ -82,15 +89,24 @@ namespace MapaniApp
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.txtIdNMB = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtMovilizacion = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtRango1 = new System.Windows.Forms.TextBox();
+            this.txtRango2 = new System.Windows.Forms.TextBox();
+            this.txtRango3 = new System.Windows.Forms.TextBox();
+            this.txtEdadNMB = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -173,7 +189,7 @@ namespace MapaniApp
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 136);
+            this.label7.Location = new System.Drawing.Point(6, 178);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 24);
             this.label7.TabIndex = 30;
@@ -182,23 +198,15 @@ namespace MapaniApp
             // TxtGenero
             // 
             this.TxtGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGenero.Location = new System.Drawing.Point(133, 136);
+            this.TxtGenero.Location = new System.Drawing.Point(132, 178);
             this.TxtGenero.Name = "TxtGenero";
             this.TxtGenero.Size = new System.Drawing.Size(226, 29);
             this.TxtGenero.TabIndex = 31;
             // 
-            // txtDiscapacidad
-            // 
-            this.txtDiscapacidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscapacidad.Location = new System.Drawing.Point(206, 215);
-            this.txtDiscapacidad.Name = "txtDiscapacidad";
-            this.txtDiscapacidad.Size = new System.Drawing.Size(153, 29);
-            this.txtDiscapacidad.TabIndex = 35;
-            // 
             // txtPartidaNacimiento
             // 
             this.txtPartidaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPartidaNacimiento.Location = new System.Drawing.Point(206, 178);
+            this.txtPartidaNacimiento.Location = new System.Drawing.Point(205, 220);
             this.txtPartidaNacimiento.Name = "txtPartidaNacimiento";
             this.txtPartidaNacimiento.Size = new System.Drawing.Size(153, 29);
             this.txtPartidaNacimiento.TabIndex = 34;
@@ -207,7 +215,7 @@ namespace MapaniApp
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 215);
+            this.label5.Location = new System.Drawing.Point(5, 257);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 24);
             this.label5.TabIndex = 33;
@@ -217,7 +225,7 @@ namespace MapaniApp
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 178);
+            this.label6.Location = new System.Drawing.Point(5, 220);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(194, 24);
             this.label6.TabIndex = 32;
@@ -225,7 +233,10 @@ namespace MapaniApp
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtDiscapacidad);
+            this.groupBox1.Controls.Add(this.txtEdadNMB);
+            this.groupBox1.Controls.Add(this.label35);
+            this.groupBox1.Controls.Add(this.ComboTipoDiscapacidadNMB);
+            this.groupBox1.Controls.Add(this.ComboDiscapacidadNMB);
             this.groupBox1.Controls.Add(this.txtPartidaNacimiento);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
@@ -239,10 +250,36 @@ namespace MapaniApp
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 259);
+            this.groupBox1.Size = new System.Drawing.Size(372, 311);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Niño";
+            // 
+            // ComboTipoDiscapacidadNMB
+            // 
+            this.ComboTipoDiscapacidadNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboTipoDiscapacidadNMB.FormattingEnabled = true;
+            this.ComboTipoDiscapacidadNMB.Items.AddRange(new object[] {
+            "Motora",
+            "Visual",
+            "Cognitiva",
+            "Auditiva"});
+            this.ComboTipoDiscapacidadNMB.Location = new System.Drawing.Point(199, 254);
+            this.ComboTipoDiscapacidadNMB.Name = "ComboTipoDiscapacidadNMB";
+            this.ComboTipoDiscapacidadNMB.Size = new System.Drawing.Size(159, 32);
+            this.ComboTipoDiscapacidadNMB.TabIndex = 77;
+            // 
+            // ComboDiscapacidadNMB
+            // 
+            this.ComboDiscapacidadNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboDiscapacidadNMB.FormattingEnabled = true;
+            this.ComboDiscapacidadNMB.Items.AddRange(new object[] {
+            "SI",
+            "No"});
+            this.ComboDiscapacidadNMB.Location = new System.Drawing.Point(132, 254);
+            this.ComboDiscapacidadNMB.Name = "ComboDiscapacidadNMB";
+            this.ComboDiscapacidadNMB.Size = new System.Drawing.Size(61, 32);
+            this.ComboDiscapacidadNMB.TabIndex = 76;
             // 
             // textBox4
             // 
@@ -300,14 +337,28 @@ namespace MapaniApp
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtRango3);
+            this.groupBox2.Controls.Add(this.txtRango2);
+            this.groupBox2.Controls.Add(this.txtRango1);
+            this.groupBox2.Controls.Add(this.label34);
+            this.groupBox2.Controls.Add(this.label33);
+            this.groupBox2.Controls.Add(this.label32);
+            this.groupBox2.Controls.Add(this.label31);
+            this.groupBox2.Controls.Add(this.label30);
+            this.groupBox2.Controls.Add(this.txtMovilizacion);
+            this.groupBox2.Controls.Add(this.label29);
+            this.groupBox2.Controls.Add(this.txtEdad);
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Controls.Add(this.txtGrupoEtnico);
             this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.label26);
-            this.groupBox2.Controls.Add(this.txtDiscapacidadCuidador);
+            this.groupBox2.Controls.Add(this.ComboGrupoEtnico);
             this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.txtEtnia);
             this.groupBox2.Controls.Add(this.txtIngresos);
             this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.ComboTipoDiscapacidadCuidador);
             this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.ComboDiscapacidadCuidador);
             this.groupBox2.Controls.Add(this.txtEstadoCivil);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.txtParentesco);
@@ -322,17 +373,138 @@ namespace MapaniApp
             this.groupBox2.Controls.Add(this.txtNombreCuidador);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Location = new System.Drawing.Point(405, 84);
+            this.groupBox2.Location = new System.Drawing.Point(405, 85);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(372, 444);
+            this.groupBox2.Size = new System.Drawing.Size(372, 547);
             this.groupBox2.TabIndex = 43;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Cuidador";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdad.Location = new System.Drawing.Point(133, 136);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(233, 29);
+            this.txtEdad.TabIndex = 79;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(13, 136);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(55, 24);
+            this.label28.TabIndex = 78;
+            this.label28.Text = "Edad";
+            // 
+            // txtGrupoEtnico
+            // 
+            this.txtGrupoEtnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGrupoEtnico.Location = new System.Drawing.Point(213, 419);
+            this.txtGrupoEtnico.Name = "txtGrupoEtnico";
+            this.txtGrupoEtnico.Size = new System.Drawing.Size(151, 29);
+            this.txtGrupoEtnico.TabIndex = 77;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(213, 277);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(153, 29);
+            this.txtTelefono.TabIndex = 45;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(13, 277);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(85, 24);
+            this.label26.TabIndex = 44;
+            this.label26.Text = "Telefono";
+            // 
+            // ComboGrupoEtnico
+            // 
+            this.ComboGrupoEtnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboGrupoEtnico.FormattingEnabled = true;
+            this.ComboGrupoEtnico.Items.AddRange(new object[] {
+            "SI",
+            "No"});
+            this.ComboGrupoEtnico.Location = new System.Drawing.Point(144, 419);
+            this.ComboGrupoEtnico.Name = "ComboGrupoEtnico";
+            this.ComboGrupoEtnico.Size = new System.Drawing.Size(61, 32);
+            this.ComboGrupoEtnico.TabIndex = 76;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(12, 390);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(123, 24);
+            this.label18.TabIndex = 42;
+            this.label18.Text = "Discapacidad";
+            // 
+            // txtIngresos
+            // 
+            this.txtIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIngresos.Location = new System.Drawing.Point(212, 349);
+            this.txtIngresos.Name = "txtIngresos";
+            this.txtIngresos.Size = new System.Drawing.Size(153, 29);
+            this.txtIngresos.TabIndex = 40;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(12, 424);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(121, 24);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "Grupo Etnico";
+            // 
+            // ComboTipoDiscapacidadCuidador
+            // 
+            this.ComboTipoDiscapacidadCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboTipoDiscapacidadCuidador.FormattingEnabled = true;
+            this.ComboTipoDiscapacidadCuidador.Items.AddRange(new object[] {
+            "Motora",
+            "Visual",
+            "Cognitiva",
+            "Auditiva"});
+            this.ComboTipoDiscapacidadCuidador.Location = new System.Drawing.Point(211, 382);
+            this.ComboTipoDiscapacidadCuidador.Name = "ComboTipoDiscapacidadCuidador";
+            this.ComboTipoDiscapacidadCuidador.Size = new System.Drawing.Size(155, 32);
+            this.ComboTipoDiscapacidadCuidador.TabIndex = 75;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(12, 349);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(151, 24);
+            this.label20.TabIndex = 38;
+            this.label20.Text = "Ingresos Propios";
+            // 
+            // ComboDiscapacidadCuidador
+            // 
+            this.ComboDiscapacidadCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboDiscapacidadCuidador.FormattingEnabled = true;
+            this.ComboDiscapacidadCuidador.Items.AddRange(new object[] {
+            "SI",
+            "No"});
+            this.ComboDiscapacidadCuidador.Location = new System.Drawing.Point(144, 382);
+            this.ComboDiscapacidadCuidador.Name = "ComboDiscapacidadCuidador";
+            this.ComboDiscapacidadCuidador.Size = new System.Drawing.Size(61, 32);
+            this.ComboDiscapacidadCuidador.TabIndex = 74;
             // 
             // txtEstadoCivil
             // 
             this.txtEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstadoCivil.Location = new System.Drawing.Point(207, 288);
+            this.txtEstadoCivil.Location = new System.Drawing.Point(212, 311);
             this.txtEstadoCivil.Name = "txtEstadoCivil";
             this.txtEstadoCivil.Size = new System.Drawing.Size(153, 29);
             this.txtEstadoCivil.TabIndex = 37;
@@ -341,7 +513,7 @@ namespace MapaniApp
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(7, 288);
+            this.label17.Location = new System.Drawing.Point(12, 311);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(107, 24);
             this.label17.TabIndex = 36;
@@ -350,7 +522,7 @@ namespace MapaniApp
             // txtParentesco
             // 
             this.txtParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParentesco.Location = new System.Drawing.Point(207, 250);
+            this.txtParentesco.Location = new System.Drawing.Point(213, 205);
             this.txtParentesco.Name = "txtParentesco";
             this.txtParentesco.Size = new System.Drawing.Size(153, 29);
             this.txtParentesco.TabIndex = 35;
@@ -358,7 +530,7 @@ namespace MapaniApp
             // txtCedula
             // 
             this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(206, 178);
+            this.txtCedula.Location = new System.Drawing.Point(213, 240);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(153, 29);
             this.txtCedula.TabIndex = 34;
@@ -367,7 +539,7 @@ namespace MapaniApp
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(7, 250);
+            this.label11.Location = new System.Drawing.Point(12, 205);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 24);
             this.label11.TabIndex = 33;
@@ -377,7 +549,7 @@ namespace MapaniApp
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 178);
+            this.label12.Location = new System.Drawing.Point(13, 240);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 24);
             this.label12.TabIndex = 32;
@@ -386,16 +558,17 @@ namespace MapaniApp
             // txtGeneroCuidador
             // 
             this.txtGeneroCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGeneroCuidador.Location = new System.Drawing.Point(133, 136);
+            this.txtGeneroCuidador.Location = new System.Drawing.Point(211, 170);
             this.txtGeneroCuidador.Name = "txtGeneroCuidador";
-            this.txtGeneroCuidador.Size = new System.Drawing.Size(226, 29);
+            this.txtGeneroCuidador.Size = new System.Drawing.Size(154, 29);
             this.txtGeneroCuidador.TabIndex = 31;
+            this.txtGeneroCuidador.TextChanged += new System.EventHandler(this.txtGeneroCuidador_TextChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(7, 136);
+            this.label13.Location = new System.Drawing.Point(13, 170);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(74, 24);
             this.label13.TabIndex = 30;
@@ -482,61 +655,6 @@ namespace MapaniApp
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // txtDiscapacidadCuidador
-            // 
-            this.txtDiscapacidadCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscapacidadCuidador.Location = new System.Drawing.Point(207, 401);
-            this.txtDiscapacidadCuidador.Name = "txtDiscapacidadCuidador";
-            this.txtDiscapacidadCuidador.Size = new System.Drawing.Size(153, 29);
-            this.txtDiscapacidadCuidador.TabIndex = 43;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(7, 401);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(123, 24);
-            this.label18.TabIndex = 42;
-            this.label18.Text = "Discapacidad";
-            // 
-            // txtEtnia
-            // 
-            this.txtEtnia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEtnia.Location = new System.Drawing.Point(207, 363);
-            this.txtEtnia.Name = "txtEtnia";
-            this.txtEtnia.Size = new System.Drawing.Size(153, 29);
-            this.txtEtnia.TabIndex = 41;
-            // 
-            // txtIngresos
-            // 
-            this.txtIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresos.Location = new System.Drawing.Point(207, 326);
-            this.txtIngresos.Name = "txtIngresos";
-            this.txtIngresos.Size = new System.Drawing.Size(153, 29);
-            this.txtIngresos.TabIndex = 40;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(7, 363);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(121, 24);
-            this.label19.TabIndex = 39;
-            this.label19.Text = "Grupo Etnico";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(7, 326);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(151, 24);
-            this.label20.TabIndex = 38;
-            this.label20.Text = "Ingresos Propios";
-            // 
             // txtEstado
             // 
             this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -599,23 +717,16 @@ namespace MapaniApp
             this.groupBox3.Controls.Add(this.txtParroquia);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Location = new System.Drawing.Point(14, 349);
+            this.groupBox3.Location = new System.Drawing.Point(14, 401);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(370, 179);
             this.groupBox3.TabIndex = 79;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Procedencia";
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(780, 70);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 439);
-            this.vScrollBar1.TabIndex = 79;
-            // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(218, 663);
+            this.txtObservaciones.Location = new System.Drawing.Point(233, 732);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(507, 89);
@@ -625,7 +736,7 @@ namespace MapaniApp
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(28, 695);
+            this.label24.Location = new System.Drawing.Point(43, 764);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(137, 24);
             this.label24.TabIndex = 113;
@@ -633,7 +744,7 @@ namespace MapaniApp
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(218, 568);
+            this.txtDireccion.Location = new System.Drawing.Point(233, 637);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(507, 89);
@@ -643,29 +754,11 @@ namespace MapaniApp
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(28, 600);
+            this.label25.Location = new System.Drawing.Point(43, 669);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(90, 24);
             this.label25.TabIndex = 111;
             this.label25.Text = "Direccion";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(206, 215);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(153, 29);
-            this.txtTelefono.TabIndex = 45;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(6, 215);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(85, 24);
-            this.label26.TabIndex = 44;
-            this.label26.Text = "Telefono";
             // 
             // label27
             // 
@@ -685,6 +778,117 @@ namespace MapaniApp
             this.txtIdNMB.Size = new System.Drawing.Size(74, 29);
             this.txtIdNMB.TabIndex = 116;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(12, 458);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(113, 24);
+            this.label29.TabIndex = 80;
+            this.label29.Text = "Movilizacion";
+            // 
+            // txtMovilizacion
+            // 
+            this.txtMovilizacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMovilizacion.Location = new System.Drawing.Point(211, 453);
+            this.txtMovilizacion.Name = "txtMovilizacion";
+            this.txtMovilizacion.Size = new System.Drawing.Size(153, 29);
+            this.txtMovilizacion.TabIndex = 81;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(12, 517);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(131, 24);
+            this.label30.TabIndex = 82;
+            this.label30.Text = "Cantidad Hijos";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(215, 485);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(41, 24);
+            this.label31.TabIndex = 83;
+            this.label31.Text = "0-5 ";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(262, 485);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(46, 24);
+            this.label32.TabIndex = 84;
+            this.label32.Text = "6-10";
+            this.label32.Click += new System.EventHandler(this.label32_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(314, 485);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(56, 24);
+            this.label33.TabIndex = 85;
+            this.label33.Text = "11-17";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(92, 483);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(117, 24);
+            this.label34.TabIndex = 86;
+            this.label34.Text = "Rango años:";
+            // 
+            // txtRango1
+            // 
+            this.txtRango1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRango1.Location = new System.Drawing.Point(213, 512);
+            this.txtRango1.Name = "txtRango1";
+            this.txtRango1.Size = new System.Drawing.Size(43, 29);
+            this.txtRango1.TabIndex = 87;
+            // 
+            // txtRango2
+            // 
+            this.txtRango2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRango2.Location = new System.Drawing.Point(266, 512);
+            this.txtRango2.Name = "txtRango2";
+            this.txtRango2.Size = new System.Drawing.Size(43, 29);
+            this.txtRango2.TabIndex = 117;
+            // 
+            // txtRango3
+            // 
+            this.txtRango3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRango3.Location = new System.Drawing.Point(321, 512);
+            this.txtRango3.Name = "txtRango3";
+            this.txtRango3.Size = new System.Drawing.Size(43, 29);
+            this.txtRango3.TabIndex = 117;
+            // 
+            // txtEdadNMB
+            // 
+            this.txtEdadNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdadNMB.Location = new System.Drawing.Point(132, 139);
+            this.txtEdadNMB.Name = "txtEdadNMB";
+            this.txtEdadNMB.Size = new System.Drawing.Size(227, 29);
+            this.txtEdadNMB.TabIndex = 81;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(6, 139);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(55, 24);
+            this.label35.TabIndex = 80;
+            this.label35.Text = "Edad";
+            // 
             // ImprimirTranscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -697,7 +901,6 @@ namespace MapaniApp
             this.Controls.Add(this.label24);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.groupBox2);
@@ -713,7 +916,7 @@ namespace MapaniApp
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ImprimirTranscripcion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ImprimirTranscripcion";
+            this.Text = "Historia Clinica";
             this.Load += new System.EventHandler(this.ImprimirTranscripcion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -738,7 +941,6 @@ namespace MapaniApp
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtGenero;
-        private System.Windows.Forms.TextBox txtDiscapacidad;
         private System.Windows.Forms.TextBox txtPartidaNacimiento;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -767,9 +969,7 @@ namespace MapaniApp
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.TextBox txtDiscapacidadCuidador;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtEtnia;
         private System.Windows.Forms.TextBox txtIngresos;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
@@ -782,12 +982,31 @@ namespace MapaniApp
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtIdNMB;
+        private System.Windows.Forms.TextBox txtGrupoEtnico;
+        private System.Windows.Forms.ComboBox ComboGrupoEtnico;
+        private System.Windows.Forms.ComboBox ComboTipoDiscapacidadCuidador;
+        private System.Windows.Forms.ComboBox ComboDiscapacidadCuidador;
+        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox ComboTipoDiscapacidadNMB;
+        private System.Windows.Forms.ComboBox ComboDiscapacidadNMB;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtMovilizacion;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtRango1;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtRango3;
+        private System.Windows.Forms.TextBox txtRango2;
+        private System.Windows.Forms.TextBox txtEdadNMB;
+        private System.Windows.Forms.Label label35;
     }
 }

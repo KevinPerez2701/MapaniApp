@@ -127,7 +127,7 @@ namespace MapaniApp
             this.TxtDireccion.Multiline = true;
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(226, 63);
-            this.TxtDireccion.TabIndex = 15;
+            this.TxtDireccion.TabIndex = 3;
             // 
             // label3
             // 
@@ -155,7 +155,7 @@ namespace MapaniApp
             this.TxtApellido.Location = new System.Drawing.Point(182, 98);
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(226, 29);
-            this.TxtApellido.TabIndex = 11;
+            this.TxtApellido.TabIndex = 1;
             // 
             // TxtNombre
             // 
@@ -163,7 +163,7 @@ namespace MapaniApp
             this.TxtNombre.Location = new System.Drawing.Point(182, 61);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(226, 29);
-            this.TxtNombre.TabIndex = 10;
+            this.TxtNombre.TabIndex = 0;
             // 
             // label2
             // 
@@ -247,7 +247,7 @@ namespace MapaniApp
             this.ComboSexo.Location = new System.Drawing.Point(182, 245);
             this.ComboSexo.Name = "ComboSexo";
             this.ComboSexo.Size = new System.Drawing.Size(226, 32);
-            this.ComboSexo.TabIndex = 23;
+            this.ComboSexo.TabIndex = 4;
             // 
             // label7
             // 
@@ -267,7 +267,7 @@ namespace MapaniApp
             this.dateTimePicker1.Location = new System.Drawing.Point(225, 133);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(183, 29);
-            this.dateTimePicker1.TabIndex = 27;
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // TxtTelefono
             // 
