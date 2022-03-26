@@ -52,6 +52,7 @@ namespace MapaniApp
             this.BtnAlmacen.TabIndex = 4;
             this.BtnAlmacen.Text = "Almacen";
             this.BtnAlmacen.UseVisualStyleBackColor = true;
+            this.BtnAlmacen.Visible = false;
             this.BtnAlmacen.Click += new System.EventHandler(this.BtnAlmacen_Click);
             // 
             // BtnEnfermeria
@@ -63,6 +64,7 @@ namespace MapaniApp
             this.BtnEnfermeria.TabIndex = 5;
             this.BtnEnfermeria.Text = "Enfermeria";
             this.BtnEnfermeria.UseVisualStyleBackColor = true;
+            this.BtnEnfermeria.Visible = false;
             this.BtnEnfermeria.Click += new System.EventHandler(this.BtnEnfermeria_Click);
             // 
             // BtnNutricion
@@ -74,6 +76,7 @@ namespace MapaniApp
             this.BtnNutricion.TabIndex = 6;
             this.BtnNutricion.Text = "Nutricion";
             this.BtnNutricion.UseVisualStyleBackColor = true;
+            this.BtnNutricion.Visible = false;
             this.BtnNutricion.Click += new System.EventHandler(this.BtnNutricion_Click);
             // 
             // BtnPediatria
@@ -81,10 +84,11 @@ namespace MapaniApp
             this.BtnPediatria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPediatria.Location = new System.Drawing.Point(395, 85);
             this.BtnPediatria.Name = "BtnPediatria";
-            this.BtnPediatria.Size = new System.Drawing.Size(173, 58);
+            this.BtnPediatria.Size = new System.Drawing.Size(173, 59);
             this.BtnPediatria.TabIndex = 7;
             this.BtnPediatria.Text = "Pediatria";
             this.BtnPediatria.UseVisualStyleBackColor = true;
+            this.BtnPediatria.Visible = false;
             this.BtnPediatria.Click += new System.EventHandler(this.BtnPediatria_Click);
             // 
             // BtnPsicologia
@@ -96,6 +100,7 @@ namespace MapaniApp
             this.BtnPsicologia.TabIndex = 8;
             this.BtnPsicologia.Text = "Psicologia";
             this.BtnPsicologia.UseVisualStyleBackColor = true;
+            this.BtnPsicologia.Visible = false;
             this.BtnPsicologia.Click += new System.EventHandler(this.BtnPsicologia_Click);
             // 
             // BtnLegal
@@ -103,10 +108,11 @@ namespace MapaniApp
             this.BtnLegal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLegal.Location = new System.Drawing.Point(574, 85);
             this.BtnLegal.Name = "BtnLegal";
-            this.BtnLegal.Size = new System.Drawing.Size(147, 57);
+            this.BtnLegal.Size = new System.Drawing.Size(147, 59);
             this.BtnLegal.TabIndex = 9;
             this.BtnLegal.Text = "Asesoria Juridica";
             this.BtnLegal.UseVisualStyleBackColor = true;
+            this.BtnLegal.Visible = false;
             this.BtnLegal.Click += new System.EventHandler(this.BtnLegal_Click);
             // 
             // BtnRecepcion
@@ -119,17 +125,19 @@ namespace MapaniApp
             this.BtnRecepcion.TabIndex = 10;
             this.BtnRecepcion.Text = "Recepcion";
             this.BtnRecepcion.UseVisualStyleBackColor = true;
+            this.BtnRecepcion.Visible = false;
             this.BtnRecepcion.Click += new System.EventHandler(this.BtnRecepcion_Click);
             // 
             // BtnTranscripcion
             // 
             this.BtnTranscripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTranscripcion.Location = new System.Drawing.Point(0, 85);
+            this.BtnTranscripcion.Location = new System.Drawing.Point(0, 86);
             this.BtnTranscripcion.Name = "BtnTranscripcion";
             this.BtnTranscripcion.Size = new System.Drawing.Size(205, 58);
             this.BtnTranscripcion.TabIndex = 11;
             this.BtnTranscripcion.Text = "Transcripcion";
             this.BtnTranscripcion.UseVisualStyleBackColor = true;
+            this.BtnTranscripcion.Visible = false;
             this.BtnTranscripcion.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // groupSuperUser
@@ -137,23 +145,22 @@ namespace MapaniApp
             this.groupSuperUser.Controls.Add(this.BtnTranscripcion);
             this.groupSuperUser.Controls.Add(this.BtnRecepcion);
             this.groupSuperUser.Controls.Add(this.BtnLegal);
+            this.groupSuperUser.Controls.Add(this.BtnEnfermeria);
+            this.groupSuperUser.Controls.Add(this.BtnNutricion);
             this.groupSuperUser.Controls.Add(this.BtnPsicologia);
             this.groupSuperUser.Controls.Add(this.BtnPediatria);
-            this.groupSuperUser.Controls.Add(this.BtnNutricion);
-            this.groupSuperUser.Controls.Add(this.BtnEnfermeria);
             this.groupSuperUser.Controls.Add(this.BtnAlmacen);
             this.groupSuperUser.Location = new System.Drawing.Point(12, 12);
             this.groupSuperUser.Name = "groupSuperUser";
-            this.groupSuperUser.Size = new System.Drawing.Size(746, 162);
+            this.groupSuperUser.Size = new System.Drawing.Size(746, 177);
             this.groupSuperUser.TabIndex = 12;
             this.groupSuperUser.TabStop = false;
-            this.groupSuperUser.Text = "SuperUser";
-            this.groupSuperUser.Visible = false;
+            this.groupSuperUser.Text = "Modulos";
             // 
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(309, 190);
+            this.BtnSalir.Location = new System.Drawing.Point(309, 221);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(180, 44);
             this.BtnSalir.TabIndex = 13;
@@ -164,7 +171,7 @@ namespace MapaniApp
             // BtnAsistencia
             // 
             this.BtnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAsistencia.Location = new System.Drawing.Point(12, 180);
+            this.BtnAsistencia.Location = new System.Drawing.Point(12, 195);
             this.BtnAsistencia.Name = "BtnAsistencia";
             this.BtnAsistencia.Size = new System.Drawing.Size(190, 41);
             this.BtnAsistencia.TabIndex = 14;

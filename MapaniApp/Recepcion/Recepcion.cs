@@ -161,7 +161,11 @@ namespace MapaniApp
 
         private void Recepcion_Load(object sender, EventArgs e)
         {
-           //Hello wordl
+            //Hello wordl
+            TxtNombre.ReadOnly = true;
+            TxtApellido.ReadOnly = true;
+            TxtDireccion.ReadOnly = true;
+            dateTimePicker1.Enabled = false;
         }
 
 
@@ -217,5 +221,25 @@ namespace MapaniApp
         {
 
         }
+        #region Validacion de Datos
+        private void ComboUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Ingrese una opcion Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            e.Handled = true;
+            return;
+        }
+        private void TxtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Introduzca un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        #endregion
+
+
     }
 }

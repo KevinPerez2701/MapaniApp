@@ -53,7 +53,7 @@ namespace MapaniApp
             this.BtnSalir.Location = new System.Drawing.Point(222, 307);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(162, 34);
-            this.BtnSalir.TabIndex = 23;
+            this.BtnSalir.TabIndex = 4;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
@@ -64,7 +64,7 @@ namespace MapaniApp
             this.BtnAgregarCita.Location = new System.Drawing.Point(54, 308);
             this.BtnAgregarCita.Name = "BtnAgregarCita";
             this.BtnAgregarCita.Size = new System.Drawing.Size(162, 33);
-            this.BtnAgregarCita.TabIndex = 22;
+            this.BtnAgregarCita.TabIndex = 3;
             this.BtnAgregarCita.Text = "Confirmar Cita";
             this.BtnAgregarCita.UseVisualStyleBackColor = true;
             this.BtnAgregarCita.Click += new System.EventHandler(this.BtnAgregarCita_Click);
@@ -136,7 +136,7 @@ namespace MapaniApp
             this.TxtCuidador.Location = new System.Drawing.Point(242, 56);
             this.TxtCuidador.Name = "TxtCuidador";
             this.TxtCuidador.Size = new System.Drawing.Size(184, 29);
-            this.TxtCuidador.TabIndex = 25;
+            this.TxtCuidador.TabIndex = 0;
             // 
             // label4
             // 
@@ -158,7 +158,7 @@ namespace MapaniApp
             this.comboBox1.Location = new System.Drawing.Point(242, 167);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(184, 32);
-            this.comboBox1.TabIndex = 27;
+            this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
@@ -178,7 +178,7 @@ namespace MapaniApp
             this.TxtObservacion.Multiline = true;
             this.TxtObservacion.Name = "TxtObservacion";
             this.TxtObservacion.Size = new System.Drawing.Size(184, 74);
-            this.TxtObservacion.TabIndex = 29;
+            this.TxtObservacion.TabIndex = 2;
             // 
             // label6
             // 

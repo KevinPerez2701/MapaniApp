@@ -306,5 +306,71 @@ namespace MapaniApp
         {
 
         }
+        #region Validacion de Datos
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Ingrese un Caracter Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TxtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Ingrese un Caracter Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void ComboSexo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Ingrese una opcion Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            e.Handled = true;
+            return;
+        }
+
+       
+
+        private void ComboEstadoCivil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Ingrese una opcion Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            e.Handled = true;
+            return;
+        }
+
+        private void AddContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (int.Parse(Metodos.GetEdadAnhos(dateTimePicker1.Value)) > 17 && textBox1.Text == "NMB")
+            {
+                MessageBox.Show("Ingrese una Fecha de Nacimiento Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dateTimePicker1.Value = DateTime.Now;
+            }
+        }
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            if (int.Parse(Metodos.GetEdad(dateTimePicker2.Value, DateTime.Now)) < 0)
+
+            {
+                MessageBox.Show("Ingrese una Fecha de visita Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dateTimePicker2.Value = DateTime.Now;
+            }
+        }
+        #endregion
+
+
     }
 }

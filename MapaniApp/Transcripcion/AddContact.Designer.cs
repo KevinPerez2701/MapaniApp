@@ -156,6 +156,7 @@ namespace MapaniApp
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(226, 29);
             this.TxtApellido.TabIndex = 1;
+            this.TxtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtApellido_KeyPress);
             // 
             // TxtNombre
             // 
@@ -164,6 +165,7 @@ namespace MapaniApp
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(226, 29);
             this.TxtNombre.TabIndex = 0;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // label2
             // 
@@ -210,7 +212,7 @@ namespace MapaniApp
             this.BtnFoto.Location = new System.Drawing.Point(514, 214);
             this.BtnFoto.Name = "BtnFoto";
             this.BtnFoto.Size = new System.Drawing.Size(162, 31);
-            this.BtnFoto.TabIndex = 18;
+            this.BtnFoto.TabIndex = 16;
             this.BtnFoto.Text = "Foto";
             this.BtnFoto.UseVisualStyleBackColor = true;
             this.BtnFoto.Click += new System.EventHandler(this.BtnFoto_Click);
@@ -221,7 +223,7 @@ namespace MapaniApp
             this.BtnSave.Location = new System.Drawing.Point(260, 682);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(102, 33);
-            this.BtnSave.TabIndex = 19;
+            this.BtnSave.TabIndex = 27;
             this.BtnSave.Text = "Guardar";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -232,7 +234,7 @@ namespace MapaniApp
             this.BtnSalir.Location = new System.Drawing.Point(385, 682);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(111, 33);
-            this.BtnSalir.TabIndex = 20;
+            this.BtnSalir.TabIndex = 28;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
@@ -248,6 +250,7 @@ namespace MapaniApp
             this.ComboSexo.Name = "ComboSexo";
             this.ComboSexo.Size = new System.Drawing.Size(226, 32);
             this.ComboSexo.TabIndex = 4;
+            this.ComboSexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboSexo_KeyPress);
             // 
             // label7
             // 
@@ -268,6 +271,7 @@ namespace MapaniApp
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(183, 29);
             this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // TxtTelefono
             // 
@@ -275,7 +279,8 @@ namespace MapaniApp
             this.TxtTelefono.Location = new System.Drawing.Point(178, 49);
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(226, 29);
-            this.TxtTelefono.TabIndex = 30;
+            this.TxtTelefono.TabIndex = 6;
+            this.TxtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContact_KeyPress);
             // 
             // label6
             // 
@@ -314,7 +319,8 @@ namespace MapaniApp
             this.dateTimePicker2.Location = new System.Drawing.Point(230, 18);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(182, 29);
-            this.dateTimePicker2.TabIndex = 33;
+            this.dateTimePicker2.TabIndex = 5;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // labelIngreso
             // 
@@ -337,7 +343,8 @@ namespace MapaniApp
             this.ComboIngreso.Location = new System.Drawing.Point(186, 250);
             this.ComboIngreso.Name = "ComboIngreso";
             this.ComboIngreso.Size = new System.Drawing.Size(226, 32);
-            this.ComboIngreso.TabIndex = 44;
+            this.ComboIngreso.TabIndex = 12;
+            this.ComboIngreso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // ComboVacunas
             // 
@@ -349,7 +356,8 @@ namespace MapaniApp
             this.ComboVacunas.Location = new System.Drawing.Point(186, 129);
             this.ComboVacunas.Name = "ComboVacunas";
             this.ComboVacunas.Size = new System.Drawing.Size(226, 32);
-            this.ComboVacunas.TabIndex = 50;
+            this.ComboVacunas.TabIndex = 9;
+            this.ComboVacunas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // labelvacunas
             // 
@@ -390,9 +398,11 @@ namespace MapaniApp
             "SI",
             "No"});
             this.ComboPartidaNacimiento.Location = new System.Drawing.Point(186, 53);
+            this.ComboPartidaNacimiento.MaxDropDownItems = 6;
             this.ComboPartidaNacimiento.Name = "ComboPartidaNacimiento";
             this.ComboPartidaNacimiento.Size = new System.Drawing.Size(226, 32);
-            this.ComboPartidaNacimiento.TabIndex = 45;
+            this.ComboPartidaNacimiento.TabIndex = 6;
+            this.ComboPartidaNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // ComboParto
             // 
@@ -404,7 +414,8 @@ namespace MapaniApp
             this.ComboParto.Location = new System.Drawing.Point(186, 173);
             this.ComboParto.Name = "ComboParto";
             this.ComboParto.Size = new System.Drawing.Size(226, 32);
-            this.ComboParto.TabIndex = 52;
+            this.ComboParto.TabIndex = 10;
+            this.ComboParto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // labelParto
             // 
@@ -425,9 +436,11 @@ namespace MapaniApp
             "SI",
             "No"});
             this.ComboDiscapacidad.Location = new System.Drawing.Point(186, 91);
+            this.ComboDiscapacidad.MaxDropDownItems = 7;
             this.ComboDiscapacidad.Name = "ComboDiscapacidad";
             this.ComboDiscapacidad.Size = new System.Drawing.Size(64, 32);
-            this.ComboDiscapacidad.TabIndex = 53;
+            this.ComboDiscapacidad.TabIndex = 7;
+            this.ComboDiscapacidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // ComboLactancia
             // 
@@ -439,7 +452,8 @@ namespace MapaniApp
             this.ComboLactancia.Location = new System.Drawing.Point(186, 214);
             this.ComboLactancia.Name = "ComboLactancia";
             this.ComboLactancia.Size = new System.Drawing.Size(226, 32);
-            this.ComboLactancia.TabIndex = 55;
+            this.ComboLactancia.TabIndex = 11;
+            this.ComboLactancia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // labelLactancia
             // 
@@ -474,7 +488,8 @@ namespace MapaniApp
             this.ComboEstadoCivil.Location = new System.Drawing.Point(178, 84);
             this.ComboEstadoCivil.Name = "ComboEstadoCivil";
             this.ComboEstadoCivil.Size = new System.Drawing.Size(226, 32);
-            this.ComboEstadoCivil.TabIndex = 57;
+            this.ComboEstadoCivil.TabIndex = 7;
+            this.ComboEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // labelTransporte
             // 
@@ -492,7 +507,8 @@ namespace MapaniApp
             this.TxtTransporte.Location = new System.Drawing.Point(176, 126);
             this.TxtTransporte.Name = "TxtTransporte";
             this.TxtTransporte.Size = new System.Drawing.Size(226, 29);
-            this.TxtTransporte.TabIndex = 61;
+            this.TxtTransporte.TabIndex = 8;
+            this.TxtTransporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // groupNMB
             // 
@@ -514,7 +530,7 @@ namespace MapaniApp
             this.groupNMB.Location = new System.Drawing.Point(2, 328);
             this.groupNMB.Name = "groupNMB";
             this.groupNMB.Size = new System.Drawing.Size(436, 296);
-            this.groupNMB.TabIndex = 62;
+            this.groupNMB.TabIndex = 5;
             this.groupNMB.TabStop = false;
             this.groupNMB.Text = "NMB";
             this.groupNMB.Visible = false;
@@ -531,7 +547,8 @@ namespace MapaniApp
             this.comboTipoDiscapacidadNMB.Location = new System.Drawing.Point(253, 91);
             this.comboTipoDiscapacidadNMB.Name = "comboTipoDiscapacidadNMB";
             this.comboTipoDiscapacidadNMB.Size = new System.Drawing.Size(159, 32);
-            this.comboTipoDiscapacidadNMB.TabIndex = 71;
+            this.comboTipoDiscapacidadNMB.TabIndex = 8;
+            this.comboTipoDiscapacidadNMB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // groupBox2
             // 
@@ -555,10 +572,10 @@ namespace MapaniApp
             this.groupBox2.Controls.Add(this.labelTransporte);
             this.groupBox2.Controls.Add(this.labelEstadoCivil);
             this.groupBox2.Controls.Add(this.ComboEstadoCivil);
-            this.groupBox2.Location = new System.Drawing.Point(12, 288);
+            this.groupBox2.Location = new System.Drawing.Point(6, 296);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(426, 380);
-            this.groupBox2.TabIndex = 63;
+            this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cuidador";
             this.groupBox2.Visible = false;
@@ -577,7 +594,8 @@ namespace MapaniApp
             this.ComboMovilizacion.Location = new System.Drawing.Point(176, 310);
             this.ComboMovilizacion.Name = "ComboMovilizacion";
             this.ComboMovilizacion.Size = new System.Drawing.Size(226, 32);
-            this.ComboMovilizacion.TabIndex = 77;
+            this.ComboMovilizacion.TabIndex = 15;
+            this.ComboMovilizacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // label20
             // 
@@ -595,8 +613,9 @@ namespace MapaniApp
             this.TxtCedula.Location = new System.Drawing.Point(178, 16);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(226, 29);
-            this.TxtCedula.TabIndex = 75;
+            this.TxtCedula.TabIndex = 5;
             this.TxtCedula.WordWrap = false;
+            this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContact_KeyPress);
             // 
             // label10
             // 
@@ -614,7 +633,7 @@ namespace MapaniApp
             this.txtGrupoEtnico.Location = new System.Drawing.Point(243, 279);
             this.txtGrupoEtnico.Name = "txtGrupoEtnico";
             this.txtGrupoEtnico.Size = new System.Drawing.Size(159, 29);
-            this.txtGrupoEtnico.TabIndex = 73;
+            this.txtGrupoEtnico.TabIndex = 14;
             // 
             // ComboGrupoEtnico
             // 
@@ -626,7 +645,8 @@ namespace MapaniApp
             this.ComboGrupoEtnico.Location = new System.Drawing.Point(176, 276);
             this.ComboGrupoEtnico.Name = "ComboGrupoEtnico";
             this.ComboGrupoEtnico.Size = new System.Drawing.Size(61, 32);
-            this.ComboGrupoEtnico.TabIndex = 72;
+            this.ComboGrupoEtnico.TabIndex = 13;
+            this.ComboGrupoEtnico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // label19
             // 
@@ -650,7 +670,8 @@ namespace MapaniApp
             this.ComboTipoDiscapacidadCuidador.Location = new System.Drawing.Point(243, 239);
             this.ComboTipoDiscapacidadCuidador.Name = "ComboTipoDiscapacidadCuidador";
             this.ComboTipoDiscapacidadCuidador.Size = new System.Drawing.Size(159, 32);
-            this.ComboTipoDiscapacidadCuidador.TabIndex = 70;
+            this.ComboTipoDiscapacidadCuidador.TabIndex = 12;
+            this.ComboTipoDiscapacidadCuidador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // ComboDiscapacidadCuidador
             // 
@@ -662,7 +683,8 @@ namespace MapaniApp
             this.ComboDiscapacidadCuidador.Location = new System.Drawing.Point(176, 239);
             this.ComboDiscapacidadCuidador.Name = "ComboDiscapacidadCuidador";
             this.ComboDiscapacidadCuidador.Size = new System.Drawing.Size(61, 32);
-            this.ComboDiscapacidadCuidador.TabIndex = 69;
+            this.ComboDiscapacidadCuidador.TabIndex = 11;
+            this.ComboDiscapacidadCuidador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // ComboIngresosPropios
             // 
@@ -674,7 +696,8 @@ namespace MapaniApp
             this.ComboIngresosPropios.Location = new System.Drawing.Point(176, 199);
             this.ComboIngresosPropios.Name = "ComboIngresosPropios";
             this.ComboIngresosPropios.Size = new System.Drawing.Size(226, 32);
-            this.ComboIngresosPropios.TabIndex = 68;
+            this.ComboIngresosPropios.TabIndex = 10;
+            this.ComboIngresosPropios.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // label17
             // 
@@ -702,7 +725,8 @@ namespace MapaniApp
             this.txtOcupacion.Location = new System.Drawing.Point(176, 161);
             this.txtOcupacion.Name = "txtOcupacion";
             this.txtOcupacion.Size = new System.Drawing.Size(226, 29);
-            this.txtOcupacion.TabIndex = 63;
+            this.txtOcupacion.TabIndex = 9;
+            this.txtOcupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // label16
             // 
@@ -738,7 +762,8 @@ namespace MapaniApp
             this.txtMunicipio.Location = new System.Drawing.Point(608, 290);
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.Size = new System.Drawing.Size(107, 29);
-            this.txtMunicipio.TabIndex = 70;
+            this.txtMunicipio.TabIndex = 18;
+            this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // txtParroquia
             // 
@@ -746,7 +771,8 @@ namespace MapaniApp
             this.txtParroquia.Location = new System.Drawing.Point(608, 253);
             this.txtParroquia.Name = "txtParroquia";
             this.txtParroquia.Size = new System.Drawing.Size(107, 29);
-            this.txtParroquia.TabIndex = 69;
+            this.txtParroquia.TabIndex = 17;
+            this.txtParroquia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // label9
             // 
@@ -774,7 +800,8 @@ namespace MapaniApp
             this.txtEstado.Location = new System.Drawing.Point(608, 325);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(107, 29);
-            this.txtEstado.TabIndex = 72;
+            this.txtEstado.TabIndex = 19;
+            this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // label12
             // 
@@ -792,7 +819,7 @@ namespace MapaniApp
             this.txtEscolaridad.Location = new System.Drawing.Point(108, 16);
             this.txtEscolaridad.Name = "txtEscolaridad";
             this.txtEscolaridad.Size = new System.Drawing.Size(166, 29);
-            this.txtEscolaridad.TabIndex = 75;
+            this.txtEscolaridad.TabIndex = 20;
             // 
             // label13
             // 
@@ -821,7 +848,7 @@ namespace MapaniApp
             this.txtDireccionEscuela.Multiline = true;
             this.txtDireccionEscuela.Name = "txtDireccionEscuela";
             this.txtDireccionEscuela.Size = new System.Drawing.Size(166, 94);
-            this.txtDireccionEscuela.TabIndex = 76;
+            this.txtDireccionEscuela.TabIndex = 22;
             // 
             // label15
             // 
@@ -839,7 +866,7 @@ namespace MapaniApp
             this.txtNombreEscuela.Location = new System.Drawing.Point(108, 57);
             this.txtNombreEscuela.Name = "txtNombreEscuela";
             this.txtNombreEscuela.Size = new System.Drawing.Size(166, 29);
-            this.txtNombreEscuela.TabIndex = 78;
+            this.txtNombreEscuela.TabIndex = 21;
             // 
             // groupEscolaridad
             // 
@@ -852,7 +879,7 @@ namespace MapaniApp
             this.groupEscolaridad.Location = new System.Drawing.Point(444, 419);
             this.groupEscolaridad.Name = "groupEscolaridad";
             this.groupEscolaridad.Size = new System.Drawing.Size(286, 217);
-            this.groupEscolaridad.TabIndex = 79;
+            this.groupEscolaridad.TabIndex = 20;
             this.groupEscolaridad.TabStop = false;
             this.groupEscolaridad.Text = "Escolaridad";
             this.groupEscolaridad.Visible = false;
@@ -874,10 +901,10 @@ namespace MapaniApp
             this.groupCharla.Controls.Add(this.label22);
             this.groupCharla.Controls.Add(this.ComboMuacRecibido);
             this.groupCharla.Controls.Add(this.label21);
-            this.groupCharla.Location = new System.Drawing.Point(444, 360);
+            this.groupCharla.Location = new System.Drawing.Point(444, 368);
             this.groupCharla.Name = "groupCharla";
             this.groupCharla.Size = new System.Drawing.Size(321, 308);
-            this.groupCharla.TabIndex = 72;
+            this.groupCharla.TabIndex = 20;
             this.groupCharla.TabStop = false;
             this.groupCharla.Text = "Informacion Recibida";
             this.groupCharla.Visible = false;
@@ -888,7 +915,8 @@ namespace MapaniApp
             this.TxtHijos.Location = new System.Drawing.Point(230, 130);
             this.TxtHijos.Name = "TxtHijos";
             this.TxtHijos.Size = new System.Drawing.Size(67, 29);
-            this.TxtHijos.TabIndex = 83;
+            this.TxtHijos.TabIndex = 23;
+            this.TxtHijos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContact_KeyPress);
             // 
             // labelHijos
             // 
@@ -907,7 +935,8 @@ namespace MapaniApp
             this.txtRango3.Location = new System.Drawing.Point(79, 260);
             this.txtRango3.Name = "txtRango3";
             this.txtRango3.Size = new System.Drawing.Size(80, 29);
-            this.txtRango3.TabIndex = 81;
+            this.txtRango3.TabIndex = 26;
+            this.txtRango3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContact_KeyPress);
             // 
             // txtRango2
             // 
@@ -915,7 +944,8 @@ namespace MapaniApp
             this.txtRango2.Location = new System.Drawing.Point(79, 230);
             this.txtRango2.Name = "txtRango2";
             this.txtRango2.Size = new System.Drawing.Size(80, 29);
-            this.txtRango2.TabIndex = 80;
+            this.txtRango2.TabIndex = 25;
+            this.txtRango2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContact_KeyPress);
             // 
             // txtRango1
             // 
@@ -923,7 +953,8 @@ namespace MapaniApp
             this.txtRango1.Location = new System.Drawing.Point(79, 199);
             this.txtRango1.Name = "txtRango1";
             this.txtRango1.Size = new System.Drawing.Size(80, 29);
-            this.txtRango1.TabIndex = 79;
+            this.txtRango1.TabIndex = 24;
+            this.txtRango1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContact_KeyPress);
             // 
             // label27
             // 
@@ -975,7 +1006,8 @@ namespace MapaniApp
             this.ComboHijosHogar.Location = new System.Drawing.Point(230, 94);
             this.ComboHijosHogar.Name = "ComboHijosHogar";
             this.ComboHijosHogar.Size = new System.Drawing.Size(67, 32);
-            this.ComboHijosHogar.TabIndex = 74;
+            this.ComboHijosHogar.TabIndex = 22;
+            this.ComboHijosHogar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // label23
             // 
@@ -997,7 +1029,8 @@ namespace MapaniApp
             this.ComboCharlaLactancia.Location = new System.Drawing.Point(230, 56);
             this.ComboCharlaLactancia.Name = "ComboCharlaLactancia";
             this.ComboCharlaLactancia.Size = new System.Drawing.Size(67, 32);
-            this.ComboCharlaLactancia.TabIndex = 72;
+            this.ComboCharlaLactancia.TabIndex = 21;
+            this.ComboCharlaLactancia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // label22
             // 
@@ -1019,7 +1052,8 @@ namespace MapaniApp
             this.ComboMuacRecibido.Location = new System.Drawing.Point(230, 21);
             this.ComboMuacRecibido.Name = "ComboMuacRecibido";
             this.ComboMuacRecibido.Size = new System.Drawing.Size(67, 32);
-            this.ComboMuacRecibido.TabIndex = 70;
+            this.ComboMuacRecibido.TabIndex = 20;
+            this.ComboMuacRecibido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboEstadoCivil_KeyPress);
             // 
             // label21
             // 
@@ -1067,6 +1101,7 @@ namespace MapaniApp
             this.Name = "AddContact";
             this.Text = "AddContact";
             this.Load += new System.EventHandler(this.AddContact_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContact_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).EndInit();
             this.groupNMB.ResumeLayout(false);
             this.groupNMB.PerformLayout();

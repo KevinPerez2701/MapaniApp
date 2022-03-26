@@ -26,20 +26,28 @@ namespace MapaniApp
         private void BtnAgregarCita_Click(object sender, EventArgs e)
         {
             ConfirmDate();
-            this.Close();
+           
         }
         private void ConfirmDate()
         {
-            HistorialVisitas Cita = new HistorialVisitas();
-            Cita.IdNMB = int.Parse(TxtId.Text);
-            Cita.IdCuidador = int.Parse(TxtCuidador.Text);
-            Cita.Fecha = DateCita.Value;
-            Cita.Departamento = comboDepartamento.Text;
-            Cita.Motivo = TxtObservacion.Text;
-            Cita.Reagendo = comboBox1.Text;
-            _LogicLayer.ConfirmCita(Cita);
-            _LogicLayer.DeleteCita(Cita);
-            
+            if (TxtCuidador.Text == "" || comboBox1.Text == "" || TxtCuidador.Text == null || comboBox1.Text == null)
+            {
+                MessageBox.Show("Rellene Todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            else
+            {
+                HistorialVisitas Cita = new HistorialVisitas();
+                Cita.IdNMB = int.Parse(TxtId.Text);
+                Cita.IdCuidador = int.Parse(TxtCuidador.Text);
+                Cita.Fecha = DateCita.Value;
+                Cita.Departamento = comboDepartamento.Text;
+                Cita.Motivo = TxtObservacion.Text;
+                Cita.Reagendo = comboBox1.Text;
+                _LogicLayer.ConfirmCita(Cita);
+                _LogicLayer.DeleteCita(Cita);
+                this.Close();
+            }
         }
 
         public void LoadData(HistorialVisitas Cita)
@@ -55,7 +63,9 @@ namespace MapaniApp
 
         private void ConfirmarCita_Load(object sender, EventArgs e)
         {
-
+            TxtId.ReadOnly = true;
+            DateCita.Enabled = false;
+            comboDepartamento.Enabled = false;
         }
 
         private void label6_Click(object sender, EventArgs e)

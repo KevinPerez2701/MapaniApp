@@ -37,7 +37,7 @@ namespace MapaniApp
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboProfesional = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -70,11 +70,13 @@ namespace MapaniApp
             this.comboDepartamento.Items.AddRange(new object[] {
             "Pediatria",
             "Nutricion",
-            "Psicologia"});
+            "Psicologia",
+            "Asesoria "});
             this.comboDepartamento.Location = new System.Drawing.Point(253, 90);
             this.comboDepartamento.Name = "comboDepartamento";
             this.comboDepartamento.Size = new System.Drawing.Size(134, 32);
             this.comboDepartamento.TabIndex = 13;
+            this.comboDepartamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboDepartamento_KeyPress);
             // 
             // TxtId
             // 
@@ -93,6 +95,7 @@ namespace MapaniApp
             this.DateCita.Name = "DateCita";
             this.DateCita.Size = new System.Drawing.Size(134, 29);
             this.DateCita.TabIndex = 11;
+            this.DateCita.ValueChanged += new System.EventHandler(this.DateCita_ValueChanged);
             // 
             // label3
             // 
@@ -124,18 +127,19 @@ namespace MapaniApp
             this.label1.TabIndex = 8;
             this.label1.Text = "Inserte Id NMB";
             // 
-            // comboBox1
+            // comboProfesional
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboProfesional.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboProfesional.FormattingEnabled = true;
+            this.comboProfesional.Items.AddRange(new object[] {
             "Pediatra1",
             "Pediatra2",
             "Nutricion1"});
-            this.comboBox1.Location = new System.Drawing.Point(253, 131);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(134, 32);
-            this.comboBox1.TabIndex = 17;
+            this.comboProfesional.Location = new System.Drawing.Point(253, 131);
+            this.comboProfesional.Name = "comboProfesional";
+            this.comboProfesional.Size = new System.Drawing.Size(134, 32);
+            this.comboProfesional.TabIndex = 17;
+            this.comboProfesional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboDepartamento_KeyPress);
             // 
             // label4
             // 
@@ -143,16 +147,16 @@ namespace MapaniApp
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(27, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 24);
+            this.label4.Size = new System.Drawing.Size(184, 24);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Inserte el Doctor";
+            this.label4.Text = "Inserte el Profesional";
             // 
             // AgregarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 243);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboProfesional);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnAgregarCita);
@@ -180,7 +184,7 @@ namespace MapaniApp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboProfesional;
         private System.Windows.Forms.Label label4;
     }
 }

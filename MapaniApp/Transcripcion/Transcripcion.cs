@@ -177,8 +177,7 @@ namespace MapaniApp
                 labelIdNMB.Visible = true;
                 TxtIdNMB.Visible = true;
                 TxtIdCuidador.Visible = true;
-                labelTipoCuidador.Visible = true;
-                ComboCuidador.Visible = true;
+                labelTipoCuidador.Visible = true;              
                 labelParentesco.Visible = true;
                 txtParentesco.Visible = true;
                
@@ -209,9 +208,9 @@ namespace MapaniApp
             this.Close();
         }
 
-      
 
-        
+        #region Limpieza de Datos
+
 
         private void HideLabels()
         {
@@ -244,7 +243,66 @@ namespace MapaniApp
             ComboOperacion.Text = "";           
             HideLabels();
         }
+        #endregion
+        #region Validacion de Datos
+        private void ComboCuidador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Ingrese una opcion Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            e.Handled = true;
+            return;
+        }
+        private void TxtIdNMB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Introduzca un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
 
-       
+        private void TxtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Introduzca un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Introduzca un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TxtIdCuidador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Introduzca un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtParentesco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Introduzca un Parentesco Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        #endregion
+
+     
     }
 }

@@ -54,7 +54,7 @@ namespace MapaniApp
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            dateTimePicker1.Enabled = false;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

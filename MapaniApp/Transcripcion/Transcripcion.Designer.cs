@@ -90,11 +90,12 @@ namespace MapaniApp
             "Buscar Contacto",
             "Agregar Relacion",
             "Imprimir"});
-            this.ComboOperacion.Location = new System.Drawing.Point(330, 18);
+            this.ComboOperacion.Location = new System.Drawing.Point(330, 15);
             this.ComboOperacion.Name = "ComboOperacion";
             this.ComboOperacion.Size = new System.Drawing.Size(172, 32);
-            this.ComboOperacion.TabIndex = 2;
+            this.ComboOperacion.TabIndex = 0;
             this.ComboOperacion.SelectedIndexChanged += new System.EventHandler(this.ComboOperacion_SelectedIndexChanged);
+            this.ComboOperacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboCuidador_KeyPress);
             // 
             // ComboContacto
             // 
@@ -104,11 +105,12 @@ namespace MapaniApp
             "NMB",
             "MMB",
             "Cuidador"});
-            this.ComboContacto.Location = new System.Drawing.Point(330, 60);
+            this.ComboContacto.Location = new System.Drawing.Point(330, 57);
             this.ComboContacto.Name = "ComboContacto";
             this.ComboContacto.Size = new System.Drawing.Size(172, 32);
-            this.ComboContacto.TabIndex = 3;
+            this.ComboContacto.TabIndex = 1;
             this.ComboContacto.Visible = false;
+            this.ComboContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboCuidador_KeyPress);
             // 
             // button1
             // 
@@ -116,7 +118,7 @@ namespace MapaniApp
             this.button1.Location = new System.Drawing.Point(111, 215);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 60);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Seleccionar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -127,7 +129,7 @@ namespace MapaniApp
             this.button2.Location = new System.Drawing.Point(274, 215);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(142, 60);
-            this.button2.TabIndex = 5;
+            this.button2.TabIndex = 6;
             this.button2.Text = "Salir";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -136,7 +138,7 @@ namespace MapaniApp
             // 
             this.labelId.AutoSize = true;
             this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.Location = new System.Drawing.Point(12, 105);
+            this.labelId.Location = new System.Drawing.Point(12, 100);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(223, 24);
             this.labelId.TabIndex = 6;
@@ -146,17 +148,18 @@ namespace MapaniApp
             // TxtId
             // 
             this.TxtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtId.Location = new System.Drawing.Point(330, 102);
+            this.TxtId.Location = new System.Drawing.Point(330, 100);
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(172, 29);
-            this.TxtId.TabIndex = 7;
+            this.TxtId.TabIndex = 2;
             this.TxtId.Visible = false;
+            this.TxtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtId_KeyPress);
             // 
             // labelCedula
             // 
             this.labelCedula.AutoSize = true;
             this.labelCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCedula.Location = new System.Drawing.Point(12, 107);
+            this.labelCedula.Location = new System.Drawing.Point(12, 100);
             this.labelCedula.Name = "labelCedula";
             this.labelCedula.Size = new System.Drawing.Size(162, 24);
             this.labelCedula.TabIndex = 8;
@@ -166,11 +169,12 @@ namespace MapaniApp
             // TxtCedula
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCedula.Location = new System.Drawing.Point(330, 102);
+            this.TxtCedula.Location = new System.Drawing.Point(330, 100);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(172, 29);
-            this.TxtCedula.TabIndex = 9;
+            this.TxtCedula.TabIndex = 2;
             this.TxtCedula.Visible = false;
+            this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
             // dataGridView1
             // 
@@ -198,7 +202,7 @@ namespace MapaniApp
             // 
             this.labelIdNMB.AutoSize = true;
             this.labelIdNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIdNMB.Location = new System.Drawing.Point(12, 107);
+            this.labelIdNMB.Location = new System.Drawing.Point(12, 105);
             this.labelIdNMB.Name = "labelIdNMB";
             this.labelIdNMB.Size = new System.Drawing.Size(191, 24);
             this.labelIdNMB.TabIndex = 11;
@@ -208,17 +212,18 @@ namespace MapaniApp
             // TxtIdNMB
             // 
             this.TxtIdNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIdNMB.Location = new System.Drawing.Point(330, 102);
+            this.TxtIdNMB.Location = new System.Drawing.Point(330, 100);
             this.TxtIdNMB.Name = "TxtIdNMB";
             this.TxtIdNMB.Size = new System.Drawing.Size(172, 29);
-            this.TxtIdNMB.TabIndex = 12;
+            this.TxtIdNMB.TabIndex = 2;
             this.TxtIdNMB.Visible = false;
+            this.TxtIdNMB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdNMB_KeyPress);
             // 
             // labelContactoID
             // 
             this.labelContactoID.AutoSize = true;
             this.labelContactoID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContactoID.Location = new System.Drawing.Point(12, 140);
+            this.labelContactoID.Location = new System.Drawing.Point(12, 137);
             this.labelContactoID.Name = "labelContactoID";
             this.labelContactoID.Size = new System.Drawing.Size(258, 24);
             this.labelContactoID.TabIndex = 13;
@@ -231,8 +236,9 @@ namespace MapaniApp
             this.TxtIdCuidador.Location = new System.Drawing.Point(330, 137);
             this.TxtIdCuidador.Name = "TxtIdCuidador";
             this.TxtIdCuidador.Size = new System.Drawing.Size(172, 29);
-            this.TxtIdCuidador.TabIndex = 14;
+            this.TxtIdCuidador.TabIndex = 3;
             this.TxtIdCuidador.Visible = false;
+            this.TxtIdCuidador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdCuidador_KeyPress);
             // 
             // labelTipoCuidador
             // 
@@ -252,20 +258,22 @@ namespace MapaniApp
             this.ComboCuidador.Items.AddRange(new object[] {
             "MMB",
             "Cuidador"});
-            this.ComboCuidador.Location = new System.Drawing.Point(330, 60);
+            this.ComboCuidador.Location = new System.Drawing.Point(330, 57);
             this.ComboCuidador.Name = "ComboCuidador";
             this.ComboCuidador.Size = new System.Drawing.Size(172, 32);
-            this.ComboCuidador.TabIndex = 16;
+            this.ComboCuidador.TabIndex = 1;
             this.ComboCuidador.Visible = false;
+            this.ComboCuidador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboCuidador_KeyPress);
             // 
             // txtParentesco
             // 
             this.txtParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParentesco.Location = new System.Drawing.Point(330, 171);
+            this.txtParentesco.Location = new System.Drawing.Point(330, 172);
             this.txtParentesco.Name = "txtParentesco";
             this.txtParentesco.Size = new System.Drawing.Size(172, 29);
-            this.txtParentesco.TabIndex = 18;
+            this.txtParentesco.TabIndex = 4;
             this.txtParentesco.Visible = false;
+            this.txtParentesco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParentesco_KeyPress);
             // 
             // labelParentesco
             // 

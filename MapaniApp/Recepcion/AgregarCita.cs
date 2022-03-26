@@ -26,26 +26,53 @@ namespace MapaniApp
         private void BtnAgregarCita_Click(object sender, EventArgs e)
         {
             SaveDate();
-            this.Close();
+           
         }
         private void SaveDate()
-        {
-            ProximasVisitas Cita = new ProximasVisitas
+        {   if (comboDepartamento.Text == "" || comboProfesional.Text == "" || comboDepartamento.Text == null || comboProfesional.Text == null)
             {
-                IdNMB = int.Parse(TxtId.Text),
-                Fecha = DateCita.Value,
-                Departamento = comboDepartamento.Text,
-                Rol = comboBox1.Text
-            };
-            _LogicLayer.SaveCita(Cita);
+                MessageBox.Show("Rellene Todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);            
+                return;
+            }
+            else
+            {
+                ProximasVisitas Cita = new ProximasVisitas
+                {
+                    IdNMB = int.Parse(TxtId.Text),
+                    Fecha = DateCita.Value,
+                    Departamento = comboDepartamento.Text,
+                    Rol = comboProfesional.Text
+                };
+                _LogicLayer.SaveCita(Cita);
+                this.Close();
+            }
         }
         public void LoadData(string ID)
         {
-            TxtId.Text = ID;            
+            TxtId.Text = ID;
+            TxtId.ReadOnly = true;
         }
         private void AgregarCita_Load(object sender, EventArgs e)
         {
 
         }
+        #region Validacion de Datos
+        private void DateCita_ValueChanged(object sender, EventArgs e)
+        {
+            if (int.Parse(Metodos.GetEdad(DateCita.Value, DateTime.Now)) > 0)
+
+            {
+                MessageBox.Show("Ingrese una Fecha de visita Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                DateCita.Value = DateTime.Now;
+            }
+        }
+
+        private void comboDepartamento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Ingrese una opcion Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            e.Handled = true;
+            return;
+        }
+        #endregion
     }
 }

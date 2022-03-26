@@ -72,7 +72,16 @@ namespace MapaniApp
             TxtTalla.Text = Datos.Talla;
             TxtCMB.Text = Datos.CMB;
             txtHb.Text = Datos.Hb;
-            TxtCC.Text = Datos.CC;
+            if (TxtCC.Text != "")
+            {
+                TxtCC.Text = Datos.CC;
+            }
+            else
+            {
+                TxtCC.Text = "0";
+            }
+            TxtTricep.Text = "0";
+            TxtSSF.Text = "0";
         }
         public void CalculateZScoresWho2006()
         {
@@ -99,12 +108,25 @@ namespace MapaniApp
                     TxtImc.Text = Math.Round(p, 1).ToString();
 
                 }
-                if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: (Lenght+0.7), sex: Sex.Male, z: ref x))
+                if (ageDays > 720)
                 {
-                    TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
-                    double p = StatisticsHelper.CalculatePercentile(x);
-                    TxtPesoTalla.Text = Math.Round(p, 1).ToString();
+                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: (Lenght + 0.7), sex: Sex.Male, z: ref x))
+                    {
+                        TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
+                        double p = StatisticsHelper.CalculatePercentile(x);
+                        TxtPesoTalla.Text = Math.Round(p, 1).ToString();
 
+                    }
+                }
+                if (ageDays < 720)
+                {
+                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: Lenght, sex: Sex.Male, z: ref x))
+                    {
+                        TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
+                        double p = StatisticsHelper.CalculatePercentile(x);
+                        TxtPesoTalla.Text = Math.Round(p, 1).ToString();
+
+                    }
                 }
                 if (who2006.TryCalculateZScore(indicator: Indicator.WeightForAge, measurement1: Weight, measurement2: ageDays, sex: Sex.Male, z: ref y))
                 {
@@ -153,12 +175,25 @@ namespace MapaniApp
                     TxtImc.Text = Math.Round(p, 1).ToString();
 
                 }
-                if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: (Lenght+0.7), sex: Sex.Female, z: ref x))
+                if (ageDays > 720)
                 {
-                    TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
-                    double p = StatisticsHelper.CalculatePercentile(x);
-                    TxtPesoTalla.Text = Math.Round(p, 1).ToString();
+                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: (Lenght + 0.7), sex: Sex.Male, z: ref x))
+                    {
+                        TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
+                        double p = StatisticsHelper.CalculatePercentile(x);
+                        TxtPesoTalla.Text = Math.Round(p, 1).ToString();
 
+                    }
+                }
+                if (ageDays < 720)
+                {
+                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: Lenght, sex: Sex.Male, z: ref x))
+                    {
+                        TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
+                        double p = StatisticsHelper.CalculatePercentile(x);
+                        TxtPesoTalla.Text = Math.Round(p, 1).ToString();
+
+                    }
                 }
                 if (who2006.TryCalculateZScore(indicator: Indicator.WeightForAge, measurement1: Weight, measurement2: ageDays, sex: Sex.Female, z: ref y))
                 {
@@ -332,24 +367,33 @@ namespace MapaniApp
                 TxtEdadMeses.Text = Metodos.GetEdadMeses(contact.FechaNacimiento,dateTimePicker2.Value);
                 txtSexo.Text = contact.Sexo;
                 txtEdadVisible.Text = Metodos.ObtenerEdad(contact.FechaNacimiento);
+                TxtNombre.ReadOnly = true;
+                TxtApellido.ReadOnly = true;
+                dateTimePicker1.Enabled = false;
+                txtSexo.ReadOnly = true;
+                txtEdadVisible.ReadOnly = true;
+
 
 
             }
         }
 
+      
+        
+       
+        
+        #region Botones
         private void BtnGuardar_Click(object sender, EventArgs e)
-        {
-            SaveData();
-        }
-
+            {
+                SaveData();
+            }
         private void BtnSucesivo_Click(object sender, EventArgs e)
-        {
-            SucesivoNutricion Sucesivo = new SucesivoNutricion();
+            {
+                SucesivoNutricion Sucesivo = new SucesivoNutricion();
            
-            Sucesivo.GetDataNutricion(TxtID.Text, int.Parse(TxtEdad.Text));
-            Sucesivo.ShowDialog(this);
-        }
-
+                Sucesivo.GetDataNutricion(TxtID.Text, int.Parse(TxtEdad.Text));
+                Sucesivo.ShowDialog(this);
+            }
         private void BtnCargarContacto_Click(object sender, EventArgs e)
         {
             List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
@@ -359,7 +403,6 @@ namespace MapaniApp
             GetDataEnfermeria();
         }
 
-
         private void BtnAddOrder_Click(object sender, EventArgs e)
         {
             VerProductos NuevaOrden = new VerProductos();
@@ -367,21 +410,111 @@ namespace MapaniApp
             NuevaOrden.GetIdNMB(TxtID.Text);
             NuevaOrden.ShowDialog(this);
         }
-
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
             if (float.Parse(TxtEdad.Text) > 1825)
             {
+                GroupWHO2007.Visible = true;
+                GroupWHO2006.Visible = false;
                 CalculateZScoresWho2007();
                 DiagnosticosWho2007();
                 DiagnosticoTalla2007();
             }
             else if (float.Parse(TxtEdad.Text) > 0 && float.Parse(TxtEdad.Text) < 1825)
             {
+                GroupWHO2006.Visible = true;
+                GroupWHO2007.Visible = false;
                 CalculateZScoresWho2006();
                 DiagnosticosWho2006();
                 DiagnosticoTalla();
+                if (float.Parse(TxtCC.Text) != 0)
+                {
+                    TxtCCP.Visible = true;
+                    TxtZCC.Visible = true;
+                    label17.Visible = true;
+                }
+                if (float.Parse(TxtTricep.Text) != 0)
+                {
+                    TxtTSFP.Visible = true;
+                    TxtTSFZ.Visible = true;
+                    label14.Visible = true;
+                }
+                if (float.Parse(TxtSSF.Text) != 0)
+                {
+                    TxtSSFP.Visible = true;
+                    TxtSSFZ.Visible = true;
+                    label15.Visible = true;
+                }
             }
         }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            TxtPeso.ReadOnly = false;
+            txtHb.ReadOnly = false;
+            TxtCC.ReadOnly = false;
+            TxtTalla.ReadOnly = false;
+            TxtCMB.ReadOnly = false;
+        }
+        #endregion
+
+        #region Validacion de DAtos
+        private void TxtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar >= 58 && e.KeyChar <= 255) || e.KeyChar == 47)
+            {
+                MessageBox.Show("Solo números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void ComboUrgencias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Ingrese una opcion Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            e.Handled = true;
+            return;
+        }
+
+        private void TxtPeso_Leave(object sender, EventArgs e)
+        {
+            if (float.Parse(TxtPeso.Text) < 1 || float.Parse(TxtPeso.Text) > 275)
+            {
+                MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TxtPeso.Text = "0";
+                return;
+            }
+        }
+
+        private void TxtTalla_Leave(object sender, EventArgs e)
+        {
+            if (float.Parse(TxtTalla.Text) < 38 || float.Parse(TxtTalla.Text) > 230)
+            {
+                MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TxtTalla.Text = "0";
+                return;
+            }
+        }
+
+        private void TxtCMB_Leave(object sender, EventArgs e)
+        {
+            if (float.Parse(TxtCMB.Text) < 6 || float.Parse(TxtCMB.Text) > 35)
+            {
+                MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TxtCMB.Text = "0";
+                return;
+            }
+        }
+        private void TxtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Introduzca un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        #endregion
+
+
     }
 }

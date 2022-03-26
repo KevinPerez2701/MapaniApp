@@ -73,7 +73,8 @@ namespace MapaniApp
             this.TxtID.Location = new System.Drawing.Point(263, 56);
             this.TxtID.Name = "TxtID";
             this.TxtID.Size = new System.Drawing.Size(121, 29);
-            this.TxtID.TabIndex = 65;
+            this.TxtID.TabIndex = 1;
+            this.TxtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtID_KeyPress);
             // 
             // label7
             // 
@@ -152,7 +153,8 @@ namespace MapaniApp
             this.ComboUsuario.Location = new System.Drawing.Point(263, 9);
             this.ComboUsuario.Name = "ComboUsuario";
             this.ComboUsuario.Size = new System.Drawing.Size(121, 32);
-            this.ComboUsuario.TabIndex = 54;
+            this.ComboUsuario.TabIndex = 0;
+            this.ComboUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboUsuario_KeyPress);
             // 
             // label1
             // 
@@ -184,7 +186,8 @@ namespace MapaniApp
             this.comboPrograma.Location = new System.Drawing.Point(263, 91);
             this.comboPrograma.Name = "comboPrograma";
             this.comboPrograma.Size = new System.Drawing.Size(121, 32);
-            this.comboPrograma.TabIndex = 67;
+            this.comboPrograma.TabIndex = 2;
+            this.comboPrograma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboUsuario_KeyPress);
             // 
             // label8
             // 
@@ -243,7 +246,7 @@ namespace MapaniApp
             this.BtnCargarContacto.Location = new System.Drawing.Point(12, 133);
             this.BtnCargarContacto.Name = "BtnCargarContacto";
             this.BtnCargarContacto.Size = new System.Drawing.Size(167, 49);
-            this.BtnCargarContacto.TabIndex = 76;
+            this.BtnCargarContacto.TabIndex = 3;
             this.BtnCargarContacto.Text = "Cargar Contacto";
             this.BtnCargarContacto.UseVisualStyleBackColor = true;
             this.BtnCargarContacto.Click += new System.EventHandler(this.BtnCargarContacto_Click);
@@ -265,8 +268,10 @@ namespace MapaniApp
             this.TxtTalla.Location = new System.Drawing.Point(268, 58);
             this.TxtTalla.Name = "TxtTalla";
             this.TxtTalla.Size = new System.Drawing.Size(173, 29);
-            this.TxtTalla.TabIndex = 81;
+            this.TxtTalla.TabIndex = 5;
             this.TxtTalla.Tag = "Contact";
+            this.TxtTalla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPeso_KeyPress);
+            this.TxtTalla.Leave += new System.EventHandler(this.TxtTalla_Leave);
             // 
             // TxtPeso
             // 
@@ -274,8 +279,10 @@ namespace MapaniApp
             this.TxtPeso.Location = new System.Drawing.Point(268, 23);
             this.TxtPeso.Name = "TxtPeso";
             this.TxtPeso.Size = new System.Drawing.Size(173, 29);
-            this.TxtPeso.TabIndex = 80;
+            this.TxtPeso.TabIndex = 4;
             this.TxtPeso.Tag = "Contact";
+            this.TxtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPeso_KeyPress);
+            this.TxtPeso.Leave += new System.EventHandler(this.TxtPeso_Leave);
             // 
             // TxtCMB
             // 
@@ -283,8 +290,10 @@ namespace MapaniApp
             this.TxtCMB.Location = new System.Drawing.Point(267, 94);
             this.TxtCMB.Name = "TxtCMB";
             this.TxtCMB.Size = new System.Drawing.Size(173, 29);
-            this.TxtCMB.TabIndex = 82;
+            this.TxtCMB.TabIndex = 6;
             this.TxtCMB.Tag = "Contact";
+            this.TxtCMB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPeso_KeyPress);
+            this.TxtCMB.Leave += new System.EventHandler(this.TxtCMB_Leave);
             // 
             // groupBase
             // 
@@ -298,10 +307,10 @@ namespace MapaniApp
             this.groupBase.Controls.Add(this.labelTalla);
             this.groupBase.Controls.Add(this.TxtTalla);
             this.groupBase.Controls.Add(this.TxtPeso);
-            this.groupBase.Location = new System.Drawing.Point(181, 205);
+            this.groupBase.Location = new System.Drawing.Point(181, 228);
             this.groupBase.Name = "groupBase";
             this.groupBase.Size = new System.Drawing.Size(452, 211);
-            this.groupBase.TabIndex = 90;
+            this.groupBase.TabIndex = 4;
             this.groupBase.TabStop = false;
             this.groupBase.Text = "GroupBase";
             this.groupBase.Visible = false;
@@ -326,9 +335,11 @@ namespace MapaniApp
             this.txtCC.Location = new System.Drawing.Point(267, 166);
             this.txtCC.Name = "txtCC";
             this.txtCC.Size = new System.Drawing.Size(173, 29);
-            this.txtCC.TabIndex = 91;
+            this.txtCC.TabIndex = 8;
             this.txtCC.Tag = "Contact";
             this.txtCC.Visible = false;
+            this.txtCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPeso_KeyPress);
+            this.txtCC.Leave += new System.EventHandler(this.txtCC_Leave);
             // 
             // label3
             // 
@@ -347,8 +358,9 @@ namespace MapaniApp
             this.TxtHb.Location = new System.Drawing.Point(267, 129);
             this.TxtHb.Name = "TxtHb";
             this.TxtHb.Size = new System.Drawing.Size(173, 29);
-            this.TxtHb.TabIndex = 89;
+            this.TxtHb.TabIndex = 7;
             this.TxtHb.Tag = "Contact";
+            this.TxtHb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPeso_KeyPress);
             // 
             // BtnGuardar
             // 
@@ -356,7 +368,7 @@ namespace MapaniApp
             this.BtnGuardar.Location = new System.Drawing.Point(153, 11);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(157, 36);
-            this.BtnGuardar.TabIndex = 102;
+            this.BtnGuardar.TabIndex = 9;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
             this.BtnGuardar.Click += new System.EventHandler(this.button1_Click);
@@ -397,7 +409,7 @@ namespace MapaniApp
             this.BtnSalir.Location = new System.Drawing.Point(416, 578);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(157, 36);
-            this.BtnSalir.TabIndex = 106;
+            this.BtnSalir.TabIndex = 10;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);

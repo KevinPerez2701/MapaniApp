@@ -158,6 +158,20 @@ namespace MapaniApp
             return $"{years} Años {(months > 0 ? $"y {months} meses" : "")}";
         }
         #endregion
-
+        #region Validacion de Datos
+        public bool vacio; // Variable utilizada para saber si hay algún TextBox vacio.
+        private void validar(Form formulario)
+        {
+            foreach (Control oControls in formulario.Controls) // Buscamos en cada TextBox de nuestro Formulario.
+            {
+                if (oControls is TextBox & oControls.Text == String.Empty) // Verificamos que no este vacio.
+                {
+                    vacio = true; // Si esta vacio el TextBox asignamos el valor True a nuestra variable.
+                }
+            }
+            if (vacio == true) MessageBox.Show("Favor de llenar todos los campos."); // Si nuestra variable es verdadera mostramos un mensaje.
+            vacio = false; // Devolvemos el valor original a nuestra variable.
+        }
+        #endregion
     }
 }
