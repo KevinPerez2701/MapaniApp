@@ -17,7 +17,7 @@ namespace MapaniApp
         private void Main_Load(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();
-            login.ShowDialog(this);           
+            login.ShowDialog(this);
 
             ventana = login.Posicion();
 
@@ -156,8 +156,8 @@ namespace MapaniApp
 
         #endregion
 
-       
 
-        
+
+
     }
 }

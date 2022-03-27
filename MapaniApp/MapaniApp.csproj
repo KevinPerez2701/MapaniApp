@@ -516,8 +516,10 @@
       <Isolated>False</Isolated>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Script\" />
+    <Content Include="Script\Scrip2019Data.txt" />
+    <Content Include="Script\Sql2019Schema.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

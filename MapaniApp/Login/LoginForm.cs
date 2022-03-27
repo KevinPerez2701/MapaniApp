@@ -13,19 +13,20 @@ namespace MapaniApp
         }
         #region EVENTOS
         private void BtnLogin_Click(object sender, EventArgs e)
-        {       if (this.Verificacion() == true)
+        {
+            if (this.Verificacion() == true)
             {
                 this.Posicion();
                 this.DialogResult = DialogResult.OK;
                 this.Hide();
             }
-        else
+            else
             {
                 MessageBox.Show("Rellene todos los Campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-               
+
                 return;
             }
-            
+
 
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -53,29 +54,29 @@ namespace MapaniApp
         public List<MapaniUsers> Posicion()
         {
             int flag = 0;
-                   
-                 List<MapaniUsers> ventana = _LogicLayer.Login(TxtUsuario.Text, TxtPassword.Text);
-                ventana[0].Fecha = dateTimePicker1.Value.Date;
-                ventana[0].HoraEntrada = DateTime.Now.ToString("hh:mm tt");
-                List<MapaniUsers> Asistencia = _LogicLayer.GetAsistencia();
-                foreach (MapaniUsers User in ventana)
+
+            List<MapaniUsers> ventana = _LogicLayer.Login(TxtUsuario.Text, TxtPassword.Text);
+            ventana[0].Fecha = dateTimePicker1.Value.Date;
+            ventana[0].HoraEntrada = DateTime.Now.ToString("hh:mm tt");
+            List<MapaniUsers> Asistencia = _LogicLayer.GetAsistencia();
+            foreach (MapaniUsers User in ventana)
+            {
+                foreach (MapaniUsers Cita in Asistencia)
                 {
-                    foreach (MapaniUsers Cita in Asistencia)
-                    {
-                        if (Cita.Fecha == User.Fecha && Cita.Id == User.Id)
-                            flag = 1;
-                    }
+                    if (Cita.Fecha == User.Fecha && Cita.Id == User.Id)
+                        flag = 1;
                 }
-                if (flag != 1)
-                 _LogicLayer.Asistencia(ventana);
-                return ventana;
-            
+            }
+            if (flag != 1)
+                _LogicLayer.Asistencia(ventana);
+            return ventana;
+
         }
 
 
         #endregion
 
- 
+
         private void LoginForm_Load(object sender, EventArgs e)
         {
 

@@ -19,7 +19,7 @@ namespace MapaniApp
         {
 
         }
-       
+
         #region Funciones
         public void SaveData()
         {

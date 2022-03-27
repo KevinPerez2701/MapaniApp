@@ -141,24 +141,24 @@ namespace MapaniApp
             // _LogicLayer.InsertCitaPediatria(Pediatria);
         }
         public void GetDataEnfermeria()
+        {
+            List<ClaseEnfermeria> Data = _LogicLayer.GetDataEnfermeria(TxtID.Text, dateTimePicker2.Value.Date);
+            ClaseEnfermeria Datos = Data[0];
+            TxtPeso.Text = Datos.Peso;
+            TxtTalla.Text = Datos.Talla;
+            TxtCMB.Text = Datos.CMB;
+            txtHb.Text = Datos.Hb;
+            if (TxtCC.Text != "")
             {
-                List<ClaseEnfermeria> Data = _LogicLayer.GetDataEnfermeria(TxtID.Text, dateTimePicker2.Value.Date);
-                ClaseEnfermeria Datos = Data[0];
-                TxtPeso.Text = Datos.Peso;
-                TxtTalla.Text = Datos.Talla;
-                TxtCMB.Text = Datos.CMB;
-                txtHb.Text = Datos.Hb;
-                if (TxtCC.Text != "")
-                {
-                    TxtCC.Text = Datos.CC;
-                }
-                else
-                {
-                    TxtCC.Text = "0";
-                }
-                TxtTricep.Text = "0";
-                TxtSSF.Text = "0";
+                TxtCC.Text = Datos.CC;
             }
+            else
+            {
+                TxtCC.Text = "0";
+            }
+            TxtTricep.Text = "0";
+            TxtSSF.Text = "0";
+        }
 
 
         #endregion
@@ -441,7 +441,7 @@ namespace MapaniApp
             }
         }
         #endregion
-    
+
         #region Validacion de Datos
         private void ComboUrgencias_KeyPress(object sender, KeyPressEventArgs e)
         {
