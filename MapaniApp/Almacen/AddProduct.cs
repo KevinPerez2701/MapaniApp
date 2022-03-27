@@ -43,41 +43,53 @@ namespace MapaniApp
             if (flag == "1")
             {
                 List<DataAlmacen> Productos = _LogicLayer.GetProductosBodega();
-                foreach (DataAlmacen Producto in Productos.ToArray())
+                if (Productos.Count != 0)
                 {
-                    if (Producto.IdProducto == int.Parse(TxtIdProducto.Text))
+                    foreach (DataAlmacen Producto in Productos.ToArray())
                     {
-                        GroupAdd.Visible = true;
-                        groupCantidad.Visible = true;
-                        TxtNombre.Text = Producto.Nombre;
-                        TxtLote.Text = Producto.Lote;
-                        datetimeVencimiento.Value = Producto.FechaVencimiento;
-                        TxtDescripcion.Text = Producto.Descripcion;
-                        comboPrograma.Text = Producto.Programa;
-                        flagBodega = "1";
+                        if (Producto.IdProducto == int.Parse(TxtIdProducto.Text))
+                        {
+                            GroupAdd.Visible = true;
+                            groupCantidad.Visible = true;
+                            TxtNombre.Text = Producto.Nombre;
+                            TxtLote.Text = Producto.Lote;
+                            datetimeVencimiento.Value = Producto.FechaVencimiento;
+                            TxtDescripcion.Text = Producto.Descripcion;
+                            comboPrograma.Text = Producto.Programa;
+                            flagBodega = "1";
+                        }
+                        else
+                        {
+                            GroupAdd.Visible = true;
+                            groupCantidad.Visible = true;
+                        }
+
                     }
-                    else
-                    {
-                        GroupAdd.Visible = true;
-                        groupCantidad.Visible = true;
-                    }
+                }
+                else
+                {
+                    GroupAdd.Visible = true;
+                    groupCantidad.Visible = true;
                 }
             }
             else if (flag == "0")
             {
                 List<DataAlmacen> Productos = _LogicLayer.GetProductos();
-                foreach (DataAlmacen Producto in Productos.ToArray())
+                if (Productos.Count != 0)
                 {
-                    if (Producto.IdProducto == int.Parse(TxtIdProducto.Text))
+                    foreach (DataAlmacen Producto in Productos.ToArray())
                     {
-                        GroupAdd.Visible = true;
-                        groupCantidad.Visible = true;
-                        TxtNombre.Text = Producto.Nombre;
-                        TxtLote.Text = Producto.Lote;
-                        datetimeVencimiento.Value = Producto.FechaVencimiento;
-                        TxtDescripcion.Text = Producto.Descripcion;
-                        comboPrograma.Text = Producto.Programa;
-                        flagAlmacen = "1";
+                        if (Producto.IdProducto == int.Parse(TxtIdProducto.Text))
+                        {
+                            GroupAdd.Visible = true;
+                            groupCantidad.Visible = true;
+                            TxtNombre.Text = Producto.Nombre;
+                            TxtLote.Text = Producto.Lote;
+                            datetimeVencimiento.Value = Producto.FechaVencimiento;
+                            TxtDescripcion.Text = Producto.Descripcion;
+                            comboPrograma.Text = Producto.Programa;
+                            flagAlmacen = "1";
+                        }
                     }
                 }
                 if (flagAlmacen == "0")

@@ -26,15 +26,22 @@ namespace MapaniApp
         public void LoadContact(string ID)
         {
             List<ContactNMB> contacts = _LogicLayer.GetContacts(ID);
-            TxtNombre.Text = contacts[0].Nombre;
-            TxtApellido.Text = contacts[0].Apellido;
-            txtEscolaridad.Text = contacts[0].Escolaridad;
-            txtEscuela.Text = contacts[0].NombreEscuela;
-            dateTimeFechaNacimiento.Value = contacts[0].FechaNacimiento;
-            txtEdad.Text = Metodos.ObtenerEdad(contacts[0].FechaNacimiento);
-            HistoriaPsicologia = contacts[0].Psicologia;
-            List<ContactPsicologia> Lista = _LogicLayer.GetHistorialPsicologia(ID);
-            dataGridView1.DataSource = Lista;
+            if (contacts.Count != 0)
+            {
+                TxtNombre.Text = contacts[0].Nombre;
+                TxtApellido.Text = contacts[0].Apellido;
+                txtEscolaridad.Text = contacts[0].Escolaridad;
+                txtEscuela.Text = contacts[0].NombreEscuela;
+                dateTimeFechaNacimiento.Value = contacts[0].FechaNacimiento;
+                txtEdad.Text = Metodos.ObtenerEdad(contacts[0].FechaNacimiento);
+                HistoriaPsicologia = contacts[0].Psicologia;
+                List<ContactPsicologia> Lista = _LogicLayer.GetHistorialPsicologia(ID);
+                dataGridView1.DataSource = Lista;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
 
         }

@@ -22,10 +22,17 @@ namespace MapaniApp
         private void BtnCargarContacto_Click(object sender, EventArgs e)
         {
             List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
-            ContactNMB contact = contacts[0];
-            LoadContact(contact);
-            BtnAddOrder.Visible = true;
-            GetDataEnfermeria();
+            if (contacts.Count != 0)
+            {
+                ContactNMB contact = contacts[0];
+                LoadContact(contact);
+                BtnAddOrder.Visible = true;
+                GetDataEnfermeria();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
         private void button1_Click(object sender, EventArgs e)
@@ -143,21 +150,28 @@ namespace MapaniApp
         public void GetDataEnfermeria()
         {
             List<ClaseEnfermeria> Data = _LogicLayer.GetDataEnfermeria(TxtID.Text, dateTimePicker2.Value.Date);
-            ClaseEnfermeria Datos = Data[0];
-            TxtPeso.Text = Datos.Peso;
-            TxtTalla.Text = Datos.Talla;
-            TxtCMB.Text = Datos.CMB;
-            txtHb.Text = Datos.Hb;
-            if (TxtCC.Text != "")
+            if (Data.Count != 0)
             {
-                TxtCC.Text = Datos.CC;
+                ClaseEnfermeria Datos = Data[0];
+                TxtPeso.Text = Datos.Peso;
+                TxtTalla.Text = Datos.Talla;
+                TxtCMB.Text = Datos.CMB;
+                txtHb.Text = Datos.Hb;
+                if (TxtCC.Text != "")
+                {
+                    TxtCC.Text = Datos.CC;
+                }
+                else
+                {
+                    TxtCC.Text = "0";
+                }
+                TxtTricep.Text = "0";
+                TxtSSF.Text = "0";
             }
             else
             {
-                TxtCC.Text = "0";
+                MessageBox.Show("Ingrese un Fecha de Consulta Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            TxtTricep.Text = "0";
-            TxtSSF.Text = "0";
         }
 
 

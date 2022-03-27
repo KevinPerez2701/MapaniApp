@@ -1974,7 +1974,7 @@ namespace MapaniApp
             catch (Exception)
             {
 
-                throw;
+              
             }
             finally
             {
@@ -2459,7 +2459,7 @@ namespace MapaniApp
             catch (Exception)
             {
 
-                throw;
+              
             }
             finally
             {

@@ -15,12 +15,7 @@ namespace MapaniApp
         {
 
         }
-        #region Botones
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        #endregion
+      
 
         #region Funciones
         public void PopulateContacts()

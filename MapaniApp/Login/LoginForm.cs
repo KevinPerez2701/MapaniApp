@@ -14,15 +14,16 @@ namespace MapaniApp
         #region EVENTOS
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (this.Verificacion() == true)
-            {
-                this.Posicion();
-                this.DialogResult = DialogResult.OK;
-                this.Hide();
+            if (this.Exito() == true)
+            {   
+                    this.Posicion();
+                    this.DialogResult = DialogResult.OK;
+                    this.Hide();
+                
             }
             else
             {
-                MessageBox.Show("Rellene todos los Campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Inicio de Sesion Invalido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 return;
             }
@@ -55,7 +56,7 @@ namespace MapaniApp
         {
             int flag = 0;
 
-            List<MapaniUsers> ventana = _LogicLayer.Login(TxtUsuario.Text, TxtPassword.Text);
+                List<MapaniUsers> ventana = _LogicLayer.Login(TxtUsuario.Text, TxtPassword.Text);
           
                 ventana[0].Fecha = dateTimePicker1.Value.Date;
                 ventana[0].HoraEntrada = DateTime.Now.ToString("hh:mm tt");
@@ -74,6 +75,18 @@ namespace MapaniApp
             
            
 
+        }
+        public bool Exito()
+        {
+            List<MapaniUsers> ventana = _LogicLayer.Login(TxtUsuario.Text, TxtPassword.Text);
+            if (ventana.Count != 0)
+            {
+                return true;
+                    }
+            else
+            {
+                return false;
+            }
         }
 
 
