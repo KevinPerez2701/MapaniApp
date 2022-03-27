@@ -29,6 +29,7 @@ namespace MapaniApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvolutivoPediatria));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@ namespace MapaniApp
             this.txtAntecedentes.Name = "txtAntecedentes";
             this.txtAntecedentes.Size = new System.Drawing.Size(455, 99);
             this.txtAntecedentes.TabIndex = 4;
-         
             // 
             // txtPatologias
             // 
@@ -129,6 +129,7 @@ namespace MapaniApp
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EvolutivoPediatria";
             this.Text = "EvolutivoPediatria";
             this.Load += new System.EventHandler(this.EvolutivoPediatria_Load);

@@ -82,24 +82,49 @@ namespace MapaniApp
             if (ComboUsuario.Text == "NMB")
             {
                 List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text); //Busca el contacto con el primary key Id
-                ContactNMB contact = contacts[0]; // Devuelve el valor unico de la lista en este caso
-                LoadContact(contact); //Carga los datos en los cuadros de texto
-                PopulateContacts(TxtID.Text); //Refresca las relaciones de cuidadores del NMB
-                PopulateContactsVisita(TxtID.Text); // Refresca las tablas Historial y Proximas visitas del NMB
+                if (contacts.Count != 0)
+                {
+                    ContactNMB contact = contacts[0]; // Devuelve el valor unico de la lista en este caso
+                    LoadContact(contact); //Carga los datos en los cuadros de texto
+                    PopulateContacts(TxtID.Text); //Refresca las relaciones de cuidadores del NMB
+                    PopulateContactsVisita(TxtID.Text); // Refresca las tablas Historial y Proximas visitas del NMB
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else if (ComboUsuario.Text == "Cuidador")
             {
                 List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtID.Text);
-                ContactCuidador contact = contacts[0];
-                LoadContactCuidador(contact);
-                PopulateContactsNMB(TxtID.Text);
+                if (contacts.Count != 0)
+                {
+                    ContactCuidador contact = contacts[0];
+                    LoadContactCuidador(contact);
+                    PopulateContactsNMB(TxtID.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else if (ComboUsuario.Text == "MMB")
             {
                 List<ContactMMB> contacts = _LogicLayer.GetContactsMMB(TxtID.Text);
-                ContactMMB contact = contacts[0];
-                LoadContactMMB(contact);
-                PopulateContactsMMB(TxtID.Text);
+                if (contacts.Count != 0)
+                {
+                    ContactMMB contact = contacts[0];
+                    LoadContactMMB(contact);
+                    PopulateContactsMMB(TxtID.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un Tipo de Usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         private void BtnCitas_Click(object sender, EventArgs e)

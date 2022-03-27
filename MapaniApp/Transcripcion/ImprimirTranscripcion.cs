@@ -9,6 +9,7 @@ namespace MapaniApp
     {
 
         private ContactNMB _contactNMB = new ContactNMB();
+        private ContactMMB _contactMMB = new ContactMMB();
         private ContactCuidador _contactCuidador = new ContactCuidador();
         private LogicLayer _LogicLayer = new LogicLayer();
         private Metodos _metodos = new Metodos();
@@ -37,7 +38,7 @@ namespace MapaniApp
             bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
             Graphics mg = Graphics.FromImage(bmp);
             mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
-            printPreviewDialog1.ShowDialog();
+            printPreviewDialog1.Show(this);
 
         }
 
@@ -70,6 +71,33 @@ namespace MapaniApp
         public void LoadContactCuidador(ContactCuidador contact)
         {
             _contactCuidador = contact;
+            if (contact != null)
+            {
+
+                txtNombreCuidador.Text = contact.Nombre;
+                txtApellidoCuidador.Text = contact.Apellido;
+                txtGeneroCuidador.Text = contact.Sexo;
+                txtCedula.Text = contact.Cedula;
+                dateTimePicker2.Value = contact.FechaNacimiento.Date;
+                txtEdad.Text = Metodos.ObtenerEdad(contact.FechaNacimiento.Date);
+                txtEstadoCivil.Text = contact.EstadoCivil;
+                txtTelefono.Text = contact.Telefono;
+                txtIngresos.Text = contact.IngresosPropios;
+                ComboDiscapacidadCuidador.Text = contact.Discapacidad;
+                ComboTipoDiscapacidadCuidador.Text = contact.TipoDiscapacidad;
+                ComboGrupoEtnico.Text = contact.GrupoEtnico;
+                txtGrupoEtnico.Text = contact.TipoGrupoEtnico;
+                txtMovilizacion.Text = contact.Movilizacion;
+                txtRango1.Text = contact.Rango1;
+                txtRango2.Text = contact.Rango2;
+                txtRango3.Text = contact.Rango3;
+            }
+
+
+        }
+        public void LoadContactMMB(ContactMMB contact)
+        {
+            _contactMMB = contact;
             if (contact != null)
             {
 

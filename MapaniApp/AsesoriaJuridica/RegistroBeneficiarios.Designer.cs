@@ -30,6 +30,7 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroBeneficiarios));
             this.txtID = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -264,7 +265,6 @@ namespace MapaniApp
             this.dataGridRelaciones.Name = "dataGridRelaciones";
             this.dataGridRelaciones.Size = new System.Drawing.Size(730, 184);
             this.dataGridRelaciones.TabIndex = 85;
-          
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -454,7 +454,6 @@ namespace MapaniApp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(732, 156);
             this.dataGridView1.TabIndex = 98;
-            
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -576,6 +575,7 @@ namespace MapaniApp
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistroBeneficiarios";
             this.Text = "Registro Beneficiarios";
             this.Load += new System.EventHandler(this.AsesoriaLegal_Load);

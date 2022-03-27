@@ -99,7 +99,19 @@ namespace MapaniApp
                 Parroquia = txtParroquia.Text,
                 Municipio = txtMunicipio.Text,
                 Estado = txtEstado.Text,
-                Ocupacion = txtOcupacion.Text,
+                Ocupacion = txtOcupacion.Text,                
+                IngresosPropios = ComboIngresosPropios.Text,
+                Discapacidad = ComboDiscapacidadCuidador.Text,
+                TipoDiscapacidad = ComboTipoDiscapacidadCuidador.Text,
+                GrupoEtnico = ComboGrupoEtnico.Text,
+                TipoGrupoEtnico = txtGrupoEtnico.Text,
+                Movilizacion = ComboMovilizacion.Text,
+                CharlaMuac = ComboMuacRecibido.Text,
+                CharlaLactancia = ComboCharlaLactancia.Text,
+                TieneHijos = ComboHijosHogar.Text,               
+                Rango1 = txtRango1.Text,
+                Rango2 = txtRango2.Text,
+                Rango3 = txtRango3.Text,
                 Id = _contactMMB != null ? _contactMMB.Id : 0
             };
             _LogicLayer.SaveContactMMB(Contact);
@@ -194,7 +206,20 @@ namespace MapaniApp
                 txtParroquia.Text = contact.Parroquia;
                 txtMunicipio.Text = contact.Municipio;
                 txtEstado.Text = contact.Estado;
-                PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);
+                txtOcupacion.Text = contact.Ocupacion;
+                PbFotoNewContact.Image = Metodos.GetImageFromByteArray(contact.Foto);               
+                ComboIngresosPropios.Text = contact.IngresosPropios;
+                ComboDiscapacidadCuidador.Text = contact.Discapacidad;
+                ComboTipoDiscapacidadCuidador.Text = contact.TipoDiscapacidad;
+                ComboGrupoEtnico.Text = contact.GrupoEtnico;
+                txtGrupoEtnico.Text = contact.TipoGrupoEtnico;
+                ComboMovilizacion.Text = contact.Movilizacion;
+                ComboCharlaLactancia.Text = contact.CharlaLactancia;
+                ComboMuacRecibido.Text = contact.CharlaMuac;
+                ComboHijosHogar.Text = contact.TieneHijos;
+                txtRango1.Text = contact.Rango1;
+                txtRango2.Text = contact.Rango2;
+                txtRango3.Text = contact.Rango3;
             }
 
 

@@ -30,15 +30,16 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Asistencia));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.HoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mapaniUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,19 +83,6 @@ namespace MapaniApp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(751, 302);
             this.dataGridView1.TabIndex = 2;
-           
-            // 
-            // HoraEntrada
-            // 
-            this.HoraEntrada.DataPropertyName = "HoraEntrada";
-            this.HoraEntrada.HeaderText = "Hora Entrada";
-            this.HoraEntrada.Name = "HoraEntrada";
-            // 
-            // HoraSalida
-            // 
-            this.HoraSalida.DataPropertyName = "HoraSalida";
-            this.HoraSalida.HeaderText = "HoraSalida";
-            this.HoraSalida.Name = "HoraSalida";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -120,6 +108,18 @@ namespace MapaniApp
             this.posicionDataGridViewTextBoxColumn.HeaderText = "Posicion";
             this.posicionDataGridViewTextBoxColumn.Name = "posicionDataGridViewTextBoxColumn";
             // 
+            // HoraEntrada
+            // 
+            this.HoraEntrada.DataPropertyName = "HoraEntrada";
+            this.HoraEntrada.HeaderText = "Hora Entrada";
+            this.HoraEntrada.Name = "HoraEntrada";
+            // 
+            // HoraSalida
+            // 
+            this.HoraSalida.DataPropertyName = "HoraSalida";
+            this.HoraSalida.HeaderText = "HoraSalida";
+            this.HoraSalida.Name = "HoraSalida";
+            // 
             // rolDataGridViewTextBoxColumn
             // 
             this.rolDataGridViewTextBoxColumn.DataPropertyName = "Rol";
@@ -138,6 +138,7 @@ namespace MapaniApp
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Asistencia";
             this.Text = "Asistencia";
             this.Load += new System.EventHandler(this.Asistencia_Load);

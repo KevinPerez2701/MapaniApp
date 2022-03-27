@@ -30,6 +30,7 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nutricion));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.BtnSucesivo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -71,8 +72,8 @@ namespace MapaniApp
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.TxtCCP = new System.Windows.Forms.TextBox();
-            this.TxtMuacP = new System.Windows.Forms.TextBox();
             this.TxtZIMC = new System.Windows.Forms.TextBox();
+            this.TxtMuacP = new System.Windows.Forms.TextBox();
             this.TxtZTallaEdad = new System.Windows.Forms.TextBox();
             this.TxtZPesoTalla = new System.Windows.Forms.TextBox();
             this.TxtZPesoEdad = new System.Windows.Forms.TextBox();
@@ -601,16 +602,6 @@ namespace MapaniApp
             this.TxtCCP.Tag = "Contact";
             this.TxtCCP.Visible = false;
             // 
-            // TxtMuacP
-            // 
-            this.TxtMuacP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMuacP.Location = new System.Drawing.Point(392, 23);
-            this.TxtMuacP.Name = "TxtMuacP";
-            this.TxtMuacP.ReadOnly = true;
-            this.TxtMuacP.Size = new System.Drawing.Size(72, 29);
-            this.TxtMuacP.TabIndex = 92;
-            this.TxtMuacP.Tag = "Contact";
-            // 
             // TxtZIMC
             // 
             this.TxtZIMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -620,6 +611,16 @@ namespace MapaniApp
             this.TxtZIMC.Size = new System.Drawing.Size(72, 29);
             this.TxtZIMC.TabIndex = 89;
             this.TxtZIMC.Tag = "Contact";
+            // 
+            // TxtMuacP
+            // 
+            this.TxtMuacP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMuacP.Location = new System.Drawing.Point(392, 23);
+            this.TxtMuacP.Name = "TxtMuacP";
+            this.TxtMuacP.ReadOnly = true;
+            this.TxtMuacP.Size = new System.Drawing.Size(72, 29);
+            this.TxtMuacP.TabIndex = 92;
+            this.TxtMuacP.Tag = "Contact";
             // 
             // TxtZTallaEdad
             // 
@@ -1160,6 +1161,7 @@ namespace MapaniApp
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Nutricion";
             this.Text = "Nutricion";
             this.Load += new System.EventHandler(this.Nutricion_Load);

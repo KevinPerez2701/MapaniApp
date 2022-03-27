@@ -29,6 +29,7 @@ namespace MapaniApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialNutricional));
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -99,7 +100,6 @@ namespace MapaniApp
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(171, 220);
             this.checkedListBox3.TabIndex = 1;
-           
             // 
             // checkedListBox2
             // 
@@ -633,6 +633,7 @@ namespace MapaniApp
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HistorialNutricional";
             this.Text = "HistorialNutricional";
             this.Load += new System.EventHandler(this.HistorialNutricional_Load);

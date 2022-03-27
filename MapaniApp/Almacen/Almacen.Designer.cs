@@ -29,6 +29,7 @@ namespace MapaniApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Almacen));
             this.button1 = new System.Windows.Forms.Button();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -114,6 +115,7 @@ namespace MapaniApp
             this.Controls.Add(this.button2);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Almacen";
             this.Text = "Almacen";
             this.Load += new System.EventHandler(this.Almacen_Load);

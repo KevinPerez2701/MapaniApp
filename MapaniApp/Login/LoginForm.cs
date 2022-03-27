@@ -56,20 +56,23 @@ namespace MapaniApp
             int flag = 0;
 
             List<MapaniUsers> ventana = _LogicLayer.Login(TxtUsuario.Text, TxtPassword.Text);
-            ventana[0].Fecha = dateTimePicker1.Value.Date;
-            ventana[0].HoraEntrada = DateTime.Now.ToString("hh:mm tt");
-            List<MapaniUsers> Asistencia = _LogicLayer.GetAsistencia();
-            foreach (MapaniUsers User in ventana)
-            {
-                foreach (MapaniUsers Cita in Asistencia)
+          
+                ventana[0].Fecha = dateTimePicker1.Value.Date;
+                ventana[0].HoraEntrada = DateTime.Now.ToString("hh:mm tt");
+                List<MapaniUsers> Asistencia = _LogicLayer.GetAsistencia();
+                foreach (MapaniUsers User in ventana)
                 {
-                    if (Cita.Fecha == User.Fecha && Cita.Id == User.Id)
-                        flag = 1;
+                    foreach (MapaniUsers Cita in Asistencia)
+                    {
+                        if (Cita.Fecha == User.Fecha && Cita.Id == User.Id)
+                            flag = 1;
+                    }
                 }
-            }
-            if (flag != 1)
-                _LogicLayer.Asistencia(ventana);
-            return ventana;
+                if (flag != 1)
+                    _LogicLayer.Asistencia(ventana);
+                return ventana;
+            
+           
 
         }
 

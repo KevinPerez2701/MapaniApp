@@ -29,6 +29,7 @@ namespace MapaniApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
             this.TxtIdProducto = new System.Windows.Forms.TextBox();
             this.datetimeVencimiento = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -125,7 +126,6 @@ namespace MapaniApp
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(226, 29);
             this.TxtNombre.TabIndex = 34;
-       
             // 
             // label2
             // 
@@ -266,6 +266,7 @@ namespace MapaniApp
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TxtIdProducto);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddProduct";
             this.Text = "AddProduct";
             this.Load += new System.EventHandler(this.AddProduct_Load);

@@ -30,8 +30,8 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactosCuidadores));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +43,7 @@ namespace MapaniApp
             this.municipioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vinculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,10 +70,6 @@ namespace MapaniApp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(920, 450);
             this.dataGridView1.TabIndex = 99;
-            // 
-            // contactAsesoriaBindingSource
-            // 
-            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -140,12 +137,17 @@ namespace MapaniApp
             this.vinculoDataGridViewTextBoxColumn.HeaderText = "Vinculo";
             this.vinculoDataGridViewTextBoxColumn.Name = "vinculoDataGridViewTextBoxColumn";
             // 
+            // contactAsesoriaBindingSource
+            // 
+            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
+            // 
             // ContactosCuidadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 450);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContactosCuidadores";
             this.Text = "ContactosCuidadores";
             this.Load += new System.EventHandler(this.ContactosCuidadores_Load);

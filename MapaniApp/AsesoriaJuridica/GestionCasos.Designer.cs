@@ -30,6 +30,7 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionCasos));
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtApellido = new System.Windows.Forms.TextBox();
@@ -40,6 +41,8 @@ namespace MapaniApp
             this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
             this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtSeguimiento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,8 +61,29 @@ namespace MapaniApp
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.BtnLimpiar = new System.Windows.Forms.Button();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCuidadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ocupacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parroquiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.municipioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vinculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pDFDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoCasoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoAtencionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seguimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -157,13 +181,49 @@ namespace MapaniApp
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Fecha,
-            this.Ver});
+            this.Ver,
+            this.idDataGridViewTextBoxColumn,
+            this.idCuidadorDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.apellidoDataGridViewTextBoxColumn,
+            this.direccionDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.ocupacionDataGridViewTextBoxColumn,
+            this.cedulaDataGridViewTextBoxColumn,
+            this.parroquiaDataGridViewTextBoxColumn,
+            this.municipioDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.vinculoDataGridViewTextBoxColumn,
+            this.tipoDocumentoDataGridViewTextBoxColumn,
+            this.documentoDataGridViewImageColumn,
+            this.pDFDataGridViewImageColumn,
+            this.idNMBDataGridViewTextBoxColumn,
+            this.tipoCasoDataGridViewTextBoxColumn,
+            this.tipoAtencionDataGridViewTextBoxColumn,
+            this.seguimientoDataGridViewTextBoxColumn,
+            this.estatusDataGridViewTextBoxColumn,
+            this.observacionDataGridViewTextBoxColumn,
+            this.evolucionDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.contactAsesoriaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(552, 51);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(260, 103);
             this.dataGridView1.TabIndex = 117;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // Ver
+            // 
+            this.Ver.HeaderText = "Ver";
+            this.Ver.Name = "Ver";
+            this.Ver.Text = "Ver";
+            this.Ver.UseColumnTextForLinkValue = true;
             // 
             // contactAsesoriaBindingSource
             // 
@@ -278,7 +338,6 @@ namespace MapaniApp
             this.label10.TabIndex = 126;
             this.label10.Text = "Observacion";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-         
             // 
             // BtnSave
             // 
@@ -334,18 +393,143 @@ namespace MapaniApp
             this.BtnLimpiar.UseVisualStyleBackColor = true;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
-            // Fecha
+            // idDataGridViewTextBoxColumn
             // 
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
-            // Ver
+            // idCuidadorDataGridViewTextBoxColumn
             // 
-            this.Ver.HeaderText = "Ver";
-            this.Ver.Name = "Ver";
-            this.Ver.Text = "Ver";
-            this.Ver.UseColumnTextForLinkValue = true;
+            this.idCuidadorDataGridViewTextBoxColumn.DataPropertyName = "IdCuidador";
+            this.idCuidadorDataGridViewTextBoxColumn.HeaderText = "IdCuidador";
+            this.idCuidadorDataGridViewTextBoxColumn.Name = "idCuidadorDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // ocupacionDataGridViewTextBoxColumn
+            // 
+            this.ocupacionDataGridViewTextBoxColumn.DataPropertyName = "Ocupacion";
+            this.ocupacionDataGridViewTextBoxColumn.HeaderText = "Ocupacion";
+            this.ocupacionDataGridViewTextBoxColumn.Name = "ocupacionDataGridViewTextBoxColumn";
+            // 
+            // cedulaDataGridViewTextBoxColumn
+            // 
+            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            // 
+            // parroquiaDataGridViewTextBoxColumn
+            // 
+            this.parroquiaDataGridViewTextBoxColumn.DataPropertyName = "Parroquia";
+            this.parroquiaDataGridViewTextBoxColumn.HeaderText = "Parroquia";
+            this.parroquiaDataGridViewTextBoxColumn.Name = "parroquiaDataGridViewTextBoxColumn";
+            // 
+            // municipioDataGridViewTextBoxColumn
+            // 
+            this.municipioDataGridViewTextBoxColumn.DataPropertyName = "Municipio";
+            this.municipioDataGridViewTextBoxColumn.HeaderText = "Municipio";
+            this.municipioDataGridViewTextBoxColumn.Name = "municipioDataGridViewTextBoxColumn";
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            // 
+            // vinculoDataGridViewTextBoxColumn
+            // 
+            this.vinculoDataGridViewTextBoxColumn.DataPropertyName = "Vinculo";
+            this.vinculoDataGridViewTextBoxColumn.HeaderText = "Vinculo";
+            this.vinculoDataGridViewTextBoxColumn.Name = "vinculoDataGridViewTextBoxColumn";
+            // 
+            // tipoDocumentoDataGridViewTextBoxColumn
+            // 
+            this.tipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "TipoDocumento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "TipoDocumento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
+            // 
+            // documentoDataGridViewImageColumn
+            // 
+            this.documentoDataGridViewImageColumn.DataPropertyName = "Documento";
+            this.documentoDataGridViewImageColumn.HeaderText = "Documento";
+            this.documentoDataGridViewImageColumn.Name = "documentoDataGridViewImageColumn";
+            // 
+            // pDFDataGridViewImageColumn
+            // 
+            this.pDFDataGridViewImageColumn.DataPropertyName = "PDF";
+            this.pDFDataGridViewImageColumn.HeaderText = "PDF";
+            this.pDFDataGridViewImageColumn.Name = "pDFDataGridViewImageColumn";
+            // 
+            // idNMBDataGridViewTextBoxColumn
+            // 
+            this.idNMBDataGridViewTextBoxColumn.DataPropertyName = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.HeaderText = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.Name = "idNMBDataGridViewTextBoxColumn";
+            // 
+            // tipoCasoDataGridViewTextBoxColumn
+            // 
+            this.tipoCasoDataGridViewTextBoxColumn.DataPropertyName = "TipoCaso";
+            this.tipoCasoDataGridViewTextBoxColumn.HeaderText = "TipoCaso";
+            this.tipoCasoDataGridViewTextBoxColumn.Name = "tipoCasoDataGridViewTextBoxColumn";
+            // 
+            // tipoAtencionDataGridViewTextBoxColumn
+            // 
+            this.tipoAtencionDataGridViewTextBoxColumn.DataPropertyName = "TipoAtencion";
+            this.tipoAtencionDataGridViewTextBoxColumn.HeaderText = "TipoAtencion";
+            this.tipoAtencionDataGridViewTextBoxColumn.Name = "tipoAtencionDataGridViewTextBoxColumn";
+            // 
+            // seguimientoDataGridViewTextBoxColumn
+            // 
+            this.seguimientoDataGridViewTextBoxColumn.DataPropertyName = "Seguimiento";
+            this.seguimientoDataGridViewTextBoxColumn.HeaderText = "Seguimiento";
+            this.seguimientoDataGridViewTextBoxColumn.Name = "seguimientoDataGridViewTextBoxColumn";
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            // 
+            // observacionDataGridViewTextBoxColumn
+            // 
+            this.observacionDataGridViewTextBoxColumn.DataPropertyName = "Observacion";
+            this.observacionDataGridViewTextBoxColumn.HeaderText = "Observacion";
+            this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
+            // 
+            // evolucionDataGridViewTextBoxColumn
+            // 
+            this.evolucionDataGridViewTextBoxColumn.DataPropertyName = "Evolucion";
+            this.evolucionDataGridViewTextBoxColumn.HeaderText = "Evolucion";
+            this.evolucionDataGridViewTextBoxColumn.Name = "evolucionDataGridViewTextBoxColumn";
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             // 
             // GestionCasos
             // 
@@ -379,6 +563,7 @@ namespace MapaniApp
             this.Controls.Add(this.BtnCargar);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestionCasos";
             this.Text = "GestionCasos";
             this.Load += new System.EventHandler(this.GestionCasos_Load);
@@ -421,5 +606,28 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewLinkColumn Ver;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCuidadorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ocupacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn parroquiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn municipioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vinculoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn documentoDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewImageColumn pDFDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNMBDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoCasoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoAtencionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seguimientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn evolucionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
     }
 }

@@ -51,7 +51,6 @@ namespace MapaniApp
             this.menuStrip1.Size = new System.Drawing.Size(1370, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
-         
             // 
             // abrirPDFToolStripMenuItem
             // 
@@ -77,6 +76,7 @@ namespace MapaniApp
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.axAcroPDF1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AbrirDocumento";
             this.Text = "AbrirDocumento";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -29,6 +29,7 @@ namespace MapaniApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AsesoriaJuridica));
             this.BtnRegistro = new System.Windows.Forms.Button();
             this.BtnCargarDocumentos = new System.Windows.Forms.Button();
             this.BtnVerDocumentos = new System.Windows.Forms.Button();
@@ -88,6 +89,7 @@ namespace MapaniApp
             this.Controls.Add(this.BtnVerDocumentos);
             this.Controls.Add(this.BtnCargarDocumentos);
             this.Controls.Add(this.BtnRegistro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AsesoriaJuridica";
             this.Text = "AsesoriaJuridica";
             this.Load += new System.EventHandler(this.AsesoriaJuridica_Load);

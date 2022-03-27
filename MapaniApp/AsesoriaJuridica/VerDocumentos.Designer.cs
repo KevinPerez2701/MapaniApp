@@ -30,6 +30,7 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerDocumentos));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idCuidadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,6 +137,7 @@ namespace MapaniApp
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VerDocumentos";
             this.Text = "VerDocumentos";
             this.Load += new System.EventHandler(this.VerDocumentos_Load);

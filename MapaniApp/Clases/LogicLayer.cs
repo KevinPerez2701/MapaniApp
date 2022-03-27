@@ -299,9 +299,9 @@ namespace MapaniApp
         {
             _dataAccessLayer.InsertRelacion(IdNMB, IdCuidador, parentesco, cedula);
         }
-        public void InsertRelacionMMB(string IdNMB, string IdMMB, string parentesco)
+        public void InsertRelacionMMB(string IdNMB, string IdMMB, string parentesco, string Cedula)
         {
-            _dataAccessLayer.InsertRelacionMMB(IdNMB, IdMMB, parentesco);
+            _dataAccessLayer.InsertRelacionMMB(IdNMB, IdMMB, parentesco, Cedula );
         }
         public List<MapaniUsers> Login(string User, string Password)
         {

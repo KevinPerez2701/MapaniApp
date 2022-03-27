@@ -30,10 +30,9 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerProductos));
             this.BtnSalir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TxtId = new System.Windows.Forms.TextBox();
-            this.dataAlmacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +41,8 @@ namespace MapaniApp
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pedido = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Diferido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAlmacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TxtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataAlmacenBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -76,18 +77,6 @@ namespace MapaniApp
             this.dataGridView1.Size = new System.Drawing.Size(861, 292);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // TxtId
-            // 
-            this.TxtId.Location = new System.Drawing.Point(504, 393);
-            this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(27, 20);
-            this.TxtId.TabIndex = 2;
-            this.TxtId.Visible = false;
-            // 
-            // dataAlmacenBindingSource
-            // 
-            this.dataAlmacenBindingSource.DataSource = typeof(MapaniApp.DataAlmacen);
             // 
             // idProductoDataGridViewTextBoxColumn
             // 
@@ -138,6 +127,18 @@ namespace MapaniApp
             this.Diferido.HeaderText = "Diferido";
             this.Diferido.Name = "Diferido";
             // 
+            // dataAlmacenBindingSource
+            // 
+            this.dataAlmacenBindingSource.DataSource = typeof(MapaniApp.DataAlmacen);
+            // 
+            // TxtId
+            // 
+            this.TxtId.Location = new System.Drawing.Point(504, 393);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(27, 20);
+            this.TxtId.TabIndex = 2;
+            this.TxtId.Visible = false;
+            // 
             // VerProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,6 +147,7 @@ namespace MapaniApp
             this.Controls.Add(this.TxtId);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnSalir);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VerProductos";
             this.Text = "VerProductos";
             this.Load += new System.EventHandler(this.VerProductos_Load);

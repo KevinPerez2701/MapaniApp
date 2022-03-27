@@ -29,6 +29,7 @@ namespace MapaniApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enfermeria));
             this.TxtID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -314,7 +315,6 @@ namespace MapaniApp
             this.groupBase.TabStop = false;
             this.groupBase.Text = "GroupBase";
             this.groupBase.Visible = false;
-          
             // 
             // labelCC
             // 
@@ -462,6 +462,7 @@ namespace MapaniApp
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ComboUsuario);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Enfermeria";
             this.Text = "Enfermeria";
             this.Load += new System.EventHandler(this.Enfermeria_Load);

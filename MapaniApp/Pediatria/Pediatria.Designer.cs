@@ -29,6 +29,7 @@ namespace MapaniApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pediatria));
             this.BtnCargarContacto = new System.Windows.Forms.Button();
             this.TxtEdad = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -1138,6 +1139,7 @@ namespace MapaniApp
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pediatria";
             this.Text = "Pediatria";
             this.Load += new System.EventHandler(this.Pediatria_Load);

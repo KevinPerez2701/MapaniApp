@@ -30,6 +30,7 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Psicologia));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.TxtApellido = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
@@ -46,7 +47,13 @@ namespace MapaniApp
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridRelaciones = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parentescoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contactos = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnCargar = new System.Windows.Forms.Button();
             this.txtSeguimiento = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -67,6 +74,8 @@ namespace MapaniApp
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VerCita = new System.Windows.Forms.DataGridViewLinkColumn();
             this.RazonSalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazonSeguridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,21 +89,13 @@ namespace MapaniApp
             this.NoAccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seguimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactPsicologiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnGuardarCita = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
-            this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactPsicologiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parentescoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactPsicologiaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -260,12 +261,46 @@ namespace MapaniApp
             this.dataGridRelaciones.TabIndex = 97;
             this.dataGridRelaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRelaciones_CellContentClick);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // fechaNacimientoDataGridViewTextBoxColumn
+            // 
+            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
+            // 
+            // parentescoDataGridViewTextBoxColumn
+            // 
+            this.parentescoDataGridViewTextBoxColumn.DataPropertyName = "Parentesco";
+            this.parentescoDataGridViewTextBoxColumn.HeaderText = "Parentesco";
+            this.parentescoDataGridViewTextBoxColumn.Name = "parentescoDataGridViewTextBoxColumn";
+            // 
             // Contactos
             // 
             this.Contactos.HeaderText = "Contactos";
             this.Contactos.Name = "Contactos";
             this.Contactos.Text = "Ver";
             this.Contactos.UseColumnTextForLinkValue = true;
+            // 
+            // contactNMBBindingSource
+            // 
+            this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
             // 
             // BtnCargar
             // 
@@ -468,6 +503,19 @@ namespace MapaniApp
             this.dataGridView1.TabIndex = 125;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // idNMBDataGridViewTextBoxColumn
+            // 
+            this.idNMBDataGridViewTextBoxColumn.DataPropertyName = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.HeaderText = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.Name = "idNMBDataGridViewTextBoxColumn";
+            this.idNMBDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
             // VerCita
             // 
             this.VerCita.HeaderText = "Ver Cita";
@@ -559,6 +607,10 @@ namespace MapaniApp
             this.Seguimiento.Name = "Seguimiento";
             this.Seguimiento.Visible = false;
             // 
+            // contactPsicologiaBindingSource
+            // 
+            this.contactPsicologiaBindingSource.DataSource = typeof(MapaniApp.ContactPsicologia);
+            // 
             // btnGuardarCita
             // 
             this.btnGuardarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -580,57 +632,6 @@ namespace MapaniApp
             this.BtnLimpiar.Text = "Limpiar Campo";
             this.BtnLimpiar.UseVisualStyleBackColor = true;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
-            // 
-            // idNMBDataGridViewTextBoxColumn
-            // 
-            this.idNMBDataGridViewTextBoxColumn.DataPropertyName = "IdNMB";
-            this.idNMBDataGridViewTextBoxColumn.HeaderText = "IdNMB";
-            this.idNMBDataGridViewTextBoxColumn.Name = "idNMBDataGridViewTextBoxColumn";
-            this.idNMBDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // contactPsicologiaBindingSource
-            // 
-            this.contactPsicologiaBindingSource.DataSource = typeof(MapaniApp.ContactPsicologia);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // fechaNacimientoDataGridViewTextBoxColumn
-            // 
-            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
-            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
-            this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
-            // 
-            // parentescoDataGridViewTextBoxColumn
-            // 
-            this.parentescoDataGridViewTextBoxColumn.DataPropertyName = "Parentesco";
-            this.parentescoDataGridViewTextBoxColumn.HeaderText = "Parentesco";
-            this.parentescoDataGridViewTextBoxColumn.Name = "parentescoDataGridViewTextBoxColumn";
-            // 
-            // contactNMBBindingSource
-            // 
-            this.contactNMBBindingSource.DataSource = typeof(MapaniApp.ContactNMB);
             // 
             // Psicologia
             // 
@@ -676,14 +677,15 @@ namespace MapaniApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Psicologia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Psicologia";
             this.Load += new System.EventHandler(this.Psicologia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactPsicologiaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

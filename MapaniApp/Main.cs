@@ -110,48 +110,49 @@ namespace MapaniApp
         private void button1_Click_1(object sender, EventArgs e)
         {
             Transcripcion transcripcion = new Transcripcion();
-            transcripcion.ShowDialog(this);
+            transcripcion.Show(this);
         }
         private void BtnAlmacen_Click(object sender, EventArgs e)
         {
             Almacen almacen = new Almacen();
-            almacen.ShowDialog(this);
+            almacen.Show(this);
         }
 
         private void BtnNutricion_Click(object sender, EventArgs e)
         {
             Nutricion nutricion = new Nutricion();
-            nutricion.ShowDialog(this);
+            nutricion.Show(this);
         }
 
         private void BtnPsicologia_Click(object sender, EventArgs e)
         {
             Psicologia psicologia = new Psicologia();
-            psicologia.ShowDialog(this);
+            psicologia.Show(this);
         }
 
         private void BtnEnfermeria_Click(object sender, EventArgs e)
         {
             Enfermeria enfermeria = new Enfermeria();
-            enfermeria.ShowDialog(this);
+            enfermeria.Show(this);
         }
 
         private void BtnPediatria_Click(object sender, EventArgs e)
         {
             Pediatria pediatria = new Pediatria();
-            pediatria.ShowDialog(this);
+            pediatria.Show(this);
         }
 
         private void BtnLegal_Click(object sender, EventArgs e)
         {
             AsesoriaJuridica legal = new AsesoriaJuridica();
-            legal.ShowDialog(this);
+            legal.Show(this);
         }
 
         private void BtnRecepcion_Click(object sender, EventArgs e)
         {
             Recepcion recepcion = new Recepcion();
-            recepcion.ShowDialog(this);
+            recepcion.Show(this);
+         
         }
 
         #endregion

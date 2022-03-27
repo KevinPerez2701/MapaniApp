@@ -30,34 +30,55 @@ namespace MapaniApp
             else if (ComboOperacion.Text == "Editar Contacto")
             {
                 if (ComboContacto.Text == "NMB")
-                {
+                {   
                     List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtId.Text);
-                    ContactNMB contact = contacts[0];
-                    AddContact contactDetails = new AddContact();
-                    contactDetails.LoadContact(contact);
-                    contactDetails.EditUser(ComboContacto.Text, TxtId.Text);
-                    contactDetails.ShowDialog(this);
-                    Clean();
+                    if (contacts.Count != 0)
+                    {
+                        ContactNMB contact = contacts[0];
+                        AddContact contactDetails = new AddContact();
+                        contactDetails.LoadContact(contact);
+                        contactDetails.EditUser(ComboContacto.Text, TxtId.Text);
+                        contactDetails.ShowDialog(this);
+                        Clean();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 else if (ComboContacto.Text == "Cuidador")
                 {
                     List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtId.Text);
-                    ContactCuidador contact = contacts[0];
-                    AddContact contactDetails = new AddContact();
-                    contactDetails.LoadContactCuidador(contact);
-                    contactDetails.EditUser(ComboContacto.Text, contact.Id.ToString());
-                    contactDetails.ShowDialog(this);
-                    Clean();
+                    if (contacts.Count != 0)
+                    {
+                        ContactCuidador contact = contacts[0];
+                        AddContact contactDetails = new AddContact();
+                        contactDetails.LoadContactCuidador(contact);
+                        contactDetails.EditUser(ComboContacto.Text, contact.Id.ToString());
+                        contactDetails.ShowDialog(this);
+                        Clean();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 else if (ComboContacto.Text == "MMB")
                 {
                     List<ContactMMB> contacts = _LogicLayer.GetContactsMMB(TxtId.Text);
-                    ContactMMB contact = contacts[0];
-                    AddContact contactDetails = new AddContact();
-                    contactDetails.LoadContactMMB(contact);
-                    contactDetails.EditUser(ComboContacto.Text, contact.Id.ToString());
-                    contactDetails.ShowDialog(this);
-                    Clean();
+                    if (contacts.Count != 0)
+                    {
+                        ContactMMB contact = contacts[0];
+                        AddContact contactDetails = new AddContact();
+                        contactDetails.LoadContactMMB(contact);
+                        contactDetails.EditUser(ComboContacto.Text, contact.Id.ToString());
+                        contactDetails.ShowDialog(this);
+                        Clean();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
 
             }
@@ -66,42 +87,71 @@ namespace MapaniApp
                 if (ComboContacto.Text == "NMB")
                 {
                     List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtId.Text);
-                    ContactNMB contact = contacts[0];
-                    AddContact contactDetails = new AddContact();
-                    contactDetails.LoadContact(contact);
-                    contactDetails.LoadUser(ComboContacto.Text, TxtId.Text);
-                    contactDetails.HideSave();
-                    contactDetails.ShowDialog(this);
-                    Clean();
+                    if ( contacts.Count != 0) 
+                    {
+                        ContactNMB contact = contacts[0];
+                        AddContact contactDetails = new AddContact();
+                        contactDetails.LoadContact(contact);
+                        contactDetails.LoadUser(ComboContacto.Text, TxtId.Text);
+                        contactDetails.HideSave();
+                        contactDetails.ShowDialog(this);
+                        Clean();
+                    }
+                    else
+                    {
+                      MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
                 }
 
                 else if (ComboContacto.Text == "Cuidador")
                 {
                     List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtId.Text);
-                    ContactCuidador contact = contacts[0];
-                    AddContact contactDetails = new AddContact();
-                    contactDetails.LoadContactCuidador(contact);
-                    contactDetails.HideSave();
-                    contactDetails.LoadUser(ComboContacto.Text, contact.Id.ToString());
-                    contactDetails.ShowDialog(this);
-                    Clean();
+                    if (contacts.Count != 0)
+                    {
+                        ContactCuidador contact = contacts[0];
+                        AddContact contactDetails = new AddContact();
+                        contactDetails.LoadContactCuidador(contact);
+                        contactDetails.HideSave();
+                        contactDetails.LoadUser(ComboContacto.Text, contact.Id.ToString());
+                        contactDetails.ShowDialog(this);
+                        Clean();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 else if (ComboContacto.Text == "MMB")
                 {
                     List<ContactMMB> contacts = _LogicLayer.GetContactsMMB(TxtId.Text);
-                    ContactMMB contact = contacts[0];
-                    AddContact contactDetails = new AddContact();
-                    contactDetails.LoadContactMMB(contact);
-                    contactDetails.LoadUser(ComboContacto.Text, contact.Id.ToString());
-                    contactDetails.HideSave();
-                    contactDetails.ShowDialog(this);
-                    Clean();
+                    if (contacts.Count != 0)
+                    {
+                        ContactMMB contact = contacts[0];
+                        AddContact contactDetails = new AddContact();
+                        contactDetails.LoadContactMMB(contact);
+                        contactDetails.LoadUser(ComboContacto.Text, contact.Id.ToString());
+                        contactDetails.HideSave();
+                        contactDetails.ShowDialog(this);
+                        Clean();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
             }
             else if (ComboOperacion.Text == "Buscar Contacto")
             {
                 List<ContactNMB> Cedula = _LogicLayer.GetRelacion(TxtCedula.Text);
-                dataGridView1.DataSource = Cedula;
+                if (Cedula.Count != 0)
+                {
+                    dataGridView1.DataSource = Cedula;
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
 
             }
             else if (ComboOperacion.Text == "Agregar Relacion")
@@ -109,27 +159,86 @@ namespace MapaniApp
                 if (ComboCuidador.Text == "Cuidador")
                 {
                     List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtIdCuidador.Text);
-                    ContactCuidador contact = contacts[0];
-
-                    _LogicLayer.InsertRelacion(TxtIdNMB.Text, contact.Id.ToString(), txtParentesco.Text, contact.Cedula);
-                    Clean();
+                   
+                    List<ContactNMB> contactsNMB = _LogicLayer.GetContacts(TxtIdNMB.Text);
+                    
+                    if (contacts.Count != 0 && contactsNMB.Count != 0)
+                    {
+                        ContactCuidador contact = contacts[0];
+                        ContactNMB contactNMB = contactsNMB[0];
+                        _LogicLayer.InsertRelacion(contactNMB.Id.ToString(), contact.Id.ToString(), txtParentesco.Text, contact.Cedula);
+                        Clean();
+                    }
+                    else
+                    {
+                       MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 else if (ComboCuidador.Text == "MMB")
                 {
-                    _LogicLayer.InsertRelacionMMB(TxtIdNMB.Text, TxtIdCuidador.Text, txtParentesco.Text);
-                    Clean();
+                    List<ContactMMB> contacts = _LogicLayer.GetContactsMMB(TxtIdCuidador.Text);
+                   
+                    List<ContactNMB> contactsNMB = _LogicLayer.GetContacts(TxtIdNMB.Text);
+                   
+                    if (contacts.Count != 0 && contactsNMB.Count != 0)
+                    {
+                        ContactMMB contact = contacts[0];
+                        ContactNMB contactNMB = contactsNMB[0];
+                        _LogicLayer.InsertRelacionMMB(contactNMB.Id.ToString(), contact.Id.ToString(), txtParentesco.Text, contact.Cedula);
+                        Clean();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
             }
             else if (ComboOperacion.Text == "Imprimir")
-            {
-                List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtIdNMB.Text);
-                ContactNMB contact = contacts[0];
-                List<ContactCuidador> contactsCuidador = _LogicLayer.GetContactsCuidador(TxtIdCuidador.Text);
-                ContactCuidador contactCuidador = contactsCuidador[0];
-                ImprimirTranscripcion Imprimir = new ImprimirTranscripcion();
-                Imprimir.LoadContact(contact);
-                Imprimir.LoadContactCuidador(contactCuidador);
-                Imprimir.ShowDialog(this);
+            {   if (ComboCuidador.Text == "Cuidador")
+                {
+                    List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtIdNMB.Text);
+                   
+                    List<ContactCuidador> contactsCuidador = _LogicLayer.GetContactsCuidador(TxtIdCuidador.Text);
+                    
+                    if (contacts.Count != 0 && contactsCuidador.Count != 0)
+                    {
+                        ContactCuidador contactCuidador = contactsCuidador[0];
+                        ContactNMB contact = contacts[0];
+                        ImprimirTranscripcion Imprimir = new ImprimirTranscripcion();
+                        Imprimir.LoadContact(contact);
+                        Imprimir.LoadContactCuidador(contactCuidador);
+                        Imprimir.ShowDialog(this);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else if (ComboCuidador.Text =="MMB")
+                {
+                    List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtIdNMB.Text);
+                    
+                    List<ContactMMB> contactsCuidador = _LogicLayer.GetContactsMMB(TxtIdCuidador.Text);
+                   
+                    if (contacts.Count != 0 && contactsCuidador.Count != 0)
+                    {
+                        ContactNMB contact = contacts[0];
+                        ContactMMB contactCuidador = contactsCuidador[0];
+                        ImprimirTranscripcion Imprimir = new ImprimirTranscripcion();
+                        Imprimir.LoadContact(contact);
+                        Imprimir.LoadContactMMB(contactCuidador);
+                        Imprimir.ShowDialog(this);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese el Valor del Cuidador", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                   
+                    return;
+                }
             }
         }
         private void button2_Click(object sender, EventArgs e)

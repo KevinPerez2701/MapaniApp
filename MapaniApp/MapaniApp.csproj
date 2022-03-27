@@ -39,7 +39,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
@@ -70,6 +70,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Captura-de-pantalla-2022-03-27-123651.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AnthStat.Statistics, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -393,6 +396,9 @@
     <EmbeddedResource Include="Enfermeria\Enfermeria.resx">
       <DependentUpon>Enfermeria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transcripcion\ImprimirTranscripcion.aa.resx">
+      <DependentUpon>ImprimirTranscripcion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transcripcion\ImprimirTranscripcion.resx">
       <DependentUpon>ImprimirTranscripcion.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +524,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Captura-de-pantalla-2022-03-27-123651.ico" />
     <Content Include="Script\Scrip2019Data.txt" />
     <Content Include="Script\Sql2019Schema.txt" />
   </ItemGroup>

@@ -114,128 +114,75 @@ namespace MapaniApp
             // 
             // Fecha
             // 
-            this.Fecha.Enabled = false;
+            resources.ApplyResources(this.Fecha, "Fecha");
             this.Fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Fecha.Location = new System.Drawing.Point(12, 51);
             this.Fecha.Name = "Fecha";
-            this.Fecha.Size = new System.Drawing.Size(82, 20);
-            this.Fecha.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 35);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Fecha 1ra Visita";
             // 
             // TxtApellido
             // 
-            this.TxtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtApellido.Location = new System.Drawing.Point(133, 56);
+            resources.ApplyResources(this.TxtApellido, "TxtApellido");
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.ReadOnly = true;
-            this.TxtApellido.Size = new System.Drawing.Size(226, 29);
-            this.TxtApellido.TabIndex = 15;
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(133, 19);
+            resources.ApplyResources(this.TxtNombre, "TxtNombre");
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.ReadOnly = true;
-            this.TxtNombre.Size = new System.Drawing.Size(226, 29);
-            this.TxtNombre.TabIndex = 14;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 56);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 24);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Apellido";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 24);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Nombre";
             // 
             // FechaNacimientoNMB
             // 
             this.FechaNacimientoNMB.CalendarTrailingForeColor = System.Drawing.Color.Gray;
-            this.FechaNacimientoNMB.Enabled = false;
-            this.FechaNacimientoNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.FechaNacimientoNMB, "FechaNacimientoNMB");
             this.FechaNacimientoNMB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaNacimientoNMB.Location = new System.Drawing.Point(176, 97);
             this.FechaNacimientoNMB.Name = "FechaNacimientoNMB";
-            this.FechaNacimientoNMB.Size = new System.Drawing.Size(183, 29);
-            this.FechaNacimientoNMB.TabIndex = 29;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 102);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 24);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Fecha Nacimiento";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 178);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 24);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Genero";
             // 
             // TxtGenero
             // 
-            this.TxtGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGenero.Location = new System.Drawing.Point(132, 178);
+            resources.ApplyResources(this.TxtGenero, "TxtGenero");
             this.TxtGenero.Name = "TxtGenero";
             this.TxtGenero.ReadOnly = true;
-            this.TxtGenero.Size = new System.Drawing.Size(226, 29);
-            this.TxtGenero.TabIndex = 31;
             // 
             // txtPartidaNacimiento
             // 
-            this.txtPartidaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPartidaNacimiento.Location = new System.Drawing.Point(205, 220);
+            resources.ApplyResources(this.txtPartidaNacimiento, "txtPartidaNacimiento");
             this.txtPartidaNacimiento.Name = "txtPartidaNacimiento";
             this.txtPartidaNacimiento.ReadOnly = true;
-            this.txtPartidaNacimiento.Size = new System.Drawing.Size(153, 29);
-            this.txtPartidaNacimiento.TabIndex = 34;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 257);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 24);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Discapacidad";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 220);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(194, 24);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Partida de Nacimiento";
             // 
             // groupBox1
             // 
@@ -254,114 +201,71 @@ namespace MapaniApp
             this.groupBox1.Controls.Add(this.TxtNombre);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 84);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 311);
-            this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Niño";
             // 
             // txtEdadNMB
             // 
-            this.txtEdadNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdadNMB.Location = new System.Drawing.Point(132, 139);
+            resources.ApplyResources(this.txtEdadNMB, "txtEdadNMB");
             this.txtEdadNMB.Name = "txtEdadNMB";
             this.txtEdadNMB.ReadOnly = true;
-            this.txtEdadNMB.Size = new System.Drawing.Size(227, 29);
-            this.txtEdadNMB.TabIndex = 81;
             // 
             // label35
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(6, 139);
+            resources.ApplyResources(this.label35, "label35");
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(55, 24);
-            this.label35.TabIndex = 80;
-            this.label35.Text = "Edad";
             // 
             // ComboTipoDiscapacidadNMB
             // 
-            this.ComboTipoDiscapacidadNMB.Enabled = false;
-            this.ComboTipoDiscapacidadNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.ComboTipoDiscapacidadNMB, "ComboTipoDiscapacidadNMB");
             this.ComboTipoDiscapacidadNMB.FormattingEnabled = true;
             this.ComboTipoDiscapacidadNMB.Items.AddRange(new object[] {
-            "Motora",
-            "Visual",
-            "Cognitiva",
-            "Auditiva"});
-            this.ComboTipoDiscapacidadNMB.Location = new System.Drawing.Point(199, 254);
+            resources.GetString("ComboTipoDiscapacidadNMB.Items"),
+            resources.GetString("ComboTipoDiscapacidadNMB.Items1"),
+            resources.GetString("ComboTipoDiscapacidadNMB.Items2"),
+            resources.GetString("ComboTipoDiscapacidadNMB.Items3")});
             this.ComboTipoDiscapacidadNMB.Name = "ComboTipoDiscapacidadNMB";
-            this.ComboTipoDiscapacidadNMB.Size = new System.Drawing.Size(159, 32);
-            this.ComboTipoDiscapacidadNMB.TabIndex = 77;
             // 
             // ComboDiscapacidadNMB
             // 
-            this.ComboDiscapacidadNMB.Enabled = false;
-            this.ComboDiscapacidadNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.ComboDiscapacidadNMB, "ComboDiscapacidadNMB");
             this.ComboDiscapacidadNMB.FormattingEnabled = true;
             this.ComboDiscapacidadNMB.Items.AddRange(new object[] {
-            "SI",
-            "No"});
-            this.ComboDiscapacidadNMB.Location = new System.Drawing.Point(132, 254);
+            resources.GetString("ComboDiscapacidadNMB.Items"),
+            resources.GetString("ComboDiscapacidadNMB.Items1")});
             this.ComboDiscapacidadNMB.Name = "ComboDiscapacidadNMB";
-            this.ComboDiscapacidadNMB.Size = new System.Drawing.Size(61, 32);
-            this.ComboDiscapacidadNMB.TabIndex = 76;
             // 
             // textBox4
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(390, 44);
+            resources.ApplyResources(this.textBox4, "textBox4");
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(173, 29);
-            this.textBox4.TabIndex = 40;
             // 
             // textBox5
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(390, 11);
+            resources.ApplyResources(this.textBox5, "textBox5");
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(173, 29);
-            this.textBox5.TabIndex = 39;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(229, 44);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(142, 24);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "N° Historia IRC3";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(210, 11);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(174, 24);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "N° Historia MAPANI";
             // 
             // txtTipoIngreso
             // 
-            this.txtTipoIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoIngreso.Location = new System.Drawing.Point(592, 44);
+            resources.ApplyResources(this.txtTipoIngreso, "txtTipoIngreso");
             this.txtTipoIngreso.Name = "txtTipoIngreso";
             this.txtTipoIngreso.ReadOnly = true;
-            this.txtTipoIngreso.Size = new System.Drawing.Size(173, 29);
-            this.txtTipoIngreso.TabIndex = 42;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(607, 8);
+            resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(143, 24);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "Tipo de Ingreso";
             // 
             // groupBox2
             // 
@@ -401,373 +305,222 @@ namespace MapaniApp
             this.groupBox2.Controls.Add(this.txtNombreCuidador);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Location = new System.Drawing.Point(405, 85);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(372, 547);
-            this.groupBox2.TabIndex = 43;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Cuidador";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtRango3
             // 
-            this.txtRango3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRango3.Location = new System.Drawing.Point(321, 512);
+            resources.ApplyResources(this.txtRango3, "txtRango3");
             this.txtRango3.Name = "txtRango3";
             this.txtRango3.ReadOnly = true;
-            this.txtRango3.Size = new System.Drawing.Size(43, 29);
-            this.txtRango3.TabIndex = 117;
             // 
             // txtRango2
             // 
-            this.txtRango2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRango2.Location = new System.Drawing.Point(266, 512);
+            resources.ApplyResources(this.txtRango2, "txtRango2");
             this.txtRango2.Name = "txtRango2";
             this.txtRango2.ReadOnly = true;
-            this.txtRango2.Size = new System.Drawing.Size(43, 29);
-            this.txtRango2.TabIndex = 117;
             // 
             // txtRango1
             // 
-            this.txtRango1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRango1.Location = new System.Drawing.Point(213, 512);
+            resources.ApplyResources(this.txtRango1, "txtRango1");
             this.txtRango1.Name = "txtRango1";
             this.txtRango1.ReadOnly = true;
-            this.txtRango1.Size = new System.Drawing.Size(43, 29);
-            this.txtRango1.TabIndex = 87;
             // 
             // label34
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(92, 483);
+            resources.ApplyResources(this.label34, "label34");
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(117, 24);
-            this.label34.TabIndex = 86;
-            this.label34.Text = "Rango años:";
             // 
             // label33
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(314, 485);
+            resources.ApplyResources(this.label33, "label33");
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(56, 24);
-            this.label33.TabIndex = 85;
-            this.label33.Text = "11-17";
             // 
             // label32
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(262, 485);
+            resources.ApplyResources(this.label32, "label32");
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(46, 24);
-            this.label32.TabIndex = 84;
-            this.label32.Text = "6-10";
             this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // label31
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(215, 485);
+            resources.ApplyResources(this.label31, "label31");
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(41, 24);
-            this.label31.TabIndex = 83;
-            this.label31.Text = "0-5 ";
             // 
             // label30
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(12, 517);
+            resources.ApplyResources(this.label30, "label30");
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(131, 24);
-            this.label30.TabIndex = 82;
-            this.label30.Text = "Cantidad Hijos";
             // 
             // txtMovilizacion
             // 
-            this.txtMovilizacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovilizacion.Location = new System.Drawing.Point(211, 453);
+            resources.ApplyResources(this.txtMovilizacion, "txtMovilizacion");
             this.txtMovilizacion.Name = "txtMovilizacion";
             this.txtMovilizacion.ReadOnly = true;
-            this.txtMovilizacion.Size = new System.Drawing.Size(153, 29);
-            this.txtMovilizacion.TabIndex = 81;
             // 
             // label29
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(12, 458);
+            resources.ApplyResources(this.label29, "label29");
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(113, 24);
-            this.label29.TabIndex = 80;
-            this.label29.Text = "Movilizacion";
             // 
             // txtEdad
             // 
-            this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdad.Location = new System.Drawing.Point(133, 136);
+            resources.ApplyResources(this.txtEdad, "txtEdad");
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.ReadOnly = true;
-            this.txtEdad.Size = new System.Drawing.Size(233, 29);
-            this.txtEdad.TabIndex = 79;
             // 
             // label28
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(13, 136);
+            resources.ApplyResources(this.label28, "label28");
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(55, 24);
-            this.label28.TabIndex = 78;
-            this.label28.Text = "Edad";
             // 
             // txtGrupoEtnico
             // 
-            this.txtGrupoEtnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGrupoEtnico.Location = new System.Drawing.Point(213, 419);
+            resources.ApplyResources(this.txtGrupoEtnico, "txtGrupoEtnico");
             this.txtGrupoEtnico.Name = "txtGrupoEtnico";
             this.txtGrupoEtnico.ReadOnly = true;
-            this.txtGrupoEtnico.Size = new System.Drawing.Size(151, 29);
-            this.txtGrupoEtnico.TabIndex = 77;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(213, 277);
+            resources.ApplyResources(this.txtTelefono, "txtTelefono");
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.ReadOnly = true;
-            this.txtTelefono.Size = new System.Drawing.Size(153, 29);
-            this.txtTelefono.TabIndex = 45;
             // 
             // label26
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(13, 277);
+            resources.ApplyResources(this.label26, "label26");
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(85, 24);
-            this.label26.TabIndex = 44;
-            this.label26.Text = "Telefono";
             // 
             // ComboGrupoEtnico
             // 
-            this.ComboGrupoEtnico.Enabled = false;
-            this.ComboGrupoEtnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.ComboGrupoEtnico, "ComboGrupoEtnico");
             this.ComboGrupoEtnico.FormattingEnabled = true;
             this.ComboGrupoEtnico.Items.AddRange(new object[] {
-            "SI",
-            "No"});
-            this.ComboGrupoEtnico.Location = new System.Drawing.Point(144, 419);
+            resources.GetString("ComboGrupoEtnico.Items"),
+            resources.GetString("ComboGrupoEtnico.Items1")});
             this.ComboGrupoEtnico.Name = "ComboGrupoEtnico";
-            this.ComboGrupoEtnico.Size = new System.Drawing.Size(61, 32);
-            this.ComboGrupoEtnico.TabIndex = 76;
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(12, 390);
+            resources.ApplyResources(this.label18, "label18");
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(123, 24);
-            this.label18.TabIndex = 42;
-            this.label18.Text = "Discapacidad";
             // 
             // txtIngresos
             // 
-            this.txtIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresos.Location = new System.Drawing.Point(212, 349);
+            resources.ApplyResources(this.txtIngresos, "txtIngresos");
             this.txtIngresos.Name = "txtIngresos";
             this.txtIngresos.ReadOnly = true;
-            this.txtIngresos.Size = new System.Drawing.Size(153, 29);
-            this.txtIngresos.TabIndex = 40;
             // 
             // label19
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(12, 424);
+            resources.ApplyResources(this.label19, "label19");
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(121, 24);
-            this.label19.TabIndex = 39;
-            this.label19.Text = "Grupo Etnico";
             // 
             // ComboTipoDiscapacidadCuidador
             // 
-            this.ComboTipoDiscapacidadCuidador.Enabled = false;
-            this.ComboTipoDiscapacidadCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.ComboTipoDiscapacidadCuidador, "ComboTipoDiscapacidadCuidador");
             this.ComboTipoDiscapacidadCuidador.FormattingEnabled = true;
             this.ComboTipoDiscapacidadCuidador.Items.AddRange(new object[] {
-            "Motora",
-            "Visual",
-            "Cognitiva",
-            "Auditiva"});
-            this.ComboTipoDiscapacidadCuidador.Location = new System.Drawing.Point(211, 382);
+            resources.GetString("ComboTipoDiscapacidadCuidador.Items"),
+            resources.GetString("ComboTipoDiscapacidadCuidador.Items1"),
+            resources.GetString("ComboTipoDiscapacidadCuidador.Items2"),
+            resources.GetString("ComboTipoDiscapacidadCuidador.Items3")});
             this.ComboTipoDiscapacidadCuidador.Name = "ComboTipoDiscapacidadCuidador";
-            this.ComboTipoDiscapacidadCuidador.Size = new System.Drawing.Size(155, 32);
-            this.ComboTipoDiscapacidadCuidador.TabIndex = 75;
             // 
             // label20
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(12, 349);
+            resources.ApplyResources(this.label20, "label20");
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(151, 24);
-            this.label20.TabIndex = 38;
-            this.label20.Text = "Ingresos Propios";
             // 
             // ComboDiscapacidadCuidador
             // 
-            this.ComboDiscapacidadCuidador.Enabled = false;
-            this.ComboDiscapacidadCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.ComboDiscapacidadCuidador, "ComboDiscapacidadCuidador");
             this.ComboDiscapacidadCuidador.FormattingEnabled = true;
             this.ComboDiscapacidadCuidador.Items.AddRange(new object[] {
-            "SI",
-            "No"});
-            this.ComboDiscapacidadCuidador.Location = new System.Drawing.Point(144, 382);
+            resources.GetString("ComboDiscapacidadCuidador.Items"),
+            resources.GetString("ComboDiscapacidadCuidador.Items1")});
             this.ComboDiscapacidadCuidador.Name = "ComboDiscapacidadCuidador";
-            this.ComboDiscapacidadCuidador.Size = new System.Drawing.Size(61, 32);
-            this.ComboDiscapacidadCuidador.TabIndex = 74;
             // 
             // txtEstadoCivil
             // 
-            this.txtEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstadoCivil.Location = new System.Drawing.Point(212, 311);
+            resources.ApplyResources(this.txtEstadoCivil, "txtEstadoCivil");
             this.txtEstadoCivil.Name = "txtEstadoCivil";
             this.txtEstadoCivil.ReadOnly = true;
-            this.txtEstadoCivil.Size = new System.Drawing.Size(153, 29);
-            this.txtEstadoCivil.TabIndex = 37;
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(12, 311);
+            resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(107, 24);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "Estado Civil";
             // 
             // txtParentesco
             // 
-            this.txtParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParentesco.Location = new System.Drawing.Point(213, 205);
+            resources.ApplyResources(this.txtParentesco, "txtParentesco");
             this.txtParentesco.Name = "txtParentesco";
             this.txtParentesco.ReadOnly = true;
-            this.txtParentesco.Size = new System.Drawing.Size(153, 29);
-            this.txtParentesco.TabIndex = 35;
             // 
             // txtCedula
             // 
-            this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(213, 240);
+            resources.ApplyResources(this.txtCedula, "txtCedula");
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.ReadOnly = true;
-            this.txtCedula.Size = new System.Drawing.Size(153, 29);
-            this.txtCedula.TabIndex = 34;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 205);
+            resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(105, 24);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "Parentesco";
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(13, 240);
+            resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 24);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Cedula";
             // 
             // txtGeneroCuidador
             // 
-            this.txtGeneroCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGeneroCuidador.Location = new System.Drawing.Point(211, 170);
+            resources.ApplyResources(this.txtGeneroCuidador, "txtGeneroCuidador");
             this.txtGeneroCuidador.Name = "txtGeneroCuidador";
             this.txtGeneroCuidador.ReadOnly = true;
-            this.txtGeneroCuidador.Size = new System.Drawing.Size(154, 29);
-            this.txtGeneroCuidador.TabIndex = 31;
             this.txtGeneroCuidador.TextChanged += new System.EventHandler(this.txtGeneroCuidador_TextChanged);
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 170);
+            resources.ApplyResources(this.label13, "label13");
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 24);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Genero";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.Color.Gray;
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.dateTimePicker2, "dateTimePicker2");
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(176, 97);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(183, 29);
-            this.dateTimePicker2.TabIndex = 29;
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(6, 102);
+            resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(164, 24);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Fecha Nacimiento";
             // 
             // txtApellidoCuidador
             // 
-            this.txtApellidoCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoCuidador.Location = new System.Drawing.Point(133, 56);
+            resources.ApplyResources(this.txtApellidoCuidador, "txtApellidoCuidador");
             this.txtApellidoCuidador.Name = "txtApellidoCuidador";
             this.txtApellidoCuidador.ReadOnly = true;
-            this.txtApellidoCuidador.Size = new System.Drawing.Size(226, 29);
-            this.txtApellidoCuidador.TabIndex = 15;
             // 
             // txtNombreCuidador
             // 
-            this.txtNombreCuidador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCuidador.Location = new System.Drawing.Point(133, 19);
+            resources.ApplyResources(this.txtNombreCuidador, "txtNombreCuidador");
             this.txtNombreCuidador.Name = "txtNombreCuidador";
             this.txtNombreCuidador.ReadOnly = true;
-            this.txtNombreCuidador.Size = new System.Drawing.Size(226, 29);
-            this.txtNombreCuidador.TabIndex = 14;
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(6, 56);
+            resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 24);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Apellido";
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.label16, "label16");
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 24);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "Nombre";
             // 
             // printDocument1
             // 
@@ -775,81 +528,49 @@ namespace MapaniApp
             // 
             // printPreviewDialog1
             // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            resources.ApplyResources(this.printPreviewDialog1, "printPreviewDialog1");
             this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(12, 8);
+            resources.ApplyResources(this.btnImprimir, "btnImprimir");
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(81, 23);
-            this.btnImprimir.TabIndex = 44;
-            this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // txtEstado
             // 
-            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(143, 113);
+            resources.ApplyResources(this.txtEstado, "txtEstado");
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.ReadOnly = true;
-            this.txtEstado.Size = new System.Drawing.Size(107, 29);
-            this.txtEstado.TabIndex = 78;
             // 
             // label21
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(14, 116);
+            resources.ApplyResources(this.label21, "label21");
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(68, 24);
-            this.label21.TabIndex = 77;
-            this.label21.Text = "Estado";
             // 
             // txtMunicipio
             // 
-            this.txtMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMunicipio.Location = new System.Drawing.Point(143, 78);
+            resources.ApplyResources(this.txtMunicipio, "txtMunicipio");
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.ReadOnly = true;
-            this.txtMunicipio.Size = new System.Drawing.Size(107, 29);
-            this.txtMunicipio.TabIndex = 76;
             // 
             // txtParroquia
             // 
-            this.txtParroquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParroquia.Location = new System.Drawing.Point(143, 44);
+            resources.ApplyResources(this.txtParroquia, "txtParroquia");
             this.txtParroquia.Name = "txtParroquia";
             this.txtParroquia.ReadOnly = true;
-            this.txtParroquia.Size = new System.Drawing.Size(107, 29);
-            this.txtParroquia.TabIndex = 75;
             // 
             // label22
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(14, 81);
+            resources.ApplyResources(this.label22, "label22");
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(92, 24);
-            this.label22.TabIndex = 74;
-            this.label22.Text = "Municipio";
             // 
             // label23
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(14, 44);
+            resources.ApplyResources(this.label23, "label23");
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(91, 24);
-            this.label23.TabIndex = 73;
-            this.label23.Text = "Parroquia";
             // 
             // groupBox3
             // 
@@ -859,75 +580,46 @@ namespace MapaniApp
             this.groupBox3.Controls.Add(this.txtParroquia);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Location = new System.Drawing.Point(14, 401);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(370, 179);
-            this.groupBox3.TabIndex = 79;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Procedencia";
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(233, 732);
-            this.txtObservaciones.Multiline = true;
+            resources.ApplyResources(this.txtObservaciones, "txtObservaciones");
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(507, 89);
-            this.txtObservaciones.TabIndex = 114;
             // 
             // label24
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(43, 764);
+            resources.ApplyResources(this.label24, "label24");
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(137, 24);
-            this.label24.TabIndex = 113;
-            this.label24.Text = "Observaciones";
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(233, 637);
-            this.txtDireccion.Multiline = true;
+            resources.ApplyResources(this.txtDireccion, "txtDireccion");
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(507, 89);
-            this.txtDireccion.TabIndex = 112;
             // 
             // label25
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(43, 669);
+            resources.ApplyResources(this.label25, "label25");
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(90, 24);
-            this.label25.TabIndex = 111;
-            this.label25.Text = "Direccion";
             // 
             // label27
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(119, 11);
+            resources.ApplyResources(this.label27, "label27");
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(72, 24);
-            this.label27.TabIndex = 115;
-            this.label27.Text = "Id NMB";
             // 
             // txtIdNMB
             // 
-            this.txtIdNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdNMB.Location = new System.Drawing.Point(117, 41);
+            resources.ApplyResources(this.txtIdNMB, "txtIdNMB");
             this.txtIdNMB.Name = "txtIdNMB";
             this.txtIdNMB.ReadOnly = true;
-            this.txtIdNMB.Size = new System.Drawing.Size(74, 29);
-            this.txtIdNMB.TabIndex = 116;
             // 
             // ImprimirTranscripcion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 749);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            resources.ApplyResources(this, "$this");
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtIdNMB);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.txtObservaciones);
@@ -948,8 +640,6 @@ namespace MapaniApp
             this.Controls.Add(this.Fecha);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ImprimirTranscripcion";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Historia Clinica";
             this.Load += new System.EventHandler(this.ImprimirTranscripcion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

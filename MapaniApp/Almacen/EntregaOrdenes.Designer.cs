@@ -30,9 +30,8 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntregaOrdenes));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BtnSalir = new System.Windows.Forms.Button();
-            this.dataAlmacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +40,8 @@ namespace MapaniApp
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pediatraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Orden = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataAlmacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataAlmacenBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -64,21 +65,6 @@ namespace MapaniApp
             this.dataGridView1.Size = new System.Drawing.Size(732, 209);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(275, 312);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(133, 30);
-            this.BtnSalir.TabIndex = 1;
-            this.BtnSalir.Text = "Salir";
-            this.BtnSalir.UseVisualStyleBackColor = true;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
-            // 
-            // dataAlmacenBindingSource
-            // 
-            this.dataAlmacenBindingSource.DataSource = typeof(MapaniApp.DataAlmacen);
             // 
             // idNMBDataGridViewTextBoxColumn
             // 
@@ -132,6 +118,21 @@ namespace MapaniApp
             this.Orden.Text = "Despachar";
             this.Orden.UseColumnTextForLinkValue = true;
             // 
+            // dataAlmacenBindingSource
+            // 
+            this.dataAlmacenBindingSource.DataSource = typeof(MapaniApp.DataAlmacen);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSalir.Location = new System.Drawing.Point(275, 312);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(133, 30);
+            this.BtnSalir.TabIndex = 1;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
             // EntregaOrdenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +140,7 @@ namespace MapaniApp
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EntregaOrdenes";
             this.Text = "EntregaOrdenes";
             this.Load += new System.EventHandler(this.EntregaOrdenes_Load);

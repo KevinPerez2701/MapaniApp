@@ -29,6 +29,7 @@ namespace MapaniApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.BtnAlmacen = new System.Windows.Forms.Button();
             this.BtnEnfermeria = new System.Windows.Forms.Button();
             this.BtnNutricion = new System.Windows.Forms.Button();
@@ -142,6 +143,7 @@ namespace MapaniApp
             // 
             // groupSuperUser
             // 
+            this.groupSuperUser.BackColor = System.Drawing.Color.Transparent;
             this.groupSuperUser.Controls.Add(this.BtnTranscripcion);
             this.groupSuperUser.Controls.Add(this.BtnRecepcion);
             this.groupSuperUser.Controls.Add(this.BtnLegal);
@@ -181,14 +183,20 @@ namespace MapaniApp
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 277);
             this.Controls.Add(this.BtnAsistencia);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.groupSuperUser);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MapaniAPP";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupSuperUser.ResumeLayout(false);
             this.ResumeLayout(false);

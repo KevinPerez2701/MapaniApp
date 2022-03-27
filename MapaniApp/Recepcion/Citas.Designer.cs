@@ -30,13 +30,11 @@ namespace MapaniApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Citas));
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.proximasVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.historialVisitasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.historialVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idNMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +43,9 @@ namespace MapaniApp
             this.departamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximasVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.historialVisitasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.historialVisitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proximasVisitasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historialVisitasBindingSource1)).BeginInit();
@@ -99,19 +100,6 @@ namespace MapaniApp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(855, 338);
             this.dataGridView1.TabIndex = 3;
-           
-            // 
-            // proximasVisitasBindingSource
-            // 
-            this.proximasVisitasBindingSource.DataSource = typeof(MapaniApp.ProximasVisitas);
-            // 
-            // historialVisitasBindingSource1
-            // 
-            this.historialVisitasBindingSource1.DataSource = typeof(MapaniApp.HistorialVisitas);
-            // 
-            // historialVisitasBindingSource
-            // 
-            this.historialVisitasBindingSource.DataSource = typeof(MapaniApp.HistorialVisitas);
             // 
             // idNMBDataGridViewTextBoxColumn
             // 
@@ -161,6 +149,18 @@ namespace MapaniApp
             this.Activo.HeaderText = "Activo";
             this.Activo.Name = "Activo";
             // 
+            // proximasVisitasBindingSource
+            // 
+            this.proximasVisitasBindingSource.DataSource = typeof(MapaniApp.ProximasVisitas);
+            // 
+            // historialVisitasBindingSource1
+            // 
+            this.historialVisitasBindingSource1.DataSource = typeof(MapaniApp.HistorialVisitas);
+            // 
+            // historialVisitasBindingSource
+            // 
+            this.historialVisitasBindingSource.DataSource = typeof(MapaniApp.HistorialVisitas);
+            // 
             // Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +170,7 @@ namespace MapaniApp
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Citas";
             this.Text = "Citas";
             this.Load += new System.EventHandler(this.Citas_Load);
