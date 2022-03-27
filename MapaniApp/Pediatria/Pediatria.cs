@@ -1,13 +1,7 @@
-﻿using System;
+﻿using AnthStat.Statistics;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using AnthStat.Statistics;
 
 namespace MapaniApp
 {
@@ -20,62 +14,20 @@ namespace MapaniApp
         {
             InitializeComponent();
         }
-
-        private void BtnCargarContacto_Click(object sender, EventArgs e)
-        {          
-                List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
-                ContactNMB contact = contacts[0];
-                LoadContact(contact);
-                BtnAddOrder.Visible = true;
-                GetDataEnfermeria();
-            
-        }
-        private void LoadContact(ContactNMB contact)
-        {
-            _contactNMB = contact;
-            if (contact != null)
-            {
-
-                TxtNombre.Text = contact.Nombre;
-                TxtNombre.ReadOnly = true;
-                TxtApellido.Text = contact.Apellido;
-                TxtApellido.ReadOnly = true;
-                dateTimePicker1.Value = contact.FechaNacimiento.Date;
-                dateTimePicker1.Enabled = false;
-                TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento,dateTimePicker2.Value);
-                TxtEdadMeses.Text = Metodos.GetEdadMeses(contact.FechaNacimiento, dateTimePicker2.Value);
-                txtSexo.Text = contact.Sexo;
-                txtSexo.ReadOnly = true;
-                txtEdadVisible.Text = Metodos.ObtenerEdad(contact.FechaNacimiento);
-                txtEdadVisible.ReadOnly = true;
-
-            }
-        }
-
         private void Pediatria_Load(object sender, EventArgs e)
         {
 
         }
-        public void GetDataEnfermeria()
+        #region Botones
+        private void BtnCargarContacto_Click(object sender, EventArgs e)
         {
-            List<ClaseEnfermeria> Data = _LogicLayer.GetDataEnfermeria(TxtID.Text,dateTimePicker2.Value.Date);
-            ClaseEnfermeria Datos = Data[0];
-            TxtPeso.Text = Datos.Peso;
-            TxtTalla.Text = Datos.Talla;
-            TxtCMB.Text = Datos.CMB;
-            txtHb.Text = Datos.Hb;
-            if (TxtCC.Text != "")
-            {
-                TxtCC.Text = Datos.CC;
-            }
-            else
-            {
-                TxtCC.Text = "0";
-            }
-            TxtTricep.Text = "0";
-            TxtSSF.Text = "0";
+            List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
+            ContactNMB contact = contacts[0];
+            LoadContact(contact);
+            BtnAddOrder.Visible = true;
+            GetDataEnfermeria();
+
         }
-       
         private void button1_Click(object sender, EventArgs e)
         {
             VerProductos NuevaOrden = new VerProductos();
@@ -83,11 +35,8 @@ namespace MapaniApp
             NuevaOrden.GetIdNMB(TxtID.Text);
             NuevaOrden.ShowDialog(this);
         }
-
-        
-
         private void BtnCalcular_Click(object sender, EventArgs e)
-        {   
+        {
             if (float.Parse(TxtEdad.Text) > 1825)
             {
                 GroupWHO2007.Visible = true;
@@ -96,7 +45,7 @@ namespace MapaniApp
                 DiagnosticosWho2007();
                 DiagnosticoTalla2007();
             }
-            else if (float.Parse(TxtEdad.Text) > 0 && float.Parse(TxtEdad.Text) <1825)
+            else if (float.Parse(TxtEdad.Text) > 0 && float.Parse(TxtEdad.Text) < 1825)
             {
                 GroupWHO2006.Visible = true;
                 GroupWHO2007.Visible = false;
@@ -124,19 +73,111 @@ namespace MapaniApp
 
             }
         }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SaveData();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HistoriasPediatria Sucesivo = new HistoriasPediatria();
+            Sucesivo.GetDataPediatria(TxtID.Text, int.Parse(TxtEdad.Text));
+            Sucesivo.ShowDialog(this);
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            TxtPeso.ReadOnly = false;
+            txtHb.ReadOnly = false;
+            TxtCC.ReadOnly = false;
+            TxtTalla.ReadOnly = false;
+            TxtCMB.ReadOnly = false;
+        }
+        #endregion
+
+        #region Funciones
+        private void LoadContact(ContactNMB contact)
+        {
+            _contactNMB = contact;
+            if (contact != null)
+            {
+
+                TxtNombre.Text = contact.Nombre;
+                TxtNombre.ReadOnly = true;
+                TxtApellido.Text = contact.Apellido;
+                TxtApellido.ReadOnly = true;
+                dateTimePicker1.Value = contact.FechaNacimiento.Date;
+                dateTimePicker1.Enabled = false;
+                TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento, dateTimePicker2.Value);
+                TxtEdadMeses.Text = Metodos.GetEdadMeses(contact.FechaNacimiento, dateTimePicker2.Value);
+                txtSexo.Text = contact.Sexo;
+                txtSexo.ReadOnly = true;
+                txtEdadVisible.Text = Metodos.ObtenerEdad(contact.FechaNacimiento);
+                txtEdadVisible.ReadOnly = true;
+
+            }
+        }
+        public void SaveData()
+        {
+            ClaseEnfermeria Pediatria = new ClaseEnfermeria
+            {
+                NMB = TxtID.Text,
+                Fecha = dateTimePicker2.Value.Date,
+                PZImcEdad = TxtIMCEdadWho2007Z.Text,
+                PZTallaEdad = TxtTallaEdadWho2007Z.Text,
+                PZPesoEdad = TxtPesoEdadWho2007Z.Text,
+                PZPesoEdad2006 = TxtZPesoEdad.Text,
+                PZTallaEdad2006 = TxtZTallaEdad.Text,
+                PZPesoTalla = TxtZPesoTalla.Text,
+                IMCPZ = TxtZIMC.Text,
+                IMC = TxtIMCCalculado.Text,
+                Urgencias = ComboUrgencias.Text,
+                Referido = ComboReferido.Text,
+                Diagnostico = TxtDiagnostico.Text,
+                DiagnosticoTalla = TxtDiagnosticoTalla.Text,
+
+            };
+            EvolutivoPediatria Cita = new EvolutivoPediatria();
+            Cita.GetCita(Pediatria);
+            Cita.ShowDialog(this);
+            // _LogicLayer.InsertCitaPediatria(Pediatria);
+        }
+        public void GetDataEnfermeria()
+            {
+                List<ClaseEnfermeria> Data = _LogicLayer.GetDataEnfermeria(TxtID.Text, dateTimePicker2.Value.Date);
+                ClaseEnfermeria Datos = Data[0];
+                TxtPeso.Text = Datos.Peso;
+                TxtTalla.Text = Datos.Talla;
+                TxtCMB.Text = Datos.CMB;
+                txtHb.Text = Datos.Hb;
+                if (TxtCC.Text != "")
+                {
+                    TxtCC.Text = Datos.CC;
+                }
+                else
+                {
+                    TxtCC.Text = "0";
+                }
+                TxtTricep.Text = "0";
+                TxtSSF.Text = "0";
+            }
+
+
+        #endregion
+
+        #region Calculo de Datos
+
         public void CalculateZScoresWho2006()
         {
             var who2006 = new AnthStat.Statistics.WHO2006();
             double ageDays = double.Parse(TxtEdad.Text);
             double Weight = double.Parse(TxtPeso.Text);
-            double Lenght = double.Parse(TxtTalla.Text);         
-            double CC  = double.Parse(TxtCC.Text);
+            double Lenght = double.Parse(TxtTalla.Text);
+            double CC = double.Parse(TxtCC.Text);
             double CMB = double.Parse(TxtCMB.Text);
             double Muac = double.Parse(TxtTricep.Text);
             double LenghtMeters = Lenght / 100;
             double imc = Weight / (LenghtMeters * LenghtMeters);
-            TxtIMCCalculado.Text = Math.Round(imc,2).ToString();
-           
+            TxtIMCCalculado.Text = Math.Round(imc, 2).ToString();
+
             double z = 0.0;
             double x = 0.0;
             double y = 0.0;
@@ -145,24 +186,24 @@ namespace MapaniApp
             {
                 if (who2006.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement1: imc, measurement2: ageDays, sex: Sex.Male, z: ref z))
                 {
-                    TxtZIMC.Text = Math.Round(z, 2).ToString();                    
+                    TxtZIMC.Text = Math.Round(z, 2).ToString();
                     double p = StatisticsHelper.CalculatePercentile(z);
                     TxtImc.Text = Math.Round(p, 1).ToString();
-                   
+
 
                 }
                 if (ageDays > 720)
                 {
                     if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: (Lenght + 0.7), sex: Sex.Male, z: ref x))
                     {
-                        TxtZPesoTalla.Text = Math.Round(x, 2).ToString();                        
+                        TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
                         double p = StatisticsHelper.CalculatePercentile(x);
                         TxtPesoTalla.Text = Math.Round(p, 1).ToString();
-                    
+
 
                     }
                 }
-                if (ageDays <720)
+                if (ageDays < 720)
                 {
                     if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: Lenght, sex: Sex.Male, z: ref x))
                     {
@@ -321,7 +362,7 @@ namespace MapaniApp
                 TxtDiagnostico.Text = "Agudo Severo";
             else
                 TxtDiagnostico.Text = "Fuera de Rango";
-                
+
         }
         public void DiagnosticosWho2007()
         {
@@ -348,10 +389,10 @@ namespace MapaniApp
             var who2007 = new AnthStat.Statistics.WHO2007();
             double ageMonths = double.Parse(TxtEdadMeses.Text);
             double Weight = double.Parse(TxtPeso.Text);
-            double Lenght = double.Parse(TxtTalla.Text);            
+            double Lenght = double.Parse(TxtTalla.Text);
             double LenghtMeters = Lenght / 100;
             double imc = Weight / (LenghtMeters * LenghtMeters);
-            
+
             double z = 0.0;
             double x = 0.0;
             double y = 0.0;
@@ -377,7 +418,7 @@ namespace MapaniApp
                     TxtTallaEdadWho2007P.Text = Math.Round(p, 2).ToString();
                 }
             }
-            else if (txtSexo.Text == "Femenino" || txtSexo.Text==  "Femenino\t")
+            else if (txtSexo.Text == "Femenino" || txtSexo.Text == "Femenino\t")
             {
                 if (who2007.TryCalculateZScore(indicator: Indicator.BodyMassIndexForAge, measurement: imc, age: ageMonths, sex: Sex.Female, z: ref z))
                 {
@@ -397,51 +438,10 @@ namespace MapaniApp
                     TxtTallaEdadWho2007Z.Text = Math.Round(y, 2).ToString();
                     TxtTallaEdadWho2007P.Text = Math.Round(p, 2).ToString();
                 }
-            }    
+            }
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            SaveData();
-        }
-        public void SaveData()
-        {
-            ClaseEnfermeria Pediatria = new ClaseEnfermeria {
-                NMB = TxtID.Text,
-                Fecha = dateTimePicker2.Value.Date,
-                PZImcEdad = TxtIMCEdadWho2007Z.Text,
-                PZTallaEdad = TxtTallaEdadWho2007Z.Text,
-                PZPesoEdad = TxtPesoEdadWho2007Z.Text,
-                PZPesoEdad2006 = TxtZPesoEdad.Text,
-                PZTallaEdad2006 = TxtZTallaEdad.Text,
-                PZPesoTalla = TxtZPesoTalla.Text,
-                IMCPZ = TxtZIMC.Text,
-                IMC = TxtIMCCalculado.Text,  
-                Urgencias = ComboUrgencias.Text,
-                Referido = ComboReferido.Text,
-                Diagnostico = TxtDiagnostico.Text,
-                DiagnosticoTalla = TxtDiagnosticoTalla.Text,
-
-            };
-            EvolutivoPediatria Cita = new EvolutivoPediatria();
-            Cita.GetCita(Pediatria);
-            Cita.ShowDialog(this);
-           // _LogicLayer.InsertCitaPediatria(Pediatria);
-        }      
-        private void button2_Click(object sender, EventArgs e)
-        {
-            HistoriasPediatria Sucesivo = new HistoriasPediatria();
-            Sucesivo.GetDataPediatria(TxtID.Text,int.Parse(TxtEdad.Text));
-            Sucesivo.ShowDialog(this);
-        }
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            TxtPeso.ReadOnly = false;
-            txtHb.ReadOnly = false;
-            TxtCC.ReadOnly = false;
-            TxtTalla.ReadOnly = false;
-            TxtCMB.ReadOnly = false;
-        }
+        #endregion
+    
         #region Validacion de Datos
         private void ComboUrgencias_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -490,8 +490,8 @@ namespace MapaniApp
         }
         #endregion
 
-     
 
-       
+
+
     }
 }

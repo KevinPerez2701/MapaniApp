@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -18,33 +14,33 @@ namespace MapaniApp
 
         public static void databaseFilePut(string varFilePath, ContactAsesoria File)
         {
-           
+
             using (var stream = new FileStream(varFilePath, FileMode.Open, FileAccess.Read))
             {
                 using (var reader = new BinaryReader(stream))
                 {
-                   File.PDF = reader.ReadBytes((int)stream.Length);
+                    File.PDF = reader.ReadBytes((int)stream.Length);
                 }
             }
-           
+
         }
         public static void databaseFileRead(ContactAsesoria blob)
         {
 
             {
-                            SaveFileDialog svg = new SaveFileDialog();
-                            svg.ShowDialog();
-                            using (var fs = new FileStream(svg.FileName + ".pdf", FileMode.Create,FileAccess.Write))
-                            fs.Write(blob.PDF, 0, (blob.PDF).Length);
-             }
+                SaveFileDialog svg = new SaveFileDialog();
+                svg.ShowDialog();
+                using (var fs = new FileStream(svg.FileName + ".pdf", FileMode.Create, FileAccess.Write))
+                    fs.Write(blob.PDF, 0, (blob.PDF).Length);
+            }
 
-       }
-        
+        }
+
         public static void GuardarFoto(PictureBox Foto)
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "Images|*.png;*.bmp;*.jpg";
-           
+
             ImageFormat format = ImageFormat.Png;
             if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -88,7 +84,7 @@ namespace MapaniApp
             }
 
         }
-       
+
         public static Bitmap GetImageFromByteArray(byte[] byteArray)
         {
             Bitmap bm = (Bitmap)_imageConverter.ConvertFrom(byteArray);
@@ -125,7 +121,7 @@ namespace MapaniApp
         {
             string edad;
             TimeSpan tS = new TimeSpan();
-            tS = Cita.Subtract(Fecha);          
+            tS = Cita.Subtract(Fecha);
             edad = Math.Floor(tS.TotalDays).ToString();
             return edad;
         }
@@ -134,9 +130,8 @@ namespace MapaniApp
         {
             double calculo;
             string edad;
-            // calculo = (Cita.Month - Fecha.Month) + 12 * (Cita.Year - Fecha.Year);
             calculo = Cita.Subtract(Fecha).Days / (365.25 / 12);
-            edad = Math.Round(calculo, 2).ToString();              
+            edad = Math.Round(calculo, 2).ToString();
             return edad;
         }
         public static string GetEdadAnhos(DateTime Fecha)
@@ -144,7 +139,7 @@ namespace MapaniApp
             string edad;
             TimeSpan tS = new TimeSpan();
             tS = DateTime.Now.Subtract(Fecha);
-            edad =Math.Floor((tS.TotalDays / 365)).ToString();
+            edad = Math.Floor((tS.TotalDays / 365)).ToString();
             return edad;
         }
         public static string ObtenerEdad(DateTime birthday)
@@ -158,20 +153,6 @@ namespace MapaniApp
             return $"{years} Años {(months > 0 ? $"y {months} meses" : "")}";
         }
         #endregion
-        #region Validacion de Datos
-        public bool vacio; // Variable utilizada para saber si hay algún TextBox vacio.
-        private void validar(Form formulario)
-        {
-            foreach (Control oControls in formulario.Controls) // Buscamos en cada TextBox de nuestro Formulario.
-            {
-                if (oControls is TextBox & oControls.Text == String.Empty) // Verificamos que no este vacio.
-                {
-                    vacio = true; // Si esta vacio el TextBox asignamos el valor True a nuestra variable.
-                }
-            }
-            if (vacio == true) MessageBox.Show("Favor de llenar todos los campos."); // Si nuestra variable es verdadera mostramos un mensaje.
-            vacio = false; // Devolvemos el valor original a nuestra variable.
-        }
-        #endregion
+
     }
 }

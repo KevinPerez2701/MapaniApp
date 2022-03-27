@@ -190,12 +190,6 @@
       <DependentUpon>GestionCasos.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\ContactNutricion.cs" />
-    <Compile Include="AsesoriaJuridica\Escolaridad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AsesoriaJuridica\Escolaridad.Designer.cs">
-      <DependentUpon>Escolaridad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Clases\ContactPsicologia.cs" />
     <Compile Include="Transcripcion\ImprimirTranscripcion.cs">
       <SubType>Form</SubType>

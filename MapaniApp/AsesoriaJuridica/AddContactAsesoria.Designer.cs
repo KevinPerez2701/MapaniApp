@@ -62,6 +62,7 @@ namespace MapaniApp
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(226, 29);
             this.txtTelefono.TabIndex = 112;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContactAsesoria_KeyPress);
             // 
             // label8
             // 
@@ -80,6 +81,7 @@ namespace MapaniApp
             this.txtOcupacion.Name = "txtOcupacion";
             this.txtOcupacion.Size = new System.Drawing.Size(226, 29);
             this.txtOcupacion.TabIndex = 110;
+            this.txtOcupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtApellido_KeyPress);
             // 
             // label7
             // 
@@ -99,6 +101,7 @@ namespace MapaniApp
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(226, 29);
             this.txtCedula.TabIndex = 108;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContactAsesoria_KeyPress);
             // 
             // label4
             // 
@@ -117,6 +120,7 @@ namespace MapaniApp
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(226, 29);
             this.txtEstado.TabIndex = 106;
+            this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtApellido_KeyPress);
             // 
             // label12
             // 
@@ -190,6 +194,7 @@ namespace MapaniApp
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(226, 29);
             this.TxtApellido.TabIndex = 98;
+            this.TxtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtApellido_KeyPress);
             // 
             // TxtNombre
             // 
@@ -198,6 +203,7 @@ namespace MapaniApp
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(226, 29);
             this.TxtNombre.TabIndex = 97;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtApellido_KeyPress);
             // 
             // label2
             // 
@@ -267,6 +273,7 @@ namespace MapaniApp
             this.txtVinculo.Name = "txtVinculo";
             this.txtVinculo.Size = new System.Drawing.Size(226, 29);
             this.txtVinculo.TabIndex = 118;
+            this.txtVinculo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtApellido_KeyPress);
             // 
             // label6
             // 
@@ -310,6 +317,7 @@ namespace MapaniApp
             this.Name = "AddContactAsesoria";
             this.Text = "AddContactAsesoria";
             this.Load += new System.EventHandler(this.AddContactAsesoria_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContactAsesoria_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

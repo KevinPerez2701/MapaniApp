@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -17,22 +11,24 @@ namespace MapaniApp
         {
             InitializeComponent();
         }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void VerProductos_Load(object sender, EventArgs e)
         {
 
         }
-        public void GetProductos(string flag=null)
+        #region Botones
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+        #region Funciones
+
+        public void GetProductos(string flag = null)
         {
             List<DataAlmacen> contacts = _LogicLayer.GetProductos();
             dataGridView1.DataSource = contacts;
-            if (flag=="1")
-            dataGridView1.Columns[6].Visible = false;
+            if (flag == "1")
+                dataGridView1.Columns[6].Visible = false;
         }
         public void GetProductosBodega(string flag = null)
         {
@@ -47,12 +43,12 @@ namespace MapaniApp
             List<DataAlmacen> ProductosBodega = _LogicLayer.GetProductosBodega();
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
-            int i=0;
+            int i = 0;
             foreach (DataAlmacen Producto in ProductosAlmacen.ToArray())
             {
                 i++;
             }
-            for (int j=0; j<i; j++)
+            for (int j = 0; j < i; j++)
             {
                 if (ProductosAlmacen[j].IdProducto == ProductosBodega[j].IdProducto)
                     ProductosAlmacen[j].Cantidad += ProductosBodega[j].Cantidad;
@@ -62,9 +58,10 @@ namespace MapaniApp
         public void GetIdNMB(string Id)
         {
             TxtId.Text = Id;
-        
-        }
 
+        }
+        #endregion
+        #region Eventos
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -77,10 +74,11 @@ namespace MapaniApp
                     IdNMB = TxtId.Text,
                     IdProducto = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()),
                     Nombre = (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()),
-                    Programa =(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()),
-                }) ; // Carga de datos de los cuadros de texto
+                    Programa = (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()),
+                }); // Carga de datos de los cuadros de texto
                 Orden.ShowDialog(this);
             }
         }
+        #endregion
     }
 }

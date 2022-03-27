@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 /// <summary>
 /// Capa Encargada de la Logica Entre Clases
 /// </summary>
 namespace MapaniApp
 {
-    
+
     class LogicLayer
-    {   private DataAccessLayer _dataAccessLayer;
+    {
+        private DataAccessLayer _dataAccessLayer;
         public LogicLayer()
         {
             _dataAccessLayer = new DataAccessLayer();
@@ -25,9 +23,9 @@ namespace MapaniApp
                 _dataAccessLayer.InserContactMMB(Contact);
             }
             else
-             {
-                 _dataAccessLayer.UpdateContactMMB(Contact);
-             }
+            {
+                _dataAccessLayer.UpdateContactMMB(Contact);
+            }
             return Contact;
         }
         public ContactCuidador SaveContactCuidador(ContactCuidador Contact)
@@ -39,21 +37,22 @@ namespace MapaniApp
             }
             else
             {
-                 _dataAccessLayer.UpdateContactCuidador(Contact);
+                _dataAccessLayer.UpdateContactCuidador(Contact);
             }
             return Contact;
         }
 
-        public  ContactNMB SaveContact(ContactNMB Contact)
-        { int flag = Contact.Id;
-            if ( flag == 0)
+        public ContactNMB SaveContact(ContactNMB Contact)
+        {
+            int flag = Contact.Id;
+            if (flag == 0)
             {
                 _dataAccessLayer.InserContactNMB(Contact);
             }
             else
             {
                 _dataAccessLayer.UpdateContactNMB(Contact);
-           }
+            }
             return Contact;
         }
         public ContactAsesoria SaveContactAsesoria(ContactAsesoria Contact)
@@ -63,30 +62,30 @@ namespace MapaniApp
             {
                 _dataAccessLayer.InserContactAsesoria(Contact);
             }
-          //  else
-           // {
+            //  else
+            // {
             //    _dataAccessLayer.UpdateContactNMB(Contact);
             //}
             return Contact;
         }
         public ContactAsesoria SaveDocument(ContactAsesoria Contact)
         {
-           // int flag = Contact.IdDocumento;
-           // if (flag == 0)
+            // int flag = Contact.IdDocumento;
+            // if (flag == 0)
             //{
-                _dataAccessLayer.InsertDocuments(Contact);
+            _dataAccessLayer.InsertDocuments(Contact);
             //}
             //else
             //{
-             //   _dataAccessLayer.UpdateDocuments(Contact);
+            //   _dataAccessLayer.UpdateDocuments(Contact);
             //}
             return Contact;
         }
 
         public DataAlmacen SaveProductBodega(DataAlmacen Product)
         {
-          
-                _dataAccessLayer.InserProductBodega(Product);
+
+            _dataAccessLayer.InserProductBodega(Product);
             return Product;
         }
         public DataAlmacen SaveProduct(DataAlmacen Product)
@@ -101,14 +100,14 @@ namespace MapaniApp
         }
         public DataAlmacen UpdateCantidadBodega(DataAlmacen Product)
         {
-            
+
             _dataAccessLayer.UpdateCantidadBodega(Product);
             return Product;
         }
         public ClaseEnfermeria SaveContactEnfermeria(ClaseEnfermeria Contact)
         {
-            
-                _dataAccessLayer.InserCitaEnfermeria(Contact);
+
+            _dataAccessLayer.InserCitaEnfermeria(Contact);
             return Contact;
         }
         public ContactPsicologia InsertCitaPsicologia(ContactPsicologia Contact)
@@ -147,9 +146,9 @@ namespace MapaniApp
             _dataAccessLayer.InserCitaAsesoria(Contact);
             return Contact;
         }
-        public  ProximasVisitas SaveCita(ProximasVisitas Cita)
+        public ProximasVisitas SaveCita(ProximasVisitas Cita)
         {
-                _dataAccessLayer.InserCita(Cita);
+            _dataAccessLayer.InserCita(Cita);
             return Cita;
         }
         public List<MapaniUsers> Asistencia(List<MapaniUsers> Asistencia)
@@ -164,7 +163,7 @@ namespace MapaniApp
         }
         public List<ContactPsicologia> GetHistorialPsicologia(string Id)
         {
-            List<ContactPsicologia> contact =_dataAccessLayer.GetHistorialPsicologia(Id);
+            List<ContactPsicologia> contact = _dataAccessLayer.GetHistorialPsicologia(Id);
             return contact;
         }
         public DataAlmacen SaveOrder(DataAlmacen Orden)
@@ -211,7 +210,7 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetContactsCuidador(SearchText);
         }
-      
+
         public List<ContactAsesoria> GetHistorialAsesoria(string SearchText = null)
         {
             return _dataAccessLayer.GetHistorialAsesoria(SearchText);
@@ -228,7 +227,7 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetCuidadores(SearchText);
         }
-        public List<ContactNMB> GetRelacion (string SearchText = null)
+        public List<ContactNMB> GetRelacion(string SearchText = null)
         {
             return _dataAccessLayer.GetRelacion(SearchText);
         }
@@ -265,7 +264,7 @@ namespace MapaniApp
             return _dataAccessLayer.GetEvaluacionPsicologia(Id);
         }
         public List<DataAlmacen> GetOrdenes()
-        {   
+        {
             return _dataAccessLayer.GetOrdenes();
         }
         public List<DataAlmacen> GetHistorialOrdenes(DataAlmacen Historial)
@@ -292,21 +291,21 @@ namespace MapaniApp
         {
             return _dataAccessLayer.GetCitas(SearchText);
         }
-        public List<MapaniUsers> GetAsistencia( )
+        public List<MapaniUsers> GetAsistencia()
         {
             return _dataAccessLayer.GetAsistencia();
         }
-        public void InsertRelacion(string IdNMB, string IdCuidador,string parentesco, string cedula)
+        public void InsertRelacion(string IdNMB, string IdCuidador, string parentesco, string cedula)
         {
-            _dataAccessLayer.InsertRelacion(IdNMB, IdCuidador,parentesco,cedula);
+            _dataAccessLayer.InsertRelacion(IdNMB, IdCuidador, parentesco, cedula);
         }
         public void InsertRelacionMMB(string IdNMB, string IdMMB, string parentesco)
         {
-            _dataAccessLayer.InsertRelacionMMB(IdNMB, IdMMB,parentesco);
+            _dataAccessLayer.InsertRelacionMMB(IdNMB, IdMMB, parentesco);
         }
         public List<MapaniUsers> Login(string User, string Password)
         {
-           return _dataAccessLayer.Login(User, Password);
+            return _dataAccessLayer.Login(User, Password);
         }
 
         public int GetMaxID()

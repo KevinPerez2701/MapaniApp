@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -17,17 +10,19 @@ namespace MapaniApp
         {
             InitializeComponent();
         }
-
+        #region Botones
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();       
+            this.Close();
         }
 
         private void BtnAgregarCita_Click(object sender, EventArgs e)
         {
             ConfirmDate();
-           
+
         }
+        #endregion
+        #region Funciones
         private void ConfirmDate()
         {
             if (TxtCuidador.Text == "" || comboBox1.Text == "" || TxtCuidador.Text == null || comboBox1.Text == null)
@@ -58,7 +53,7 @@ namespace MapaniApp
                 comboDepartamento.Text = Cita.Departamento.ToString();
                 DateCita.Value = Cita.Fecha;
 
-            }    
+            }
         }
 
         private void ConfirmarCita_Load(object sender, EventArgs e)
@@ -68,10 +63,8 @@ namespace MapaniApp
             comboDepartamento.Enabled = false;
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
+        #region Eventos
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -80,5 +73,6 @@ namespace MapaniApp
             else
                 groupBox1.Visible = false;
         }
+        #endregion
     }
 }

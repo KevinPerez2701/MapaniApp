@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -18,30 +12,15 @@ namespace MapaniApp
             InitializeComponent();
         }
 
-        private void BtnCargar_Click(object sender, EventArgs e)
-        {
-            LoadContactCuidador(txtID.Text);
-        }
-        public void LoadContactCuidador(string ID)
-        {
-            List<ContactCuidador> Contacts = _LogicLayer.GetContactsCuidador(ID);
-            ContactCuidador contact = Contacts[0];
-            TxtNombre.Text = contact.Nombre;
-            TxtApellido.Text = contact.Apellido;
-            txtCedula.Text = contact.Cedula;
-            dataGridView1.DataSource = _LogicLayer.GetHistorialAsesoria(ID);
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void GestionCasos_Load(object sender, EventArgs e)
         {
 
         }
-
+        #region Botones
+        private void BtnCargar_Click(object sender, EventArgs e)
+        {
+            LoadContactCuidador(txtID.Text);
+        }
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -50,6 +29,21 @@ namespace MapaniApp
         private void BtnSave_Click(object sender, EventArgs e)
         {
             SaveData();
+        }
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+        #endregion
+        #region Funciones
+        public void LoadContactCuidador(string ID)
+        {
+            List<ContactCuidador> Contacts = _LogicLayer.GetContactsCuidador(ID);
+            ContactCuidador contact = Contacts[0];
+            TxtNombre.Text = contact.Nombre;
+            TxtApellido.Text = contact.Apellido;
+            txtCedula.Text = contact.Cedula;
+            dataGridView1.DataSource = _LogicLayer.GetHistorialAsesoria(ID);
         }
         public void SaveData()
         {
@@ -66,7 +60,18 @@ namespace MapaniApp
             };
             _LogicLayer.InsertCitaAsesoria(contact);
         }
-
+        public void LimpiarCampos()
+        {
+            txtTipoAtencion.Text = "";
+            txtTipoCaso.Text = "";
+            txtSeguimiento.Text = "";
+            txtEstatus.Text = "";
+            txtObservacion.Text = "";
+            txtEvolucion.Text = "";
+            dateTimePicker1.Value = DateTime.Now;
+        }
+        #endregion
+        #region Eventos
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
@@ -83,20 +88,18 @@ namespace MapaniApp
 
             }
         }
-        public void LimpiarCampos()
-        {
-            txtTipoAtencion.Text = "";
-            txtTipoCaso.Text ="";
-            txtSeguimiento.Text = "";
-            txtEstatus.Text = "";
-            txtObservacion.Text = "";
-            txtEvolucion.Text = "";
-            dateTimePicker1.Value = DateTime.Now ;
-        }
+        #endregion
 
-        private void BtnLimpiar_Click(object sender, EventArgs e)
+        #region Validacion de Datos
+        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
         {
-            LimpiarCampos();
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
+        #endregion 
     }
 }

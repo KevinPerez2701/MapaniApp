@@ -314,7 +314,7 @@ namespace MapaniApp
             this.groupBase.TabStop = false;
             this.groupBase.Text = "GroupBase";
             this.groupBase.Visible = false;
-            this.groupBase.Enter += new System.EventHandler(this.groupBase_Enter);
+          
             // 
             // labelCC
             // 

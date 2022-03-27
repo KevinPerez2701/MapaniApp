@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /// <summary>
 /// Clase Encargada de la interraccion con la base de datos SQL
@@ -12,10 +9,10 @@ namespace MapaniApp
 {
     class DataAccessLayer
 
-    { 
-         // private SqlConnection Connection = new SqlConnection("data source=192.168.68.166,1433; initial catalog=MAPANI; user id=kevin; password =Mapani2022;");
+    {
+        // private SqlConnection Connection = new SqlConnection("data source=192.168.68.166,1433; initial catalog=MAPANI; user id=kevin; password =Mapani2022;");
         // private SqlConnection Connection = new SqlConnection("data source=192.168.68.118,1433; initial catalog=MAPANI; user id=kevin; password =1234;");
-      //  private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+        //  private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
         private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS
         /// <summary>
@@ -193,11 +190,11 @@ namespace MapaniApp
                 SqlParameter CharlaMuac = new SqlParameter("@CharlaMuac", contact.CharlaMuac);
                 SqlParameter CharlaLactancia = new SqlParameter("@CharlaLactancia", contact.CharlaLactancia);
                 SqlParameter Movilizacion = new SqlParameter("@Movilizacion", contact.Movilizacion);
-              
+
 
 
                 SqlCommand command = new SqlCommand(query, Connection);
-               
+
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Apellido);
                 command.Parameters.Add(FechaNacimiento);
@@ -439,20 +436,20 @@ namespace MapaniApp
                 SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
                 SqlParameter Direccion = new SqlParameter("@Direccion", contact.Direccion);
                 SqlParameter Telefono = new SqlParameter("@Telefono", contact.Telefono);
-                SqlParameter Ocupacion = new SqlParameter("@Ocupacion", contact.Ocupacion);     
+                SqlParameter Ocupacion = new SqlParameter("@Ocupacion", contact.Ocupacion);
                 SqlParameter Cedula = new SqlParameter("@Cedula", contact.Cedula);
                 SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
                 SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
                 SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
-                SqlParameter IdCuidador = new SqlParameter("@IdCuidador",contact.IdCuidador);
+                SqlParameter IdCuidador = new SqlParameter("@IdCuidador", contact.IdCuidador);
                 SqlParameter Vinculo = new SqlParameter("@Vinculo", contact.Vinculo);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Nombre);
                 command.Parameters.Add(Apellido);
                 command.Parameters.Add(Direccion);
                 command.Parameters.Add(Ocupacion);
-                command.Parameters.Add(Telefono);                
-                command.Parameters.Add(Cedula);              
+                command.Parameters.Add(Telefono);
+                command.Parameters.Add(Cedula);
                 command.Parameters.Add(Parroquia);
                 command.Parameters.Add(Municipio);
                 command.Parameters.Add(Estado);
@@ -476,22 +473,22 @@ namespace MapaniApp
             try
             {
                 Connection.Open();
-                    string query = @"Insert into TablaDocumentsASesoria (IdCuidador,IdNMB,TipoDocumento,PDF)  
+                string query = @"Insert into TablaDocumentsASesoria (IdCuidador,IdNMB,TipoDocumento,PDF)  
                                     Values(@IdCuidador,@IdNMB,@TipoDocumento,@PDF)
                                    ";
 
-                    SqlParameter IdCuidador = new SqlParameter("@IdCuidador", contact.IdCuidador);               
-                    SqlParameter IdNMB = new SqlParameter("@IdNMB", contact.IdNMB);
-                    SqlParameter Tipo = new SqlParameter("@TipoDocumento", contact.TipoDocumento);
-                    SqlParameter PDF = new SqlParameter("@PDF", contact.PDF);
-                    SqlCommand command = new SqlCommand(query, Connection);
-                    command.Parameters.Add(IdCuidador);                
-                    command.Parameters.Add(IdNMB);
-                    command.Parameters.Add(Tipo);
-                    command.Parameters.Add(PDF);
-                    command.ExecuteNonQuery();
-                
-                
+                SqlParameter IdCuidador = new SqlParameter("@IdCuidador", contact.IdCuidador);
+                SqlParameter IdNMB = new SqlParameter("@IdNMB", contact.IdNMB);
+                SqlParameter Tipo = new SqlParameter("@TipoDocumento", contact.TipoDocumento);
+                SqlParameter PDF = new SqlParameter("@PDF", contact.PDF);
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(IdCuidador);
+                command.Parameters.Add(IdNMB);
+                command.Parameters.Add(Tipo);
+                command.Parameters.Add(PDF);
+                command.ExecuteNonQuery();
+
+
             }
             catch (Exception)
             {
@@ -516,7 +513,7 @@ namespace MapaniApp
                                     Insert into ProximasVisitas ([NMB], [Fecha], [Departamento],Doctor)  
                                     Values(@IdNMB,@Fecha,@Departamento,@Rol)";
                 SqlParameter IdNMB = new SqlParameter("@IdNMB", Cita.IdNMB);
-                SqlParameter Fecha= new SqlParameter("@Fecha", Cita.Fecha);
+                SqlParameter Fecha = new SqlParameter("@Fecha", Cita.Fecha);
                 SqlParameter Departamento = new SqlParameter("@Departamento", Cita.Departamento);
                 SqlParameter Rol = new SqlParameter("@Rol", Cita.Rol);
                 SqlCommand command = new SqlCommand(query, Connection);
@@ -550,7 +547,7 @@ namespace MapaniApp
                                     Insert into TablaAsistencia ([IdTrabajador], [Fecha],Rol,Hora)  
                                     Values(@Id,@Fecha,@Rol,@Hora)";
                 SqlParameter IdNMB = new SqlParameter("@Id", Asistencia[0].Id);
-                SqlParameter Fecha = new SqlParameter("@Fecha",Asistencia[0].Fecha);
+                SqlParameter Fecha = new SqlParameter("@Fecha", Asistencia[0].Fecha);
                 SqlParameter Rol = new SqlParameter("@Rol", Asistencia[0].Rol);
                 SqlParameter Hora = new SqlParameter("@Hora", Asistencia[0].HoraEntrada);
 
@@ -582,11 +579,11 @@ namespace MapaniApp
                                     where TablaAsistencia.IdTrabajador = @Id and TablaAsistencia.Fecha =@Fecha";
                 SqlParameter IdNMB = new SqlParameter("@Id", Asistencia[0].Id);
                 SqlParameter Fecha = new SqlParameter("@Fecha", Asistencia[0].Fecha);
-                SqlParameter Salida = new SqlParameter("@Salida", Asistencia[0].HoraSalida);             
+                SqlParameter Salida = new SqlParameter("@Salida", Asistencia[0].HoraSalida);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(IdNMB);
                 command.Parameters.Add(Fecha);
-                command.Parameters.Add(Salida);        
+                command.Parameters.Add(Salida);
                 command.ExecuteNonQuery();
 
             }
@@ -652,12 +649,12 @@ namespace MapaniApp
                                     Where (Ordenes.IdNMB = @IdNMB and Ordenes.IdProducto = @IdProducto and Fecha = @Fecha)
                                     ";
                 SqlParameter IdNMB = new SqlParameter("@IdNMB", int.Parse(Orden.IdNMB));
-                SqlParameter IdProducto = new SqlParameter("@IdProducto", Orden.IdProducto);                        
-                SqlParameter Fecha = new SqlParameter("@Fecha", Orden.Fecha);            
+                SqlParameter IdProducto = new SqlParameter("@IdProducto", Orden.IdProducto);
+                SqlParameter Fecha = new SqlParameter("@Fecha", Orden.Fecha);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(IdNMB);
-                command.Parameters.Add(IdProducto);              
-                command.Parameters.Add(Fecha);             
+                command.Parameters.Add(IdProducto);
+                command.Parameters.Add(Fecha);
                 command.ExecuteNonQuery();
             }
             catch (Exception)
@@ -683,10 +680,10 @@ namespace MapaniApp
                                      where (TablaAlmacen.IdProducto = @IdProducto)
                                     ";
                 SqlParameter CantidadDespachada = new SqlParameter("@CantidadDespachada", Orden.Cantidad);
-                SqlParameter IdProducto = new SqlParameter("@IdProducto", Orden.IdProducto);   
+                SqlParameter IdProducto = new SqlParameter("@IdProducto", Orden.IdProducto);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(CantidadDespachada);
-                command.Parameters.Add(IdProducto);        
+                command.Parameters.Add(IdProducto);
                 command.ExecuteNonQuery();
             }
             catch (Exception)
@@ -777,7 +774,7 @@ namespace MapaniApp
                 command.Parameters.Add(CantidadDiferida);
                 command.Parameters.Add(IdProducto);
                 command.ExecuteNonQuery();
-               
+
             }
             catch (Exception)
             {
@@ -840,7 +837,7 @@ namespace MapaniApp
                                     Delete From ProximasVisitas  
                                     Where NMB=@IdNMB and Fecha=@Fecha and Departamento=@Departamento";
                 SqlParameter IdNMB = new SqlParameter("@IdNMB", Cita.IdNMB);
- 
+
                 SqlParameter Fecha = new SqlParameter("@Fecha", Cita.Fecha);
                 SqlParameter Departamento = new SqlParameter("@Departamento", Cita.Departamento);
 
@@ -867,7 +864,7 @@ namespace MapaniApp
         /// <param name="IdNMB"></param>
         /// <param name="IdCuidador"></param>
         /// <param name="Parentesco"></param>
-        public void InsertRelacion(string IdNMB,string IdCuidador, string Parentesco, string Cedulas)
+        public void InsertRelacion(string IdNMB, string IdCuidador, string Parentesco, string Cedulas)
         {
             try
             {
@@ -875,10 +872,10 @@ namespace MapaniApp
                 string query = @"
                                     Insert into Referencia(NMB,Cuidador,Parentesco,Cedula) 
                                     Values(@IdNMB,@IdCuidador,@Parentesco,@Cedula)";
-                SqlParameter NMB = new SqlParameter("@IdNMB",int.Parse(IdNMB));
+                SqlParameter NMB = new SqlParameter("@IdNMB", int.Parse(IdNMB));
                 SqlParameter Cuidador = new SqlParameter("@IdCuidador", int.Parse(IdCuidador));
                 SqlParameter Relacion = new SqlParameter("@Parentesco", Parentesco);
-                SqlParameter Cedula = new SqlParameter("@Cedula",Cedulas);
+                SqlParameter Cedula = new SqlParameter("@Cedula", Cedulas);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(NMB);
                 command.Parameters.Add(Cuidador);
@@ -1078,7 +1075,7 @@ namespace MapaniApp
                                    Insert into TablaNutricion (NMB, Fecha,Programa,Peso,Talla,CMB,Hb,CC,Diagnostico,DiagnosticoTalla,Urgencias,Referido,Antecedentes,Observacion,Patologias,Imc,
                                     PZImcEdad,PZTallaEdad,PZPesoEdad,PZPesoEdad2006,PZTallaEdad2006,PZPesoTalla,IMCPZ)  
                                     Values(@NMB,@Fecha,@Programa,@Peso,@Talla,@CMB,@Hb,@CC,@Diagnostico,@DiagnosticoTalla,@Urgencias,@Referido,@Antecedentes,@Observacion,@Patologias,@IMC,
-                                    @PZImcEdad,@PZTallaEdad,@PZPesoEdad,@PZPesoEdad2006,@PZTallaEdad2006,@PZPesoTalla,@IMCPZ)"; 
+                                    @PZImcEdad,@PZTallaEdad,@PZPesoEdad,@PZPesoEdad2006,@PZTallaEdad2006,@PZPesoTalla,@IMCPZ)";
                 SqlParameter NMB = new SqlParameter("@NMB", contact.NMB);
                 SqlParameter Fecha = new SqlParameter("@Fecha", contact.Fecha);
                 SqlParameter IMCPZ = new SqlParameter("@IMCPZ", contact.IMCPZ);
@@ -1091,7 +1088,7 @@ namespace MapaniApp
                 SqlParameter Patologias = new SqlParameter("@Patologias", contact.Patologia);
                 SqlParameter Programa = new SqlParameter("@Programa", contact.Programa);
                 SqlParameter Peso = new SqlParameter("@Peso", contact.Peso);
-                SqlParameter Talla  = new SqlParameter("@Talla", contact.Talla);
+                SqlParameter Talla = new SqlParameter("@Talla", contact.Talla);
                 SqlParameter IMC = new SqlParameter("@IMC", contact.IMC);
                 SqlParameter PZImcEdad = new SqlParameter("@PZImcEdad", contact.PZImcEdad);
                 SqlParameter PZTallaEdad = new SqlParameter("@PZTallaEdad", contact.PZTallaEdad);
@@ -1223,7 +1220,7 @@ namespace MapaniApp
                 SqlParameter AccionOtro = new SqlParameter("@AccionOtro", contact.AccionOtro);
                 SqlParameter NoAccion = new SqlParameter("@NoAccion", contact.NoAccion);
                 SqlParameter Seguimiento = new SqlParameter("@Seguimiento", contact.Seguimiento);
-              
+
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(Fecha);
                 command.Parameters.Add(NMB);
@@ -1238,7 +1235,7 @@ namespace MapaniApp
                 command.Parameters.Add(AccionOtro);
                 command.Parameters.Add(NoAccion);
                 command.Parameters.Add(Seguimiento);
-               
+
                 command.ExecuteNonQuery();
             }
             catch (Exception)
@@ -1260,21 +1257,21 @@ namespace MapaniApp
                                    Insert into TablaPsicologia (IdNMB,SistemaFamiliar,MotivoConsulta,Antecedentes,Evaluacion,EvaluacionInicial,RazonAlta,RazonMedia,RazonBaja,NoRazon) 
                                     Values(@NMB,@SistemaFamiliar,@MotivoConsulta,@Antecedentes,@Evaluacion,@EvaluacionInicial,@RazonAlta,@RazonMedia,@RazonBaja,@NoRazon)
                                     Update TablaNMB Set Psicologia = 'Si' where TablaNMB.Id = @NMB";
-                
+
                 SqlParameter NMB = new SqlParameter("@NMB", contact.IdNMB);
                 SqlParameter SistemaFamiliar = new SqlParameter("@SistemaFamiliar", contact.SistemaFamiliar);
                 SqlParameter MotivoConsulta = new SqlParameter("@MotivoConsulta", contact.MotivoConsulta);
                 SqlParameter Antecedentes = new SqlParameter("@Antecedentes", contact.Antecedentes);
                 SqlParameter Evaluacion = new SqlParameter("@Evaluacion", contact.Evaluacion);
-               // SqlParameter Referencia = new SqlParameter("@Referencia", contact.ref);
+                // SqlParameter Referencia = new SqlParameter("@Referencia", contact.ref);
                 SqlParameter EvaluacionInicial = new SqlParameter("@EvaluacionInicial", contact.EvaluacionInicial);
                 SqlParameter RazonAlta = new SqlParameter("@RazonAlta", contact.RazonAlta);
                 SqlParameter RazonMedia = new SqlParameter("@RazonMedia", contact.RazonMedia);
                 SqlParameter RazonBaja = new SqlParameter("@RazonBaja", contact.RazonBajo);
                 SqlParameter NoRazon = new SqlParameter("@NoRazon", contact.NoRazon);
-      
+
                 SqlCommand command = new SqlCommand(query, Connection);
-               // command.Parameters.Add(Historial);
+                // command.Parameters.Add(Historial);
                 command.Parameters.Add(NMB);
                 command.Parameters.Add(SistemaFamiliar);
                 command.Parameters.Add(MotivoConsulta);
@@ -1285,7 +1282,7 @@ namespace MapaniApp
                 command.Parameters.Add(RazonMedia);
                 command.Parameters.Add(RazonBaja);
                 command.Parameters.Add(NoRazon);
-               
+
                 command.ExecuteNonQuery();
             }
             catch (Exception)
@@ -1313,7 +1310,7 @@ namespace MapaniApp
                 SqlParameter Seguimiento = new SqlParameter("@Seguimiento", contact.Seguimiento);
                 SqlParameter Evolucion = new SqlParameter("@Evolucion", contact.Evolucion);
                 SqlParameter Estatus = new SqlParameter("@Estatus", contact.Estatus);
-                SqlParameter Observacion = new SqlParameter("@Observacion", contact.Observacion);              
+                SqlParameter Observacion = new SqlParameter("@Observacion", contact.Observacion);
                 SqlCommand command = new SqlCommand(query, Connection);
                 command.Parameters.Add(IdCuidador);
                 command.Parameters.Add(Fecha);
@@ -1349,7 +1346,7 @@ namespace MapaniApp
                                     Insert into TablaBodega ([Nombre], [Lote], [FechaVencimiento],[Cantidad],[Descripcion],Programa)  
                                     Values(@Nombre,@Lote,@FechaVencimiento,@Cantidad,@Descripcion,@Programa)";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
-               // SqlParameter Id = new SqlParameter("@IdProducto", contact.IdProducto);
+                // SqlParameter Id = new SqlParameter("@IdProducto", contact.IdProducto);
                 SqlParameter Lote = new SqlParameter("@Lote", contact.Lote);
                 SqlParameter FechaVencimiento = new SqlParameter("@FechaVencimiento", contact.FechaVencimiento);
                 SqlParameter Descripcion = new SqlParameter("@Descripcion", contact.Descripcion);
@@ -1435,12 +1432,12 @@ namespace MapaniApp
                 string query = @"Select * FROM TablaNMB Where Id=@Search";
                 SqlCommand command = new SqlCommand();
                 command.Parameters.Add(new SqlParameter("@Search", int.Parse(Search)));
-             /*   if (!string.IsNullOrEmpty(Search))
-                {
-                    query += @"WHERE Id=@Search";
-                    command.Parameters.Add(new SqlParameter("@Search", $"%{Search}%"));
+                /*   if (!string.IsNullOrEmpty(Search))
+                   {
+                       query += @"WHERE Id=@Search";
+                       command.Parameters.Add(new SqlParameter("@Search", $"%{Search}%"));
 
-                }*/
+                   }*/
                 command.CommandText = query;
                 command.Connection = Connection;
                 SqlDataReader reader = command.ExecuteReader();
@@ -1472,7 +1469,7 @@ namespace MapaniApp
                         DireccionEscuela = reader["DireccionEscuela"].ToString(),
                         Psicologia = reader["Psicologia"].ToString(),
                         TipoDiscapacidad = reader["TipoDiscapacidad"].ToString(),
-                    }) ; ;
+                    }); ;
                 }
 
             }
@@ -1522,7 +1519,7 @@ namespace MapaniApp
                         Sexo = reader["Sexo"].ToString(),
                         Foto = (byte[])reader["Foto"],
                         Telefono = reader["Telefono"].ToString(),
-                        EstadoCivil=reader["EstadoCivil"].ToString(),
+                        EstadoCivil = reader["EstadoCivil"].ToString(),
                         CantidadHijos = reader["Hijos"].ToString(),
                         Cedula = reader["Cedula"].ToString(),
                         Parroquia = reader["Parroquia"].ToString(),
@@ -1582,11 +1579,11 @@ namespace MapaniApp
                     {
                         Fecha = (DateTime)reader["Fecha"],
                         TipoCaso = reader["TipoCaso"].ToString(),
-                        TipoAtencion = reader["TipoAtencion"].ToString(),                       
+                        TipoAtencion = reader["TipoAtencion"].ToString(),
                         Seguimiento = reader["Seguimiento"].ToString(),
                         Estatus = reader["Estatus"].ToString(),
                         Observacion = reader["Observacion"].ToString(),
-                        Evolucion = reader["Evolucion"].ToString(),                      
+                        Evolucion = reader["Evolucion"].ToString(),
                     });
                 }
 
@@ -1730,12 +1727,12 @@ namespace MapaniApp
                     contactAsesoria.Add(new ContactAsesoria
                     {
                         Id = int.Parse(reader["Id"].ToString()),
-                      //  IdCuidador = int.Parse(reader["IdCuidador"].ToString()),
+                        //  IdCuidador = int.Parse(reader["IdCuidador"].ToString()),
                         Nombre = reader["Nombre"].ToString(),
                         Apellido = reader["Apellido"].ToString(),
                         Direccion = reader["Direccion"].ToString(),
                         Ocupacion = reader["Ocupacion"].ToString(),
-                        Telefono = reader["Telefono"].ToString(),                      
+                        Telefono = reader["Telefono"].ToString(),
                         Cedula = reader["Cedula"].ToString(),
                         Parroquia = reader["Parroquia"].ToString(),
                         Municipio = reader["Municipio"].ToString(),
@@ -1781,7 +1778,7 @@ namespace MapaniApp
                     {
                         IdCuidador = int.Parse(reader["IdCuidador"].ToString()),
                         IdNMB = int.Parse(reader["IdNMB"].ToString()),
-                        TipoDocumento = reader["TipoDocumento"].ToString(),                      
+                        TipoDocumento = reader["TipoDocumento"].ToString(),
                         PDF = (byte[])reader["PDF"],
 
                     });
@@ -1826,10 +1823,10 @@ namespace MapaniApp
                     {
                         Id = int.Parse(reader["Id"].ToString()),
                         Nombre = reader["Nombre"].ToString(),
-                        Apellido = reader ["Apellido"].ToString(),
+                        Apellido = reader["Apellido"].ToString(),
                         FechaNacimiento = (DateTime)reader["FechaNacimiento"],
-                        Cedula = reader ["Cedula"].ToString(),
-                        Parentesco = reader ["Parentesco"].ToString(),
+                        Cedula = reader["Cedula"].ToString(),
+                        Parentesco = reader["Parentesco"].ToString(),
                     });
                 }
             }
@@ -1867,7 +1864,7 @@ namespace MapaniApp
                         Id = int.Parse(reader["Id"].ToString()),
                         Nombre = reader["Nombre"].ToString(),
                         Apellido = reader["Apellido"].ToString(),
-                        
+
                         Parentesco = reader["Parentesco"].ToString(),
                     });
                 }
@@ -1909,7 +1906,7 @@ namespace MapaniApp
                         Posicion = reader["Position"].ToString(),
                         Rol = reader["Rol"].ToString(),
                         Fecha = (DateTime)reader["Fecha"],
-                        HoraEntrada =reader["Hora"].ToString(),
+                        HoraEntrada = reader["Hora"].ToString(),
                         HoraSalida = reader["HoraSalida"].ToString(),
                     });
                 }
@@ -2058,8 +2055,8 @@ namespace MapaniApp
                         Lote = reader["Lote"].ToString(),
                         Cantidad = int.Parse(reader["Cantidad"].ToString()),
                         FechaVencimiento = (DateTime)reader["FechaVencimiento"],
-                        Descripcion = reader ["Descripcion"].ToString(),
-                       
+                        Descripcion = reader["Descripcion"].ToString(),
+
                     });
                 }
             }
@@ -2140,11 +2137,11 @@ namespace MapaniApp
                 while (reader.Read())
                 {
                     Data.Add(new ClaseEnfermeria
-                    {   
+                    {
                         Fecha = (DateTime)reader["Fecha"],
                         Peso = reader["Peso"].ToString(),
                         Talla = reader["Talla"].ToString(),
-                        IMC = reader ["IMC"].ToString(),
+                        IMC = reader["IMC"].ToString(),
                         Programa = reader["Programa"].ToString(),
                         CMB = reader["CMB"].ToString(),
                         PZImcEdad = reader["PZImcEdad"].ToString(),
@@ -2158,8 +2155,8 @@ namespace MapaniApp
                         Referido = reader["Referido"].ToString(),
                         Diagnostico = reader["Diagnostico"].ToString(),
                         DiagnosticoTalla = reader["DiagnosticoTalla"].ToString(),
-                        Hb =reader["Hb"].ToString(),
-                        CC =reader["CC"].ToString(),
+                        Hb = reader["Hb"].ToString(),
+                        CC = reader["CC"].ToString(),
                         Observacion = reader["Observacion"].ToString(),
                         Antecedentes = reader["Antecedentes"].ToString(),
                         Patologia = reader["Patologias"].ToString(),
@@ -2258,7 +2255,7 @@ namespace MapaniApp
                         HoraCena = DateTime.Parse(reader["HoraCena"].ToString()),
                         Levantar = reader["Levantar"].ToString(),
                         Desayuno = reader["Desayuno"].ToString(),
-                        Merienda1  = reader["Merienda1"].ToString(),
+                        Merienda1 = reader["Merienda1"].ToString(),
                         Almuerzo = reader["Almuerzo"].ToString(),
                         Merienda2 = reader["Merienda2"].ToString(),
                         Cena = reader["Cena"].ToString(),
@@ -2298,7 +2295,7 @@ namespace MapaniApp
                 {
                     Data = new ContactPsicologia
                     {
-                       
+
                         RazonAlta = reader["RazonAlta"].ToString(),
                         RazonMedia = reader["RazonMedia"].ToString(),
                         RazonBajo = reader["RazonBaja"].ToString(),
@@ -2308,7 +2305,7 @@ namespace MapaniApp
                         SistemaFamiliar = reader["SistemaFamiliar"].ToString(),
                         MotivoConsulta = reader["MotivoConsulta"].ToString(),
                         Evaluacion = reader["Evaluacion"].ToString(),
-                        
+
                     };
                 }
             }
@@ -2323,9 +2320,9 @@ namespace MapaniApp
             }
             return Data;
         }
-        public List<ContactPsicologia>  GetHistorialPsicologia(string Id)
+        public List<ContactPsicologia> GetHistorialPsicologia(string Id)
         {
-           List<ContactPsicologia> Data = new List<ContactPsicologia>();
+            List<ContactPsicologia> Data = new List<ContactPsicologia>();
             try
             {
                 Connection.Open();
@@ -2339,7 +2336,7 @@ namespace MapaniApp
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    Data.Add ( new ContactPsicologia
+                    Data.Add(new ContactPsicologia
                     {
 
                         RazonSalud = reader["RazonSalud"].ToString(),
@@ -2352,7 +2349,7 @@ namespace MapaniApp
                         AccionCuidado = reader["AccionCuidado"].ToString(),
                         AccionOtro = reader["AccionOtro"].ToString(),
                         NoAccion = reader["NoAccion"].ToString(),
-                       Fecha = (DateTime)reader["Fecha"],
+                        Fecha = (DateTime)reader["Fecha"],
                         Seguimiento = reader["Seguimiento"].ToString(),
 
                     });
@@ -2390,13 +2387,14 @@ namespace MapaniApp
                 while (reader.Read())
                 {
                     contacts.Add(new DataAlmacen
-                    {   IdNMB = reader["IdNMB"].ToString(),
+                    {
+                        IdNMB = reader["IdNMB"].ToString(),
                         IdProducto = int.Parse(reader["IdProducto"].ToString()),
                         Nombre = reader["Nombre"].ToString(),
                         Programa = reader["Programa"].ToString(),
                         Pediatra = reader["Pediatra"].ToString(),
                         Cantidad = int.Parse(reader["Cantidad"].ToString()),
-                        Fecha= (DateTime)reader["Fecha"],
+                        Fecha = (DateTime)reader["Fecha"],
                         Despachado = reader["Despachado"].ToString(),
                     });
                 }
@@ -2432,9 +2430,9 @@ namespace MapaniApp
                     Connection = Connection
                 };
                 SqlParameter IdNMB = new SqlParameter("@IdNMB", int.Parse(Orden.IdNMB));
-                SqlParameter Fecha = new SqlParameter("@Fecha", Orden.Fecha);                                        
+                SqlParameter Fecha = new SqlParameter("@Fecha", Orden.Fecha);
                 command.Parameters.Add(IdNMB);
-                command.Parameters.Add(Fecha);               
+                command.Parameters.Add(Fecha);
                 command.ExecuteNonQuery();
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -2509,7 +2507,7 @@ namespace MapaniApp
         /// </summary>
         /// <param name="Search"></param>
         /// <returns></returns>
-        public List<HistorialVisitas> GetHistorial (string Search = null)
+        public List<HistorialVisitas> GetHistorial(string Search = null)
         {
             List<HistorialVisitas> Historial = new List<HistorialVisitas>();
             try
@@ -2531,8 +2529,8 @@ namespace MapaniApp
                         IdCuidador = int.Parse(reader["Cuidador"].ToString()),
                         Fecha = (DateTime)reader["Fecha"],
                         Departamento = reader["Departamento"].ToString(),
-                        Reagendo = reader ["Reagendada"].ToString(),
-                        Motivo = reader ["Motivo"].ToString(),
+                        Reagendo = reader["Reagendada"].ToString(),
+                        Motivo = reader["Motivo"].ToString(),
                     });
                 }
             }
@@ -2552,7 +2550,7 @@ namespace MapaniApp
         /// </summary>
         /// <param name="Search"></param>
         /// <returns></returns>
-        public List<HistorialVisitas> GetHistorialCitas(DateTime Search )
+        public List<HistorialVisitas> GetHistorialCitas(DateTime Search)
         {
             List<HistorialVisitas> Historial = new List<HistorialVisitas>();
             try
@@ -2639,7 +2637,7 @@ namespace MapaniApp
         /// </summary>
         /// <param name="Fecha"></param>
         /// <returns></returns>
-        public List<ProximasVisitas> GetCitas(DateTime Fecha )
+        public List<ProximasVisitas> GetCitas(DateTime Fecha)
         {
             List<ProximasVisitas> Citas = new List<ProximasVisitas>();
             try
@@ -2649,23 +2647,23 @@ namespace MapaniApp
                                            From ProximasVisitas, TablaNMB
                                where ProximasVisitas.Fecha =@Fecha and ProximasVisitas.NMB=TablaNMB.Id"; //and ProximasVisitas.NMB=TablaNMB.Id" Nombre, Apellido,FechaNacimiento,
                 SqlCommand command = new SqlCommand();
-                command.Parameters.Add(new SqlParameter("@Fecha",Fecha));
+                command.Parameters.Add(new SqlParameter("@Fecha", Fecha));
                 command.CommandText = query;
                 command.Connection = Connection;
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                   Citas.Add(new ProximasVisitas
+                    Citas.Add(new ProximasVisitas
                     {
                         IdNMB = int.Parse(reader["NMB"].ToString()),
-                        Nombre= reader["Nombre"].ToString(),
+                        Nombre = reader["Nombre"].ToString(),
                         Apellido = reader["Apellido"].ToString(),
                         FechaNacimiento = (DateTime)reader["FechaNacimiento"],
                         Fecha = (DateTime)reader["Fecha"],
                         Departamento = reader["Departamento"].ToString(),
                         Rol = reader["Doctor"].ToString(),
                         Activo = reader["Activo"].ToString(),
-                   });
+                    });
                 }
             }
             catch (Exception)
@@ -2681,7 +2679,7 @@ namespace MapaniApp
         }
         public int GetMaxId()
         {
-            int MaxId=0;
+            int MaxId = 0;
             try
             {
                 Connection.Open();
@@ -2695,9 +2693,9 @@ namespace MapaniApp
                 {
 
                     MaxId = int.Parse(reader["MaxID"].ToString());
-                       
-                 };
-                
+
+                };
+
             }
             catch (Exception)
             {
@@ -2775,7 +2773,7 @@ namespace MapaniApp
 
             return MaxId;
         }
-      
+
         /// <summary>
         /// Obtiene la Asistencia del usuario.
         /// </summary>
@@ -2788,7 +2786,7 @@ namespace MapaniApp
                 Connection.Open();
                 string query = @"Select IdTrabajador, Fecha,Rol
                                  From TablaAsistencia";
-                              
+
                 SqlCommand command = new SqlCommand();
                 command.CommandText = query;
                 command.Connection = Connection;
@@ -2820,7 +2818,7 @@ namespace MapaniApp
         /// <param name="User"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        public List<MapaniUsers> Login(string User,string Password)
+        public List<MapaniUsers> Login(string User, string Password)
         {
             List<MapaniUsers> Usuario = new List<MapaniUsers>();
             try
@@ -2836,12 +2834,14 @@ namespace MapaniApp
                 command.Connection = Connection;
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
-                { Usuario.Add(new MapaniUsers
-                    {   Id = int.Parse(reader["Id"].ToString()),
+                {
+                    Usuario.Add(new MapaniUsers
+                    {
+                        Id = int.Parse(reader["Id"].ToString()),
                         Nombre = reader["FirstName"].ToString(),
                         Posicion = reader["Position"].ToString(),
                         Rol = reader["Rol"].ToString(),
-                });
+                    });
                 }
             }
             catch (Exception)

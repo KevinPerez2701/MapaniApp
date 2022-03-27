@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -17,7 +11,7 @@ namespace MapaniApp
         {
             InitializeComponent();
         }
-
+        #region Eventos
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
@@ -34,23 +28,24 @@ namespace MapaniApp
                 Evolutivo.ShowDialog(this);
             }
             else if (cell.Value.ToString() == "Productos") // Si se selecciona el hipervinculo "confirmar"
-             {
-                 EntregaOrdenes VerOrdenes = new EntregaOrdenes();
-                 VerOrdenes.GetHistorial(new DataAlmacen
-                 {
-                     IdNMB = dataGridView1.Rows[e.RowIndex].Cells[23].Value.ToString(),
-                     Fecha = (DateTime)dataGridView1.Rows[e.RowIndex].Cells[0].Value,
-                 });
-                 VerOrdenes.ShowDialog(this); 
-             } 
+            {
+                EntregaOrdenes VerOrdenes = new EntregaOrdenes();
+                VerOrdenes.GetHistorial(new DataAlmacen
+                {
+                    IdNMB = dataGridView1.Rows[e.RowIndex].Cells[23].Value.ToString(),
+                    Fecha = (DateTime)dataGridView1.Rows[e.RowIndex].Cells[0].Value,
+                });
+                VerOrdenes.ShowDialog(this);
+            }
         }
-
+        #endregion
+        #region Funciones
         public void GetDataPediatria(string ID, int Dias)
         {
             List<ClaseEnfermeria> Data = _LogicLayer.GetDataPediatria(ID);
             dataGridView1.DataSource = Data;
-           
-            if (Dias>1825)
+
+            if (Dias > 1825)
             {
                 dataGridView1.Columns[7].Visible = true;
                 dataGridView1.Columns[8].Visible = true;
@@ -62,9 +57,10 @@ namespace MapaniApp
                 dataGridView1.Columns[11].Visible = true;
                 dataGridView1.Columns[12].Visible = true;
                 dataGridView1.Columns[13].Visible = true;
-               
+
             }
         }
+        #endregion
 
         private void HistoriasPediatria_Load(object sender, EventArgs e)
         {

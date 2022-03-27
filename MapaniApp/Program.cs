@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -15,7 +12,7 @@ namespace MapaniApp
         /// </summary>
         [STAThread]
         static void Main()
-        {  
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             CultureInfo current = Thread.CurrentThread.CurrentUICulture;
@@ -32,8 +29,8 @@ namespace MapaniApp
             Console.WriteLine("The current culture is {0} [{1}]",
                               Thread.CurrentThread.CurrentUICulture.NativeName,
                               Thread.CurrentThread.CurrentUICulture.Name);
-            Application.Run(new Main());     
-            
+            Application.Run(new Main());
+
         }
     }
 }

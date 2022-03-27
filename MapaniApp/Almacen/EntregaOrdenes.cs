@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -17,39 +11,42 @@ namespace MapaniApp
         {
             InitializeComponent();
         }
+        private void EntregaOrdenes_Load(object sender, EventArgs e)
+        {
 
+        }
+        #region Botones
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
 
-        private void EntregaOrdenes_Load(object sender, EventArgs e)
-        {
-            
-        }
+        #region Funciones
         public void PopulateContacts()
         {
-                List<DataAlmacen> contacts = _LogicLayer.GetOrdenes();
-                foreach (DataAlmacen contact in contacts.ToArray())
-                 {
-                    if (contact.Despachado == "Si")
-                        contacts.Remove(contact);
-                 }
-                dataGridView1.DataSource = contacts;           
+            List<DataAlmacen> contacts = _LogicLayer.GetOrdenes();
+            foreach (DataAlmacen contact in contacts.ToArray())
+            {
+                if (contact.Despachado == "Si")
+                    contacts.Remove(contact);
+            }
+            dataGridView1.DataSource = contacts;
         }
         public void GetHistorial(DataAlmacen Orden)
         {
-            List<DataAlmacen> contacts = _LogicLayer.GetHistorialOrdenes(Orden);       
+            List<DataAlmacen> contacts = _LogicLayer.GetHistorialOrdenes(Orden);
             foreach (DataAlmacen contact in contacts.ToArray())
             {
                 if (contact.Despachado == "No")
                     contacts.Remove(contact);
             }
-           
+
             dataGridView1.DataSource = contacts;
             dataGridView1.Columns[7].Visible = false;
         }
-
+        #endregion
+        #region Eventos
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
@@ -66,9 +63,10 @@ namespace MapaniApp
                 PopulateContacts();
             }
 
-         }
-        
-        
+        }
+        #endregion
+
+
     }
 
 }

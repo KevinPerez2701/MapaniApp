@@ -189,7 +189,7 @@ namespace MapaniApp
             this.label6.Size = new System.Drawing.Size(164, 24);
             this.label6.TabIndex = 28;
             this.label6.Text = "Motivo Reagendar";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+        
             // 
             // groupBox1
             // 

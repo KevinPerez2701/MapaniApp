@@ -87,7 +87,7 @@ namespace MapaniApp
             this.splitContainer1.Panel2.Controls.Add(this.txtRiesgoAlto);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.checkedListBox2);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+           
             this.splitContainer1.Size = new System.Drawing.Size(1106, 712);
             this.splitContainer1.SplitterDistance = 314;
             this.splitContainer1.TabIndex = 0;
@@ -161,6 +161,7 @@ namespace MapaniApp
             this.menuStrip1.Size = new System.Drawing.Size(1106, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            
             // 
             // guardarToolStripMenuItem
             // 
@@ -328,7 +329,7 @@ namespace MapaniApp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EvaluacionInicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.EvaluacionInicial_Load);
+         
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

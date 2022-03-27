@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -17,7 +10,11 @@ namespace MapaniApp
         {
             InitializeComponent();
         }
+        private void AgregarCita_Load(object sender, EventArgs e)
+        {
 
+        }
+        #region Botones
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,12 +23,15 @@ namespace MapaniApp
         private void BtnAgregarCita_Click(object sender, EventArgs e)
         {
             SaveDate();
-           
+
         }
+        #endregion
+        #region Funciones
         private void SaveDate()
-        {   if (comboDepartamento.Text == "" || comboProfesional.Text == "" || comboDepartamento.Text == null || comboProfesional.Text == null)
+        {
+            if (comboDepartamento.Text == "" || comboProfesional.Text == "" || comboDepartamento.Text == null || comboProfesional.Text == null)
             {
-                MessageBox.Show("Rellene Todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);            
+                MessageBox.Show("Rellene Todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             else
@@ -52,10 +52,7 @@ namespace MapaniApp
             TxtId.Text = ID;
             TxtId.ReadOnly = true;
         }
-        private void AgregarCita_Load(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
         #region Validacion de Datos
         private void DateCita_ValueChanged(object sender, EventArgs e)
         {

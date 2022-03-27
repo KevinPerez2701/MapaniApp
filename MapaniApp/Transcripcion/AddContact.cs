@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -21,7 +14,7 @@ namespace MapaniApp
         {
             InitializeComponent();
             _metodos = new Metodos();
-        }   
+        }
         #region AGREGAR CONTACTOS
         private void SaveContact()
         {
@@ -50,7 +43,7 @@ namespace MapaniApp
                 TipoDiscapacidad = comboTipoDiscapacidadNMB.Text,
                 Id = _contactNMB != null ? _contactNMB.Id : 0
             };
-            _LogicLayer.SaveContact(Contact); 
+            _LogicLayer.SaveContact(Contact);
         }
 
         private void SaveContactCuidador()
@@ -65,7 +58,7 @@ namespace MapaniApp
                 Foto = Metodos.ImageToArray(PbFotoNewContact),
                 Telefono = TxtTelefono.Text,
                 Cedula = TxtCedula.Text,
-                EstadoCivil = ComboEstadoCivil.Text,              
+                EstadoCivil = ComboEstadoCivil.Text,
                 Transporte = TxtTransporte.Text,
                 Parroquia = txtParroquia.Text,
                 Municipio = txtMunicipio.Text,
@@ -85,7 +78,7 @@ namespace MapaniApp
                 Rango2 = txtRango2.Text,
                 Rango3 = txtRango3.Text,
                 Id = _contactCuidador != null ? _contactCuidador.Id : 0
-            };          
+            };
             _LogicLayer.SaveContactCuidador(Contact);
         }
         private void SaveContactMMB()
@@ -128,7 +121,7 @@ namespace MapaniApp
                 ComboDiscapacidad.Text = contact.Discapacidad;
                 ComboParto.Text = contact.Parto;
                 ComboVacunas.Text = contact.Vacunas;
-                ComboPartidaNacimiento.Text = contact.PartidaNacimiento;              
+                ComboPartidaNacimiento.Text = contact.PartidaNacimiento;
                 ComboIngreso.Text = contact.Ingreso;
                 ComboSexo.Text = contact.Sexo;
                 TxtDireccion.Text = contact.Direccion;
@@ -159,7 +152,7 @@ namespace MapaniApp
                 TxtTelefono.Text = contact.Telefono;
                 TxtTransporte.Text = contact.Transporte;
                 ComboSexo.Text = contact.Sexo;
-                TxtDireccion.Text = contact.Direccion;             
+                TxtDireccion.Text = contact.Direccion;
                 txtParroquia.Text = contact.Parroquia;
                 txtMunicipio.Text = contact.Municipio;
                 txtEstado.Text = contact.Estado;
@@ -206,7 +199,7 @@ namespace MapaniApp
 
 
         }
-        public void LoadUser(string Contact,string Id = null)
+        public void LoadUser(string Contact, string Id = null)
         {
             textBox1.Text = Contact;
             textBox1.ReadOnly = true;
@@ -247,7 +240,7 @@ namespace MapaniApp
             textBox1.ReadOnly = true;
             textBox2.Text = Id;
             textBox2.ReadOnly = true;
-          
+
         }
         public void HideSave()
         {
@@ -282,7 +275,8 @@ namespace MapaniApp
             this.Close();
         }
         private void BtnSave_Click(object sender, EventArgs e)
-        {   if (textBox1.Text == "NMB")
+        {
+            if (textBox1.Text == "NMB")
             {
                 SaveContact();
             }
@@ -334,7 +328,7 @@ namespace MapaniApp
             return;
         }
 
-       
+
 
         private void ComboEstadoCivil_KeyPress(object sender, KeyPressEventArgs e)
         {

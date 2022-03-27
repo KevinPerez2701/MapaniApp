@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -24,24 +18,24 @@ namespace MapaniApp
 
         }
 
-        
+        #region Botones
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ComboOperacion.Text=="Agregar Contacto")
+            if (ComboOperacion.Text == "Agregar Contacto")
             {
                 AddContact contact = new AddContact();
                 contact.LoadId(ComboContacto.Text);
                 contact.ShowDialog(this);
             }
             else if (ComboOperacion.Text == "Editar Contacto")
-            {              
+            {
                 if (ComboContacto.Text == "NMB")
                 {
                     List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtId.Text);
                     ContactNMB contact = contacts[0];
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContact(contact);
-                    contactDetails.EditUser(ComboContacto.Text,TxtId.Text);
+                    contactDetails.EditUser(ComboContacto.Text, TxtId.Text);
                     contactDetails.ShowDialog(this);
                     Clean();
                 }
@@ -50,7 +44,7 @@ namespace MapaniApp
                     List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtId.Text);
                     ContactCuidador contact = contacts[0];
                     AddContact contactDetails = new AddContact();
-                    contactDetails.LoadContactCuidador(contact);             
+                    contactDetails.LoadContactCuidador(contact);
                     contactDetails.EditUser(ComboContacto.Text, contact.Id.ToString());
                     contactDetails.ShowDialog(this);
                     Clean();
@@ -61,26 +55,27 @@ namespace MapaniApp
                     ContactMMB contact = contacts[0];
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContactMMB(contact);
-                    contactDetails.EditUser(ComboContacto.Text, contact.Id.ToString());                   
+                    contactDetails.EditUser(ComboContacto.Text, contact.Id.ToString());
                     contactDetails.ShowDialog(this);
                     Clean();
                 }
 
             }
-            else if (ComboOperacion.Text == "Ver Contacto" )
-            {   if (ComboContacto.Text == "NMB")
+            else if (ComboOperacion.Text == "Ver Contacto")
+            {
+                if (ComboContacto.Text == "NMB")
                 {
                     List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtId.Text);
                     ContactNMB contact = contacts[0];
                     AddContact contactDetails = new AddContact();
                     contactDetails.LoadContact(contact);
-                    contactDetails.LoadUser(ComboContacto.Text,TxtId.Text);
+                    contactDetails.LoadUser(ComboContacto.Text, TxtId.Text);
                     contactDetails.HideSave();
                     contactDetails.ShowDialog(this);
                     Clean();
                 }
-          
-                else if (ComboContacto.Text =="Cuidador")
+
+                else if (ComboContacto.Text == "Cuidador")
                 {
                     List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtId.Text);
                     ContactCuidador contact = contacts[0];
@@ -91,7 +86,7 @@ namespace MapaniApp
                     contactDetails.ShowDialog(this);
                     Clean();
                 }
-                else if (ComboContacto.Text =="MMB")
+                else if (ComboContacto.Text == "MMB")
                 {
                     List<ContactMMB> contacts = _LogicLayer.GetContactsMMB(TxtId.Text);
                     ContactMMB contact = contacts[0];
@@ -103,11 +98,11 @@ namespace MapaniApp
                     Clean();
                 }
             }
-            else if (ComboOperacion.Text=="Buscar Contacto")
+            else if (ComboOperacion.Text == "Buscar Contacto")
             {
-                List<ContactNMB> Cedula = _LogicLayer.GetRelacion(TxtCedula.Text);               
+                List<ContactNMB> Cedula = _LogicLayer.GetRelacion(TxtCedula.Text);
                 dataGridView1.DataSource = Cedula;
-                
+
             }
             else if (ComboOperacion.Text == "Agregar Relacion")
             {
@@ -116,12 +111,12 @@ namespace MapaniApp
                     List<ContactCuidador> contacts = _LogicLayer.GetContactsCuidador(TxtIdCuidador.Text);
                     ContactCuidador contact = contacts[0];
 
-                    _LogicLayer.InsertRelacion(TxtIdNMB.Text, contact.Id.ToString(),txtParentesco.Text,contact.Cedula);
+                    _LogicLayer.InsertRelacion(TxtIdNMB.Text, contact.Id.ToString(), txtParentesco.Text, contact.Cedula);
                     Clean();
                 }
                 else if (ComboCuidador.Text == "MMB")
                 {
-                    _LogicLayer.InsertRelacionMMB(TxtIdNMB.Text, TxtIdCuidador.Text,txtParentesco.Text);
+                    _LogicLayer.InsertRelacionMMB(TxtIdNMB.Text, TxtIdCuidador.Text, txtParentesco.Text);
                     Clean();
                 }
             }
@@ -137,7 +132,12 @@ namespace MapaniApp
                 Imprimir.ShowDialog(this);
             }
         }
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+        #region Eventos
         private void ComboOperacion_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboOperacion.Text == "Agregar Contacto")
@@ -169,7 +169,7 @@ namespace MapaniApp
                 TxtCedula.Visible = true;
                 dataGridView1.Visible = true;
             }
-            else if (ComboOperacion.Text == "Agregar Relacion" )
+            else if (ComboOperacion.Text == "Agregar Relacion")
             {
                 labelTipoCuidador.Visible = true;
                 ComboCuidador.Visible = true;
@@ -177,12 +177,12 @@ namespace MapaniApp
                 labelIdNMB.Visible = true;
                 TxtIdNMB.Visible = true;
                 TxtIdCuidador.Visible = true;
-                labelTipoCuidador.Visible = true;              
+                labelTipoCuidador.Visible = true;
                 labelParentesco.Visible = true;
                 txtParentesco.Visible = true;
-               
+
             }
-            else if ( ComboOperacion.Text == "Imprimir")
+            else if (ComboOperacion.Text == "Imprimir")
             {
                 labelTipoCuidador.Visible = true;
                 ComboCuidador.Visible = true;
@@ -192,7 +192,7 @@ namespace MapaniApp
                 TxtIdCuidador.Visible = true;
                 labelTipoCuidador.Visible = true;
                 ComboCuidador.Visible = true;
-             
+
 
             }
 
@@ -202,13 +202,7 @@ namespace MapaniApp
                 HideLabels();
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
+        #endregion     
         #region Limpieza de Datos
 
 
@@ -228,7 +222,7 @@ namespace MapaniApp
             labelContacto.Visible = false;
             labelParentesco.Visible = false;
             txtParentesco.Visible = false;
-            dataGridView1.Visible = false;           
+            dataGridView1.Visible = false;
             dataGridView1.DataSource = null;
         }
         private void Clean()
@@ -240,7 +234,7 @@ namespace MapaniApp
             TxtId.Text = "";
             ComboCuidador.Text = "";
             ComboContacto.Text = "";
-            ComboOperacion.Text = "";           
+            ComboOperacion.Text = "";
             HideLabels();
         }
         #endregion
@@ -303,6 +297,6 @@ namespace MapaniApp
 
         #endregion
 
-     
+
     }
 }

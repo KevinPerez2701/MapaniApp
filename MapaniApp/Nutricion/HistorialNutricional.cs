@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
 {
-    
+
     public partial class HistorialNutricional : Form
     {
         private LogicLayer _LogicLayer = new LogicLayer();
@@ -23,17 +16,20 @@ namespace MapaniApp
         {
 
         }
-
+        #region Botones
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
-           
+            SavedataList();
+            SaveData();
+            this.Close();
         }
-        public void LoadInfo(string Name,string LastName,string ID,string Historial)
+        #endregion
+        #region Funciones
+        public void LoadInfo(string Name, string LastName, string ID, string Historial)
         {
             TxtNombre.Text = Name;
             TxtApellido.Text = LastName;
@@ -41,8 +37,8 @@ namespace MapaniApp
             TxtNombre.ReadOnly = true;
             TxtApellido.ReadOnly = true;
             txtSexo.ReadOnly = true;
-            if (Historial=="Si")
-            {   
+            if (Historial == "Si")
+            {
                 groupBox3.Visible = true;
                 groupBox2.Visible = false;
                 LoadHistorial(ID);
@@ -59,7 +55,7 @@ namespace MapaniApp
 
             foreach (object item in checkedListBox4.CheckedItems)
             {
-                    Diario += item.ToString() + ",";    
+                Diario += item.ToString() + ",";
             }
             foreach (object item in checkedListBox3.CheckedItems)
             {
@@ -102,7 +98,7 @@ namespace MapaniApp
                 Mensual = textBox1.Text,
                 Historial = "Si",
             };
-             _LogicLayer.InsertarHistorialNutricional(Nutricion);
+            _LogicLayer.InsertarHistorialNutricional(Nutricion);
         }
         public void LoadHistorial(string ID)
         {
@@ -124,12 +120,8 @@ namespace MapaniApp
             textBox2.Text = contact.Quincenal;
             textBox1.Text = contact.Mensual;
         }
-        private void BtnGuardar_Click(object sender, EventArgs e)
-        {
-            SavedataList();
-            SaveData();
-            this.Close();
-        }
+        #endregion
+       
     }
 
 }

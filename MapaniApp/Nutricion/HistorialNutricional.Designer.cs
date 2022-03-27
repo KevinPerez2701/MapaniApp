@@ -99,7 +99,7 @@ namespace MapaniApp
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(171, 220);
             this.checkedListBox3.TabIndex = 1;
-            this.checkedListBox3.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+           
             // 
             // checkedListBox2
             // 

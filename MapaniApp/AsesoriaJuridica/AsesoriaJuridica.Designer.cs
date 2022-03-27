@@ -90,6 +90,7 @@ namespace MapaniApp
             this.Controls.Add(this.BtnRegistro);
             this.Name = "AsesoriaJuridica";
             this.Text = "AsesoriaJuridica";
+            this.Load += new System.EventHandler(this.AsesoriaJuridica_Load);
             this.ResumeLayout(false);
 
         }

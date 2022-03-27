@@ -84,7 +84,7 @@ namespace MapaniApp
             this.txtAntecedentes.Name = "txtAntecedentes";
             this.txtAntecedentes.Size = new System.Drawing.Size(455, 99);
             this.txtAntecedentes.TabIndex = 4;
-            this.txtAntecedentes.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+         
             // 
             // txtPatologias
             // 

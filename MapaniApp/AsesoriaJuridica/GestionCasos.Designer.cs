@@ -40,6 +40,7 @@ namespace MapaniApp
             this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtSeguimiento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTipoAtencion = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@ namespace MapaniApp
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.BtnLimpiar = new System.Windows.Forms.Button();
-            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,6 +69,7 @@ namespace MapaniApp
             this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.Location = new System.Drawing.Point(185, 126);
             this.txtCedula.Name = "txtCedula";
+            this.txtCedula.ReadOnly = true;
             this.txtCedula.Size = new System.Drawing.Size(226, 29);
             this.txtCedula.TabIndex = 116;
             // 
@@ -87,6 +88,7 @@ namespace MapaniApp
             this.TxtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtApellido.Location = new System.Drawing.Point(185, 88);
             this.TxtApellido.Name = "TxtApellido";
+            this.TxtApellido.ReadOnly = true;
             this.TxtApellido.Size = new System.Drawing.Size(226, 29);
             this.TxtApellido.TabIndex = 114;
             // 
@@ -95,6 +97,7 @@ namespace MapaniApp
             this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(185, 51);
             this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.ReadOnly = true;
             this.TxtNombre.Size = new System.Drawing.Size(226, 29);
             this.TxtNombre.TabIndex = 113;
             // 
@@ -124,7 +127,7 @@ namespace MapaniApp
             this.BtnCargar.Location = new System.Drawing.Point(333, 12);
             this.BtnCargar.Name = "BtnCargar";
             this.BtnCargar.Size = new System.Drawing.Size(78, 33);
-            this.BtnCargar.TabIndex = 110;
+            this.BtnCargar.TabIndex = 1;
             this.BtnCargar.Text = "Cargar";
             this.BtnCargar.UseVisualStyleBackColor = true;
             this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
@@ -135,7 +138,8 @@ namespace MapaniApp
             this.txtID.Location = new System.Drawing.Point(244, 13);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(79, 29);
-            this.txtID.TabIndex = 109;
+            this.txtID.TabIndex = 0;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // label5
             // 
@@ -155,11 +159,15 @@ namespace MapaniApp
             this.Fecha,
             this.Ver});
             this.dataGridView1.DataSource = this.contactAsesoriaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(543, 52);
+            this.dataGridView1.Location = new System.Drawing.Point(552, 51);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(260, 103);
             this.dataGridView1.TabIndex = 117;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // contactAsesoriaBindingSource
+            // 
+            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
             // 
             // txtSeguimiento
             // 
@@ -270,7 +278,7 @@ namespace MapaniApp
             this.label10.TabIndex = 126;
             this.label10.Text = "Observacion";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+         
             // 
             // BtnSave
             // 
@@ -325,10 +333,6 @@ namespace MapaniApp
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.UseVisualStyleBackColor = true;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
-            // 
-            // contactAsesoriaBindingSource
-            // 
-            this.contactAsesoriaBindingSource.DataSource = typeof(MapaniApp.ContactAsesoria);
             // 
             // Fecha
             // 

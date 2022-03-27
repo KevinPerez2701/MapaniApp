@@ -1,14 +1,7 @@
-﻿using RDotNet;
+﻿using AnthStat.Statistics;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using AnthStat.Statistics;
 
 
 namespace MapaniApp
@@ -23,15 +16,11 @@ namespace MapaniApp
         }
 
         private void Nutricion_Load(object sender, EventArgs e)
-        {                        
-        }
-
-        private void BtnHistorialNutricional_Click(object sender, EventArgs e)
         {
-            HistorialNutricional Historial = new HistorialNutricional();
-            Historial.LoadInfo(TxtNombre.Text, TxtApellido.Text, TxtID.Text,_contactNMB.HistorialNutricional);
-            Historial.ShowDialog(this);
+
         }
+       
+        #region Funciones
         public void SaveData()
         {
             ClaseEnfermeria Pediatria = new ClaseEnfermeria
@@ -83,6 +72,29 @@ namespace MapaniApp
             TxtTricep.Text = "0";
             TxtSSF.Text = "0";
         }
+        private void LoadContact(ContactNMB contact)
+        {
+            _contactNMB = contact;
+            if (contact != null)
+            {
+
+                TxtNombre.Text = contact.Nombre;
+                TxtApellido.Text = contact.Apellido;
+                dateTimePicker1.Value = contact.FechaNacimiento.Date;
+                TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento, dateTimePicker2.Value);
+                TxtEdadMeses.Text = Metodos.GetEdadMeses(contact.FechaNacimiento, dateTimePicker2.Value);
+                txtSexo.Text = contact.Sexo;
+                txtEdadVisible.Text = Metodos.ObtenerEdad(contact.FechaNacimiento);
+                TxtNombre.ReadOnly = true;
+                TxtApellido.ReadOnly = true;
+                dateTimePicker1.Enabled = false;
+                txtSexo.ReadOnly = true;
+                txtEdadVisible.ReadOnly = true;
+
+            }
+        }
+        #endregion
+        #region Calculo de Datos
         public void CalculateZScoresWho2006()
         {
             var who2006 = new AnthStat.Statistics.WHO2006();
@@ -354,46 +366,25 @@ namespace MapaniApp
                 }
             }
         }
-        private void LoadContact(ContactNMB contact)
-        {
-            _contactNMB = contact;
-            if (contact != null)
-            {
-
-                TxtNombre.Text = contact.Nombre;
-                TxtApellido.Text = contact.Apellido;
-                dateTimePicker1.Value = contact.FechaNacimiento.Date;
-                TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento,dateTimePicker2.Value);
-                TxtEdadMeses.Text = Metodos.GetEdadMeses(contact.FechaNacimiento,dateTimePicker2.Value);
-                txtSexo.Text = contact.Sexo;
-                txtEdadVisible.Text = Metodos.ObtenerEdad(contact.FechaNacimiento);
-                TxtNombre.ReadOnly = true;
-                TxtApellido.ReadOnly = true;
-                dateTimePicker1.Enabled = false;
-                txtSexo.ReadOnly = true;
-                txtEdadVisible.ReadOnly = true;
-
-
-
-            }
-        }
-
-      
-        
-       
-        
+        #endregion
         #region Botones
+        private void BtnHistorialNutricional_Click(object sender, EventArgs e)
+        {
+            HistorialNutricional Historial = new HistorialNutricional();
+            Historial.LoadInfo(TxtNombre.Text, TxtApellido.Text, TxtID.Text, _contactNMB.HistorialNutricional);
+            Historial.ShowDialog(this);
+        }
         private void BtnGuardar_Click(object sender, EventArgs e)
-            {
-                SaveData();
-            }
+        {
+            SaveData();
+        }
         private void BtnSucesivo_Click(object sender, EventArgs e)
-            {
-                SucesivoNutricion Sucesivo = new SucesivoNutricion();
-           
-                Sucesivo.GetDataNutricion(TxtID.Text, int.Parse(TxtEdad.Text));
-                Sucesivo.ShowDialog(this);
-            }
+        {
+            SucesivoNutricion Sucesivo = new SucesivoNutricion();
+
+            Sucesivo.GetDataNutricion(TxtID.Text, int.Parse(TxtEdad.Text));
+            Sucesivo.ShowDialog(this);
+        }
         private void BtnCargarContacto_Click(object sender, EventArgs e)
         {
             List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtID.Text);
@@ -456,7 +447,6 @@ namespace MapaniApp
             TxtCMB.ReadOnly = false;
         }
         #endregion
-
         #region Validacion de DAtos
         private void TxtPeso_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -238,7 +238,7 @@ namespace MapaniApp
             this.dataGridRelaciones.Name = "dataGridRelaciones";
             this.dataGridRelaciones.Size = new System.Drawing.Size(350, 244);
             this.dataGridRelaciones.TabIndex = 45;
-            this.dataGridRelaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRelaciones_CellContentClick);
+            
             // 
             // Parentesco
             // 

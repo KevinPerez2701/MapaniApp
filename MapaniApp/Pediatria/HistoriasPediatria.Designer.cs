@@ -31,10 +31,6 @@ namespace MapaniApp
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Evolutivo = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Productos = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.NMB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +47,14 @@ namespace MapaniApp
             this.iMCPZDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diagnosticoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diagnosticoTallaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.antecedentesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patologiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urgenciasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.referidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Evolutivo = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Productos = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.NMB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.claseEnfermeriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.claseEnfermeriaBindingSource)).BeginInit();
@@ -93,37 +93,9 @@ namespace MapaniApp
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1462, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(1370, 450);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Observacion
-            // 
-            this.Observacion.DataPropertyName = "Observacion";
-            this.Observacion.HeaderText = "Observacion";
-            this.Observacion.Name = "Observacion";
-            this.Observacion.Visible = false;
-            // 
-            // Evolutivo
-            // 
-            this.Evolutivo.HeaderText = "Evolutivo";
-            this.Evolutivo.Name = "Evolutivo";
-            this.Evolutivo.Text = "Ver";
-            this.Evolutivo.UseColumnTextForLinkValue = true;
-            // 
-            // Productos
-            // 
-            this.Productos.HeaderText = "Entrega";
-            this.Productos.Name = "Productos";
-            this.Productos.Text = "Productos";
-            this.Productos.UseColumnTextForLinkValue = true;
-            // 
-            // NMB
-            // 
-            this.NMB.DataPropertyName = "NMB";
-            this.NMB.HeaderText = "NMB";
-            this.NMB.Name = "NMB";
-            this.NMB.Visible = false;
             // 
             // fechaDataGridViewTextBoxColumn
             // 
@@ -233,6 +205,13 @@ namespace MapaniApp
             this.diagnosticoTallaDataGridViewTextBoxColumn.HeaderText = "DiagnosticoTalla";
             this.diagnosticoTallaDataGridViewTextBoxColumn.Name = "diagnosticoTallaDataGridViewTextBoxColumn";
             // 
+            // Observacion
+            // 
+            this.Observacion.DataPropertyName = "Observacion";
+            this.Observacion.HeaderText = "Observacion";
+            this.Observacion.Name = "Observacion";
+            this.Observacion.Visible = false;
+            // 
             // antecedentesDataGridViewTextBoxColumn
             // 
             this.antecedentesDataGridViewTextBoxColumn.DataPropertyName = "Antecedentes";
@@ -260,6 +239,27 @@ namespace MapaniApp
             this.referidoDataGridViewTextBoxColumn.Name = "referidoDataGridViewTextBoxColumn";
             this.referidoDataGridViewTextBoxColumn.Width = 50;
             // 
+            // Evolutivo
+            // 
+            this.Evolutivo.HeaderText = "Evolutivo";
+            this.Evolutivo.Name = "Evolutivo";
+            this.Evolutivo.Text = "Ver";
+            this.Evolutivo.UseColumnTextForLinkValue = true;
+            // 
+            // Productos
+            // 
+            this.Productos.HeaderText = "Entrega";
+            this.Productos.Name = "Productos";
+            this.Productos.Text = "Productos";
+            this.Productos.UseColumnTextForLinkValue = true;
+            // 
+            // NMB
+            // 
+            this.NMB.DataPropertyName = "NMB";
+            this.NMB.HeaderText = "NMB";
+            this.NMB.Name = "NMB";
+            this.NMB.Visible = false;
+            // 
             // claseEnfermeriaBindingSource
             // 
             this.claseEnfermeriaBindingSource.DataSource = typeof(MapaniApp.ClaseEnfermeria);
@@ -268,7 +268,7 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1462, 450);
+            this.ClientSize = new System.Drawing.Size(1370, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "HistoriasPediatria";
             this.Text = "HistoriasPediatria";

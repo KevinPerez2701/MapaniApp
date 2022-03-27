@@ -125,7 +125,7 @@ namespace MapaniApp
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(226, 29);
             this.TxtNombre.TabIndex = 34;
-            this.TxtNombre.TextChanged += new System.EventHandler(this.TxtNombre_TextChanged);
+       
             // 
             // label2
             // 

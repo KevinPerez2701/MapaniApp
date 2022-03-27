@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -20,7 +14,7 @@ namespace MapaniApp
         {
             InitializeComponent();
         }
-
+        #region Funciones 
         private void Enfermeria_Load(object sender, EventArgs e)
         {
             TxtNombre.ReadOnly = true;
@@ -28,6 +22,37 @@ namespace MapaniApp
             TxtApellido.ReadOnly = true;
             dateTimePicker1.Enabled = false;
         }
+        private void LoadContact(ContactNMB contact)
+        {
+            _contactNMB = contact;
+            if (contact != null)
+            {
+
+                TxtNombre.Text = contact.Nombre;
+                TxtApellido.Text = contact.Apellido;
+                dateTimePicker1.Value = contact.FechaNacimiento.Date;
+                TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento, DateTimeFecha.Value);
+                txtEdadVisible.Text = Metodos.ObtenerEdad(contact.FechaNacimiento);
+            }
+        }
+        private void SaveContact()
+        {
+            ClaseEnfermeria Cita = new ClaseEnfermeria
+            {
+                NMB = TxtID.Text,
+                Fecha = DateTimeFecha.Value.Date,
+                Programa = comboPrograma.Text,
+                Peso = TxtPeso.Text,
+                Talla = TxtTalla.Text,
+                CMB = TxtCMB.Text,
+                Hb = TxtHb.Text,
+                CC = txtCC.Text,
+
+            };
+            _LogicLayer.SaveContactEnfermeria(Cita);
+        }
+        #endregion
+        #region Botones
 
         private void BtnCargarContacto_Click(object sender, EventArgs e)
         {
@@ -36,7 +61,7 @@ namespace MapaniApp
             LoadContact(contact);
             groupBox1.Visible = true;
             groupBase.Visible = true;
-            if (int.Parse(TxtEdad.Text)<730)
+            if (int.Parse(TxtEdad.Text) < 730)
             {
                 txtCC.Visible = true;
                 labelCC.Visible = true;
@@ -61,24 +86,6 @@ namespace MapaniApp
               }
             */
         }
-        private void LoadContact(ContactNMB contact)
-        {   
-            _contactNMB = contact;
-            if (contact != null)
-            {
-
-                TxtNombre.Text = contact.Nombre;
-                TxtApellido.Text = contact.Apellido;
-                dateTimePicker1.Value = contact.FechaNacimiento.Date;
-                TxtEdad.Text = Metodos.GetEdad(contact.FechaNacimiento,DateTimeFecha.Value);
-                txtEdadVisible.Text = Metodos.ObtenerEdad(contact.FechaNacimiento);
-              
-
-
-
-            }
-        }
-
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -89,31 +96,8 @@ namespace MapaniApp
             SaveContact();
             this.Close();
         }
-        private void SaveContact()
-        {
-            ClaseEnfermeria Cita = new ClaseEnfermeria {
-                NMB = TxtID.Text,
-                Fecha = DateTimeFecha.Value.Date,
-                Programa = comboPrograma.Text,
-                Peso = TxtPeso.Text,
-                Talla = TxtTalla.Text,              
-                CMB = TxtCMB.Text,
-                Hb = TxtHb.Text,
-                CC = txtCC.Text,
-               
-            };
-            _LogicLayer.SaveContactEnfermeria(Cita);
-        }
+        #endregion
 
-        private void ComboEdema_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBase_Enter(object sender, EventArgs e)
-        {
-
-        }
         #region Validacion de datos
         private void ComboUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {

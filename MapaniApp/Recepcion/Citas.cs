@@ -10,16 +10,21 @@ namespace MapaniApp
         public Citas()
         {
             InitializeComponent();
-            
-        }
 
+        }
+        private void Citas_Load(object sender, EventArgs e)
+        {
+
+        }
+        #region Botones
         private void button1_Click(object sender, EventArgs e)
         {
             List<MapaniUsers> Asistencias = _LogicLayer.GetAsistencia();
             List<ProximasVisitas> Citas = _LogicLayer.GetCitas(dateTimePicker1.Value.Date);
             foreach (ProximasVisitas Cita in Citas)
-            {   foreach(MapaniUsers Asistencia in Asistencias)
-                if (Cita.Rol == Asistencia.Rol && Cita.Fecha == Asistencia.Fecha)
+            {
+                foreach (MapaniUsers Asistencia in Asistencias)
+                    if (Cita.Rol == Asistencia.Rol && Cita.Fecha == Asistencia.Fecha)
                     {
                         Cita.Activo = "Si";
                     }
@@ -29,15 +34,6 @@ namespace MapaniApp
 
 
         }
-
-        private void Citas_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        #endregion       
     }
 }

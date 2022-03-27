@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -17,6 +10,7 @@ namespace MapaniApp
             InitializeComponent();
         }
 
+        #region Botones
         private void button1_Click(object sender, EventArgs e)
         {
             RegistroBeneficiarios registro = new RegistroBeneficiarios();
@@ -39,6 +33,12 @@ namespace MapaniApp
         {
             GestionCasos casos = new GestionCasos();
             casos.ShowDialog(this);
+        }
+        #endregion
+
+        private void AsesoriaJuridica_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

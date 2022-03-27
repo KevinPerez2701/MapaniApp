@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -19,6 +13,14 @@ namespace MapaniApp
         public Recepcion()
         {
             InitializeComponent();
+        }
+        private void Recepcion_Load(object sender, EventArgs e)
+        {
+            //Hello wordl
+            TxtNombre.ReadOnly = true;
+            TxtApellido.ReadOnly = true;
+            TxtDireccion.ReadOnly = true;
+            dateTimePicker1.Enabled = false;
         }
         #region RECARGA DE DATOS 
         /// <summary>
@@ -62,7 +64,7 @@ namespace MapaniApp
             List<HistorialVisitas> Historial = _LogicLayer.GetHistorial(SearchText);
             dataGridHistorial.DataSource = Historial;
             List<ProximasVisitas> Proximas = _LogicLayer.GetProximas(SearchText);
-            List<MapaniUsers> Asistencias = _LogicLayer.GetAsistencia();           
+            List<MapaniUsers> Asistencias = _LogicLayer.GetAsistencia();
             foreach (ProximasVisitas Cita in Proximas)
             {
                 foreach (MapaniUsers Asistencia in Asistencias)
@@ -74,6 +76,7 @@ namespace MapaniApp
             dataGridProximasVisitas.DataSource = Proximas;
         }
         #endregion
+        #region Botones
         private void BtnCargar_Click(object sender, EventArgs e)
         {
             if (ComboUsuario.Text == "NMB")
@@ -99,6 +102,21 @@ namespace MapaniApp
                 PopulateContactsMMB(TxtID.Text);
             }
         }
+        private void BtnCitas_Click(object sender, EventArgs e)
+        {
+            Citas Cita = new Citas();
+            Cita.ShowDialog(this);
+        }
+
+        private void BtnAgregarCita_Click(object sender, EventArgs e)
+        {
+            AgregarCita NuevaCita = new AgregarCita();
+            NuevaCita.LoadData(TxtID.Text);
+            NuevaCita.ShowDialog(this);
+            PopulateContacts(TxtID.Text); //Refresca las relaciones de cuidadores del NMB
+            PopulateContactsVisita(TxtID.Text);
+        }
+        #endregion
         #region FUNCIONES DE CARGA DE CONTACTOS
         /// <summary>
         /// Se encarga de recibir el contacto de la base de datos con el ID de NMB y cargarlo a los textbox
@@ -158,32 +176,7 @@ namespace MapaniApp
 
         }
         #endregion
-
-        private void Recepcion_Load(object sender, EventArgs e)
-        {
-            //Hello wordl
-            TxtNombre.ReadOnly = true;
-            TxtApellido.ReadOnly = true;
-            TxtDireccion.ReadOnly = true;
-            dateTimePicker1.Enabled = false;
-        }
-
-
-        private void BtnCitas_Click(object sender, EventArgs e)
-        {
-            Citas Cita = new Citas();
-            Cita.ShowDialog(this);
-        }
-
-        private void BtnAgregarCita_Click(object sender, EventArgs e)
-        {
-            AgregarCita NuevaCita = new AgregarCita();
-            NuevaCita.LoadData(TxtID.Text);
-            NuevaCita.ShowDialog(this);
-            PopulateContacts(TxtID.Text); //Refresca las relaciones de cuidadores del NMB
-            PopulateContactsVisita(TxtID.Text);
-        }
-
+        #region Eventos
         private void dataGridProximasVisitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridProximasVisitas.Rows[e.RowIndex].Cells[e.ColumnIndex];
@@ -192,14 +185,14 @@ namespace MapaniApp
                 ConfirmarCita Confirm = new ConfirmarCita();
                 Confirm.LoadData(new HistorialVisitas
                 {
-                    IdNMB= int.Parse(dataGridProximasVisitas.Rows[e.RowIndex].Cells[0].Value.ToString()),
+                    IdNMB = int.Parse(dataGridProximasVisitas.Rows[e.RowIndex].Cells[0].Value.ToString()),
                     Departamento = (dataGridProximasVisitas.Rows[e.RowIndex].Cells[2].Value.ToString()),
-                    Fecha =(DateTime)dataGridProximasVisitas.Rows[e.RowIndex].Cells[1].Value
+                    Fecha = (DateTime)dataGridProximasVisitas.Rows[e.RowIndex].Cells[1].Value
                 }); // Carga de datos de los cuadros de texto
                 Confirm.ShowDialog(this);
                 PopulateContacts(TxtID.Text); //Refresca las relaciones de cuidadores del NMB
                 PopulateContactsVisita(TxtID.Text);
-            }    
+            }
         }
 
         private void dataGridHistorial_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -216,11 +209,7 @@ namespace MapaniApp
                 VerOrdenes.ShowDialog(this);
             }
         }
-
-        private void dataGridRelaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        #endregion       
         #region Validacion de Datos
         private void ComboUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {

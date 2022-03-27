@@ -53,7 +53,7 @@ namespace MapaniApp
             this.BtnCargar.Location = new System.Drawing.Point(330, 17);
             this.BtnCargar.Name = "BtnCargar";
             this.BtnCargar.Size = new System.Drawing.Size(78, 33);
-            this.BtnCargar.TabIndex = 95;
+            this.BtnCargar.TabIndex = 1;
             this.BtnCargar.Text = "Cargar";
             this.BtnCargar.UseVisualStyleBackColor = true;
             this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
@@ -64,7 +64,8 @@ namespace MapaniApp
             this.txtID.Location = new System.Drawing.Point(241, 18);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(79, 29);
-            this.txtID.TabIndex = 94;
+            this.txtID.TabIndex = 0;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddDocuments_KeyPress);
             // 
             // label5
             // 
@@ -103,6 +104,7 @@ namespace MapaniApp
             this.ComboDocumento.Size = new System.Drawing.Size(167, 32);
             this.ComboDocumento.TabIndex = 97;
             this.ComboDocumento.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.ComboDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboDocumento_KeyPress);
             // 
             // BtnAgregar
             // 
@@ -124,6 +126,7 @@ namespace MapaniApp
             this.txtIdNMB.Size = new System.Drawing.Size(79, 29);
             this.txtIdNMB.TabIndex = 101;
             this.txtIdNMB.Visible = false;
+            this.txtIdNMB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddDocuments_KeyPress);
             // 
             // labelIdNMB
             // 
@@ -141,6 +144,7 @@ namespace MapaniApp
             this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.Location = new System.Drawing.Point(182, 131);
             this.txtCedula.Name = "txtCedula";
+            this.txtCedula.ReadOnly = true;
             this.txtCedula.Size = new System.Drawing.Size(226, 29);
             this.txtCedula.TabIndex = 107;
             // 
@@ -159,6 +163,7 @@ namespace MapaniApp
             this.TxtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtApellido.Location = new System.Drawing.Point(182, 93);
             this.TxtApellido.Name = "TxtApellido";
+            this.TxtApellido.ReadOnly = true;
             this.TxtApellido.Size = new System.Drawing.Size(226, 29);
             this.TxtApellido.TabIndex = 105;
             // 
@@ -167,6 +172,7 @@ namespace MapaniApp
             this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(182, 56);
             this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.ReadOnly = true;
             this.TxtNombre.Size = new System.Drawing.Size(226, 29);
             this.TxtNombre.TabIndex = 104;
             // 
@@ -236,6 +242,7 @@ namespace MapaniApp
             this.Name = "AddDocuments";
             this.Text = "AddDocuments";
             this.Load += new System.EventHandler(this.AddDocuments_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddDocuments_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -47,6 +47,16 @@ namespace MapaniApp
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridRelaciones = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Escolaridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionEscuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreEscuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.contactNMBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -73,16 +83,6 @@ namespace MapaniApp
             this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnSalir = new System.Windows.Forms.Button();
             this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Escolaridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DireccionEscuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreEscuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactNMBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -96,7 +96,8 @@ namespace MapaniApp
             this.txtID.Location = new System.Drawing.Point(241, 49);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(79, 29);
-            this.txtID.TabIndex = 78;
+            this.txtID.TabIndex = 0;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // dateTimePicker1
             // 
@@ -124,6 +125,7 @@ namespace MapaniApp
             this.TxtDireccion.Location = new System.Drawing.Point(182, 239);
             this.TxtDireccion.Multiline = true;
             this.TxtDireccion.Name = "TxtDireccion";
+            this.TxtDireccion.ReadOnly = true;
             this.TxtDireccion.Size = new System.Drawing.Size(226, 63);
             this.TxtDireccion.TabIndex = 73;
             // 
@@ -142,6 +144,7 @@ namespace MapaniApp
             this.TxtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtApellido.Location = new System.Drawing.Point(182, 131);
             this.TxtApellido.Name = "TxtApellido";
+            this.TxtApellido.ReadOnly = true;
             this.TxtApellido.Size = new System.Drawing.Size(226, 29);
             this.TxtApellido.TabIndex = 70;
             // 
@@ -150,6 +153,7 @@ namespace MapaniApp
             this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(182, 94);
             this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.ReadOnly = true;
             this.TxtNombre.Size = new System.Drawing.Size(226, 29);
             this.TxtNombre.TabIndex = 69;
             // 
@@ -178,6 +182,7 @@ namespace MapaniApp
             this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstado.Location = new System.Drawing.Point(182, 380);
             this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
             this.txtEstado.Size = new System.Drawing.Size(226, 29);
             this.txtEstado.TabIndex = 84;
             // 
@@ -196,6 +201,7 @@ namespace MapaniApp
             this.txtMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMunicipio.Location = new System.Drawing.Point(182, 345);
             this.txtMunicipio.Name = "txtMunicipio";
+            this.txtMunicipio.ReadOnly = true;
             this.txtMunicipio.Size = new System.Drawing.Size(226, 29);
             this.txtMunicipio.TabIndex = 82;
             // 
@@ -204,6 +210,7 @@ namespace MapaniApp
             this.txtParroquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtParroquia.Location = new System.Drawing.Point(182, 308);
             this.txtParroquia.Name = "txtParroquia";
+            this.txtParroquia.ReadOnly = true;
             this.txtParroquia.Size = new System.Drawing.Size(226, 29);
             this.txtParroquia.TabIndex = 81;
             // 
@@ -257,7 +264,70 @@ namespace MapaniApp
             this.dataGridRelaciones.Name = "dataGridRelaciones";
             this.dataGridRelaciones.Size = new System.Drawing.Size(730, 184);
             this.dataGridRelaciones.TabIndex = 85;
-            this.dataGridRelaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRelaciones_CellContentClick);
+          
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // fechaNacimientoDataGridViewTextBoxColumn
+            // 
+            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
+            // 
+            // Parentesco
+            // 
+            this.Parentesco.DataPropertyName = "Parentesco";
+            this.Parentesco.HeaderText = "Parentesco";
+            this.Parentesco.Name = "Parentesco";
+            // 
+            // sexoDataGridViewTextBoxColumn
+            // 
+            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            // 
+            // Escolaridad
+            // 
+            this.Escolaridad.DataPropertyName = "Escolaridad";
+            this.Escolaridad.HeaderText = "Escolaridad";
+            this.Escolaridad.Name = "Escolaridad";
+            // 
+            // DireccionEscuela
+            // 
+            this.DireccionEscuela.DataPropertyName = "DireccionEscuela";
+            this.DireccionEscuela.HeaderText = "DireccionEscuela";
+            this.DireccionEscuela.Name = "DireccionEscuela";
+            // 
+            // NombreEscuela
+            // 
+            this.NombreEscuela.DataPropertyName = "NombreEscuela";
+            this.NombreEscuela.HeaderText = "NombreEscuela";
+            this.NombreEscuela.Name = "NombreEscuela";
+            // 
+            // dataGridViewLinkColumn1
+            // 
+            this.dataGridViewLinkColumn1.HeaderText = "Escolaridad";
+            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
+            this.dataGridViewLinkColumn1.Text = "Ver";
+            this.dataGridViewLinkColumn1.UseColumnTextForLinkValue = true;
+            this.dataGridViewLinkColumn1.Visible = false;
             // 
             // contactNMBBindingSource
             // 
@@ -268,6 +338,7 @@ namespace MapaniApp
             this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.Location = new System.Drawing.Point(182, 169);
             this.txtCedula.Name = "txtCedula";
+            this.txtCedula.ReadOnly = true;
             this.txtCedula.Size = new System.Drawing.Size(226, 29);
             this.txtCedula.TabIndex = 88;
             // 
@@ -286,6 +357,7 @@ namespace MapaniApp
             this.txtOcupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOcupacion.Location = new System.Drawing.Point(182, 204);
             this.txtOcupacion.Name = "txtOcupacion";
+            this.txtOcupacion.ReadOnly = true;
             this.txtOcupacion.Size = new System.Drawing.Size(226, 29);
             this.txtOcupacion.TabIndex = 90;
             // 
@@ -316,7 +388,7 @@ namespace MapaniApp
             this.BtnCargar.Location = new System.Drawing.Point(330, 48);
             this.BtnCargar.Name = "BtnCargar";
             this.BtnCargar.Size = new System.Drawing.Size(78, 33);
-            this.BtnCargar.TabIndex = 92;
+            this.BtnCargar.TabIndex = 1;
             this.BtnCargar.Text = "Cargar";
             this.BtnCargar.UseVisualStyleBackColor = true;
             this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
@@ -326,6 +398,7 @@ namespace MapaniApp
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(182, 415);
             this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(226, 29);
             this.txtTelefono.TabIndex = 94;
             // 
@@ -381,7 +454,7 @@ namespace MapaniApp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(732, 156);
             this.dataGridView1.TabIndex = 98;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -468,69 +541,6 @@ namespace MapaniApp
             // contactCuidadorBindingSource
             // 
             this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // fechaNacimientoDataGridViewTextBoxColumn
-            // 
-            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
-            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
-            this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
-            // 
-            // Parentesco
-            // 
-            this.Parentesco.DataPropertyName = "Parentesco";
-            this.Parentesco.HeaderText = "Parentesco";
-            this.Parentesco.Name = "Parentesco";
-            // 
-            // sexoDataGridViewTextBoxColumn
-            // 
-            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
-            // 
-            // Escolaridad
-            // 
-            this.Escolaridad.DataPropertyName = "Escolaridad";
-            this.Escolaridad.HeaderText = "Escolaridad";
-            this.Escolaridad.Name = "Escolaridad";
-            // 
-            // DireccionEscuela
-            // 
-            this.DireccionEscuela.DataPropertyName = "DireccionEscuela";
-            this.DireccionEscuela.HeaderText = "DireccionEscuela";
-            this.DireccionEscuela.Name = "DireccionEscuela";
-            // 
-            // NombreEscuela
-            // 
-            this.NombreEscuela.DataPropertyName = "NombreEscuela";
-            this.NombreEscuela.HeaderText = "NombreEscuela";
-            this.NombreEscuela.Name = "NombreEscuela";
-            // 
-            // dataGridViewLinkColumn1
-            // 
-            this.dataGridViewLinkColumn1.HeaderText = "Escolaridad";
-            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
-            this.dataGridViewLinkColumn1.Text = "Ver";
-            this.dataGridViewLinkColumn1.UseColumnTextForLinkValue = true;
-            this.dataGridViewLinkColumn1.Visible = false;
             // 
             // RegistroBeneficiarios
             // 

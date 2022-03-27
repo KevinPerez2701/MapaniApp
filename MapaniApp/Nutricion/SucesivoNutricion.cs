@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -22,6 +16,7 @@ namespace MapaniApp
         {
 
         }
+        #region Funciones
         public void GetDataNutricion(string ID, int Dias)
         {
             List<ClaseEnfermeria> Data = _LogicLayer.GetDataNutricion(ID);
@@ -41,7 +36,8 @@ namespace MapaniApp
 
             }
         }
-
+        #endregion
+        #region Eventos
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewLinkCell cell = (DataGridViewLinkCell)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
@@ -58,6 +54,7 @@ namespace MapaniApp
                 Evolutivo.ShowDialog(this);
             }
         }
+        #endregion
     }
 
 }

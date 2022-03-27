@@ -112,6 +112,7 @@ namespace MapaniApp
             this.TxtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtApellido.Location = new System.Drawing.Point(124, 103);
             this.TxtApellido.Name = "TxtApellido";
+            this.TxtApellido.ReadOnly = true;
             this.TxtApellido.Size = new System.Drawing.Size(173, 29);
             this.TxtApellido.TabIndex = 86;
             // 
@@ -120,6 +121,7 @@ namespace MapaniApp
             this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(124, 70);
             this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.ReadOnly = true;
             this.TxtNombre.Size = new System.Drawing.Size(173, 29);
             this.TxtNombre.TabIndex = 85;
             // 
@@ -149,7 +151,8 @@ namespace MapaniApp
             this.TxtID.Location = new System.Drawing.Point(124, 35);
             this.TxtID.Name = "TxtID";
             this.TxtID.Size = new System.Drawing.Size(173, 29);
-            this.TxtID.TabIndex = 88;
+            this.TxtID.TabIndex = 0;
+            this.TxtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtID_KeyPress);
             // 
             // label7
             // 
@@ -163,6 +166,7 @@ namespace MapaniApp
             // 
             // dateTimeFechaNacimiento
             // 
+            this.dateTimeFechaNacimiento.Enabled = false;
             this.dateTimeFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeFechaNacimiento.Location = new System.Drawing.Point(187, 211);
@@ -186,6 +190,7 @@ namespace MapaniApp
             this.txtEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEscuela.Location = new System.Drawing.Point(124, 173);
             this.txtEscuela.Name = "txtEscuela";
+            this.txtEscuela.ReadOnly = true;
             this.txtEscuela.Size = new System.Drawing.Size(173, 29);
             this.txtEscuela.TabIndex = 94;
             // 
@@ -194,6 +199,7 @@ namespace MapaniApp
             this.txtEscolaridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEscolaridad.Location = new System.Drawing.Point(124, 138);
             this.txtEscolaridad.Name = "txtEscolaridad";
+            this.txtEscolaridad.ReadOnly = true;
             this.txtEscolaridad.Size = new System.Drawing.Size(173, 29);
             this.txtEscolaridad.TabIndex = 93;
             // 
@@ -222,6 +228,7 @@ namespace MapaniApp
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdad.Location = new System.Drawing.Point(124, 246);
             this.txtEdad.Name = "txtEdad";
+            this.txtEdad.ReadOnly = true;
             this.txtEdad.Size = new System.Drawing.Size(173, 29);
             this.txtEdad.TabIndex = 96;
             // 
@@ -265,7 +272,7 @@ namespace MapaniApp
             this.BtnCargar.Location = new System.Drawing.Point(177, 3);
             this.BtnCargar.Name = "BtnCargar";
             this.BtnCargar.Size = new System.Drawing.Size(120, 25);
-            this.BtnCargar.TabIndex = 98;
+            this.BtnCargar.TabIndex = 1;
             this.BtnCargar.Text = "Cargar";
             this.BtnCargar.UseVisualStyleBackColor = true;
             this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);

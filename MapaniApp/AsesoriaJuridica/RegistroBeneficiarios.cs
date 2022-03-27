@@ -1,12 +1,5 @@
-﻿using AnthStat.Statistics;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -21,9 +14,9 @@ namespace MapaniApp
 
         private void AsesoriaLegal_Load(object sender, EventArgs e)
         {
-            
-        }
 
+        }
+        #region Botones
         private void BtnCargar_Click(object sender, EventArgs e)
         {
             LoadContactCuidador(txtID.Text);
@@ -31,31 +24,6 @@ namespace MapaniApp
             PopulateContactsAsesoria(txtID.Text);
 
         }
-        public void LoadContactCuidador(string ID)
-        {
-            List<ContactCuidador> Contacts =_LogicLayer.GetContactsCuidador(ID);
-            ContactCuidador contact = Contacts[0];
-            TxtNombre.Text = contact.Nombre;
-            TxtApellido.Text = contact.Apellido;
-            TxtDireccion.Text = contact.Direccion;
-            txtParroquia.Text = contact.Parroquia;
-            txtMunicipio.Text = contact.Municipio;
-            txtEstado.Text = contact.Estado;
-            txtCedula.Text = contact.Cedula;
-            txtTelefono.Text = contact.Telefono;
-            
-        }
-        public void PopulateContactsNMB(string SearchText = null)
-        {
-            List<ContactNMB> contacts = _LogicLayer.GetNMB(SearchText);
-            dataGridRelaciones.DataSource = contacts;
-        }
-        public void PopulateContactsAsesoria(string SearchText = null)
-        {
-            List<ContactAsesoria> contacts = _LogicLayer.GetContactsAsesoria(SearchText);
-            dataGridView1.DataSource = contacts;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             AddContactAsesoria asesoria = new AddContactAsesoria();
@@ -67,15 +35,44 @@ namespace MapaniApp
         {
             this.Close();
         }
-
-        private void dataGridRelaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        #endregion
+        #region Funciones
+        public void LoadContactCuidador(string ID)
         {
+            List<ContactCuidador> Contacts = _LogicLayer.GetContactsCuidador(ID);
+            ContactCuidador contact = Contacts[0];
+            TxtNombre.Text = contact.Nombre;
+            TxtApellido.Text = contact.Apellido;
+            TxtDireccion.Text = contact.Direccion;
+            txtParroquia.Text = contact.Parroquia;
+            txtMunicipio.Text = contact.Municipio;
+            txtEstado.Text = contact.Estado;
+            txtCedula.Text = contact.Cedula;
+            txtTelefono.Text = contact.Telefono;
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void PopulateContactsNMB(string SearchText = null)
         {
-
+            List<ContactNMB> contacts = _LogicLayer.GetNMB(SearchText);
+            dataGridRelaciones.DataSource = contacts;
         }
+        public void PopulateContactsAsesoria(string SearchText = null)
+        {
+            List<ContactAsesoria> contacts = _LogicLayer.GetContactsAsesoria(SearchText);
+            dataGridView1.DataSource = contacts;
+        }
+        #endregion
+
+        #region Validacion de Datos
+        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        #endregion
     }
 }

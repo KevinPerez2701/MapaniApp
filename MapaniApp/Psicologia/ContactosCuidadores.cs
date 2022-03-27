@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -22,10 +16,12 @@ namespace MapaniApp
         {
 
         }
+        #region Eventos
         public void PopulateContactsAsesoria(string SearchText = null)
         {
             List<ContactAsesoria> contacts = _LogicLayer.GetContactsAsesoria(SearchText);
             dataGridView1.DataSource = contacts;
         }
+        #endregion 
     }
 }

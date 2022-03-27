@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -19,13 +13,14 @@ namespace MapaniApp
             InitializeComponent();
             _LogicLayer = new LogicLayer();
         }
-
+        #region Evento
         private void Main_Load(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();
-            login.ShowDialog(this);
+            login.ShowDialog(this);           
+
             ventana = login.Posicion();
-           
+
             if (ventana[0].Posicion == "SuperUser")
             {
                 groupSuperUser.Visible = true;
@@ -87,18 +82,30 @@ namespace MapaniApp
                 BtnLegal.Visible = true;
             }
 
-
-
-
-
         }
-
+        #endregion
+        #region Botones
         private void BtnAddContact_Click(object sender, EventArgs e)
         {
             AddContact NewContact = new AddContact();
             NewContact.ShowDialog(this);
         }
-
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Salida();
+            this.Close();
+        }
+        private void Salida()
+        {
+            ventana[0].HoraSalida = DateTime.Now.ToString("hh:mm tt");
+            _LogicLayer.Salida(ventana);
+        }
+        private void BtnAsistencia_Click(object sender, EventArgs e)
+        {
+            Asistencia VerAsistencia = new Asistencia();
+            VerAsistencia.ShowDialog(this);
+        }
+        #endregion
         #region APERTURA DE NUEVAS VENTANAS
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -149,20 +156,8 @@ namespace MapaniApp
 
         #endregion
 
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Salida();
-            this.Close();
-        }
-        private void Salida()
-        {
-            ventana[0].HoraSalida = DateTime.Now.ToString("hh:mm tt");
-            _LogicLayer.Salida(ventana);
-        }
-        private void BtnAsistencia_Click(object sender, EventArgs e)
-        {
-            Asistencia VerAsistencia = new Asistencia();
-            VerAsistencia.ShowDialog(this);
-        }
+       
+
+        
     }
 }

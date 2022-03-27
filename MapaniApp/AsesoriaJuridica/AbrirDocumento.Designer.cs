@@ -51,6 +51,7 @@ namespace MapaniApp
             this.menuStrip1.Size = new System.Drawing.Size(1370, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
+         
             // 
             // abrirPDFToolStripMenuItem
             // 
