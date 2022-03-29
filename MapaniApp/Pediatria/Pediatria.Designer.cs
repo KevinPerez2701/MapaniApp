@@ -117,6 +117,8 @@ namespace MapaniApp
             this.txtEdadVisible = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.txtPrueba2 = new System.Windows.Forms.TextBox();
+            this.txtPrueba1 = new System.Windows.Forms.TextBox();
             this.DatosEnfermeria.SuspendLayout();
             this.GroupWHO2006.SuspendLayout();
             this.GroupWHO2007.SuspendLayout();
@@ -1104,11 +1106,33 @@ namespace MapaniApp
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // txtPrueba2
+            // 
+            this.txtPrueba2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrueba2.Location = new System.Drawing.Point(482, 348);
+            this.txtPrueba2.Name = "txtPrueba2";
+            this.txtPrueba2.ReadOnly = true;
+            this.txtPrueba2.Size = new System.Drawing.Size(72, 29);
+            this.txtPrueba2.TabIndex = 103;
+            this.txtPrueba2.Tag = "Contact";
+            // 
+            // txtPrueba1
+            // 
+            this.txtPrueba1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrueba1.Location = new System.Drawing.Point(404, 348);
+            this.txtPrueba1.Name = "txtPrueba1";
+            this.txtPrueba1.ReadOnly = true;
+            this.txtPrueba1.Size = new System.Drawing.Size(72, 29);
+            this.txtPrueba1.TabIndex = 102;
+            this.txtPrueba1.Tag = "Contact";
+            // 
             // Pediatria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 602);
+            this.Controls.Add(this.txtPrueba2);
+            this.Controls.Add(this.txtPrueba1);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtEdadVisible);
             this.Controls.Add(this.label24);
@@ -1245,5 +1269,7 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox txtEdadVisible;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.TextBox txtPrueba2;
+        private System.Windows.Forms.TextBox txtPrueba1;
     }
 }

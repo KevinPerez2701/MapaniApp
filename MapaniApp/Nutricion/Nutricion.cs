@@ -129,11 +129,12 @@ namespace MapaniApp
                 }
                 if (ageDays > 720)
                 {
-                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: (Lenght + 0.7), sex: Sex.Male, z: ref x))
+                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForHeight, measurement1: Weight, measurement2: Lenght, sex: Sex.Male, z: ref x))
                     {
                         TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
                         double p = StatisticsHelper.CalculatePercentile(x);
                         TxtPesoTalla.Text = Math.Round(p, 1).ToString();
+
 
                     }
                 }
@@ -146,6 +147,7 @@ namespace MapaniApp
                         TxtPesoTalla.Text = Math.Round(p, 1).ToString();
 
                     }
+
                 }
                 if (who2006.TryCalculateZScore(indicator: Indicator.WeightForAge, measurement1: Weight, measurement2: ageDays, sex: Sex.Male, z: ref y))
                 {
@@ -196,23 +198,25 @@ namespace MapaniApp
                 }
                 if (ageDays > 720)
                 {
-                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: (Lenght + 0.7), sex: Sex.Male, z: ref x))
+                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForHeight, measurement1: Weight, measurement2: Lenght, sex: Sex.Female, z: ref x))
                     {
                         TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
                         double p = StatisticsHelper.CalculatePercentile(x);
                         TxtPesoTalla.Text = Math.Round(p, 1).ToString();
 
                     }
+
                 }
                 if (ageDays < 720)
                 {
-                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: Lenght, sex: Sex.Male, z: ref x))
+                    if (who2006.TryCalculateZScore(indicator: Indicator.WeightForLength, measurement1: Weight, measurement2: Lenght, sex: Sex.Female, z: ref x))
                     {
                         TxtZPesoTalla.Text = Math.Round(x, 2).ToString();
                         double p = StatisticsHelper.CalculatePercentile(x);
                         TxtPesoTalla.Text = Math.Round(p, 1).ToString();
 
                     }
+
                 }
                 if (who2006.TryCalculateZScore(indicator: Indicator.WeightForAge, measurement1: Weight, measurement2: ageDays, sex: Sex.Female, z: ref y))
                 {
