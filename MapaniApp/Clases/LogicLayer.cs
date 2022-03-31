@@ -90,9 +90,11 @@ namespace MapaniApp
         }
         public DataAlmacen SaveProduct(DataAlmacen Product)
         {
-            _dataAccessLayer.InserProduct(Product);
+            // _dataAccessLayer.InserProduct(Product);
+            _dataAccessLayer.InserProductAlmacen(Product);
             return Product;
         }
+       
         public DataAlmacen UpdateCantidad(DataAlmacen Product)
         {
             _dataAccessLayer.UpdateCantidad(Product);
@@ -319,6 +321,10 @@ namespace MapaniApp
         public int GetMaxIDMMB()
         {
             return _dataAccessLayer.GetMaxIdMMB();
+        }
+        public int GetMaxIDBodega()
+        {
+            return _dataAccessLayer.GetMaxIdBodega();
         }
         #endregion
 

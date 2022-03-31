@@ -31,87 +31,138 @@ namespace MapaniApp
         private void button1_Click(object sender, EventArgs e)
         {
             if (flag == "0")
-                SaveProduct();
-            else if (flag == "1")
-                SaveProductBodega();
-            else
-                this.Close();
-            this.Close();
-        }
-        private void BtnCargar_Click(object sender, EventArgs e)
-        {
-            if (flag == "1")
             {
-                List<DataAlmacen> Productos = _LogicLayer.GetProductosBodega();
-                if (Productos.Count != 0)
+                if (int.Parse(txtCantidadActual.Text) > int.Parse(TxtCantidad.Text))
                 {
-                    foreach (DataAlmacen Producto in Productos.ToArray())
+                    DataAlmacen Product = new DataAlmacen
                     {
-                        if (Producto.IdProducto == int.Parse(TxtIdProducto.Text))
-                        {
-                            GroupAdd.Visible = true;
-                            groupCantidad.Visible = true;
-                            TxtNombre.Text = Producto.Nombre;
-                            TxtLote.Text = Producto.Lote;
-                            datetimeVencimiento.Value = Producto.FechaVencimiento;
-                            TxtDescripcion.Text = Producto.Descripcion;
-                            comboPrograma.Text = Producto.Programa;
-                            flagBodega = "1";
-                        }
-                        else
-                        {
-                            GroupAdd.Visible = true;
-                            groupCantidad.Visible = true;
-                        }
-
-                    }
+                        IdProducto = int.Parse(TxtIdProducto.Text),
+                        Cantidad = int.Parse(TxtCantidad.Text),
+                    };
+                    _LogicLayer.UpdateCantidad(Product);
+                    this.Close();
                 }
                 else
                 {
-                    GroupAdd.Visible = true;
-                    groupCantidad.Visible = true;
+                    MessageBox.Show("Ingrese una Cantidad Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TxtCantidad.Text = "0";
+
                 }
             }
-            else if (flag == "0")
+
+            else if (flag == "1")
             {
-                List<DataAlmacen> Productos = _LogicLayer.GetProductos();
-                if (Productos.Count != 0)
+                SaveProductBodega();
+                this.Close();
+            }
+            
+           
+        }
+        private void BtnCargar_Click(object sender, EventArgs e)
+        {
+            TxtIdProducto.ReadOnly = true;
+
+            if (flag == "1")
+
+            {   if (TxtIdProducto.Text == "" || TxtIdProducto.Text == null)
                 {
-                    foreach (DataAlmacen Producto in Productos.ToArray())
-                    {
-                        if (Producto.IdProducto == int.Parse(TxtIdProducto.Text))
-                        {
-                            GroupAdd.Visible = true;
-                            groupCantidad.Visible = true;
-                            TxtNombre.Text = Producto.Nombre;
-                            TxtLote.Text = Producto.Lote;
-                            datetimeVencimiento.Value = Producto.FechaVencimiento;
-                            TxtDescripcion.Text = Producto.Descripcion;
-                            comboPrograma.Text = Producto.Programa;
-                            flagAlmacen = "1";
-                        }
-                    }
-                }
-                if (flagAlmacen == "0")
-                {
+                    TxtIdProducto.Text = (_LogicLayer.GetMaxIDBodega() + 1).ToString();
                     GroupAdd.Visible = true;
                     groupCantidad.Visible = true;
+                }
+                else if (int.Parse(TxtIdProducto.Text) > _LogicLayer.GetMaxIDBodega())
+                {
+                    MessageBox.Show("Ingrese un Id  Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TxtIdProducto.ReadOnly = false;
+                    TxtIdProducto.Text = "";
+                }
+                
+                else
+                {
+                    List<DataAlmacen> Productos = _LogicLayer.GetProductosBodega();
+                    if (Productos.Count != 0)
+                    {
+                        foreach (DataAlmacen Producto in Productos.ToArray())
+                        {
+                            if (Producto.IdProducto == int.Parse(TxtIdProducto.Text))
+                            {
+                                GroupAdd.Visible = true;
+                                groupCantidad.Visible = true;
+                                TxtNombre.Text = Producto.Nombre;
+                                TxtNombre.ReadOnly = true;
+                                TxtLote.Text = Producto.Lote;
+                                TxtLote.ReadOnly = true;
+                                datetimeVencimiento.Value = Producto.FechaVencimiento;
+                                datetimeVencimiento.Enabled = false;
+                                TxtDescripcion.Text = Producto.Descripcion;
+                                TxtDescripcion.ReadOnly = true;
+                                comboPrograma.Text = Producto.Programa;
+                                comboPrograma.Enabled = false;
+                                txtCantidadActual.Text = Producto.Cantidad.ToString();
+                                flagBodega = "1";
+                            }
+
+                        }
+                    }
+
+                
+                }
+            }
+               
+            else if (flag == "0")
+            {
+                if (TxtIdProducto.Text == "" || TxtIdProducto.Text == null)
+                {
+                    MessageBox.Show("Ingrese un Id  Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TxtIdProducto.ReadOnly = false;
+                    TxtIdProducto.Text = "";
+                }
+                else if (int.Parse(TxtIdProducto.Text) > _LogicLayer.GetMaxIDBodega())
+                {
+                    MessageBox.Show("Ingrese un Id  Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TxtIdProducto.ReadOnly = false;
+                    TxtIdProducto.Text = "";
+                }
+                else
+                {                
+                    List<DataAlmacen> Productos = _LogicLayer.GetProductos();
+                    if (Productos.Count != 0)
+                    {
+                        foreach (DataAlmacen Producto in Productos.ToArray())
+                        {
+                            if (Producto.IdProducto == int.Parse(TxtIdProducto.Text))
+                            {
+                                GroupAdd.Visible = true;
+                                groupCantidad.Visible = true;
+                                TxtNombre.Text = Producto.Nombre;
+                                TxtNombre.ReadOnly = true;
+                                TxtLote.Text = Producto.Lote;
+                                TxtLote.ReadOnly = true;
+                                datetimeVencimiento.Value = Producto.FechaVencimiento;
+                                datetimeVencimiento.Enabled = false;
+                                txtCantidadAlmacen.Text = Producto.Cantidad.ToString();
+                                txtCantidadAlmacen.ReadOnly = true;
+                                TxtDescripcion.Text = Producto.Descripcion;
+                                TxtDescripcion.ReadOnly = true;
+                                comboPrograma.Text = Producto.Programa;
+                                comboPrograma.Enabled = false;
+                                flagAlmacen = "1";
+                            }
+                        }
+                    }
                     List<DataAlmacen> ProductosBodega = _LogicLayer.GetProductosBodega();
                     foreach (DataAlmacen ProductoBodega in ProductosBodega.ToArray())
                     {
                         if (ProductoBodega.IdProducto == int.Parse(TxtIdProducto.Text))
                         {
-                            GroupAdd.Visible = true;
-                            groupCantidad.Visible = true;
-                            TxtNombre.Text = ProductoBodega.Nombre;
-                            TxtLote.Text = ProductoBodega.Lote;
-                            datetimeVencimiento.Value = ProductoBodega.FechaVencimiento;
-                            TxtDescripcion.Text = ProductoBodega.Descripcion;
-                            comboPrograma.Text = ProductoBodega.Programa;
-                            flagAlmacen = "2";
+                           
+                            txtCantidadActual.Text = ProductoBodega.Cantidad.ToString();
+                            
                         }
                     }
+
                 }
+               
             }
         }
         public void Bodega()
@@ -142,21 +193,7 @@ namespace MapaniApp
                 };
                 _LogicLayer.UpdateCantidad(Product);
             }
-            else if (flagAlmacen == "2")
-            {
-                DataAlmacen Product = new DataAlmacen
-                {
-                    IdProducto = int.Parse(TxtIdProducto.Text),
-                    Nombre = TxtNombre.Text,
-                    Lote = TxtLote.Text,
-                    FechaVencimiento = datetimeVencimiento.Value.Date,
-                    Descripcion = TxtDescripcion.Text,
-                    Programa = comboPrograma.Text,
-                    Cantidad = int.Parse(TxtCantidad.Text),
-
-                };
-                _LogicLayer.SaveProduct(Product);
-            }
+         
         }
         private void SaveProductBodega()
         {
@@ -187,12 +224,22 @@ namespace MapaniApp
                     Programa = comboPrograma.Text,
                     Cantidad = int.Parse(TxtCantidad.Text),
                 };
-
                 _LogicLayer.SaveProductBodega(Product);
+                Product.Cantidad = 0;
+                _LogicLayer.SaveProduct(Product);
             }
         }
+
         #endregion
 
-
+        private void TxtIdProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

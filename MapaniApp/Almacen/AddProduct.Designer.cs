@@ -49,6 +49,10 @@ namespace MapaniApp
             this.BtnCargar = new System.Windows.Forms.Button();
             this.GroupAdd = new System.Windows.Forms.GroupBox();
             this.groupCantidad = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCantidadActual = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCantidadAlmacen = new System.Windows.Forms.TextBox();
             this.GroupAdd.SuspendLayout();
             this.groupCantidad.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +63,8 @@ namespace MapaniApp
             this.TxtIdProducto.Location = new System.Drawing.Point(182, 18);
             this.TxtIdProducto.Name = "TxtIdProducto";
             this.TxtIdProducto.Size = new System.Drawing.Size(110, 29);
-            this.TxtIdProducto.TabIndex = 41;
+            this.TxtIdProducto.TabIndex = 0;
+            this.TxtIdProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdProducto_KeyPress);
             // 
             // datetimeVencimiento
             // 
@@ -70,7 +75,7 @@ namespace MapaniApp
             this.datetimeVencimiento.Location = new System.Drawing.Point(305, 122);
             this.datetimeVencimiento.Name = "datetimeVencimiento";
             this.datetimeVencimiento.Size = new System.Drawing.Size(110, 29);
-            this.datetimeVencimiento.TabIndex = 40;
+            this.datetimeVencimiento.TabIndex = 6;
             // 
             // label5
             // 
@@ -89,7 +94,7 @@ namespace MapaniApp
             this.TxtDescripcion.Multiline = true;
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(226, 63);
-            this.TxtDescripcion.TabIndex = 38;
+            this.TxtDescripcion.TabIndex = 7;
             // 
             // label3
             // 
@@ -117,7 +122,7 @@ namespace MapaniApp
             this.TxtLote.Location = new System.Drawing.Point(189, 88);
             this.TxtLote.Name = "TxtLote";
             this.TxtLote.Size = new System.Drawing.Size(226, 29);
-            this.TxtLote.TabIndex = 35;
+            this.TxtLote.TabIndex = 5;
             // 
             // TxtNombre
             // 
@@ -125,7 +130,7 @@ namespace MapaniApp
             this.TxtNombre.Location = new System.Drawing.Point(189, 17);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(226, 29);
-            this.TxtNombre.TabIndex = 34;
+            this.TxtNombre.TabIndex = 3;
             // 
             // label2
             // 
@@ -153,7 +158,8 @@ namespace MapaniApp
             this.TxtCantidad.Location = new System.Drawing.Point(305, 24);
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(110, 29);
-            this.TxtCantidad.TabIndex = 43;
+            this.TxtCantidad.TabIndex = 9;
+            this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdProducto_KeyPress);
             // 
             // label6
             // 
@@ -168,10 +174,10 @@ namespace MapaniApp
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(149, 384);
+            this.button1.Location = new System.Drawing.Point(124, 450);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 39);
-            this.button1.TabIndex = 44;
+            this.button1.Size = new System.Drawing.Size(108, 39);
+            this.button1.TabIndex = 10;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -179,10 +185,10 @@ namespace MapaniApp
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(253, 384);
+            this.BtnSalir.Location = new System.Drawing.Point(238, 450);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(82, 39);
-            this.BtnSalir.TabIndex = 45;
+            this.BtnSalir.Size = new System.Drawing.Size(101, 39);
+            this.BtnSalir.TabIndex = 11;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
@@ -209,7 +215,7 @@ namespace MapaniApp
             this.comboPrograma.Location = new System.Drawing.Point(189, 52);
             this.comboPrograma.Name = "comboPrograma";
             this.comboPrograma.Size = new System.Drawing.Size(226, 32);
-            this.comboPrograma.TabIndex = 47;
+            this.comboPrograma.TabIndex = 4;
             // 
             // BtnCargar
             // 
@@ -217,7 +223,7 @@ namespace MapaniApp
             this.BtnCargar.Location = new System.Drawing.Point(313, 12);
             this.BtnCargar.Name = "BtnCargar";
             this.BtnCargar.Size = new System.Drawing.Size(95, 36);
-            this.BtnCargar.TabIndex = 48;
+            this.BtnCargar.TabIndex = 1;
             this.BtnCargar.Text = "Cargar";
             this.BtnCargar.UseVisualStyleBackColor = true;
             this.BtnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
@@ -237,29 +243,71 @@ namespace MapaniApp
             this.GroupAdd.Location = new System.Drawing.Point(16, 54);
             this.GroupAdd.Name = "GroupAdd";
             this.GroupAdd.Size = new System.Drawing.Size(447, 246);
-            this.GroupAdd.TabIndex = 49;
+            this.GroupAdd.TabIndex = 2;
             this.GroupAdd.TabStop = false;
             this.GroupAdd.Text = "Nuevo Producto";
             this.GroupAdd.Visible = false;
             // 
             // groupCantidad
             // 
+            this.groupCantidad.Controls.Add(this.label9);
+            this.groupCantidad.Controls.Add(this.txtCantidadAlmacen);
+            this.groupCantidad.Controls.Add(this.label8);
+            this.groupCantidad.Controls.Add(this.txtCantidadActual);
             this.groupCantidad.Controls.Add(this.label6);
             this.groupCantidad.Controls.Add(this.TxtCantidad);
             this.groupCantidad.Location = new System.Drawing.Point(16, 306);
             this.groupCantidad.Name = "groupCantidad";
-            this.groupCantidad.Size = new System.Drawing.Size(447, 67);
-            this.groupCantidad.TabIndex = 50;
+            this.groupCantidad.Size = new System.Drawing.Size(447, 138);
+            this.groupCantidad.TabIndex = 8;
             this.groupCantidad.TabStop = false;
             this.groupCantidad.Text = "Cantidad ";
             this.groupCantidad.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(20, 59);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(212, 24);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Cantidad Actual Bodega";
+            // 
+            // txtCantidadActual
+            // 
+            this.txtCantidadActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadActual.Location = new System.Drawing.Point(305, 59);
+            this.txtCantidadActual.Name = "txtCantidadActual";
+            this.txtCantidadActual.ReadOnly = true;
+            this.txtCantidadActual.Size = new System.Drawing.Size(110, 29);
+            this.txtCantidadActual.TabIndex = 43;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(20, 94);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(221, 24);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "Cantidad Actual Almacen";
+            // 
+            // txtCantidadAlmacen
+            // 
+            this.txtCantidadAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadAlmacen.Location = new System.Drawing.Point(305, 94);
+            this.txtCantidadAlmacen.Name = "txtCantidadAlmacen";
+            this.txtCantidadAlmacen.ReadOnly = true;
+            this.txtCantidadAlmacen.Size = new System.Drawing.Size(110, 29);
+            this.txtCantidadAlmacen.TabIndex = 45;
             // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(475, 450);
+            this.ClientSize = new System.Drawing.Size(475, 518);
             this.Controls.Add(this.groupCantidad);
             this.Controls.Add(this.GroupAdd);
             this.Controls.Add(this.BtnCargar);
@@ -301,5 +349,9 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnCargar;
         private System.Windows.Forms.GroupBox GroupAdd;
         private System.Windows.Forms.GroupBox groupCantidad;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCantidadActual;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCantidadAlmacen;
     }
 }

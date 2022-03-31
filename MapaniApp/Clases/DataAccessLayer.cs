@@ -13,8 +13,8 @@ namespace MapaniApp
     {
         // private SqlConnection Connection = new SqlConnection("data source=192.168.68.166,1433; initial catalog=MAPANI; user id=kevin; password =Mapani2022;");
         // private SqlConnection Connection = new SqlConnection("data source=192.168.68.118,1433; initial catalog=MAPANI; user id=kevin; password =1234;");
-          private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
-        //private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
+         // private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-A51VEQA");
+        private SqlConnection Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=MAPANI;Data Source=DESKTOP-OLASR82");
         #region AGREGAR CONTACTOS y Actualizar Contactos
             #region NMB
         /// <summary>
@@ -1259,22 +1259,16 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
-        /// <summary>
-        /// Inserta un Producto nuevo de la Bodega al Almacen. Actualiza La cantidad de dicho producto en Bodega.
-        /// </summary>
-        /// <param name="contact"></param>
-        public void InserProduct(DataAlmacen contact)
+        public void InserProductAlmacen(DataAlmacen contact)
         {
             try
             {
                 Connection.Open();
                 string query = @"
-                                    Insert into TablaAlmacen ([IdProducto],[Nombre], [Lote], [FechaVencimiento],[Cantidad],[Descripcion],Programa)  
-                                    Values(@IdProducto,@Nombre,@Lote,@FechaVencimiento,@Cantidad,@Descripcion,@Programa)
-                                     UPDATE TablaBodega SET Cantidad = (TablaBodega.Cantidad - @Cantidad)
-                                      where (TablaBodega.IdProducto = @IdProducto)   ";
+                                    Insert into TablaAlmacen ([Nombre], [Lote], [FechaVencimiento],[Cantidad],[Descripcion],Programa)  
+                                    Values(@Nombre,@Lote,@FechaVencimiento,@Cantidad,@Descripcion,@Programa)";
                 SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
-                SqlParameter Id = new SqlParameter("@IdProducto", contact.IdProducto);
+
                 SqlParameter Lote = new SqlParameter("@Lote", contact.Lote);
                 SqlParameter FechaVencimiento = new SqlParameter("@FechaVencimiento", contact.FechaVencimiento);
                 SqlParameter Descripcion = new SqlParameter("@Descripcion", contact.Descripcion);
@@ -1287,7 +1281,7 @@ namespace MapaniApp
                 command.Parameters.Add(Descripcion);
                 command.Parameters.Add(Cantidad);
                 command.Parameters.Add(Programa);
-                command.Parameters.Add(Id);
+
                 command.ExecuteNonQuery();
 
             }
@@ -1301,6 +1295,11 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        /// <summary>
+        /// Inserta un Producto nuevo de la Bodega al Almacen. Actualiza La cantidad de dicho producto en Bodega.
+        /// </summary>
+        /// <param name="contact"></param>
+      
         public void InsertDespacho(DataAlmacen Orden)
         {
             try
@@ -2235,6 +2234,38 @@ namespace MapaniApp
         }
         #endregion
         #region Almacen
+        public int GetMaxIdBodega()
+        {
+            int MaxId = 0;
+            try
+            {
+                Connection.Open();
+                string query = @"SELECT MAX(IdProducto) MaxId FROM TablaBodega;";
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Connection = Connection;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    MaxId = int.Parse(reader["MaxID"].ToString());
+
+                };
+
+            }
+            catch (Exception)
+            {
+
+                MaxId = 0;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return MaxId;
+        }
         public List<DataAlmacen> GetOrdenes()
         {
             List<DataAlmacen> contacts = new List<DataAlmacen>();
