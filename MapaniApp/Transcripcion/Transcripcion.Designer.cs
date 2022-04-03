@@ -42,11 +42,7 @@ namespace MapaniApp
             this.labelCedula = new System.Windows.Forms.Label();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelIdNMB = new System.Windows.Forms.Label();
             this.TxtIdNMB = new System.Windows.Forms.TextBox();
             this.labelContactoID = new System.Windows.Forms.Label();
@@ -55,6 +51,10 @@ namespace MapaniApp
             this.ComboCuidador = new System.Windows.Forms.ComboBox();
             this.txtParentesco = new System.Windows.Forms.TextBox();
             this.labelParentesco = new System.Windows.Forms.Label();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactCuidadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactCuidadorBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -193,33 +193,11 @@ namespace MapaniApp
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.Visible = false;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
             // Parentesco
             // 
             this.Parentesco.DataPropertyName = "Parentesco";
             this.Parentesco.HeaderText = "Parentesco";
             this.Parentesco.Name = "Parentesco";
-            // 
-            // contactCuidadorBindingSource
-            // 
-            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
             // 
             // labelIdNMB
             // 
@@ -309,10 +287,33 @@ namespace MapaniApp
             this.labelParentesco.Text = "Seleccione Parentesco";
             this.labelParentesco.Visible = false;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // contactCuidadorBindingSource
+            // 
+            this.contactCuidadorBindingSource.DataSource = typeof(MapaniApp.ContactCuidador);
+            // 
             // Transcripcion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(647, 391);
             this.Controls.Add(this.txtParentesco);
             this.Controls.Add(this.labelParentesco);
@@ -333,6 +334,7 @@ namespace MapaniApp
             this.Controls.Add(this.ComboOperacion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelContacto);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Transcripcion";
             this.Text = "Transcripcion";

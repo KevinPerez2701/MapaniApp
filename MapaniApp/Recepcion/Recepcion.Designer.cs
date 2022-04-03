@@ -276,7 +276,7 @@ namespace MapaniApp
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(415, 450);
+            this.label8.Location = new System.Drawing.Point(395, 450);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(134, 24);
             this.label8.TabIndex = 47;
@@ -294,7 +294,7 @@ namespace MapaniApp
             this.Motivo,
             this.Productos});
             this.dataGridHistorial.DataSource = this.historialVisitasBindingSource2;
-            this.dataGridHistorial.Location = new System.Drawing.Point(82, 477);
+            this.dataGridHistorial.Location = new System.Drawing.Point(125, 477);
             this.dataGridHistorial.Name = "dataGridHistorial";
             this.dataGridHistorial.Size = new System.Drawing.Size(662, 124);
             this.dataGridHistorial.TabIndex = 48;
@@ -445,6 +445,8 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(909, 635);
             this.Controls.Add(this.BtnAgregarCita);
             this.Controls.Add(this.dataGridProximasVisitas);
@@ -468,6 +470,7 @@ namespace MapaniApp
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ComboUsuario);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Recepcion";
             this.Text = "Recepcion";

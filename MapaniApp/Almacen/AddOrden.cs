@@ -22,24 +22,37 @@ namespace MapaniApp
             if (Orden != null)
             {
                 TxtIdNMB.Text = Orden.IdNMB.ToString();
+                TxtIdNMB.ReadOnly = true;
                 TxtNombre.Text = Orden.Nombre;
+                TxtNombre.ReadOnly = true;
                 TxtIdProducto.Text = Orden.IdProducto.ToString();
+                TxtIdProducto.ReadOnly = true;
                 TxtPrograma.Text = Orden.Programa;
+                TxtPrograma.ReadOnly = true;
+                txtCantidadDisponible.Text = Orden.Cantidad.ToString();
+                txtCantidadDisponible.ReadOnly = true;
             }
         }
         private void SaveOrder()
-        {
-            DataAlmacen Orden = new DataAlmacen
+        {   if (int.Parse(TxtCantidad.Text) <= int.Parse(txtCantidadDisponible.Text))
             {
-                IdNMB = TxtIdNMB.Text,
-                IdProducto = int.Parse(TxtIdProducto.Text),
-                Nombre = TxtNombre.Text,
-                Programa = TxtPrograma.Text,
-                Pediatra = ComboPediatra.Text,
-                Fecha = dateTimePicker1.Value.Date,
-                Cantidad = int.Parse(TxtCantidad.Text),
-            };
-            _LogicLayer.SaveOrder(Orden);
+                DataAlmacen Orden = new DataAlmacen
+                {
+                    IdNMB = TxtIdNMB.Text,
+                    IdProducto = int.Parse(TxtIdProducto.Text),
+                    Nombre = TxtNombre.Text,
+                    Programa = TxtPrograma.Text,
+                    Pediatra = ComboPediatra.Text,
+                    Fecha = dateTimePicker1.Value.Date,
+                    Cantidad = int.Parse(TxtCantidad.Text),
+                };
+                _LogicLayer.SaveOrder(Orden);
+                
+            }
+            else
+            {
+                MessageBox.Show("Ingrese una Cantidad Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
         #endregion

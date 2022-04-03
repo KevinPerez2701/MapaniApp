@@ -301,6 +301,7 @@ namespace MapaniApp
             this.groupBox1.Controls.Add(this.txtDesayuno);
             this.groupBox1.Controls.Add(this.txtMerienda);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(888, 257);
@@ -548,6 +549,7 @@ namespace MapaniApp
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(282, 9);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(79, 24);
@@ -558,6 +560,7 @@ namespace MapaniApp
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(18, 9);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(79, 24);
@@ -576,6 +579,7 @@ namespace MapaniApp
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
             this.label23.Location = new System.Drawing.Point(545, 12);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(27, 24);
@@ -592,6 +596,7 @@ namespace MapaniApp
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(19, 313);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(762, 266);
@@ -609,7 +614,8 @@ namespace MapaniApp
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.textBox3);
             this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Location = new System.Drawing.Point(9, 321);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(9, 313);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(902, 154);
             this.groupBox3.TabIndex = 150;
@@ -621,6 +627,7 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(923, 650);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

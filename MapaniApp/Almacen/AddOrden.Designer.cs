@@ -46,21 +46,24 @@ namespace MapaniApp
             this.BtnSalir = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TxtIdNMB
             // 
             this.TxtIdNMB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIdNMB.Location = new System.Drawing.Point(172, 22);
+            this.TxtIdNMB.Location = new System.Drawing.Point(187, 22);
             this.TxtIdNMB.Name = "TxtIdNMB";
             this.TxtIdNMB.ReadOnly = true;
-            this.TxtIdNMB.Size = new System.Drawing.Size(184, 29);
+            this.TxtIdNMB.Size = new System.Drawing.Size(169, 29);
             this.TxtIdNMB.TabIndex = 37;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(2, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 24);
@@ -70,24 +73,25 @@ namespace MapaniApp
             // TxtCantidad
             // 
             this.TxtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.Location = new System.Drawing.Point(172, 240);
+            this.TxtCantidad.Location = new System.Drawing.Point(187, 275);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(184, 29);
+            this.TxtCantidad.Size = new System.Drawing.Size(169, 29);
             this.TxtCantidad.TabIndex = 35;
             // 
             // TxtNombre
             // 
             this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(172, 57);
+            this.TxtNombre.Location = new System.Drawing.Point(187, 57);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.ReadOnly = true;
-            this.TxtNombre.Size = new System.Drawing.Size(184, 29);
+            this.TxtNombre.Size = new System.Drawing.Size(169, 29);
             this.TxtNombre.TabIndex = 34;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 24);
@@ -98,6 +102,7 @@ namespace MapaniApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 24);
@@ -108,7 +113,8 @@ namespace MapaniApp
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 240);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 275);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 24);
             this.label3.TabIndex = 69;
@@ -121,15 +127,16 @@ namespace MapaniApp
             this.ComboPediatra.Items.AddRange(new object[] {
             "Pediatra 1\t",
             "Pediatra 2"});
-            this.ComboPediatra.Location = new System.Drawing.Point(172, 198);
+            this.ComboPediatra.Location = new System.Drawing.Point(187, 198);
             this.ComboPediatra.Name = "ComboPediatra";
-            this.ComboPediatra.Size = new System.Drawing.Size(184, 32);
+            this.ComboPediatra.Size = new System.Drawing.Size(169, 32);
             this.ComboPediatra.TabIndex = 71;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 24);
@@ -139,25 +146,26 @@ namespace MapaniApp
             // TxtPrograma
             // 
             this.TxtPrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPrograma.Location = new System.Drawing.Point(172, 130);
+            this.TxtPrograma.Location = new System.Drawing.Point(187, 130);
             this.TxtPrograma.Name = "TxtPrograma";
             this.TxtPrograma.ReadOnly = true;
-            this.TxtPrograma.Size = new System.Drawing.Size(184, 29);
+            this.TxtPrograma.Size = new System.Drawing.Size(169, 29);
             this.TxtPrograma.TabIndex = 72;
             // 
             // TxtIdProducto
             // 
             this.TxtIdProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIdProducto.Location = new System.Drawing.Point(172, 89);
+            this.TxtIdProducto.Location = new System.Drawing.Point(187, 89);
             this.TxtIdProducto.Name = "TxtIdProducto";
             this.TxtIdProducto.ReadOnly = true;
-            this.TxtIdProducto.Size = new System.Drawing.Size(184, 29);
+            this.TxtIdProducto.Size = new System.Drawing.Size(169, 29);
             this.TxtIdProducto.TabIndex = 74;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(3, 94);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 24);
@@ -167,7 +175,7 @@ namespace MapaniApp
             // BtnAddOrden
             // 
             this.BtnAddOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAddOrden.Location = new System.Drawing.Point(134, 275);
+            this.BtnAddOrden.Location = new System.Drawing.Point(134, 314);
             this.BtnAddOrden.Name = "BtnAddOrden";
             this.BtnAddOrden.Size = new System.Drawing.Size(101, 33);
             this.BtnAddOrden.TabIndex = 75;
@@ -178,7 +186,7 @@ namespace MapaniApp
             // BtnSalir
             // 
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.Location = new System.Drawing.Point(134, 314);
+            this.BtnSalir.Location = new System.Drawing.Point(134, 353);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(101, 36);
             this.BtnSalir.TabIndex = 76;
@@ -191,28 +199,50 @@ namespace MapaniApp
             this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(172, 165);
+            this.dateTimePicker1.Location = new System.Drawing.Point(187, 165);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker1.Size = new System.Drawing.Size(184, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(169, 29);
             this.dateTimePicker1.TabIndex = 77;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(2, 169);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 24);
             this.label7.TabIndex = 78;
             this.label7.Text = "Fecha";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 236);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(178, 24);
+            this.label8.TabIndex = 80;
+            this.label8.Text = "Cantidad Disponible";
+            // 
+            // txtCantidadDisponible
+            // 
+            this.txtCantidadDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadDisponible.Location = new System.Drawing.Point(187, 236);
+            this.txtCantidadDisponible.Name = "txtCantidadDisponible";
+            this.txtCantidadDisponible.Size = new System.Drawing.Size(169, 29);
+            this.txtCantidadDisponible.TabIndex = 79;
+            // 
             // AddOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(368, 361);
+            this.ClientSize = new System.Drawing.Size(368, 398);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtCantidadDisponible);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.BtnSalir);
@@ -231,7 +261,7 @@ namespace MapaniApp
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddOrden";
-            this.Text = "AddOrden";
+            this.Text = "Agregar Orden";
             this.Load += new System.EventHandler(this.AddOrden_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,5 +286,7 @@ namespace MapaniApp
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCantidadDisponible;
     }
 }

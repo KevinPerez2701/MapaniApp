@@ -70,8 +70,10 @@ namespace MapaniApp
                     IdProducto = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()),
                     Nombre = (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()),
                     Programa = (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()),
+                    Cantidad = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString()),
                 }); // Carga de datos de los cuadros de texto
                 Orden.ShowDialog(this);
+                GetProductos();
             }
         }
         #endregion

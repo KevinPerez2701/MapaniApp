@@ -144,6 +144,7 @@ namespace MapaniApp
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.ComboUrgencias);
             this.groupBox1.Controls.Add(this.ComboReferido);
             this.groupBox1.Controls.Add(this.label29);
@@ -447,6 +448,7 @@ namespace MapaniApp
             // 
             // GroupWHO2006
             // 
+            this.GroupWHO2006.BackColor = System.Drawing.Color.Transparent;
             this.GroupWHO2006.Controls.Add(this.TxtSSFZ);
             this.GroupWHO2006.Controls.Add(this.TxtTSFZ);
             this.GroupWHO2006.Controls.Add(this.TxtZCC);
@@ -895,6 +897,7 @@ namespace MapaniApp
             // 
             // DatosEnfermeria
             // 
+            this.DatosEnfermeria.BackColor = System.Drawing.Color.Transparent;
             this.DatosEnfermeria.Controls.Add(this.txtHb);
             this.DatosEnfermeria.Controls.Add(this.label22);
             this.DatosEnfermeria.Controls.Add(this.TxtIMCCalculado);
@@ -1129,6 +1132,8 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(929, 626);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtEdadVisible);
@@ -1161,6 +1166,7 @@ namespace MapaniApp
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Nutricion";
             this.Text = "Nutricion";

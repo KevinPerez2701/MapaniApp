@@ -505,10 +505,14 @@ namespace MapaniApp
                 return;
             }
         }
+
+
+
         #endregion
 
+        private void DatosEnfermeria_Enter(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

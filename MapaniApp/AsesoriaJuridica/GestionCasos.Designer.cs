@@ -43,24 +43,6 @@ namespace MapaniApp
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtSeguimiento = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTipoAtencion = new System.Windows.Forms.TextBox();
-            this.txtTipoCaso = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtEstatus = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtEvolucion = new System.Windows.Forms.TextBox();
-            this.txtObservacion = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.BtnSave = new System.Windows.Forms.Button();
-            this.BtnSalir = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.BtnLimpiar = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCuidadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +66,24 @@ namespace MapaniApp
             this.observacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactAsesoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtSeguimiento = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTipoAtencion = new System.Windows.Forms.TextBox();
+            this.txtTipoCaso = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtEstatus = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtEvolucion = new System.Windows.Forms.TextBox();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.BtnSave = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.BtnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -224,6 +224,144 @@ namespace MapaniApp
             this.Ver.Name = "Ver";
             this.Ver.Text = "Ver";
             this.Ver.UseColumnTextForLinkValue = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // idCuidadorDataGridViewTextBoxColumn
+            // 
+            this.idCuidadorDataGridViewTextBoxColumn.DataPropertyName = "IdCuidador";
+            this.idCuidadorDataGridViewTextBoxColumn.HeaderText = "IdCuidador";
+            this.idCuidadorDataGridViewTextBoxColumn.Name = "idCuidadorDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // ocupacionDataGridViewTextBoxColumn
+            // 
+            this.ocupacionDataGridViewTextBoxColumn.DataPropertyName = "Ocupacion";
+            this.ocupacionDataGridViewTextBoxColumn.HeaderText = "Ocupacion";
+            this.ocupacionDataGridViewTextBoxColumn.Name = "ocupacionDataGridViewTextBoxColumn";
+            // 
+            // cedulaDataGridViewTextBoxColumn
+            // 
+            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            // 
+            // parroquiaDataGridViewTextBoxColumn
+            // 
+            this.parroquiaDataGridViewTextBoxColumn.DataPropertyName = "Parroquia";
+            this.parroquiaDataGridViewTextBoxColumn.HeaderText = "Parroquia";
+            this.parroquiaDataGridViewTextBoxColumn.Name = "parroquiaDataGridViewTextBoxColumn";
+            // 
+            // municipioDataGridViewTextBoxColumn
+            // 
+            this.municipioDataGridViewTextBoxColumn.DataPropertyName = "Municipio";
+            this.municipioDataGridViewTextBoxColumn.HeaderText = "Municipio";
+            this.municipioDataGridViewTextBoxColumn.Name = "municipioDataGridViewTextBoxColumn";
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            // 
+            // vinculoDataGridViewTextBoxColumn
+            // 
+            this.vinculoDataGridViewTextBoxColumn.DataPropertyName = "Vinculo";
+            this.vinculoDataGridViewTextBoxColumn.HeaderText = "Vinculo";
+            this.vinculoDataGridViewTextBoxColumn.Name = "vinculoDataGridViewTextBoxColumn";
+            // 
+            // tipoDocumentoDataGridViewTextBoxColumn
+            // 
+            this.tipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "TipoDocumento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "TipoDocumento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
+            // 
+            // documentoDataGridViewImageColumn
+            // 
+            this.documentoDataGridViewImageColumn.DataPropertyName = "Documento";
+            this.documentoDataGridViewImageColumn.HeaderText = "Documento";
+            this.documentoDataGridViewImageColumn.Name = "documentoDataGridViewImageColumn";
+            // 
+            // pDFDataGridViewImageColumn
+            // 
+            this.pDFDataGridViewImageColumn.DataPropertyName = "PDF";
+            this.pDFDataGridViewImageColumn.HeaderText = "PDF";
+            this.pDFDataGridViewImageColumn.Name = "pDFDataGridViewImageColumn";
+            // 
+            // idNMBDataGridViewTextBoxColumn
+            // 
+            this.idNMBDataGridViewTextBoxColumn.DataPropertyName = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.HeaderText = "IdNMB";
+            this.idNMBDataGridViewTextBoxColumn.Name = "idNMBDataGridViewTextBoxColumn";
+            // 
+            // tipoCasoDataGridViewTextBoxColumn
+            // 
+            this.tipoCasoDataGridViewTextBoxColumn.DataPropertyName = "TipoCaso";
+            this.tipoCasoDataGridViewTextBoxColumn.HeaderText = "TipoCaso";
+            this.tipoCasoDataGridViewTextBoxColumn.Name = "tipoCasoDataGridViewTextBoxColumn";
+            // 
+            // tipoAtencionDataGridViewTextBoxColumn
+            // 
+            this.tipoAtencionDataGridViewTextBoxColumn.DataPropertyName = "TipoAtencion";
+            this.tipoAtencionDataGridViewTextBoxColumn.HeaderText = "TipoAtencion";
+            this.tipoAtencionDataGridViewTextBoxColumn.Name = "tipoAtencionDataGridViewTextBoxColumn";
+            // 
+            // seguimientoDataGridViewTextBoxColumn
+            // 
+            this.seguimientoDataGridViewTextBoxColumn.DataPropertyName = "Seguimiento";
+            this.seguimientoDataGridViewTextBoxColumn.HeaderText = "Seguimiento";
+            this.seguimientoDataGridViewTextBoxColumn.Name = "seguimientoDataGridViewTextBoxColumn";
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            // 
+            // observacionDataGridViewTextBoxColumn
+            // 
+            this.observacionDataGridViewTextBoxColumn.DataPropertyName = "Observacion";
+            this.observacionDataGridViewTextBoxColumn.HeaderText = "Observacion";
+            this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
+            // 
+            // evolucionDataGridViewTextBoxColumn
+            // 
+            this.evolucionDataGridViewTextBoxColumn.DataPropertyName = "Evolucion";
+            this.evolucionDataGridViewTextBoxColumn.HeaderText = "Evolucion";
+            this.evolucionDataGridViewTextBoxColumn.Name = "evolucionDataGridViewTextBoxColumn";
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             // 
             // contactAsesoriaBindingSource
             // 
@@ -393,148 +531,12 @@ namespace MapaniApp
             this.BtnLimpiar.UseVisualStyleBackColor = true;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // idCuidadorDataGridViewTextBoxColumn
-            // 
-            this.idCuidadorDataGridViewTextBoxColumn.DataPropertyName = "IdCuidador";
-            this.idCuidadorDataGridViewTextBoxColumn.HeaderText = "IdCuidador";
-            this.idCuidadorDataGridViewTextBoxColumn.Name = "idCuidadorDataGridViewTextBoxColumn";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            // 
-            // ocupacionDataGridViewTextBoxColumn
-            // 
-            this.ocupacionDataGridViewTextBoxColumn.DataPropertyName = "Ocupacion";
-            this.ocupacionDataGridViewTextBoxColumn.HeaderText = "Ocupacion";
-            this.ocupacionDataGridViewTextBoxColumn.Name = "ocupacionDataGridViewTextBoxColumn";
-            // 
-            // cedulaDataGridViewTextBoxColumn
-            // 
-            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
-            // 
-            // parroquiaDataGridViewTextBoxColumn
-            // 
-            this.parroquiaDataGridViewTextBoxColumn.DataPropertyName = "Parroquia";
-            this.parroquiaDataGridViewTextBoxColumn.HeaderText = "Parroquia";
-            this.parroquiaDataGridViewTextBoxColumn.Name = "parroquiaDataGridViewTextBoxColumn";
-            // 
-            // municipioDataGridViewTextBoxColumn
-            // 
-            this.municipioDataGridViewTextBoxColumn.DataPropertyName = "Municipio";
-            this.municipioDataGridViewTextBoxColumn.HeaderText = "Municipio";
-            this.municipioDataGridViewTextBoxColumn.Name = "municipioDataGridViewTextBoxColumn";
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            // 
-            // vinculoDataGridViewTextBoxColumn
-            // 
-            this.vinculoDataGridViewTextBoxColumn.DataPropertyName = "Vinculo";
-            this.vinculoDataGridViewTextBoxColumn.HeaderText = "Vinculo";
-            this.vinculoDataGridViewTextBoxColumn.Name = "vinculoDataGridViewTextBoxColumn";
-            // 
-            // tipoDocumentoDataGridViewTextBoxColumn
-            // 
-            this.tipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "TipoDocumento";
-            this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "TipoDocumento";
-            this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
-            // 
-            // documentoDataGridViewImageColumn
-            // 
-            this.documentoDataGridViewImageColumn.DataPropertyName = "Documento";
-            this.documentoDataGridViewImageColumn.HeaderText = "Documento";
-            this.documentoDataGridViewImageColumn.Name = "documentoDataGridViewImageColumn";
-            // 
-            // pDFDataGridViewImageColumn
-            // 
-            this.pDFDataGridViewImageColumn.DataPropertyName = "PDF";
-            this.pDFDataGridViewImageColumn.HeaderText = "PDF";
-            this.pDFDataGridViewImageColumn.Name = "pDFDataGridViewImageColumn";
-            // 
-            // idNMBDataGridViewTextBoxColumn
-            // 
-            this.idNMBDataGridViewTextBoxColumn.DataPropertyName = "IdNMB";
-            this.idNMBDataGridViewTextBoxColumn.HeaderText = "IdNMB";
-            this.idNMBDataGridViewTextBoxColumn.Name = "idNMBDataGridViewTextBoxColumn";
-            // 
-            // tipoCasoDataGridViewTextBoxColumn
-            // 
-            this.tipoCasoDataGridViewTextBoxColumn.DataPropertyName = "TipoCaso";
-            this.tipoCasoDataGridViewTextBoxColumn.HeaderText = "TipoCaso";
-            this.tipoCasoDataGridViewTextBoxColumn.Name = "tipoCasoDataGridViewTextBoxColumn";
-            // 
-            // tipoAtencionDataGridViewTextBoxColumn
-            // 
-            this.tipoAtencionDataGridViewTextBoxColumn.DataPropertyName = "TipoAtencion";
-            this.tipoAtencionDataGridViewTextBoxColumn.HeaderText = "TipoAtencion";
-            this.tipoAtencionDataGridViewTextBoxColumn.Name = "tipoAtencionDataGridViewTextBoxColumn";
-            // 
-            // seguimientoDataGridViewTextBoxColumn
-            // 
-            this.seguimientoDataGridViewTextBoxColumn.DataPropertyName = "Seguimiento";
-            this.seguimientoDataGridViewTextBoxColumn.HeaderText = "Seguimiento";
-            this.seguimientoDataGridViewTextBoxColumn.Name = "seguimientoDataGridViewTextBoxColumn";
-            // 
-            // estatusDataGridViewTextBoxColumn
-            // 
-            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
-            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
-            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
-            // 
-            // observacionDataGridViewTextBoxColumn
-            // 
-            this.observacionDataGridViewTextBoxColumn.DataPropertyName = "Observacion";
-            this.observacionDataGridViewTextBoxColumn.HeaderText = "Observacion";
-            this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
-            // 
-            // evolucionDataGridViewTextBoxColumn
-            // 
-            this.evolucionDataGridViewTextBoxColumn.DataPropertyName = "Evolucion";
-            this.evolucionDataGridViewTextBoxColumn.HeaderText = "Evolucion";
-            this.evolucionDataGridViewTextBoxColumn.Name = "evolucionDataGridViewTextBoxColumn";
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
             // GestionCasos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 597);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.label11);
@@ -563,9 +565,10 @@ namespace MapaniApp
             this.Controls.Add(this.BtnCargar);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestionCasos";
-            this.Text = "GestionCasos";
+            this.Text = "Gestion de Casos";
             this.Load += new System.EventHandler(this.GestionCasos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).EndInit();

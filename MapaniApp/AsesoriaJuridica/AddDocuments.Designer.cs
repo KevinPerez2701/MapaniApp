@@ -223,6 +223,8 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(897, 241);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnGuardar);
@@ -240,9 +242,10 @@ namespace MapaniApp
             this.Controls.Add(this.BtnCargar);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddDocuments";
-            this.Text = "AddDocuments";
+            this.Text = "Agregar Documentos";
             this.Load += new System.EventHandler(this.AddDocuments_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddDocuments_KeyPress);
             this.ResumeLayout(false);

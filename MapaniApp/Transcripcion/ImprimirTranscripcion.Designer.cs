@@ -107,6 +107,9 @@ namespace MapaniApp
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.txtIdNMB = new System.Windows.Forms.TextBox();
+            this.txtIdCuidador = new System.Windows.Forms.TextBox();
+            this.labelCuidador = new System.Windows.Forms.Label();
+            this.labelMMB = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -308,7 +311,6 @@ namespace MapaniApp
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtRango3
             // 
@@ -342,7 +344,6 @@ namespace MapaniApp
             // 
             resources.ApplyResources(this.label32, "label32");
             this.label32.Name = "label32";
-            this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // label31
             // 
@@ -481,7 +482,6 @@ namespace MapaniApp
             resources.ApplyResources(this.txtGeneroCuidador, "txtGeneroCuidador");
             this.txtGeneroCuidador.Name = "txtGeneroCuidador";
             this.txtGeneroCuidador.ReadOnly = true;
-            this.txtGeneroCuidador.TextChanged += new System.EventHandler(this.txtGeneroCuidador_TextChanged);
             // 
             // label13
             // 
@@ -615,11 +615,31 @@ namespace MapaniApp
             this.txtIdNMB.Name = "txtIdNMB";
             this.txtIdNMB.ReadOnly = true;
             // 
+            // txtIdCuidador
+            // 
+            resources.ApplyResources(this.txtIdCuidador, "txtIdCuidador");
+            this.txtIdCuidador.Name = "txtIdCuidador";
+            this.txtIdCuidador.ReadOnly = true;
+            // 
+            // labelCuidador
+            // 
+            resources.ApplyResources(this.labelCuidador, "labelCuidador");
+            this.labelCuidador.Name = "labelCuidador";
+            this.labelCuidador.Click += new System.EventHandler(this.label36_Click);
+            // 
+            // labelMMB
+            // 
+            resources.ApplyResources(this.labelMMB, "labelMMB");
+            this.labelMMB.Name = "labelMMB";
+            // 
             // ImprimirTranscripcion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.labelMMB);
+            this.Controls.Add(this.txtIdCuidador);
+            this.Controls.Add(this.labelCuidador);
             this.Controls.Add(this.txtIdNMB);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.txtObservaciones);
@@ -640,7 +660,7 @@ namespace MapaniApp
             this.Controls.Add(this.Fecha);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ImprimirTranscripcion";
-            this.Load += new System.EventHandler(this.ImprimirTranscripcion_Load);
+          
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -731,5 +751,8 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox txtRango2;
         private System.Windows.Forms.TextBox txtEdadNMB;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtIdCuidador;
+        private System.Windows.Forms.Label labelCuidador;
+        private System.Windows.Forms.Label labelMMB;
     }
 }

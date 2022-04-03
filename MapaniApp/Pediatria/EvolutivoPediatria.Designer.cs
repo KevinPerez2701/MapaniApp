@@ -44,6 +44,7 @@ namespace MapaniApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(60, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 24);
@@ -54,6 +55,7 @@ namespace MapaniApp
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(60, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 24);
@@ -64,6 +66,7 @@ namespace MapaniApp
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(60, 286);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 24);
@@ -120,6 +123,7 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.BtnSalir);

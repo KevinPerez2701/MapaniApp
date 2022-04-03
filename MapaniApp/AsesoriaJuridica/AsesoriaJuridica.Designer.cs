@@ -84,11 +84,14 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 119);
+            this.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(613, 184);
             this.Controls.Add(this.BtnGestionCasos);
             this.Controls.Add(this.BtnVerDocumentos);
             this.Controls.Add(this.BtnCargarDocumentos);
             this.Controls.Add(this.BtnRegistro);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AsesoriaJuridica";
             this.Text = "AsesoriaJuridica";
