@@ -154,7 +154,7 @@ namespace MapaniApp
                 }
 
             }
-            else if (ComboOperacion.Text == "Agregar Relacion")
+            else if (ComboOperacion.Text == "Agregar Relación")
             {
                 if (ComboCuidador.Text == "Cuidador")
                 {
@@ -254,7 +254,7 @@ namespace MapaniApp
                 HideLabels();
                 labelContacto.Visible = true;
                 ComboContacto.Visible = true;
-
+               
             }
             else if (ComboOperacion.Text == "")
             {
@@ -278,8 +278,9 @@ namespace MapaniApp
                 TxtCedula.Visible = true;
                 dataGridView1.Visible = true;
             }
-            else if (ComboOperacion.Text == "Agregar Relacion")
+            else if (ComboOperacion.Text == "Agregar Relación")
             {
+                HideLabels();
                 labelTipoCuidador.Visible = true;
                 ComboCuidador.Visible = true;
                 labelContactoID.Visible = true;
@@ -293,6 +294,7 @@ namespace MapaniApp
             }
             else if (ComboOperacion.Text == "Imprimir")
             {
+                HideLabels();
                 labelTipoCuidador.Visible = true;
                 ComboCuidador.Visible = true;
                 labelContactoID.Visible = true;
@@ -333,6 +335,7 @@ namespace MapaniApp
             txtParentesco.Visible = false;
             dataGridView1.Visible = false;
             dataGridView1.DataSource = null;
+            PrimeraVez.Visible = false;
         }
         private void Clean()
         {
@@ -404,8 +407,27 @@ namespace MapaniApp
             }
         }
 
+
         #endregion
 
+       
 
+        private void ComboContacto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboContacto.Text == "NMB" && ComboOperacion.Text == "Agregar Contacto")
+            {
+                PrimeraVez.Visible = true;
+            }
+            else
+            {
+                PrimeraVez.Visible = false;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            TxtId.Visible = !TxtId.Visible;
+            labelId.Visible = !labelId.Visible;
+        }
     }
 }

@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -56,9 +56,7 @@
   <PropertyGroup>
     <StartupObject>MapaniApp.Program</StartupObject>
   </PropertyGroup>
-  <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ManifestCertificateThumbprint>81AFCFE53CB449C550A0A55AB46E2F05776903ED</ManifestCertificateThumbprint>
   </PropertyGroup>
@@ -72,7 +70,8 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Captura-de-pantalla-2022-03-27-123651.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AnthStat.Statistics, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -143,6 +142,7 @@
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.0\lib\netstandard2.0\System.Memory.dll</HintPath>
     </Reference>
@@ -420,9 +420,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Enfermeria\Enfermeria.resx">
       <DependentUpon>Enfermeria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Transcripcion\ImprimirTranscripcion.aa.resx">
-      <DependentUpon>ImprimirTranscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transcripcion\ImprimirTranscripcion.resx">
       <DependentUpon>ImprimirTranscripcion.cs</DependentUpon>

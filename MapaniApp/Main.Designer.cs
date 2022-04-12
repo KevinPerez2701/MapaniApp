@@ -51,7 +51,7 @@ namespace MapaniApp
             this.BtnAlmacen.Name = "BtnAlmacen";
             this.BtnAlmacen.Size = new System.Drawing.Size(178, 63);
             this.BtnAlmacen.TabIndex = 4;
-            this.BtnAlmacen.Text = "Almacen";
+            this.BtnAlmacen.Text = "Almacén";
             this.BtnAlmacen.UseVisualStyleBackColor = true;
             this.BtnAlmacen.Visible = false;
             this.BtnAlmacen.Click += new System.EventHandler(this.BtnAlmacen_Click);
@@ -63,7 +63,7 @@ namespace MapaniApp
             this.BtnEnfermeria.Name = "BtnEnfermeria";
             this.BtnEnfermeria.Size = new System.Drawing.Size(178, 59);
             this.BtnEnfermeria.TabIndex = 5;
-            this.BtnEnfermeria.Text = "Enfermeria";
+            this.BtnEnfermeria.Text = "Enfermería";
             this.BtnEnfermeria.UseVisualStyleBackColor = true;
             this.BtnEnfermeria.Visible = false;
             this.BtnEnfermeria.Click += new System.EventHandler(this.BtnEnfermeria_Click);
@@ -75,7 +75,7 @@ namespace MapaniApp
             this.BtnNutricion.Name = "BtnNutricion";
             this.BtnNutricion.Size = new System.Drawing.Size(173, 63);
             this.BtnNutricion.TabIndex = 6;
-            this.BtnNutricion.Text = "Nutricion";
+            this.BtnNutricion.Text = "Nutrición";
             this.BtnNutricion.UseVisualStyleBackColor = true;
             this.BtnNutricion.Visible = false;
             this.BtnNutricion.Click += new System.EventHandler(this.BtnNutricion_Click);
@@ -87,7 +87,7 @@ namespace MapaniApp
             this.BtnPediatria.Name = "BtnPediatria";
             this.BtnPediatria.Size = new System.Drawing.Size(173, 59);
             this.BtnPediatria.TabIndex = 7;
-            this.BtnPediatria.Text = "Pediatria";
+            this.BtnPediatria.Text = "Pediatría";
             this.BtnPediatria.UseVisualStyleBackColor = true;
             this.BtnPediatria.Visible = false;
             this.BtnPediatria.Click += new System.EventHandler(this.BtnPediatria_Click);
@@ -99,7 +99,7 @@ namespace MapaniApp
             this.BtnPsicologia.Name = "BtnPsicologia";
             this.BtnPsicologia.Size = new System.Drawing.Size(148, 63);
             this.BtnPsicologia.TabIndex = 8;
-            this.BtnPsicologia.Text = "Psicologia";
+            this.BtnPsicologia.Text = "Psicología";
             this.BtnPsicologia.UseVisualStyleBackColor = true;
             this.BtnPsicologia.Visible = false;
             this.BtnPsicologia.Click += new System.EventHandler(this.BtnPsicologia_Click);
@@ -111,7 +111,7 @@ namespace MapaniApp
             this.BtnLegal.Name = "BtnLegal";
             this.BtnLegal.Size = new System.Drawing.Size(147, 59);
             this.BtnLegal.TabIndex = 9;
-            this.BtnLegal.Text = "Asesoria Juridica";
+            this.BtnLegal.Text = "Asesoría Jurídica";
             this.BtnLegal.UseVisualStyleBackColor = true;
             this.BtnLegal.Visible = false;
             this.BtnLegal.Click += new System.EventHandler(this.BtnLegal_Click);
@@ -124,7 +124,7 @@ namespace MapaniApp
             this.BtnRecepcion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnRecepcion.Size = new System.Drawing.Size(205, 63);
             this.BtnRecepcion.TabIndex = 10;
-            this.BtnRecepcion.Text = "Recepcion";
+            this.BtnRecepcion.Text = "Recepción";
             this.BtnRecepcion.UseVisualStyleBackColor = true;
             this.BtnRecepcion.Visible = false;
             this.BtnRecepcion.Click += new System.EventHandler(this.BtnRecepcion_Click);
@@ -136,7 +136,7 @@ namespace MapaniApp
             this.BtnTranscripcion.Name = "BtnTranscripcion";
             this.BtnTranscripcion.Size = new System.Drawing.Size(205, 58);
             this.BtnTranscripcion.TabIndex = 11;
-            this.BtnTranscripcion.Text = "Transcripcion";
+            this.BtnTranscripcion.Text = "Transcripción";
             this.BtnTranscripcion.UseVisualStyleBackColor = true;
             this.BtnTranscripcion.Visible = false;
             this.BtnTranscripcion.Click += new System.EventHandler(this.button1_Click_1);
@@ -157,7 +157,7 @@ namespace MapaniApp
             this.groupSuperUser.Size = new System.Drawing.Size(746, 177);
             this.groupSuperUser.TabIndex = 12;
             this.groupSuperUser.TabStop = false;
-            this.groupSuperUser.Text = "Modulos";
+            this.groupSuperUser.Text = "Módulos";
             // 
             // BtnSalir
             // 
@@ -195,8 +195,7 @@ namespace MapaniApp
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MapaniAPP";
-            this.TopMost = true;
+            this.Text = "Mapani APP";
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupSuperUser.ResumeLayout(false);
             this.ResumeLayout(false);

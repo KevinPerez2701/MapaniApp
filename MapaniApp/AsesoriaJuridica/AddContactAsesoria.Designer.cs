@@ -74,7 +74,7 @@ namespace MapaniApp
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 24);
             this.label8.TabIndex = 111;
-            this.label8.Text = "Telefono";
+            this.label8.Text = "Teléfono";
             // 
             // txtOcupacion
             // 
@@ -95,7 +95,7 @@ namespace MapaniApp
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 24);
             this.label7.TabIndex = 109;
-            this.label7.Text = "Ocupacion";
+            this.label7.Text = "Ocupación";
             // 
             // txtCedula
             // 
@@ -115,7 +115,7 @@ namespace MapaniApp
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 24);
             this.label4.TabIndex = 107;
-            this.label4.Text = "Cedula";
+            this.label4.Text = "Cédula";
             // 
             // txtEstado
             // 
@@ -193,7 +193,7 @@ namespace MapaniApp
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 24);
             this.label3.TabIndex = 99;
-            this.label3.Text = "Direccion ";
+            this.label3.Text = "Dirección ";
             // 
             // TxtApellido
             // 
@@ -295,7 +295,7 @@ namespace MapaniApp
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 24);
             this.label6.TabIndex = 117;
-            this.label6.Text = "Vinculo";
+            this.label6.Text = "Vínculo";
             // 
             // AddContactAsesoria
             // 
@@ -329,7 +329,7 @@ namespace MapaniApp
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddContactAsesoria";
-            this.Text = "Agregar Contacto Proteccion";
+            this.Text = "Agregar Contacto Protección";
             this.Load += new System.EventHandler(this.AddContactAsesoria_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContactAsesoria_KeyPress);
             this.ResumeLayout(false);

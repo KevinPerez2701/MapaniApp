@@ -189,6 +189,7 @@ namespace MapaniApp
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtEdadNMB);
             this.groupBox1.Controls.Add(this.label35);
             this.groupBox1.Controls.Add(this.ComboTipoDiscapacidadNMB);
@@ -272,6 +273,7 @@ namespace MapaniApp
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.txtRango3);
             this.groupBox2.Controls.Add(this.txtRango2);
             this.groupBox2.Controls.Add(this.txtRango1);
@@ -574,6 +576,7 @@ namespace MapaniApp
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.txtEstado);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.txtMunicipio);
@@ -637,6 +640,7 @@ namespace MapaniApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
             this.Controls.Add(this.labelMMB);
             this.Controls.Add(this.txtIdCuidador);
             this.Controls.Add(this.labelCuidador);
@@ -658,9 +662,10 @@ namespace MapaniApp
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Fecha);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ImprimirTranscripcion";
-          
+            this.Load += new System.EventHandler(this.ImprimirTranscripcion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

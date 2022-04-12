@@ -71,7 +71,7 @@ namespace MapaniApp
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 24);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Patologias";
+            this.label3.Text = "Patologías";
             // 
             // txtEvolutivo
             // 
@@ -135,7 +135,7 @@ namespace MapaniApp
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EvolutivoPediatria";
-            this.Text = "EvolutivoPediatria";
+            this.Text = "Evolutivo Pediatría";
             this.Load += new System.EventHandler(this.EvolutivoPediatria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

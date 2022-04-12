@@ -249,7 +249,7 @@ namespace MapaniApp
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SucesivoNutricion";
-            this.Text = "SucesivoNutricion";
+            this.Text = "Sucesivo Nutrición";
             this.Load += new System.EventHandler(this.SucesivoNutricion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.claseEnfermeriaBindingSource)).EndInit();

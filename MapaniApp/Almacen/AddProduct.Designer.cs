@@ -105,7 +105,7 @@ namespace MapaniApp
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 24);
             this.label3.TabIndex = 37;
-            this.label3.Text = "Descripcion";
+            this.label3.Text = "Descripción";
             // 
             // label4
             // 
@@ -275,7 +275,7 @@ namespace MapaniApp
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(221, 24);
             this.label9.TabIndex = 46;
-            this.label9.Text = "Cantidad Actual Almacen";
+            this.label9.Text = "Cantidad Actual Almacén";
             // 
             // txtCantidadAlmacen
             // 

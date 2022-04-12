@@ -76,7 +76,7 @@ namespace MapaniApp
             this.BtnGestionCasos.Name = "BtnGestionCasos";
             this.BtnGestionCasos.Size = new System.Drawing.Size(128, 68);
             this.BtnGestionCasos.TabIndex = 3;
-            this.BtnGestionCasos.Text = "Gestion de Casos";
+            this.BtnGestionCasos.Text = "Gestión de Casos";
             this.BtnGestionCasos.UseVisualStyleBackColor = true;
             this.BtnGestionCasos.Click += new System.EventHandler(this.BtnGestionCasos_Click);
             // 
@@ -94,7 +94,7 @@ namespace MapaniApp
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AsesoriaJuridica";
-            this.Text = "AsesoriaJuridica";
+            this.Text = "Asesoría Jurídica";
             this.Load += new System.EventHandler(this.AsesoriaJuridica_Load);
             this.ResumeLayout(false);
 

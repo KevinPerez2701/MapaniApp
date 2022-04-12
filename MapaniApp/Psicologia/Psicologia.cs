@@ -139,11 +139,21 @@ namespace MapaniApp
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
         }
         #endregion
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

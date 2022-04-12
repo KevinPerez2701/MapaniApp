@@ -80,6 +80,7 @@ namespace MapaniApp
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 56);
             this.label7.Name = "label7";
@@ -101,6 +102,7 @@ namespace MapaniApp
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(469, 79);
             this.label4.Name = "label4";
@@ -127,6 +129,7 @@ namespace MapaniApp
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(469, 44);
             this.label2.Name = "label2";
@@ -137,6 +140,7 @@ namespace MapaniApp
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(469, 9);
             this.label5.Name = "label5";
@@ -160,6 +164,7 @@ namespace MapaniApp
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
@@ -170,6 +175,7 @@ namespace MapaniApp
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 91);
             this.label6.Name = "label6";
@@ -193,6 +199,7 @@ namespace MapaniApp
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(351, 169);
             this.label8.Name = "label8";
@@ -234,6 +241,7 @@ namespace MapaniApp
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(469, 117);
             this.label13.Name = "label13";
@@ -298,6 +306,7 @@ namespace MapaniApp
             // 
             // groupBase
             // 
+            this.groupBase.BackColor = System.Drawing.Color.Transparent;
             this.groupBase.Controls.Add(this.labelCC);
             this.groupBase.Controls.Add(this.txtCC);
             this.groupBase.Controls.Add(this.label3);
@@ -313,7 +322,7 @@ namespace MapaniApp
             this.groupBase.Size = new System.Drawing.Size(452, 211);
             this.groupBase.TabIndex = 4;
             this.groupBase.TabStop = false;
-            this.groupBase.Text = "GroupBase";
+            this.groupBase.Text = "Datos Enfermería";
             this.groupBase.Visible = false;
             // 
             // labelCC
@@ -386,6 +395,7 @@ namespace MapaniApp
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(259, 455);
             this.label11.Name = "label11";
@@ -396,6 +406,7 @@ namespace MapaniApp
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(11, 19);
             this.label12.Name = "label12";
@@ -416,6 +427,7 @@ namespace MapaniApp
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.BtnGuardar);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
@@ -439,6 +451,8 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(778, 661);
             this.Controls.Add(this.txtEdadVisible);
             this.Controls.Add(this.groupBox1);
@@ -462,9 +476,10 @@ namespace MapaniApp
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ComboUsuario);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Enfermeria";
-            this.Text = "Enfermeria";
+            this.Text = "Enfermería";
             this.Load += new System.EventHandler(this.Enfermeria_Load);
             this.groupBase.ResumeLayout(false);
             this.groupBase.PerformLayout();

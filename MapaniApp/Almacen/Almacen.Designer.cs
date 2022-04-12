@@ -45,7 +45,7 @@ namespace MapaniApp
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 53);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Ver Almacen";
+            this.button1.Text = "Ver Almacén";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -78,7 +78,7 @@ namespace MapaniApp
             this.BtnAddAlmacen.Name = "BtnAddAlmacen";
             this.BtnAddAlmacen.Size = new System.Drawing.Size(180, 67);
             this.BtnAddAlmacen.TabIndex = 3;
-            this.BtnAddAlmacen.Text = "Agregar Producto Almacen";
+            this.BtnAddAlmacen.Text = "Agregar Producto Almacén";
             this.BtnAddAlmacen.UseVisualStyleBackColor = true;
             this.BtnAddAlmacen.Click += new System.EventHandler(this.BtnAddAlmacen_Click);
             // 

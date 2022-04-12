@@ -34,24 +34,31 @@ namespace MapaniApp
             }
         }
         private void SaveOrder()
-        {   if (int.Parse(TxtCantidad.Text) <= int.Parse(txtCantidadDisponible.Text))
+        {  if (TxtCantidad.Text != "" && ComboPediatra.Text != "")
             {
-                DataAlmacen Orden = new DataAlmacen
+                if (int.Parse(TxtCantidad.Text) <= int.Parse(txtCantidadDisponible.Text))
                 {
-                    IdNMB = TxtIdNMB.Text,
-                    IdProducto = int.Parse(TxtIdProducto.Text),
-                    Nombre = TxtNombre.Text,
-                    Programa = TxtPrograma.Text,
-                    Pediatra = ComboPediatra.Text,
-                    Fecha = dateTimePicker1.Value.Date,
-                    Cantidad = int.Parse(TxtCantidad.Text),
-                };
-                _LogicLayer.SaveOrder(Orden);
-                
+                    DataAlmacen Orden = new DataAlmacen
+                    {
+                        IdNMB = TxtIdNMB.Text,
+                        IdProducto = int.Parse(TxtIdProducto.Text),
+                        Nombre = TxtNombre.Text,
+                        Programa = TxtPrograma.Text,
+                        Pediatra = ComboPediatra.Text,
+                        Fecha = dateTimePicker1.Value.Date,
+                        Cantidad = int.Parse(TxtCantidad.Text),
+                    };
+                    _LogicLayer.SaveOrder(Orden);
+
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese una Cantidad Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else
             {
-                MessageBox.Show("Ingrese una Cantidad Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ingrese los Datos Solicitados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }

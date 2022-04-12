@@ -378,6 +378,12 @@ namespace MapaniApp
                 MessageBox.Show("Ingrese una Fecha de Nacimiento Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 dateTimePicker1.Value = DateTime.Now;
             }
+            else if (int.Parse(Metodos.GetEdadAnhos(dateTimePicker1.Value)) < 0 )
+            {
+                MessageBox.Show("Ingrese una Fecha de Nacimiento Valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dateTimePicker1.Value = DateTime.Now;
+            }
+            
         }
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {

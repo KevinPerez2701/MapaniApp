@@ -73,6 +73,8 @@ namespace MapaniApp
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
+            this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Panel2.Controls.Add(this.txtAntecedentes);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
             this.splitContainer1.Panel2.Controls.Add(this.txtEvaluacion);
@@ -110,38 +112,38 @@ namespace MapaniApp
             this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
-            "Abuso Fisico/Violencia",
+            "Abuso Físico/Violencia",
             "Abuso Sexual/Violencia",
-            "Violacion",
-            "Abuso/Violencia Emocional o Psicologica",
+            "Violación",
+            "Abuso/Violencia Emocional o Psicológica",
             "Neglicencia",
             "Abandono",
             "Trabajo Infantil (No en sus peores formas)",
             "Trabajo Peligroso",
-            "Explotacion Sexual",
+            "Explotación Sexual",
             "Esclavitud/Venta/Secuestro/Trata/Trabajo Forzoso",
             "En conflicto con la ley",
             "Asociado con fuerzas armadas o grupos",
-            "Privado de libertad/en detencion",
-            "Condicion Medica Grave",
+            "Privado de libertad/en detención",
+            "Condición Medica Grave",
             "Dificultad Funcional (Vista, incluso si usa lentes)",
-            "Dificultad Funcional (Audicion, inscluso si usa audifonos)",
+            "Dificultad Funcional (Audición, incluso si usa audífonos)",
             "Dificultad Funcional (Caminar o usar partes de su cuerpo)",
             "Dificultad Funcional (recordar o concentrarse)",
-            "Dificultad para cuidarse a si mismo, como alimentarse o vestirse",
+            "Dificultad para cuidarse a sí mismo, como alimentarse o vestirse",
             "Dificultad para comunicarse",
             "No acompañado",
             "Separado",
-            "Huerfano",
-            "DIficultad Psicosocial",
+            "Huérfano",
+            "Dificultad Psicosocial",
             "Trastorno Mental",
-            "Abuso de sustancias y adiccion (niño)",
+            "Abuso de sustancias y adicción (niño)",
             "Pertenece al grupo marginado/discriminado",
-            "Falta de documentacion/registro de nacimiento",
+            "Falta de documentación/registro de nacimiento",
             "Matrimonio infantil",
-            "Mutilacion Genital Femenina (MGF)",
+            "Mutilación Genital Femenina (MGF)",
             "Embarazo/Hijo Padre",
-            "Denegacion de recursos, oportunidades o servicios",
+            "Denegación de recursos, oportunidades o servicios",
             "Acuerdo de cuidado altamente Vulnerable",
             "Niño Sobreviviente de dispositivo Explosivo (DE)",
             "Otros, por favor especificar:"});
@@ -212,7 +214,7 @@ namespace MapaniApp
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 24);
             this.label11.TabIndex = 111;
-            this.label11.Text = "Evaluacion";
+            this.label11.Text = "Evaluación";
             // 
             // TxtMotivoConsulta
             // 

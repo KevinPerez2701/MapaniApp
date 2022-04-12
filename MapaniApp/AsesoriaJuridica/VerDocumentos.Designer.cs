@@ -141,7 +141,7 @@ namespace MapaniApp
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VerDocumentos";
-            this.Text = "VerDocumentos";
+            this.Text = "Ver Documentos";
             this.Load += new System.EventHandler(this.VerDocumentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).EndInit();

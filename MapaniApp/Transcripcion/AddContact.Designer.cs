@@ -133,16 +133,18 @@ namespace MapaniApp
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 189);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 24);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Direccion ";
+            this.label3.Text = "Dirección ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(13, 133);
             this.label4.Name = "label4";
@@ -171,6 +173,7 @@ namespace MapaniApp
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(13, 103);
             this.label2.Name = "label2";
@@ -181,6 +184,7 @@ namespace MapaniApp
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 66);
             this.label1.Name = "label1";
@@ -191,8 +195,9 @@ namespace MapaniApp
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 19);
+            this.label5.Location = new System.Drawing.Point(7, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(255, 24);
             this.label5.TabIndex = 16;
@@ -209,13 +214,14 @@ namespace MapaniApp
             // 
             // BtnFoto
             // 
+            this.BtnFoto.BackColor = System.Drawing.Color.Transparent;
             this.BtnFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFoto.Location = new System.Drawing.Point(514, 214);
             this.BtnFoto.Name = "BtnFoto";
             this.BtnFoto.Size = new System.Drawing.Size(162, 31);
             this.BtnFoto.TabIndex = 16;
             this.BtnFoto.Text = "Foto";
-            this.BtnFoto.UseVisualStyleBackColor = true;
+            this.BtnFoto.UseVisualStyleBackColor = false;
             this.BtnFoto.Click += new System.EventHandler(this.BtnFoto_Click);
             // 
             // BtnSave
@@ -256,6 +262,7 @@ namespace MapaniApp
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(13, 248);
             this.label7.Name = "label7";
@@ -291,7 +298,7 @@ namespace MapaniApp
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 24);
             this.label6.TabIndex = 29;
-            this.label6.Text = "Telefono";
+            this.label6.Text = "Teléfono";
             // 
             // textBox1
             // 
@@ -470,7 +477,7 @@ namespace MapaniApp
             // 
             this.labelEstadoCivil.AutoSize = true;
             this.labelEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEstadoCivil.Location = new System.Drawing.Point(11, 84);
+            this.labelEstadoCivil.Location = new System.Drawing.Point(4, 93);
             this.labelEstadoCivil.Name = "labelEstadoCivil";
             this.labelEstadoCivil.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelEstadoCivil.Size = new System.Drawing.Size(107, 24);
@@ -496,11 +503,11 @@ namespace MapaniApp
             // 
             this.labelTransporte.AutoSize = true;
             this.labelTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTransporte.Location = new System.Drawing.Point(1, 131);
+            this.labelTransporte.Location = new System.Drawing.Point(1, 129);
             this.labelTransporte.Name = "labelTransporte";
             this.labelTransporte.Size = new System.Drawing.Size(170, 24);
             this.labelTransporte.TabIndex = 60;
-            this.labelTransporte.Text = "Metodo Transporte";
+            this.labelTransporte.Text = "Método Transporte";
             // 
             // TxtTransporte
             // 
@@ -513,6 +520,7 @@ namespace MapaniApp
             // 
             // groupNMB
             // 
+            this.groupNMB.BackColor = System.Drawing.Color.Transparent;
             this.groupNMB.Controls.Add(this.comboTipoDiscapacidadNMB);
             this.groupNMB.Controls.Add(this.dateTimePicker2);
             this.groupNMB.Controls.Add(this.labelFechaIngreso);
@@ -530,7 +538,7 @@ namespace MapaniApp
             this.groupNMB.Controls.Add(this.ComboParto);
             this.groupNMB.Location = new System.Drawing.Point(2, 328);
             this.groupNMB.Name = "groupNMB";
-            this.groupNMB.Size = new System.Drawing.Size(436, 296);
+            this.groupNMB.Size = new System.Drawing.Size(436, 335);
             this.groupNMB.TabIndex = 5;
             this.groupNMB.TabStop = false;
             this.groupNMB.Text = "NMB";
@@ -553,6 +561,7 @@ namespace MapaniApp
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.ComboMovilizacion);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.TxtCedula);
@@ -573,7 +582,7 @@ namespace MapaniApp
             this.groupBox2.Controls.Add(this.labelTransporte);
             this.groupBox2.Controls.Add(this.labelEstadoCivil);
             this.groupBox2.Controls.Add(this.ComboEstadoCivil);
-            this.groupBox2.Location = new System.Drawing.Point(6, 296);
+            this.groupBox2.Location = new System.Drawing.Point(11, 290);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(426, 380);
             this.groupBox2.TabIndex = 5;
@@ -606,7 +615,7 @@ namespace MapaniApp
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(113, 24);
             this.label20.TabIndex = 76;
-            this.label20.Text = "Movilizacion";
+            this.label20.Text = "Movilización";
             // 
             // TxtCedula
             // 
@@ -626,7 +635,7 @@ namespace MapaniApp
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 24);
             this.label10.TabIndex = 74;
-            this.label10.Text = "Cedula";
+            this.label10.Text = "Cédula";
             // 
             // txtGrupoEtnico
             // 
@@ -657,7 +666,7 @@ namespace MapaniApp
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(121, 24);
             this.label19.TabIndex = 71;
-            this.label19.Text = "Grupo Etnico";
+            this.label19.Text = "Grupo Étnico";
             // 
             // ComboTipoDiscapacidadCuidador
             // 
@@ -737,11 +746,12 @@ namespace MapaniApp
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(103, 24);
             this.label16.TabIndex = 62;
-            this.label16.Text = "Ocupacion";
+            this.label16.Text = "Ocupación";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(364, 19);
             this.label8.Name = "label8";
@@ -762,22 +772,21 @@ namespace MapaniApp
             this.txtMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMunicipio.Location = new System.Drawing.Point(608, 290);
             this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(107, 29);
+            this.txtMunicipio.Size = new System.Drawing.Size(155, 29);
             this.txtMunicipio.TabIndex = 18;
-            this.txtMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // txtParroquia
             // 
             this.txtParroquia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtParroquia.Location = new System.Drawing.Point(608, 253);
             this.txtParroquia.Name = "txtParroquia";
-            this.txtParroquia.Size = new System.Drawing.Size(107, 29);
+            this.txtParroquia.Size = new System.Drawing.Size(155, 29);
             this.txtParroquia.TabIndex = 17;
-            this.txtParroquia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(458, 290);
             this.label9.Name = "label9";
@@ -788,6 +797,7 @@ namespace MapaniApp
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(462, 253);
             this.label11.Name = "label11";
@@ -800,13 +810,14 @@ namespace MapaniApp
             this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstado.Location = new System.Drawing.Point(608, 325);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(107, 29);
+            this.txtEstado.Size = new System.Drawing.Size(157, 29);
             this.txtEstado.TabIndex = 19;
             this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(458, 325);
             this.label12.Name = "label12";
@@ -830,7 +841,7 @@ namespace MapaniApp
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 24);
             this.label13.TabIndex = 74;
-            this.label13.Text = "Direccion";
+            this.label13.Text = "Dirección";
             // 
             // label14
             // 
@@ -871,6 +882,7 @@ namespace MapaniApp
             // 
             // groupEscolaridad
             // 
+            this.groupEscolaridad.BackColor = System.Drawing.Color.Transparent;
             this.groupEscolaridad.Controls.Add(this.txtNombreEscuela);
             this.groupEscolaridad.Controls.Add(this.label15);
             this.groupEscolaridad.Controls.Add(this.txtDireccionEscuela);
@@ -887,6 +899,7 @@ namespace MapaniApp
             // 
             // groupCharla
             // 
+            this.groupCharla.BackColor = System.Drawing.Color.Transparent;
             this.groupCharla.Controls.Add(this.TxtHijos);
             this.groupCharla.Controls.Add(this.labelHijos);
             this.groupCharla.Controls.Add(this.txtRango3);
@@ -902,12 +915,12 @@ namespace MapaniApp
             this.groupCharla.Controls.Add(this.label22);
             this.groupCharla.Controls.Add(this.ComboMuacRecibido);
             this.groupCharla.Controls.Add(this.label21);
-            this.groupCharla.Location = new System.Drawing.Point(444, 368);
+            this.groupCharla.Location = new System.Drawing.Point(444, 360);
             this.groupCharla.Name = "groupCharla";
             this.groupCharla.Size = new System.Drawing.Size(321, 308);
             this.groupCharla.TabIndex = 20;
             this.groupCharla.TabStop = false;
-            this.groupCharla.Text = "Informacion Recibida";
+            this.groupCharla.Text = "Información Recibida";
             this.groupCharla.Visible = false;
             // 
             // TxtHijos
@@ -1104,7 +1117,7 @@ namespace MapaniApp
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddContact";
-            this.Text = "AddContact";
+            this.Text = "Agregar Contacto";
             this.Load += new System.EventHandler(this.AddContact_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddContact_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).EndInit();

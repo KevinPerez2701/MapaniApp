@@ -116,7 +116,7 @@ namespace MapaniApp
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -126,7 +126,7 @@ namespace MapaniApp
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar >= 58 && e.KeyChar <= 255) || e.KeyChar == 47)
             {
-                MessageBox.Show("Solo números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ingrese un Dato Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -134,45 +134,87 @@ namespace MapaniApp
 
         private void TxtPeso_Leave(object sender, EventArgs e)
         {
-            if (float.Parse(TxtPeso.Text) < 1 || float.Parse(TxtPeso.Text) > 275)
+            
+            if (TxtPeso.Text != "" )
+            {
+                if (float.Parse(TxtPeso.Text) < 1 || float.Parse(TxtPeso.Text) > 275)
+                {
+                    MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TxtPeso.Text = "0";
+                    TxtPeso.Focus();
+                   
+                }
+            }
+            else
             {
                 MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TxtPeso.Text = "0";
-                return;
+                TxtPeso.Focus();
             }
         }
 
         private void TxtTalla_Leave(object sender, EventArgs e)
         {
-            if (float.Parse(TxtTalla.Text) < 38 || float.Parse(TxtTalla.Text) > 230)
+            if (TxtTalla.Text != "")
+            {
+                if (float.Parse(TxtTalla.Text) < 38 || float.Parse(TxtTalla.Text) > 230)
+                {
+                    MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TxtTalla.Text = "0";
+                    
+                    TxtTalla.Focus();
+                }
+            }
+            else
             {
                 MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TxtTalla.Text = "0";
-                return;
+                TxtTalla.Focus();
             }
         }
 
         private void TxtCMB_Leave(object sender, EventArgs e)
         {
-            if (float.Parse(TxtCMB.Text) < 6 || float.Parse(TxtCMB.Text) > 35)
+            if (TxtCMB.Text != "")
+            {
+                if (float.Parse(TxtCMB.Text) < 6 || float.Parse(TxtCMB.Text) > 35)
+                {
+                    MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TxtCMB.Text = "0";
+                    TxtCMB.Focus();
+                }
+            }
+            else
             {
                 MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TxtCMB.Text = "0";
-                return;
+                TxtCMB.Focus();
             }
         }
 
         private void txtCC_Leave(object sender, EventArgs e)
         {
-            if (float.Parse(txtCC.Text) < 25 || float.Parse(txtCC.Text) > 64)
+            if (TxtCMB.Text != "")
+            {
+                if (float.Parse(txtCC.Text) < 25 || float.Parse(txtCC.Text) > 64)
+                {
+                    MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtCC.Text = "0";
+                    txtCC.Focus();
+                }
+
+            }
+            else
             {
                 MessageBox.Show("Ingrese un Valor Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtCC.Text = "0";
-                return;
+                txtCC.Focus();
             }
+
         }
+
         #endregion
 
-
+        
     }
 }

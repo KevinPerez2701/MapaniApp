@@ -133,7 +133,7 @@ namespace MapaniApp
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EntregaOrdenes";
-            this.Text = "EntregaOrdenes";
+            this.Text = "Entrega de Ordenes";
             this.Load += new System.EventHandler(this.EntregaOrdenes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataAlmacenBindingSource)).EndInit();

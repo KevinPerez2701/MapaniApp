@@ -68,7 +68,7 @@ namespace MapaniApp
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(920, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(1055, 450);
             this.dataGridView1.TabIndex = 99;
             // 
             // idDataGridViewTextBoxColumn
@@ -145,11 +145,11 @@ namespace MapaniApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 450);
+            this.ClientSize = new System.Drawing.Size(1055, 450);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContactosCuidadores";
-            this.Text = "ContactosCuidadores";
+            this.Text = "Contactos Cuidadores";
             this.Load += new System.EventHandler(this.ContactosCuidadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactAsesoriaBindingSource)).EndInit();

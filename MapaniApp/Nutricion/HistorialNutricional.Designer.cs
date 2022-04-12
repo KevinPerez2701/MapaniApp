@@ -378,7 +378,7 @@ namespace MapaniApp
             this.label11.Size = new System.Drawing.Size(59, 24);
             this.label11.TabIndex = 105;
             this.label11.Tag = "Contact";
-            this.label11.Text = "Menu";
+            this.label11.Text = "Menú";
             // 
             // label17
             // 
@@ -642,7 +642,7 @@ namespace MapaniApp
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HistorialNutricional";
-            this.Text = "HistorialNutricional";
+            this.Text = "Historial Nutricional";
             this.Load += new System.EventHandler(this.HistorialNutricional_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

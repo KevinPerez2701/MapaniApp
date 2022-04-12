@@ -16,7 +16,7 @@ namespace MapaniApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             CultureInfo current = Thread.CurrentThread.CurrentUICulture;
-            if (current.TwoLetterISOLanguageName != "fr")
+            if (current.TwoLetterISOLanguageName != "en-us")
             {
                 CultureInfo newCulture = CultureInfo.CreateSpecificCulture("en-US");
                 Thread.CurrentThread.CurrentUICulture = newCulture;

@@ -1,10 +1,12 @@
 ﻿using CsvHelper;
+using CsvHelper.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 
 namespace MapaniApp
@@ -27,6 +29,7 @@ namespace MapaniApp
         }
         public class Imprimir
         {
+       
             public int Id { get; set; }
             public string Nombre { get; set; }
             public string Apellido { get; set; }
@@ -102,6 +105,7 @@ namespace MapaniApp
                 var Imprimir = new List<Imprimir>
             {
             new Imprimir {
+          
             Id=int.Parse(txtIdNMB.Text),
             IdCuidador=int.Parse(txtIdCuidador.Text),
             Parto = contact.Parto,
@@ -151,79 +155,96 @@ namespace MapaniApp
                     if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK && !string.IsNullOrWhiteSpace(fd.SelectedPath))
                     {
                        string  direccion = fd.SelectedPath;
-                        using (var writer = new StreamWriter(direccion + "\\" + contact.Id + contact.Nombre + contactCuidador.Id+contactCuidador.Nombre+ ".csv"))
-                        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                       
+                        using (var writer = new StreamWriter(direccion + "\\" + contact.Id + contact.Nombre + contactCuidador.Id+contactCuidador.Nombre+ ".csv",false,Encoding.Default ))
                         {
-                            csv.WriteRecords(Imprimir);
+                           
+                            writer.WriteLine("sep=,");
+                            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                            {
+                               
+                                csv.WriteRecords(Imprimir);
+                            }
+                            
                         }
+                        
+
                     }
                 }
-                
+                MessageBox.Show("Guardado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else if (labelMMB.Visible = true)
             {
                 List<ContactMMB> contactsCuidador = _LogicLayer.GetContactsMMB(txtIdCuidador.Text);
                 ContactMMB contactCuidador = contactsCuidador[0];
                 var Imprimir = new List<Imprimir>
-            {
-            new Imprimir {
-            Id=int.Parse(txtIdNMB.Text),
-            IdCuidador=int.Parse(txtIdCuidador.Text),
-            Parto = contact.Parto,
-            Vacunas = contact.Vacunas,
-            Lactancia = contact.Lactancia,
-            Ocupacion = contactCuidador.Ocupacion,
-            Transporte = contactCuidador.Transporte,
-            CharlaMuac = contactCuidador.CharlaMuac,
-            CharlaLactancia = contactCuidador.CharlaLactancia,
-            TieneHijos = contactCuidador.TieneHijos,
-            Nombre =TxtNombre.Text ,
-            Apellido = TxtApellido.Text ,
-            FechaNacimiento = FechaNacimientoNMB.Value,
-            FechaIngreso = Fecha.Value ,
-            Sexo = TxtGenero.Text ,
-            Discapacidad =  ComboDiscapacidadNMB.Text ,
-            TipoDiscapacidad =  ComboTipoDiscapacidadCuidador.Text ,
-            PartidaNacimiento =    txtPartidaNacimiento.Text ,
-            Ingreso =   txtTipoIngreso.Text ,
-            Direccion =   txtDireccion.Text ,
-            Parroquia = txtParroquia.Text ,
-            Municipio= txtMunicipio.Text ,
-            Estado =   txtEstado.Text ,
-            Edad =  txtEdadNMB.Text ,
-            Parentesco =    txtParentesco.Text ,
-            NombreCuidador=  txtNombreCuidador.Text ,
-            ApellidoCuidador =  txtApellidoCuidador.Text ,
-            SexoCuidador =   txtGeneroCuidador.Text ,
-            Cedula = txtCedula.Text ,
-            FechaNacimientoCuidador = dateTimePicker2.Value ,
-            EdadCuidador =  txtEdad.Text ,
-            EstadoCivil = txtEstadoCivil.Text ,
-            Telefono = txtTelefono.Text ,
-            IngresosPropios =  txtIngresos.Text ,
-            DiscapacidadCuidador= ComboDiscapacidadCuidador.Text ,
-            TipoDiscapacidadCuidador = ComboTipoDiscapacidadCuidador.Text ,
-            GrupoEtnico = ComboGrupoEtnico.Text ,
-            TipoGrupoEtnico =   txtGrupoEtnico.Text ,
-            Movilizacion = txtMovilizacion.Text ,
-            Rango1 = txtRango1.Text ,
-            Rango2 =  txtRango2.Text ,
-            Rango3 =  txtRango3.Text ,
-        },
-            };
+                     {
+                        new Imprimir 
+                        {
+                                Id=int.Parse(txtIdNMB.Text),
+                                IdCuidador=int.Parse(txtIdCuidador.Text),
+                                Parto = contact.Parto,
+                                Vacunas = contact.Vacunas,
+                                Lactancia = contact.Lactancia,
+                                Ocupacion = contactCuidador.Ocupacion,
+                                Transporte = contactCuidador.Transporte,
+                                CharlaMuac = contactCuidador.CharlaMuac,
+                                CharlaLactancia = contactCuidador.CharlaLactancia,
+                                TieneHijos = contactCuidador.TieneHijos,
+                                Nombre =TxtNombre.Text ,
+                                Apellido = TxtApellido.Text ,
+                                FechaNacimiento = FechaNacimientoNMB.Value,
+                                FechaIngreso = Fecha.Value ,
+                                Sexo = TxtGenero.Text ,
+                                Discapacidad =  ComboDiscapacidadNMB.Text ,
+                                TipoDiscapacidad =  ComboTipoDiscapacidadCuidador.Text ,
+                                PartidaNacimiento =    txtPartidaNacimiento.Text ,
+                                Ingreso =   txtTipoIngreso.Text ,
+                                Direccion =   txtDireccion.Text ,
+                                Parroquia = txtParroquia.Text ,
+                                Municipio= txtMunicipio.Text ,
+                                Estado =   txtEstado.Text ,
+                                Edad =  txtEdadNMB.Text ,
+                                Parentesco =    txtParentesco.Text ,
+                                NombreCuidador=  txtNombreCuidador.Text ,
+                                ApellidoCuidador =  txtApellidoCuidador.Text ,
+                                SexoCuidador =   txtGeneroCuidador.Text ,
+                                Cedula = txtCedula.Text ,
+                                FechaNacimientoCuidador = dateTimePicker2.Value ,
+                                EdadCuidador =  txtEdad.Text ,
+                                EstadoCivil = txtEstadoCivil.Text ,
+                                Telefono = txtTelefono.Text ,
+                                IngresosPropios =  txtIngresos.Text ,
+                                DiscapacidadCuidador= ComboDiscapacidadCuidador.Text ,
+                                TipoDiscapacidadCuidador = ComboTipoDiscapacidadCuidador.Text ,
+                                GrupoEtnico = ComboGrupoEtnico.Text ,
+                                TipoGrupoEtnico =   txtGrupoEtnico.Text ,
+                                Movilizacion = txtMovilizacion.Text ,
+                                Rango1 = txtRango1.Text ,
+                                Rango2 =  txtRango2.Text ,
+                                Rango3 =  txtRango3.Text ,
+                        },
+                 };
                 using (var fd = new FolderBrowserDialog())
                 {
                     if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK && !string.IsNullOrWhiteSpace(fd.SelectedPath))
                     {
                         string direccion = fd.SelectedPath;
-                        using (var writer = new StreamWriter(direccion + "\\" + contact.Id + contact.Nombre + contactCuidador.Id + contactCuidador.Nombre + ".csv"))
-                        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                        using (var writer = new StreamWriter(direccion + "\\" + contact.Id + contact.Nombre + contactCuidador.Id + contactCuidador.Nombre + ".csv",false,Encoding.Default))
                         {
-                            csv.WriteRecords(Imprimir);
+                            writer.WriteLine("sep=,");
+                            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                            {
+                                csv.WriteRecords(Imprimir);
+                            }
                         }
                     }
                 }
-            }         
+                MessageBox.Show("Guardado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+           
         }
 
 
@@ -311,6 +332,11 @@ namespace MapaniApp
         }
 
         private void label36_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImprimirTranscripcion_Load(object sender, EventArgs e)
         {
 
         }

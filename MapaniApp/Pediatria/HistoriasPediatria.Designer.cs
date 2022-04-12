@@ -273,7 +273,7 @@ namespace MapaniApp
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HistoriasPediatria";
-            this.Text = "HistoriasPediatria";
+            this.Text = "Historias Pediatría";
             this.Load += new System.EventHandler(this.HistoriasPediatria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.claseEnfermeriaBindingSource)).EndInit();
