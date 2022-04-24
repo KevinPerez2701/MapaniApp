@@ -17,8 +17,8 @@ namespace MapaniApp
         #region PERMISOS DE AGREGAR CONTACTO
         public ContactMMB SaveContactMMB(ContactMMB Contact)
         {
-            int flag = Contact.Id;
-            if (flag == 0)
+           
+            if (Contact.Id == 0)
             {
                 _dataAccessLayer.InserContactMMB(Contact);
             }
@@ -30,8 +30,7 @@ namespace MapaniApp
         }
         public ContactCuidador SaveContactCuidador(ContactCuidador Contact)
         {
-            int flag = Contact.Id;
-            if (flag == 0)
+            if (Contact.Id == 0)
             {
                 _dataAccessLayer.InserContactCuidador(Contact);
             }
@@ -42,12 +41,15 @@ namespace MapaniApp
             return Contact;
         }
 
-        public ContactNMB SaveContact(ContactNMB Contact)
-        {
-            int flag = Contact.Id;
-            if (flag == 0)
+        public ContactNMB SaveContact(ContactNMB Contact, bool check = false)
+        {           
+            if (Contact.Id == 0 && check == false)
             {
                 _dataAccessLayer.InserContactNMB(Contact);
+            }
+            else if (Contact.Id != 0 && check == true)
+            {
+                _dataAccessLayer.InserOldContactNMB(Contact);
             }
             else
             {
@@ -57,8 +59,8 @@ namespace MapaniApp
         }
         public ContactAsesoria SaveContactAsesoria(ContactAsesoria Contact)
         {
-            int flag = Contact.Id;
-            if (flag == 0)
+           
+            if (Contact.Id == 0)
             {
                 _dataAccessLayer.InserContactAsesoria(Contact);
             }
@@ -90,7 +92,7 @@ namespace MapaniApp
         }
         public DataAlmacen SaveProduct(DataAlmacen Product)
         {
-            // _dataAccessLayer.InserProduct(Product);
+           
             _dataAccessLayer.InserProductAlmacen(Product);
             return Product;
         }

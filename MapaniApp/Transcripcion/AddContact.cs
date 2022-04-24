@@ -43,7 +43,11 @@ namespace MapaniApp
                 TipoDiscapacidad = comboTipoDiscapacidadNMB.Text,
                 Id = _contactNMB != null ? _contactNMB.Id : 0
             };
-            _LogicLayer.SaveContact(Contact);
+            if (PrimeraVez.Checked == true)
+            {
+                Contact.Id = int.Parse(textBox2.Text);
+            }
+            _LogicLayer.SaveContact(Contact,PrimeraVez.Checked);
         }
 
         private void SaveContactCuidador()
@@ -231,17 +235,23 @@ namespace MapaniApp
             textBox2.Text = Id;
             textBox2.ReadOnly = true;
         }
-        public void LoadId(string Contact)
+        public void LoadId(string Contact, string Id = null)
         {
             int aux;
             textBox1.Text = Contact;
             textBox1.ReadOnly = true;
-            if (Contact == "NMB")
+            if (Contact == "NMB" && Id == null)
             {
                 aux = _LogicLayer.GetMaxID();
                 aux++;
                 textBox2.Text = aux.ToString();
                 textBox2.ReadOnly = true;
+            }
+            else if (Contact == "NMB" && Id != null)
+            {
+                textBox2.Text = Id;
+                textBox2.ReadOnly = true;
+                PrimeraVez.Checked = true;
             }
             else if (Contact == "Cuidador")
             {
@@ -301,10 +311,11 @@ namespace MapaniApp
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "NMB")
+            if (textBox1.Text == "NMB" )
             {
                 SaveContact();
             }
+            
             else if (textBox1.Text == "Cuidador")
             {
                 SaveContactCuidador();

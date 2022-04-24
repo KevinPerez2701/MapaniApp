@@ -86,6 +86,74 @@ namespace MapaniApp
                 Connection.Close();
             }
         }
+        public void InserOldContactNMB(ContactNMB contact)
+        {
+            try
+            {
+                Connection.Open();
+                string query = @"   SET IDENTITY_INSERT dbo.TablaNMB ON
+                                    Insert into TablaNMB (Id,Escolaridad,DireccionEscuela,NombreEscuela,[Nombre], [Apellido], [FechaNacimiento], [Direccion],[sexo],[Foto],Cedula,FechaIngreso,Discapacidad,Vacunas,LactanciaMaterna,Parto,IngresoPrograma,PartidaNacimiento,Parroquia,Municipio,Estado,TipoDiscapacidad)  
+                                    Values(@Id,@Escolaridad,@DireccionEscuela,@NombreEscuela,@Nombre,@Apellido,@Edad,@Direccion,@Sexo,@foto,@cedula,@fechaIngreso,@Discapacidad,@Vacunas,@LactanciaMaterna,@Parto,@ingreso,@PartidaNacimiento,@Parroquia,@Municipio,@Estado,@TipoDiscapacidad)
+                                    SET IDENTITY_INSERT dbo.TablaNMB OFF";
+                SqlParameter Id = new SqlParameter("@Id", contact.Id);
+                SqlParameter Nombre = new SqlParameter("@Nombre", contact.Nombre);
+                SqlParameter Apellido = new SqlParameter("@Apellido", contact.Apellido);
+                SqlParameter FechaNacimiento = new SqlParameter("@Edad", contact.FechaNacimiento);
+                SqlParameter Cedula = new SqlParameter("@cedula", contact.Cedula);
+                SqlParameter FechaIngreso = new SqlParameter("@fechaIngreso", contact.FechaIngreso);
+                SqlParameter Discapacidad = new SqlParameter("@Discapacidad", contact.Discapacidad);
+                SqlParameter Vacunas = new SqlParameter("@Vacunas", contact.Vacunas);
+                SqlParameter Parto = new SqlParameter("@Parto", contact.Parto);
+                SqlParameter Ingreso = new SqlParameter("@ingreso", contact.Ingreso);
+                SqlParameter Direccion = new SqlParameter("@Direccion", contact.Direccion);
+                SqlParameter LactanciaMaterna = new SqlParameter("@LactanciaMaterna", contact.Lactancia);
+                SqlParameter Sexo = new SqlParameter("@Sexo", contact.Sexo);
+                SqlParameter PartidaNacimiento = new SqlParameter("@PartidaNacimiento", contact.PartidaNacimiento);
+                SqlParameter foto = new SqlParameter("@foto", contact.Foto);
+                SqlParameter Parroquia = new SqlParameter("@Parroquia", contact.Parroquia);
+                SqlParameter Municipio = new SqlParameter("@Municipio", contact.Municipio);
+                SqlParameter Estado = new SqlParameter("@Estado", contact.Estado);
+                SqlParameter Escolaridad = new SqlParameter("@Escolaridad", contact.Escolaridad);
+                SqlParameter DireccionEscuela = new SqlParameter("@DireccionEscuela", contact.DireccionEscuela);
+                SqlParameter NombreEscuela = new SqlParameter("@NombreEscuela", contact.NombreEscuela);
+                SqlParameter TipoDiscapacidad = new SqlParameter("@TipoDiscapacidad", contact.TipoDiscapacidad);
+
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.Add(Id);
+                command.Parameters.Add(Nombre);
+                command.Parameters.Add(Apellido);
+                command.Parameters.Add(FechaNacimiento);
+                command.Parameters.Add(Direccion);
+                command.Parameters.Add(Sexo);
+                command.Parameters.Add(foto);
+                command.Parameters.Add(FechaIngreso);
+                command.Parameters.Add(Parto);
+                command.Parameters.Add(Vacunas);
+                command.Parameters.Add(LactanciaMaterna);
+                command.Parameters.Add(Ingreso);
+                command.Parameters.Add(Discapacidad);
+                command.Parameters.Add(Cedula);
+                command.Parameters.Add(PartidaNacimiento);
+                command.Parameters.Add(Parroquia);
+                command.Parameters.Add(Municipio);
+                command.Parameters.Add(Estado);
+                command.Parameters.Add(Escolaridad);
+                command.Parameters.Add(DireccionEscuela);
+                command.Parameters.Add(NombreEscuela);
+                command.Parameters.Add(TipoDiscapacidad);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
         public void UpdateContactNMB(ContactNMB contact)
         {
             try

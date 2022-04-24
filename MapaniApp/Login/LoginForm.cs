@@ -12,6 +12,10 @@ namespace MapaniApp
             InitializeComponent();
         }
         #region EVENTOS
+        private void LoginForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBox.Show("Desarrollado por Kevin Pérez, Ingeniero Electrónico UNEXPO\nContacto:Kevinperez9A@gmail.com", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             if (this.Exito() == true)
@@ -23,7 +27,7 @@ namespace MapaniApp
             }
             else
             {
-                MessageBox.Show("Inicio de Sesion Invalido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Inicio de Sesión Inválido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 return;
             }
@@ -34,11 +38,7 @@ namespace MapaniApp
         {
             TxtPassword.PasswordChar = '*';
         }
-        #endregion
-
-        #region METODOS DE CLASE
-
-        #endregion
+        #endregion     
         #region Funciones
         public bool Verificacion()
         {
@@ -91,11 +91,11 @@ namespace MapaniApp
 
 
         #endregion
-
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
         }
+
+       
     }
 }

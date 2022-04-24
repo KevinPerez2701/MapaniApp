@@ -114,6 +114,7 @@ namespace MapaniApp
             this.label22 = new System.Windows.Forms.Label();
             this.ComboMuacRecibido = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.PrimeraVez = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbFotoNewContact)).BeginInit();
             this.groupNMB.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -582,7 +583,7 @@ namespace MapaniApp
             this.groupBox2.Controls.Add(this.labelTransporte);
             this.groupBox2.Controls.Add(this.labelEstadoCivil);
             this.groupBox2.Controls.Add(this.ComboEstadoCivil);
-            this.groupBox2.Location = new System.Drawing.Point(11, 290);
+            this.groupBox2.Location = new System.Drawing.Point(11, 288);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(426, 380);
             this.groupBox2.TabIndex = 5;
@@ -1079,6 +1080,19 @@ namespace MapaniApp
             this.label21.TabIndex = 69;
             this.label21.Text = "Charla MUAC";
             // 
+            // PrimeraVez
+            // 
+            this.PrimeraVez.AutoSize = true;
+            this.PrimeraVez.BackColor = System.Drawing.Color.Transparent;
+            this.PrimeraVez.Enabled = false;
+            this.PrimeraVez.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrimeraVez.Location = new System.Drawing.Point(17, 294);
+            this.PrimeraVez.Name = "PrimeraVez";
+            this.PrimeraVez.Size = new System.Drawing.Size(146, 28);
+            this.PrimeraVez.TabIndex = 72;
+            this.PrimeraVez.Text = "Ya Registrado";
+            this.PrimeraVez.UseVisualStyleBackColor = false;
+            // 
             // AddContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1086,6 +1100,7 @@ namespace MapaniApp
             this.BackgroundImage = global::MapaniApp.Properties.Resources.Logotipo_Variaciones_39;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(775, 743);
+            this.Controls.Add(this.PrimeraVez);
             this.Controls.Add(this.groupCharla);
             this.Controls.Add(this.groupEscolaridad);
             this.Controls.Add(this.txtEstado);
@@ -1095,8 +1110,8 @@ namespace MapaniApp
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupNMB);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker1);
@@ -1219,5 +1234,6 @@ namespace MapaniApp
         private System.Windows.Forms.TextBox txtRango1;
         private System.Windows.Forms.TextBox TxtHijos;
         private System.Windows.Forms.Label labelHijos;
+        private System.Windows.Forms.CheckBox PrimeraVez;
     }
 }

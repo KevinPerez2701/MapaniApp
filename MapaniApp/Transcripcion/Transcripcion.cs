@@ -24,8 +24,32 @@ namespace MapaniApp
             if (ComboOperacion.Text == "Agregar Contacto")
             {
                 AddContact contact = new AddContact();
-                contact.LoadId(ComboContacto.Text);
-                contact.ShowDialog(this);
+                if (PrimeraVez.Checked == false)
+                {
+                    contact.LoadId(ComboContacto.Text);
+                    contact.ShowDialog(this);
+                }
+                else
+                {
+                    List<ContactNMB> contacts = _LogicLayer.GetContacts(TxtId.Text);
+                    if (int.Parse(TxtId.Text) < _LogicLayer.GetMaxID() && contacts.Count == 0)
+                    {
+                        contact.LoadId(ComboContacto.Text, TxtId.Text);
+                        contact.ShowDialog(this);
+                    }
+                    else if (int.Parse(TxtId.Text) > _LogicLayer.GetMaxID() && contacts.Count == 0)
+                    {
+                        MessageBox.Show("Id Fuera de Rango", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else if (int.Parse(TxtId.Text) < _LogicLayer.GetMaxID() && contacts.Count != 0)
+                    {
+                        MessageBox.Show("Id Ya existente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Id Valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
             }
             else if (ComboOperacion.Text == "Editar Contacto")
             {
@@ -336,6 +360,8 @@ namespace MapaniApp
             dataGridView1.Visible = false;
             dataGridView1.DataSource = null;
             PrimeraVez.Visible = false;
+            PrimeraVez.Checked = false;
+          
         }
         private void Clean()
         {
@@ -347,6 +373,7 @@ namespace MapaniApp
             ComboCuidador.Text = "";
             ComboContacto.Text = "";
             ComboOperacion.Text = "";
+            
             HideLabels();
         }
         #endregion
